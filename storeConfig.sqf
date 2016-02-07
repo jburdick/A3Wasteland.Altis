@@ -640,7 +640,19 @@ genObjectsArray = compileFinal str
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
 	["Hangar", "Land_Hangar_F", 10000, "object"],
-	["Scaffolding", "Land_Scaffolding_F", 250, "object"]
+	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
+	
+	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
+	["Castle Wall (Walkway)", "Land_Castle_01_wall_07_F", 150, "object"], 
+	["Castle Wall (Thin, Windows)", "Land_Castle_01_church_a_ruin_F", 150, "object"], 
+	["Castle Wall (U-Shaped, Stairs)", "Land_Castle_01_wall_14_F", 150, "object"],
+	["Lighthouse", "Land_LightHouse_F", 150, "object"], 
+	["Hanger", "Land_Hangar_F", 150, "object"],
+	["Shed (Large)", "Land_Shed_Big_F", 150, "object"], 
+	["Shed (Half, Wall)", "Land_Shed_Small_F", 150, "object"],
+	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"],  
+	["Medical Office", "Land_Medevac_HQ_V1_F", 150, "object"]
+		
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
