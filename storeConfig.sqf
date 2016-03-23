@@ -120,7 +120,7 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	// ["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
@@ -464,30 +464,30 @@ uniformArray = compileFinal str
 	["Guerilla Smocks 5", "U_IG_Guerilla3_1", 25, "uni"],
 	["Guerilla Smocks 6", "U_IG_Guerilla3_2", 25, "uni"],
 	["Guerilla Smocks 7", "U_IG_leader", 25, "uni"],
-	/*["Worker Coveralls", "U_C_WorkerCoveralls", 25, "uni"], // can only be worn by civilian units
-	["T-Shirt (Blue)", "U_C_Poor_1", 25, "uni"],
-	["Polo (Red/white)", "U_C_Poloshirt_redwhite", 25, "uni"],
-	["Polo (Salmon)", "U_C_Poloshirt_salmon", 25, "uni"],
-	["Polo (Tri-color)", "U_C_Poloshirt_tricolour", 25, "uni"],
-	["Polo (Navy)", "U_C_Poloshirt_blue", 25, "uni"],
-	["Polo (Burgundy)", "U_C_Poloshirt_burgundy", 25, "uni"],
-	["Polo (Blue/green)", "U_C_Poloshirt_stripped", 25, "uni"],*/
-	["Polo (Competitor)", "U_Competitor", 25, "uni"],
-	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"]
-	/*["Racing Suit (Black)", "U_C_Driver_1_black", 25, "uni"], // can only be worn by civilian units
-	["Racing Suit (Blue)", "U_C_Driver_1_blue", 25, "uni"],
-	["Racing Suit (Green)", "U_C_Driver_1_green", 25, "uni"],
-	["Racing Suit (Yellow)", "U_C_Driver_1_yellow", 25, "uni"],
-	["Racing Suit (Orange)", "U_C_Driver_1_orange", 25, "uni"],
-	["Racing Suit (Red)", "U_C_Driver_1_red", 25, "uni"],
-	["Racing Suit (White)", "U_C_Driver_1_white", 25, "uni"],
-	["Racing Suit (Fuel)", "U_C_Driver_1", 25, "uni"],
-	["Racing Suit (Bluking)", "U_C_Driver_2", 25, "uni"],
-	["Racing Suit (Redstone)", "U_C_Driver_3", 25, "uni"],
-	["Racing Suit (Vrana)", "U_C_Driver_4", 25, "uni"],*/
+	// ["Worker Coveralls", "U_C_WorkerCoveralls", 25, "uni"], // can only be worn by civilian units
+	// ["T-Shirt (Blue)", "U_C_Poor_1", 25, "uni"],
+	// ["Polo (Red/white)", "U_C_Poloshirt_redwhite", 25, "uni"],
+	// ["Polo (Salmon)", "U_C_Poloshirt_salmon", 25, "uni"],
+	// ["Polo (Tri-color)", "U_C_Poloshirt_tricolour", 25, "uni"],
+	// ["Polo (Navy)", "U_C_Poloshirt_blue", 25, "uni"],
+	// ["Polo (Burgundy)", "U_C_Poloshirt_burgundy", 25, "uni"],
+	// ["Polo (Blue/green)", "U_C_Poloshirt_stripped", 25, "uni"],
+	// ["Racing Suit (Black)", "U_C_Driver_1_black", 25, "uni"], // can only be worn by civilian units
+	// ["Racing Suit (Blue)", "U_C_Driver_1_blue", 25, "uni"],
+	// ["Racing Suit (Green)", "U_C_Driver_1_green", 25, "uni"],
+	// ["Racing Suit (Yellow)", "U_C_Driver_1_yellow", 25, "uni"],
+	// ["Racing Suit (Orange)", "U_C_Driver_1_orange", 25, "uni"],
+	// ["Racing Suit (Red)", "U_C_Driver_1_red", 25, "uni"],
+	// ["Racing Suit (White)", "U_C_Driver_1_white", 25, "uni"],
+	// ["Racing Suit (Fuel)", "U_C_Driver_1", 25, "uni"],
+	// ["Racing Suit (Bluking)", "U_C_Driver_2", 25, "uni"],
+	// ["Racing Suit (Redstone)", "U_C_Driver_3", 25, "uni"],
+	// ["Racing Suit (Vrana)", "U_C_Driver_4", 25, "uni"]
 	// ["Tron Light Suit (Blue)", "U_B_Protagonist_VR", 5000, "uni"],
 	// ["Tron Light Suit (Red)", "U_O_Protagonist_VR", 5000, "uni"],
 	// ["Tron Light Suit (Green)", "U_I_Protagonist_VR", 5000, "uni"]
+	["Polo (Competitor)", "U_Competitor", 25, "uni"],
+	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"] 
 ];
 
 vestArray = compileFinal str
@@ -556,7 +556,7 @@ backpackArray = compileFinal str
 	["Bergen (Sage)", "B_Bergen_sgg", 350, "backpack"],
 
 	["Carryall (Khaki)", "B_Carryall_khk", 500, "backpack"],
-	["Carryall (Khaki)", "B_Carryall_cbr", 500, "backpack"],
+	["Carryall (Coyote)", "B_Carryall_cbr", 500, "backpack"],
 	["Carryall (MTP)", "B_Carryall_mcamo", 500, "backpack"],
 	["Carryall (Olive)", "B_Carryall_oli", 500, "backpack"],
 	["Carryall (Urban)", "B_Carryall_oucamo", 500, "backpack"]
@@ -577,7 +577,9 @@ genItemArray = compileFinal str
 	["Medikit", "Medikit", 150, "item"],
 	["Toolkit", "ToolKit", 150, "item"],
 	["Mine Detector", "MineDetector", 100, "item"],
-	["NV Goggles", "NVGoggles", 100, "nvg"],
+	["NV Goggles (Brown)", "NVGoggles", 100, "nvg"],
+	["NV Goggles (Black)", "NVGoggles_OPFOR", 100, "nvg"],
+	["NV Goggles", "NVGoggles_INDEP", 100, "nvg"],
 	["Diving Goggles", "G_Diving", 100, "gogg"],
 	["Binoculars", "Binocular", 50, "binoc"],
 	["Rangefinder", "Rangefinder", 150, "binoc"],
@@ -637,6 +639,7 @@ genObjectsArray = compileFinal str
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
+	["Hangar", "Land_Hangar_F", 10000, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"]
 ];
 
@@ -676,7 +679,7 @@ landArray = compileFinal str
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
 	["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
 
-	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
+	["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 	["Tempest Transport", "O_Truck_03_transport_F", 6000, "vehicle"],
 	["Tempest Covered", "O_Truck_03_covered_F", 7500, "vehicle"],
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
@@ -726,7 +729,9 @@ tanksArray = compileFinal str
 	["M2A1 Slammer", "B_MBT_01_cannon_F", 325000, "vehicle"],
 	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 350000, "vehicle"], // Commander gun variant
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 400000, "vehicle"],
-	["MBT-52 Kuma", "I_MBT_03_cannon_F", 450000, "vehicle"]
+	["MBT-52 Kuma", "I_MBT_03_cannon_F", 450000, "vehicle"],
+	["M4 Scorcher", "B_MBT_01_arty_F", 1500000, "vehicle"],
+	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 2000000, "vehicle"]
 ];
 
 
