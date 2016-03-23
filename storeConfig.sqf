@@ -473,7 +473,7 @@ uniformArray = compileFinal str
 	["Polo (Burgundy)", "U_C_Poloshirt_burgundy", 25, "uni"],
 	["Polo (Blue/green)", "U_C_Poloshirt_stripped", 25, "uni"],*/
 	["Polo (Competitor)", "U_Competitor", 25, "uni"],
-	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"],
+	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"]
 	/*["Racing Suit (Black)", "U_C_Driver_1_black", 25, "uni"], // can only be worn by civilian units
 	["Racing Suit (Blue)", "U_C_Driver_1_blue", 25, "uni"],
 	["Racing Suit (Green)", "U_C_Driver_1_green", 25, "uni"],
