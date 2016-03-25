@@ -5,18 +5,75 @@
  */
 R3F_LOG_CFG_remorqueurs =
 [
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"Truck_01_base_F",
-	"Truck_02_base_F",
-	"Truck_03_base_F",
-	"Wheeled_APC_F",
-	"Tank_F",
-	"Boat_Armed_01_base_F"
+	"C_Offroad_01_F", // Offroad
+	"B_G_Offroad_01_F", // Offroad Camo
+	"C_Offroad_01_repair_F", // Offroad Repair
+	"B_G_Offroad_01_armed_F", // Offroad HMG
+	"C_Van_01_transport_F", // Truck
+	"B_G_Van_01_transport_F", // Truck (Camo)
+	"C_Van_01_box_F", // Truck Box
+	"C_Van_01_fuel_F", // Fuel Truck
+	"B_G_Van_01_fuel_F", // Fuel Truck (Camo)
+	"B_Truck_01_mover_F", // HEMTT Tractor
+	"B_Truck_01_box_F", // HEMTT Box
+	"B_Truck_01_transport_F", // HEMTT Transport
+	"B_Truck_01_covered_F", // HEMTT Covered
+	"B_Truck_01_fuel_F", // HEMTT Fuel
+	"B_Truck_01_medical_F", // HEMTT Medical
+	"B_Truck_01_Repair_F", // HEMTT Repair
+	"B_Truck_01_ammo_F", // HEMTT Ammo
+	"O_Truck_03_transport_F", // Tempest Transport
+	"O_Truck_03_covered_F", // Tempest Covered
+	"O_Truck_03_fuel_F", // Tempest Fuel
+	"O_Truck_03_medical_F", // Tempest Medical
+	"O_Truck_03_repair_F", // Tempest Repair
+	"O_Truck_03_ammo_F", // Tempest Ammo
+	"I_Truck_02_transport_F", // Zamak Transport
+	"I_Truck_02_covered_F", // Zamak Covered
+	"I_Truck_02_fuel_F", // Zamak Fuel
+	"I_Truck_02_medical_F",// Zamak Medical
+	"I_Truck_02_box_F", // Zamak Repair
+	"I_Truck_02_ammo_F", // Zamak Ammo
+	"B_MRAP_01_F", // Hunter
+	"B_MRAP_01_hmg_F", // Hunter HMG
+	"B_MRAP_01_gmg_F", // Hunter GMG
+	"O_MRAP_02_F", // Ifrit
+	"O_MRAP_02_hmg_F", // Ifrit HMG
+	"O_MRAP_02_gmg_F", // Ifrit GMG
+	"I_MRAP_03_F", // Strider
+	"I_MRAP_03_hmg_F", // Strider HMG
+	"I_MRAP_03_gmg_F", // Strider GMG
+	"O_APC_Wheeled_02_rcws_F", // MSE-3 Marid
+	"B_APC_Wheeled_01_cannon_F", // AMV-7 Marshall
+	"I_APC_Wheeled_03_cannon_F", // AFV-4 Gorgon
+	"B_APC_Tracked_01_CRV_F", // CRV-6e Bobcat
+	"B_APC_Tracked_01_rcws_F", // IFV-6c Panther
+	"I_APC_tracked_03_cannon_F", // FV-720 Mora
+	"O_APC_Tracked_02_cannon_F", // BTR-K Kamysh
+	"B_APC_Tracked_01_AA_F", // IFV-6a Cheetah AA
+	"O_APC_Tracked_02_AA_F", // ZSU-39 Tigris AA
+	"B_MBT_01_cannon_F", // M2A1 Slammer
+	"B_MBT_01_TUSK_F", // M2A4 Slammer HMG
+	"O_MBT_02_cannon_F", // T-100 Varsuk
+	"I_MBT_03_cannon_F", // MBT-52 Kuma
+	"B_MBT_01_arty_F", // M4 Scorcher
+	"B_MBT_01_mlrs_F", // M5 Sandstorm MLRS
+	"C_Rubberboat", // Rescue Boat
+	"B_Lifeboat", // Rescue Boat (NATO)
+	"O_Lifeboat", // Rescue Boat (CSAT)
+	"B_Boat_Transport_01_F", // Assault Boat (NATO)
+	"O_Boat_Transport_01_F", // Assault Boat (CSAT
+	"I_Boat_Transport_01_F", // Assault Boat (AAF)
+	"B_G_Boat_Transport_01_F", // Assault Boat (FIA)
+	"C_Boat_Civil_01_F", // Motorboat
+	"C_Boat_Civil_rescue_01_F", // Motorboat Rescue
+	"C_Boat_Civil_police_01_F", // Motorboat Police
+	"O_Boat_Armed_01_hmg_F", // Speedboat HMG (CSAT)
+	"B_Boat_Armed_01_minigun_F", // Speedboat Minigun (NATO)
+	"I_Boat_Armed_01_minigun_F", // Speedboat Minigun (AAF
+	"B_SDV_01_F", // SDV Submarine (NATO)
+	"O_SDV_01_F", // SDV Submarine (CSAT)
+	"I_SDV_01_F" // SDV Submarine (AAF)
 ];
 
 /**
@@ -24,19 +81,115 @@ R3F_LOG_CFG_remorqueurs =
  */
 R3F_LOG_CFG_objets_remorquables =
 [
-	"Hatchback_01_base_F",
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"UGV_01_base_F",
-	"SDV_01_base_F",
-	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F",
-	"Helicopter_Base_F",
-	"Plane"
+	"C_Quadbike_01_F", // Quadbike (Civilian)
+	"B_Quadbike_01_F", // Quadbike (NATO)
+	"O_Quadbike_01_F", // Quadbike (CSAT)
+	"I_Quadbike_01_F", // Quadbike (AAF)
+	"B_G_Quadbike_01_F", // Quadbike (FIA)
+	"C_Hatchback_01_F", // Quadbike (FIA
+	"C_Hatchback_01_sport_F", // Hatchback Sport
+	"C_SUV_01_F", // SUV
+	"C_Offroad_01_F", // Offroad
+	"B_G_Offroad_01_F", // Offroad Camo
+	"C_Offroad_01_repair_F", // Offroad Repair
+	"B_G_Offroad_01_armed_F", // Offroad HMG
+	"C_Van_01_transport_F", // Truck
+	"B_G_Van_01_transport_F", // Truck (Camo)
+	"C_Van_01_box_F", // Truck Box
+	"C_Van_01_fuel_F", // Fuel Truck
+	"B_G_Van_01_fuel_F", // Fuel Truck (Camo)
+	"B_Truck_01_mover_F", // HEMTT Tractor
+	"B_Truck_01_box_F", // HEMTT Box
+	"B_Truck_01_transport_F", // HEMTT Transport
+	"B_Truck_01_covered_F", // HEMTT Covered
+	"B_Truck_01_fuel_F", // HEMTT Fuel
+	"B_Truck_01_medical_F", // HEMTT Medical
+	"B_Truck_01_Repair_F", // HEMTT Repair
+	"B_Truck_01_ammo_F", // HEMTT Ammo
+	"O_Truck_03_transport_F", // Tempest Transport
+	"O_Truck_03_covered_F", // Tempest Covered
+	"O_Truck_03_fuel_F", // Tempest Fuel
+	"O_Truck_03_medical_F", // Tempest Medical
+	"O_Truck_03_repair_F", // Tempest Repair
+	"O_Truck_03_ammo_F", // Tempest Ammo
+	"I_Truck_02_transport_F", // Zamak Transport
+	"I_Truck_02_covered_F", // Zamak Covered
+	"I_Truck_02_fuel_F", // Zamak Fuel
+	"I_Truck_02_medical_F",// Zamak Medical
+	"I_Truck_02_box_F", // Zamak Repair
+	"I_Truck_02_ammo_F", // Zamak Ammo
+	"B_UGV_01_F", // UGV Stomper (NATO)
+	"B_UGV_01_rcws_F", // UGV Stomper RCWS (NATO)
+	"I_UGV_01_F", // UGV Stomper (AAF)
+	"I_UGV_01_rcws_F",// UGV Stomper RCWS (AAF)
+	"O_UGV_01_F", // UGV Saif (CSAT)
+	"O_UGV_01_rcws_F", // UGV Saif RCWS (CSAT
+	"B_MRAP_01_F", // Hunter
+	"B_MRAP_01_hmg_F", // Hunter HMG
+	"B_MRAP_01_gmg_F", // Hunter GMG
+	"O_MRAP_02_F", // Ifrit
+	"O_MRAP_02_hmg_F", // Ifrit HMG
+	"O_MRAP_02_gmg_F", // Ifrit GMG
+	"I_MRAP_03_F", // Strider
+	"I_MRAP_03_hmg_F", // Strider HMG
+	"I_MRAP_03_gmg_F", // Strider GMG
+	"O_APC_Wheeled_02_rcws_F", // MSE-3 Marid
+	"B_APC_Wheeled_01_cannon_F", // AMV-7 Marshall
+	"I_APC_Wheeled_03_cannon_F", // AFV-4 Gorgon
+	"B_APC_Tracked_01_CRV_F", // CRV-6e Bobcat
+	"B_APC_Tracked_01_rcws_F", // IFV-6c Panther
+	"I_APC_tracked_03_cannon_F", // FV-720 Mora
+	"O_APC_Tracked_02_cannon_F", // BTR-K Kamysh
+	"B_APC_Tracked_01_AA_F", // IFV-6a Cheetah AA
+	"O_APC_Tracked_02_AA_F", // ZSU-39 Tigris AA
+	"C_Heli_Light_01_civil_F",  // M-900 Civilian
+	"B_Heli_Light_01_F", // MH-9 Hummingbird4000, "vehicle"],
+	"O_Heli_Light_02_unarmed_F", // PO-30 Orca (Black)
+	"I_Heli_light_03_unarmed_F", // WY-55 Hellcat (Green)
+	"O_Heli_Transport_04_F", // Mi-290 Taru (Crane) [DLC]
+	"O_Heli_Transport_04_box_F", // Mi-290 Taru (Box) [DLC]
+	"O_Heli_Transport_04_fuel_F", // Mi-290 Taru (Fuel) [DLC]
+	"O_Heli_Transport_04_bench_F", // Mi-290 Taru (Bench) [DLC]
+	"O_Heli_Transport_04_covered_F", // Mi-290 Taru (Transport) [DLC]
+	"B_Heli_Transport_03_unarmed_F", // CH-67 Huron (Black) [DLC]
+	"I_Heli_Transport_02_F", // CH-49 Mohawk
+	"O_Heli_Transport_04_medevac_F", // Mi-290 Taru (Medical) [DLC]
+	"O_Heli_Transport_04_repair_F", // Mi-290 Taru (Repair) [DLC]
+	"O_Heli_Transport_04_ammo_F", // Mi-290 Taru (Ammo) [DLC]
+	"B_Heli_Transport_01_F", // UH-80 Ghost Hawk
+	"B_Heli_Transport_03_F", // CH-67 Huron (Armed) [DLC]
+	"B_Heli_Light_01_armed_F", // AH-9 Pawnee
+	"O_Heli_Light_02_v2_F", // PO-30 Orca (Armed, Black)
+	"O_Heli_Light_02_F", // PO-30 Orca (Armed, Hex
+	"I_Heli_light_03_F", // WY-55 Hellcat (Armed
+	"B_Heli_Attack_01_F", // AH-99 Blackfoot
+	"O_Heli_Attack_02_F", // Mi-48 Kajman
+	"I_Plane_Fighter_03_AA_F", // A-143 Buzzard AA
+	"I_Plane_Fighter_03_CAS_F", // A-143 Buzzard CAS
+	"B_Plane_CAS_01_F", // A-164 Wipeout CAS
+	"O_Plane_CAS_02_F", // To-199 Neophron CAS
+	"B_UAV_02_F", // MQ4A Greyhawk Missile UAV
+	"B_UAV_02_CAS_F", // MQ4A Greyhawk Bomber UAV
+	"O_UAV_02_F", // K40 Ababil-3 Missile UAV (CSAT)
+	"O_UAV_02_CAS_F", // K40 Ababil-3 Bomber UAV (CSAT)
+	"I_UAV_02_F", // K40 Ababil-3 Missile UAV (AAF)
+	"I_UAV_02_CAS_F", // K40 Ababil-3 Bomber UAV (AAF)
+	"C_Rubberboat", // Rescue Boat
+	"B_Lifeboat", // Rescue Boat (NATO)
+	"O_Lifeboat", // Rescue Boat (CSAT)
+	"B_Boat_Transport_01_F", // Assault Boat (NATO)
+	"O_Boat_Transport_01_F", // Assault Boat (CSAT
+	"I_Boat_Transport_01_F", // Assault Boat (AAF)
+	"B_G_Boat_Transport_01_F", // Assault Boat (FIA)
+	"C_Boat_Civil_01_F", // Motorboat
+	"C_Boat_Civil_rescue_01_F", // Motorboat Rescue
+	"C_Boat_Civil_police_01_F", // Motorboat Police
+	"O_Boat_Armed_01_hmg_F", // Speedboat HMG (CSAT)
+	"B_Boat_Armed_01_minigun_F", // Speedboat Minigun (NATO)
+	"I_Boat_Armed_01_minigun_F", // Speedboat Minigun (AAF
+	"B_SDV_01_F", // SDV Submarine (NATO)
+	"O_SDV_01_F", // SDV Submarine (CSAT)
+	"I_SDV_01_F" // SDV Submarine (AAF)
 ];
 
 /****** LIFT WITH VEHICLE  ******/
@@ -46,7 +199,19 @@ R3F_LOG_CFG_objets_remorquables =
  */
 R3F_LOG_CFG_heliporteurs =
 [
-	"Helicopter_Base_F"
+	"O_Heli_Light_02_unarmed_F", // PO-30 Orca (Black)
+	"I_Heli_light_03_unarmed_F", // WY-55 Hellcat (Green)
+	"O_Heli_Transport_04_F", // Mi-290 Taru (Crane) [DLC]
+	"O_Heli_Transport_04_box_F", // Mi-290 Taru (Box) [DLC]
+	"O_Heli_Transport_04_fuel_F", // Mi-290 Taru (Fuel) [DLC]
+	"O_Heli_Transport_04_bench_F", // Mi-290 Taru (Bench) [DLC]
+	"O_Heli_Transport_04_covered_F", // Mi-290 Taru (Transport) [DLC]
+	"B_Heli_Transport_03_unarmed_F", // CH-67 Huron (Black) [DLC]
+	"I_Heli_Transport_02_F", // CH-49 Mohawk
+	"O_Heli_Transport_04_medevac_F", // Mi-290 Taru (Medical) [DLC]
+	"O_Heli_Transport_04_repair_F", // Mi-290 Taru (Repair) [DLC]
+	"B_Heli_Transport_01_F", // UH-80 Ghost Hawk
+	"B_Heli_Transport_03_F" // CH-67 Huron (Armed) [DLC]
 ];
 
 /**
@@ -54,17 +219,74 @@ R3F_LOG_CFG_heliporteurs =
  */
 R3F_LOG_CFG_objets_heliportables =
 [
-	"Hatchback_01_base_F",
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"UGV_01_base_F",
-	"SDV_01_base_F",
-	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F"
+	"C_Quadbike_01_F", // Quadbike (Civilian)
+	"B_Quadbike_01_F", // Quadbike (NATO)
+	"O_Quadbike_01_F", // Quadbike (CSAT)
+	"I_Quadbike_01_F", // Quadbike (AAF)
+	"B_G_Quadbike_01_F", // Quadbike (FIA)
+	"C_Hatchback_01_F", // Quadbike (FIA
+	"C_Hatchback_01_sport_F", // Hatchback Sport
+	"C_SUV_01_F", // SUV
+	"C_Offroad_01_F", // Offroad
+	"B_G_Offroad_01_F", // Offroad Camo
+	"C_Offroad_01_repair_F", // Offroad Repair
+	"B_G_Offroad_01_armed_F", // Offroad HMG
+	"C_Van_01_transport_F", // Truck
+	"B_G_Van_01_transport_F", // Truck (Camo)
+	"C_Van_01_box_F", // Truck Box
+	"C_Van_01_fuel_F", // Fuel Truck
+	"B_G_Van_01_fuel_F", // Fuel Truck (Camo)
+	"B_Truck_01_mover_F", // HEMTT Tractor
+	"B_Truck_01_box_F", // HEMTT Box
+	"B_Truck_01_transport_F", // HEMTT Transport
+	"B_Truck_01_covered_F", // HEMTT Covered
+	"B_Truck_01_fuel_F", // HEMTT Fuel
+	"B_Truck_01_medical_F", // HEMTT Medical
+	"B_Truck_01_Repair_F", // HEMTT Repair
+	"B_Truck_01_ammo_F", // HEMTT Ammo
+	"O_Truck_03_transport_F", // Tempest Transport
+	"O_Truck_03_covered_F", // Tempest Covered
+	"O_Truck_03_fuel_F", // Tempest Fuel
+	"O_Truck_03_medical_F", // Tempest Medical
+	"O_Truck_03_repair_F", // Tempest Repair
+	"O_Truck_03_ammo_F", // Tempest Ammo
+	"I_Truck_02_transport_F", // Zamak Transport
+	"I_Truck_02_covered_F", // Zamak Covered
+	"I_Truck_02_fuel_F", // Zamak Fuel
+	"I_Truck_02_medical_F",// Zamak Medical
+	"I_Truck_02_box_F", // Zamak Repair
+	"I_Truck_02_ammo_F", // Zamak Ammo
+	"B_UGV_01_F", // UGV Stomper (NATO)
+	"B_UGV_01_rcws_F", // UGV Stomper RCWS (NATO)
+	"I_UGV_01_F", // UGV Stomper (AAF)
+	"I_UGV_01_rcws_F",// UGV Stomper RCWS (AAF)
+	"O_UGV_01_F", // UGV Saif (CSAT)
+	"O_UGV_01_rcws_F", // UGV Saif RCWS (CSAT
+	"B_MRAP_01_F", // Hunter
+	"B_MRAP_01_hmg_F", // Hunter HMG
+	"B_MRAP_01_gmg_F", // Hunter GMG
+	"O_MRAP_02_F", // Ifrit
+	"O_MRAP_02_hmg_F", // Ifrit HMG
+	"O_MRAP_02_gmg_F", // Ifrit GMG
+	"I_MRAP_03_F", // Strider
+	"I_MRAP_03_hmg_F", // Strider HMG
+	"I_MRAP_03_gmg_F", // Strider GMG
+	"C_Rubberboat", // Rescue Boat
+	"B_Lifeboat", // Rescue Boat (NATO)
+	"O_Lifeboat", // Rescue Boat (CSAT)
+	"B_Boat_Transport_01_F", // Assault Boat (NATO)
+	"O_Boat_Transport_01_F", // Assault Boat (CSAT
+	"I_Boat_Transport_01_F", // Assault Boat (AAF)
+	"B_G_Boat_Transport_01_F", // Assault Boat (FIA)
+	"C_Boat_Civil_01_F", // Motorboat
+	"C_Boat_Civil_rescue_01_F", // Motorboat Rescue
+	"C_Boat_Civil_police_01_F", // Motorboat Police
+	"O_Boat_Armed_01_hmg_F", // Speedboat HMG (CSAT)
+	"B_Boat_Armed_01_minigun_F", // Speedboat Minigun (NATO)
+	"I_Boat_Armed_01_minigun_F", // Speedboat Minigun (AAF
+	"B_SDV_01_F", // SDV Submarine (NATO)
+	"O_SDV_01_F", // SDV Submarine (CSAT)
+	"I_SDV_01_F" // SDV Submarine (AAF)
 ];
 
 
@@ -77,31 +299,97 @@ R3F_LOG_CFG_objets_heliportables =
  */
 R3F_LOG_CFG_transporteurs =
 [
-	["Quadbike_01_base_F", 5],
-	["UGV_01_base_F", 10],
-	["Hatchback_01_base_F", 10],
-	["SUV_01_base_F", 20],
-	["Offroad_01_base_F", 30],
-	["Van_01_base_F", 40],
-	["MRAP_01_base_F", 20],
-	["MRAP_02_base_F", 20],
-	["MRAP_03_base_F", 20],
-	["B_Truck_01_box_F", 150],
-	["Truck_F", 75],
-	["Wheeled_APC_F", 30],
-	["Tank_F", 30],
-	["Rubber_duck_base_F", 10],
-	["Boat_Civil_01_base_F", 10],
-	["Boat_Armed_01_base_F", 20],
-	["Heli_Light_01_base_F", 10],
-	["Heli_Light_02_base_F", 20],
-	["I_Heli_light_03_base_F", 20],
-	["Heli_Transport_01_base_F", 25],
-	["Heli_Transport_02_base_F", 30],
-	["Heli_Transport_03_base_F", 30],
-	["Heli_Transport_04_base_F", 30],
-	["Heli_Attack_01_base_F", 10],
-	["Heli_Attack_02_base_F", 20]
+	["C_Quadbike_01_F", 5], // Quadbike (Civilian)
+	["B_Quadbike_01_F", 5], // Quadbike (NATO)
+	["O_Quadbike_01_F", 5], // Quadbike (CSAT)
+	["I_Quadbike_01_F", 5], // Quadbike (AAF)
+	["B_G_Quadbike_01_F", 5], // Quadbike (FIA)
+	["C_Hatchback_01_F", 10], // Hatchback
+	["C_Hatchback_01_sport_F", 10], // Hatchback Sport
+	["C_SUV_01_F", 25], // SUV
+	["C_Offroad_01_F", 50], // Offroad
+	["B_G_Offroad_01_F", 50], // Offroad Camo
+	["C_Offroad_01_repair_F", 10], // Offroad Repair
+	["B_G_Offroad_01_armed_F", 5], // Offroad HMG
+	["C_Van_01_transport_F", 60], // Truck
+	["B_G_Van_01_transport_F", 60], // Truck (Camo)
+	["C_Van_01_box_F", 60], // Truck Box
+	["C_Van_01_fuel_F", 5], // Fuel Truck
+	["B_G_Van_01_fuel_F", 10], // Fuel Truck (Camo)
+	["B_Truck_01_mover_F", 190], // HEMTT Tractor
+	["B_Truck_01_box_F", 190], // HEMTT Box
+	["B_Truck_01_transport_F", 190], // HEMTT Transport
+	["B_Truck_01_covered_F", 190], // HEMTT Covered
+	["B_Truck_01_fuel_F", 50], // HEMTT Fuel
+	["B_Truck_01_medical_F", 190], // HEMTT Medical
+	["B_Truck_01_Repair_F", 95], // HEMTT Repair
+	["O_Truck_03_transport_F", 150], // Tempest Transport
+	["O_Truck_03_covered_F", 150], // Tempest Covered
+	["O_Truck_03_fuel_F", 45], // Tempest Fuel
+	["O_Truck_03_medical_F", 150], // Tempest Medical
+	["O_Truck_03_repair_F", 75], // Tempest Repair
+	["I_Truck_02_transport_F", 100], // Zamak Transport
+	["I_Truck_02_covered_F", 100], // Zamak Covered
+	["I_Truck_02_fuel_F", 25], // Zamak Fuel
+	["I_Truck_02_medical_F", 100],// Zamak Medical
+	["I_Truck_02_box_F", 50], // Zamak Repair
+	["B_UGV_01_F", 5], // UGV Stomper (NATO)
+	["B_UGV_01_rcws_F", 5], // UGV Stomper RCWS (NATO)
+	["I_UGV_01_F", 5], // UGV Stomper (AAF)
+	["I_UGV_01_rcws_F", 5],// UGV Stomper RCWS (AAF)
+	["O_UGV_01_F", 5], // UGV Saif (CSAT)
+	["O_UGV_01_rcws_F", 5], // UGV Saif RCWS (CSAT
+	["B_MRAP_01_F", 30], // Hunter
+	["B_MRAP_01_hmg_F", 30], // Hunter HMG
+	["B_MRAP_01_gmg_F", 30], // Hunter GMG
+	["O_MRAP_02_F", 30], // Ifrit
+	["O_MRAP_02_hmg_F", 30], // Ifrit HMG
+	["O_MRAP_02_gmg_F", 30], // Ifrit GMG
+	["I_MRAP_03_F", 30], // Strider
+	["I_MRAP_03_hmg_F", 30], // Strider HMG
+	["I_MRAP_03_gmg_F", 30], // Strider GMG
+	["O_APC_Wheeled_02_rcws_F", 50], // MSE-3 Marid
+	["B_APC_Wheeled_01_cannon_F", 50], // AMV-7 Marshall
+	["I_APC_Wheeled_03_cannon_F", 50], // AFV-4 Gorgon
+	["B_APC_Tracked_01_CRV_F", 75], // CRV-6e Bobcat
+	["B_APC_Tracked_01_rcws_F", 50], // IFV-6c Panther
+	["I_APC_tracked_03_cannon_F", 50], // FV-720 Mora
+	["O_APC_Tracked_02_cannon_F", 50], // BTR-K Kamysh
+	["B_APC_Tracked_01_AA_F", 30], // IFV-6a Cheetah AA
+	["O_APC_Tracked_02_AA_F", 30], // ZSU-39 Tigris AA
+	["C_Heli_Light_01_civil_F", 15],  // M-900 Civilian
+	["B_Heli_Light_01_F", 15], // MH-9 Hummingbird4000, "vehicle"],
+	["O_Heli_Light_02_unarmed_F", 40], // PO-30 Orca (Black)
+	["I_Heli_light_03_unarmed_F", 40], // WY-55 Hellcat (Green)
+	["O_Heli_Transport_04_box_F", 175, // Mi-290 Taru (Box) [DLC]
+	["O_Heli_Transport_04_fuel_F", 75], // Mi-290 Taru (Fuel) [DLC]
+	["O_Heli_Transport_04_covered_F", 200], // Mi-290 Taru (Transport) [DLC]
+	["B_Heli_Transport_03_unarmed_F", 200], // CH-67 Huron (Black) [DLC]
+	["I_Heli_Transport_02_F", 250], // CH-49 Mohawk
+	["O_Heli_Transport_04_medevac_F", 75], // Mi-290 Taru (Medical) [DLC]
+	["O_Heli_Transport_04_repair_F", 75], // Mi-290 Taru (Repair) [DLC]
+	["B_Heli_Transport_01_F", 40], // UH-80 Ghost Hawk
+	["B_Heli_Transport_03_F", 200], // CH-67 Huron (Armed) [DLC]
+	["O_Heli_Light_02_v2_F", 20], // PO-30 Orca (Armed, Black)
+	["O_Heli_Light_02_F", 20], // PO-30 Orca (Armed, Hex
+	["I_Heli_light_03_F", 20], // WY-55 Hellcat (Armed
+	["O_Heli_Attack_02_F", 50], // Mi-48 Kajman
+	["C_Rubberboat", 5], // Rescue Boat
+	["B_Lifeboat", 5], // Rescue Boat (NATO)
+	["O_Lifeboat", 5], // Rescue Boat (CSAT)
+	["B_Boat_Transport_01_F", 20], // Assault Boat (NATO)
+	["O_Boat_Transport_01_F", 20], // Assault Boat (CSAT
+	["I_Boat_Transport_01_F", 20], // Assault Boat (AAF)
+	["B_G_Boat_Transport_01_F", 20], // Assault Boat (FIA)
+	["C_Boat_Civil_01_F", 20], // Motorboat
+	["C_Boat_Civil_rescue_01_F", 20], // Motorboat Rescue
+	["C_Boat_Civil_police_01_F", 20], // Motorboat Police
+	["O_Boat_Armed_01_hmg_F", 20], // Speedboat HMG (CSAT)
+	["B_Boat_Armed_01_minigun_F", 20], // Speedboat Minigun (NATO)
+	["I_Boat_Armed_01_minigun_F", 20], // Speedboat Minigun (AAF
+	["B_SDV_01_F", 5], // SDV Submarine (NATO)
+	["O_SDV_01_F", 5], // SDV Submarine (CSAT)
+	["I_SDV_01_F", 5] // SDV Submarine (AAF)
 ];
 
 
@@ -110,9 +398,9 @@ R3F_LOG_CFG_objets_transportables =
 	["Static_Designator_01_base_F", 2],
 	["Static_Designator_02_base_F", 2],
 	["StaticWeapon", 5],
-	["Box_NATO_AmmoVeh_F", 10],
-	["B_supplyCrate_F", 5],
-	["ReammoBox_F", 3],
+	["Box_NATO_AmmoVeh_F", 40],
+	["B_supplyCrate_F", 2],
+	["ReammoBox_F", 1],
 	["Kart_01_Base_F", 5],
 	["Quadbike_01_base_F", 10],
 	["Rubber_duck_base_F", 10],
@@ -171,8 +459,8 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Hangar_F", 110], // Hanger
 	["Land_Shed_Big_F", 110], // Shed large
 	["Land_Shed_Small_F", 55], // Shed half
-	["Land_Cargo_HQ_V1_F", 30], // Mil HQ
-	["Land_Medevac_HQ_V1_F", 30] // Med HQ
+	["Land_Cargo_HQ_V1_F", 50], // Mil HQ
+	["Land_Medevac_HQ_V1_F", 50] // Med HQ
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
