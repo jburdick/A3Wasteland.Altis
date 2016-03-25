@@ -120,7 +120,7 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 7500],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
@@ -691,59 +691,59 @@ landArray = compileFinal str
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
 	["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
 
-	["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
+	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 	["Tempest Transport", "O_Truck_03_transport_F", 6000, "vehicle"],
 	["Tempest Covered", "O_Truck_03_covered_F", 7500, "vehicle"],
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 10000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 12500, "vehicle"],
-	// ["Tempest Ammo", "O_Truck_03_ammo_F", 975000, "vehicle"],
+	["Tempest Ammo", "O_Truck_03_ammo_F", 250000, "vehicle"],
 
 	["Zamak Transport", "I_Truck_02_transport_F", 4000, "vehicle"],
 	["Zamak Covered", "I_Truck_02_covered_F", 5000, "vehicle"],
 	["Zamak Fuel", "I_Truck_02_fuel_F", 7500, "vehicle"],
 	["Zamak Medical", "I_Truck_02_medical_F", 9000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 10000, "vehicle"],
-	// ["Zamak Ammo", "I_Truck_02_ammo_F", 25000, "vehicle"],
+	// ["Zamak Ammo", "I_Truck_02_ammo_F", 25, "vehicle"],
 
 	["UGV Stomper (NATO)", "B_UGV_01_F", 2500, "vehicle"],
-	["UGV Stomper RCWS (NATO)", "B_UGV_01_rcws_F", 15000, "vehicle"],
+	["UGV Stomper RCWS (NATO)", "B_UGV_01_rcws_F", 45000, "vehicle"],
 	["UGV Stomper (AAF)", "I_UGV_01_F", 2500, "vehicle"],
-	["UGV Stomper RCWS (AAF)", "I_UGV_01_rcws_F", 15000, "vehicle"],
+	["UGV Stomper RCWS (AAF)", "I_UGV_01_rcws_F", 45000, "vehicle"],
 	["UGV Saif (CSAT)", "O_UGV_01_F", 2500, "vehicle"],
-	["UGV Saif RCWS (CSAT)", "O_UGV_01_rcws_F", 15000, "vehicle"]
+	["UGV Saif RCWS (CSAT)", "O_UGV_01_rcws_F", 45000, "vehicle"]
 ];
 
 armoredArray = compileFinal str
 [
 	["Hunter", "B_MRAP_01_F", 4000, "vehicle"],
-	["Hunter HMG", "B_MRAP_01_hmg_F", 55000, "vehicle"],
-	["Hunter GMG", "B_MRAP_01_gmg_F", 57500, "vehicle"],
+	["Hunter HMG", "B_MRAP_01_hmg_F", 35000, "vehicle"],
+	["Hunter GMG", "B_MRAP_01_gmg_F", 37500, "vehicle"],
 	["Ifrit", "O_MRAP_02_F", 4000, "vehicle"],
-	["Ifrit HMG", "O_MRAP_02_hmg_F", 55000, "vehicle"],
-	["Ifrit GMG", "O_MRAP_02_gmg_F", 57500, "vehicle"],
+	["Ifrit HMG", "O_MRAP_02_hmg_F", 35000, "vehicle"],
+	["Ifrit GMG", "O_MRAP_02_gmg_F", 37500, "vehicle"],
 	["Strider", "I_MRAP_03_F", 4000, "vehicle"],
-	["Strider HMG", "I_MRAP_03_hmg_F", 55000, "vehicle"],
-	["Strider GMG", "I_MRAP_03_gmg_F", 57500, "vehicle"],
-	["MSE-3 Marid", "O_APC_Wheeled_02_rcws_F", 125000, "vehicle"],
-	["AMV-7 Marshall", "B_APC_Wheeled_01_cannon_F", 175000, "vehicle"],
-	["AFV-4 Gorgon", "I_APC_Wheeled_03_cannon_F", 200000, "vehicle"]
+	["Strider HMG", "I_MRAP_03_hmg_F", 35000, "vehicle"],
+	["Strider GMG", "I_MRAP_03_gmg_F", 37500, "vehicle"],
+	["MSE-3 Marid", "O_APC_Wheeled_02_rcws_F", 50000, "vehicle"],
+	["AMV-7 Marshall", "B_APC_Wheeled_01_cannon_F", 70000, "vehicle"],
+	["AFV-4 Gorgon", "I_APC_Wheeled_03_cannon_F", 95000, "vehicle"]
 ];
 
 tanksArray = compileFinal str
 [
 	// ["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 82500, "vehicle"],
-	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 235000, "vehicle"],
-	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 375000, "vehicle"],
-	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 400000, "vehicle"],
-	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 400000, "vehicle"],
-	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 400000, "vehicle"],
-	["M2A1 Slammer", "B_MBT_01_cannon_F", 325000, "vehicle"],
-	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 350000, "vehicle"], // Commander gun variant
-	["T-100 Varsuk", "O_MBT_02_cannon_F", 400000, "vehicle"],
-	["MBT-52 Kuma", "I_MBT_03_cannon_F", 450000, "vehicle"],
-	["M4 Scorcher", "B_MBT_01_arty_F", 1500000, "vehicle"],
-	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 2000000, "vehicle"]
+	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
+	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
+	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],
+	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 112000, "vehicle"],
+	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 115000, "vehicle"],
+	["M2A1 Slammer", "B_MBT_01_cannon_F", 125000, "vehicle"],
+	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 130000, "vehicle"], // Commander gun variant
+	["T-100 Varsuk", "O_MBT_02_cannon_F", 140000, "vehicle"],
+	["MBT-52 Kuma", "I_MBT_03_cannon_F", 150000, "vehicle"],
+	["M4 Scorcher", "B_MBT_01_arty_F", 750000, "vehicle"],
+	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 1000000, "vehicle"]
 ];
 
 
@@ -764,7 +764,7 @@ helicoptersArray = compileFinal str
 
 	["Mi-290 Taru (Medical) [DLC]", "O_Heli_Transport_04_medevac_F",12500, "vehicle"],
 	["Mi-290 Taru (Repair) [DLC]", "O_Heli_Transport_04_repair_F", 1000000, "vehicle"],
-	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 25000, "vehicle"],
+	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 500000, "vehicle"],
 
 	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 25000, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["CH-67 Huron (Armed) [DLC]", "B_Heli_Transport_03_F", 30000, "vehicle"], // CH-47 with 2 side miniguns
