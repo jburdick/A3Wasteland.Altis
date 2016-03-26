@@ -593,6 +593,7 @@ genItemArray = compileFinal str
 	["Chemlight (Green)", "Chemlight_green", 25, "mag"],
 	["Chemlight (Yellow)", "Chemlight_yellow", 25, "mag"],
 	["Chemlight (Red)", "Chemlight_red", 25, "mag"]
+	
 ];
 
 allStoreMagazines = compileFinal str (call ammoArray + call throwputArray + call genItemArray);
@@ -639,7 +640,6 @@ genObjectsArray = compileFinal str
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
-	["Hangar", "Land_Hangar_F", 10000, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
 	
 	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
@@ -647,11 +647,27 @@ genObjectsArray = compileFinal str
 	["Castle Wall (Thin, Windows)", "Land_Castle_01_church_a_ruin_F", 150, "object"], 
 	["Castle Wall (U-Shaped, Stairs)", "Land_Castle_01_wall_14_F", 150, "object"],
 	["Lighthouse", "Land_LightHouse_F", 150, "object"], 
-	["Hanger", "Land_Hangar_F", 150, "object"],
-	["Shed (Large)", "Land_Shed_Big_F", 150, "object"], 
-	["Shed (Half, Wall)", "Land_Shed_Small_F", 150, "object"],
+	["Hanger", "Land_Hangar_F", 15000, "object"],
+	["Shed (Large)", "Land_Shed_Big_F", 1500, "object"], 
+	["Shed (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
 	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"],  
-	["Medical Office", "Land_Medevac_HQ_V1_F", 150, "object"]
+	["Land Controller", "Land_Device_assembled_F", 100000],
+	["Land Pier", "Land_Pier_F", 10000],
+	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
+	["Fuel station", "Land_FuelStation_Feed_F", 500],
+	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
+	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
+	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
+	["Repair Container", "B_Slingload_01_Repair_F", 1000],
+	["Medical Container", "B_Slingload_01_Medevac_F", 1000],
+	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
+	["Sling Box", "CargoNet_01_box_F", 1000],
+	["Portable Helipad", "Land_MobilLandingPlatform_01_F", 500],
+	["Ladder", "Land_PierLadder_F", 100]
+	
+	
+	
 		
 ];
 
@@ -689,7 +705,7 @@ landArray = compileFinal str
 	["HEMTT Fuel", "B_Truck_01_fuel_F", 9000, "vehicle"],
 	["HEMTT Medical", "B_Truck_01_medical_F", 10000, "vehicle"],
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
-	["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
+	// ["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
 
 	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 	["Tempest Transport", "O_Truck_03_transport_F", 6000, "vehicle"],
@@ -697,7 +713,7 @@ landArray = compileFinal str
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 10000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 12500, "vehicle"],
-	["Tempest Ammo", "O_Truck_03_ammo_F", 250000, "vehicle"],
+	// ["Tempest Ammo", "O_Truck_03_ammo_F", 250000, "vehicle"],
 
 	["Zamak Transport", "I_Truck_02_transport_F", 4000, "vehicle"],
 	["Zamak Covered", "I_Truck_02_covered_F", 5000, "vehicle"],
@@ -1029,6 +1045,7 @@ colorsArray = compileFinal str
 // ["Medical Kit", "medkits", localize "STR_WL_ShopDescriptions_MedKit", "client\icons\medkit.paa", 400, 200],  // not needed since there are First Ait Kits
 customPlayerItems = compileFinal str
 [
+	["Vehicle Pinlock", "pinlock", localize "STR_WL_ShopDescriptions_Pinlock", "client\icons\keypad.paa", 1000, 500],
 	["Water Bottle", "water", localize "STR_WL_ShopDescriptions_Water", "client\icons\waterbottle.paa", 30, 15],
 	["Canned Food", "cannedfood", localize "STR_WL_ShopDescriptions_CanFood", "client\icons\cannedfood.paa", 30, 15],
 	["Repair Kit", "repairkit", localize "STR_WL_ShopDescriptions_RepairKit", "client\icons\briefcase.paa", 500, 250],
