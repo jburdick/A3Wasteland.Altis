@@ -129,7 +129,45 @@ case "Launcers_Tier_2":
 		];
 	
 	};
-
+case "Diving_Gear": //diving equipment for squad of 2
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", "arifle_SDAR_F", 2, RANDOM_BETWEEN(4,6)],
+			["itm", "V_RebreatherB", 2],
+			["itm", "V_RebreatherIR", 2],
+			["itm", "V_RebreatherIA", 2],
+			["itm", "G_Diving", 2],
+			["itm", "U_B_Wetsuit", 2],
+			["itm", "U_O_Wetsuit", 2],
+			["itm", "U_I_Wetsuit", 2],
+			["itm", ["Chemlight_red", "Chemlight_green", "Chemlight_yellow", "Chemlight_blue"], RANDOM_BETWEEN(6,9)],
+			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
+			//["bac", ["B_Kitbag_mcamo", "B_Bergen_sgg", "B_FieldPack_khk", "B_Carryall_mcamo"], RANDOM_BETWEEN(3,5)],	
+		];
+	};	
+	case "General_supplies":
+	{
+	_boxitems =
+		[
+			//first aid, medkit, tookit, gps, rangefinder, etc
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["itm", "FirstAidKit", RANDOM_BETWEEN(5,6)],
+			["wep", ["Binocular", "Rangefinder", "Laserdesignator"], RANDOM_BETWEEN(3,5)],
+			["wep", ["hgun_Pistol_heavy_01_F", "hgun_Pistol_heavy_01_MRD_F", "hgun_Pistol_heavy_02_F", "hgun_Pistol_heavy_02_Yorris_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,5)],
+			["itm", "Medikit", RANDOM_BETWEEN(2,3)],
+			["itm", "Toolkit", RANDOM_BETWEEN(2,3)],
+			["itm", "Laserbatteries", RANDOM_BETWEEN(2,4)],
+			["itm", "MineDetector", 3],
+			["itm", ["H_CrewHelmetHeli_B","H_CrewHelmetHeli_O", "H_CrewHelmetHeli_I"], RANDOM_BETWEEN(2,4)],
+			["bac", ["B_Kitbag_mcamo", "B_Bergen_sgg", "B_FieldPack_khk", "B_Carryall_mcamo"], RANDOM_BETWEEN(3,5)],
+			["itm", ["V_PlateCarrierIAGL_dgtl", "V_TacVest_camo", "V_PlateCarrierGL_rgr"], RANDOM_BETWEEN(2,4)],
+			["itm", ["Chemlight_red", "Chemlight_green", "Chemlight_yellow", "Chemlight_blue"], RANDOM_BETWEEN(6,9)],
+			//["itm", ["V_RebreatherB", "U_B_Wetsuit"], RANDOM_BETWEEN(3,6)],
+			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
+		];
+	};	
 	Case "GEVP":
 	{
 	
