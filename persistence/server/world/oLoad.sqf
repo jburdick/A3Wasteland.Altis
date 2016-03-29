@@ -51,6 +51,7 @@ _exclObjectIDs = [];
 		{
 			case (call _isWarchestEntry):       { _warchestSavingOn };
 			case (call _isBeaconEntry):         { _beaconSavingOn };
+			case (call _isCameraEntry):         { _cameraSavingOn };
 			case (_class call _isBox):          { _boxSavingOn };
 			case (_class call _isStaticWeapon): { _staticWeaponSavingOn };
 			default                             { _baseSavingOn };
@@ -107,6 +108,9 @@ _exclObjectIDs = [];
 			{
 				case "side": { _value = _value call _strToSide };
 				case "R3F_Side": { _value = _value call _strToSide };
+				case "lockDown": { _value }; // BASE LOCKER
+				case "Lights": { _value }; // BASE LOCKER
+				case "password": { _value }; // BASE LOCKER - SAFE - DOOR
 				case "ownerName":
 				{
 					switch (typeName _value) do
