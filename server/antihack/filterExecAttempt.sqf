@@ -35,6 +35,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 		[
 			"client\functions\defineServerRules.sqf",
 			"territory\client\updateTerritoryMarkers.sqf",
+			"addons\3D_Markers\3Dmarkers.sqf",
 			"initPlayerServer.sqf"
 		];
 	}

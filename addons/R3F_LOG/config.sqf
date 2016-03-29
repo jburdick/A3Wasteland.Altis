@@ -271,7 +271,7 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 [
 	// e.g. : "MyLifterVehicleClassName1", "MyLifterVehicleClassName2"
-];
+	];
 
 /**
  * List of class names of objects which can be lifted.
@@ -280,31 +280,7 @@ R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 [
 	// e.g. : "MyLiftableObjectClassName1", "MyLiftableObjectClassName2"
-	"Land_Device_assembled_F", // Base locker
-	"ReammoBox_F",
-	"Hatchback_01_base_F",
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"Truck_01_base_F",
-	"Truck_02_base_F",
-	"Truck_03_base_F",
-	"UGV_01_base_F",
-	"SDV_01_base_F",
-	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F",
-	"Wheeled_APC_F",
-	"APC_Tracked_01_base_F",
-	"APC_Tracked_02_base_F",
-	"APC_Tracked_03_base_F",
-	"MBT_01_base_F",
-	"MBT_02_base_F",
-	"MBT_03_base_F",
-	"Land_Pod_Heli_Transport_04_box_F"
-];
+	];
 
 
 /****** LOAD IN VEHICLE / CHARGER DANS LE VEHICULE ******/
@@ -373,8 +349,6 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["Land_Pod_Heli_Transport_04_box_F", 250],
 	["Land_Pod_Heli_Transport_04_box_F", 175],
 	["B_Slingload_01_Cargo_F", 1000]
-	
-	
 ];
 
 /**
@@ -393,7 +367,11 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 50],
 	["B_supplyCrate_F", 2],
-	["ReammoBox_F", 1],
+	["Box_Ammo_F", 1],
+	["EAST_Box_Base", 1],
+	["FIA_Box_Base_F", 1],
+	["IND_Box_Base", 1],
+	["NATO_Box_Base", 1],
 	["Kart_01_Base_F", 10],
 	["Quadbike_01_base_F", 10],
 	["Rubber_duck_base_F", 10],
@@ -436,6 +414,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Obstacle_Ramp_F", 5],
 	["Land_Pipes_large_F", 5],
 	["Land_RampConcreteHigh_F", 6],
+	["Land_RampConcrete_F", 6],
 	["Land_RampConcrete_F", 5],
 	["BlockConcrete_F", 25],
 	["Land_Razorwire_F", 5],
@@ -468,7 +447,10 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["B_CargoNet_01_ammo_F", 4],
 	["CargoNet_01_box_F", 2],
 	["Land_MobilLandingPlatform_01_F", 50],
-	["Land_PierLadder_F", 2]
+	["Land_PierLadder_F", 2],
+	["ContainmentArea_1_sand_F", 10],
+	["ContainmentAera_2_sand_F", 8],
+	["Shelter_base_F", 10]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -549,6 +531,12 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"B_Slingload_01_Repair_F",
 	"B_Slingload_01_Fuel_F",
 	"B_Slingload_01_Cargo_F",
-	"B_Slingload_01_Ammo_F"
+	"Land_Hangar_F",
+	"B_Slingload_01_Ammo_F",
 	
+	"ContainmentArea_1_sand_F",
+	"ContainmentAera_2_sand_F",
+	"Land_RampConcrete_F",
+	"Land_Pier_Box_F",
+	"Shelter_base_F"
 ];

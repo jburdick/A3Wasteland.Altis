@@ -50,7 +50,7 @@ switch (_lockState) do
 	case 0: // LOCK
 	{
 		R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = 5;
+		_totalDuration = 1;
 		//_lockDuration = _totalDuration;
 		//_iteration = 0;
 
@@ -139,7 +139,7 @@ switch (_lockState) do
 	case 1: // UNLOCK
 	{
 		R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 10 } else { 45 }; // Allow owner to unlock quickly
+		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 1 } else { 1200 }; // Allow owner to unlock quickly
 		//_unlockDuration = _totalDuration;
 		//_iteration = 0;
 

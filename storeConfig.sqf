@@ -121,6 +121,12 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 staticGunsArray = compileFinal str
 [
 	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 7500],
+	["Explosives Crate", "Box_NATO_AmmoOrd_F", 100],
+	["Ammo Crate", "Box_NATO_Ammo_F", 100],
+	["Granade Crate", "Box_NATO_Grenades_F", 100],
+	["Launcher Crate", "Box_NATO_WpsLaunch_F", 100],
+	["Special Weapon Crate", "Box_NATO_WpsSpecial_F", 100],
+	["Weapon Crate", "Box_NATO_Wps_F", 100],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
@@ -130,24 +136,24 @@ staticGunsArray = compileFinal str
 	["Mk30 HMG .50 Low tripod (NATO)", "B_HMG_01_F", 2000],
 	["Mk30 HMG .50 Low tripod (CSAT)", "O_HMG_01_F", 2000],
 	["Mk30 HMG .50 Low tripod (AAF)", "I_HMG_01_F", 2000],
-	["Mk30A HMG .50 Sentry (NATO)", "B_HMG_01_A_F", 5000], // "A" = Autonomous = Overpowered
-	["Mk30A HMG .50 Sentry (CSAT)", "O_HMG_01_A_F", 5000],
-	["Mk30A HMG .50 Sentry (AAF)", "I_HMG_01_A_F", 5000],
+	["Mk30A HMG .50 Sentry (NATO)", "B_HMG_01_A_F", 10000], // "A" = Autonomous = Overpowered
+	["Mk30A HMG .50 Sentry (CSAT)", "O_HMG_01_A_F", 10000],
+	["Mk30A HMG .50 Sentry (AAF)", "I_HMG_01_A_F", 10000],
 	["Mk30 HMG .50 High tripod (NATO)", "B_HMG_01_high_F", 3000],
 	["Mk30 HMG .50 High tripod (CSAT)", "O_HMG_01_high_F", 3000],
 	["Mk30 HMG .50 High tripod (AAF)", "I_HMG_01_high_F", 3000],
 	["Mk32 GMG 20mm Low tripod (NATO)", "B_GMG_01_F", 5000],
 	["Mk32 GMG 20mm Low tripod (CSAT)", "O_GMG_01_F", 5000],
 	["Mk32 GMG 20mm Low tripod (AAF)", "I_GMG_01_F", 5000],
-	["Mk32A GMG 20mm Sentry (NATO)", "B_GMG_01_A_F", 10000],
-	["Mk32A GMG 20mm Sentry (CSAT)", "O_GMG_01_A_F", 10000],
-	["Mk32A GMG 20mm Sentry (AAF)", "I_GMG_01_A_F", 10000],
+	["Mk32A GMG 20mm Sentry (NATO)", "B_GMG_01_A_F", 15000],
+	["Mk32A GMG 20mm Sentry (CSAT)", "O_GMG_01_A_F", 15000],
+	["Mk32A GMG 20mm Sentry (AAF)", "I_GMG_01_A_F", 15000],
 	["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 6000],
 	["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 6000],
 	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 6000],
-	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 12500],
-	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 12500],
-	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 12500]
+	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 25000],
+	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 25000],
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 25000]
 ];
 
 throwputArray = compileFinal str
@@ -195,11 +201,11 @@ ammoArray = compileFinal str
 	["6.5mm 100Rnd Tracer (Red) Belt Case", "100Rnd_65x39_caseless_mag_Tracer", 50],
 	["6.5mm 200Rnd Belt Case", "200Rnd_65x39_cased_Box", 150],
 	["6.5mm 200Rnd Tracer (Yellow) Belt Case", "200Rnd_65x39_cased_Box_Tracer", 125],
-	//["7.62mm 10Rnd Mag", "10Rnd_762x51_Mag", 15],
+	["7.62mm 10Rnd Mag", "10Rnd_762x51_Mag", 15],
 	["7.62mm 10Rnd Mag", "10Rnd_762x54_Mag", 15],
 	["7.62mm 20Rnd Mag", "20Rnd_762x51_Mag", 25],
-	//["7.62mm 150Rnd Box", "150Rnd_762x51_Box", 150],
-	//["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 125],
+	["7.62mm 150Rnd Box", "150Rnd_762x51_Box", 150],
+	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 125],
 	["7.62mm 150Rnd Box", "150Rnd_762x54_Box", 150],
 	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x54_Box_Tracer", 125],
 	[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 50],
@@ -432,6 +438,7 @@ uniformArray = compileFinal str
 	["CTRG Combat Uniform (UBACS)", "U_B_CTRG_1", 50, "uni"],
 	["CTRG Combat Uniform (UBACS2)", "U_B_CTRG_2", 50, "uni"],
 	["CTRG Combat Uniform (Tee)", "U_B_CTRG_3", 50, "uni"],
+	// ["Survival Fatigues", "Item_U_B_survival_uniform", 500],
 	["Recon Fatigues (Hex)", "U_O_SpecopsUniform_ocamo", 50, "uni"],
 	["Fatigues (Urban)", "U_O_CombatUniform_oucamo", 50, "uni"],
 	["Combat Fatigues Short (Digi)", "U_I_CombatUniform_shortsleeve", 50, "uni"],
@@ -602,18 +609,21 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 
 genObjectsArray = compileFinal str
 [
-	["Camo Ammo Cache", "Box_FIA_Support_F", 250, "ammocrate"],
+	["Camo Ammo Cache", "Box_FIA_Support_F", 1000, "ammocrate"],
+	["Support Crate", "Box_NATO_Support_F", 100],
 	//["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	//["Toilet Box", "Land_ToiletBox_F", 25, "object"],
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 100, "object"],
 	["Lamp Post (Shabby)", "Land_LampShabby_F", 100, "object"],
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
-	["Pipes", "Land_Pipes_Large_F", 200, "object"],
-	["Concrete Frame", "Land_CncShelter_F", 200, "object"],
+	["Fuel station", "Land_FuelStation_Feed_F", 500],
+	["Ladder", "Land_PierLadder_F", 100],
 	["Highway Guardrail", "Land_Crash_barrier_F", 200, "object"],
+	
 	["Concrete Barrier", "Land_CncBarrier_F", 200, "object"],
 	["Concrete Barrier (Medium)", "Land_CncBarrierMedium_F", 350, "object"],
 	["Concrete Barrier (Long)", "Land_CncBarrierMedium4_F", 500, "object"],
+	
 	["HBarrier (1 block)", "Land_HBarrier_1_F", 150, "object"],
 	["HBarrier (3 blocks)", "Land_HBarrier_3_F", 200, "object"],
 	["HBarrier (5 blocks)", "Land_HBarrier_5_F", 250, "object"],
@@ -621,13 +631,23 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (4 blocks)", "Land_HBarrierWall4_F", 400, "object"],
 	["HBarrier Wall (6 blocks)", "Land_HBarrierWall6_F", 500, "object"],
 	["HBarrier Watchtower", "Land_HBarrierTower_F", 600, "object"],
+	
 	["Concrete Wall", "Land_CncWall1_F", 400, "object"],
 	["Concrete Military Wall", "Land_Mil_ConcreteWall_F", 400, "object"],
 	["Concrete Wall (Long)", "Land_CncWall4_F", 600, "object"],
+	["Concrete Frame", "Land_CncShelter_F", 200, "object"],
+	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
+	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
+	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
+	["Land Pier", "Land_Pier_F", 10000],
+	
 	["Military Wall (Big)", "Land_Mil_WallBig_4m_F", 600, "object"],
-	//["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
+	
+	["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
+	
 	["Canal Wall (Small)", "Land_Canal_WallSmall_10m_F", 400, "object"],
 	["Canal Stairs", "Land_Canal_Wall_Stairs_F", 500, "object"],
+	
 	["Bag Fence (Corner)", "Land_BagFence_Corner_F", 150, "object"],
 	["Bag Fence (End)", "Land_BagFence_End_F", 150, "object"],
 	["Bag Fence (Long)", "Land_BagFence_Long_F", 200, "object"],
@@ -636,35 +656,34 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Small)", "Land_BagBunker_Small_F", 250, "object"],
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
+	
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
-	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
-	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
-	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
-	
 	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
-	["Castle Wall (Walkway)", "Land_Castle_01_wall_07_F", 150, "object"], 
-	["Castle Wall (Thin, Windows)", "Land_Castle_01_church_a_ruin_F", 150, "object"], 
-	["Castle Wall (U-Shaped, Stairs)", "Land_Castle_01_wall_14_F", 150, "object"],
 	["Lighthouse", "Land_LightHouse_F", 150, "object"], 
 	["Hanger", "Land_Hangar_F", 15000, "object"],
 	["Shed (Large)", "Land_Shed_Big_F", 1500, "object"], 
 	["Shed (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
-	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"],  
-	["Land Controller", "Land_Device_assembled_F", 100000],
-	["Land Pier", "Land_Pier_F", 10000],
+	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"], 
 	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
-	["Fuel station", "Land_FuelStation_Feed_F", 500],
+		 
+	["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
+		
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
 	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
 	["Medical Container", "B_Slingload_01_Medevac_F", 1000],
+	
 	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
 	["Sling Box", "CargoNet_01_box_F", 1000],
-	["Portable Helipad", "Land_MobilLandingPlatform_01_F", 500],
-	["Ladder", "Land_PierLadder_F", 100]
+		
+	["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
+	["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
+	["Large Camo Net (Brown", "CamoNet_OPFOR_big_F", 500],
+	["Portable LZ (Large)", "ContainmentArea_1_sand_F", 1000],
+	["Portable LZ (Small)", "ContainmentArea_2_sand_F", 800]
 	
 	
 	
@@ -748,7 +767,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	// ["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 82500, "vehicle"],
+	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 82500, "vehicle"],
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],
@@ -1055,7 +1074,10 @@ customPlayerItems = compileFinal str
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
 	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
 	["Energy Drink", "energydrink", localize "STR_WL_ShopDescriptions_Energy_Drink", "client\icons\energydrink.paa", 100, 50],
-	["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500]
+	["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500],
+	["IP/Net Camera", "cctv_camera", localize "STR_WL_ShopDescriptions_CCTV_Camera", "addons\cctv\icons\camcorder.paa", 850, 500],
+	["Camera Terminal", "cctv_base", localize "STR_WL_ShopDescriptions_CCTV_Base", "addons\cctv\icons\laptop.paa", 500, 300]
+	
 ];
 
 call compile preprocessFileLineNumbers "mapConfig\storeOwners.sqf";

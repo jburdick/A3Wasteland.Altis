@@ -14,15 +14,15 @@ A3W_uavControl = "group";          // Restrict connection to UAVs based on owner
 
 // Time settings
 A3W_startHour = 05;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
-A3W_timeMultiplierDay = 1.0;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
-A3W_timeMultiplierNight = 4.0;     // Sets the speed of time between 8 PM and 5 AM
+A3W_timeMultiplierDay = 3.0;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
+A3W_timeMultiplierNight = 15.0;     // Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
 
 // Player settings
 A3W_startingMoney = 10000;           // Amount of money that players start with
 A3W_survivalSystem = 1;            // Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
 A3W_unlimitedStamina = 1;          // Allow unlimited sprinting, jumping, etc. (0 = no, 1 = yes) - this also removes energy drinks from the mission
-A3W_bleedingTime = 60;             // Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
+A3W_bleedingTime = 120;             // Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
 A3W_headshotNoRevive = 1;          // Instant death on fatal headshot by enemy player with non-explosive ammo (0 = no, 1 = yes)
 
 // Spawn settings
@@ -37,9 +37,9 @@ A3W_antiHackMinRecoil = 1.0;       // Mininum recoil coefficient enforced by the
 // Store settings
 A3W_showGunStoreStatus = 1;        // Show enemy and friendly presence at gunstores on map (0 = no, 1 = yes)
 A3W_gunStoreIntruderWarning = 1;   // Warn players in gunstore areas of enemy intruders (0 = no, 1 = yes)
-A3W_remoteBombStoreRadius = 75;    // Prevent players from placing remote explosives within this distance from any store (0 = disabled)
-A3W_poiObjLockDistance = 100;      // Prevent players from locking objects within this distance from points of interest (stores & mission spawns)
-A3W_vehiclePurchaseCooldown = 60;  // Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
+A3W_remoteBombStoreRadius = 20;    // Prevent players from placing remote explosives within this distance from any store (0 = disabled)
+A3W_poiObjLockDistance = 20;      // Prevent players from locking objects within this distance from points of interest (stores & mission spawns)
+A3W_vehiclePurchaseCooldown = 30;  // Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
 
 // ATM settings
 A3W_atmEnabled = 1;                // Enable ATM system (0 = no, 1 = yes)

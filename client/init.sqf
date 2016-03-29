@@ -141,6 +141,9 @@ A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 [] execVM "addons\far_revive\FAR_revive_init.sqf";
 [] execVM "addons\camera\functions.sqf";
 [] execVM "addons\UAV_Control\functions.sqf";
+[] execVM "addons\cctv\functions.sqf";             // CCTV Camera addon
+if(hasInterface) then{[] execVM "addons\statusBar\statusBar.sqf"}; 
+[] execVM "addons\APOC_Property_Manager\APOC_PM_functions.sqf"	// Property Manager Addon
 
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";
