@@ -40,7 +40,7 @@ _setupObjects =
 		"I_Truck_02_fuel_F",
 		"I_Truck_02_medical_F",
 		"I_Truck_02_box_F"
-		"B_Truck_01_ammo_F"
+		// "B_Truck_01_ammo_F"
 	] call BIS_fnc_selectRandom;
 
 	// Class, Position, Fuel, Ammo, Damage, Special
