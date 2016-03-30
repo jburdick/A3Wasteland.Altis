@@ -15,9 +15,9 @@
 	["TERRITORY_THRONOS_CASTLE", "Thronos Castle", 5000, "CASTLE"],
 	["TERRITORY_KASTRO_CASTLE", "Kastro Castle", 5000, "CASTLE"],
 	["TERRITORY_SW_AIRFIELD", "AAC Airfield", 5000, "AIRFIELD"],
-	["TERRITORY_MAIN_AIRBASE_SW", "Altis Airport (SW)", 7500, "AIRBASE"],
-	["TERRITORY_MAIN_AIRBASE_CENTER", "Altis Airport (Center)", 7500, "AIRBASE"],
-	["TERRITORY_MAIN_AIRBASE_NE", "Altis Airport (NE)", 7500, "AIRBASE"],
+	["TERRITORY_MAIN_AIRBASE_SW", "Altis Airport (SW)", 5000, "AIRBASE"],
+	["TERRITORY_MAIN_AIRBASE_CENTER", "Altis Airport (Center)", 5000, "AIRBASE"],
+	["TERRITORY_MAIN_AIRBASE_NE", "Altis Airport (NE)", 5000, "AIRBASE"],
 	["TERRITORY_NE_AIRFIELD", "Molos Airfield", 5000, "AIRFIELD"],
 	["TERRITORY_SE_AIRFIELD", "Selakano Airfield", 5000, "AIRFIELD"],
 	["TERRITORY_NW_AIRFIELD", "Northwest Airfield", 5000, "AIRFIELD"],
@@ -28,5 +28,11 @@
 	["TERRITORY_ARTINARKI_RUINS", "Artinarki Ruins", 5000, "RUINS"],
 	["TERRITORY_MAGOS_TRANSMITTER", "Magos Transmitter", 5000, "TRANSMITTER"],
 	["TERRITORY_PYRSOS_TRANSMITTER", "Pyrsos Transmitter", 5000, "TRANSMITTER"],
-	["TERRITORY_MILITARY_RESEARCH", "Telos Military Base", 5000, "MILITARY"]
+	["TERRITORY_MILITARY_RESEARCH", "Telos Military Base", 5000, "MILITARY"],
+	["TERRITORY_RIGA", "Riga", 5000, "Ruins"],
+	["TERRITORY_VIKOS_CASTLE", "Vikos Castle", 5000, "Ruins"],
+	["TERRITORY_PYRGOS_OFFICES", "Pyrgos Offices", 5000, "Ruins"],
+	["TERRITORY_PYRGOS_MILITARY", "Pyrgos FOB", 5000, "Military"],
+	["TERRITORY_MILITARYHILL", "Military Hill", 5000, "Military"],
+	["TERRITORY_SOFIA_RADAR", "Sofia Radardome", 5000, "Military"]
 ]
