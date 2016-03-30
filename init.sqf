@@ -87,7 +87,6 @@ if (hasInterface || isServer) then
 {
 	//init 3rd Party Scripts
 	// [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
-	nul = [] execVM "addons\3D_Markers\3Dmarkers.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
 	[] execVM "addons\laptop\init.sqf";
 	[] execVM "addons\vactions\functions.sqf";	
