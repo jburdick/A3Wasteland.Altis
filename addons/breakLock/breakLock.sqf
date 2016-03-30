@@ -29,13 +29,13 @@ if (_break < _price / 4) exitWith {
  for "_i" from _price to 0 step -1 do
  {
     hint str _i;
-	//player action ["lightOn", _vehicle];
-	//_soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
-	//_soundToPlay = _soundPath + "addons\breakLock\sounds\carhorn.ogg";
-	//playSound3D [_soundToPlay, _vehicle, false, getPosASL _vehicle, 1, 1, 0];
-    //sleep 0.5;
-	//player action ["lightOff", _vehicle];
-	//sleep 0.5;
+	player action ["lightOn", _vehicle];
+	_soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
+	_soundToPlay = _soundPath + "addons\breakLock\sounds\carhorn.ogg";
+	playSound3D [_soundToPlay, _vehicle, false, getPosASL _vehicle, 1, 1, 0];
+    sleep 0.5;
+	player action ["lightOff", _vehicle];
+	sleep 0.5;
 	
 	if (player distance _vehicle >5 ) then
 	{
