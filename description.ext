@@ -67,6 +67,8 @@ loadScreen = "mapConfig\Loading.jpg";
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
+#include "addons\APOC_Property_Manager\APOC_PM_Defines.hpp"
+#include "addons\APOC_Property_Manager\APOC_PM_Dialog.hpp"
 
 class RscTitles
 {
@@ -166,5 +168,3 @@ class CfgSounds
 							titles[] = {};
 		};
 };
-#include "addons\APOC_Property_Manager\APOC_PM_Defines.hpp"
-#include "addons\APOC_Property_Manager\APOC_PM_Dialog.hpp"
