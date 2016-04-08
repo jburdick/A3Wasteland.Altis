@@ -35,7 +35,7 @@ removeDisabledMissions = [_path, "removeDisabledMissions.sqf"] call mf_compile;
 setLocationObjects = [_path, "setLocationObjects.sqf"] call mf_compile;
 setLocationState = [_path, "setLocationState.sqf"] call mf_compile;
 setMissionState = [_path, "setMissionState.sqf"] call mf_compile;
-//Addon Missions
+// Non Vanilla missions
 createsniperGroup = [_path, "createUnits\sniperGroup.sqf"] call mf_compile; 
 createsmugglerGroup = [_path, "createUnits\smugglerGroup.sqf"] call mf_compile;
 createRandomPilot = [_path, "createUnits\createRandomPilot.sqf"] call mf_compile;
@@ -55,6 +55,7 @@ cleanVehicleWreck = [_path, "cleanVehicleWreck.sqf"] call mf_compile;
 convertTerritoryOwner = "territory\server\convertTerritoryOwner.sqf" call mf_compile;
 defendArea = [_path, "defendArea.sqf"] call mf_compile;
 dropPlayerItems = [_path, "dropPlayerItems.sqf"] call mf_compile;
+getMagazineDetailAmmo = [_path, "getMagazineDetailAmmo.sqf"] call mf_compile;
 findClientPlayer = [_path, "findClientPlayer.sqf"] call mf_compile;
 fn_onPlayerConnected = [_path, "fn_onPlayerConnected.sqf"] call mf_compile;
 fn_onPlayerDisconnected = [_path, "fn_onPlayerDisconnected.sqf"] call mf_compile;
@@ -74,7 +75,6 @@ processMoneyPickup = [_path, "processMoneyPickup.sqf"] call mf_compile;
 processTransaction = [_path, "processTransaction.sqf"] call mf_compile;
 punishTeamKiller = [_path, "punishTeamKiller.sqf"] call mf_compile;
 refillPrimaryAmmo = [_path, "refillPrimaryAmmo.sqf"] call mf_compile;
-respawnEventServer = [_path, "respawnEventServer.sqf"] call mf_compile;
 setMissionSkill = [_path, "setMissionSkill.sqf"] call mf_compile;
 spawnStoreObject = [_path, "spawnStoreObject.sqf"] call mf_compile;
 teamKillUnlock = [_path, "teamKillUnlock.sqf"] call mf_compile;
@@ -82,12 +82,23 @@ teamSwitchLock = [_path, "teamSwitchLock.sqf"] call mf_compile;
 teamSwitchUnlock = [_path, "teamSwitchUnlock.sqf"] call mf_compile;
 updateConnectingClients = "territory\client\updateConnectingClients.sqf" call mf_compile;
 vehicleRepair = [_path, "vehicleRepair.sqf"] call mf_compile;
+vehicleRespawnCheck = [_path, "vehicle.sqf"] call mf_compile;
 vehicleSetup = [_path, "vehicleSetup.sqf"] call mf_compile;
 waitUntilBagTaken = [_path, "waitUntilBagTaken.sqf"] call mf_compile;
 weaponDisassembledServer = [_path, "weaponDisassembledServer.sqf"] call mf_compile;
 
 //Player Management
 server_playerDied = [_path, "serverPlayerDied.sqf"] call mf_compile;
+server_BountyDied = [_path, "serverBountyDied.sqf"] call mf_compile;
+
+/*
+//Bounty System
+_path = "server\systems\bounties";
+onBountySystemPlayerDied = [_path, "onBountySystemPlayerDied.sqf"] call mf_compile;
+startPlayerBounty = [_path, "startPlayerBounty.sqf"] call mf_compile;
+startSystemBounty = [_path, "startSystemBounty.sqf"] call mf_compile;
+startSystemBountyByName = [_path, "startSystemBountyByName.sqf"] call mf_compile;
+*/
 
 //Spawning Compiles
 _path = "server\spawning";
