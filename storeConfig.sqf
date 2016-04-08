@@ -120,13 +120,14 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 7500],
-	["Explosives Crate", "Box_NATO_AmmoOrd_F", 100],
-	["Ammo Crate", "Box_NATO_Ammo_F", 100],
-	["Granade Crate", "Box_NATO_Grenades_F", 100],
-	["Launcher Crate", "Box_NATO_WpsLaunch_F", 100],
-	["Special Weapon Crate", "Box_NATO_WpsSpecial_F", 100],
-	["Weapon Crate", "Box_NATO_Wps_F", 100],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 75000],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
+	["Explosives Crate(Empty)", "Box_NATO_AmmoOrd_F", 100],
+	["Ammo Crate (Empty)", "Box_NATO_Ammo_F", 100],
+	["Granade Crate (Empty)", "Box_NATO_Grenades_F", 100],
+	["Launcher Crate (Empty)", "Box_NATO_WpsLaunch_F", 100],
+	["Special Weapon Crate (Empty)", "Box_NATO_WpsSpecial_F", 100],
+	["Weapon Crate (Empty)", "Box_NATO_Wps_F", 100],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
@@ -438,7 +439,7 @@ uniformArray = compileFinal str
 	["CTRG Combat Uniform (UBACS)", "U_B_CTRG_1", 50, "uni"],
 	["CTRG Combat Uniform (UBACS2)", "U_B_CTRG_2", 50, "uni"],
 	["CTRG Combat Uniform (Tee)", "U_B_CTRG_3", 50, "uni"],
-	// ["Survival Fatigues", "Item_U_B_survival_uniform", 500],
+	["Survival Fatigues", "U_B_survival_uniform", 500],
 	["Recon Fatigues (Hex)", "U_O_SpecopsUniform_ocamo", 50, "uni"],
 	["Fatigues (Urban)", "U_O_CombatUniform_oucamo", 50, "uni"],
 	["Combat Fatigues Short (Digi)", "U_I_CombatUniform_shortsleeve", 50, "uni"],
@@ -667,10 +668,9 @@ genObjectsArray = compileFinal str
 	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"], 
 	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
 		 
-	["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
+	//["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
 		
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
-	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
