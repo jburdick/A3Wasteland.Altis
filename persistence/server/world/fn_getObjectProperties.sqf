@@ -53,13 +53,6 @@ switch (true) do
 		_variables pushBack ["ownerName", toArray (_obj getVariable ["ownerName", "[Beacon]"])];
 	};
 };
-	case (_obj call _isCamera):
-	{
-		_variables pushBack ["R3F_LOG_disabled", false];
-		_variables pushBack ["mf_item_id", (_obj getVariable ["mf_item_id", nil])];
-	};
-	
-};
 _owner = _obj getVariable ["ownerUID", ""];
 
 _r3fSide = _obj getVariable "R3F_Side";
