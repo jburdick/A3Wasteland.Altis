@@ -47,8 +47,8 @@ switch (_boxType) do
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//["itm", "NVGoggles", 5],
 			["wep", ["Binocular", "Rangefinder"], RANDOM_BETWEEN(1,5)],
-			["itm", "Medikit", RANDOM_BETWEEN(1,3)],
-			["itm", "Toolkit", RANDOM_BETWEEN(0,1)],
+			["itm", "Medikit", RANDOM_BETWEEN(0,3)],
+			["itm", "Toolkit", RANDOM_BETWEEN(0,3)],
 			["itm", ["optic_MRCO", "optic_Arco", "optic_Hamr", "optic_SOS"], RANDOM_BETWEEN(0,2)],
 			["itm", ["muzzle_snds_M", "muzzle_snds_H", "muzzle_snds_H_MG", "muzzle_snds_B", "muzzle_snds_acp"], RANDOM_BETWEEN(0,3)],
 			["wep", ["hgun_Pistol_heavy_01_F", "hgun_Pistol_heavy_01_MRD_F", "hgun_Pistol_heavy_02_F", "hgun_Pistol_heavy_02_Yorris_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,5)],
@@ -111,9 +111,23 @@ switch (_boxType) do
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F", "srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], RANDOM_BETWEEN(3,4), RANDOM_BETWEEN(6,8)],
 			["wep", ["srifle_EBR_F", "srifle_DMR_01_F"], RANDOM_BETWEEN(2,3), RANDOM_BETWEEN(6,8)],
-			["wep", ["Binocular", "Rangefinder"], RANDOM_BETWEEN(1,3)],
-			["itm", ["B_Carryall_mcamo", "B_Kitbag_mcamo"], RANDOM_BETWEEN(2,5)],			
-			["itm", ["optic_DMS","optic_AMS","optic_tws","optic_KHS_blk"], RANDOM_BETWEEN(5,8)]
+			["wep", ["Laserdesignator"], RANDOM_BETWEEN(1,3)],
+			["itm", ["B_Carryall_mcamo"], RANDOM_BETWEEN(2,5)],
+			["mag", "5Rnd_127x108_APDS_Mag", RANDOM_BETWEEN(10,40)],		
+			["itm", ["optic_tws"], RANDOM_BETWEEN(5,8)]
+		];
+	};
+	case "airdrop_Launchers":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["launch_RPG32_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,8)],
+			["wep", ["launch_NLAW_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,8)],
+			["wep", ["launch_Titan_short_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,8)],
+			["wep", "launch_Titan_F", RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,8)],
+			["mag", "RPG32_HE_F", RANDOM_BETWEEN(3,8)],
+			["mag", "Titan_AP", RANDOM_BETWEEN(3,8)]
 		];
 	};
 case "Launcers_Tier_2":

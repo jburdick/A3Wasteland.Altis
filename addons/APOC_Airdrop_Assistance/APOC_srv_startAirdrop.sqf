@@ -43,13 +43,13 @@ _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropS
 
 diag_log format ["AAA - Heli Spawned at %1", _spos];
 _heli = createVehicle [_heliType, _spos, [], 0, "FLY"];
-_heli allowDamage false;
+_heli allowDamage true;
 _heli setVariable ["R3F_LOG_disabled", true, true];
 [_heli] call vehicleSetup;
 
 _crew = [_grp, _spos] call createRandomSoldierC;
 _crew moveInDriver _heli;
-_crew allowDamage false;
+_crew allowDamage true;
 
 _heli setCaptive true;
 
