@@ -125,7 +125,7 @@ A3W_territoryCaptureTime = 1*60;   // Time in seconds needed to capture a territ
 A3W_territoryPayroll = 1;          // Periodically reward sides and indie groups based on how many territories they own (0 = no, 1 = yes)
 A3W_payrollInterval = 1*60;       // Delay in seconds between each payroll
 A3W_payrollAmount = 10000;           // Amount of money rewarded per territory on each payroll
-A3W_territoryAllowed = [0,1,2,3,4,5,6,7,8,9]; //Territory Allowed (0:KAVALA,1:ALTISAIR,2:PYRGOS,3:SELANKANO,4:KORE,5:ZAROS,6:DOCKS,7:GHOST,8:ABDERA,9:PANOCHORI,10:SKOPOS,11:Selakano)
+A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //Territories allowed
 
 // Mission settings
 // Mission settings
