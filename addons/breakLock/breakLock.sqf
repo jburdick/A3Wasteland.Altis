@@ -56,6 +56,7 @@ if (_break < _price / 4) exitWith {
 			};
 
 	_vehicle setVariable ["objectLocked", false, true]; 
+	_vehicle setVariable ["ownerUID", getPlayerUID player, true];
 	_vehicle setVariable ["R3F_LOG_disabled",false,true];		
 	_soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 	_soundToPlay = _soundPath + "addons\breakLock\sounds\carlock.ogg";

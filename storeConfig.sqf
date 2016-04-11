@@ -677,13 +677,13 @@ genObjectsArray = compileFinal str
 	["Medical Container", "B_Slingload_01_Medevac_F", 1000],
 	
 	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
-	["Sling Box", "CargoNet_01_box_F", 1000],
+	["Sling Box", "CargoNet_01_box_F", 1000]
 		
-	["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
-	["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
-	["Large Camo Net (Brown", "CamoNet_OPFOR_big_F", 500],
-	["Portable LZ (Large)", "ContainmentArea_1_sand_F", 1000],
-	["Portable LZ (Small)", "ContainmentArea_2_sand_F", 800]
+	//["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
+	//["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
+	//["Large Camo Net (Brown", "CamoNet_OPFOR_big_F", 500],
+	//["Portable LZ (Large)", "ContainmentArea_1_sand_F", 1000],
+	//["Portable LZ (Small)", "ContainmentArea_2_sand_F", 800]
 	
 	
 	

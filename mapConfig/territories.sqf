@@ -12,14 +12,14 @@
 // 4 - Territory category, currently unused. See territory/README.md for details.
 
 [
-	["TERRITORY_0_ABDERA", "Abdera", 100000, "CITY"],
-	["TERRITORY_1_KAVALA", "Kavala", 100000, "CITY"],
-	["TERRITORY_2_AGIOS", "Agios Dionysios", 100000, "CITY"],
-	["TERRITORY_3_PAROS", "Paros", 100000, "CITY"],
-	["TERRITORY_4_MILHILL", "Military Hill", 100000, "CITY"],
-	["TERRITORY_5_FRINI", "Frini", 100000, "CITY"],
-	["TERRITORY_6_MILRESEARCH", "Research Post", 100000, "CITY"],
-	["TERRITORY_7_MOLOS", "Molos", 100000, "CITY"],
-	["TERRITORY_8_VIKOS", "Vikos", 100000, "CITY"],
-	["TERRITORY_9_PANAGIA", "Panagia", 100000, "CITY"]
+	["TERRITORY_0_ABDERA", "Abdera", 5000, "CITY"],
+	["TERRITORY_1_KAVALA", "Kavala", 5000, "CITY"],
+	["TERRITORY_2_AGIOS", "Agios Dionysios", 5000, "CITY"],
+	["TERRITORY_3_PAROS", "Paros", 5000, "CITY"],
+	["TERRITORY_4_MILHILL", "Military Hill", 5000, "CITY"],
+	["TERRITORY_5_FRINI", "Frini", 5000, "CITY"],
+	["TERRITORY_6_MILRESEARCH", "Research Post", 5000, "CITY"],
+	["TERRITORY_7_MOLOS", "Molos", 5000, "CITY"],
+	["TERRITORY_8_VIKOS", "Vikos", 5000, "CITY"],
+	["TERRITORY_9_PANAGIA", "Panagia", 5000, "CITY"]
 ]
