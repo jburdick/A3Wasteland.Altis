@@ -73,6 +73,7 @@ FAR_HandleRevive =
 		if (_target getVariable ["FAR_treatedBy", objNull] == player) then
 		{
 			_target setVariable ["FAR_treatedBy", nil, true];
+			player removeItem "Medikit";
 		};
 	};
 }
