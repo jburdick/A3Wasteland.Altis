@@ -8,15 +8,15 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=577;
+		nextID=587;
 	};
 	class MarkerIDProvider
 	{
-		nextID=294;
+		nextID=304;
 	};
 	class Camera
 	{
-		pos[]={20529.043,59.126812,8846.2021};
+		pos[]={20857.92,27.339926,14629.278};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
 		aside[]={0.99999994,0,-0};
@@ -48,8 +48,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="BIB A3Wasteland";
-		overviewText="Wasteland survival sandbox by BIBGaming - visit BIBGaming.com for more details";
+		briefingName="A3Wasteland Altis v1.2b";
+		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
 		startWeather=0;
@@ -66,7 +66,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=290;
+		items=300;
 		class Item0
 		{
 			dataType="Group";
@@ -5545,7 +5545,7 @@ class Mission
 			fillName="DiagGrid";
 			a=150;
 			b=325;
-			angle=248.16199;
+			angle=248.16196;
 			id=559;
 		};
 		class Item273
@@ -5728,6 +5728,96 @@ class Mission
 			type="mil_objective";
 			colorName="ColorRed";
 			id=576;
+		};
+		class Item290
+		{
+			dataType="Marker";
+			position[]={14473.897,17.002466,16867.523};
+			name="RoadBlock_1";
+			type="Empty";
+			colorName="ColorOrange";
+			id=577;
+		};
+		class Item291
+		{
+			dataType="Marker";
+			position[]={12120.87,24.993299,15842.267};
+			name="RoadBlock_2";
+			type="Empty";
+			colorName="ColorOrange";
+			id=578;
+		};
+		class Item292
+		{
+			dataType="Marker";
+			position[]={8711.5957,93.086029,15931.121};
+			name="RoadBlock_3";
+			type="Empty";
+			colorName="ColorOrange";
+			id=579;
+		};
+		class Item293
+		{
+			dataType="Marker";
+			position[]={6430.9741,34.823841,15220.92};
+			name="RoadBlock_4";
+			type="Empty";
+			colorName="ColorOrange";
+			id=580;
+		};
+		class Item294
+		{
+			dataType="Marker";
+			position[]={5694.1484,21.028578,14753.772};
+			name="RoadBlock_5";
+			type="Empty";
+			colorName="ColorOrange";
+			id=581;
+		};
+		class Item295
+		{
+			dataType="Marker";
+			position[]={17105.578,14.5,17869.596};
+			name="RoadBlock_6";
+			type="Empty";
+			colorName="ColorOrange";
+			id=582;
+		};
+		class Item296
+		{
+			dataType="Marker";
+			position[]={16656.031,4.4119678,15707.655};
+			name="RoadBlock_7";
+			type="Empty";
+			colorName="ColorOrange";
+			id=583;
+		};
+		class Item297
+		{
+			dataType="Marker";
+			position[]={19583.893,80.711151,12639.252};
+			name="RoadBlock_8";
+			type="Empty";
+			colorName="ColorOrange";
+			id=584;
+		};
+		class Item298
+		{
+			dataType="Marker";
+			position[]={20772.443,36.342907,16630.158};
+			name="RoadBlock_9";
+			type="Empty";
+			colorName="ColorOrange";
+			id=585;
+		};
+		class Item299
+		{
+			dataType="Marker";
+			position[]={22749.746,14.071923,19082.979};
+			name="RoadBlock_10";
+			type="Empty";
+			colorName="ColorOrange";
+			id=586;
 		};
 	};
 };
