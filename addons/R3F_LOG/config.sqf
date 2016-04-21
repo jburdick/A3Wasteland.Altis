@@ -458,6 +458,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["CamoNet_INDP_big_F", 10],
 	["CamoNet_OPFOR_big_F", 10],
 	["ContainmentArea_1_sand_F", 10],
+	["Land_Medevac_HQ_V1_F", 50],
 	["ContainmentArea_2_sand_F", 10]
 ];
 
@@ -548,5 +549,6 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Pier_Box_F",
 	"CamoNet_BLUFOR_big_F",
 	"CamoNet_INDP_big_F",
+	"Land_Medevac_HQ_V1_F",
 	"CamoNet_OPFOR_big_F"
 ];
