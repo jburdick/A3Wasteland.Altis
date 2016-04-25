@@ -184,6 +184,7 @@ switch (_lockState) do
 			_object setVariable ["ownerUID", nil, true];
 			_object setVariable ["baseSaving_hoursAlive", nil, true];
 			_object setVariable ["baseSaving_spawningTime", nil, true];
+			_object allowDamage true;
 
 			pvar_manualObjectSave = netId _object;
 			publicVariableServer "pvar_manualObjectSave";

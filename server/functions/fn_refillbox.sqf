@@ -22,7 +22,7 @@ _box setVariable ["A3W_inventoryLockR3F", true, true];
 
 // Clear pre-existing cargo first
 //clearBackpackCargoGlobal _box;
-clearMagazineCargoGlobal _box;
+clearMagazineCargoGlobal _box;/
 clearWeaponCargoGlobal _box;
 clearItemCargoGlobal _box;
 
@@ -30,7 +30,7 @@ if (_boxType == "mission_USSpecial2") then { _boxType = "mission_USSpecial" };
 
 switch (_boxType) do
 {
-	case "mission_USLaunchers":
+	case "mission_USLaunchers": // default wasteland launchers loot crate 
 	{
 		_boxItems =
 		[
@@ -40,7 +40,7 @@ switch (_boxType) do
 			["mag", ["ClaymoreDirectionalMine_Remote_Mag", "SLAMDirectionalMine_Wire_Mag", "ATMine_Range_Mag", "DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag"], RANDOM_BETWEEN(3,8)]
 		];
 	};
-	case "mission_USSpecial":
+	case "mission_USSpecial": //default wasteland generic loot crate
 	{
 		_boxItems =
 		[
@@ -60,28 +60,7 @@ switch (_boxType) do
 			["mag", "9Rnd_45ACP_Mag", RANDOM_BETWEEN(1,5)]
 		];
 	};
-	case "mission_Main_A3snipers":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F", "srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
-			["wep", ["srifle_EBR_F", "srifle_DMR_01_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
-			["wep", ["Binocular", "Rangefinder"], RANDOM_BETWEEN(1,3)],
-			["itm", "optic_DMS", RANDOM_BETWEEN(1,2)]
-		];
-	};
-	case "mission_TOP_Gear1":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			["itm", ["V_RebreatherB", "V_PlateCarrierIAGL_dgtl", "V_TacVest_camo", "V_PlateCarrierGL_rgr"], RANDOM_BETWEEN(1,8)],
-			["itm", ["B_Carryall_mcamo", "B_Kitbag_mcamo"], RANDOM_BETWEEN(1,5)],
-			["itm", ["U_B_HeliPilotCoveralls","U_B_Wetsuit","U_B_CombatUniform_mcam_vest"], RANDOM_BETWEEN(1,4)],
-			["itm", ["H_HelmetCrew_B","H_CrewHelmetHeli_B","H_HelmetB_plain_blk","H_HelmetSpecB"], RANDOM_BETWEEN(1,5)]
-		];
-	};
+	
 	case "airdrop_DLC_Rifles":
 	{
 		_boxItems =
@@ -250,6 +229,171 @@ case "Diving_Gear": //diving equipment for squad of 2
 			
 		];	
 	};		
+
+	case "mission_AALauncher":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", "launch_Titan_F", "launch_O_Titan_F", "launch_I_Titan_F"  RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(10,20)]
+		];
+	};
+	case "mission_CompactLauncher":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["launch_Titan_short_F", "launch_O_Titan_short_F", "launch_I_Titan_short_F"] RANDOM_BETWEEN(1,5), RANDOM_BETWEEN (8-12],
+			["mag", "Titan_AP", RANDOM_BETWEEN(8-12)]
+		];
+	};
+	case "mission_snipers":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F", "srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
+			["wep", ["srifle_EBR_F", "srifle_DMR_01_F", "srifle_DMR_03_F", "srifle_DMR_06_camo_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
+			["wep", ["srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
+			["wep", ["srifle_DMR_05_blk_F", "srifle_DMR_05_hex_F", "srifle_DMR_05_tan_f"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
+			["mag", "5Rnd_127x108_APDS_Mag", RANDOM_BETWEEN(3,10)],
+			["wep", ["Rangefinder"], RANDOM_BETWEEN(1,3)],
+			["itm", "optic_DMS", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_SOS", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_AMS", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_KHS_blk", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_LRPS", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_tws", RANDOM_BETWEEN(1,2)],
+			["itm", "optic_Nightstalker", RANDOM_BETWEEN(1,2)],
+			["itm", "muzzle_snds_338_black", RANDOM_BETWEEN(1,2)],
+			["itm", "muzzle_snds_93mmg", RANDOM_BETWEEN(1,2)],
+			["itm", "bipod_01_F_blk", RANDOM_BETWEEN(2,4)]
+		];
+	};
+	case "mission_RPG":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["launch_RPG32_F"], RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(8,12)],
+			["mag", "RPG32_HE_F", RANDOM_BETWEEN(8,12)]
+		];
+	};
+	case "mission_PCML":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["NLAW_F"], RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(10,20)]
+		];
+	};
+	case "mission_Pistols":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", "hgun_P07_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "hgun_Rook40_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "hgun_ACPC2_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "hgun_Pistol_heavy_02_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "hgun_Pistol_heavy_01_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["itm", "muzzle_snds_acp", RANDOM_BETWEEN(2,4)],
+			["itm", "muzzle_snds_L", RANDOM_BETWEEN(2,4)],
+			["itm", "muzzle_snds_L", RANDOM_BETWEEN(2,4)],
+			["itm", "muzzle_snds_L", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_Yorris", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_MRD", RANDOM_BETWEEN(2,4)]
+		];
+	};
+case "mission_AssRifles":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["arifle_Mk20C_plain_F", "arifle_Mk20C_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", "arifle_Mk20_GL_plain_F", "arifle_Mk20_GL_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", ["arifle_TRG20_F", "arifle_TRG21_F", "arifle_TRG21_GL_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", ["arifle_Katiba_C_F", "arifle_Katiba_F", "arifle_Katiba_GL_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", ["arifle_MXC_F", "arifle_MXC_Black_F", "arifle_MX_F", "arifle_MX_Black_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", ["arifle_MXM_F", "arifle_MXM_Black_F", "srifle_DMR_01_F", "srifle_EBR_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["itm", "optic_MRCO", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_Arco", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_Hamr", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_DMS", RANDOM_BETWEEN(2,4)]
+			];
+	};
+case "mission_SMGs":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", "hgun_PDW2000_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "SMG_02_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "SMG_01_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["itm", "muzzle_snds_L", RANDOM_BETWEEN(2,4)],
+			["itm", "optic_aco_smg", RANDOM_BETWEEN(2,4)]
+		];
+	};
+case "mission_LMGs":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["arifle_MX_SW_F", "arifle_MX_SW_Black_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "LMG_Mk200_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "LMG_Zafir_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
+			["wep", "MMG_02_sand_F", "MMG_02_camo_F", "MMG_02_black_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)]
+		];
+	};
+Case "Medical"
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["itm", "Medikit", RANDOM_BETWEEN(10,20)],
+			["itm", "FirstAidKit", RANDOM_BETWEEN(10,20)]
+			];
+	}
+
+	case "Diving_Gear": //diving equipment for squad of 2
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", "arifle_SDAR_F", 2, RANDOM_BETWEEN(4,6)],
+			["itm", "V_RebreatherB", 2],
+			["itm", "V_RebreatherIR", 2],
+			["itm", "V_RebreatherIA", 2],
+			["itm", "G_Diving", 2],
+			["itm", "U_B_Wetsuit", 2],
+			["itm", "U_O_Wetsuit", 2],
+			["itm", "U_I_Wetsuit", 2],
+			["itm", ["Chemlight_red", "Chemlight_green", "Chemlight_yellow", "Chemlight_blue"], RANDOM_BETWEEN(6,9)],
+			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
+			//["bac", ["B_Kitbag_mcamo", "B_Bergen_sgg", "B_FieldPack_khk", "B_Carryall_mcamo"], RANDOM_BETWEEN(3,5)],	
+		];
+	};	
+
+	case "General_supplies":
+	{
+	_boxitems =
+		[
+			//first aid, medkit, tookit, gps, rangefinder, etc
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["itm", "FirstAidKit", RANDOM_BETWEEN(5,6)],
+			["wep", ["Binocular", "Rangefinder", "Laserdesignator"], RANDOM_BETWEEN(3,5)],
+			["wep", ["hgun_Pistol_heavy_01_F", "hgun_Pistol_heavy_01_MRD_F", "hgun_Pistol_heavy_02_F", "hgun_Pistol_heavy_02_Yorris_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,5)],
+			["itm", "Medikit", RANDOM_BETWEEN(2,3)],
+			["itm", "Toolkit", RANDOM_BETWEEN(2,3)],
+			["itm", "Laserbatteries", RANDOM_BETWEEN(2,4)],
+			["itm", "MineDetector", 3],
+			["itm", ["H_CrewHelmetHeli_B","H_CrewHelmetHeli_O", "H_CrewHelmetHeli_I"], RANDOM_BETWEEN(2,4)],
+			["bac", ["B_Kitbag_mcamo", "B_Bergen_sgg", "B_FieldPack_khk", "B_Carryall_mcamo"], RANDOM_BETWEEN(3,5)],
+			["itm", ["V_PlateCarrierIAGL_dgtl", "V_TacVest_camo", "V_PlateCarrierGL_rgr"], RANDOM_BETWEEN(2,4)],
+			["itm", ["Chemlight_red", "Chemlight_green", "Chemlight_yellow", "Chemlight_blue"], RANDOM_BETWEEN(6,9)],
+			//["itm", ["V_RebreatherB", "U_B_Wetsuit"], RANDOM_BETWEEN(3,6)],
+			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
+		];
+	};	
 };
 
 [_box, _boxItems] call processItems;

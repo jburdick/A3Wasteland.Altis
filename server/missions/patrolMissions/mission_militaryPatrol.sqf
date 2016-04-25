@@ -170,14 +170,17 @@ _successExec =
 		_cash setVariable["owner","world",true];
 	};
 
+	//Special Crate
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launcers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;
 	
+	//weapon crate
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     [_box2,"mission_USSpecial2"] call fn_refillbox;
 	_box2 allowDamage false;
 	
+	//Supply Crate
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
     [_box3,"mission_Main_A3snipers"] call fn_refillbox;
 	_box3 allowDamage false;

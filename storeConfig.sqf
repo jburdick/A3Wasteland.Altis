@@ -612,18 +612,27 @@ genObjectsArray = compileFinal str
 [
 	["Camo Ammo Cache", "Box_FIA_Support_F", 1000, "ammocrate"],
 	["Support Crate", "Box_NATO_Support_F", 100],
+	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
+	["Sling Box", "CargoNet_01_box_F", 1000],
+	
 	//["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	//["Toilet Box", "Land_ToiletBox_F", 25, "object"],
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 100, "object"],
 	["Lamp Post (Shabby)", "Land_LampShabby_F", 100, "object"],
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
-	["Fuel station", "Land_FuelStation_Feed_F", 500],
 	["Ladder", "Land_PierLadder_F", 100],
 	["Highway Guardrail", "Land_Crash_barrier_F", 200, "object"],
+	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
+	["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
+	
+	["Fuel station", "Land_FuelStation_Feed_F", 500],
+	["Fuel Bladder", "StorageBladder_01_fuel_sand_F", 500],
+	
 	
 	["Concrete Barrier", "Land_CncBarrier_F", 200, "object"],
 	["Concrete Barrier (Medium)", "Land_CncBarrierMedium_F", 350, "object"],
 	["Concrete Barrier (Long)", "Land_CncBarrierMedium4_F", 500, "object"],
+	["T Wall", "Land_Mil_WallBig_4m_F", 600, "object"],
 	
 	["HBarrier (1 block)", "Land_HBarrier_1_F", 150, "object"],
 	["HBarrier (3 blocks)", "Land_HBarrier_3_F", 200, "object"],
@@ -639,13 +648,8 @@ genObjectsArray = compileFinal str
 	["Concrete Frame", "Land_CncShelter_F", 200, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
-	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
 	["Land Pier", "Land_Pier_F", 10000],
-	
-	["Military Wall (Big)", "Land_Mil_WallBig_4m_F", 600, "object"],
-	
-	["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
-	
+		
 	["Canal Wall (Small)", "Land_Canal_WallSmall_10m_F", 400, "object"],
 	["Canal Stairs", "Land_Canal_Wall_Stairs_F", 500, "object"],
 	
@@ -660,30 +664,34 @@ genObjectsArray = compileFinal str
 	
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
-	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
-	["Lighthouse", "Land_LightHouse_F", 150, "object"], 
-	["Hanger", "Land_Hangar_F", 15000, "object"],
-	["Shed (Large)", "Land_Shed_Big_F", 1500, "object"], 
-	["Shed (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
+	["Containerized Housing Unit (Brown)", "Land_Cargo_House_V3_F", 800],
 	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"], 
 	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
+	 
+	["Hanger", "Land_Hangar_F", 15000, "object"],
+	["Shed (Large)", "Land_Shed_Big_F", 5000, "object"],
+	["Awning (Large)", "Land_i_Shed_Ind_F", 1500, "object"],	
+	["Awning (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
+	
+	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
+	["Lighthouse", "Land_LightHouse_F", 150, "object"],
 		 
-	//["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
+	
 		
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
-	["Medical Container", "B_Slingload_01_Medevac_F", 1000],
+	["Medical Container", "B_Slingload_01_Medevac_F", 1000]
 	
-	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
-	["Sling Box", "CargoNet_01_box_F", 1000]
+	
 		
-	//["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
-	//["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
-	//["Large Camo Net (Brown", "CamoNet_OPFOR_big_F", 500],
-	//["Portable LZ (Large)", "ContainmentArea_1_sand_F", 1000],
-	//["Portable LZ (Small)", "ContainmentArea_2_sand_F", 800]
+	// ["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
+	// ["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
+	// ["Large Camo Net (Brown)", "CamoNet_OPFOR_big_F", 500],
+	// ["Portable LZ (Large)", "ContainmentArea_01_sand_F", 1000],
+	// ["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
+	// ["Portable LZ (Small)", "ContainmentArea_02_sand_F", 800]
 	
 	
 	
@@ -905,11 +913,11 @@ colorsArray = compileFinal str
 			["Hello Kitty", _texDir + "hellokitty.paa"],
 			["Hex", _texDir + "hex.paa"],
 			["Hippie", _texDir + "hippie.paa"],
-			["ISIS", _texDir + "isis.paa"],
+			// ["ISIS", _texDir + "isis.paa"],
 			["Leopard", _texDir + "leopard.paa"],
 			["Mountain Dew", _texDir + "mtndew.paa"],
 			["'Murica", _texDir + "murica.paa"],
-			["Nazi", _texDir + "nazi.paa"],
+			// ["Nazi", _texDir + "nazi.paa"],
 			["Orange Camo", _texDir + "camo_orange.paa"],
 			["Pink Camo", _texDir + "camo_pink.paa"],
 			["Pride", _texDir + "pride.paa"],

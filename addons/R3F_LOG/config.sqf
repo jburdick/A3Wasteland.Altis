@@ -311,10 +311,10 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["UGV_01_base_F", 10],
 	["Hatchback_01_base_F", 10],
 	["SUV_01_base_F", 20],
-	["Offroad_01_base_F", 40],
+	["Offroad_01_base_F", 60],
 	["Offroad_01_armed_base_F", 20],
 	["Offroad_01_repair_base_F", 20],
-	["Van_01_base_F", 50],
+	["Van_01_base_F", 70],
 	["MRAP_01_base_F", 30],
 	["MRAP_02_base_F", 30],
 	["MRAP_03_base_F", 30],
@@ -457,9 +457,18 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["CamoNet_BLUFOR_big_F", 10],
 	["CamoNet_INDP_big_F", 10],
 	["CamoNet_OPFOR_big_F", 10],
-	["ContainmentArea_1_sand_F", 10],
+	["ContainmentArea_01_sand_F", 10],
 	["Land_Medevac_HQ_V1_F", 50],
-	["ContainmentArea_2_sand_F", 10]
+	
+	["Land_Shed_Big_F", 50],
+	["Land_LightHouse_F", 100],
+	["Land_Castle_01_tower_F", 75],
+	["Land_i_Shed_Ind_F", 100],
+	["Land_Cargo_House_V3_F", 75],
+	["StorageBladder_01_fuel_sand_F", 150]
+	
+	
+	["ContainmentArea_02_sand_F", 10]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -543,12 +552,18 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Hangar_F",
 	"B_Slingload_01_Ammo_F",
 	"Land_Laptop_unfolded_F",
-	"ContainmentArea_1_sand_F",
-	"ContainmentAera_2_sand_F",
+	"ContainmentArea_01_sand_F",
+	"ContainmentAera_02_sand_F",
 	"Land_RampConcrete_F",
 	"Land_Pier_Box_F",
 	"CamoNet_BLUFOR_big_F",
 	"CamoNet_INDP_big_F",
 	"Land_Medevac_HQ_V1_F",
-	"CamoNet_OPFOR_big_F"
+	"Land_Shed_Big_F",
+	"Land_LightHouse_F",
+	"Land_Castle_01_tower_F",
+	"Land_i_Shed_Ind_F",
+	"CamoNet_OPFOR_big_F",
+	"Land_Cargo_House_V3_F",
+	"StorageBladder_01_fuel_sand_F"
 ];
