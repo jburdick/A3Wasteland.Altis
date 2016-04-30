@@ -669,8 +669,8 @@ genObjectsArray = compileFinal str
 	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
 	 
 	["Hanger", "Land_Hangar_F", 15000, "object"],
-	["Shed (Large)", "Land_Shed_Big_F", 5000, "object"],
-	["Awning (Large)", "Land_i_Shed_Ind_F", 1500, "object"],	
+	["Shed (Large)", "Land_i_Shed_Ind_F", 1500, "object"],
+	["Awning (Large)", "Land_Shed_Big_F", 5000, "object"],
 	["Awning (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
 	
 	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
@@ -775,7 +775,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 82500, "vehicle"],
+	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 45000, "vehicle"],
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],

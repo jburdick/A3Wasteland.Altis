@@ -390,7 +390,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_CargoBox_V1_F", 5],
 	["Land_Cargo_Patrol_V1_F", 7],
 	["Land_Cargo_Tower_V1_F", 30],
-	["Land_Cargo_HQ_V1_F", 30], // Added on player request
+	["Land_Cargo_HQ_V1_F", 30], 
 	["Land_CncBarrier_F", 4],
 	["Land_CncBarrierMedium_F", 4],
 	["Land_CncBarrierMedium4_F", 4],
@@ -465,7 +465,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Castle_01_tower_F", 75],
 	["Land_i_Shed_Ind_F", 100],
 	["Land_Cargo_House_V3_F", 75],
-	["StorageBladder_01_fuel_sand_F", 150]
+	["StorageBladder_01_fuel_sand_F", 150],
 	
 	
 	["ContainmentArea_02_sand_F", 10]

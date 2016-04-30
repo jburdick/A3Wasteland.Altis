@@ -1,7 +1,7 @@
 //Configuration for Airdrop Assistance
 //Author: Apoc
 
-APOC_AA_coolDownTime = 60; //Expressed in sec
+APOC_AA_coolDownTime = 15; //Expressed in sec
 
 APOC_AA_VehOptions =
 [ // ["Menu Text",		ItemClassname,				Price,	"Drop Type"]
@@ -15,12 +15,13 @@ APOC_AA_VehOptions =
 
 APOC_AA_SupOptions =
 [// ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
-["Launchers", 			"airdrop_Launchers", 			60000, "supply"],
-["Assault Rifle", 		"mission_USSpecial", 			35000, "supply"],
-["Sniper Rifles", 		"airdrop_Snipers", 				50000, "supply"],
-["DLC Rifles", 			"airdrop_DLC_Rifles", 			45000, "supply"],
-["DLC LMGs", 			"airdrop_DLC_LMGs", 			45000, "supply"],
-["Dive Gear", 			"Diving_Gear", 					25000, ""supply"],
+["Launchers", 			"airdrop_Launchers", 			60000,	"supply"],
+["Sniper Rifles", 		"airdrop_Snipers", 				50000,	"supply"],
+["Rifles", 				"airdrop_DLC_Rifles", 			45000,	"supply"],
+["LMGs", 				"airdrop_DLC_LMGs", 			45000,	"supply"],
+["Dive Gear", 			"airdrop_Diving_Gear", 			25000,	"supply"],
+["Medical", 			"airdrop_Medical", 				1500,	"supply"],
+// ["Test",				"mission_USLaunchers",			1,		"supply"],
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
 ["Food",				"Land_Sacks_goods_F",	5000, 	"picnic"],
