@@ -21,7 +21,7 @@ _box allowDamage false; // No more fucking busted crates
 _box setVariable ["A3W_inventoryLockR3F", true, true];
 
 // Clear pre-existing cargo first
-//clearBackpackCargoGlobal _box;
+clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearWeaponCargoGlobal _box;
 clearItemCargoGlobal _box;
@@ -30,7 +30,7 @@ if (_boxType == "mission_USSpecial2") then { _boxType = "mission_USSpecial" };
 
 switch (_boxType) do
 {
-	case "mission_USLaunchers": // default wasteland launchers loot crate 
+	case "mission_USLaunchers": // default wasteland launchers loot crate
 	{
 		_boxItems =
 		[
@@ -66,18 +66,18 @@ switch (_boxType) do
 	};
 	case "Launchers_Tier_2":
 	{
-		_boxItems = 
+		_boxItems =
 		[
 			//Weapons
-			["wep", "launch_RPG32_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,4)], 
+			["wep", "launch_RPG32_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,4)],
 			["wep", "launch_NLAW_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,4)],
 			["wep", "launch_Titan_short_F", RANDOM_BETWEEN(2,3), RANDOM_BETWEEN(3,4)],
 			["wep", "launch_Titan_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,4)],
 			//Items
 			["bac", ["B_Carryall_cbr", "B_Carryall_khk", "B_Carryall_oli", "B_Carryall_mcamo", "B_Carryall_oucamo"], RANDOM_BETWEEN(3,4)]
-		
+
 		];
-	
+
 	};
 	case "Diving_Gear":
 	{
@@ -98,9 +98,9 @@ switch (_boxType) do
 			["bac", ["B_Carryall_cbr", "B_Carryall_khk", "B_Carryall_oli", "B_Carryall_mcamo", "B_Carryall_oucamo"], RANDOM_BETWEEN(3,5)],
 			//Mags
 			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
-				
+
 		];
-	};	
+	};
 	case "General_supplies":
 	{
 	_boxitems =
@@ -119,11 +119,11 @@ switch (_boxType) do
 			["itm", ["Chemlight_red", "Chemlight_green", "Chemlight_yellow", "Chemlight_blue"], RANDOM_BETWEEN(6,9)],
 			["mag", ["SmokeShell", "SmokeShellRed", "SmokeShellgreen"], RANDOM_BETWEEN(5,9)]
 		];
-	};	
+	};
 	Case "GEVP":
 	{
-	
-		_boxItems = 
+
+		_boxItems =
 		[
 			//Weapons
 			["wep", ["srifle_EBR_ARCO_pointer_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(10,12)],
@@ -155,7 +155,7 @@ switch (_boxType) do
 			["itm", ["bipod_03_F_blk", "bipod_03_F_oli"], RANDOM_BETWEEN(3,4)],
 			["itm", ["muzzle_snds_93mmg", "muzzle_snds_93mmg_tan"], RANDOM_BETWEEN(1,2)],
 			["itm", ["muzzle_snds_338_sand", "muzzle_snds_338_green", "muzzle_snds_338_black"], RANDOM_BETWEEN(1,2)]
-		
+
 		];
 	};
 
@@ -176,19 +176,19 @@ switch (_boxType) do
 			["mag","20Rnd_762x51_Mag", 10],
 			["mag",["150Rnd_762x54_Box","150Rnd_762x54_Box_Tracer"], 10],
 			["mag","10Rnd_338_Mag", 10],
-			["mag","130Rnd_338_Mag", 10], 
+			["mag","130Rnd_338_Mag", 10],
 			["mag","7Rnd_408_Mag", 10],
 			["mag","10Rnd_93x64_DMR_05_Mag", 10],
-			["mag","150Rnd_93x64_Mag", 10], 
-			["mag","10Rnd_127x54_Mag", 10], 
+			["mag","150Rnd_93x64_Mag", 10],
+			["mag","10Rnd_127x54_Mag", 10],
 			["mag",["5Rnd_127x108_Mag","5Rnd_127x108_APDS_Mag"], RANDOM_BETWEEN(10,15)],
 			["mag","SmokeShellyellow", RANDOM_BETWEEN(3,6)],
 			["mag",["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"], RANDOM_BETWEEN(8,10)],
 			["mag",["3Rnd_HE_Grenade_shell","3Rnd_Smoke_Grenade_shell","3Rnd_SmokePurple_Grenade_shell","3Rnd_SmokeBlue_Grenade_shell", "3Rnd_SmokeGreen_Grenade_shell", "3Rnd_SmokeYellow_Grenade_shell","3Rnd_SmokeOrange_Grenade_shell","3Rnd_SmokeRed_Grenade_shell"], RANDOM_BETWEEN(8,10)],
 			["mag",["UGL_FlareWhite_F", "UGL_FlareGreen_F","UGL_FlareYellow_F","UGL_FlareRed_F","UGL_FlareCIR_F", "3Rnd_UGL_FlareWhite_F", "3Rnd_UGL_FlareGreen_F","3Rnd_UGL_FlareYellow_F", "3Rnd_UGL_FlareRed_F","3Rnd_UGL_FlareCIR_F"], RANDOM_BETWEEN(10,15)]
-			
-		];	
-	};		
+
+		];
+	};
 	case "mission_AALauncher":
 	{
 		_boxItems =
@@ -318,10 +318,10 @@ switch (_boxType) do
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//weapons
-			["wep", ["arifle_MXC_F", "arifle_MXC_Black_F", "arifle_MX_F", "arifle_MX_Black_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F"], 2,12],
-			["wep", ["arifle_Mk20C_plain_F", "arifle_Mk20C_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", "arifle_Mk20_GL_plain_F", "arifle_Mk20_GL_F"], 2,12],
-			["wep", ["arifle_TRG20_F", "arifle_TRG21_F", "arifle_TRG21_GL_F"], 2,12],
-			["wep", ["arifle_Katiba_C_F", "arifle_Katiba_F", "arifle_Katiba_GL_F"], 2,12],
+			["wep", ["arifle_MXC_F", "arifle_MXC_Black_F", "arifle_MX_F", "arifle_MX_Black_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F"], 2,6],
+			["wep", ["arifle_Mk20C_plain_F", "arifle_Mk20C_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", "arifle_Mk20_GL_plain_F", "arifle_Mk20_GL_F"], 2,6],
+			["wep", ["arifle_TRG20_F", "arifle_TRG21_F", "arifle_TRG21_GL_F"], 2,6],
+			["wep", ["arifle_Katiba_C_F", "arifle_Katiba_F", "arifle_Katiba_GL_F"], 2,6],
 			//items
 			["itm", ["bipod_01_F_blk", "bipod_02_F_hex"], 3]
 		];
@@ -341,7 +341,7 @@ switch (_boxType) do
 			//items
 			["itm", ["bipod_01_F_blk", "bipod_02_F_hex"], 2]
 		];
-	};	
+	};
 	case "airdrop_Snipers":
 	{
 		_boxItems =
@@ -349,7 +349,7 @@ switch (_boxType) do
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//weapons
 			["wep", ["srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], 2,0],
-			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F"], 2,20],
+			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F"], 2,10],
 			["wep", "Laserdesignator", 4],
 			//Mags
 			["mag", "5Rnd_127x108_APDS_Mag", 20],
@@ -363,10 +363,10 @@ switch (_boxType) do
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//Weapons
-			["wep", "launch_RPG32_F", 2,8],
-			["wep", "launch_NLAW_F", 2,8],
-			["wep", "launch_Titan_short_F", 2,8],
-			["wep", "launch_Titan_F", 2,8],
+			["wep", "launch_RPG32_F", 2,4],
+			["wep", "launch_NLAW_F", 2,4],
+			["wep", "launch_Titan_short_F", 2,4],
+			["wep", "launch_Titan_F", 2,4],
 			//Mags
 			["mag", "RPG32_HE_F", 8],
 			["mag", "Titan_AP", 8]
@@ -387,7 +387,7 @@ switch (_boxType) do
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//weapons
-			["wep", "arifle_SDAR_F", 2,10],
+			["wep", "arifle_SDAR_F", 2,5],
 			//items
 			["itm", "V_RebreatherB", 2],
 			["itm", "V_RebreatherIR", 2],

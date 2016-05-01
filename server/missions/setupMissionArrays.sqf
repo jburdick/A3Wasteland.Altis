@@ -18,7 +18,7 @@ MainMissions =
 	["mission_LightArmVeh", 1],
 	["mission_ArmedHeli", .25],
 	["mission_CivHeli", 1]
-	
+
 ];
 
 SideMissions =
@@ -32,14 +32,14 @@ SideMissions =
 	["mission_WepCache", 1.5],
 	["mission_Outpost", 1],
 	//["mission_HostileInfantry", 3],
-	["mission_Truck", 1],
-	["mission_geoCache", .5]
+	["mission_Truck", 1]
+	//["mission_geoCache", .5]
 ];
 
 MoneyMissions =
 [
-	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", .5],
+	// ["mission_MoneyShipment", 1],
+	// ["mission_SunkenTreasure", .5],
 	["mission_altisPatrol", .5]
 ];
 

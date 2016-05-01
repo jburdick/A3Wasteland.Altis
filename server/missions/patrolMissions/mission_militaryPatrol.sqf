@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "patrolMissionDefines.sqf";
 
-private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3"];
+private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3", "_randomBox1", "_randomBox2", "_randomBox3", "_Case1", "_Case2", "_Case3"];
 
 _setupVars =
 {
@@ -19,14 +19,25 @@ _setupObjects =
 {
 	private ["_starts", "_startDirs", "_waypoints"];
 	call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
-	
+
 	// Pick the vehicles for the patrol. Only one set at the moment. Will add more later.
-	_convoyVeh = 
-	[	
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"],
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"]
+	_convoyVeh =
+	[
+		//NATO Patrols
+		["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"], // Light Patrol
+		["B_MRAP_01_hmg_F", "B_MBT_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MRAP_01_gmg_F"], // Medium Patrol
+		["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // Heavy Patrol
+		["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // AA Patrol
+		// ["B_APC_Tracked_01_CRV_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F"], // Route Clearance Patrol
+		// ["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F", "B_MBT_01_arty_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // Arty Patrol
+
+		//CSAT Patrols
+		["O_MRAP_02_hmg_F", "O_MBT_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_MBT_02_cannon_F", "O_MRAP_02_gmg_F"], //Medium Patrol
+
+		//AAF Patrols
+		["I_MRAP_03_gmg_F", "I_MBT_03_cannon_F", "I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F", "I_MRAP_03_hmg_F"] //Medium Patrol
 	] call BIS_fnc_selectRandom;
-	
+
 	_veh1 = _convoyVeh select 0;
 	_veh2 = _convoyVeh select 1;
 	_veh3 = _convoyVeh select 2;
@@ -36,7 +47,7 @@ _setupObjects =
 
 	_createVehicle1 = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
-		
+
 		_type = _this select 0;
 		_position = _this select 1;
 		_direction = _this select 2;
@@ -46,21 +57,21 @@ _setupObjects =
 
 		_vehicle setDir _direction;
 		_aiGroup addVehicle _vehicle;
-		
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCommander _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
 		_vehicle
-	};	
-	
+	};
+
 	_createVehicle2 = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
-		
+
 		_type = _this select 0;
 		_position = _this select 1;
 		_direction = _this select 2;
@@ -71,11 +82,11 @@ _setupObjects =
 		_vehicle setDir _direction;
 		_aiGroup addVehicle _vehicle;
 
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCommander _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInGunner _vehicle;
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
@@ -84,7 +95,7 @@ _setupObjects =
 
 		_createVehicle3 = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
-		
+
 		_type = _this select 0;
 		_position = _this select 1;
 		_direction = _this select 2;
@@ -94,10 +105,10 @@ _setupObjects =
 
 		_vehicle setDir _direction;
 		_aiGroup addVehicle _vehicle;
-		
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
@@ -105,21 +116,21 @@ _setupObjects =
 	};
 
 	_aiGroup = createGroup CIVILIAN;
-	
+
 	_vehicles =
 	[
-		[_veh1, _starts select 0, _startDirs select 0] call _createVehicle3,
+		[_veh1, _starts select 0, _startDirs select 0] call _createVehicle2,
 		[_veh2, _starts select 1, _startDirs select 1] call _createVehicle2,
-		[_veh3, _starts select 2, _startDirs select 2] call _createVehicle1,
+		[_veh3, _starts select 2, _startDirs select 2] call _createVehicle2,
 		[_veh4, _starts select 3, _startDirs select 3] call _createVehicle2,
 		[_veh5, _starts select 4, _startDirs select 4] call _createVehicle2,
-		[_veh6, _starts select 5, _startDirs select 5] call _createVehicle3
+		[_veh6, _starts select 5, _startDirs select 5] call _createVehicle2
 	];
 
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 	_leader setRank "LIEUTENANT";
-	
+
 	_aiGroup setCombatMode "GREEN"; // units will defend themselves
 	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup setFormation "STAG COLUMN";
@@ -143,7 +154,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh4 >> "displayName");
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh5 >> "displayName");
-	
+
 	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling a high value location! Stop the partol and collect the high value weapons crate and money!", _vehicleName, _vehicleName2, _vehicleName3, patrolMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
@@ -166,26 +177,43 @@ _successExec =
 		_cash = "Land_Money_F" createVehicle markerPos _marker;
 		_cash setPos ((markerPos _marker) vectorAdd ([[2 + random 2,0,0], random 360] call BIS_fnc_rotateVector2D));
 		_cash setDir random 360;
-		_cash setVariable["cmoney",15000,true];
+		_cash setVariable["cmoney",10000,true];
 		_cash setVariable["owner","world",true];
 	};
 
 	//Special Crate
-	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
-    [_box1,"Launcers_Tier_2"] call fn_refillbox;
+	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
+	_Case1 = [[_randomBox1] call fn_choosebox];
+	_box1 = [_Case1] createVehicle getMarkerPos _marker;
+    [_box1, _randomBox1] call fn_refillbox;
 	_box1 allowDamage false;
-	
+
 	//weapon crate
+	_randomBox2 = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
+	_Case2 = [[_randomBox2] call fn_choosebox];
+	_box2 = [_Case2] createVehicle getMarkerPos _marker;
+   [_box2, _randomBox2] call fn_refillbox;
+	_box2 allowDamage false;
+
+	//Supply Crate
+	_randomBox3 = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"] call BIS_fnc_selectRandom;
+	_Case3 = [[_randomBox3] call fn_choosebox];
+	_box3 = [_Case3] createVehicle getMarkerPos _marker;
+    [_box3, _randomBox3] call fn_refillbox;
+	_box3 allowDamage false;
+/*
+	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
+    [_box1,"Launchers_Tier_2"] call fn_refillbox;
+	_box1 allowDamage false;
+
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     [_box2,"mission_USSpecial2"] call fn_refillbox;
 	_box2 allowDamage false;
-	
-	//Supply Crate
-	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-    [_box3,"mission_Main_A3snipers"] call fn_refillbox;
-	_box3 allowDamage false;
 
-	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
+	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
+    [_box3,"mission_snipers"] call fn_refillbox;
+	_box3 allowDamage false;
+	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";*/
 };
 
 _this call patrolMissionProcessor;

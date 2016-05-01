@@ -8,7 +8,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_vehicle", "_class", "_getInOut", "_centerOfMass", "_weapons"];
+private ["_vehicle", "_class", "_getInOut", "_centerOfMass", "_weapons", "_armor"];
 _vehicle = _this select 0;
 _class = typeOf _vehicle;
 
