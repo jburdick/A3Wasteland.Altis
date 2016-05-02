@@ -184,11 +184,11 @@ _successExec =
 	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box3Select", "case1select", "case2select", "case3select"];
 
 	//Weapons
-	_box1Choices = ["mission_AssRifles", "mission_LMGs", "mission_snipers", "mission_SMGs", "mission_Pistols"];
+	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
 	//Special
-	_box2Choices = ["mission_USLaunchers", "Launcers_Tier_2"];
+	_box2Choices = ["Launcers_Tier_2"];
 	//Supplies
-	_box3Choices = ["Ammo_Drop", "Medical"];
+	_box3Choices = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"];
 
 	_box1Select = _box1Choices call BIS_fnc_selectRandom;
 	_box2Select = _box2Choices call BIS_fnc_selectRandom;
@@ -200,17 +200,22 @@ _successExec =
 
 	_box1 = createVehicle [_case1seclect, _lastPos, [], 5, "None"];
 	_box1 setDir random 360;
+	_box1 allowDamage false,
 	[_box1, _box1Select] call fn_refillbox;
 
 	_box2 = createVehicle [_case2seclect, _lastPos, [], 5, "None"];
 	_box2 setDir random 360;
+	_box2 allowDamage false;
 	[_box2, _box2Select] call fn_refillbox;
 
 	_box3 = createVehicle [_case3seclect, _lastPos, [], 5, "None"];
 	_box3 setDir random 360;
+	_box3 allowDamage false;
 	[_box3, _box3Select] call fn_refillbox;
 
-/*	//Special Crate
+/*
+	//This Doesn't work
+	//Special Crate
 	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
 	_Case1 = [[_randomBox1] call fn_choosebox];
 	_box1 = createVehicle [_Case1] getMarkerPos _marker;
@@ -231,6 +236,7 @@ _successExec =
     [_box3, _randomBox3] call fn_refillbox;
 	_box3 allowDamage false;
 
+	//This works
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;

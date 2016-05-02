@@ -8,21 +8,17 @@
 
 if (!isServer) exitWith {};
 
-private ["_box", "_boxType"];
-_box = _this select 0;
-_boxType = _this select 1;
-
-_box setVariable [call vChecksum, true];
-
-_box allowDamage false;
-_box setVariable ["A3W_inventoryLockR3F", true, true];
+private ["_boxType", "case"];
+_boxType = _this;
 
 switch (_boxType) do
 {
 
 	case "Launchers_Tier_2":
 	{
-		["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		_case = ["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		createVehicle [_Case3] getMarkerPos _marker;
+
 	};
 	case "Diving_Gear":
 	{
