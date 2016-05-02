@@ -140,7 +140,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_veh = _this select 0;
 					_side = _this select 1;
 
-					waitUntil {!isNull driver _veh};
+					waitUntil {count crew _veh > 0};
 
 					//assign AI to player's side to allow terminal connection
 					(crew _veh) joinSilent createGroup _side;
@@ -173,7 +173,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			_isDamageable = !(_object isKindOf "ReammoBox_F"); // ({_object isKindOf _x} count ["AllVehicles", "Lamps_base_F", "Cargo_Patrol_base_F", "Cargo_Tower_base_F"] > 0);
 
-			[_object, false] call vehicleSetup;
+			[_object] call vehicleSetup;
 			_object allowDamage _isDamageable;
 			_object setVariable ["allowDamage", _isDamageable];
 
@@ -190,6 +190,8 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				{
 					_object setAmmoCargo .75;
 				};
+
+
 				
 				case (_object isKindOf "O_Truck_03_Ammo_F" > 0):
 				{

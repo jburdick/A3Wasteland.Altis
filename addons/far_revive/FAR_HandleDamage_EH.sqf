@@ -32,29 +32,6 @@ if (_fatalHit && !isNull _source && isNil {_unit getVariable "FAR_killerVehicle"
 _reviveReady = _unit getVariable ["FAR_reviveModeReady", false];
 _skipRevive = false;
 
-// skip revive if headshot by another player with non-explosive ammo (regular bullets and sub-50mm APDS rounds)
-if (["A3W_headshotNoRevive"] call isConfigOn && _fatalHit &&
-   {_selection in ["head","face_hub"] && _ammo select [0,2] == "B_" && {getNumber (configfile >> "CfgAmmo" >> _ammo >> "explosive") <= 0 && !isNil {_unit getVariable "FAR_killerVehicle"} && !_reviveReady}}) then
-{
-	_killer = _unit call FAR_findKiller;
-
-	if (!isNull _killer) then
-	{
-		_killerGroup = group _killer;
-		_killerSide = side _killerGroup;
-		_unitGroup = group _unit;
-		_unitSide = side _unitGroup;
-
-		_unit setVariable ["FAR_killerPrimeSuspect", _killer];
-
-		if (isPlayer _killer && {_killerSide != _unitSide || (!(_unitSide in [BLUFOR,OPFOR]) && _killerGroup != _unitGroup)}) then // check if enemy
-		{
-			_skipRevive = true;
-			diag_log format ["HEADSHOT by [%1] with [%2]", _killer, _ammo];
-		};
-	};
-};
-
 if (UNCONSCIOUS(_unit) && !_skipRevive) then
 {
 	if (!_reviveReady) exitWith { _damage = 0.5 }; // block additional damage while transitioning to revive mode; allowDamage false prevents proper tracking of lethal headshots
@@ -66,17 +43,12 @@ if (UNCONSCIOUS(_unit) && !_skipRevive) then
 		if (!isNil "_oldDamage") then
 		{
 			// Apply part of the damage without multiplier when below the stabilization threshold of 50% damage
-			if (STABILIZED(_unit) && {_criticalHit && FAR_DamageMultiplier < 1}) then
+			if (_criticalHit && {STABILIZED(_unit) && FAR_DamageMultiplier < 1}) then
 			{
 				_oldDamage = _damage min 0.5;
 			};
 
-			_damage = ((_damage - _oldDamage) min 5) * FAR_DamageMultiplier + _oldDamage; // max damage inflicted per hit is capped (via min 5) to prevent insta-bleedout
-
-			if (_criticalHit && _damage < 1) then // prevent setDamage 1 here otherwise the "Killed" EH gets triggered twice
-			{
-				_unit setDamage _damage;
-			};
+			_damage = ((_damage - _oldDamage) min 10) * FAR_DamageMultiplier + _oldDamage; // max damage inflicted per hit is capped (via min 10) to prevent insta-bleedout
 		};
 	//};
 }
@@ -85,7 +57,7 @@ else
 	// Allow revive if unit is dead and not in exploded vehicle
 	if (_fatalHit && alive vehicle _unit) then
 	{
-		[] spawn fn_deletePlayerData;
+		if (_unit == player && !isNil "fn_deletePlayerData") then { call fn_deletePlayerData };
 
 		if (!_skipRevive) then
 		{
@@ -94,19 +66,35 @@ else
 			_unit setFatigue 1;
 		};
 
-		if (!isNil "FAR_Player_Unconscious_thread" && {typeName FAR_Player_Unconscious_thread == "SCRIPT" && {!scriptDone FAR_Player_Unconscious_thread}}) then
-		{
-			terminate FAR_Player_Unconscious_thread;
-		};
+		terminate (_unit getVariable ["FAR_Player_Unconscious_thread", scriptNull]);
 
-		(findDisplay ReviveBlankGUI_IDD) closeDisplay 0;
-		(findDisplay ReviveGUI_IDD) closeDisplay 0;
+		if (_unit == player) then
+		{
+			(findDisplay ReviveBlankGUI_IDD) closeDisplay 0;
+			(findDisplay ReviveGUI_IDD) closeDisplay 0;
+		};
 
 		if (_skipRevive) exitWith {};
 
-		FAR_Player_Unconscious_thread = [_unit, _source] spawn FAR_Player_Unconscious;
-
+		_unit setVariable ["FAR_Player_Unconscious_thread", [_unit, _source] spawn FAR_Player_Unconscious];
 		_damage = 0.5;
+	};
+};
+
+if (UNCONSCIOUS(_unit) && !_reviveReady) then
+{
+	_headshotQueue = _unit getVariable "FAR_headshotHitPartEH_queued";
+
+	if (!isNil "_headshotQueue") then
+	{
+		_headshotQueue params [["_time",0], ["_hitPart",[]]];
+
+		if (time - _time < 0.25) then
+		{
+			_hitPart call FAR_headshotHitPartEH;
+		};
+
+		_unit setVariable ["FAR_headshotHitPartEH_queued", nil];
 	};
 };
 

@@ -29,8 +29,7 @@ doCancelAction = false;
 playerCompiledScripts = false;
 playerSetupComplete = false;
 
-waitUntil {!isNull player};
-waitUntil {time > 0.1};
+waitUntil {!isNull player && time > 0};
 
 removeAllWeapons player;
 player switchMove "";
@@ -54,6 +53,7 @@ if (!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_
 player addEventHandler ["Respawn", { _this spawn onRespawn }];
 player addEventHandler ["Killed", { _this spawn onKilled }];
 
+call compile preprocessFileLineNumbers "addons\far_revive\FAR_revive_init.sqf";
 A3W_scriptThreads pushBack execVM "client\functions\evalManagedActions.sqf";
 
 pvar_playerRespawn = [player, objNull];
@@ -147,6 +147,7 @@ if(hasInterface) then{[] execVM "addons\statusBar\statusBar.sqf"};
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";
 
+{ [_x] call fn_remotePlayerSetup } forEach allPlayers;
 // update player's spawn beaoon
 {
 	if (_x getVariable ["ownerUID",""] == getPlayerUID player) then

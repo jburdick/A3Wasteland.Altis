@@ -58,7 +58,25 @@ player addEventHandler ["WeaponAssembled",
 {
 	_player = _this select 0;
 	_obj = _this select 1;
-	if (_obj isKindOf "UAV_01_base_F") then { _obj setVariable ["ownerUID", getPlayerUID _player, true] };
+
+	if (round getNumber (configFile >> "CfgVehicles" >> typeOf _obj >> "isUav") > 0) then
+	{
+		_obj setVariable ["ownerUID", getPlayerUID _player, true];
+
+		if (!alive getConnectedUAV player) then
+		{
+			player connectTerminalToUAV _obj;
+		};
+
+		if ({_obj isKindOf _x} count ["Static_Designator_01_base_F","Static_Designator_02_base_F"] > 0) then
+		{
+			_obj setAutonomous false; // disable autonomous mode by default on static designators so they stay on target after releasing controls
+		};
+
+		{
+			[_x, ["AI","",""]] remoteExec ["A3W_fnc_setName"]; 
+		} forEach crew _obj;
+	};
 }];
 
 player addEventHandler ["InventoryOpened",
@@ -115,7 +133,7 @@ player addEventHandler ["InventoryClosed",
 		_lastVeh = _currVeh;
 
 		// Prevent usage of commander camera
-		if (cameraView == "GROUP") then
+		if (cameraView == "GROUP" && cameraOn in [player, vehicle player]) then
 		{
 			cameraOn switchCamera "EXTERNAL";
 		};
@@ -130,12 +148,13 @@ if (["A3W_remoteBombStoreRadius", 0] call getPublicVar > 0) then
 {
 	player addEventHandler ["Fired",
 	{
-		// Remove remote explosives if within 100m of a store
+		// Remove explosives if within 100m of a store
 		if (_this select 1 == "Put") then
 		{
 			_ammo = _this select 4;
 
-			if ({_ammo isKindOf _x} count ["PipeBombBase", "ClaymoreDirectionalMine_Remote_Ammo"] > 0) then
+			//if ({_ammo isKindOf _x} count ["PipeBombBase", "ClaymoreDirectionalMine_Remote_Ammo"] > 0) then // "touchable" remote explosives only
+			if (_ammo isKindOf "TimeBombCore") then // all explosives
 			{
 				_mag = _this select 5;
 				_bomb = _this select 6;
@@ -147,7 +166,7 @@ if (["A3W_remoteBombStoreRadius", 0] call getPublicVar > 0) then
 						deleteVehicle _bomb;
 						player addMagazine _mag;
 						playSound "FD_CP_Not_Clear_F";
-						titleText [format ["You are not allowed to place remote explosives within %1m of a store.\nThe explosive has been re-added to your inventory.", _minDist], "PLAIN DOWN", 0.5];
+						titleText [format ["You are not allowed to place explosives within %1m of a store.\nThe explosive has been re-added to your inventory.", _minDist], "PLAIN DOWN", 0.5];
 					};
 				} forEach entities "CAManBase";
 			};

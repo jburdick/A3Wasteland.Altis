@@ -88,6 +88,7 @@ _displayTerritoryActivity =
 _survivalSystem = ["A3W_survivalSystem"] call isConfigOn;
 _unlimitedStamina = ["A3W_unlimitedStamina"] call isConfigOn;
 _atmEnabled = ["A3W_atmEnabled"] call isConfigOn;
+_disableUavFeed = ["A3W_disableUavFeed"] call isConfigOn;
 
 private ["_mapCtrls", "_mapCtrl"];
 _ui = displayNull;
@@ -178,14 +179,21 @@ while {true} do
 	{
 		if (player != vehicle player) then
 		{
-			_vehicle = assignedVehicle player;
+			_vehicle = vehicle player;
 
 			{
-				_icon = switch (true) do
+				if (alive _x) then
+
 				{
-					case (driver _vehicle == _x): { "client\icons\driver.paa" };
-					case (gunner _vehicle == _x): { "client\icons\gunner.paa" };
-					default                       { "client\icons\cargo.paa" };
+					_icon = switch (true) do
+					{
+						case (driver _vehicle == _x): { "client\icons\driver.paa" };
+						case (gunner _vehicle == _x): { "client\icons\gunner.paa" };
+						default                       { "client\icons\cargo.paa" };
+					};
+
+					_tempString = format ["%1 %2 <img image='%3'/><br/>", _tempString, name _x, _icon];
+					_yOffset = _yOffset + 0.04;
 				};
 
 				_tempString = format ["%1 %2 <img image='%3'/><br/>", _tempString, name _x, _icon];
@@ -319,6 +327,11 @@ while {true} do
 			};
 		};
 	} forEach [cursorTarget, cursorObject];
-
+	
+	if (_disableUavFeed && shownUavFeed) then
+	{
+		showUavFeed false;
+	};
+	
 	uiSleep 1;
 };
