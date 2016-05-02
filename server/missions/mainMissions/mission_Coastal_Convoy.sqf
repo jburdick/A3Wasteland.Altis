@@ -176,7 +176,7 @@ _successExec =
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir random 360;
-	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
+	[_box3, "mission_snipers"] call fn_refillbox;
 
 	_successHintMessage = "The patrol has been stopped, the ammo crates are yours to take. Find them near the wreck!";
 };

@@ -125,7 +125,7 @@ _setupObjects =
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh3 >> "displayName");
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh4 >> "displayName");
 
-	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling Altis! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, moneyMissionColor];
+	_missionHintText = format ["A military convoy is patrolling Altis! Stop the patrol and capture the goods and money!", moneyMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -170,7 +170,7 @@ _successExec =
 	};
 
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
-    [_box1,"Launcers_Tier_2"] call fn_refillbox;
+    [_box1,"Launchers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;
 
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
@@ -178,7 +178,7 @@ _successExec =
 	_box2 allowDamage false;
 
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-    [_box3,"mission_Main_A3snipers"] call fn_refillbox;
+    [_box3,"mission_snipers"] call fn_refillbox;
 	_box3 allowDamage false;
 
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3, _box4];

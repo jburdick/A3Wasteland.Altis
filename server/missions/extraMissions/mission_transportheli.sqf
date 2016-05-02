@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "extraMissionDefines.sqf"
 
-private ["_transportChoicesUnarmed", "_transportChoicesArmed", "_supportChoices", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", 
+private ["_transportChoicesUnarmed", "_transportChoicesArmed", "_supportChoices", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint",
 	"_vehicleName", "_vehicleName2", "_vehicleName3", "_numWaypoints", "_box1", "_box2", "_box3"];
 
 _setupVars =
@@ -25,7 +25,7 @@ _setupObjects =
 	_supportChoices = ["O_Heli_Attack_02_black_F","O_Heli_Attack_02_F","B_Heli_Attack_01_F"];
 
 	_veh1 = [];
-	
+
 	if ((floor random 2) == 1 ) then {
 		_veh1 append [(_transportChoicesArmed call BIS_fnc_selectRandom)];
 		_veh1 append [true];
@@ -35,7 +35,7 @@ _setupObjects =
 		_veh1 append [false];
 	};
 
-	_veh2 = _supportChoices call BIS_fnc_selectRandom; 
+	_veh2 = _supportChoices call BIS_fnc_selectRandom;
 	_veh3 = _supportChoices call BIS_fnc_selectRandom;
 
 	_createVehicle =
@@ -43,7 +43,7 @@ _setupObjects =
 		private ["_type", "_isArmed", "_position", "_direction", "_vehicle", "_soldier"];
 
 		_type = _this select 0;
-		_isArmed = _this select 3; 
+		_isArmed = _this select 3;
 		_position = _this select 1;
 		_direction = _this select 2;
 
@@ -126,7 +126,7 @@ _setupObjects =
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh3 >> "displayName");
 
 	_textVehSupport = "";
-	
+
 	if(_vehicleName2 == _vehicleName3) then {
 		_textVehSupport = format ["2 <t color='%2'>%1</t> helicopters", _vehicleName2, extraMissionColor];
 	}
@@ -134,7 +134,7 @@ _setupObjects =
 	{
 		_textVehSupport = format ["1 <t color='%3'>%1</t> and 1 <t color='%3'>%2</t>", _vehicleName2, _vehicleName3, extraMissionColor];
 	};
-	
+
 	_missionHintText = format ["A <t color='%3'>%1</t> helicopter and an escort of %2 are on the move. Take them down and collect their payload!", _vehicleName, _textVehSupport, extraMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
@@ -151,17 +151,17 @@ _failedExec = nil;
 _successExec =
 {
 	// Mission completed
-	
+
 	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box3Select"];
-	
-	_box1Choices = ["airdrop_DLC_Rifles", "airdrop_DLC_LMGs", "airdrop_Snipers"];
+
+	_box1Choices = ["mission_AssRifles", "mission_LMGs", "mission_snipers", "mission_SMGs", "mission_Pistols"];
 	_box2Choices = ["mission_USLaunchers", "Launcers_Tier_2"];
-	_box3Choices = ["Ammo_Drop", "mission_USSpecial"];
-	
+	_box3Choices = ["Ammo_Drop", "Medical"];
+
 	_box1Select = _box1Choices call BIS_fnc_selectRandom;
 	_box2Select = _box2Choices call BIS_fnc_selectRandom;
 	_box3Select = _box3Choices call BIS_fnc_selectRandom;
-	
+
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
 	_box1 setDir random 360;

@@ -181,27 +181,56 @@ _successExec =
 		_cash setVariable["owner","world",true];
 	};
 
-	//Special Crate
+	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box3Select", "case1select", "case2select", "case3select"];
+
+	//Weapons
+	_box1Choices = ["mission_AssRifles", "mission_LMGs", "mission_snipers", "mission_SMGs", "mission_Pistols"];
+	//Special
+	_box2Choices = ["mission_USLaunchers", "Launcers_Tier_2"];
+	//Supplies
+	_box3Choices = ["Ammo_Drop", "Medical"];
+
+	_box1Select = _box1Choices call BIS_fnc_selectRandom;
+	_box2Select = _box2Choices call BIS_fnc_selectRandom;
+	_box3Select = _box3Choices call BIS_fnc_selectRandom;
+	_case1seclect = _box1Select call fn_choosebox;
+	_case2seclect = _box2Select call fn_choosebox;
+	_case3seclect = _box3Select call fn_choosebox;
+
+
+	_box1 = createVehicle [_case1seclect, _lastPos, [], 5, "None"];
+	_box1 setDir random 360;
+	[_box1, _box1Select] call fn_refillbox;
+
+	_box2 = createVehicle [_case2seclect, _lastPos, [], 5, "None"];
+	_box2 setDir random 360;
+	[_box2, _box2Select] call fn_refillbox;
+
+	_box3 = createVehicle [_case3seclect, _lastPos, [], 5, "None"];
+	_box3 setDir random 360;
+	[_box3, _box3Select] call fn_refillbox;
+
+/*	//Special Crate
 	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
 	_Case1 = [[_randomBox1] call fn_choosebox];
-	_box1 = [_Case1] createVehicle getMarkerPos _marker;
+	_box1 = createVehicle [_Case1] getMarkerPos _marker;
     [_box1, _randomBox1] call fn_refillbox;
 	_box1 allowDamage false;
 
 	//weapon crate
 	_randomBox2 = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
 	_Case2 = [[_randomBox2] call fn_choosebox];
-	_box2 = [_Case2] createVehicle getMarkerPos _marker;
+	_box2 = createVehicle [_Case2] getMarkerPos _marker;
    [_box2, _randomBox2] call fn_refillbox;
 	_box2 allowDamage false;
 
 	//Supply Crate
 	_randomBox3 = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"] call BIS_fnc_selectRandom;
 	_Case3 = [[_randomBox3] call fn_choosebox];
-	_box3 = [_Case3] createVehicle getMarkerPos _marker;
+	_box3 = createVehicle [_Case3] getMarkerPos _marker;
     [_box3, _randomBox3] call fn_refillbox;
 	_box3 allowDamage false;
-/*
+
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;
@@ -212,8 +241,9 @@ _successExec =
 
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
     [_box3,"mission_snipers"] call fn_refillbox;
-	_box3 allowDamage false;
-	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";*/
+	_box3 allowDamage false;*/
+
+	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
 };
 
 _this call patrolMissionProcessor;
