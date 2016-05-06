@@ -38,9 +38,9 @@ SideMissions =
 
 MoneyMissions =
 [
-	// ["mission_MoneyShipment", 1],
-	// ["mission_SunkenTreasure", .5],
-	["mission_altisPatrol", .5]
+	["mission_MoneyShipment", 1],
+	["mission_SunkenTreasure", 1],
+	["mission_altisPatrol", 1]
 ];
 
 ExtraMissions =

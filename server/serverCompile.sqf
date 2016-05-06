@@ -36,7 +36,7 @@ setLocationObjects = [_path, "setLocationObjects.sqf"] call mf_compile;
 setLocationState = [_path, "setLocationState.sqf"] call mf_compile;
 setMissionState = [_path, "setMissionState.sqf"] call mf_compile;
 // Non Vanilla missions
-createsniperGroup = [_path, "createUnits\sniperGroup.sqf"] call mf_compile; 
+createsniperGroup = [_path, "createUnits\sniperGroup.sqf"] call mf_compile;
 createsmugglerGroup = [_path, "createUnits\smugglerGroup.sqf"] call mf_compile;
 createRandomPilot = [_path, "createUnits\createRandomPilot.sqf"] call mf_compile;
 createWaitCondition = [_path, "createWaitCondition.sqf"] call mf_compile;
@@ -60,6 +60,7 @@ findClientPlayer = [_path, "findClientPlayer.sqf"] call mf_compile;
 fn_onPlayerConnected = [_path, "fn_onPlayerConnected.sqf"] call mf_compile;
 fn_onPlayerDisconnected = [_path, "fn_onPlayerDisconnected.sqf"] call mf_compile;
 fn_publicVariableAll = [_path, "fn_publicVariableAll.sqf"] call mf_compile;
+fn_choosebox = [_path, "fn_choosebox.sqf"] call mf_compile;
 fn_refillBox = [_path, "fn_refillbox.sqf"] call mf_compile;
 fn_refillTruck = [_path, "fn_refilltruck.sqf"] call mf_compile;
 fn_replaceMagazines = [_path, "fn_replaceMagazines.sqf"] call mf_compile;

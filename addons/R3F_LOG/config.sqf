@@ -245,7 +245,8 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 	"Truck_03_base_F",
 	"Wheeled_APC_F",
 	"Tank",
-	"Boat_Armed_01_base_F"
+	"Boat_Armed_01_base_F",
+	"Ship_F"
 ];
 
 /**
@@ -255,9 +256,36 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
 	// e.g. : "MyTowableObjectClassName1", "MyTowableObjectClassName2"
-	"Helicopter",
+	"B_Heli_Attack_01_F",
+	"Heli_Attack_02_base_F",
+	"Heli_Light_01_base_F",
+	"Heli_Light_02_base_F",
+	"Heli_Transport_01_base_F",
+	"Heli_Transport_02_base_F",
+	"O_Heli_Transport_04_box_F",
+	"O_Heli_Transport_04_fuel_F",
+	"O_Heli_Transport_04_bench_F",
+	"O_Heli_Transport_04_covered_F",
+	"B_Heli_Transport_03_unarmed_F",
+	"O_Heli_Transport_04_medevac_F",
+	"O_Heli_Transport_04_repair_F",
+	"B_Heli_Transport_03_F",
+	"I_Heli_light_03_unarmed_F",
+	"I_Heli_light_03_F",
 	"Car_F",
-	"Tank",
+	"B_APC_Tracked_01_AA_F",
+	"B_APC_Tracked_01_rcws_F",
+	"I_APC_tracked_03_cannon_F",
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Tracked_02_AA_F",
+	"B_MBT_01_cannon_F",
+	"B_MBT_01_TUSK_F",
+	"O_MBT_02_cannon_F",
+	"I_MBT_03_cannon_F",
+	"B_MBT_01_arty_F",
+	"B_MBT_01_mlrs_F",
+	"B_Heli_Transport_03_F",
+	"Ship_F",
 	"Plane"
 ];
 
