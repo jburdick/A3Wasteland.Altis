@@ -21,15 +21,15 @@ _IsAllowed = false;
 //Start donator part
 //{
 //	if(((_object distance getMarkerPos  (_x select 3)) <  (_x select 1))) then
-//	{	
-//		_IsProtected = true;			
-//		if ((getPlayerUID player) in (_x select 5)) then {				
+//	{
+//		_IsProtected = true;
+//		if ((getPlayerUID player) in (_x select 5)) then {
 //			_IsAllowed = true;
 //		};
 //	};
 //} forEach call Donators;
 
-//if ((_IsProtected) && !(_IsAllowed)) exitwith {	 
+//if ((_IsProtected) && !(_IsAllowed)) exitwith {
 //	hint "This base is protected by donator status"; R3F_LOG_mutex_local_verrou = false;
 //};
 //End donator part
@@ -60,13 +60,13 @@ switch (_lockState) do
 			_progress = _this select 0;
 			_object = _this select 1;
 			_failed = true;
-			
+
 			_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 150];
-			if (count _reLockers > 0) then { 
-				_reLocker = _reLockers select 0; 
+			if (count _reLockers > 0) then {
+				_reLocker = _reLockers select 0;
 				}else{
 				_reLocker = objNull;
-				}; 
+				};
 
 			switch (true) do
 			{
@@ -140,7 +140,7 @@ switch (_lockState) do
 	case 1: // UNLOCK
 	{
 		R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 1 } else { 1200 }; // Allow owner to unlock quickly
+		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 1 } else { 1}; // Allow owner to unlock quickly
 		//_unlockDuration = _totalDuration;
 		//_iteration = 0;
 
@@ -152,12 +152,12 @@ switch (_lockState) do
 			_failed = true;
 
 			_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 150];
-			if (count _reLockers > 0) then { 
-				_reLocker = _reLockers select 0; 
+			if (count _reLockers > 0) then {
+				_reLocker = _reLockers select 0;
 				}else{
 				_reLocker = objNull;
-			}; 
-			
+			};
+
 			switch (true) do
 			{
 				case (!alive player): {};

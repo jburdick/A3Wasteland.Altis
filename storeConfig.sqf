@@ -273,7 +273,7 @@ accessoriesArray = compileFinal str
 	["Bipod (Hex)", "bipod_02_F_hex", 250, "item"],
 	["Bipod (Olive)", "bipod_03_F_oli", 250, "item"],
 	["Bipod (Sand)", "bipod_01_F_snd", 250, "item"],
-	["Bipod (Tan)", "bipod_02_F_tan", 250, "item"], 
+	["Bipod (Tan)", "bipod_02_F_tan", 250, "item"],
 	["Flashlight", "acc_flashlight", 25, "item"],
 	["IR Laser Pointer", "acc_pointer_IR", 25, "item"],
 	["Yorris Sight (Zubr Revolver)", "optic_Yorris", 50, "item"],
@@ -495,7 +495,7 @@ uniformArray = compileFinal str
 	// ["Tron Light Suit (Red)", "U_O_Protagonist_VR", 5000, "uni"],
 	// ["Tron Light Suit (Green)", "U_I_Protagonist_VR", 5000, "uni"]
 	["Polo (Competitor)", "U_Competitor", 25, "uni"],
-	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"] 
+	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"]
 ];
 
 vestArray = compileFinal str
@@ -550,7 +550,9 @@ backpackArray = compileFinal str
 
 	["Field Pack (Black)", "B_FieldPack_blk", 200, "backpack"],
 	["Field Pack (Coyote)", "B_FieldPack_cbr", 200, "backpack"],
+	["Field Pack (Hex)", "B_FieldPack_ocamo", 250, "backpack"],
 	["Field Pack (Khaki)", "B_FieldPack_khk", 200, "backpack"],
+	["Field Pack (Olive)", "B_FieldPack_oli", 250, "backpack"],
 	["Field Pack (Urban)", "B_FieldPack_oucamo", 200, "backpack"],
 
 	["Kitbag (Coyote)", "B_Kitbag_cbr", 350, "backpack"],
@@ -563,6 +565,7 @@ backpackArray = compileFinal str
 	["Bergen (MTP)", "B_Bergen_mcamo", 350, "backpack"],
 	["Bergen (Sage)", "B_Bergen_sgg", 350, "backpack"],
 
+	["Carryall (Hex)", "B_Carryall_ocamo", 850, "backpack"],
 	["Carryall (Khaki)", "B_Carryall_khk", 500, "backpack"],
 	["Carryall (Coyote)", "B_Carryall_cbr", 500, "backpack"],
 	["Carryall (MTP)", "B_Carryall_mcamo", 500, "backpack"],
@@ -600,8 +603,43 @@ genItemArray = compileFinal str
 	["Chemlight (Blue)", "Chemlight_blue", 25, "mag"],
 	["Chemlight (Green)", "Chemlight_green", 25, "mag"],
 	["Chemlight (Yellow)", "Chemlight_yellow", 25, "mag"],
-	["Chemlight (Red)", "Chemlight_red", 25, "mag"]
-	
+	["Chemlight (Red)", "Chemlight_red", 25, "mag"],
+	["Aviator Glasses", "G_Aviator", 25, "gogg"],
+	["Balaclava (Black)", "G_Balaclava_blk", 100, "gogg"],
+	["Balaclava (Olive)", "G_Balaclava_oli", 100, "gogg"],
+	["Balaclava (Combat Goggles)", "G_Balaclava_combat", 100, "gogg"],
+	["Balaclava (Low Profile Goggles)", "G_Balaclava_lowprofile", 100, "gogg"],
+	["Bandanna (Aviator)", "G_Bandanna_aviator", 100, "gogg"],
+	["Bandanna (Beast)", "G_Bandanna_beast", 100, "gogg"],
+	["Bandanna (Black)", "G_Bandanna_blk", 100, "gogg"],
+	["Bandanna (Khaki)", "G_Bandanna_khk", 100, "gogg"],
+	["Bandanna (Olive)", "G_Bandanna_oli", 100, "gogg"],
+	["Bandanna (Shades)", "G_Bandanna_shades", 100, "gogg"],
+	["Bandanna (Sport)", "G_Bandanna_sport", 100, "gogg"],
+	["Bandanna (Tan)", "G_Bandanna_tan", 100, "gogg"],
+	["Combat Goggles", "G_Combat", 100, "gogg"],
+	["VR Goggles", "G_Goggles_VR", 100, "gogg"],
+	["Ladies Shades (ICE)", "G_Lady_Blue", 100, "gogg"],
+	["Ladies Shades (Sea)", "G_Lady_Dark", 100, "gogg"],
+	["Ladies Shades (Iridium)", "G_Lady_Mirror", 100, "gogg"],
+	["Ladies Shades (Fire)", "G_Lady_Red", 100, "gogg"],
+	["Low Profile Goggles", "G_Lowprofile", 100, "gogg"],
+	["Shades (Black)", "G_Shades_Black", 100, "gogg"],
+	["Shades (Blue)", "G_Shades_Blue", 100, "gogg"],
+	["Shades (Green)", "G_Shades_Green", 100, "gogg"],
+	["Shades (Red)", "G_Shades_Red", 100, "gogg"],
+	["Spectacle Glasses", "G_Spectacles", 100, "gogg"],
+	["Tinted Spectacles", "G_Spectacles_Tinted", 100, "gogg"],
+	["Sport Shades (Vulcan)", "G_Sport_Blackred", 100, "gogg"],
+	["Sport Shades (Shadow)", "G_Sport_BlackWhite", 100, "gogg"],
+	["Sport Shades (Poison)", "G_Sport_Blackyellow", 100, "gogg"],
+	["Sport Shades (Style)", "G_Sport_Checkered", 100, "gogg"],
+	["Sport Shades (Yetti)", "G_Sport_Greenblack", 100, "gogg"],
+	["Sport Shades (Fire)", "G_Sport_Red", 100, "gogg"],
+	["Square Spectacles", "G_Squares", 100, "gogg"],
+	["Square Shades", "G_Squares_Tinted", 100, "gogg"],
+	["Tactical Shades", "G_Tactical_Black", 100, "gogg"],
+	["Tactical Glasses", "G_Tactical_Clear", 100, "gogg"]
 ];
 
 allStoreMagazines = compileFinal str (call ammoArray + call throwputArray + call genItemArray);
@@ -610,11 +648,14 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 
 genObjectsArray = compileFinal str
 [
+	// ["Base door (beta)", "Land_Canal_Wall_10m_F", 25000, "object"],  // LouD
+	// ["Base door key (PIN: 0000) (beta)", "Land_InfoStand_V2_F", 10000, "object"],  // LouD
+	["Base locker", "Land_Device_assembled_F", 550000, "object"],  //Cael817, SNAFU,Used for base operations <-- Destroyable
 	["Camo Ammo Cache", "Box_FIA_Support_F", 1000, "ammocrate"],
 	["Support Crate", "Box_NATO_Support_F", 100],
 	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
 	["Sling Box", "CargoNet_01_box_F", 1000],
-	
+
 	//["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	//["Toilet Box", "Land_ToiletBox_F", 25, "object"],
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 100, "object"],
@@ -624,16 +665,16 @@ genObjectsArray = compileFinal str
 	["Highway Guardrail", "Land_Crash_barrier_F", 200, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
 	["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
-	
+
 	["Fuel station", "Land_FuelStation_Feed_F", 500],
 	["Fuel Bladder", "StorageBladder_01_fuel_sand_F", 500],
-	
-	
+
+
 	["Concrete Barrier", "Land_CncBarrier_F", 200, "object"],
 	["Concrete Barrier (Medium)", "Land_CncBarrierMedium_F", 350, "object"],
 	["Concrete Barrier (Long)", "Land_CncBarrierMedium4_F", 500, "object"],
 	["T Wall", "Land_Mil_WallBig_4m_F", 600, "object"],
-	
+
 	["HBarrier (1 block)", "Land_HBarrier_1_F", 150, "object"],
 	["HBarrier (3 blocks)", "Land_HBarrier_3_F", 200, "object"],
 	["HBarrier (5 blocks)", "Land_HBarrier_5_F", 250, "object"],
@@ -641,7 +682,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (4 blocks)", "Land_HBarrierWall4_F", 400, "object"],
 	["HBarrier Wall (6 blocks)", "Land_HBarrierWall6_F", 500, "object"],
 	["HBarrier Watchtower", "Land_HBarrierTower_F", 600, "object"],
-	
+
 	["Concrete Wall", "Land_CncWall1_F", 400, "object"],
 	["Concrete Military Wall", "Land_Mil_ConcreteWall_F", 400, "object"],
 	["Concrete Wall (Long)", "Land_CncWall4_F", 600, "object"],
@@ -649,10 +690,10 @@ genObjectsArray = compileFinal str
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
 	["Land Pier", "Land_Pier_F", 10000],
-		
+
 	["Canal Wall (Small)", "Land_Canal_WallSmall_10m_F", 400, "object"],
 	["Canal Stairs", "Land_Canal_Wall_Stairs_F", 500, "object"],
-	
+
 	["Bag Fence (Corner)", "Land_BagFence_Corner_F", 150, "object"],
 	["Bag Fence (End)", "Land_BagFence_End_F", 150, "object"],
 	["Bag Fence (Long)", "Land_BagFence_Long_F", 200, "object"],
@@ -661,41 +702,41 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Small)", "Land_BagBunker_Small_F", 250, "object"],
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
-	
+
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
 	["Containerized Housing Unit (Brown)", "Land_Cargo_House_V3_F", 800],
-	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"], 
+	["Military Office", "Land_Cargo_HQ_V1_F", 150, "object"],
 	["Medical Office", "Land_Medevac_HQ_V1_F", 1500, "object"],
-	 
+
 	["Hanger", "Land_Hangar_F", 15000, "object"],
 	["Shed (Large)", "Land_i_Shed_Ind_F", 1500, "object"],
 	["Awning (Large)", "Land_Shed_Big_F", 5000, "object"],
 	["Awning (Half, Wall)", "Land_Shed_Small_F", 700, "object"],
-	
-	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"], 
+
+	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"],
 	["Lighthouse", "Land_LightHouse_F", 150, "object"],
-		 
-	
-		
+
+
+
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
 	["Medical Container", "B_Slingload_01_Medevac_F", 1000]
-	
-	
-		
+
+
+
 	// ["Large Camo Net (Green)", "CamoNet_BLUFOR_big_F", 500],
 	// ["Large Camo Net (Forest", "CamoNet_INDP_big_F", 500],
 	// ["Large Camo Net (Brown)", "CamoNet_OPFOR_big_F", 500],
 	// ["Portable LZ (Large)", "ContainmentArea_01_sand_F", 1000],
 	// ["Laptop (Property Manager)", "Land_Laptop_unfolded_F", 250000, "object"],
 	// ["Portable LZ (Small)", "ContainmentArea_02_sand_F", 800]
-	
-	
-	
-		
+
+
+
+
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
@@ -1030,7 +1071,7 @@ colorsArray = compileFinal str
 			]]
 		]
 	],
-	[ // Ghost Hawk camo 
+	[ // Ghost Hawk camo
 		"Heli_Transport_01_base_F",
 		[
 			["Olive (Ghost Hawk)", [

@@ -11,6 +11,12 @@
 A3W_teamPlayersMap = 1;            // Show all friendly players on the map at all times, regardless of difficulty level (0 = no, 1 = yes)
 A3W_disableGlobalVoice = 1;        // Auto-switch channel to Direct communication whenever broadcasting voice on global, unless being admin (0 = no, 1 = yes)
 A3W_uavControl = "group";          // Restrict connection to UAVs based on ownership ("owner", "group", "side")
+// Timers
+BoS_coolDownTimer = 10800;           // Baselocker hacking timer
+
+// Store NPC additions
+License_Price = 10;                // Devider for the store price (e.g. a vehicle that is $10.000 in the store will change ownership for $1.000 when set to 10)
+Vehicle_Distance = 50;             // Maximum distance the vehicle can be from the store NPC.
 
 // Time settings
 A3W_startHour = 05;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
@@ -27,6 +33,7 @@ A3W_headshotNoRevive = 1;          // Instant death on fatal headshot by enemy p
 
 // Spawn settings
 A3W_townSpawnCooldown = 10*60;      // Number of seconds to wait between each spawn on a specific town (0 = disabled)
+A3W_townSpawnSpawnHeight = 1500;   // Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
 A3W_spawnBeaconCooldown = 15*60;    // Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
 A3W_spawnBeaconSpawnHeight = 2500; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
 
@@ -66,6 +73,7 @@ A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magaz
 A3W_warchestSaving = 1;            // Save warchest objects deployed by players between server restarts (0 = no, 1 = yes)
 A3W_warchestMoneySaving = 1;       // Save warchest team money between server restarts (0 = no, 1 = yes)
 A3W_spawnBeaconSaving = 1;         // Save spawn beacons between server restarts (0 = no, 1 = yes)
+A3W_camoNetSaving = 1;             // Save camonets between server restarts (0 = no, 1 = yes)
 A3W_objectLifetime = 14*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 7*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
