@@ -14,18 +14,12 @@ if (!isServer) exitWith {};
 // Exit if territories are not set
 if (isNil "currentTerritoryDetails" || {count currentTerritoryDetails == 0}) exitWith {};
 
-private ["_player", "_JIP", "_markers", "_markerName", "_markerTeam"];
-
-_player = _this select 0;
-_JIP = _this select 1;
-
-_markers = [];
+params ["_player", "_JIP"];
+private _markers = [];
 
 {
-	_markerName = _x select 0;
-	_markerTeam = _x select 2;
-
-	if (typeName _markerTeam == "GROUP" || {_markerTeam != sideUnknown}) then
+	_x params ["_markerName", "", "_markerTeam"];
+	if !(_markerTeam in [sideUnknown,grpNull]) then
 	{
 		_markers pushBack [_markerName, _markerTeam];
 	};

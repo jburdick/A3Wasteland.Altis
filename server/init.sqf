@@ -28,44 +28,6 @@ if (isServer) then
 
 		diag_log format ["HandleDisconnect - %1 - alive: %2 - local: %3", [_name, _uid], alive _unit, local _unit];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		if (alive _unit) then
 		{
 			if (!(_unit call A3W_fnc_isUnconscious) && {!isNil "isConfigOn" && {["A3W_playerSaving"] call isConfigOn}}) then
@@ -85,13 +47,6 @@ if (isServer) then
 				_unit spawn fn_ejectCorpse;
 			};
 		};
-
-
-
-
-
-
-
 
 		false
 	}];
@@ -170,9 +125,9 @@ if (isServer) then
 		"A3W_atmMapIcons",
 		"A3W_atmRemoveIfDisabled",
 		"A3W_uavControl",
+		"A3W_disableUavFeed",
 		"A3W_townSpawnCooldown",
 		"A3W_townSpawnSpawnHeight",
-
 		"A3W_survivalSystem",
 		"A3W_extDB_GhostingAdmins",
 		"A3W_hcPrefix",
@@ -187,8 +142,8 @@ if (isServer) then
 		"A3W_headshotNoRevive"
 	];
 
-	["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
-	["A3W_quit", "onPlayerDisconnected", { diag_log format ["onPlayerDisconnected - %1", [_name, _uid]] }] call BIS_fnc_addStackedEventHandler;
+	addMissionEventHandler ["PlayerConnected", fn_onPlayerConnected];
+	addMissionEventHandler ["PlayerDisconnected", fn_onPlayerDisconnected];
 };
 
 _playerSavingOn = ["A3W_playerSaving"] call isConfigOn;
@@ -322,8 +277,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			{
 				waitUntil {scriptDone _this};
 
-				["A3W_flagCheckOnJoin", "onPlayerConnected", { [_uid, _name, _owner] spawn fn_kickPlayerIfFlagged }] call BIS_fnc_addStackedEventHandler;
-
+				addMissionEventHandler ["PlayerConnected", { (_this select [1,3]) spawn fn_kickPlayerIfFlagged }];
 
 				// force check for non-JIP players
 				{ waitUntil {!isNull player}; [player] remoteExec ["A3W_fnc_checkPlayerFlag", 2] } remoteExec ["call", -2];
@@ -449,12 +403,10 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			["vehicleSaving", _vehicleSavingOn],
 			["boxSaving", _boxSavingOn],
 			["staticWeaponSaving", _staticWeaponSavingOn],
-
 			["warchestSaving", _warchestSavingOn],
 			["warchestMoneySaving", _warchestMoneySavingOn],
 			["spawnBeaconSaving", _beaconSavingOn],
 			["camoNetSaving", _camonetSavingOn],
-
 			["timeSaving", _timeSavingOn],
 			["weatherSaving", _weatherSavingOn],
 			["hcObjSaving", _hcObjSavingOn]
@@ -577,6 +529,3 @@ if (["A3W_serverMissions"] call isConfigOn) then
 
 // Start clean-up loop
 [] execVM "server\WastelandServClean.sqf";
-
-
-
