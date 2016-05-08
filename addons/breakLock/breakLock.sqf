@@ -14,7 +14,7 @@ _price = 100;
 if (_type == _x select 1) then
 	{   
 	_price = _x select 2;
-	_price = round (_price / 1000) + 100;
+	_price = round (_price / 10000) + 200;
 	};
 } forEach (call allVehStoreVehicles);
 
