@@ -4,7 +4,7 @@
 //	@file Name: functions.sqf
 //	@file Author: AgentRev
 
-private ["_baseSavingOn", "_boxSavingOn", "_staticWeaponSavingOn", "_warchestSavingOn", "_warchestMoneySavingOn", "_beaconSavingOn", "_timeSavingOn", "_weatherSavingOn", "_savingMethod", "_isBox", "_isStaticWeapon", "_isWarchest", "_isBeacon"];
+private ["_baseSavingOn", "_boxSavingOn", "_staticWeaponSavingOn", "_warchestSavingOn", "_warchestMoneySavingOn", "_beaconSavingOn", "_camonetSavingOn", "_timeSavingOn", "_weatherSavingOn", "_savingMethod", "_isBox", "_isStaticWeapon", "_isWarchest", "_isBeacon"];
 
 _baseSavingOn = ["A3W_baseSaving"] call isConfigOn;
 _boxSavingOn = ["A3W_boxSaving"] call isConfigOn;
@@ -22,6 +22,7 @@ _isBox = { _this isKindOf "ReammoBox_F" };
 _isStaticWeapon = { _this isKindOf "StaticWeapon" };
 _isWarchest = { _this getVariable ["a3w_warchest", false] && {(_this getVariable ["side", sideUnknown]) in [WEST,EAST]} };
 _isBeacon = { _this getVariable ["a3w_spawnBeacon", false] };
+_isCamonet = { _this getVariable ["a3w_camoNet", false] };
 _camonetSavingOn = ["A3W_camoNetSaving"] call isConfigOn;
 
 _isSaveable = { (toLower _this) in A3W_saveableObjects };
