@@ -43,7 +43,6 @@ loadScreen = "mapConfig\Loading.jpg";
 //Dialog includes
 
 #include "client\gui_base.hpp"
-// #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 #include "addons\R3F_LOG\desc_include.h"
 #include "client\systems\ui_toolkit.hpp"
 #include "client\systems\common.hpp"
@@ -142,7 +141,7 @@ class CfgSounds
 		{
 							sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.5};
 							titles[] = {};
-		};		
+		};
 	class beep2
 		{
 							sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.6};
