@@ -528,7 +528,7 @@ va_outside_target = {
 
   def(_target);
     _target = cursorObject;
-
+  if ((_player distance _target)>4) exitWith {};
   if (isNil "_target") exitWith {};
 
   if (({_target isKindOf _x } count ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"]) == 0) exitWith {};
