@@ -41,15 +41,11 @@ if (isNil "_vehicle" || {typeName _vehicle != typeName objNull || {isNull _vehic
 };
 
 if (_success) then {
-	[[netId _vehicle, 1], "A3W_fnc_setLockState", _vehicle] call A3W_fnc_MP; // Unlock
+[[netId _vehicle, 1], "A3W_fnc_setLockState", _vehicle] call A3W_fnc_MP; // Unlock
 	_vehicle setVariable ["A3W_purchasedVehicle", true, true];
-	_vehicle setVariable ["A3W_missionVehicle", false, false];
 	_vehicle setVariable ["ownerUID", getPlayerUID player, true];
-	_vehicle setVariable ["vehicle_first_user", getPlayerUID player, true];
-	_vehicle setVariable ["vehicle_abandoned_by", getPlayerUID player, true];
-	_vehicle setVariable ["ownerN", name player, true];
-	_vehicle setVariable ["baseSaving_spawningTime", nil, true];
-	_vehicle setVariable ["baseSaving_hoursAlive", nil, true];
+	_vehicle setVariable ["ownerName", name player, true];
+	_vehicle setVariable ["ownedVehicle", true, true];
 	trackVehicle = _vehicle;
 	publicVariableServer "trackVehicle";
 	titleText ["Weapon Save Complete!","PLAIN DOWN"]; titleFadeOut 5;
