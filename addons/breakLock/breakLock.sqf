@@ -65,4 +65,5 @@ if (_break < _price / 4) exitWith {
 	_vehicle engineOn true;
 	//sleep 0.5;
 	//player action ["lightOff", _vehicle];
+	player removeItem "ToolKit";
 	titleText ["You broke in to the vehicle!","PLAIN DOWN"]; titleFadeOut 2;
