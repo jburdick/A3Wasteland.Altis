@@ -155,7 +155,7 @@ _successExec =
 	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box3Select"];
 
 	_box1Choices = ["mission_AssRifles", "mission_LMGs", "mission_snipers", "mission_SMGs", "mission_Pistols"];
-	_box2Choices = ["mission_USLaunchers", "Launcers_Tier_2"];
+	_box2Choices = ["mission_USLaunchers", "Launchers_Tier_2"];
 	_box3Choices = ["Ammo_Drop", "Medical"];
 
 	_box1Select = _box1Choices call BIS_fnc_selectRandom;

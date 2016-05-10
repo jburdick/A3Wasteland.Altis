@@ -188,7 +188,7 @@ _successExec =
 	//Special Weapons
 	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
 	//Special
-	_box2Choices = ["Launcers_Tier_2"];
+	_box2Choices = ["Launchers_Tier_2"];
 	//Supplies
 	_box3Choices = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"];
 

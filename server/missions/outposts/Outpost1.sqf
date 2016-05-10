@@ -21,7 +21,7 @@
 	["Land_BagBunker_Small_F", [-6.35974, 7.86914, 0], 180],
 	["Land_BagBunker_Small_F", [-6.06433, -10.0005, 0], 0],
 	["Land_BagBunker_Small_F", [6.27478, -9.8975, 0], 0],
-	["B_supplyCrate_F", [6.26294, -10.02422, 0], 180, { [_this, "Launcers_Tier_2"] call fn_refillbox }],
+	["B_supplyCrate_F", [6.26294, -10.02422, 0], 180, { [_this, "Launchers_Tier_2"] call fn_refillbox }],
 	["Land_HBarrierBig_F", [-11.583, -5.92871, 0], 45],
 	["Land_HBarrierBig_F", [-12.4873, 5.40869, 0], 315],
 	["Land_HBarrierBig_F", [10.9138, 4.86182, 0], 45],
