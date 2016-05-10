@@ -46,6 +46,7 @@ if (_success) then {
 	_vehicle setVariable ["ownerUID", getPlayerUID player, true];
 	_vehicle setVariable ["ownerName", name player, true];
 	_vehicle setVariable ["ownedVehicle", true, true];
+	player removeItem "ToolKit";
 	trackVehicle = _vehicle;
 	publicVariableServer "trackVehicle";
 	titleText ["Vehicle Save Complete!","PLAIN DOWN"]; titleFadeOut 5;
