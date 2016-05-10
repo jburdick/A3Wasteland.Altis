@@ -196,8 +196,6 @@ while {true} do
 					_yOffset = _yOffset + 0.04;
 				};
 
-				_tempString = format ["%1 %2 <img image='%3'/><br/>", _tempString, name _x, _icon];
-				_yOffset = _yOffset + 0.04;
 			} forEach crew _vehicle;
 		};
 	};
