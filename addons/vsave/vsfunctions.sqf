@@ -5,5 +5,5 @@
 
 SaveVehicleCheck = "addons\vsave\SaveVehicleCheck.sqf" call mf_compile;
 ReSaveVehicleCheck = "addons\vsave\ReSaveVehicleCheck.sqf" call mf_compile;
-SaveWeaponCheck = "addons\vsave\SaveWeaponCheck.sqf" call mf_compile;
-ReSaveWeaponCheck = "addons\vsave\ReSaveWeaponCheck.sqf" call mf_compile;
+// SaveWeaponCheck = "addons\vsave\SaveWeaponCheck.sqf" call mf_compile;
+// ReSaveWeaponCheck = "addons\vsave\ReSaveWeaponCheck.sqf" call mf_compile;
