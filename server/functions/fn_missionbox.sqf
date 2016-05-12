@@ -2,39 +2,42 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: fn_refillbox.sqf  "fn_refillbox"
-//	@file Author: [404] Pulse , [404] Costlyy , [404] Deadbeat, AgentRev
-//	@file Created: 22/1/2012 00:00
+//	@file Name: fn_missionbox.sqf  "fn_missionbox"
+//	@file Author:BIB_Monkey (Framework appropriated from fn_refillbox.sqf)
+//	@file Created: 12 May 16
 //	@file Args: [OBJECT (Weapons box that needs filling), STRING (Name of the fill to give to object)]
 
 if (!isServer) exitWith {};
 
 #define RANDOM_BETWEEN(START,END) (START + floor random ((END - START) + 1))
 
-private ["_box", "_boxType", "_boxItems", "_item", "_qty", "_mag"];
+private ["_box", "_location", "_crateItems", "_item", "_qty", "_mag", "_crate", "_crateselect"];
 _box = _this select 0;
-_boxType = _this select 1;
+_location = _this select 1;
 
-_box setVariable [call vChecksum, true];
 
-_box allowDamage false; // No more fucking busted crates
-_box setVariable ["A3W_inventoryLockR3F", true, true];
-
-// Clear pre-existing cargo first
-clearBackpackCargoGlobal _box;
-clearMagazineCargoGlobal _box;
-clearWeaponCargoGlobal _box;
-clearItemCargoGlobal _box;
 
 if (_boxType == "mission_USSpecial2") then { _boxType = "mission_USSpecial" };
 
 switch (_boxType) do
 {
-	//Mission Crates
+	
 	
 	case "mission_USLaunchers": // default wasteland launchers loot crate
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//Weapons
@@ -46,7 +49,19 @@ switch (_boxType) do
 	};
 	case "mission_USSpecial": //default wasteland generic loot crate
 	{
-		_boxItems =
+		_crateselect = ["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//Weapons
@@ -68,7 +83,19 @@ switch (_boxType) do
 	};
 	case "Launchers_Tier_2":
 	{
-		_boxItems =
+		_crateselect = ["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			//Weapons
 			["wep", "launch_RPG32_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,4)],
@@ -83,7 +110,19 @@ switch (_boxType) do
 	};
 	case "Diving_Gear":
 	{
-		_boxItems =
+		_crateselect = ["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			//Weapons
@@ -105,13 +144,24 @@ switch (_boxType) do
 	};
 	case "General_supplies":
 	{
-	_boxitems =
+		_crateselect = ["Box_IND_Support_F", "Box_NATO_Support_F", "Box_EAST_Support_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			//first aid, medkit, tookit, gps, rangefinder, etc
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["itm", "FirstAidKit", RANDOM_BETWEEN(5,6)],
 			["wep", ["Rangefinder", "Laserdesignator"], RANDOM_BETWEEN(3,5)],
-			["wep", ["hgun_Pistol_heavy_01_F", "hgun_Pistol_heavy_01_MRD_F", "hgun_Pistol_heavy_02_F", "hgun_Pistol_heavy_02_Yorris_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(3,5)],
 			["itm", "Medikit", RANDOM_BETWEEN(2,3)],
 			["itm", "Toolkit", RANDOM_BETWEEN(2,3)],
 			["itm", "Laserbatteries", RANDOM_BETWEEN(0,4)],
@@ -124,8 +174,20 @@ switch (_boxType) do
 	};
 	Case "GEVP":
 	{
+		_crateselect = ["CargoNet_01_box_F", "B_supplyCrate_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
 
-		_boxItems =
+		_crateItems =
 		[
 			//Weapons
 			["wep", ["srifle_EBR_ARCO_pointer_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(10,12)],
@@ -163,7 +225,19 @@ switch (_boxType) do
 
 	case "Ammo_Drop":
 	{
-		_boxitems =
+		_crateselect = ["Box_NATO_Ammo_F", "Box_IND_Ammo_F", "Box_EAST_Ammo_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["mag",["16Rnd_9x21_Mag", "30Rnd_9x21_Mag", "6Rnd_45ACP_Cylinder", "11Rnd_45ACP_Mag", "9Rnd_45ACP_Mag"], RANDOM_BETWEEN(15,20)],
@@ -193,7 +267,19 @@ switch (_boxType) do
 	};
 	case "mission_AALauncher":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["launch_Titan_F", "launch_O_Titan_F", "launch_I_Titan_F"], RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(10,20)]
@@ -201,7 +287,19 @@ switch (_boxType) do
 	};
 	case "mission_CompactLauncher":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["launch_Titan_short_F", "launch_O_Titan_short_F", "launch_I_Titan_short_F"], RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(10,20)],
@@ -210,7 +308,19 @@ switch (_boxType) do
 	};
 	case "mission_snipers":
 	{
-		_boxItems =
+		_crateselect = ["Box_Nato_WpsSpecial_F", "Box_IND_WpsSpecial_F", "Box_EAST_WpsSpecial_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F", "srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(4,6)],
@@ -233,7 +343,19 @@ switch (_boxType) do
 	};
 	case "mission_RPG":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", "launch_RPG32_F", RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(8,12)],
@@ -242,7 +364,19 @@ switch (_boxType) do
 	};
 	case "mission_PCML":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", "NLAW_F", RANDOM_BETWEEN(1,5), RANDOM_BETWEEN(10,20)]
@@ -250,7 +384,19 @@ switch (_boxType) do
 	};
 	case "mission_Pistols":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_Wps_F", "Box_NATO_Wps_F", "Box_EAST_Wps_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", "hgun_P07_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
@@ -268,7 +414,19 @@ switch (_boxType) do
 	};
 	case "mission_AssRifles":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_Wps_F", "Box_NATO_Wps_F", "Box_EAST_Wps_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["arifle_Mk20C_plain_F", "arifle_Mk20C_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", "arifle_Mk20_GL_plain_F", "arifle_Mk20_GL_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
@@ -284,7 +442,19 @@ switch (_boxType) do
 	};
 	case "mission_SMGs":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_Wps_F", "Box_NATO_Wps_F", "Box_EAST_Wps_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", "hgun_PDW2000_F", RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
@@ -296,7 +466,19 @@ switch (_boxType) do
 	};
 	case "mission_LMGs":
 	{
-		_boxItems =
+		_crateselect = ["Box_Nato_WpsSpecial_F", "Box_IND_WpsSpecial_F", "Box_EAST_WpsSpecial_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["arifle_MX_SW_F", "arifle_MX_SW_Black_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(5,10)],
@@ -307,100 +489,25 @@ switch (_boxType) do
 	};
 	case "Medical":
 	{
-		_boxItems =
+		_crateselect = ["Box_IND_Support_F", "Box_NATO_Support_F", "Box_EAST_Support_F"] call BIS_fnc_selectRandom;
+		_crate = createVehicle [_crateselect] getMarkerPos _location;
+		_crate = setDir random 360;
+		_crate = allowDamage false;
+		_crate setVariable [call vChecksum, true];
+		_crate allowDamage false; // No more fucking busted crates
+		_crate setVariable ["A3W_inventoryLockR3F", true, true];
+		// Clear pre-existing cargo first
+		clearBackpackCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		_crateItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["itm", "Medikit", RANDOM_BETWEEN(10,20)],
 			["itm", "FirstAidKit", RANDOM_BETWEEN(10,20)]
 		];
 	};
-	case "airdrop_Rifles":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			//weapons
-			["wep", ["arifle_MXC_F", "arifle_MXC_Black_F", "arifle_MX_F", "arifle_MX_Black_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F"], 2,6],
-			["wep", ["arifle_Mk20C_plain_F", "arifle_Mk20C_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", "arifle_Mk20_GL_plain_F", "arifle_Mk20_GL_F"], 2,6],
-			["wep", ["arifle_TRG20_F", "arifle_TRG21_F", "arifle_TRG21_GL_F"], 2,6],
-			["wep", ["arifle_Katiba_C_F", "arifle_Katiba_F", "arifle_Katiba_GL_F"], 2,6],
-			//items
-			["itm", ["bipod_01_F_blk", "bipod_02_F_hex"], 3]
-		];
-	};
-	case "airdrop_LMGs":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			//weapons
-			["wep", ["MMG_02_black_F", "MMG_01_hex_F"], 2,5],
-			["wep", ["arifle_MX_SW_F", "arifle_MX_SW_Black_F"], 2,5],
-			["wep", "LMG_Mk200_F", 2,5],
-			["wep", "LMG_Mk200_F", 2,5],
-			["wep", "LMG_Zafir_F", 2,5],
-			["wep", ["MMG_01_tan_F", "MMG_01_hex_F"], 2,5],
-			//items
-			["itm", ["bipod_01_F_blk", "bipod_02_F_hex"], 2]
-		];
-	};
-	case "airdrop_Snipers":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			//weapons
-			["wep", ["srifle_GM6_LRPS_F", "srifle_GM6_camo_LRPS_F"], 2,0],
-			["wep", ["srifle_LRR_LRPS_F", "srifle_LRR_camo_LRPS_F"], 2,10],
-			["wep", "Laserdesignator", 4],
-			//Mags
-			["mag", "5Rnd_127x108_APDS_Mag", 20],
-			//Items
-			["itm", "optic_tws", 4]
-		];
-	};
-	case "airdrop_Launchers":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			//Weapons
-			["wep", "launch_RPG32_F", 2,4],
-			["wep", "launch_NLAW_F", 2,4],
-			["wep", "launch_Titan_short_F", 2,4],
-			["wep", "launch_Titan_F", 2,4],
-			//Mags
-			["mag", "RPG32_HE_F", 8],
-			["mag", "Titan_AP", 8]
-		];
-	};
-	case "airdrop_Medical":
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			["itm", "Medikit", 15],
-			["itm", "FirstAidKit", 20]
-		];
-	};
-	case "airdrop_Diving_Gear": //diving equipment for squad of 2
-	{
-		_boxItems =
-		[
-			// Item type, Item class(es), # of items, # of magazines per weapon
-			//weapons
-			["wep", "arifle_SDAR_F", 2,5],
-			//items
-			["itm", "V_RebreatherB", 2],
-			["itm", "V_RebreatherIR", 2],
-			["itm", "V_RebreatherIA", 2],
-			["itm", "G_Diving", 2],
-			["itm", "U_B_Wetsuit", 2],
-			["itm", "U_O_Wetsuit", 2],
-			["itm", "U_I_Wetsuit", 2],
-			["bac", ["B_Carryall_cbr", "B_Carryall_khk", "B_Carryall_oli", "B_Carryall_mcamo", "B_Carryall_oucamo"], 2]
-		];
-	};
 };
 
-[_box, _boxItems] call processItems;
+[_box, _crateItems] call processItems;
