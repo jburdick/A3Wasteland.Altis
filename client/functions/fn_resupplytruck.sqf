@@ -47,7 +47,7 @@ if (isEngineOn _vehicle) exitWith
 	mutexScriptInProgress = false;
 };
 
-/*
+
 if ((!isnull (gunner _vehicle)) && !(_vehicle isKindOf "StaticWeapon")) then {
 	_vehicle vehicleChat format ["Gunner must be out of seat for service! Get gunner out in 20s."];
 	sleep 10;
@@ -59,7 +59,7 @@ if ((!isnull (gunner _vehicle)) && !(_vehicle isKindOf "StaticWeapon")) then {
 		mutexScriptInProgress = false;
 	};
 };
-*/
+
 
 _resupplyThread = [_truck, _unit, _vehicle, _price] spawn
 {
@@ -171,14 +171,14 @@ _resupplyThread = [_truck, _unit, _vehicle, _price] spawn
 	sleep (REARM_TIME_SLICE / 2);
 	call _checkAbortConditions;
 
-	/*_engineOn = false;
+	_engineOn = false;
 
 	if !(_vehicle isKindOf "Air") then
 	{
 		_engineOn = isEngineOn _vehicle;
 		_vehicle engineOn false;
 		_unit action ["EngineOff", _vehicle];
-	};*/
+	};
 
 	{
 		_turretCfg = _x select 0;
