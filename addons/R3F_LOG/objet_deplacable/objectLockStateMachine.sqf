@@ -92,7 +92,7 @@ switch (_lockState) do
 		{
 			_object setVariable ["objectLocked", true, true];
 			_object setVariable ["ownerUID", getPlayerUID player, true];
-			_object allowDamage false;
+			_object addEventHandler ["HandleDamage", {}];
 
 			pvar_manualObjectSave = netId _object;
 			publicVariableServer "pvar_manualObjectSave";
@@ -184,7 +184,7 @@ switch (_lockState) do
 			_object setVariable ["ownerUID", nil, true];
 			_object setVariable ["baseSaving_hoursAlive", nil, true];
 			_object setVariable ["baseSaving_spawningTime", nil, true];
-			_object allowDamage true;
+			_object addEventHandler ["HandleDamage", {_this select 2}];;
 
 			pvar_manualObjectSave = netId _object;
 			publicVariableServer "pvar_manualObjectSave";
