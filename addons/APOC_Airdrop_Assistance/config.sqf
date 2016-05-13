@@ -10,7 +10,8 @@ APOC_AA_VehOptions =
 ["Hunter HMG", 			"B_MRAP_01_hmg_F", 			50000, 	"vehicle"],
 ["MH-9 Hummingbird", 	"B_Heli_Light_01_F", 		50000, 	"vehicle"],
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	150000, "vehicle"],
-["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		175000, "vehicle"]
+["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		175000, "vehicle"],
+["Speedboat HMG", 		"C_Boat_Civil_police_01_F",	5000,	"vehicle"]
 ];
 
 APOC_AA_SupOptions =
