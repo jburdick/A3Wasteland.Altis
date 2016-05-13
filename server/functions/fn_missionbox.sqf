@@ -510,4 +510,4 @@ switch (_boxType) do
 	};
 };
 
-[_box, _crateItems] call processItems;
+[_crate, _crateItems] call processItems;
