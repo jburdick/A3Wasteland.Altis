@@ -122,8 +122,8 @@ drn_fnc_DynamicWeather_ShowDebugTextLocal = {
 		player sideChat (_this select 0);
 	};
 
-	_minutes = floor (diag_tickTime / 60);
-	_seconds = floor (diag_tickTime - (_minutes * 60));
+	_minutes = floor (time / 60);
+	_seconds = floor (time - (_minutes * 60));
 	diag_log ((str _minutes + ":" + str _seconds) + " Debug: " + (_this select 0));
 };
 
@@ -143,7 +143,7 @@ if (_debug) then {
 };
 
 drn_DynamicWeatherEventArgs = []; // [current overcast, current fog, current rain, current weather change ("OVERCAST", "FOG" or ""), target weather value, time until weather completion (in seconds), current wind x, current wind z]
-drn_AskServerDynamicWeatherEventArgs = [];
+drn_AskServerDynamicWeatherEventArgs = []; // []
 
 drn_fnc_overcastOdds = { ((9/8) * (_this ^ (5/2))) min 1 }; // https://www.desmos.com/calculator/sp7zsxckhn
 drn_fnc_fogOdds =
@@ -157,43 +157,59 @@ drn_fnc_fogOdds =
 };
 
 drn_fnc_DynamicWeather_SetWeatherLocal = {
-	params ["_currentOvercast", "_currentFog", "_currentRain", "_currentWeatherChange", "_targetWeatherValue", "_timeUntilCompletion", "_currentWindX", "_currentWindY"];
+	params ["_currentOvercast", "_currentFog", "_currentRain", "_currentWeatherChange", "_targetWeatherValue", "_timeUntilCompletion", "_currentWindX", "_currentWindZ"];
 
-	if (_currentFog isEqualType []) then {
-		_currentFog = _currentFog select 0;
-	};
-
-	/*if (typeName _currentFog == "ARRAY") then {
+	if (typeName _currentFog == "ARRAY") then {
 		_currentFog set [0, (_currentFog select 0) max (_currentRain / 4)];
 	}
-	else {*/
+	else {
 		_currentFog = _currentFog max (_currentRain / 4);
-	//};
+	};
 
 	// Set current weather values
-	if (isNil "drn_JIPWeatherSynced") then { 0 setOvercast _currentOvercast };
-	0 setFog [_currentFog, 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
-	drn_var_DynamicWeather_Rain = _currentRain;
-	setWind [_currentWindX, _currentWindY, true];
+	if (date select 2 > 4 && date select 2 < 19) then
+	{
+		0 setOvercast _currentOvercast;
+	}
+	else
+	{
+		0 setOvercast (0.1 max _currentOvercast);
+	};
 
-	if (isNil "drn_JIPWeatherSynced") then
+	0 setFog [_currentFog max (_currentRain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
+	drn_var_DynamicWeather_Rain = _currentRain;
+	setWind [_currentWindX, _currentWindZ, true];
+
+	if (!isNil "drn_JIPWeatherSync") then
 	{
 		forceWeatherChange;
-		drn_JIPWeatherSynced = true;
+		drn_JIPWeatherSync = nil;
 	};
 
 	// Set forecast
 	if (_currentWeatherChange == "OVERCAST") then {
-		_timeUntilCompletion setOvercast (_targetWeatherValue call drn_fnc_overcastOdds);
-		//5 setFog [_currentRain / 4, 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably // Quick hack to ensure fog goes away regularly
+		//if (date select 2 > 4 && date select 2 < 18) then
+		//{
+			_timeUntilCompletion setOvercast (_targetWeatherValue call drn_fnc_overcastOdds);
+		/*}
+		else
+		{
+			_timeUntilCompletion setOvercast (0.1 max (_targetWeatherValue call drn_fnc_overcastOdds));
+		};*/
+		5 setFog [_currentRain / 4, 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably // Quick hack to ensure fog goes away regularly
+		_currentFog
 	};
 	if (_currentWeatherChange == "FOG") then {
 		if (typeName _targetWeatherValue == "ARRAY") then {
 			_targetWeatherValue = _targetWeatherValue select 0;
 		};
-		(3600 * timeMultiplier * abs (overcast - _currentOvercast)) setOvercast _currentOvercast;
 		_timeUntilCompletion setFog [_targetWeatherValue max (_currentRain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
 	};
+};
+
+if (!isDedicated) then
+{
+	drn_JIPWeatherSync = true;
 };
 
 if (!isServer) then {
@@ -203,13 +219,12 @@ if (!isServer) then {
 
 	waitUntil {!isNil "drn_var_DynamicWeather_ServerInitialized"};
 
-	drn_AskServerDynamicWeatherEventArgs = [clientOwner];
+	drn_AskServerDynamicWeatherEventArgs = [true];
 	publicVariable "drn_AskServerDynamicWeatherEventArgs";
 };
 
 if (isServer) then {
 	drn_fnc_DynamicWeather_SetWeatherAllClients = {
-		params [["_owner",0,[0]]];
 		private ["_timeUntilCompletion", "_currentWeatherChange"];
 
 		_timeUntilCompletion = (drn_DynamicWeather_WeatherChangeCompletedTime - drn_DynamicWeather_WeatherChangeStartedTime) * timeMultiplier;
@@ -221,28 +236,19 @@ if (isServer) then {
 		};
 
 		drn_DynamicWeatherEventArgs = [overcast, fog, drn_var_DynamicWeather_Rain, _currentWeatherChange, drn_DynamicWeather_WeatherTargetValue, _timeUntilCompletion, drn_DynamicWeather_WindX, drn_DynamicWeather_WindY];
-
-		if (_owner > 0) then
-		{
-			_owner publicVariableClient "drn_DynamicWeatherEventArgs";
-		}
-		else
-		{
-			publicVariable "drn_DynamicWeatherEventArgs";
-		};
-
+		publicVariable "drn_DynamicWeatherEventArgs";
 		drn_DynamicWeatherEventArgs spawn drn_fnc_DynamicWeather_SetWeatherLocal;
 	};
 
 	drn_DynamicWeather_CurrentWeatherChange = "";
 	drn_DynamicWeather_WeatherTargetValue = 0;
-	drn_DynamicWeather_WeatherChangeStartedTime = diag_tickTime;
-	drn_DynamicWeather_WeatherChangeCompletedTime = diag_tickTime;
+	drn_DynamicWeather_WeatherChangeStartedTime = time;
+	drn_DynamicWeather_WeatherChangeCompletedTime = time;
 	drn_DynamicWeather_WindX = _initialWind param [0, nil, [0]];
 	drn_DynamicWeather_WindY = _initialWind param [1, nil, [0]];
 
 	"drn_AskServerDynamicWeatherEventArgs" addPublicVariableEventHandler {
-		(_this select 1) spawn drn_fnc_DynamicWeather_SetWeatherAllClients;
+		[] spawn drn_fnc_DynamicWeather_SetWeatherAllClients;
 	};
 
 	if (_initialFog == -1) then {
@@ -253,7 +259,7 @@ if (isServer) then {
 		_initialFog = _minimumFog max _initialFog min _maximumFog;
 	};
 
-	//0 setFog [_initialFog max (rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
+	0 setFog [_initialFog max (rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
 
 	if (_initialOvercast == -1) then {
 		_initialOvercast = _minimumOvercast + random (_maximumOvercast - _minimumOvercast);
@@ -282,7 +288,7 @@ if (isServer) then {
 
 	drn_var_DynamicWeather_Rain = _initialRain;
 	0 setRain drn_var_DynamicWeather_Rain;
-	0 setFog [_initialFog max (drn_var_DynamicWeather_Rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
+	0 setFog [fog max (drn_var_DynamicWeather_Rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
 
 
 	if (isNil "drn_DynamicWeather_WindX") then {
@@ -299,10 +305,10 @@ if (isServer) then {
 
 	setWind [drn_DynamicWeather_WindX, drn_DynamicWeather_WindY, true];
 
-	if (isNil "drn_JIPWeatherSynced") then
+	if (!isNil "drn_JIPWeatherSync") then
 	{
 		forceWeatherChange;
-		drn_JIPWeatherSynced = true;
+		drn_JIPWeatherSync = nil;
 	};
 
 	sleep 0.05;
@@ -364,9 +370,9 @@ if (isServer) then {
 
 				drn_DynamicWeather_WeatherTargetValue = [_fogValue, 0.0, 0]; //_fogDecay, _fogBase];
 
-				drn_DynamicWeather_WeatherChangeStartedTime = diag_tickTime;
+				drn_DynamicWeather_WeatherChangeStartedTime = time;
 				_weatherChangeTimeSek = _minWeatherChangeTimeMin * 60 + random ((_maxWeatherChangeTimeMin - _minWeatherChangeTimeMin) * 60);
-				drn_DynamicWeather_WeatherChangeCompletedTime = diag_tickTime + _weatherChangeTimeSek;
+				drn_DynamicWeather_WeatherChangeCompletedTime = time + _weatherChangeTimeSek;
 
 				if (_debug) then {
 					["Weather forecast: Fog " + str drn_DynamicWeather_WeatherTargetValue + " in " + str round (_weatherChangeTimeSek / 60) + " minutes."] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
@@ -404,9 +410,9 @@ if (isServer) then {
 				};
 				*/
 
-				drn_DynamicWeather_WeatherChangeStartedTime = diag_tickTime;
+				drn_DynamicWeather_WeatherChangeStartedTime = time;
 				_weatherChangeTimeSek = _minWeatherChangeTimeMin * 60 + random ((_maxWeatherChangeTimeMin - _minWeatherChangeTimeMin) * 60);
-				drn_DynamicWeather_WeatherChangeCompletedTime = diag_tickTime + _weatherChangeTimeSek;
+				drn_DynamicWeather_WeatherChangeCompletedTime = time + _weatherChangeTimeSek;
 
 				if (_debug) then {
 					["Weather forecast: Overcast " + str drn_DynamicWeather_WeatherTargetValue + " in " + str round (_weatherChangeTimeSek / 60) + " minutes."] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
@@ -424,7 +430,7 @@ if (isServer) then {
 				};
 			};
 
-			[] call drn_fnc_DynamicWeather_SetWeatherAllClients;
+			call drn_fnc_DynamicWeather_SetWeatherAllClients;
 
 			SLEEP_REALTIME(_weatherChangeTimeSek);
 		};
@@ -443,7 +449,7 @@ if (isServer) then {
 				publicVariable "drn_var_DynamicWeather_Rain";
 			};
 
-			_nextRainEventTime = diag_tickTime;
+			_nextRainEventTime = time;
 			_forceStop = false;
 
 			if (_keepRain) then
@@ -456,7 +462,7 @@ if (isServer) then {
 
 				if (overcast > 0.75) then {
 
-					if (diag_tickTime >= _nextRainEventTime) then {
+					if (time >= _nextRainEventTime) then {
 
 						// At every rain event time, start or stop rain with 50% probability
 						if (random 100 < _rainIntervalRainProbability && !_forceStop) then {
@@ -474,7 +480,7 @@ if (isServer) then {
 
 						// Pick a time for next rain change
 						_rainTimeSec = _minRainIntervalTimeMin * 60 + random ((_maxRainIntervalTimeMin - _minRainIntervalTimeMin) * 60);
-						_nextRainEventTime = diag_tickTime + _rainTimeSec;
+						_nextRainEventTime = time + _rainTimeSec;
 
 						if (_debug) then {
 							["Rain set to " + str drn_var_DynamicWeather_rain + " for " + str (_rainTimeSec / 60) + " minutes"] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
@@ -491,7 +497,7 @@ if (isServer) then {
 						};
 					};
 
-					_nextRainEventTime = diag_tickTime;
+					_nextRainEventTime = time;
 					_forceStop = false;
 				};
 
@@ -506,7 +512,6 @@ if (isServer) then {
 	};
 };
 
-// is actually rain thread (#2)
 if (!isNil "drn_DynamicWeather_FogThread") then { terminate drn_DynamicWeather_FogThread };
 drn_DynamicWeather_FogThread = [_rainIntervalRainProbability, _debug] spawn
 {
@@ -528,7 +533,7 @@ drn_DynamicWeather_FogThread = [_rainIntervalRainProbability, _debug] spawn
 	};
 
 	0 setRain _rain;
-	//0 setFog [fog max (_rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
+	0 setFog [fog max (_rain / 4), 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
 	sleep 0.1;
 
 	while {true} do {
@@ -551,11 +556,11 @@ drn_DynamicWeather_FogThread = [_rainIntervalRainProbability, _debug] spawn
 			5 setRain _rain;
 		};
 
-		/*_tempFog = fog max (_rain / 4);
+		_tempFog = fog max (_rain / 4);
 		if (_tempFog > fog + 0.001 || _tempFog < fog - 0.001) then
 		{
 			(5 * timeMultiplier) setFog [_tempFog, 0.0, 0]; // do not change fog decay/base otherwise the fog level will vary unpredictably
-		};*/
+		};
 
 		SLEEP_REALTIME(10);
 	};

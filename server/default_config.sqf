@@ -15,6 +15,9 @@ A3W_uavControl = "group";          // Restrict connection to UAVs based on owner
 // Timers
 BoS_coolDownTimer = 10800;           // Baselocker hacking timer
 
+// Store NPC additions
+License_Price = 10;                // Devider for the store price (e.g. a vehicle that is $10.000 in the store will change ownership for $1.000 when set to 10)
+Vehicle_Distance = 50;             // Maximum distance the vehicle can be from the store NPC.
 
 // Time settings
 A3W_startHour = 05;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
@@ -64,7 +67,7 @@ A3W_timeSaving = 0;                // Save and restore in-game clock time betwee
 A3W_weatherSaving = 0;             // Save and restore weather settings between server restarts (0 = no, 1 = yes)
 A3W_combatAbortDelay = 60;         // If playerSaving = 1, delay in seconds for which to disable abort and respawn buttons after firing or being shot (0 = none)
 A3W_purchasedVehicleSaving = 1;    // Save vehicles purchased at vehicle stores between server restarts (0 = no, 1 = yes)
-A3W_missionVehicleSaving = 0;      // Save vehicles captured from missions between server restarts (0 = no, 1 = yes)
+A3W_missionVehicleSaving = 1;      // Save vehicles captured from missions between server restarts (0 = no, 1 = yes)
 A3W_baseSaving = 1;                // Save locked base parts between server restarts (0 = no, 1 = yes)
 A3W_boxSaving = 1;                 // Save locked weapon crates and their contents between server restarts (0 = no, 1 = yes)
 A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magazines between server restarts (0 = no, 1 = yes)

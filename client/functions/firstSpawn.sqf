@@ -164,16 +164,11 @@ if (["A3W_remoteBombStoreRadius", 0] call getPublicVar > 0) then
 					if (_x getVariable ["storeNPC_setupComplete", false] && {_bomb distance _x < _minDist}) exitWith
 					{
 						deleteVehicle _bomb;
-						[player, _mag] call fn_forceAddItem;
+						player addMagazine _mag;
 						playSound "FD_CP_Not_Clear_F";
 						titleText [format ["You are not allowed to place explosives within %1m of a store.\nThe explosive has been re-added to your inventory.", _minDist], "PLAIN DOWN", 0.5];
 					};
 				} forEach entities "CAManBase";
-
-				if (mineActive _bomb) then
-				{
-					_bomb setVariable ["ownerUID", getPlayerUID player, true];
-				};
 			};
 		};
 	}];

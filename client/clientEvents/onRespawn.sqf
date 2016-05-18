@@ -65,10 +65,10 @@ _player call playerSetup;
 
 call playerSpawn;
 
-if !(pvar_PlayerTeamKiller isEqualTo []) then
+if (isPlayer pvar_PlayerTeamKiller) then
 {
 	pDialogTeamkiller = pvar_PlayerTeamKiller;
-	pvar_PlayerTeamKiller = [];
+	pvar_PlayerTeamKiller = objNull;
 
 	[] execVM "client\functions\createTeamKillDialog.sqf";
 };

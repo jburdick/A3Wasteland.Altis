@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "patrolMissionDefines.sqf";
 
-private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3", "_box4", "_randomBox1", "_randomBox2", "_randomBox3", "_Case1", "_Case2", "_Case3"];
+private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3", "_randomBox1", "_randomBox2", "_randomBox3", "_Case1", "_Case2", "_Case3"];
 
 _setupVars =
 {
@@ -182,24 +182,47 @@ _successExec =
 	};
 
 	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box4Choices", "_box3Select","_box4Select", "_case1select", "_case2select", "_case3select"];
-/*
+
 	//Weapons
-	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
+	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
 	//Special Weapons
-	_box2Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
+	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
 	//Special
-	_box3Choices = ["Launchers_Tier_2"] call BIS_fnc_selectRandom;
+	_box2Choices = ["Launchers_Tier_2"];
 	//Supplies
-	_box4Choices = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"] call BIS_fnc_selectRandom;
+	_box3Choices = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"];
 
-	
-	_box1 = [_box1Choices, _marker] call fn_missionbox;
-	_box2 = [_box2Choices, _marker] call fn_missionbox;
-	_box3 = [_box3Choices, _marker] call fn_missionbox;
-	_box4 = [_box3Choices, _marker] call fn_missionbox;
+	_box1Select = _box1Choices call BIS_fnc_selectRandom;
+	_box2Select = _box2Choices call BIS_fnc_selectRandom;
+	_box3Select = _box3Choices call BIS_fnc_selectRandom;
+	_box4Select = _box4Choices call BIS_fnc_selectRandom;
+	_case1seclect = [_box1Select, _marker] call fn_missionbox;
+	_case2seclect = [_box1Select, _marker] call fn_missionbox;
+	_case3seclect = [_box1Select, _marker] call fn_missionbox;
 
-*/
-	
+/*
+	//This Doesn't work
+	//Special Crate
+	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
+	_Case1 = [[_randomBox1] call fn_choosebox];
+	_box1 = createVehicle [_Case1] getMarkerPos _marker;
+    [_box1, _randomBox1] call fn_refillbox;
+	_box1 allowDamage false;
+
+	//weapon crate
+	_randomBox2 = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
+	_Case2 = [[_randomBox2] call fn_choosebox];
+	_box2 = createVehicle [_Case2] getMarkerPos _marker;
+   [_box2, _randomBox2] call fn_refillbox;
+	_box2 allowDamage false;
+
+	//Supply Crate
+	_randomBox3 = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"] call BIS_fnc_selectRandom;
+	_Case3 = [[_randomBox3] call fn_choosebox];
+	_box3 = createVehicle [_Case3] getMarkerPos _marker;
+    [_box3, _randomBox3] call fn_refillbox;
+	_box3 allowDamage false;
+
 	//This works
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;
@@ -216,7 +239,7 @@ _successExec =
 	_box4 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
     [_box4,"mission_snipers"] call fn_refillbox;
 	_box4 allowDamage false;
-
+*/
 	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
 };
 

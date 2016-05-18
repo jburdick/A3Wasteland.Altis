@@ -94,10 +94,6 @@ _exclObjectIDs = [];
 			_obj allowDamage true;
 			_obj setDamage _damage;
 			_obj setVariable ["allowDamage", true];
-		}
-		else
-		{
-			_obj setVariable ["allowDamage", false, true];
 		};
 
 		if (!isNil "_owner") then
