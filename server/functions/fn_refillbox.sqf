@@ -314,6 +314,14 @@ switch (_boxType) do
 			["itm", "FirstAidKit", RANDOM_BETWEEN(10,20)]
 		];
 	};
+	case "mission_Field_Engineer": 
+	{	
+		_boxItems = 
+		[
+			["itm", "Toolkit", 30],
+			["itm", "MineDetector", 20]
+		];
+	};
 	case "airdrop_Rifles":
 	{
 		_boxItems =
@@ -379,8 +387,8 @@ switch (_boxType) do
 		_boxItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
-			["itm", "Medikit", 15],
-			["itm", "FirstAidKit", 20]
+			["itm", "Medikit", 30],
+			["itm", "FirstAidKit", 40]
 		];
 	};
 	case "airdrop_Diving_Gear": //diving equipment for squad of 2
@@ -398,7 +406,15 @@ switch (_boxType) do
 			["itm", "U_B_Wetsuit", 2],
 			["itm", "U_O_Wetsuit", 2],
 			["itm", "U_I_Wetsuit", 2],
-			["bac", ["B_Carryall_cbr", "B_Carryall_khk", "B_Carryall_oli", "B_Carryall_mcamo", "B_Carryall_oucamo"], 2]
+			["bac", ["B_Carryall_cbr", "B_Carryall_khk", "B_Carryall_oli", "B_Carryall_mcamo"], 2]
+		];
+	};
+	case "airdrop_Field_Engineer": 
+	{	
+		_boxItems = 
+		[
+			["itm", "Toolkit", 30],
+			["itm", "MineDetector", 20]
 		];
 	};
 };

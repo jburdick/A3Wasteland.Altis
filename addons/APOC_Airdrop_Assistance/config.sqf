@@ -11,7 +11,7 @@ APOC_AA_VehOptions =
 ["MH-9 Hummingbird", 	"B_Heli_Light_01_F", 		50000, 	"vehicle"],
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	150000, "vehicle"],
 ["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		175000, "vehicle"],
-["Speedboat HMG", 		"C_Boat_Civil_police_01_F",	5000,	"vehicle"]
+["Speedboat HMG", 		"C_Boat_Civil_01_F",		5000,	"vehicle"]
 ];
 
 APOC_AA_SupOptions =
@@ -21,7 +21,8 @@ APOC_AA_SupOptions =
 ["Rifles", 				"airdrop_DLC_Rifles", 			45000,	"supply"],
 ["LMGs", 				"airdrop_DLC_LMGs", 			45000,	"supply"],
 ["Dive Gear", 			"airdrop_Diving_Gear", 			25000,	"supply"],
-["Medical", 			"airdrop_Medical", 				1500,	"supply"],
+["Medical", 			"airdrop_Medical", 				5000,	"supply"],
+["Field Engineer",		"airdrop_Field_Engineer", 		5000,	"supply"],
 // ["Test",				"mission_USLaunchers",			1,		"supply"],
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
