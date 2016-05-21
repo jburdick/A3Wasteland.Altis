@@ -180,7 +180,7 @@ _successExec =
 		_cash setVariable["cmoney",10000,true];
 		_cash setVariable["owner","world",true];
 	};
-
+/*
 	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box4Choices", "_box3Select","_box4Select", "_case1select", "_case2select", "_case3select"];
 
 	//Weapons
@@ -200,7 +200,7 @@ _successExec =
 	_case2seclect = [_box1Select, _marker] call fn_missionbox;
 	_case3seclect = [_box1Select, _marker] call fn_missionbox;
 
-/*
+
 	//This Doesn't work
 	//Special Crate
 	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
@@ -222,7 +222,7 @@ _successExec =
 	_box3 = createVehicle [_Case3] getMarkerPos _marker;
     [_box3, _randomBox3] call fn_refillbox;
 	_box3 allowDamage false;
-
+*/
 	//This works
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;
@@ -239,7 +239,7 @@ _successExec =
 	_box4 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
     [_box4,"mission_snipers"] call fn_refillbox;
 	_box4 allowDamage false;
-*/
+
 	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
 };
 
