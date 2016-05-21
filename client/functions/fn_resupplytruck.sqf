@@ -245,6 +245,9 @@ _resupplyThread = [_truck, _unit, _vehicle, _price] spawn
 	} forEach _turretsArray;
 
 	_vehicle setVehicleAmmoDef 1; // Full ammo reset just to be sure
+	_vehicle setAmmoCargo 1;
+	_vehicle setRepairCargo 1;
+	_vehicle setFuelCargo 1;
 
 	if (damage _vehicle > 0.001) then
 	{
