@@ -5,14 +5,14 @@
 
 private ["_price", "_playerMoney"];
 
-#define RADIUS 30
+#define RADIUS 100
 _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
 _objects = nearestObjects [position player, ["thingX", "Building", "ReammoBox_F"], RADIUS];
 _ownedObjects = {typeName _x == "OBJECT" && {!(isNil {_x getVariable "ownerUID"})} && {_x getVariable "objectLocked"}} count _objects;
 //_ownedObjects = {typeName _x == "OBJECT" && {_x getVariable ["ownerUID",""] == getPlayerUID player}} count _objects; // Use this if you want only owned objects to be relocked.
 
 _playerMoney = player getVariable "cmoney";
-_price = _ownedObjects * 100;
+_price = _ownedObjects * 1;
 _playerMoney = player getVariable "cmoney";
 
 
@@ -41,7 +41,7 @@ if (count reLockedObjectMapMarkers > 0) then {
 if (!isNil "_price") then 
 {
 	// Add total sell value to confirm message
-	_confirmMsg = format ["Re locking %1 baseparts/objects will cost you $%2<br/>Range is %3 meters, all relocked objects will be marked on map<br/>Objects will not load in after next restart if older than %4 hours.", _ownedObjects, _price, RADIUS, _maxLifetime];
+	_confirmMsg = format ["Re locking %1 baseparts/objects will cost you $%2<br/>Range is %3 meters, all relocked objects will be marked on map", _ownedObjects, _price, RADIUS, _maxLifetime];
 
 	// Display confirm message
 	if ([parseText _confirmMsg, "Confirm", "OK", true] call BIS_fnc_guiMessage) then
