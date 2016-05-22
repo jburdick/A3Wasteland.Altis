@@ -11,15 +11,15 @@ APOC_AA_VehOptions =
 ["MH-9 Hummingbird", 	"B_Heli_Light_01_F", 		50000, 	"vehicle"],
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	150000, "vehicle"],
 ["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		175000, "vehicle"],
-["Speedboat HMG", 		"C_Boat_Civil_01_F",		5000,	"vehicle"]
+["Speedboat", 			"C_Boat_Civil_01_F",		5000,	"vehicle"]
 ];
 
 APOC_AA_SupOptions =
 [// ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
 ["Launchers", 			"airdrop_Launchers", 			60000,	"supply"],
 ["Sniper Rifles", 		"airdrop_Snipers", 				50000,	"supply"],
-["Rifles", 				"airdrop_DLC_Rifles", 			45000,	"supply"],
-["LMGs", 				"airdrop_DLC_LMGs", 			45000,	"supply"],
+["Rifles", 				"airdrop_Rifles", 				45000,	"supply"],
+["LMGs", 				"airdrop_LMGs", 				45000,	"supply"],
 ["Dive Gear", 			"airdrop_Diving_Gear", 			25000,	"supply"],
 ["Medical", 			"airdrop_Medical", 				5000,	"supply"],
 ["Field Engineer",		"airdrop_Field_Engineer", 		5000,	"supply"],
@@ -28,5 +28,6 @@ APOC_AA_SupOptions =
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
 ["Food",				"Land_Sacks_goods_F",		5000, 	"picnic"],
 ["Water",				"Land_BarrelWater_F",		5000, 	"picnic"],
-["Fuel", 				"FlexibleTank_01_sand_F",	5000,	"picnic"]
+["Fuel", 				"FlexibleTank_01_sand_F",	5000,	"picnic"],
+["Vehicle Ammo",		"Box_NATO_AmmoVeh_F",		125000, "picnic"]
 ];
