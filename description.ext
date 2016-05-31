@@ -76,7 +76,7 @@ loadScreen = "mapConfig\Loading.jpg";
 
 #include "addons\BoS\dialog\BoS_mainMenu.hpp"
 
-#include "addons\Door\dialog\Door_mainMenu.hpp"
+
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 
 
