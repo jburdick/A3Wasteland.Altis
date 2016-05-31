@@ -215,5 +215,13 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 					_object2 setVariable ["water",50, true];
 					_object2
 				};
+				case "FlexibleTank_01_sand_F": {
+					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+					_object2
+				};
+				case "Box_NATO_AmmoVeh_F": {
+					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+					_object2
+				};
 			};
 		};
