@@ -9,7 +9,7 @@
 
 if (!isServer) exitWith {};
 
-#define RANDOM_BETWEEN(START,END) (START + floor random ((END - START) + 1))
+#define RANDOM_BETWEEN(START,END) (START + floor random ((END - START)))
 
 private ["_box", "_location", "_crateItems", "_item", "_qty", "_mag", "_crate", "_crateselect"];
 _box = _this select 0;
@@ -28,9 +28,8 @@ switch (_boxType) do
 		_crateselect = ["Box_IND_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_EAST_WpsLaunch_F"] call BIS_fnc_selectRandom;
 		_crate = createVehicle [_crateselect] getMarkerPos _location;
 		_crate = setDir random 360;
-		_crate = allowDamage false;
 		_crate setVariable [call vChecksum, true];
-		_crate allowDamage false; // No more fucking busted crates
+		_crate allowDamage false;
 		_crate setVariable ["A3W_inventoryLockR3F", true, true];
 		// Clear pre-existing cargo first
 		clearBackpackCargoGlobal _crate;
