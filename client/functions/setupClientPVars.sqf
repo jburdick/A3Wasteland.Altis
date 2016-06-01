@@ -22,5 +22,6 @@
 	["pvar_ejectCorpse", { PVAL spawn fn_ejectCorpse }],
 
 	["pvar_territoryActivityHandler", { PVAR_TARGET(_value call A3W_fnc_territoryActivityHandler) }],
+	["pvar_territoryActivityHandler_2", { PVAR_TARGET(_value call A3W_fnc_territoryActivityHandler_2) }],
 	["pvar_updateTerritoryMarkers", { PVAR_TARGET(_value call updateTerritoryMarkers) }]
 ];
