@@ -28,13 +28,13 @@ if (_uid call isAdmin) then
 	_playerData = _playerListBox lbData _index;
 
 	{
-		if (getPlayerUID _x == _playerData) exitWith
-		{
+		if (str(_x) == _playerData) then {
 			_target = _x;
+			_check = 1;
 		};
-	} forEach allPlayers;
+	} forEach playableUnits;
 
-	if (isNil "_target" || {isNull _target}) exitWith{};
+	if (_check == 0) exitWith{};
 
 	switch (_switch) do
 	{
@@ -74,7 +74,7 @@ if (_uid call isAdmin) then
 		};
 		case 2: //Slay
 		{
-			if (damage _target < 1) then { _target setDamage 1 }; // if check required to prevent "Killed" EH from getting triggered twice
+			_target setDamage 1;
 			["PlayerMgmt_Slay", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
 		};
 		case 3: //Unlock Team Switcher
