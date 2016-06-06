@@ -144,8 +144,7 @@ FAR_Drag =
 	}
 	else
 	{
-		FAR_isDragging_EH = _target;
-		publicVariable "FAR_isDragging_EH";
+		["FAR_isDragging_EH", _target] remoteExecCall ["FAR_fnc_public_EH", _target];
 	};
 
 	// Add release action and save its id so it can be removed
@@ -245,7 +244,7 @@ FAR_Slay_Target =
 
 	if ([_target] call FAR_Check_Slay) then
 	{
-		_target setDamage 1;
+		["FAR_slayTarget", [_target, player]] remoteExecCall ["FAR_fnc_public_EH", _target];
 	};
 }
 call mf_compile;
@@ -255,53 +254,90 @@ call mf_compile;
 ////////////////////////////////////////////////
 FAR_public_EH =
 {
-	if(count _this < 2) exitWith {};
+	params ["_EH", "_value"];
 
-	_EH  = _this select 0;
-	_value = _this select 1;
 
-	// FAR_isDragging
-	if (_EH == "FAR_isDragging_EH") then
+	switch (_EH) do
+
+
+
+
+
 	{
-		if (local _value) then
-		{
-			_value setDir 180;
-			_value spawn // fix for hovering on release
-			{
-				_unit = _this;
-				waitUntil {sleep 0.1; !alive _unit || vehicle _unit != _unit || isNull attachedTo _unit};
+		case "FAR_isDragging_EH":
 
-				if (alive _unit && vehicle _unit == _unit && isNull attachedTo _unit) then
+		{
+			if (local _value) then
+
+
+			{
+				_value setDir 180;
+				_value spawn // fix for hovering on release
 				{
-					_unit setVelocity velocity _unit;
+					_unit = _this;
+					waitUntil {sleep 0.1; !alive _unit || vehicle _unit != _unit || isNull attachedTo _unit};
+
+					if (alive _unit && vehicle _unit == _unit && isNull attachedTo _unit) then
+					{
+						_unit setVelocity velocity _unit;
+					};
 				};
 			};
 		};
-	};
 
-	// FAR_deathMessage
-	if (_EH == "FAR_deathMessage") then
-	{
-		_names = _value select 0;
-		_unitName = _names select 0;
-		_killerName = _names param [1, nil];
-		_unit = objectFromNetId (_value select 1);
-
-		if (alive _unit) then
+		case "FAR_deathMessage":
 		{
-			if (isNil "_killerName") then
+			_value params [["_unit",objNull,[objNull]], ["_unitName",[],[[]]], ["_killerName",[],[[]]], ["_friendlyFire",false,[false]]];
+
+			if (alive _unit && !(_unitName isEqualTo [])) then
 			{
-				systemChat format ["%1 was injured", toString _unitName];
+				if (_killerName isEqualTo []) then
+				{
+					systemChat format ["%1 was injured", toString _unitName];
+				}
+				else
+
+				{
+					systemChat format ["%1 injured %2%3", toString _killerName, toString _unitName, [""," (friendly fire)"] select _friendlyFire];
+
+				};
+			};
+		};
+
+
+		case "FAR_slayTarget":
+		{
+			_value params [["_victim",objNull,[objNull]], ["_killer",objNull,[objNull]]];
+
+
+
+
+
+
+
+
+			if (local _victim) then
+
+
+			{
+				if (alive _victim && {!isNull _killer && _killer distance _victim <= FAR_Max_Distance}) then
+				{
+					_victim setVariable ["A3W_deathCause_local", ["slay",nil,_killer]];
+					_victim setDamage 1;
+				};
+
 			}
 			else
 			{
-				systemChat format ["%1 was injured by %2", toString _unitName, toString _killerName];
+				_this remoteExecCall ["FAR_fnc_public_EH", _victim];
+
 			};
 		};
 	};
 }
 call mf_compile;
 
+FAR_fnc_public_EH = FAR_public_EH;
 ////////////////////////////////////////////////
 // Suicide Action Check
 ////////////////////////////////////////////////
@@ -360,10 +396,11 @@ call mf_compile;
 ////////////////////////////////////////////////
 FAR_Check_Stabilize =
 {
-	private "_target";
-	_target = call FAR_FindTarget;
 
-	(!IS_MEDIC(player) || !([player, _target] call A3W_fnc_isFriendly)) && FAR_Check_Dragging && {!STABILIZED(_target) && ({_x in ["FirstAidKit","Medikit"]} count items player > 0)}
+	private _target = call FAR_FindTarget;
+
+	// do not show Stabilize if Revive is shown, unless target is enemy
+	(!IS_MEDIC(player) || !([player, _target] call A3W_fnc_isFriendly)) && FAR_Check_Dragging && {!STABILIZED(_target) && !(["FirstAidKit","Medikit"] arrayIntersect items player isEqualTo [])}
 }
 call mf_compile;
 
@@ -372,7 +409,10 @@ call mf_compile;
 ////////////////////////////////////////////////
 FAR_Check_Revive =
 {
-	IS_MEDIC(player) && FAR_Check_Dragging
+	private _target = call FAR_FindTarget;
+
+	// do not show Revive if target is enemy
+	IS_MEDIC(player) && [player, _target] call A3W_fnc_isFriendly && FAR_Check_Dragging
 }
 call mf_compile;
 
@@ -382,7 +422,7 @@ call mf_compile;
 FAR_Check_Slay =
 {
 	private "_target";
-	_target = if (_this isEqualType []) then { param [0,objNull,[objNull]] } else { call FAR_FindTarget }; // if not array then it's an addAction condition check
+	private _target = if (_this isEqualType []) then { param [0,objNull,[objNull]] } else { call FAR_FindTarget }; // if not array then it's an addAction condition check
 
 	!([_target, player] call A3W_fnc_isFriendly) && FAR_Check_Dragging
 }

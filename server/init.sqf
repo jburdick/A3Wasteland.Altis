@@ -21,28 +21,43 @@ if (isServer) then
 	// Corpse deletion on disconnect if player alive and player saving on + inventory save
 	addMissionEventHandler ["HandleDisconnect",
 	{
-		_unit = _this select 0;
-		_id = _this select 1;
-		_uid = _this select 2;
-		_name = _this select 3;
+		params ["_unit", "_id", "_uid", "_name"];
+
+		if (isNil "A3W_serverSetupComplete") exitWith
+		{
+			deleteVehicle _unit;
+			false
+		};
 
 		diag_log format ["HandleDisconnect - %1 - alive: %2 - local: %3", [_name, _uid], alive _unit, local _unit];
 
 		if (alive _unit) then
 		{
-			if (!(_unit call A3W_fnc_isUnconscious) && {!isNil "isConfigOn" && {["A3W_playerSaving"] call isConfigOn}}) then
+			if (_unit call A3W_fnc_isUnconscious) then
 			{
-				if (!(_unit getVariable ["playerSpawning", true]) && getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "headlessclient") then
-				{
-					[_uid, [], [_unit, false] call fn_getPlayerData] spawn fn_saveAccount;
-				};
+				[_unit] spawn dropPlayerItems;
+				[_uid, "deathCount", 1] call fn_addScore;
+				_unit setVariable ["A3W_handleDisconnect_name", _name];
+				_unit setVariable ["A3W_deathCause_local", ["bleedout"]];
+				[_unit, objNull, objNull, true] call A3W_fnc_registerKillScore; // killer retrieved via FAR_killerPrimeSuspectData
+			}
+			else
+			{
+				if (["A3W_playerSaving"] call isConfigOn) then
 
-				deleteVehicle _unit;
+				{
+					if (!(_unit getVariable ["playerSpawning", true]) && getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "headlessclient") then
+					{
+						[_uid, [], [_unit, false] call fn_getPlayerData] spawn fn_saveAccount;
+					};
+
+					deleteVehicle _unit;
+				};
 			};
 		}
 		else
 		{
-			if (vehicle _unit != _unit && !isNil "fn_ejectCorpse") then
+			if (vehicle _unit != _unit) then
 			{
 				_unit spawn fn_ejectCorpse;
 			};
@@ -137,6 +152,8 @@ if (isServer) then
 		"A3W_hcObjCachingID",
 		"A3W_hcObjSaving",
 		"A3W_hcObjSavingID",
+		"A3W_disableBuiltInThermal",
+		"A3W_customDeathMessages",
 		"BoS_coolDownTimer",
 		"License_Price",
 		"Vehicle_Distance",
@@ -145,6 +162,12 @@ if (isServer) then
 
 	addMissionEventHandler ["PlayerConnected", fn_onPlayerConnected];
 	addMissionEventHandler ["PlayerDisconnected", fn_onPlayerDisconnected];
+
+	// Temp fix for https://forums.bistudio.com/topic/190773-mission-event-handlers-playerconnected-and-playerdisconnected-do-not-work/
+	["A3W_missionEH_fix", "onPlayerConnected", {}] call BIS_fnc_addStackedEventHandler;
+	["A3W_missionEH_fix", "onPlayerDisconnected", {}] call BIS_fnc_addStackedEventHandler;
+	["A3W_missionEH_fix", "onPlayerConnected"] call BIS_fnc_removeStackedEventHandler;
+	["A3W_missionEH_fix", "onPlayerDisconnected"] call BIS_fnc_removeStackedEventHandler;
 };
 
 _playerSavingOn = ["A3W_playerSaving"] call isConfigOn;
@@ -278,10 +301,10 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			{
 				waitUntil {scriptDone _this};
 
-				addMissionEventHandler ["PlayerConnected", { (_this select [1,3]) spawn fn_kickPlayerIfFlagged }];
+				addMissionEventHandler ["PlayerConnected", { _this spawn fn_kickPlayerIfFlagged }];
 
 				// force check for non-JIP players
-				{ waitUntil {!isNull player}; [player] remoteExec ["A3W_fnc_checkPlayerFlag", 2] } remoteExec ["call", -2];
+				{ waitUntil {!isNull player}; [player, didJIP] remoteExecCall ["A3W_fnc_checkPlayerFlag", 2] } remoteExec ["call", -2];
 			};
 		};
 	};

@@ -238,6 +238,10 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			{
 				_object call fn_manualVehicleSave;
 			};
+			if (_object isKindOf "AllVehicles") then
+			{
+				_object setOwner owner _player; // tentative workaround for exploding vehicles
+			};
 		};
 	};
 };

@@ -8,10 +8,14 @@
 
 if (!isServer) exitWith {};
 
-private ["_unit", "_killer", "_presumedKiller", "_scoreColumn", "_scoreValue", "_backpack"];
+params [["_unit",objNull,[objNull]], "", "", ["_deathCause",[],[[]]]]; // _unit, _killer, _presumedKiller, _deathCause
 
-_unit = _this select 0;
+if (alive _unit) exitWith {};
+
 _unit setVariable ["processedDeath", diag_tickTime];
+_unit setVariable ["A3W_deathCause_local", _deathCause];
+
+private _killer = (_this select [0,3]) call A3W_fnc_registerKillScore;
 
 // Remove player save on death
 if (isPlayer _unit && {["A3W_playerSaving"] call isConfigOn}) then
@@ -19,41 +23,7 @@ if (isPlayer _unit && {["A3W_playerSaving"] call isConfigOn}) then
 	(getPlayerUID _unit) call fn_deletePlayerSave;
 };
 
-_killer = if (count _this > 1) then { _this select 1 } else { objNull };
-_presumedKiller = if (count _this > 2) then { _this select 2 } else { objNull };
-
-if !(_killer isKindOf "Man") then { _killer = effectiveCommander _killer };
-
-// Score handling
-if (isPlayer _killer) then
-{
-	_enemyKill = !([_killer, _unit] call A3W_fnc_isFriendly);
-
-	if (isPlayer _unit) then
-	{
-		_scoreColumn = ["teamKills","playerKills"] select _enemyKill;
-		_scoreValue = 1;
-	}
-	else
-	{
-		_scoreColumn = "aiKills";
-		_scoreValue = [0,1] select _enemyKill;
-	};
-
-	[_killer, _scoreColumn, _scoreValue] call fn_addScore;
-
-	if (isPlayer _presumedKiller && _presumedKiller != _unit) then
-	{
-		[_presumedKiller, "playerKills", 0] call fn_addScore; // sync Steam score
-	};
-};
-
-if (isPlayer _unit) then
-{
-	[_unit, "deathCount", 1] call fn_addScore;
-};
-
-_backpack = unitBackpack _unit;
+private _backpack = unitBackpack _unit;
 
 if (!isNull _backpack) then
 {
@@ -69,21 +39,8 @@ if (vehicle _unit != _unit) then
 	}
 	else
 	{
-		pvar_ejectCorpse = _unit;
-		(owner _unit) publicVariableClient "pvar_ejectCorpse";
+		_unit remoteExec ["fn_ejectCorpse", _unit];
 	};
 };
 
-// Make NPCs drop Cash
-if (!isPlayer _unit) then
-{
-			_itemtype = ["Item","Land_Money_F"];
-			_item = createVehicle [_itemtype select 1, getpos _unit, [], 5, "None"];
-			_item setPos ([getPos _unit, 1, 3, 0, 0, 2000, 0] call BIS_fnc_findSafePos);
-			_item setDir random 360;
-			_cash = round(random 1000);
-			_item setVariable ["cmoney", _cash , true];
-			_item setVariable ["owner", "world", true];
-
-};
-if !(["G_Diving", goggles _unit] call fn_startsWith) then { removeGoggles _unit };
+//if !(["G_Diving", goggles _unit] call fn_startsWith) then { removeGoggles _unit };
