@@ -31,7 +31,6 @@ if (_uid call isAdmin) then
 		if (getPlayerUID _x == _playerData) exitWith
 		{
 			_target = _x;
-
 		};
 	} forEach allPlayers;
 
@@ -80,6 +79,7 @@ if (_uid call isAdmin) then
 				_target setVariable ["A3W_deathCause_remote", ["forcekill",serverTime], true];
 				_target setDamage 1;
 			};
+
 			["PlayerMgmt_Slay", format ["%1 (%2)", name _target, getPlayerUID _target]] call notifyAdminMenu;
 		};
 		case 3: //Unlock Team Switcher
