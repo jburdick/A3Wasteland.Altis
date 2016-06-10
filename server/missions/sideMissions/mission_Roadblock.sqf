@@ -12,7 +12,7 @@ private [ "_box1", "_barGate", "_bunker1","_bunker2","_obj1","_obj2"];
 _setupVars =
 {
 	_missionType = "Roadblock";
-	_reinforceChance = 75; // Chance of reinforcements being called
+	_reinforceChance = 0; // Chance of reinforcements being called
 	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
 	_maxReinforceGroups = 3; //maximum number of paradrop groups that will respond to call
 };

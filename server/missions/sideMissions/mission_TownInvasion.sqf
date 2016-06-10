@@ -31,7 +31,7 @@ _setupVars =
 	// 25% chance on AI trying to fit into a single building instead of spreading out
 	if (random 1 < 0.75) then { _fillEvenly = true } else { _fillEvenly = false };
 	
-	_reinforceChance = 75; // Chance of reinforcements being called
+	_reinforceChance = 0; // Chance of reinforcements being called
 	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
 	_maxReinforceGroups = 3; //maximum number of paradrop groups that will respond to call	
 };
