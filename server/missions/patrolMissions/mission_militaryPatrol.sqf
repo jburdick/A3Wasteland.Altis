@@ -28,7 +28,7 @@ _setupObjects =
 		["B_MRAP_01_hmg_F", "B_MBT_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MRAP_01_gmg_F"], // Medium Patrol
 		["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // Heavy Patrol
 		["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // AA Patrol
-		// ["B_APC_Tracked_01_CRV_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F"], // Route Clearance Patrol
+		["B_APC_Tracked_01_CRV_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_AA_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F"], // Route Clearance Patrol
 		// ["B_MBT_01_TUSK_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F", "B_MBT_01_arty_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_TUSK_F"], // Arty Patrol
 
 		//CSAT Patrols
@@ -180,49 +180,7 @@ _successExec =
 		_cash setVariable["cmoney",10000,true];
 		_cash setVariable["owner","world",true];
 	};
-/*
-	private ["_box1Choices", "_box1Select", "_box2Choices", "_box2Select", "_box3Choices","_box4Choices", "_box3Select","_box4Select", "_case1select", "_case2select", "_case3select"];
 
-	//Weapons
-	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
-	//Special Weapons
-	_box1Choices = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"];
-	//Special
-	_box2Choices = ["Launchers_Tier_2"];
-	//Supplies
-	_box3Choices = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"];
-
-	_box1Select = _box1Choices call BIS_fnc_selectRandom;
-	_box2Select = _box2Choices call BIS_fnc_selectRandom;
-	_box3Select = _box3Choices call BIS_fnc_selectRandom;
-	_box4Select = _box4Choices call BIS_fnc_selectRandom;
-	_case1seclect = [_box1Select, _marker] call fn_missionbox;
-	_case2seclect = [_box1Select, _marker] call fn_missionbox;
-	_case3seclect = [_box1Select, _marker] call fn_missionbox;
-
-
-	//This Doesn't work
-	//Special Crate
-	_randomBox1 = ["Launchers_Tier_2", "GEVP"] call BIS_fnc_selectRandom;
-	_Case1 = [[_randomBox1] call fn_choosebox];
-	_box1 = createVehicle [_Case1] getMarkerPos _marker;
-    [_box1, _randomBox1] call fn_refillbox;
-	_box1 allowDamage false;
-
-	//weapon crate
-	_randomBox2 = ["mission_USLaunchers","mission_USSpecial","mission_AALauncher", "mission_snipers", "mission_RPG", "mission_PCML", "mission_Pistols", "mission_AssRifles", "mission_SMGs", "mission_LMGs"] call BIS_fnc_selectRandom;
-	_Case2 = [[_randomBox2] call fn_choosebox];
-	_box2 = createVehicle [_Case2] getMarkerPos _marker;
-   [_box2, _randomBox2] call fn_refillbox;
-	_box2 allowDamage false;
-
-	//Supply Crate
-	_randomBox3 = ["Medical", "Ammo_Drop", "General_supplies", "Diving_Gear"] call BIS_fnc_selectRandom;
-	_Case3 = [[_randomBox3] call fn_choosebox];
-	_box3 = createVehicle [_Case3] getMarkerPos _marker;
-    [_box3, _randomBox3] call fn_refillbox;
-	_box3 allowDamage false;
-*/
 	//This works
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;

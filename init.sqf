@@ -88,7 +88,6 @@ if (hasInterface || isServer) then
 	//init 3rd Party Scripts
 	// [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
-	[] execVM "addons\laptop\init.sqf";
 	[] execVM "addons\vactions\functions.sqf";	
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 	if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};

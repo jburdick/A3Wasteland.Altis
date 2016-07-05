@@ -237,6 +237,12 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 [
 	// e.g. : "MyTowingVehicleClassName1", "MyTowingVehicleClassName2"
 	"Offroad_01_base_F",
+	"I_C_Offroad_02_unarmed_F",
+	"C_Offroad_02_unarmed_F",
+	"B_T_LSV_01_unarmed_F",
+	"B_T_LSV_01_armed_F",
+	"O_T_LSV_02_unarmed_F",
+	"O_T_LSV_02_armed_F",
 	"MRAP_01_base_F",
 	"MRAP_02_base_F",
 	"MRAP_03_base_F",
@@ -342,6 +348,13 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["Offroad_01_base_F", 60],
 	["Offroad_01_armed_base_F", 20],
 	["Offroad_01_repair_base_F", 20],
+	["I_C_Offroad_02_unarmed_F", 30],
+	["C_Offroad_02_unarmed_F", 30],
+	["B_T_LSV_01_unarmed_F", 40],
+	["B_T_LSV_01_armed_F", 30],
+	["O_T_LSV_02_unarmed_F", 40],
+	["O_T_LSV_02_armed_F", 30],
+	["B_T_UAV_03_F", 10],
 	["Van_01_base_F", 70],
 	["MRAP_01_base_F", 30],
 	["MRAP_02_base_F", 30],
@@ -375,7 +388,15 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["Heli_Attack_01_base_F", 0],
 	["Heli_Attack_02_base_F", 50],
 	["Land_Pod_Heli_Transport_04_box_F", 175],
-	["B_Slingload_01_Cargo_F", 1000]
+	["B_Slingload_01_Cargo_F", 1000],
+	["C_Plane_Civil_01_F", 10],
+	["C_Plane_Civil_01_Racing_F", 10],
+	["B_T_VTOL_01_infantry_F", 250],
+	["B_T_VTOL_01_vehicle_F", 500],
+	["B_T_VTOL_01_armed_F", 100],
+	["O_T_VTOL_02_infantry_F", 50],
+	["O_T_VTOL_02_vehicle_F", 100]
+	
 ];
 
 /**
@@ -405,6 +426,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Quadbike_01_base_F", 10],
 	["Rubber_duck_base_F", 10],
 	["SDV_01_base_F", 15],
+	["C_Scooter_Transport_01_F", 15],
 	["UAV_01_base_F", 2],
 	["Land_BagBunker_Large_F", 10],
 	["Land_BagBunker_Small_F", 5],
@@ -458,8 +480,14 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["UGV_01_base_F", 10],
 	["Hatchback_01_base_F", 20],
 	["SUV_01_base_F", 30],
-	["Offroad_01_base_F", 60],
-	["Van_01_base_F", 65],
+	["Offroad_01_base_F", 50],
+	["I_C_Offroad_02_unarmed_F", 40],
+	["C_Offroad_02_unarmed_F", 40],
+	["B_T_LSV_01_unarmed_F", 50],
+	["B_T_LSV_01_armed_F", 50],
+	["O_T_LSV_02_unarmed_F", 50],
+	["O_T_LSV_02_armed_F", 50],
+	["Van_01_base_F", 55],
 	["MRAP_01_base_F", 70],
 	["MRAP_02_base_F", 70],
 	["MRAP_03_base_F", 70],
@@ -489,7 +517,12 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["CamoNet_OPFOR_big_F", 10],
 	["ContainmentArea_01_sand_F", 10],
 	["Land_Medevac_HQ_V1_F", 50],
-
+	["Box_NATO_Uniforms_F", 2],
+	["Box_CSAT_Uniforms_F", 2],
+	["Box_AAF_Uniforms_F", 2],
+	["Box_AAF_Equip_F", 2],
+	["Box_CSAT_Equip_F", 2],
+	["Box_NATO_Equip_F", 2],
 	["Land_Shed_Big_F", 50],
 	["Land_LightHouse_F", 100],
 	["Land_Castle_01_tower_F", 75],
@@ -598,5 +631,18 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Cargo_House_V3_F",
 	"B_Slingload_01_Ammo_F",
 	"FlexibleTank_01_sand_F",
-	"StorageBladder_01_fuel_sand_F"
+	"StorageBladder_01_fuel_sand_F",
+	"Land_HBarrier_01_tower_green_F",
+	"Land_BagBunker_01_small_green_F",
+	"Land_BagBunker_01_large_green_F",
+	"Land_HBarrier_01_line_1_green_F",
+	"Land_HBarrier_01_line_3_green_F",
+	"Land_HBarrier_01_line_5_green_F",
+	"Land_HBarrier_01_wall_corridor_green_F",
+	"Land_HBarrier_01_big_4_green_F",
+	"Land_HBarrier_01_wall_4_green_F",
+	"Land_HBarrier_01_wall_6_green_F",
+	"Land_HBarrier_01_wall_corner_green_F",
+	"Land_HBarrier_01_big_tower_green_F"
+	
 ];

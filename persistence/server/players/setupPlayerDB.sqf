@@ -21,7 +21,6 @@ fn_kickPlayerIfFlagged = "persistence\server\players\fn_kickPlayerIfFlagged.sqf"
 A3W_fnc_checkPlayerFlag =
 {
 	params [["_player",objNull,[objNull]], ["_jip",true,[false]]];
-
 	[0, getPlayerUID _player, name _player, _jip, owner _player] spawn fn_kickPlayerIfFlagged;
 } call mf_compile;
 

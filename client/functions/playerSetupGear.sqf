@@ -22,7 +22,7 @@ if (_goggles != "") then { _player addGoggles _goggles };
 sleep 0.1;
 
 // Remove GPS
-//_player unlinkItem "ItemGPS";
+_player unlinkItem "ItemGPS";
 
 // Remove radio
 //_player unlinkItem "ItemRadio";
@@ -52,7 +52,7 @@ switch (true) do
 	};
 	case (["_engineer_", typeOf _player] call fn_findString != -1):
 	{
-		//_player addItem "MineDetector";
+		_player addItem "MineDetector";
 		_player addItem "Toolkit";
 	};
 	case (["_sniper_", typeOf _player] call fn_findString != -1):

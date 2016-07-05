@@ -256,20 +256,11 @@ FAR_public_EH =
 {
 	params ["_EH", "_value"];
 
-
 	switch (_EH) do
-
-
-
-
-
 	{
 		case "FAR_isDragging_EH":
-
 		{
 			if (local _value) then
-
-
 			{
 				_value setDir 180;
 				_value spawn // fix for hovering on release
@@ -296,41 +287,27 @@ FAR_public_EH =
 					systemChat format ["%1 was injured", toString _unitName];
 				}
 				else
-
 				{
 					systemChat format ["%1 injured %2%3", toString _killerName, toString _unitName, [""," (friendly fire)"] select _friendlyFire];
-
 				};
 			};
 		};
-
 
 		case "FAR_slayTarget":
 		{
 			_value params [["_victim",objNull,[objNull]], ["_killer",objNull,[objNull]]];
 
-
-
-
-
-
-
-
 			if (local _victim) then
-
-
 			{
 				if (alive _victim && {!isNull _killer && _killer distance _victim <= FAR_Max_Distance}) then
 				{
 					_victim setVariable ["A3W_deathCause_local", ["slay",nil,_killer]];
 					_victim setDamage 1;
 				};
-
 			}
 			else
 			{
 				_this remoteExecCall ["FAR_fnc_public_EH", _victim];
-
 			};
 		};
 	};
@@ -338,6 +315,7 @@ FAR_public_EH =
 call mf_compile;
 
 FAR_fnc_public_EH = FAR_public_EH;
+
 ////////////////////////////////////////////////
 // Suicide Action Check
 ////////////////////////////////////////////////
@@ -396,7 +374,6 @@ call mf_compile;
 ////////////////////////////////////////////////
 FAR_Check_Stabilize =
 {
-
 	private _target = call FAR_FindTarget;
 
 	// do not show Stabilize if Revive is shown, unless target is enemy
@@ -421,7 +398,6 @@ call mf_compile;
 ////////////////////////////////////////////////
 FAR_Check_Slay =
 {
-	private "_target";
 	private _target = if (_this isEqualType []) then { param [0,objNull,[objNull]] } else { call FAR_FindTarget }; // if not array then it's an addAction condition check
 
 	!([_target, player] call A3W_fnc_isFriendly) && FAR_Check_Dragging

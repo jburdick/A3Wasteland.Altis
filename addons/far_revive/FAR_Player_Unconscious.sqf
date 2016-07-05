@@ -84,7 +84,7 @@ _unit spawn
 		_unit setVariable ["FAR_killerSuspects", []];
 	};
 
-	// sleep 0.5;
+	//sleep 0.5;
 
 	if (UNCONSCIOUS(_unit) && alive _unit) then
 	{
@@ -119,7 +119,6 @@ if (FAR_EnableDeathMessages && (round difficultyOption "deathMessages" > 0 || ["
 	{
 		params ["_victim", "_killer"];
 
-
 		if (isPlayer _victim || FAR_Debugging) then
 		{
 			_msgArr = [_victim, toArray name _victim];
@@ -127,7 +126,6 @@ if (FAR_EnableDeathMessages && (round difficultyOption "deathMessages" > 0 || ["
 			if (!isNull _killer && {(isPlayer _killer || FAR_Debugging) && _killer != _victim}) then
 			{
 				_msgArr append [toArray name _killer, [_killer, _victim] call A3W_fnc_isFriendly];
-
 			};
 
 			[_victim, _msgArr] spawn
@@ -136,8 +134,6 @@ if (FAR_EnableDeathMessages && (round difficultyOption "deathMessages" > 0 || ["
 
 				waitUntil {!UNCONSCIOUS(_victim) || !alive _victim || _victim getVariable ["FAR_headshotHitTimeout", false]};
 				if (!alive _victim) exitWith {};
-
-
 
 				["FAR_deathMessage", _msgArr] remoteExecCall ["FAR_fnc_public_EH"];
 			};
@@ -201,7 +197,7 @@ _unit spawn
 					if (_pilot == _unit) then
 					{
 						_unit action ["UnlockVehicleControl", _veh];
-						[[_copilot, netId _veh], "A3W_fnc_copilotTakeControl", _copilot] call A3W_fnc_MP;
+						[_copilot, netId _veh] remoteExecCall ["A3W_fnc_copilotTakeControl", _copilot];
 					};
 
 					// Give control back to pilot if appropriate
@@ -309,6 +305,7 @@ while {UNCONSCIOUS(_unit) && diag_tickTime < _bleedOut} do
 			_unit setDamage 1;
 			_unit setOxygenRemaining 0;
 		};
+
 		if (_unit == player) then { FAR_cutTextLayer cutText ["", "PLAIN"] };
 	};
 
@@ -430,8 +427,8 @@ if (alive _unit && !UNCONSCIOUS(_unit)) then // Player got revived
 	// outside scheduler
 	_resetUnit = [_unit,
 	{
-		_this call FAR_Reset_Unit;
 		_this call FAR_Reset_Killer_Info;
+		_this call FAR_Reset_Unit;
 	}] execFSM "call.fsm";
 
 	waitUntil {completedFSM _resetUnit};

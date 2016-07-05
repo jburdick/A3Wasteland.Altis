@@ -19,6 +19,7 @@ private _markers = [];
 
 {
 	_x params ["_markerName", "", "_markerTeam"];
+
 	if !(_markerTeam in [sideUnknown,grpNull]) then
 	{
 		_markers pushBack [_markerName, _markerTeam];

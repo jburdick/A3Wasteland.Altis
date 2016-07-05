@@ -37,7 +37,7 @@ _obj2 = createVehicle ["I_GMG_01_high_F", _bargate modelToWorld [-8,-2,-4.1], []
 _bunker2 setDir _markerDir;
 
 	// NPC Randomizer
-_randomGroup = [createGroup1,createGroup2,createGroup3,createGroup4,createGroup5,createGroup6,createGroup7,createGroup8,createGroup9,createGroup10] call BIS_fnc_selectRandom;
+_randomGroup = [createGroup1, createGroup2, createGroup3, createGroup4, createGroup5] call BIS_fnc_selectRandom;
 _aiGroup  = createGroup CIVILIAN;
 [_aiGroup, _missionPos] spawn _randomGroup;
 
