@@ -8,18 +8,18 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1931;
+		nextID=1933;
 	};
 	class MarkerIDProvider
 	{
-		nextID=304;
+		nextID=306;
 	};
 	class Camera
 	{
-		pos[]={23757.277,30.651623,16091.566};
-		dir[]={-0.67192394,-0.32201365,-0.66698176};
-		up[]={-0.22854435,0.94673008,-0.22686358};
-		aside[]={-0.70450556,3.6554411e-007,0.70972466};
+		pos[]={23861.986,233.54869,16024.735};
+		dir[]={-0.30370265,-0.95170754,0.045421045};
+		up[]={-0.94122469,0.30704722,0.1407672};
+		aside[]={0.14791436,-8.7359513e-007,0.98902088};
 	};
 };
 binarizationWanted=0;
@@ -119,7 +119,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=301;
+		items=302;
 		class Item0
 		{
 			dataType="Group";
@@ -6108,7 +6108,7 @@ class Mission
 			name="RoadBlock_1";
 			type="Empty";
 			colorName="ColorOrange";
-			angle=44.138069;
+			angle=44.138062;
 			id=577;
 		};
 		class Item291
@@ -6139,7 +6139,7 @@ class Mission
 			name="RoadBlock_4";
 			type="Empty";
 			colorName="ColorOrange";
-			angle=239.01833;
+			angle=239.01831;
 			id=580;
 		};
 		class Item294
@@ -6206,20 +6206,23 @@ class Mission
 		};
 		class Item300
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={23713,18.355402,16052.906};
-				angles[]={0,3.9361203,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=591;
-			type="Land_Cargo_Tower_V3_F";
-			atlOffset=-0.021080971;
+			dataType="Marker";
+			position[]={13275.452,-185.97,29138.291};
+			name="TS";
+			text="TeamSpeak: ts3.bibgaming.com";
+			type="mil_dot";
+			colorName="ColorGreen";
+			id=1931;
+		};
+		class Item301
+		{
+			dataType="Marker";
+			position[]={13314.32,-185.97,29805.518};
+			name="Website";
+			text="Website: bibgaming.com";
+			type="mil_dot";
+			colorName="ColorBlue";
+			id=1932;
 		};
 	};
 };
