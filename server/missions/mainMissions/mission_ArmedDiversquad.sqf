@@ -22,7 +22,7 @@ _setupObjects =
 
 	_box1 = createVehicle ["Box_IND_WpsSpecial_F", _missionPos, [], 5, "None"];
 	_box1 setDir random 360;
-	[_box1, "mission_Main_A3snipers"] call fn_refillbox;
+	[_box1, "mission_snipers"] call fn_refillbox;
 
 	_box2 = createVehicle ["Box_NATO_WpsSpecial_F", _missionPos, [], 5, "None"];
 	_box2 setDir random 360;
@@ -51,7 +51,6 @@ _setupObjects =
 		["wep", "arifle_SDAR_F", 2],
 		["mag", "20Rnd_556x45_UW_mag", 8]
 	]] call processItems;
-
 	_aiGroup = createGroup CIVILIAN;
 	[_aiGroup, _missionPos] call createLargeDivers;
 

@@ -10,7 +10,7 @@ if (!isServer) exitWith {};
 
 params [["_unit",objNull,[objNull]], "", "", ["_deathCause",[],[[]]]]; // _unit, _killer, _presumedKiller, _deathCause
 
-_unit call A3W_fnc_setItemCleanup;
+_unit setVariable ["processedDeath", diag_tickTime];
 _unit setVariable ["A3W_deathCause_local", _deathCause];
 
 private _killer = (_this select [0,3]) call A3W_fnc_registerKillScore;
@@ -25,7 +25,7 @@ private _backpack = unitBackpack _unit;
 
 if (!isNull _backpack) then
 {
-	_backpack call A3W_fnc_setItemCleanup;
+	_backpack setVariable ["processedDeath", diag_tickTime];
 };
 
 // Eject corpse from vehicle once stopped
@@ -42,3 +42,16 @@ if (vehicle _unit != _unit) then
 };
 
 //if !(["G_Diving", goggles _unit] call fn_startsWith) then { removeGoggles _unit };
+
+// Make NPCs drop Cash
+if (!isPlayer _unit) then
+{
+			_itemtype = ["Item","Land_Money_F"];
+			_item = createVehicle [_itemtype select 1, getpos _unit, [], 5, "None"];
+			_item setPos ([getPos _unit, 1, 3, 0, 0, 2000, 0] call BIS_fnc_findSafePos);
+			_item setDir random 360;
+			_cash = round(random 1000);
+			_item setVariable ["cmoney", _cash , true];
+			_item setVariable ["owner", "world", true];
+
+};

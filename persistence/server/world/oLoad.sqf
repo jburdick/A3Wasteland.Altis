@@ -6,12 +6,13 @@
 
 #include "functions.sqf"
 
-private ["_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
+private ["_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_isCamonetEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
 
 _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
 
 _isWarchestEntry = { [_variables, "a3w_warchest", false] call fn_getFromPairs };
 _isBeaconEntry = { [_variables, "a3w_spawnBeacon", false] call fn_getFromPairs };
+_isCamonetEntry = { [_variables, "a3w_camoNet", false] call fn_getFromPairs };
 
 _worldDir = "persistence\server\world";
 _methodDir = format ["%1\%2", _worldDir, call A3W_savingMethodDir];
@@ -38,6 +39,7 @@ _exclObjectIDs = [];
 		{
 			case (call _isWarchestEntry):       { _warchestSavingOn };
 			case (call _isBeaconEntry):         { _beaconSavingOn };
+			case (call _isCamonetEntry):        { _camonetSavingOn };
 			case (_class call _isBox):          { _boxSavingOn };
 			case (_class call _isStaticWeapon): { _staticWeaponSavingOn };
 			default                             { _baseSavingOn };
@@ -78,11 +80,7 @@ _exclObjectIDs = [];
 		{
 			_obj allowDamage true;
 			_obj setDamage _damage;
-			_obj setVariable ["allowDamage", true, true];
-		}
-		else
-		{
-			_obj setVariable ["allowDamage", false, true];
+			_obj setVariable ["allowDamage", true];
 		};
 
 		if (!isNil "_owner") then
@@ -98,6 +96,9 @@ _exclObjectIDs = [];
 			{
 				case "side": { _value = _value call _strToSide };
 				case "R3F_Side": { _value = _value call _strToSide };
+				case "lockDown": { _value }; // BASE LOCKER
+				case "Lights": { _value }; // BASE LOCKER
+				case "password": { _value }; // BASE LOCKER - SAFE - DOOR
 				case "ownerName":
 				{
 					switch (typeName _value) do
@@ -118,6 +119,11 @@ _exclObjectIDs = [];
 			_obj setVariable [_var, _value, true];
 		} forEach _variables;
 
+		// Base locker lights
+		if (_obj getVariable ["lights",""] == "off") then
+		{
+			_obj setHit ["light_1_hit", 0.97];
+		};
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
@@ -132,6 +138,7 @@ _exclObjectIDs = [];
 				publicVariable "pvar_spawn_beacons";
 				true
 			};
+			case (_obj call _isCamonet): { true };
 			case (_locked < 1): { true };
 			default { false };
 		};
@@ -188,12 +195,6 @@ _exclObjectIDs = [];
 
 	if (!_valid && !isNil "_objectID") then
 	{
-		if (!isNil "_obj") then
-		{
-			_obj setVariable ["A3W_objectID", nil, true];
-		};
-
-		_exclVehicleIDs pushBack _vehicleID;
 		_exclObjectIDs pushBack _objectID;
 	};
 } forEach _objects;
