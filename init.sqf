@@ -28,6 +28,9 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 
+CHVD_allowTerrain = false;
+CHVD_maxView = 5000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 5000; // Set maximimum object view distance (default: 12000)
 // versionName = ""; // Set in STR_WL_WelcomeToWasteland in stringtable.xml
 
 if (isServer) then { X_Server = true };
@@ -87,6 +90,8 @@ if (hasInterface || isServer) then
 {
 	//init 3rd Party Scripts
 	// [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
+	[] execVM "addons\parking\functions.sqf";
+	[] execVM "addons\storage\functions.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
 	[] execVM "addons\vactions\functions.sqf";	
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
@@ -96,15 +101,14 @@ if (hasInterface || isServer) then
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
-	[] execVM "addons\vsave\vsfunctions.sqf";
 	[] execVM "addons\stickyCharges\init.sqf";
 	//if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
 
 // Remove line drawings from map
-(createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
+/*(createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
 [
 	"!triggerActivated thisTrigger", 
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
-];
+];*/

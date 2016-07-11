@@ -57,6 +57,12 @@ A3W_atmEditorPlacedOnly = 0;       // Only allow access via ATMs placed from the
 A3W_atmMapIcons = 1;               // Draw small icons on the map that indicate ATM locations (0 = no, 1 = yes)
 A3W_atmRemoveIfDisabled = 1;       // Remove all ATMs from map if A3W_atmEnabled is set to 0 (0 = no, 1 = yes)
 
+// Not currently implemented, soon
+A3W_atmBounties = 1;
+A3W_bountyMax = 100000;
+A3W_bountyMin = 1000;
+A3W_bountyFee = 50;
+A3W_bountyKillsLifetime = 3*24;
 // Persistence settings
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
@@ -78,7 +84,13 @@ A3W_objectLifetime = 14*24;         // Maximum lifetime in hours for saved objec
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 7*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
-
+A3W_mineSaving = 1;                // Save placed mines between server restarts (0 = no, 1 = yes)
+A3W_mineLifetime = 2*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
+A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
+A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
+A3W_privateParkingLimit = 2;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
+A3W_privateParkingCost = 10000;     // Cost to retrieve an individual vehicle from private parking
+A3W_vehicleLocking = 1;            // Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 // iniDB settings
 PDB_PlayerFileID = "A3W_";         // Player savefile prefix (if you run multiple servers, keep it the same for all of them)
 PDB_ObjectFileID = "A3W_";         // Object savefile prefix (if you run multiple servers, change it to a unique value for each server)
@@ -102,6 +114,8 @@ A3W_extDB_RconCommands = "KICK-ADDBAN";	// List of dash-separated RCON commands 
 A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;            // ID of the headless client in charge of object caching (1 or 2)
+A3W_hcObjCleanup = 0;              // Enable headless client server cleanup (0 = no, 1 = yes)
+A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
 A3W_hcObjSaving = 1;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
 A3W_hcObjSavingID = 2;             // ID of the headless client in charge of object saving (1 or 2)
 

@@ -80,7 +80,11 @@ _exclObjectIDs = [];
 		{
 			_obj allowDamage true;
 			_obj setDamage _damage;
-			_obj setVariable ["allowDamage", true];
+			_obj setVariable ["allowDamage", true, true];
+		}
+		else
+		{
+			_obj setVariable ["allowDamage", false, true];
 		};
 
 		if (!isNil "_owner") then
@@ -195,6 +199,12 @@ _exclObjectIDs = [];
 
 	if (!_valid && !isNil "_objectID") then
 	{
+		if (!isNil "_obj") then
+		{
+			_obj setVariable ["A3W_objectID", nil, true];
+		};
+
+		_exclVehicleIDs pushBack _vehicleID;
 		_exclObjectIDs pushBack _objectID;
 	};
 } forEach _objects;

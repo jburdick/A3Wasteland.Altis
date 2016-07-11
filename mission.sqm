@@ -8,18 +8,22 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1933;
+		nextID=1950;
 	};
 	class MarkerIDProvider
 	{
 		nextID=306;
 	};
+	class LayerIndexProvider
+	{
+		nextID=2;
+	};
 	class Camera
 	{
-		pos[]={23861.986,233.54869,16024.735};
-		dir[]={-0.30370265,-0.95170754,0.045421045};
-		up[]={-0.94122469,0.30704722,0.1407672};
-		aside[]={0.14791436,-8.7359513e-007,0.98902088};
+		pos[]={3969.7546,6.3541689,15071.754};
+		dir[]={0.57451838,-0.19368765,0.79527456};
+		up[]={0.11342514,0.98105896,0.15700918};
+		aside[]={0.81062514,1.4033867e-007,-0.58560461};
 	};
 };
 binarizationWanted=0;
@@ -58,7 +62,7 @@ class AddonsMetaData
 		class Item2
 		{
 			className="A3_Structures_F_Households";
-			name="Arma 3 Alpha - Houses";
+			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
@@ -72,14 +76,14 @@ class AddonsMetaData
 		class Item4
 		{
 			className="A3_Structures_F";
-			name="Arma 3 Alpha - Buildings and structures";
+			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
 		class Item5
 		{
 			className="A3_Structures_F_EPC";
-			name="Arma 3 Win Episode - Buildings and structures";
+			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
@@ -119,7 +123,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=302;
+		items=303;
 		class Item0
 		{
 			dataType="Group";
@@ -2994,10 +2998,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11533.004,19.740152,9433.5977};
+						position[]={11528.619,23.759048,9426.3359};
+						angles[]={0,0.93692034,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3005,12 +3010,14 @@ class Mission
 					};
 					id=183;
 					type="C_man_1_1_F";
+					atlOffset=3.7124577;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=182;
+			atlOffset=3.7124577;
 		};
 		class Item39
 		{
@@ -3024,7 +3031,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={20786.578,35.680283,6807.9385};
+						position[]={20781.352,39.66573,6801.0933};
+						angles[]={0,1.096895,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3054,7 +3062,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={18087.299,25.085295,15245.854};
+						position[]={18083.506,28.767622,15245.422};
+						angles[]={0,2.3348024,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3084,10 +3093,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9268.7627,120.79516,15868.989};
+						position[]={9261.2695,121.30144,15862.267};
+						angles[]={0,1.2357638,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3095,12 +3105,14 @@ class Mission
 					};
 					id=189;
 					type="C_man_1_1_F";
+					atlOffset=0.42575073;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=188;
+			atlOffset=0.42575073;
 		};
 		class Item42
 		{
@@ -3114,10 +3126,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4565.4165,299.6936,21384.443};
+						position[]={4567.6738,302.89752,21382.887};
+						angles[]={0,4.0087185,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3125,12 +3138,14 @@ class Mission
 					};
 					id=191;
 					type="C_man_1_1_F";
+					atlOffset=3.2431946;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=190;
+			atlOffset=3.2431946;
 		};
 		class Item43
 		{
@@ -3144,7 +3159,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3366.886,2.6616757,13206.822};
+						position[]={3367.4666,2.9858134,13202.177};
+						angles[]={0,5.6444974,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3155,12 +3171,14 @@ class Mission
 					};
 					id=193;
 					type="C_man_1_1_F";
+					atlOffset=9.2506409e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=192;
+			atlOffset=9.2506409e-005;
 		};
 		class Item44
 		{
@@ -3174,7 +3192,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16708.83,18.713705,12779.289};
+						position[]={16707.084,19.05442,12780.548};
+						angles[]={0,0.7209065,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3204,7 +3223,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={25786.891,20.234783,21354.904};
+						position[]={25789.121,24.173183,21363.559};
+						angles[]={0,3.9461143,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3215,12 +3235,14 @@ class Mission
 					};
 					id=197;
 					type="C_man_1_1_F";
+					atlOffset=0.00014686584;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=196;
+			atlOffset=0.00014686584;
 		};
 		class Item46
 		{
@@ -3234,10 +3256,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9435.292,125.51241,20267.066};
+						position[]={9436.3906,126.08245,20266.604};
+						angles[]={0,1.1776069,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3245,12 +3268,14 @@ class Mission
 					};
 					id=199;
 					type="C_man_1_1_F";
+					atlOffset=0.52937317;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=198;
+			atlOffset=0.52937317;
 		};
 		class Item47
 		{
@@ -3264,7 +3289,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={26712.592,20.400131,24601.951};
+						position[]={26714.281,21.095295,24599.186};
+						angles[]={0,0.6260314,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3294,10 +3320,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={22958.713,4.925653,18879.021};
+						position[]={22960.816,8.8349247,18878.441};
+						angles[]={0,3.8531859,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3305,12 +3332,14 @@ class Mission
 					};
 					id=203;
 					type="C_man_1_1_F";
+					atlOffset=3.9276509;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=202;
+			atlOffset=3.9276509;
 		};
 		class Item49
 		{
@@ -3324,7 +3353,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={20761.709,28.230583,7264.3013};
+						position[]={20756.125,28.551964,7276.2295};
+						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3354,7 +3384,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14482.604,18.865522,16330.717};
+						position[]={14491.195,19.257435,16333.705};
+						angles[]={0,3.8467257,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3384,7 +3415,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3971.4854,4.7555971,15072.104};
+						position[]={3971.3311,4.8812075,15073.705};
+						angles[]={0,3.1379342,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -3395,14 +3427,12 @@ class Mission
 					};
 					id=209;
 					type="C_man_1_1_F";
-					atlOffset=8.0108643e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=208;
-			atlOffset=8.0108643e-005;
 		};
 		class Item52
 		{
@@ -6207,22 +6237,202 @@ class Mission
 		class Item300
 		{
 			dataType="Marker";
-			position[]={13275.452,-185.97,29138.291};
-			name="TS";
-			text="TeamSpeak: ts3.bibgaming.com";
-			type="mil_dot";
-			colorName="ColorGreen";
-			id=1931;
-		};
-		class Item301
-		{
-			dataType="Marker";
 			position[]={13314.32,-185.97,29805.518};
 			name="Website";
 			text="Website: bibgaming.com";
 			type="mil_dot";
 			colorName="ColorBlue";
 			id=1932;
+		};
+		class Item301
+		{
+			dataType="Marker";
+			position[]={13275.452,1.8753896e+017,29138.289};
+			name="TS";
+			text="TeamSpeak:IP: 104.243.37.146";
+			type="mil_dot";
+			colorName="ColorGreen";
+			id=1931;
+			atlOffset=1.8753896e+017;
+		};
+		class Item302
+		{
+			dataType="Layer";
+			name="VanillaLayer";
+			class Entities
+			{
+				items=16;
+				class Item0
+				{
+					dataType="Marker";
+					position[]={3989.3848,62.143944,17547.477};
+					name="Parking1";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1934;
+					atlOffset=32.785923;
+				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={3959.8848,60.300026,17517.477};
+					name="Parking1_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=36.060287;
+					id=1935;
+					atlOffset=38.289627;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={23153.385,52.365932,19965.977};
+					name="Parking2";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1936;
+					atlOffset=38.490044;
+				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={23176.885,52.610626,19979.477};
+					name="Parking2_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=315.77444;
+					id=1937;
+					atlOffset=38.491165;
+				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={20233.885,82.475922,8856.9756};
+					name="Parking3";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1938;
+					atlOffset=32.456512;
+				};
+				class Item5
+				{
+					dataType="Marker";
+					position[]={20255.385,80.060539,8833.4756};
+					name="Parking3_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=231.83937;
+					id=1939;
+					atlOffset=38.469536;
+				};
+				class Item6
+				{
+					dataType="Marker";
+					position[]={12433.885,58.747929,15840.476};
+					name="Parking4";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1940;
+					atlOffset=33.207062;
+				};
+				class Item7
+				{
+					dataType="Marker";
+					position[]={12466.385,57.625889,15856.976};
+					name="Parking4_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=172.21471;
+					id=1941;
+					atlOffset=38.539314;
+				};
+				class Item8
+				{
+					dataType="Marker";
+					position[]={4162.8848,65.537933,14045.976};
+					name="Parking5";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1942;
+					atlOffset=38.512154;
+				};
+				class Item9
+				{
+					dataType="Marker";
+					position[]={4164.8848,64.953949,14013.476};
+					name="Parking5_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=47.329494;
+					id=1943;
+					atlOffset=38.493042;
+				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={10744.885,58.629242,12139.476};
+					name="Parking6";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1944;
+					atlOffset=33.128544;
+				};
+				class Item11
+				{
+					dataType="Marker";
+					position[]={10788.885,56.759224,12153.476};
+					name="Parking6_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=215.59122;
+					id=1945;
+					atlOffset=38.713524;
+				};
+				class Item12
+				{
+					dataType="Marker";
+					position[]={4912.8848,69.119949,11132.476};
+					name="Parking7";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1946;
+					atlOffset=32.380375;
+				};
+				class Item13
+				{
+					dataType="Marker";
+					position[]={4913.3848,72.737984,11190.476};
+					name="Parking7_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=180.06848;
+					id=1947;
+					atlOffset=38.284359;
+				};
+				class Item14
+				{
+					dataType="Marker";
+					position[]={8560.8848,223.0966,18171.477};
+					name="Parking8";
+					type="Empty";
+					colorName="ColorBlack";
+					id=1948;
+					atlOffset=33.370331;
+				};
+				class Item15
+				{
+					dataType="Marker";
+					position[]={8549.3848,220.53984,18190.977};
+					name="Parking8_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=200.78293;
+					id=1949;
+					atlOffset=38.711334;
+				};
+			};
+			id=1933;
+			atlOffset=-14.285049;
 		};
 	};
 };

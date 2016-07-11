@@ -14,7 +14,7 @@ private ["_convoyVeh", "_veh1", "_createVehicle", "_vehicles", "_leader", "_spee
 _setupVars =
 {
 	_missionType = "Rogue NATO SF Team";
-	_locationsArray = SFConvoyPaths;
+	_locationsArray = LandConvoyPaths;
 	
 	_reinforceChance = 0; // Chance of reinforcements being called
 	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
