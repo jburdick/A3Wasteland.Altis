@@ -15,9 +15,6 @@ _setupVars =
 {
 	_missionType = "Truck Convoy";
 	_locationsArray = LandConvoyPaths;
-	_reinforceChance = 20; // Chance of reinforcements being called
-	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 2; //maximum number of paradrop groups that will respond to call	
 };
 
 _setupObjects =
@@ -52,6 +49,7 @@ _setupObjects =
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
+		_vehicle setVariable ["A3W_skipAutoSave", true, true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -134,7 +132,7 @@ _successExec =
 	// Mission completed
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 2, "None"];
 	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call fn_refillbox;
+	[_box1, "mission_USSpecial2"] call fn_refillbox;
 
 	_box2 = createVehicle ["Box_East_WpsSpecial_F", _lastPos, [], 2, "None"];
 	_box2 setDir random 360;

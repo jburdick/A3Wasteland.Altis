@@ -78,7 +78,7 @@ va_pull_player_action_available = {
 
 
   if (not(alive _player)) exitWith {false};
-  if (not(isPlayer _target) && {_vehicle isKindOf "UAV_02_base_F" || {_vehicle isKindOf "UGV_01_base_F"}}) exitWith {false};
+  if (not(isPlayer _target) && {_vehicle isKindOf "UAV_01_base_F" || {_vehicle isKindOf "UAV_02_base_F" || {_vehicle isKindOf "UAV_03_base_F" || {_vehicle isKindOf "UGV_01_base_F"}}}}) exitWith {false};
   if (cursorTarget != _vehicle) exitWith {false};
   if (not(locked _vehicle < 2)) exitWith {false};
   if (not([_target, _vehicle] call va_player_inside)) exitWith {false};
@@ -142,7 +142,7 @@ va_unflip_action = {
       _player groupChat format["Could not unflip the %1, you must stay within %2 meters.", _display_name, _dist];
     };
 
-    [[_vehicle,[0,0,1]],"A3W_fnc_unflip",true,false] call BIS_fnc_MP;
+    [[_vehicle,surfaceNormal (getPos _vehicle)],"A3W_fnc_unflip",_vehicle] call BIS_fnc_MP;
 
 
     _player groupChat format["The %1 has been unflipped", _display_name];
@@ -212,7 +212,7 @@ va_get_owner_name = {
         _uid == _uid4}}}) exitWith {
       _player = _x;
     }
-  };} forEach playableUnits;
+  };} forEach allPlayers;
 
   if (!isOBJECT(_player)) exitWith {"Not in game"};
 
@@ -251,17 +251,14 @@ va_information_action = {
     _text = _text + "<t align='left' font='PuristaMedium' size='1'>" + _label + "</t><t align='left' font='PuristaMedium'>" + _value + "</t><br />";
   }
   forEach(
-    [["   ID:           ", ([_tag,17] call str_truncate)],
-     ["   Direction:    ", str(round(getdir _vehicle)) + toString [176]],
-     ["   Grid:         ", mapGridPosition _vehicle],
-     ["   Altitude:     ", str(round(getposASL _vehicle select 2)) + " meter(s) ASL"],
-     ["   Driver:       ", ([_driver,17] call str_truncate)],
-     ["   Seats:        ", str((_vehicle emptyPositions "cargo")+(_vehicle emptyPositions "driver")) + " seat(s)"],
-     ["   Size:         ", str(round((sizeOf _class)*10)/10) + " meter(s)"],
-     ["   Owner:        ",  ([_owner,17] call str_truncate)],
-     ["   Ammo Cargo    ", str(getAmmoCargo _vehicle)],
-     ["   Fuel Cargo    ", str(getFuelCargo _vehicle)],
-     ["   Repair Cargo  ", str(getRepairCargo _vehicle)]
+    [["   ID:         ", ([_tag,17] call str_truncate)],
+     ["   Direction:  ", str(round(getdir _vehicle)) + toString [176]],
+     ["   Grid:       ", mapGridPosition _vehicle],
+     ["   Altitude:   ", str(round(getposASL _vehicle select 2)) + " meter(s) ASL"],
+     ["   Driver:     ", ([_driver,17] call str_truncate)],
+     ["   Seats:     ", str((_vehicle emptyPositions "cargo")+(_vehicle emptyPositions "driver")) + " seat(s)"],
+     ["   Size:       ", str(round((sizeOf _class)*10)/10) + " meter(s)"],
+     ["   Owner:     ",  ([_owner,17] call str_truncate)]
 
 
     ]);
@@ -290,8 +287,9 @@ va_unlock = {
 
 va_remote_lock = {
   ARGVX3(0,_vehicle, objNull);
-  ARGVX3(1,_state,0);
-  [[_vehicle, _state] , "A3W_fnc_lock", true, false, true] call BIS_fnc_MP;
+  ARGVX3(1,_state,1);
+  //[[_vehicle, _state] , "A3W_fnc_lock", true, false, true] call BIS_fnc_MP;
+  [_vehicle, _state] call A3W_fnc_setLockState;
 };
 
 va_is_locked = {
@@ -347,12 +345,12 @@ va_unlock_action = {
 va_is_lockable = {
   ARGVX3(0,_vehicle,objNull);
 
-  if (count(cfg_va_lock_actions_classes_list) == 0) exitWith {true};
+  if (_vehicle isKindOf "Man") exitWith {false};
 
   def(_class);
   _class = typeOf _vehicle;
 
-  (({_class isKindOf _x} count cfg_va_lock_actions_classes_list) > 0)
+  ({_class isKindOf _x} count cfg_va_lock_actions_classes_list > 0 && {{_class isKindOf _x} count cfg_va_lock_actions_classes_list_excl == 0})
 };
 
 va_lock_action_available = {
@@ -448,17 +446,17 @@ va_outside_add_actions = {
 
 
   //Add view vehicle information action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\info.paa'/> %1 info", _display_name], {_this call va_information_action;}, [_player, _vehicle],5,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\info.paa'/> %1 info", _display_name], {_this call va_information_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_information_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
 
   //Add vehicle lock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_lock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
 
   //Add vehicle unlock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],999,true,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_unlock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
 };
@@ -477,12 +475,12 @@ va_inside_add_actions = {
   _display_name = [typeOf _vehicle] call generic_display_name;
 
   //Add vehicle lock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],5,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],10,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_lock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_inside_actions = va_inside_actions + [_action_id];
 
   //Add vehicle unlock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],5,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],10,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_unlock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_inside_actions = va_inside_actions + [_action_id];
 };
@@ -506,35 +504,20 @@ va_inside_remove_actions = {
 
 va_outside_target = {
   ARGVX3(0,_player,objNull);
-  ARGVX3(1,_distance,0);
   if (!isPlayer _player) exitWith {};
 
-/*
   def(_target);
-  if (surfaceIsWater (position _player)) then {
-   //line intersect does not work well when vehicle is in water
-    _target = cursorTarget;
-  }
-  else {
-    def(_pos1);
-    def(_pos2);
-    _pos1 = (eyePos player);
-    _pos2 = ([_pos1, cameraDirDist(_distance)] call vector_add);
-	_objects = (lineIntersectsWith [_pos1,_pos2,objNull,objNull,true]);
-	if (!isARRAY(_objects) || {count _objects == 0}) exitWith {};
-	_target = _objects select 0;
-  };
-*/
+  _objects = nearestObjects [_player, ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"], 10];
+  if (!isARRAY(_objects) || {count _objects == 0}) exitWith {};
+  _target = cursorObject;
 
-  def(_target);
-    _target = cursorObject;
-  if ((_player distance _target)>7) exitWith {};
   if (isNil "_target") exitWith {};
 
   if (({_target isKindOf _x } count ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"]) == 0) exitWith {};
 
   _target
 };
+
 
 va_check_outside_actions = {
   //player groupChat format["va_check_outside_actions"];

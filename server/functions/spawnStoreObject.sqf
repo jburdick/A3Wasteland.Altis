@@ -102,6 +102,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 	if (!isNil "_itemEntry" && markerShape _marker != "") then
 	{
 		_itemPrice = _itemEntry select 2;
+		_skipSave = "SKIPSAVE" in (_itemEntry select [3,999]);
 
 		/*if (_class isKindOf "Box_NATO_Ammo_F") then
 		{
@@ -130,6 +131,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_objectID = netId _object;
 			_object setVariable ["A3W_purchasedStoreObject", true];
 			_object setVariable ["ownerUID", getPlayerUID _player, true];
+			_object setVariable ["ownerName", name _player, true];
 
 			if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0) then
 			{
@@ -141,10 +143,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					params ["_uav", "_playerSide", "_playerGroup"];
 					private "_grp";
 
-
-
 					waitUntil {_grp = group _uav; !isNull _grp};
-
 
 					//assign AI to player's side to allow terminal connection
 					if (side _uav != _playerSide) then
@@ -182,6 +181,11 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				_object setVelocity [0,0,0.01];
 				// _object spawn cleanVehicleWreck;
 				_object setVariable ["A3W_purchasedVehicle", true, true];
+
+				if (["A3W_vehicleLocking"] call isConfigOn) then
+				{
+					[_object, 2] call A3W_fnc_setLockState; // Lock
+				};
 			};
 
 			_object setDir (if (_object isKindOf "Plane") then { markerDir _marker } else { random 360 });
@@ -196,33 +200,21 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			switch (true) do
 			{
-				/*case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"] > 0):
+				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"] > 0):
 				{
-					_object setAmmoCargo .03;
+					_object setAmmoCargo 5;
 				};
 
 				case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
 				{
-					_object setAmmoCargo .75;
+					_object setAmmoCargo 10;
 				};
 
-
-				
-				case (_object isKindOf "O_Truck_03_Ammo_F" > 0):
+				case ({_object isKindOf _x} count ["B_Truck_01_ammo_F", "O_Truck_02_Ammo_F", "O_Truck_03_ammo_F", "I_Truck_02_ammo_F"] > 0):
 				{
-					_object setAmmoCargo .25;
-				};
-				
-				case (_object isKindOf "B_Truck_01_ammo_F" > 0):
-				{
-					_object setAmmoCargo .5;
+					_object setAmmoCargo 25;
 				};
 
-				case (_object isKindOf "I_Truck_02_ammo_F" > 0):
-				{
-					_object setAmmoCargo .1;
-				};*/
-				
 				case ({_object isKindOf _x} count ["C_Van_01_fuel_F", "I_G_Van_01_fuel_F", "O_Heli_Transport_04_fuel_F"] > 0):
 				{
 					_object setFuelCargo 10;
@@ -249,9 +241,16 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				};
 			};
 
-			if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
+			if (_skipSave) then
 			{
-				_object call fn_manualVehicleSave;
+				_object setVariable ["A3W_skipAutoSave", true, true];
+			}
+			else
+			{
+				if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
+				{
+					_object call fn_manualVehicleSave;
+				};
 			};
 
 			if (_object isKindOf "AllVehicles") then

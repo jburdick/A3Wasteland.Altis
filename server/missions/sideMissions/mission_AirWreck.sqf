@@ -14,11 +14,8 @@ private ["_nbUnits", "_wreckPos", "_wreck", "_box1", "_box2"];
 _setupVars =
 {
 	_missionType = "Aircraft Wreck";
-	_locationsArray = MissionSpawnMarkers;
+	_locationsArray = [ForestMissionMarkers, MissionSpawnMarkers] select (ForestMissionMarkers isEqualTo []);
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
-	_reinforceChance = 0; // Chance of reinforcements being called
-	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 2; //maximum number of paradrop groups that will respond to call
 };
 
 _setupObjects =

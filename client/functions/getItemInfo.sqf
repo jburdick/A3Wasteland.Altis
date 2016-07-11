@@ -212,10 +212,6 @@ if (!isNil "_itemEntry") then
 				{
 					_description = "Increases underwater visibility";
 				};
-				if (["G_Balaclava_TI_", _itemType] call fn_startsWith) then
-				{
-					_description = "Thermally insulated";
-				};
 			};
 			default
 			{

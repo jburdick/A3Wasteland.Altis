@@ -15,10 +15,6 @@ _setupVars =
 {
 	_missionType = "Armed Convoy";
 	_locationsArray = LandConvoyPaths;
-	
-	_reinforceChance = 30; // Chance of reinforcements being called
-	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 3; //maximum number of paradrop groups that will respond to call	
 };
 
 _setupObjects =
@@ -48,6 +44,7 @@ _setupObjects =
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
+		_vehicle setVariable ["A3W_skipAutoSave", true, true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;

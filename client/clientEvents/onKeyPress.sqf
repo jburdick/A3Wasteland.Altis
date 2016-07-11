@@ -53,28 +53,6 @@ switch (true) do
 			["You've taken out your earplugs.", 5] call mf_notify_client;
 		};
 	};
-	// Z Key
-	case (_key in A3W_customKeys_AJZeus):
-	{
-		execVM "addons\aj\zeus\refreshzeus.sqf";
-	};
-	
-	// Holster - unholster weapon (H key)
-	case (_key == 35):
-	{
-		if (vehicle player == player && currentWeapon player != "") then
-		{
-			curWep_h = currentWeapon player;
-			player action ["SwitchWeapon", player, player, 100];
-		}
-		else
-		{
-			if (curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then
-			{
-				player selectWeapon curWep_h;
-			};
-		};
-	};
 };
 
 // ********** Action keys **********
@@ -107,6 +85,7 @@ if (!_handled && _key in actionKeys "GetOver") then
 		};
 	};
 };
+
 // Eject
 if (!_handled && _key in actionKeys "GetOut") then
 {
@@ -153,6 +132,16 @@ if (!_handled && _key in (actionKeys "UavView" + actionKeys "UavViewToggle")) th
 	if (["A3W_disableUavFeed"] call isConfigOn) then
 	{
 		_handled = true;
+	};
+};
+
+// Override prone reload freeze (ffs BIS)
+if (!_handled && _key in (actionKeys "MoveDown" + actionKeys "MoveUp")) then
+{
+	if ((toLower animationState player) find "reloadprone" != -1) then
+	{
+		[player, format ["AmovPknlMstpSrasW%1Dnon", [player, true] call getMoveWeapon]] call switchMoveGlobal;
+		reload player;
 	};
 };
 

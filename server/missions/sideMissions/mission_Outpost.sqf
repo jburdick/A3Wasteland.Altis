@@ -16,9 +16,6 @@ _setupVars =
 	_missionType = "Enemy Outpost";
 	_locationsArray = MissionSpawnMarkers;
 	_nbUnits = AI_GROUP_MEDIUM;
-	_reinforceChance = 0; // Chance of reinforcements being called
-	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 5; //maximum number of paradrop groups that will respond to call
 };
 
 _setupObjects =

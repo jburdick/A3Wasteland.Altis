@@ -16,10 +16,6 @@ _setupVars =
 	_missionType = "Supply Truck";
 	_locationsArray = MissionSpawnMarkers;
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
-
-	_reinforceChance = 0; // Chance of reinforcements being called
-	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 1; //maximum number of paradrop groups that will respond to call	
 };
 
 _setupObjects =
@@ -39,8 +35,7 @@ _setupObjects =
 		"I_Truck_02_covered_F",
 		"I_Truck_02_fuel_F",
 		"I_Truck_02_medical_F",
-		"I_Truck_02_box_F",
-		"O_Truck_03_ammo_F"
+		"I_Truck_02_box_F"
 	] call BIS_fnc_selectRandom;
 
 	// Class, Position, Fuel, Ammo, Damage, Special
@@ -69,8 +64,7 @@ _failedExec =
 _successExec =
 {
 	// Mission completed
-	_vehicle lock 1;
-	_vehicle setVariable ["R3F_LOG_disabled", false, true];
+	[_vehicle, 1] call A3W_fnc_setLockState; // Unlock
 
 	_successHintMessage = "The truck has been captured, well done.";
 };
