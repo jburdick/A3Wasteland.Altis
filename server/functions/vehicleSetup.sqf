@@ -10,7 +10,6 @@ if (!isServer) exitWith {};
 
 params [["_vehicle",objNull,[objNull]], ["_brandNew",true,[false]]]; // _brandNew: true for newly spawned/purchased vehicle (default), false for vehicles restored from save
 private ["_class", "_getInOut", "_centerOfMass", "_weapons"];
-
 _class = typeOf _vehicle;
 
 _vehicle setVariable [call vChecksum, true];
@@ -64,7 +63,6 @@ _vehicle addEventHandler ["GetOut", _getInOut];
 _vehicle addEventHandler ["Killed",
 {
 	_veh = _this select 0;
-
 	_veh call A3W_fnc_setItemCleanup;
 
 	if (!isNil "fn_manualVehicleDelete") then
@@ -163,13 +161,10 @@ if (_brandNew) then
 		_path = _x;
 
 		{
-
-
 			if ((toLower getText (configFile >> "CfgMagazines" >> _x >> "ammo")) find "_minigun_" != -1) then
 			{
 				_vehicle addMagazineTurret [_x, _path];
 			};
-
 		} forEach (_vehicle magazinesTurret _path);
 	} forEach ([[-1]] + allTurrets _vehicle);
 };

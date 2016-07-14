@@ -22,7 +22,6 @@ A3W_startHour = 07;                // In-game hour at mission start (0 to 23) - 
 A3W_timeMultiplierDay = 7.5;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
 A3W_timeMultiplierNight = 15.0;     // Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
-
 // Player settings
 A3W_startingMoney = 10000;           // Amount of money that players start with
 A3W_survivalSystem = 1;            // Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
@@ -36,7 +35,6 @@ A3W_townSpawnCooldown = 10*60;      // Number of seconds to wait between each sp
 A3W_townSpawnSpawnHeight = 1500;   // Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
 A3W_spawnBeaconCooldown = 15*60;    // Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
 A3W_spawnBeaconSpawnHeight = 2500; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
-
 // Antihack settings
 A3W_antiHackUnitCheck = 1;         // Detect players who spawn unauthorized AI units (0 = no, 1 = yes) - disable if you have custom unit scripts/mods like AI recruitment or ALiVE
 A3W_antiHackMinRecoil = 1.0;       // Mininum recoil coefficient enforced by the antihack (recommended values: default = 1.0, TMR Mod = 0.5, VTS Weapon Resting = 0.25) (minimum: 0.02)
@@ -63,16 +61,16 @@ A3W_bountyMax = 100000;
 A3W_bountyMin = 1000;
 A3W_bountyFee = 50;
 A3W_bountyKillsLifetime = 3*24;
+
 // Persistence settings
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
 A3W_moneySaving = 1;               // If playerSaving = 1, save player money amount (0 = no, 1 = yes)
 A3W_playerStatsGlobal = 0;         // If playerSaving = 1 and savingMethod = "extDB", players' stats on the scoreboard will be their all-time global values from all servers of your database (0 = no, 1 = yes)
 A3W_timeSaving = 1;                // Save and restore in-game clock time between server restarts (0 = no, 1 = yes)
-A3W_weatherSaving = 0;             // Save and restore weather settings between server restarts (0 = no, 1 = yes)
+A3W_weatherSaving = 1;             // Save and restore weather settings between server restarts (0 = no, 1 = yes)
 A3W_combatAbortDelay = 60;         // If playerSaving = 1, delay in seconds for which to disable abort and respawn buttons after firing or being shot (0 = none)
-A3W_purchasedVehicleSaving = 1;    // Save vehicles purchased at vehicle stores between server restarts (0 = no, 1 = yes)
-A3W_missionVehicleSaving = 0;      // Save vehicles captured from missions between server restarts (0 = no, 1 = yes)
+A3W_vehicleSaving = 1;             // Save purchased and captured vehicles between server restarts (0 = no, 1 = yes)
 A3W_baseSaving = 1;                // Save locked base parts between server restarts (0 = no, 1 = yes)
 A3W_boxSaving = 1;                 // Save locked weapon crates and their contents between server restarts (0 = no, 1 = yes)
 A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magazines between server restarts (0 = no, 1 = yes)
@@ -85,7 +83,7 @@ A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicl
 A3W_vehicleMaxUnusedTime = 7*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
 A3W_mineSaving = 1;                // Save placed mines between server restarts (0 = no, 1 = yes)
-A3W_mineLifetime = 2*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
+A3W_mineLifetime = 1*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
 A3W_privateParkingLimit = 2;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
@@ -114,7 +112,7 @@ A3W_extDB_RconCommands = "KICK-ADDBAN";	// List of dash-separated RCON commands 
 A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;            // ID of the headless client in charge of object caching (1 or 2)
-A3W_hcObjCleanup = 0;              // Enable headless client server cleanup (0 = no, 1 = yes)
+A3W_hcObjCleanup = 1;              // Enable headless client server cleanup (0 = no, 1 = yes)
 A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
 A3W_hcObjSaving = 1;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
 A3W_hcObjSavingID = 2;             // ID of the headless client in charge of object saving (1 or 2)

@@ -60,6 +60,7 @@ case (_obj call _isCamonet):
 		_variables pushBack ["ownerName", toArray (_obj getVariable ["ownerName", ""])];
 	};
 };
+
 _owner = _obj getVariable ["ownerUID", ""];
 
 _r3fSide = _obj getVariable "R3F_Side";

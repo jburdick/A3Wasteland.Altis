@@ -153,6 +153,7 @@ while {true} do
 
 	_strArray pushBack format ["<t color='%1'>%2</t> <img size='0.7' image='client\icons\health.paa'/>", _healthTextColor, _health];
 */
+
 	_str = "";
 
 	{ _str = format ["%1%2<br/>", _str, _x] } forEach _strArray;
@@ -184,7 +185,6 @@ while {true} do
 
 			{
 				if (alive _x) then
-
 				{
 					_icon = switch (true) do
 					{
@@ -196,7 +196,6 @@ while {true} do
 					_tempString = format ["%1 %2 <img image='%3'/><br/>", _tempString, name _x, _icon];
 					_yOffset = _yOffset + 0.04;
 				};
-
 			} forEach crew _vehicle;
 		};
 	};
@@ -326,12 +325,12 @@ while {true} do
 			};
 		};
 	} forEach [cursorTarget, cursorObject];
-	
+
 	if (_disableUavFeed && shownUavFeed) then
 	{
 		showUavFeed false;
 	};
-	
+
 	if (isNil "A3W_missingMarkersNotice" && visibleMap) then
 	{
 		_cbMarkerColors = findDisplay 12 displayCtrl 1090;
@@ -352,6 +351,8 @@ while {true} do
 
 			A3W_missingMarkersNotice = true;
 		};
-	};	
+	};
+
+	enableEnvironment true;
 	uiSleep 1;
 };

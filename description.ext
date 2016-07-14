@@ -3,13 +3,11 @@ respawnDelay=15;
 disabledAI=1;
 disableChannels[] = {{0,false,true}, {2,true,true}}; // 0 = global, 1 = side, 2 = command // new syntax: {{channel<number>, disableText<bool>, disableVoice<bool>}, ...};
 // side chat is disabled for indies in client\preInit.sqf
-
 joinUnassigned = 0;
 enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
 weaponPool = 0;
 corpseManagerMode = 1;
-
 corpseRemovalMinTime = 10*60;
 corpseRemovalMaxTime = 20*60;
 wreckManagerMode = 1;
@@ -20,13 +18,12 @@ respawnDialog = 0; // do not enable this, otherwise the default scoreboard will 
 onPauseScript = "client\clientEvents\onPause.sqf";
 class Header
 {
-	gameType=Survival;
+	gameType=Sandbox;
 	minPlayers=1;
 	maxPlayers=146; // 144 players, 2 headless clients
 };
 author="BIB Monkey|BIBGaming.com - AgentRev|A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
 onLoadName = "BIBA3Wasteland Tanoa"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-
 onLoadMission = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
 overviewText = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
 overviewTextLocked = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
@@ -41,7 +38,6 @@ briefing = 0; // if 0, skip Continue button
 #define A3W_UICOLOR_R  0.25 // default = 0.25
 #define A3W_UICOLOR_G  0.51 // default = 0.51
 #define A3W_UICOLOR_B  0.96 // default = 0.96
-
 
 //Dialog includes
 
@@ -70,22 +66,15 @@ briefing = 0; // if 0, skip Continue button
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
 #include "addons\proving_ground\PG_config.hpp"
 #include "addons\outlw_magrepack\config.hpp"
-
 #include "addons\BoS\dialog\BoS_mainMenu.hpp"
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
 #include "addons\CHVD\dialog.hpp"
 
-
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
-
-
-
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
-
 #include "addons\HCAI\description.ext"
-
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
@@ -104,7 +93,6 @@ class CfgFunctions
 		#include "server\CfgFunctions.hpp"
 	};
 
-	
 	#include "addons\CHVD\CfgFunctions.hpp"
 	
 	class armajunkies

@@ -5,6 +5,7 @@
 //	@file Author: AgentRev
 
 #define STICKY_CHARGE_DUMMY_OBJ "Sign_Sphere10cm_F"
+
 private ["_baseSavingOn", "_boxSavingOn", "_staticWeaponSavingOn", "_warchestSavingOn", "_warchestMoneySavingOn", "_beaconSavingOn", "_camonetSavingOn", "_timeSavingOn", "_weatherSavingOn", "_savingMethod", "_isBox", "_isStaticWeapon", "_isWarchest", "_isBeacon", "_isSaveable", "_strToSide", "_hcProfileVarName", "_hcSaveProfileVar"];
 
 _baseSavingOn = ["A3W_baseSaving"] call isConfigOn;
@@ -40,6 +41,7 @@ _strToSide =
 		default       { sideUnknown };
 	};
 };
+
 _hcProfileVarName =
 {
 	private "_midName";

@@ -45,11 +45,11 @@ switch (true) do
 
 private _resupplyTruck = _veh getVariable ["A3W_resupplyTruck", false];
 
-
 if (_resupplyTruck) then
 {
 	_variables pushBack ["A3W_resupplyTruck", true];
 };
+
 private _isUav = (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0);
 
 if (_isUav && side _veh in [BLUFOR,OPFOR,INDEPENDENT]) then
@@ -74,7 +74,6 @@ private _locked = 1 max locked _veh; // default vanilla state is always 1, so we
 ];
 
 _owner = _veh getVariable ["ownerUID", ""];
-
 _doubleBSlash = (call A3W_savingMethod == "extDB");
 
 _textures = [];
@@ -119,48 +118,6 @@ if (_class call fn_hasInventory) then
 _turretMags = []; // magazinesAmmo _veh;
 _turretMags2 = [];
 _turretMags3 = [];
-
-// deprecated
-/*
-_hasDoorGuns = isClass (configFile >> "CfgVehicles" >> _class >> "Turrets" >> "RightDoorGun");
-
-_turrets = allTurrets [_veh, false];
-
-if !(_class isKindOf "B_Heli_Transport_03_unarmed_F") then
-{
-	_turrets = [[-1]] + _turrets; // only add driver turret if not unarmed Huron, otherwise flares get saved twice
-};
-
-if (_hasDoorGuns) then
-{
-	// remove left door turret, because its mags are already returned by magazinesAmmo
-	{
-		if (_x isEqualTo [1]) exitWith
-		{
-			_turrets set [_forEachIndex, 1];
-		};
-	} forEach _turrets;
-
-	_turrets = _turrets - [1];
-};
-
-{
-	_path = _x;
-
-	{
-		if ([_turretMags, _x, -1] call fn_getFromPairs == -1 || _hasDoorGuns) then
-		{
-			if (_veh currentMagazineTurret _path == _x && {count _turretMags3 == 0}) then
-			{
-				_turretMags3 pushBack [_x, _path, [_veh currentMagazineDetailTurret _path] call getMagazineDetailAmmo];
-			}
-			else
-			{
-				_turretMags2 pushBack [_x, _path];
-			};
-		};
-	} forEach (_veh magazinesTurret _path);
-} forEach _turrets;*/
 
 {
 	if (_x select 0 != "FakeWeapon") then

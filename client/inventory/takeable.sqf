@@ -29,8 +29,6 @@ _takeable = objNull;
 	_lineOfSightBroken = lineIntersects [_playerPos, _objectPos, player, _x];
 
 	switch (true) do {
-
-
 		// case (_lineOfSightBroken): {};
 		case (_id call mf_inventory_is_full): {};
 		case (_x getVariable ["mf_item_id", ""] != _id): {};

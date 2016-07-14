@@ -30,6 +30,7 @@ _height = (["A3W_townSpawnSpawnHeight", 0] call getPublicVar) max 0;
 } forEach (call cityList);
 
 player setVariable [_marker + "_lastSpawn", diag_tickTime];
+[player, _marker] remoteExecCall ["A3W_fnc_updateSpawnTimestamp", 2];
 
 respawnDialogActive = false;
 closeDialog 0;

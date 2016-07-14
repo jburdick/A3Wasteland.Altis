@@ -80,8 +80,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			};
 		};
 	};
-		
-
+	
 		if (!_whitelisted) then
 		{
 			{

@@ -148,6 +148,7 @@ if (["A3W_survivalSystem"] call isConfigOn) then
 	{
 		waitUntil {!isNil "storage_functions_defined"};
 	};
+
 	[] execVM "client\functions\createGeneralStoreMarkers.sqf";
 	[] execVM "client\functions\createVehicleStoreMarkers.sqf";
 	[] execVM "client\functions\createLegendMarkers.sqf";
@@ -179,15 +180,3 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 		_x setVariable ["side", playerSide, true];
 	};
 } forEach pvar_spawn_beacons;
-
-{ _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "Air";
-{ _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "UGV_01_base_F";
-
-{
-	{
-		if (!isPlayer _x) then
-		{
-			_x setName ["AI","",""];
-		};
-	} forEach crew _x;
-} forEach allUnitsUAV;

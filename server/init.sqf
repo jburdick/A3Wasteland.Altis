@@ -139,8 +139,6 @@ if (isServer) then
 		"A3W_spawnBeaconSpawnHeight",
 		"A3W_vehicleSaving",
 		"A3W_staticWeaponSaving",
-		"A3W_purchasedVehicleSaving",
-		"A3W_missionVehicleSaving",
 		"A3W_missionFarAiDrawLines",
 		"A3W_atmEnabled",
 		"A3W_atmMaxBalance",
@@ -172,8 +170,6 @@ if (isServer) then
 		"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
 		"BoS_coolDownTimer",
-		"License_Price",
-		"Vehicle_Distance",
 		"A3W_headshotNoRevive"
 	];
 
@@ -195,12 +191,10 @@ _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
 _camonetSavingOn = ["A3W_camoNetSaving"] call isConfigOn;
-
 _timeSavingOn = ["A3W_timeSaving"] call isConfigOn;
 _weatherSavingOn = ["A3W_weatherSaving"] call isConfigOn;
 _mineSavingOn = ["A3W_mineSaving"] call isConfigOn;
-_purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
-_missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
+
 _objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _camonetSavingOn);
 _vehicleSavingOn = ["A3W_vehicleSaving"] call isConfigOn;
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
@@ -418,6 +412,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 			};
 		};
 	};
+
 	if (isServer) then
 	{
 		{

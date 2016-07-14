@@ -244,6 +244,7 @@ if (isNil "_cheatFlag") then
 			false
 		};
 	};
+
 	// Decode _rscParams
 	{
 		_x set [1, toString (_x select 1)];
