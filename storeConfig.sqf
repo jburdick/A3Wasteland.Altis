@@ -611,7 +611,7 @@ uniformArray = compileFinal str
 	["Polo (Tri-color)", "U_C_Poloshirt_tricolour", 25, "uni"],
 	["Polo (Navy)", "U_C_Poloshirt_blue", 25, "uni"],
 	["Polo (Burgundy)", "U_C_Poloshirt_burgundy", 25, "uni"],
-	["Polo (Blue/green)", "U_C_Poloshirt_stripped", 25, "uni"],*/
+	["Polo (Blue/green)", "U_C_Poloshirt_stripped", 25, "uni"],
 	["Polo (Competitor)", "U_Competitor", 25, "uni"],
 	["Polo (Rangemaster)", "U_Rangemaster", 25, "uni"],
 	["Racing Suit (Black)", "U_C_Driver_1_black", 25, "uni"], // can only be worn by civilian units
@@ -700,7 +700,7 @@ vestArray = compileFinal str
 	["Tactical Chest Rig (Green)", "V_TacChestrig_grn_F", -1, "vest"],
 	["Tactical Chest Rig (Olive)", "V_TacChestrig_oli_F", -1, "vest"],
 	["Raven Night Vest", "V_TacVestIR_blk", -1, "vest"],
-	["Press Vest", "V_Press_F", -1, "vest"]
+	["Press Vest", "V_Press_F", -1, "vest"],
 	["Gendarmerie Vest", "V_TacVest_gen_F", -1, "vest"]
 ];
 
