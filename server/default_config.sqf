@@ -57,7 +57,7 @@ A3W_atmRemoveIfDisabled = 1;       // Remove all ATMs from map if A3W_atmEnabled
 
 // Not currently implemented, soon
 A3W_atmBounties = 1;
-A3W_bountyMax = 100000;
+A3W_bountyMax = 1000000;
 A3W_bountyMin = 1000;
 A3W_bountyFee = 50;
 A3W_bountyKillsLifetime = 3*24;
@@ -86,7 +86,7 @@ A3W_mineSaving = 1;                // Save placed mines between server restarts 
 A3W_mineLifetime = 1*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
-A3W_privateParkingLimit = 2;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
+A3W_privateParkingLimit = 0;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
 A3W_privateParkingCost = 10000;     // Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;            // Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 // iniDB settings
@@ -115,7 +115,7 @@ A3W_hcObjCachingID = 1;            // ID of the headless client in charge of obj
 A3W_hcObjCleanup = 1;              // Enable headless client server cleanup (0 = no, 1 = yes)
 A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
 A3W_hcObjSaving = 1;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
-A3W_hcObjSavingID = 2;             // ID of the headless client in charge of object saving (1 or 2)
+A3W_hcObjSavingID = 1;             // ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
 // The IDs of HCs are assigned according to the order they connect to the server. The first HC to connect will have ID 1, and the second one will have ID 2.

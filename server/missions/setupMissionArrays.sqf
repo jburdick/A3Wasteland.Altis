@@ -36,12 +36,12 @@ MoneyMissions =
 
 PatrolMissions =
 [
-	// ["mission_GendarmerieConvoy", 1]
-	// ["mission_militaryPatrol", 1],
+	//["mission_GendarmerieConvoy", 1]
+	["mission_militaryPatrol", 1],
 	["mission_ConvoyAmbushers", 1],
 	["mission_ConvoyCSATSF", 1],
-	["mission_ConvoyNATOSF", 1]
-	/* ["mission_Convoy", 1],
+	["mission_ConvoyNATOSF", 1],
+	["mission_Convoy", 1],
 	["mission_HostileHelicopter", 1],
 	["mission_MiniConvoy", 1],
 	["mission_TanoaPatrol", 1],
@@ -52,7 +52,7 @@ PatrolMissions =
 	["mission_SupplyDrop", 1],
 	["mission_SmugglerPlane", 1],
 	["mission_HostileVTOL", 1],
-	["mission_Coastal_Convoy", 1]*/
+	["mission_Coastal_Convoy", 1]
 ];
 
 vehicleMissions =

@@ -63,7 +63,7 @@ createRandomSyndikat = [_path, "createUnits\createRandomSyndikat.sqf"] call mf_c
 createRandomSyndikatDemo = [_path, "createUnits\createRandomSyndikatDemo.sqf"] call mf_compile;
 createRandomSyndikatLauncher = [_path, "createUnits\createRandomSyndikatLauncher.sqf"] call mf_compile;
 createRandomSyndikatPilot = [_path, "createUnits\createRandomSyndikatPilot.sqf"] call mf_compile;
-createLargeSyndikatroup = [_path, "createUnits\createLargeSyndikatroup.sqf"] call mf_compile;
+// createLargeSyndikatroup = [_path, "createUnits\createLargeSyndikatroup.sqf"] call mf_compile;
 createFireBase = [_path, "createFireBase.sqf"] call mf_compile;
 
 //Function Compiles
