@@ -112,9 +112,9 @@ A3W_extDB_RconCommands = "KICK-ADDBAN";	// List of dash-separated RCON commands 
 A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;            // ID of the headless client in charge of object caching (1 or 2)
-A3W_hcObjCleanup = 1;              // Enable headless client server cleanup (0 = no, 1 = yes)
+A3W_hcObjCleanup = 0;              // Enable headless client server cleanup (0 = no, 1 = yes)
 A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
-A3W_hcObjSaving = 1;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
+A3W_hcObjSaving = 0;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
 A3W_hcObjSavingID = 1;             // ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
