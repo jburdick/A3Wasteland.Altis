@@ -53,7 +53,8 @@ if (_success) then
 {
 	[_vehicle, 1] call A3W_fnc_setLockState; // Unlock
 	_vehicle call fn_forceSaveVehicle;
-	["Lockpicking complete!", 5] call mf_notify_client;
+	player removeItem "Toolkit";
+	["Vehicle Stolen!", 5] call mf_notify_client;
 };
 
 _success
