@@ -52,6 +52,7 @@ private _success = [DURATION, ANIMATION, _checks, [_vehicle]] call a3w_actions_s
 if (_success) then
 {
 	[_vehicle, 1] call A3W_fnc_setLockState; // Unlock
+	[_vehicle, player] call A3W_fnc_takeOwnership;
 	_vehicle call fn_forceSaveVehicle;
 	player removeItem "Toolkit";
 	["Vehicle Stolen!", 5] call mf_notify_client;
