@@ -5,11 +5,11 @@
 //	@file Author: MercyfulFate, AgentRev, Gigatek
 //	@file Description: Lockpick the nearest vehicle
 
-#define DURATION 150
+#define DURATION 120
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
 
 #define FORMAT2(STR1,STR2) format ["%1 %2", STR1, STR2]
-#define ERR_FAILED "Lockpicking failed!"
+#define ERR_FAILED "Stealing failed!"
 #define ERR_IN_VEHICLE "You can't do that in a vehicle."
 #define ERR_DISTANCE "You are too far away from the vehicle."
 #define ERR_MOVED "Somebody moved the vehicle."
@@ -17,7 +17,7 @@
 #define ERR_UNLOCKED "The vehicle is unlocked."
 #define ERR_CREW "Somebody is inside the vehicle."
 #define ERR_DESTROYED "The vehicle is destroyed."
-#define ERR_CANCELLED "Lockpicking cancelled!"
+#define ERR_CANCELLED "Stealing cancelled!"
 
 private _vehicle = ["LandVehicle", "Air", "Ship"] call mf_nearest_vehicle;
 private _checks =
@@ -39,7 +39,7 @@ private _checks =
 		case (doCancelAction): { _text = ERR_CANCELLED; doCancelAction = false };
 		default
 		{
-			_text = format ["Lockpicking %1%2 complete", round(100 * _progress), "%"];
+			_text = format ["Stealing %1%2 complete", round(100 * _progress), "%"];
 			_failed = false;
 		};
 	};
