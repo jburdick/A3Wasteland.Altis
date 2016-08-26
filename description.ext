@@ -92,7 +92,7 @@ class CfgFunctions
 		#include "server\CfgFunctions.hpp"
 	};
 
-	#include "addons\CHVD\CfgFunctions.hpp"
+	// #include "addons\CHVD\CfgFunctions.hpp"
 	
 	class armajunkies
 	{
