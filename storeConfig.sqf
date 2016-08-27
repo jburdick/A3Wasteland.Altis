@@ -219,10 +219,6 @@ throwputArray = compileFinal str
 	["AT Mine", "ATMine_Range_Mag", 400],
 	["Explosive Charge", "DemoCharge_Remote_Mag", 450],
 	["Explosive Satchel", "SatchelCharge_Remote_Mag", 500],
-	["Small IED(Urban)", "IEDUrbanSmall_Remote_Mag", 250]
-	["Large IED(Urban)", "IEDUrbanBig_Remote_Mag", 500]
-	["Small IED(Dug-In)", "IEDLandSmall_Remote_Mag", 250]
-	["Small IED(Dug-In)", "IEDLandBig_Remote_Mag", 500]
 	["Smoke Grenade (White)", "SmokeShell", 50],
 	["Smoke Grenade (Purple)", "SmokeShellPurple", 50],
 	["Smoke Grenade (Blue)", "SmokeShellBlue", 50],
