@@ -222,7 +222,7 @@ throwputArray = compileFinal str
 	["Small IED(Urban)", "IEDUrbanSmall_Remote_Mag", 250],
 	["Large IED(Urban)", "IEDUrbanBig_Remote_Mag", 500],
 	["Small IED(Dug-In)", "IEDLandSmall_Remote_Mag", 250],
-	["Small IED(Dug-In)", "IEDLandBig_Remote_Mag", 500],
+	["Large IED(Dug-In)", "IEDLandBig_Remote_Mag", 500],
 	["Smoke Grenade (White)", "SmokeShell", 50],
 	["Smoke Grenade (Purple)", "SmokeShellPurple", 50],
 	["Smoke Grenade (Blue)", "SmokeShellBlue", 50],
