@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={11545.594,27.458824,9441.1045};
-		dir[]={-0.6589269,-0.30190405,-0.68899214};
-		up[]={-0.20867448,0.95333558,-0.2181951};
-		aside[]={-0.72271669,5.8747537e-007,0.69118005};
+		pos[]={9267.3359,124.7271,15864.519};
+		dir[]={-0.85246599,-0.51891875,0.063543417};
+		up[]={-0.51748651,0.85482162,0.038573503};
+		aside[]={0.074333154,-3.2270327e-007,0.99724013};
 	};
 };
 binarizationWanted=0;
@@ -3033,7 +3033,7 @@ class Mission
 						angles[]={0,1.096895,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3041,12 +3041,14 @@ class Mission
 					};
 					id=185;
 					type="C_man_1_1_F";
+					atlOffset=3.7172279;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=184;
+			atlOffset=3.7172279;
 		};
 		class Item40
 		{
@@ -3064,7 +3066,7 @@ class Mission
 						angles[]={0,2.3348024,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3072,12 +3074,14 @@ class Mission
 					};
 					id=187;
 					type="C_man_1_1_F";
+					atlOffset=3.569912;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=186;
+			atlOffset=3.569912;
 		};
 		class Item41
 		{
@@ -3091,11 +3095,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9261.2695,121.30144,15862.267};
+						position[]={9261.8359,121.30144,15862.412};
 						angles[]={0,1.2357638,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3103,14 +3107,14 @@ class Mission
 					};
 					id=189;
 					type="C_man_1_1_F";
-					atlOffset=0.42575073;
+					atlOffset=0.00075531006;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=188;
-			atlOffset=0.42575073;
+			atlOffset=0.00075531006;
 		};
 		class Item42
 		{
@@ -3128,7 +3132,7 @@ class Mission
 						angles[]={0,4.0087185,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3136,14 +3140,12 @@ class Mission
 					};
 					id=191;
 					type="C_man_1_1_F";
-					atlOffset=3.2431946;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=190;
-			atlOffset=3.2431946;
 		};
 		class Item43
 		{
@@ -3161,7 +3163,7 @@ class Mission
 						angles[]={0,5.6444974,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3169,14 +3171,14 @@ class Mission
 					};
 					id=193;
 					type="C_man_1_1_F";
-					atlOffset=0.27458692;
+					atlOffset=9.2506409e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=192;
-			atlOffset=0.27458692;
+			atlOffset=9.2506409e-005;
 		};
 		class Item44
 		{
@@ -3258,7 +3260,7 @@ class Mission
 						angles[]={0,1.1776069,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3266,14 +3268,12 @@ class Mission
 					};
 					id=199;
 					type="C_man_1_1_F";
-					atlOffset=0.52937317;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=198;
-			atlOffset=0.52937317;
 		};
 		class Item47
 		{
@@ -3355,7 +3355,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3363,12 +3363,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
+					atlOffset=0.35717964;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
+			atlOffset=0.35717964;
 		};
 		class Item50
 		{
@@ -3386,7 +3388,7 @@ class Mission
 						angles[]={0,3.8467257,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3394,12 +3396,14 @@ class Mission
 					};
 					id=207;
 					type="C_man_1_1_F";
+					atlOffset=0.40918541;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=206;
+			atlOffset=0.40918541;
 		};
 		class Item51
 		{
@@ -4153,7 +4157,7 @@ class Mission
 			type="Empty";
 			colorName="ColorKhaki";
 			id=287;
-			atlOffset=0.0032997131;
+			atlOffset=7.3523617;
 		};
 		class Item130
 		{
@@ -6217,7 +6221,7 @@ class Mission
 					name="Parking6_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=215.59117;
+					angle=215.59116;
 					id=1945;
 					atlOffset=38.713524;
 				};
