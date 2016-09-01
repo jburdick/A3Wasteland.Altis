@@ -70,20 +70,22 @@ if (_isUAV) then
 		_veh flyInHeight (((_veh call fn_getPos3D) select 2) max 500);
 	};
 
+	//assign AI to the vehicle so it can actually be used
 	[_veh, _flying, _uavSide] spawn
 	{
 		params ["_uav", "_flying", "_uavSide"];
-		private "_grp";
 
-		waitUntil {_grp = group _uav; !isNull _grp};
+		
 
-		if (_uavSide != sideUnknown && side _uav != _uavSide) then
-		{
-			_grp = createGroup _uavSide;
-			(crew _uav) joinSilent _grp;
-		};
 
-		_grp setCombatMode "BLUE"; // hold fire
+
+
+
+
+
+
+
+		_grp = [_uav, _uavSide] call fn_createCrewUAV;
 
 		if (_flying) then
 		{
@@ -91,9 +93,9 @@ if (_isUAV) then
 			_wp setWaypointType "MOVE";
 		};
 
-		{
-			[_x, ["UAV","",""]] remoteExec ["A3W_fnc_setName", 0, _x];
-		} forEach crew _uav;
+
+
+
 	};
 };
 
