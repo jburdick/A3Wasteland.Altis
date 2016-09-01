@@ -530,7 +530,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Cargo_House_V3_F", 75],
 	["StorageBladder_01_fuel_sand_F", 150],
 	["FlexibleTank_01_sand_F", 30],
-	["ContainmentArea_02_sand_F", 10]
+	["ContainmentArea_02_sand_F", 10],
 	["Box_Syndicate_Wps_F", 1]
 ];
 
