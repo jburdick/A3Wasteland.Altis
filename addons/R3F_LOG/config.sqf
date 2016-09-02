@@ -531,7 +531,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["StorageBladder_01_fuel_sand_F", 150],
 	["FlexibleTank_01_sand_F", 30],
 	["ContainmentArea_02_sand_F", 10],
-	["Box_Syndicate_Wps_F", 1]
+	["Box_Syndicate_Wps_F", 1],
+	"Box_Syndicate_WpsLaunch_F", 1],
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
