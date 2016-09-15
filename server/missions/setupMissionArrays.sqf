@@ -9,50 +9,35 @@ if (!isServer) exitWith {};
 MainMissions =
 [
 	// Mission filename, weight
-	["mission_ArmedDiversquad", .5],
 	["mission_Outpost", 1],
-	// ["mission_FireBase", 1],
-	["mission_TownInvasion", 1]
-	
+	["mission_TownInvasion", 1],
+	["mission_Sniper", 1],
+	["mission_SupplyDrop", 1],
+	["mission_transportheli", 1]
+
 ];
 
 SideMissions =
 [
-	["mission_Sniper", 1],
-	["mission_SunkenSupplies", 1],
 	["mission_Roadblock", 1],
 	["mission_AirWreck", 1],
-	["mission_WepCache", 1],
 	["mission_Smugglers", 1],
-	["mission_Truck", 1]
+	["mission_Truck", 1],
+	["mission_SmugglerPlane", 1],
+	["mission_ConvoyAmbushers", 1]
 ];
 
 MoneyMissions =
 [
-	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 1]
-	
+	["mission_MoneyShipment", 1]
+		
 ];
 
 PatrolMissions =
 [
-	//["mission_GendarmerieConvoy", 1]
 	["mission_militaryPatrol", 1],
-	["mission_ConvoyAmbushers", 1],
-	["mission_ConvoyCSATSF", 1],
-	["mission_ConvoyNATOSF", 1],
-	["mission_Convoy", 1],
-	["mission_HostileHelicopter", 1],
-	["mission_MiniConvoy", 1],
 	["mission_TanoaPatrol", 1],
-	["mission_HostileHeliFormation", 1],
-	["mission_HostileJet", 1],
-	["mission_transportheli", 1],
-	["mission_Gunship", 1],
-	["mission_SupplyDrop", 1],
-	["mission_SmugglerPlane", 1],
-	["mission_HostileVTOL", 1],
-	["mission_Coastal_Convoy", 1]
+	["mission_artypatrol", 1]
 ];
 
 vehicleMissions =
@@ -66,6 +51,36 @@ vehicleMissions =
 	["mission_LSV", 1],
 	["mission_VTOL", 1]
 
+];
+
+extraMissions =
+[
+	["mission_Convoy", 1],
+	["mission_ConvoyCSATSF", 1],
+	["mission_ConvoyNATOSF", 1],
+	["mission_HackLaptop", 1],
+	["mission_MiniConvoy", 1]
+	
+
+];
+
+aquaticMissions =
+[
+	["mission_ArmedDiversquad", 1],
+	["mission_Coastal_Convoy", 1],
+	["mission_SunkenSupplies", 1],
+	["mission_SunkenTreasure", 1]
+	
+
+];
+hostileairMissions =
+[
+	["mission_Gunship", 1],
+	["mission_HostileHelicopter", 1],
+	["mission_HostileHeliFormation", 1],
+	["mission_HostileJet", 1],
+	["mission_HostileVTOL", 1]
+	
 ];
 
 MainMissions = [MainMissions, [["A3W_heliPatrolMissions", ["mission_Coastal_Convoy", "mission_HostileHeliFormation"]], ["A3W_underWaterMissions", ["mission_ArmedDiversquad"]]]] call removeDisabledMissions;
