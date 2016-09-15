@@ -6,7 +6,7 @@
 //	@file Author: [404] Deadbeat, AgentRev
 //	@file Created: 08/12/2012 15:19
 
-// Main Mission Color = #FF8C00 - Orange
+// Main Mission Color = #52bf90 - Light blue
 // Fail Mission Color = #FF1717 - Light red
 // Success Mission Color = #17FF41 - Light green
 
