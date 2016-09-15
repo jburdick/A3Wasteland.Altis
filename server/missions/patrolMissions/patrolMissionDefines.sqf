@@ -10,7 +10,7 @@
 // Fail Mission Color = #FF1717 - Light red
 // Success Mission Color = #17FF41 - Light green
 
-#define patrolMissionColor "#0000CD"
+#define patrolMissionColor "#0000FF"
 #define failMissionColor "#FF0000"
 #define successMissionColor "#00CC00"
 #define subTextColor "#FFFFFF"
