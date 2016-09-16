@@ -121,9 +121,8 @@ vehicleWeapons =
 	["launch_RPG32_F", "launch_RPG32_ghex_F"],
 	["launch_NLAW_F"],
 	["launch_Titan_short_F", "launch_O_Titan_short_F", "launch_I_Titan_short_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_short_ghex_F"],
-	["launch_O_Titan_F", "launch_I_Titan_F", "launch_B_Titan_tna_F", "launch_O_Titan_ghex_F"],
-	["MiniGrenade", "HandGrenade"],
-	["APERSTripMine_Wire_Mag", "APERSBoundingMine_Range_Mag", "APERSMine_Range_Mag", "ClaymoreDirectionalMine_Remote_Mag", "SLAMDirectionalMine_Wire_Mag", "ATMine_Range_Mag", "DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag"]
+	["launch_O_Titan_F", "launch_I_Titan_F", "launch_B_Titan_tna_F", "launch_O_Titan_ghex_F"]
+
 ];
 
 vehicleAddition =
@@ -157,7 +156,9 @@ vehicleAddition =
 	["optic_tws"],
 	["optic_tws_mg"],
 	["optic_Nightstalker"],
-	["acc_flashlight", "acc_pointer_IR"]
+	["acc_flashlight", "acc_pointer_IR"],
+	["MiniGrenade", "HandGrenade"],
+	["APERSTripMine_Wire_mag", "APERSBoundingMine_Range_mag", "APERSMine_Range_mag", "ClaymoreDirectionalMine_Remote_mag", "SLAMDirectionalMine_Wire_mag", "ATMine_Range_mag", "DemoCharge_Remote_mag", "SatchelCharge_Remote_mag"]
 	
 ];
 
@@ -166,8 +167,6 @@ vehicleAddition2 =
 	["Chemlight_blue", "Chemlight_green", "Chemlight_yellow", "Chemlight_red"],
 	["SmokeShell", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellOrange", "SmokeShellRed"],
 	["B_IR_Grenade", "I_IR_Grenade", "O_IR_Grenade"],
-	["Medikit"],
-	["FirstAidKit"],
-	["MineDetector"],
-	["ToolKit"]
+	"acc_flashlight",
+	"acc_pointer_IR"
 ];
