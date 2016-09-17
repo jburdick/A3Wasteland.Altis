@@ -9,50 +9,40 @@ if (!isServer) exitWith {};
 MainMissions =
 [
 	// Mission filename, weight
-	["mission_ArmedDiversquad", .5],
 	["mission_Outpost", 1],
-	// ["mission_FireBase", 1],
-	["mission_TownInvasion", 1]
+	["mission_Sniper", 1],
+	["mission_SupplyDrop", 1],
+	["mission_TownInvasion", 1],
+	//["mission_Hackers", 1],
+	["mission_transportheli", 1]
+	
+	
 	
 ];
 
 SideMissions =
 [
-	["mission_Sniper", 1],
-	["mission_SunkenSupplies", 1],
+	["mission_SmugglerPlane", 1],
 	["mission_Roadblock", 1],
 	["mission_AirWreck", 1],
-	["mission_WepCache", 1],
+	["mission_ConvoyAmbushers", 1],
 	["mission_Smugglers", 1],
 	["mission_Truck", 1]
 ];
 
 MoneyMissions =
 [
-	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 1]
+	["mission_MoneyShipment", 1]
 	
 ];
 
 PatrolMissions =
 [
-	//["mission_GendarmerieConvoy", 1]
 	["mission_militaryPatrol", 1],
-	["mission_ConvoyAmbushers", 1],
-	["mission_ConvoyCSATSF", 1],
-	["mission_ConvoyNATOSF", 1],
-	["mission_Convoy", 1],
-	["mission_HostileHelicopter", 1],
-	["mission_MiniConvoy", 1],
-	["mission_TanoaPatrol", 1],
-	["mission_HostileHeliFormation", 1],
-	["mission_HostileJet", 1],
-	["mission_transportheli", 1],
-	["mission_Gunship", 1],
-	["mission_SupplyDrop", 1],
-	["mission_SmugglerPlane", 1],
-	["mission_HostileVTOL", 1],
-	["mission_Coastal_Convoy", 1]
+	//["mission_artyPatrol", 1],
+	["mission_TanoaPatrol", 1]
+	
+	
 ];
 
 vehicleMissions =
@@ -68,6 +58,38 @@ vehicleMissions =
 
 ];
 
+extraMissions =
+[
+	["mission_Convoy", 1],
+	["mission_ConvoyCSATSF", 1],
+	["mission_ConvoyNATOSF", 1],
+	["mission_MiniConvoy", 1],
+	["mission_HackLaptop", 1]
+	
+	
+
+];
+
+aquaticMissions =
+[
+	["mission_ArmedDiversquad", 1],
+	["mission_Coastal_Convoy", 1],
+	["mission_SunkenSupplies", 1],
+	["mission_SunkenTreasure", 1]
+	
+
+];
+
+hostileairMissions =
+[
+	["mission_Gunship", 1],
+	["mission_HostileHelicopter", 1],
+	["mission_HostileHeliFormation", 1],
+	["mission_HostileJet", 1],
+	["mission_HostileVTOL", 1]
+	
+];
+
 MainMissions = [MainMissions, [["A3W_heliPatrolMissions", ["mission_Coastal_Convoy", "mission_HostileHeliFormation"]], ["A3W_underWaterMissions", ["mission_ArmedDiversquad"]]]] call removeDisabledMissions;
 SideMissions = [SideMissions, [["A3W_heliPatrolMissions", ["mission_HostileHelicopter"]], ["A3W_underWaterMissions", ["mission_SunkenSupplies"]]]] call removeDisabledMissions;
 MoneyMissions = [MoneyMissions, [["A3W_underWaterMissions", ["mission_SunkenTreasure"]]]] call removeDisabledMissions;
@@ -79,6 +101,9 @@ MoneyMissions = [MoneyMissions, [["A3W_underWaterMissions", ["mission_SunkenTrea
 { _x set [2, false] } forEach MoneyMissions;
 { _x set [2, false] } forEach PatrolMissions;
 { _x set [2, false] } forEach vehicleMissions;
+{ _x set [2, false] } forEach extraMissions;
+{ _x set [2, false] } forEach aquaticMissions;
+{ _x set [2, false] } forEach hostileairMissions;
 
 MissionSpawnMarkers = [];
 SunkenMissionMarkers = [];
@@ -115,3 +140,8 @@ SFConvoyPaths = [];
 {
 	SFConvoyPaths pushBack [_x, false];
 } forEach (call compile preprocessFileLineNumbers "mapConfig\convoys\SFConvoysList.sqf");
+
+ArtyConvoyPaths = [];
+{
+	ArtyConvoyPaths pushBack [_x, false];
+} forEach (call compile preprocessFileLineNumbers "mapConfig\convoys\artyConvoysList.sqf");
