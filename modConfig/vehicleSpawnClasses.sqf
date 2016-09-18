@@ -168,5 +168,9 @@ vehicleAddition2 =
 	["SmokeShell", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellOrange", "SmokeShellRed"],
 	["B_IR_Grenade", "I_IR_Grenade", "O_IR_Grenade"],
 	"acc_flashlight",
-	"acc_pointer_IR"
+	"acc_pointer_IR",
+	"Medikit",
+	"FirstAidKit",
+	"MineDetector",
+	"ToolKit"
 ];

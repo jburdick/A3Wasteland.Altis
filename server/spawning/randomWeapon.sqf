@@ -82,7 +82,6 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		_car addMagazineCargoGlobal [_mag, 2 + floor random 3];
 
 		_car addItemCargoGlobal ["FirstAidKit", 2];
-		_car addItemCargoGlobal [["Medkit", "Toolkit", "MineDetector"] cal bis_fn_selectrandom, 1],
 		_car addItemCargoGlobal [_additionOne, 1];
 		_car addItemCargoGlobal [_additionTwo, 1];
 		if (_nightTime) then { _car addMagazineCargoGlobal [_additionThree, 1] };
