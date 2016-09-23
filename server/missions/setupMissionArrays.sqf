@@ -63,8 +63,9 @@ extraMissions =
 	["mission_Convoy", 1],
 	["mission_ConvoyCSATSF", 1],
 	["mission_ConvoyNATOSF", 1],
-	["mission_MiniConvoy", 1],
-	["mission_HackLaptop", 1]
+	//["mission_HackLaptop", 1],
+	["mission_MiniConvoy", 1]
+	
 	
 	
 
