@@ -66,14 +66,7 @@ if (_ownerName != "") then
 };
 
 private _locked = 1 max locked _veh; // default vanilla state is always 1, so we ignore 0's
-// Save vPin by LouD
-{ _variables pushBack [_x select 0, _veh getVariable _x] } forEach
-[
-	["vPin", false],
-	["password", ""]
-];
 
-_owner = _veh getVariable ["ownerUID", ""];
 _doubleBSlash = (call A3W_savingMethod == "extDB");
 
 _textures = [];
