@@ -27,8 +27,7 @@ else
 };
 
 {
-	_name = _x select 0;
-	_value = _x select 1;
+	_x params ["_name", "_value"];
 
 	switch (_name) do
 	{
@@ -56,21 +55,23 @@ else
 			// If uniform cannot be worn by player due to different team, try to convert it, else give default instead
 			if (_value != "") then
 			{
-				if (player isUniformAllowed _value) then
+				if (player isUniformAllowed _value || // indie exception for NATO jungle ghillie & thermal suit due to BIS not giving a damn
+				    (playerSide == INDEPENDENT && {{_value == _x} count ["U_B_CTRG_Soldier_F","U_B_T_FullGhillie_tna_F"] > 0})) then
 				{
-					player addUniform _value;
+					player forceAddUniform _value;
 				}
 				else
 				{
 					_newUniform = [player, _value] call uniformConverter;
 
-					if (player isUniformAllowed _newUniform) then
+					if (player isUniformAllowed _newUniform ||
+					    (playerSide == INDEPENDENT && {{_newUniform == _x} count ["U_B_CTRG_Soldier_F","U_B_T_FullGhillie_tna_F"] > 0})) then
 					{
-						player addUniform _newUniform;
+						player forceAddUniform _newUniform;
 					}
 					else
 					{
-						player addUniform ([player, "uniform"] call getDefaultClothing);
+						player forceAddUniform ([player, "uniform"] call getDefaultClothing);
 					}
 				};
 			};
@@ -78,11 +79,19 @@ else
 		case "Vest": { if (_value != "") then { player addVest _value } };
 		case "Backpack":
 		{
-				removeBackpack player;
-				if (_value != "") then
+			removeBackpack player;
+
+			if (_value != "") then
+			{
+				if (_value isKindOf "Weapon_Bag_Base" && ({_value isKindOf _x} count ["B_UAV_01_backpack_F", "B_Static_Designator_01_weapon_F", "O_Static_Designator_02_weapon_F"] == 0)) then
+				{
+					player addBackpack "B_AssaultPack_rgr"; // NO SOUP FOR YOU
+				}
+				else
 				{
 					player addBackpack _value;
 				};
+			};
 		};
 		case "Goggles": { if (_value != "") then { player addGoggles _value } };
 		case "Headgear":
