@@ -66,7 +66,7 @@ A3W_bountyKillsLifetime = 3*24;
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
 A3W_moneySaving = 1;               // If playerSaving = 1, save player money amount (0 = no, 1 = yes)
-A3W_playerStatsGlobal = 0;         // If playerSaving = 1 and savingMethod = "extDB", players' stats on the scoreboard will be their all-time global values from all servers of your database (0 = no, 1 = yes)
+A3W_playerStatsGlobal = 1;         // If playerSaving = 1 and savingMethod = "extDB", players' stats on the scoreboard will be their all-time global values from all servers of your database (0 = no, 1 = yes)
 A3W_timeSaving = 1;                // Save and restore in-game clock time between server restarts (0 = no, 1 = yes)
 A3W_weatherSaving = 1;             // Save and restore weather settings between server restarts (0 = no, 1 = yes)
 A3W_combatAbortDelay = 60;         // If playerSaving = 1, delay in seconds for which to disable abort and respawn buttons after firing or being shot (0 = none)
@@ -81,7 +81,7 @@ A3W_camoNetSaving = 1;             // Save camonets between server restarts (0 =
 A3W_objectLifetime = 14*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 7*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
-A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
+A3W_serverSavingInterval = 5*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
 A3W_mineSaving = 1;                // Save placed mines between server restarts (0 = no, 1 = yes)
 A3W_mineLifetime = 1*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
@@ -111,11 +111,11 @@ A3W_extDB_RconCommands = "KICK-ADDBAN";	// List of dash-separated RCON commands 
 // Headless client settings
 A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)
-A3W_hcObjCachingID = 1;            // ID of the headless client in charge of object caching (1 or 2)
+A3W_hcObjCachingID = 2;            // ID of the headless client in charge of object caching (1 or 2)
 A3W_hcObjCleanup = 1;              // Enable headless client server cleanup (0 = no, 1 = yes)
-A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
-A3W_hcObjSaving = 1;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
-A3W_hcObjSavingID = 1;             // ID of the headless client in charge of object saving (1 or 2)
+A3W_hcObjCleanupID = 2;            // ID of the headless client in charge of object saving (1 or 2)
+A3W_hcObjSaving = 0;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
+A3W_hcObjSavingID = 2;             // ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
 // The IDs of HCs are assigned according to the order they connect to the server. The first HC to connect will have ID 1, and the second one will have ID 2.
