@@ -64,7 +64,7 @@ _setupObjects =
 	_aiGroup = createGroup CIVILIAN;
 
 	_vehicles = [];
-	_vehicles set [0, [_veh1,[14321.6,15857.7,0], 14, _aiGroup] call _createVehicle]; // static value update when porting to different maps
+	_vehicles set [0, [_veh1,[14574.7,31859.3,0], 14, _aiGroup] call _createVehicle]; // static value update when porting to different maps
 
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
