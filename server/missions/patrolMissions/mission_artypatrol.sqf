@@ -1,8 +1,8 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: mission_ArtyPatrol.sqf
-//	@file Author: WitchDoctor(GGO)
+//	@file Name: mission_artyPatrol.sqf
+//	@file Author: WitchDoctor [GGO]
 
 if (!isServer) exitwith {};
 #include "patrolMissionDefines.sqf";
@@ -79,10 +79,12 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 
-		_vehicle = createVehicle [_type, _position, [], 0, "none"];
+		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		[_vehicle] call vehicleSetup;
 
+		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
+		_vehicle setVelocity _vel; // Added to make it fly
 		_aiGroup addVehicle _vehicle;
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
@@ -145,10 +147,12 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 
-		_vehicle = createVehicle [_type, _position, [], 0, "none"];
+		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		[_vehicle] call vehicleSetup;
 
+		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
+		_vehicle setVelocity _vel; // Added to make it fly
 		_aiGroup addVehicle _vehicle;
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
@@ -208,10 +212,12 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 
-		_vehicle = createVehicle [_type, _position, [], 0, "none"];
+		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		[_vehicle] call vehicleSetup;
 
+		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
+		_vehicle setVelocity _vel; // Added to make it fly
 		_aiGroup addVehicle _vehicle;
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
@@ -286,6 +292,8 @@ _setupObjects =
 		[_veh9, _starts select 8, _startDirs select 8] call _createVehicle2,
 		[_veh10, _starts select 9, _startDirs select 9] call _createVehicle2
 	];
+
+	
 
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
