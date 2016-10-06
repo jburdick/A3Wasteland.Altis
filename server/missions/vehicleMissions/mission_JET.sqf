@@ -15,14 +15,15 @@ _setupVars =
 {
 	_vehicleClass =
 	[
-		"O_Plane_CAS_02_F",
 		"B_Plane_CAS_01_F",
+		"O_Plane_CAS_02_F",
 		"I_Plane_Fighter_03_CAS_F",
 		"I_Plane_Fighter_03_AA_F"
+	
 	] call BIS_fnc_selectRandom;
 
 	_missionType = "Jet";
-	_locationsArray = [[6965.28,7389.1], [2221.11,13385.3], [11823.5,13090.5], [11692.2,3055.81], [2575.89,3569.63]];
+	_locationsArray = MissionSpawnMarkers;
 
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
 	
