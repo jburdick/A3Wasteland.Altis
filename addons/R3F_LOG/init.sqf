@@ -23,10 +23,10 @@
 	/* DEBUT import config */
 	
 	// Initialise les listes vides avant que le config.sqf les concatène
-	//R3F_LOG_CFG_can_tow = [];
-	//R3F_LOG_CFG_can_be_towed = [];
-	//R3F_LOG_CFG_can_lift = [];
-	//R3F_LOG_CFG_can_be_lifted = [];
+	R3F_LOG_CFG_can_tow = [];
+	R3F_LOG_CFG_can_be_towed = [];
+	R3F_LOG_CFG_can_lift = [];
+	R3F_LOG_CFG_can_be_lifted = [];
 	R3F_LOG_CFG_can_transport_cargo = [];
 	R3F_LOG_CFG_can_be_transported_cargo = [];
 	R3F_LOG_CFG_can_be_moved_by_player = [];
@@ -40,19 +40,19 @@
 	 * On inverse l'ordre de toutes les listes de noms de classes pour donner
 	 * la priorité aux classes spécifiques sur les classes génériques
 	 */
-	//reverse R3F_LOG_CFG_can_tow;
-	//reverse R3F_LOG_CFG_can_be_towed;
-	///reverse R3F_LOG_CFG_can_lift;
-	//reverse R3F_LOG_CFG_can_be_lifted;
+	reverse R3F_LOG_CFG_can_tow;
+	reverse R3F_LOG_CFG_can_be_towed;
+	reverse R3F_LOG_CFG_can_lift;
+	reverse R3F_LOG_CFG_can_be_lifted;
 	reverse R3F_LOG_CFG_can_transport_cargo;
 	reverse R3F_LOG_CFG_can_be_transported_cargo;
 	reverse R3F_LOG_CFG_can_be_moved_by_player;
 	
 	// On passe tous les noms de classes en minuscules
-	//{R3F_LOG_CFG_can_tow set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_tow;
-	//{R3F_LOG_CFG_can_be_towed set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_towed;
-	//{R3F_LOG_CFG_can_lift set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_lift;
-	//{R3F_LOG_CFG_can_be_lifted set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_lifted;
+	{R3F_LOG_CFG_can_tow set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_tow;
+	{R3F_LOG_CFG_can_be_towed set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_towed;
+	{R3F_LOG_CFG_can_lift set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_lift;
+	{R3F_LOG_CFG_can_be_lifted set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_lifted;
 	{R3F_LOG_CFG_can_transport_cargo select _forEachIndex set [0, toLower (_x select 0)];} forEach R3F_LOG_CFG_can_transport_cargo;
 	{R3F_LOG_CFG_can_be_transported_cargo select _forEachIndex set [0, toLower (_x select 0)];} forEach R3F_LOG_CFG_can_be_transported_cargo;
 	{R3F_LOG_CFG_can_be_moved_by_player set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_moved_by_player;
@@ -70,12 +70,12 @@
 	} forEach R3F_LOG_CFG_can_be_transported_cargo;
 	
 	// Union des tableaux de types d'objets servant dans un isKindOf
-	/*R3F_LOG_objets_depl_heli_remorq_transp = [];
+	R3F_LOG_objets_depl_heli_remorq_transp = [];
 	{
 		if !(_x in R3F_LOG_objets_depl_heli_remorq_transp) then
 		{
 			R3F_LOG_objets_depl_heli_remorq_transp pushBack _x;
-		};*/
+		};
 	} forEach (R3F_LOG_CFG_can_be_moved_by_player + R3F_LOG_CFG_can_be_lifted + R3F_LOG_CFG_can_be_towed + R3F_LOG_classes_objets_transportables);
 	
 	// Gestion compatibilité fichier de config 3.0 => 3.1 (définition de valeurs par défaut)
@@ -203,14 +203,14 @@
 		R3F_LOG_FNCT_objet_relacher = compile preprocessFile "addons\R3F_LOG\objet_deplacable\relacher.sqf";
 		R3F_LOG_FNCT_objet_deplacer = compile preprocessFile "addons\R3F_LOG\objet_deplacable\deplacer.sqf";
 		
-	//	R3F_LOG_FNCT_heliporteur_heliporter = compile preprocessFile "addons\R3F_LOG\heliporteur\heliporter.sqf";
-	//	R3F_LOG_FNCT_heliporteur_larguer = compile preprocessFile "addons\R3F_LOG\heliporteur\larguer.sqf";
-	//	R3F_LOG_FNCT_heliporteur_init = compile preprocessFile "addons\R3F_LOG\heliporteur\heliporteur_init.sqf";
+		R3F_LOG_FNCT_heliporteur_heliporter = compile preprocessFile "addons\R3F_LOG\heliporteur\heliporter.sqf";
+		R3F_LOG_FNCT_heliporteur_larguer = compile preprocessFile "addons\R3F_LOG\heliporteur\larguer.sqf";
+		R3F_LOG_FNCT_heliporteur_init = compile preprocessFile "addons\R3F_LOG\heliporteur\heliporteur_init.sqf";
 		
-	//	R3F_LOG_FNCT_remorqueur_detacher = compile preprocessFile "addons\R3F_LOG\remorqueur\detacher.sqf";
-	//	R3F_LOG_FNCT_remorqueur_remorquer_deplace = compile preprocessFile "addons\R3F_LOG\remorqueur\remorquer_deplace.sqf";
-	//	R3F_LOG_FNCT_remorqueur_remorquer_direct = compile preprocessFile "addons\R3F_LOG\remorqueur\remorquer_direct.sqf";
-	//	R3F_LOG_FNCT_remorqueur_init = compile preprocessFile "addons\R3F_LOG\remorqueur\remorqueur_init.sqf";
+		R3F_LOG_FNCT_remorqueur_detacher = compile preprocessFile "addons\R3F_LOG\remorqueur\detacher.sqf";
+		R3F_LOG_FNCT_remorqueur_remorquer_deplace = compile preprocessFile "addons\R3F_LOG\remorqueur\remorquer_deplace.sqf";
+		R3F_LOG_FNCT_remorqueur_remorquer_direct = compile preprocessFile "addons\R3F_LOG\remorqueur\remorquer_direct.sqf";
+		R3F_LOG_FNCT_remorqueur_init = compile preprocessFile "addons\R3F_LOG\remorqueur\remorqueur_init.sqf";
 		
 		R3F_LOG_FNCT_transporteur_charger_deplace = compile preprocessFile "addons\R3F_LOG\transporteur\charger_deplace.sqf";
 		R3F_LOG_FNCT_transporteur_charger_selection = compile preprocessFile "addons\R3F_LOG\transporteur\charger_selection.sqf";
@@ -233,14 +233,14 @@
 		R3F_LOG_action_charger_selection_valide = false;
 		R3F_LOG_action_contenu_vehicule_valide = false;
 		
-		//R3F_LOG_action_remorquer_deplace_valide = false;
+		R3F_LOG_action_remorquer_deplace_valide = false;
 		
-		//R3F_LOG_action_heliporter_valide = false;
-		//R3F_LOG_action_heliport_larguer_valide = false;
+		R3F_LOG_action_heliporter_valide = false;
+		R3F_LOG_action_heliport_larguer_valide = false;
 		
 		R3F_LOG_action_deplacer_objet_valide = false;
-		//R3F_LOG_action_remorquer_direct_valide = false;
-		//R3F_LOG_action_detacher_valide = false;
+		R3F_LOG_action_remorquer_direct_valide = false;
+		R3F_LOG_action_detacher_valide = false;
 		R3F_LOG_action_selectionner_objet_charge_valide = false;
 		
 		R3F_LOG_action_ouvrir_usine_valide = false;
