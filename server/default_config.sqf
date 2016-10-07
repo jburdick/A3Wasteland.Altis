@@ -29,7 +29,9 @@ A3W_unlimitedStamina = 1;          // Allow unlimited sprinting, jumping, etc. (
 A3W_bleedingTime = 120;             // Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
 A3W_headshotNoRevive = 1;          // Instant death on fatal headshot by enemy player with non-explosive ammo (0 = no, 1 = yes)
 A3W_customDeathMessages = 1;       // If difficulty option deathMessages=0, display custom messages related to causes of death, as defined in fn_deathMessage.sqf (0 = no, 1 = yes)
-
+A3W_healthTime = 7*60;             // Seconds till death once starving or dehydrated
+A3W_hungerTime = 170*60;           // Seconds till starving
+A3W_thirstTime = 140*60;           // Seconds till dehydrated
 // Spawn settings
 A3W_townSpawnCooldown = 10*60;      // Number of seconds to wait between each spawn on a specific town (0 = disabled)
 A3W_townSpawnSpawnHeight = 1500;   // Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
@@ -55,13 +57,10 @@ A3W_atmEditorPlacedOnly = 0;       // Only allow access via ATMs placed from the
 A3W_atmMapIcons = 1;               // Draw small icons on the map that indicate ATM locations (0 = no, 1 = yes)
 A3W_atmRemoveIfDisabled = 1;       // Remove all ATMs from map if A3W_atmEnabled is set to 0 (0 = no, 1 = yes)
 
-// Not currently implemented, soon
-A3W_atmBounties = 1;
-A3W_bountyMax = 1000000;
-A3W_bountyMin = 1000;
-A3W_bountyFee = 50;
-A3W_bountyKillsLifetime = 3*24;
-
+A3W_bountyMax = 2000000;            // Maximum amount of money that can be set as a bounty on someone
+A3W_bountyMinStart = 2500;         // Minimum amount of money to start a bounty on someone
+A3W_bountyRewardPerc = 100;         // Percentage of cost that goes to bounty reward
+A3W_bountyLifetime = 4*24;         // Maximum lifetime in hours for bounty kills to store in DB (storing bounty kills is to prevent from forming groups with someone you collected bounty on)
 // Persistence settings
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
