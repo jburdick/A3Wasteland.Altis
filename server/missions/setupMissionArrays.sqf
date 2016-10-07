@@ -39,7 +39,7 @@ MoneyMissions =
 PatrolMissions =
 [
 	["mission_militaryPatrol", 1],
-	//["mission_artyPatrol", 1],
+	["mission_artyPatrol", 1],
 	["mission_TanoaPatrol", 1]
 	
 	
@@ -47,7 +47,7 @@ PatrolMissions =
 
 vehicleMissions =
 [
-	//["mission_jet", 1],
+	["mission_jet", 1],
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	["mission_LightArmVeh", 1],
