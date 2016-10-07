@@ -55,13 +55,6 @@ if (!isDedicated) then
 		{
 			9999 cutText ["Welcome to A3Wasteland, please wait for your client to initialize", "BLACK", 0.01];
 
-
-
-
-
-
-
-
 			waitUntil {!isNull player};
 			player setVariable ["playerSpawning", true, true];
 			playerSpawning = true;
@@ -111,7 +104,6 @@ if (hasInterface || isServer) then
 	[] execVM "addons\stickyCharges\init.sqf";
 	[] execVM "addons\laptop\init.sqf";
 	//if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
-	[] execVM "addons\bounty\init.sqf";
 };
 
 // Remove line drawings from map
