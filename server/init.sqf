@@ -170,7 +170,7 @@ if (isServer) then
 		"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
 		"BoS_coolDownTimer",
-		"A3W_headshotNoRevive"
+		"A3W_headshotNoRevive",
 		"A3W_bountyMax",
 		"A3W_bountyMinStart",
 		"A3W_bountyRewardPerc",
