@@ -6,11 +6,11 @@
 //	@file Author: [404] Deadbeat, AgentRev
 //	@file Created: 08/12/2012 15:19
 
-// Main Mission Color = #52bf90 - Light blue
+// Main Mission Color = #52bf90 - Purple
 // Fail Mission Color = #FF1717 - Light red
 // Success Mission Color = #17FF41 - Light green
 
-#define vehicleMissionColor "#52bf90"
+#define vehicleMissionColor "#6F2A73"
 #define failMissionColor "#FF1717"
 #define successMissionColor "#17FF41"
 #define subTextColor "#FFFFFF"
