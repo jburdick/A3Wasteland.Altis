@@ -68,7 +68,6 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\BoS\dialog\BoS_mainMenu.hpp"
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
-// #include "addons\CHVD\dialog.hpp"
 
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
@@ -91,8 +90,6 @@ class CfgFunctions
 		#include "client\CfgFunctions.hpp"
 		#include "server\CfgFunctions.hpp"
 	};
-
-	// #include "addons\CHVD\CfgFunctions.hpp"
 	
 	class armajunkies
 	{
