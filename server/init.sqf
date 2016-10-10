@@ -167,7 +167,7 @@ if (isServer) then
 		"A3W_privateParkingLimit",
 		"A3W_privateParkingCost",
 		"A3W_vehicleLocking",
-		"A3W_disableBuiltInThermal",
+		//"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
 		"BoS_coolDownTimer",
 		"A3W_headshotNoRevive"
