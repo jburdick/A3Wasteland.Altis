@@ -1,14 +1,14 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2016 A3Wasteland.com *
 // ******************************************************************************************
-//  @file Name: fn_resupplyTruck.sqf
+//  @file Name: fn_resupplyTruck_.sqf
 //  @file Author: Wiking, AgentRev, micovery
 
 #define RESUPPLY_TRUCK_DISTANCE 20
 #define REARM_TIME_SLICE 5
 #define REPAIR_TIME_SLICE 1
 #define REFUEL_TIME_SLICE 1
-#define PRICE_RELATIONSHIP 100000000 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
+#define PRICE_RELATIONSHIP 10 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
 #define RESUPPLY_TIMEOUT 30
 
 // Check if mutex lock is active.
@@ -34,7 +34,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 	_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
 	_vehName = getText (_vehCfg >> "displayName");
 	_isUAV = (round getNumber (_vehCfg >> "isUav") >= 1);
-	_isStaticWep = _vehClass isKindOf "StaticWeapon";
+	_isWep = _vehClass isKindOf "Weapon";
 
 	scopeName "resupplyTruckThread";
 
@@ -46,7 +46,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 			_price = _x select 2;
 			_price = round (_price / PRICE_RELATIONSHIP);
 		};
-	} forEach (call allVehStoreVehicles + call staticGunsArray);
+	} forEach (call allVehStoreVehicles + call GunsArray);
 
 	_titleText = { titleText [_this, "PLAIN DOWN", ((REARM_TIME_SLICE max 1) / 10) max 0.3] };
 
@@ -94,7 +94,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 			// Abort if player gets out of vehicle
 			_checkCondition = {vehicle _unit != _vehicle};
-			if (!_isUAV && !_isStaticWep && _checkCondition) exitWith
+			if (!_isUAV && !_isWep && _checkCondition) exitWith
 			{
 				_pauseText = "Get back in the vehicle.";
 				_abortText = "You are not in the vehicle.";
@@ -115,12 +115,12 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 			for [{_i = RESUPPLY_TIMEOUT}, {_i > 0 && _checkCondition && !doCancelAction}, {_i = _i - 1}] do
 			{
-				_vehicle setVariable ["A3W_resupplyTruckTimeout", true];
+				_vehicle setVariable ["resupplyTruckThread", true];
 				titleText [format ["%1\n%2", _pauseText, format ["Resupply sequence timeout in %1", _i]], "PLAIN DOWN", 0.5];
 				sleep 1;
 			};
 
-			_vehicle setVariable ["A3W_resupplyTruckTimeout", nil];
+			_vehicle setVariable ["resupplyTruckThread", nil];
 
 			if !(call _checkCondition) then
 			{
@@ -154,9 +154,9 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 	call
 	{
-		if (_isStaticWep) then
+		if (_isWep) then
 		{
-			_text = format ["%1\n%2", "Resupply sequence started", "Please get out of the static weapon."];
+			_text = format ["%1\n%2", "Resupply sequence started", "Please get out of the  weapon."];
 			titleText [_text, "PLAIN DOWN", 0.5];
 			sleep 10;
 
@@ -172,7 +172,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 			(_vehicle getVariable "A3W_truckResupplyThread") params [["_resupplyThread", scriptNull, [scriptNull]]];
 
-			if (_started && !scriptDone _resupplyThread && !(_vehicle getVariable ["A3W_resupplyTruckTimeout", false])) then
+			if (_started && !scriptDone _resupplyThread && !(_vehicle getVariable ["resupplyTruckThread", false])) then
 			{
 				_vehicle engineOn false;
 			};
@@ -180,7 +180,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		_vehicle engineOn false;
 
-		/* if (player getVariable ["cmoney",0] >= _price) then
+		if (player getVariable ["cmoney",0] >= _price) then
 		{
 			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _price, _vehName], "Do you want to proceed?"];
 
@@ -188,7 +188,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 			{
 				breakTo "resupplyTruckThread";
 			};
-		}; */
+		};
 
 		call _checkAbortConditions;
 		call _checkPlayerMoney;
@@ -328,7 +328,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		_checkDone = true;
 
-		if (fuel _vehicle < 0.999 && !_isStaticWep) then
+		if (fuel _vehicle < 0.999 && !_isWep) then
 		{
 			while {fuel _vehicle < 0.999} do
 			{
