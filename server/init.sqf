@@ -167,8 +167,16 @@ if (isServer) then
 		"A3W_privateParkingLimit",
 		"A3W_privateParkingCost",
 		"A3W_vehicleLocking",
-		//"A3W_disableBuiltInThermal",
+		"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
+		"A3W_bountyMax",
+		"A3W_bountyMinStart",
+		"A3W_bountyRewardPerc",
+		"A3W_bountyLifetime",
+		"A3W_maxMoney",
+		"A3W_healthTime",
+		"A3W_hungerTime",
+		"A3W_thirstTime"
 		"BoS_coolDownTimer",
 		"A3W_headshotNoRevive"
 	];
