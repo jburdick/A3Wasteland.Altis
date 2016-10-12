@@ -409,12 +409,12 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
-	["Static_Designator_01_base_F", 2],
-	["Static_Designator_02_base_F", 2],
+	//["Static_Designator_01_base_F", 2],
+	//["Static_Designator_02_base_F", 2],
 	["Land_Canal_Wall_10m_F", 10], // Base door
 	["Land_InfoStand_V2_F", 3], // Base door key	
 	["Land_Device_assembled_F", 10], // Base Locker
-	["StaticWeapon", 5],
+	//["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 10],
 	["B_supplyCrate_F", 2],
 	["Box_Ammo_F", 1],
