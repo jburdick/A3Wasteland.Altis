@@ -38,7 +38,7 @@ _amount = _input call mf_verify_money_input;
 
 if (_amount < 1) exitWith {};
 
-_reward = ["A3W_bountyRewardPerc", 10] call getPublicVar;
+_reward = ["A3W_bountyRewardPerc", 100] call getPublicVar;
 _rewardAmount = ceil (_amount * (_reward / 100));
 _balance = player getVariable ["bmoney", 0];
 
