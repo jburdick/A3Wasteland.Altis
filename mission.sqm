@@ -8,7 +8,7 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=1960;
+		nextID=1969;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8;
+		nextID=9;
 	};
 	class Camera
 	{
-		pos[]={4572.9053,302.36032,21419.52};
-		dir[]={0.59887242,-0.33662021,-0.7267127};
-		up[]={0.21408261,0.94163316,-0.25978243};
-		aside[]={-0.77175045,1.1092925e-007,-0.63598913};
+		pos[]={11367.355,25,11414.591};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -123,7 +123,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=304;
+		items=313;
 		class Item0
 		{
 			dataType="Group";
@@ -3351,7 +3351,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3359,14 +3359,12 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
-					atlOffset=0.35717964;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
-			atlOffset=0.35717964;
 		};
 		class Item50
 		{
@@ -5579,12 +5577,12 @@ class Mission
 		class Item254
 		{
 			dataType="Marker";
-			position[]={16061.949,56.833313,18262.105};
+			position[]={9564.999,56.3787,15653.898};
 			name="Mission_35";
 			type="Empty";
 			colorName="ColorOrange";
 			id=429;
-			atlOffset=3.8146973e-006;
+			atlOffset=-90.29821;
 		};
 		class Item255
 		{
@@ -6215,7 +6213,7 @@ class Mission
 					name="Parking6_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=215.59109;
+					angle=215.59108;
 					id=1945;
 					atlOffset=38.713524;
 				};
@@ -6384,6 +6382,104 @@ class Mission
 			};
 			id=1959;
 			type="Land_Atm_01_F";
+		};
+		class Item304
+		{
+			dataType="Marker";
+			position[]={15211.678,-1.335183e-005,16779.711};
+			name="Jet_1";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=226.99998;
+			id=1960;
+			atlOffset=-17.910013;
+		};
+		class Item305
+		{
+			dataType="Marker";
+			position[]={14809.98,-2.4002654e-011,16772.664};
+			name="Jet_2";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1961;
+			atlOffset=-17.91;
+		};
+		class Item306
+		{
+			dataType="Marker";
+			position[]={14233.86,0,16298.729};
+			name="Jet_3";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=135;
+			id=1962;
+			atlOffset=-19.386719;
+		};
+		class Item307
+		{
+			dataType="Marker";
+			position[]={23249.166,3.5236688,19121.189};
+			name="Jet_4";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1963;
+			atlOffset=0.33366871;
+		};
+		class Item308
+		{
+			dataType="Marker";
+			position[]={22979.605,0,17001.701};
+			name="Jet_5";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=329.99997;
+			id=1964;
+			atlOffset=-3.1900001;
+		};
+		class Item309
+		{
+			dataType="Marker";
+			position[]={21166.678,0,7568.8403};
+			name="Jet_6";
+			type="Empty";
+			colorName="ColorYellow";
+			id=1965;
+			atlOffset=-18.230478;
+		};
+		class Item310
+		{
+			dataType="Marker";
+			position[]={11615.774,0,11941.714};
+			name="Jet_7";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1966;
+			atlOffset=-23.492937;
+		};
+		class Item311
+		{
+			dataType="Marker";
+			position[]={11367.355,0,11439.591};
+			name="Jet_8";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1967;
+			atlOffset=-22.479101;
+		};
+		class Item312
+		{
+			dataType="Marker";
+			position[]={21041.588,19.380178,7431.4175};
+			name="Jet_9";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1968;
+			atlOffset=-1.5249386;
 		};
 	};
 };

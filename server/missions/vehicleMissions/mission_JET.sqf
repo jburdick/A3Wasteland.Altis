@@ -23,7 +23,7 @@ _setupVars =
 	] call BIS_fnc_selectRandom;
 
 	_missionType = "Jet";
-	_locationsArray = MissionSpawnMarkers;
+	_locationsArray = JetSpawnMarkers;
 
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
 	

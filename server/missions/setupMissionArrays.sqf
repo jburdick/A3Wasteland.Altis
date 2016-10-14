@@ -48,13 +48,13 @@ PatrolMissions =
 
 vehicleMissions =
 [
-	["mission_APC", 1],
-	["mission_MBT", 1],
-	["mission_LightArmVeh", 1],
-	["mission_ArmedHeli", 1],
-	["mission_CivHeli", 1],
-	["mission_LSV", 1],
-	["mission_VTOL", 1],
+	//["mission_APC", 1],
+	//["mission_MBT", 1],
+	//["mission_LightArmVeh", 1],
+	//["mission_ArmedHeli", 1],
+	//["mission_CivHeli", 1],
+	//["mission_LSV", 1],
+	//["mission_VTOL", 1],
 	["mission_jet", 1]
 	
 

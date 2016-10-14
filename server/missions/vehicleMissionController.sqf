@@ -7,7 +7,7 @@
 #define MISSION_CTRL_PVAR_LIST vehicleMissions
 #define MISSION_CTRL_TYPE_NAME "Vehicle"
 #define MISSION_CTRL_FOLDER "vehicleMissions"
-#define MISSION_CTRL_DELAY (["A3W_vehicleMissionDelay", 10*60] call getPublicVar)
+#define MISSION_CTRL_DELAY (["A3W_vehicleMissionDelay", 5*60] call getPublicVar)
 #define MISSION_CTRL_COLOR_DEFINE vehicleMissionColor
 
 #include "vehicleMissions\vehicleMissionDefines.sqf"
