@@ -16,21 +16,20 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9;
+		nextID=10;
 	};
 	class Camera
 	{
-		pos[]={11367.355,25,11414.591};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={15115.231,204.31059,16824.207};
+		dir[]={-0.51895261,-0.34925523,-0.78022015};
+		up[]={-0.19343424,0.93702173,-0.29081848};
+		aside[]={-0.83265102,-6.1839819e-007,0.55382782};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Ui_F",
 	"A3_Structures_F_Households_House_Big01",
 	"A3_Structures_F_Households_House_Small02",
 	"A3_Structures_F_Mil_Cargo",
@@ -44,7 +43,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -54,40 +53,33 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item2
-		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item4
+		class Item3
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
@@ -6213,7 +6205,7 @@ class Mission
 					name="Parking6_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=215.59108;
+					angle=215.59106;
 					id=1945;
 					atlOffset=38.713524;
 				};
@@ -6390,14 +6382,14 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99998;
+			angle=226.99997;
 			id=1960;
 			atlOffset=-17.910013;
 		};
 		class Item305
 		{
 			dataType="Marker";
-			position[]={14809.98,-2.4002654e-011,16772.664};
+			position[]={15144.729,0,17225.455};
 			name="Jet_2";
 			type="Empty";
 			colorName="ColorYellow";
@@ -6408,18 +6400,18 @@ class Mission
 		class Item306
 		{
 			dataType="Marker";
-			position[]={14233.86,0,16298.729};
+			position[]={14168.672,0,16191.258};
 			name="Jet_3";
 			type="Empty";
 			colorName="ColorYellow";
 			angle=135;
 			id=1962;
-			atlOffset=-19.386719;
+			atlOffset=-20.553244;
 		};
 		class Item307
 		{
 			dataType="Marker";
-			position[]={23249.166,3.5236688,19121.189};
+			position[]={23148.742,3.5236688,18402.359};
 			name="Jet_4";
 			type="Empty";
 			colorName="ColorYellow";
@@ -6434,7 +6426,7 @@ class Mission
 			name="Jet_5";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=329.99997;
+			angle=329.99994;
 			id=1964;
 			atlOffset=-3.1900001;
 		};
