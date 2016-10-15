@@ -109,6 +109,7 @@ MoneyMissions = [MoneyMissions, [["A3W_underWaterMissions", ["mission_SunkenTrea
 { _x set [2, false] } forEach hostileairMissions;
 
 MissionSpawnMarkers = [];
+JetSpawnMarkers = [];
 SunkenMissionMarkers = [];
 {
 	switch (true) do
@@ -120,6 +121,10 @@ SunkenMissionMarkers = [];
 		case (["SunkenMission_", _x] call fn_startsWith):
 		{
 			SunkenMissionMarkers pushBack [_x, false];
+		};
+		case (["Jet_", _x] call fn_startsWith):
+		{
+			JetSpawnMarkers pushBack [_x, false];
 		};
 	};
 } forEach allMapMarkers;
