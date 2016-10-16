@@ -236,7 +236,7 @@ R3F_LOG_CFG_string_condition_allow_creation_factory_on_this_client = "false";
 R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 [
 	// e.g. : "MyTowingVehicleClassName1", "MyTowingVehicleClassName2"
-	/*"Offroad_01_base_F",
+	"Offroad_01_base_F",
 	"I_C_Offroad_02_unarmed_F",
 	"C_Offroad_02_unarmed_F",
 	"B_T_LSV_01_unarmed_F",
@@ -252,7 +252,7 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 	"Wheeled_APC_F",
 	"Tank",
 	"Boat_Armed_01_base_F",
-	"Ship_F"*/
+	"Ship_F"
 ];
 
 /**
@@ -262,7 +262,7 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
 	// e.g. : "MyTowableObjectClassName1", "MyTowableObjectClassName2"
-	/*"B_Heli_Attack_01_F",
+	"B_Heli_Attack_01_F",
 	"Heli_Attack_02_base_F",
 	"Heli_Light_01_base_F",
 	"Heli_Light_02_base_F",
@@ -292,7 +292,7 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 	"B_MBT_01_mlrs_F",
 	"B_Heli_Transport_03_F",
 	"Ship_F",
-	"Plane"*/
+	"Plane"
 ];
 
 
