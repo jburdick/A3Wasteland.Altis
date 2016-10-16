@@ -3,5 +3,5 @@
 #endif
 
 #ifdef SAF_FNCS
-	#include "\cfg\cfgFunctions.cpp"
+	#include "cfg\cfgFunctions.cpp"
 #endif
