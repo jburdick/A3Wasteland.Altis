@@ -34,7 +34,7 @@ if (_selection != "?") then
 	};
 
 	// Revive stuff
-	//call FAR_HandleDamage_EH;
+	call FAR_HandleDamage_EH;
 
 	//diag_log str [_unit, _selection, _damage, typeOf _source, _ammo];
 };
