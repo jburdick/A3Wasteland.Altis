@@ -72,11 +72,7 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
-#include "addons\taw_vd\GUI.h"
-#include "addons\killfeed\dialogs\common.hpp"
-#include "addons\vip_cmn\resource\vip_dlg_defaults.hpp"
-#include "addons\vip_sms\resource\vip_sms_dlg.hpp"
-
+#include "addons\HCAI\description.ext"
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
@@ -85,9 +81,6 @@ class RscTitles
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "addons\statusBar\statusBar.hpp"
-	#include "addons\killfeed\dialogs\titles.hpp"
-	#include "addons\ais_injury\dialogs\rscTitlesAIS.hpp"
-
 };
 
 class CfgFunctions
@@ -102,27 +95,6 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
-	class SAF 
-	{
-        #define SAF_FNCS
-            #include "addons\sushi_scripts\core\init.cpp"
-            #include "addons\sushi_scripts\breach\init.cpp"
-        #undef SAF_FNCS
-    };
-	class killfeed {
-		tag = "kill";
-		class functions {
-			file = "addons\killfeed\functions";
-			class killfeedMain {};
-			class killfeedCompile {};
-			class killfeedType {};
-			class killfeedRender {};
-		};
-	};
-	#include "addons\taw_vd\CfgFunctions.hpp"
-	#include "addons\vip_cmn\fn\vip_cmn_fnc.hpp"
-	#include "addons\vip_sms\fn\vip_sms_fnc.hpp"
-	#include "addons\ais_injury\cfgFunctionsAIS.hpp"
 };
 
 class CfgNotifications
@@ -204,5 +176,3 @@ class CfgSounds
 							titles[] = {};
 		};
 };
-
-enableDebugConsole = 1;	//Allows access to the Debug Console outside of the editor during normal gameplay.0 = Default behavior, available only in editor, 1 = Available in SP and for hosts / logged in admins, 2 = Available for everyone
