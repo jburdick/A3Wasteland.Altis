@@ -114,9 +114,9 @@ if (hasInterface || isServer) then
 	[] execVM "addons\bounty\init.sqf";
 	[true,30,false,true,30,3,true,[]] execVM "addons\scripts\WerthlesHeadless.sqf";
 	[] execVM "addons\VCOMAI\init.sqf";
-	[] execVM "addons\scripts\AUSMD_Tactical_Glasses.sqf";
-	[] execVM "addons\VCOM_Driving\init.sqf";
-	[] execVM "addons\scripts\cratercleaner.sqf";
+	[] execVM "AUSMD_Tactical_Glasses.sqf";
+	[] execVM "VCOM_Driving\init.sqf";
+	[] execVM "cratercleaner.sqf";
 };
 
 // Remove line drawings from map
