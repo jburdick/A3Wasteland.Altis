@@ -4,7 +4,7 @@ createShortcuts = 1;
 class tcb_ais {
 	tag = "tcb";
 	class ais {
-		file = "addons\ais_injury\func";
+		file = "ais_injury\func";
 		addf(handleDamage2);
 		addf(keyUnbind);
 		addf(firstAid);

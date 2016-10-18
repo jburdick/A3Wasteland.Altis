@@ -55,7 +55,7 @@ if (!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_
 player addEventHandler ["Respawn", { _this spawn onRespawn }];
 player addEventHandler ["Killed", onKilled];
 
-//call compile preprocessFileLineNumbers "addons\far_revive\FAR_revive_init.sqf";
+call compile preprocessFileLineNumbers "addons\far_revive\FAR_revive_init.sqf";
 
 A3W_scriptThreads pushBack execVM "client\functions\evalManagedActions.sqf";
 
