@@ -28,13 +28,13 @@ call mf_compile;
 ////////////////////////////////////////////////
 // Handle Death
 ////////////////////////////////////////////////
-//FAR_HandleDamage_EH = "addons\far_revive\FAR_HandleDamage_EH.sqf" call mf_compile;
-//FAR_fnc_headshotHitPartEH = "addons\far_revive\FAR_headshotHitPartEH.sqf" call mf_compile;
+FAR_HandleDamage_EH = "addons\far_revive\FAR_HandleDamage_EH.sqf" call mf_compile;
+FAR_fnc_headshotHitPartEH = "addons\far_revive\FAR_headshotHitPartEH.sqf" call mf_compile;
 
 ////////////////////////////////////////////////
 // Make Player Unconscious
 ////////////////////////////////////////////////
-//FAR_Player_Unconscious = "addons\far_revive\FAR_Player_Unconscious.sqf" call mf_compile;
+FAR_Player_Unconscious = "addons\far_revive\FAR_Player_Unconscious.sqf" call mf_compile;
 
 ////////////////////////////////////////////////
 // Suspect Tracking
@@ -44,25 +44,25 @@ call mf_compile;
 ////////////////////////////////////////////////
 // Revive Player
 ////////////////////////////////////////////////
-/* FAR_HandleRevive =
+FAR_HandleRevive =
 {
 	[_this select 0, true] call FAR_HandleTreating;
 }
-call mf_compile; */
+call mf_compile;
 
 ////////////////////////////////////////////////
 // Stabilize Player
 ////////////////////////////////////////////////
-/* FAR_HandleStabilize =
+FAR_HandleStabilize =
 {
 	[_this select 0, false] call FAR_HandleTreating;
 }
-call mf_compile; */
+call mf_compile;
 
 ////////////////////////////////////////////////
 // Revive or Stabilize Player
 ////////////////////////////////////////////////
-/* FAR_HandleTreating =
+FAR_HandleTreating =
 {
 	private "_treatThread";
 	_treatThread = _this spawn
@@ -115,11 +115,11 @@ call mf_compile;
 
 
 #define IS_DRAGGING_UNIT(UNIT) (alive player && |UNCONSCIOUS(player) && alive UNIT && UNCONSCIOUS(UNIT) && FAR_isDragging && DRAGGED_BY(UNIT) == player)
- */
+
 ////////////////////////////////////////////////
 // Drag Injured Player
 ////////////////////////////////////////////////
-/* FAR_Drag =
+FAR_Drag =
 {
 	if (primaryWeapon player == "") exitWith
 	{
@@ -235,7 +235,7 @@ FAR_Eject_Injured =
 		};
 	} forEach crew _veh;
 }
-call mf_compile; */
+call mf_compile;
 
 FAR_Slay_Target =
 {
@@ -362,36 +362,36 @@ call mf_compile;
 ////////////////////////////////////////////////
 // Dragging Action Check
 ////////////////////////////////////////////////
-/* FAR_Check_Dragging =
+FAR_Check_Dragging =
 {
 	// Make sure player is alive and target is an injured unit
 	(alive player && !UNCONSCIOUS(player) && !IS_TREATING(player) && !FAR_isDragging && !isNull call FAR_FindTarget)
 }
 call mf_compile;
- */
+
 ////////////////////////////////////////////////
 // Stabilize Action Check
 ////////////////////////////////////////////////
-/* FAR_Check_Stabilize =
+FAR_Check_Stabilize =
 {
 	private _target = call FAR_FindTarget;
 
 	// do not show Stabilize if Revive is shown, unless target is enemy
 	(!IS_MEDIC(player) || !([player, _target] call A3W_fnc_isFriendly)) && FAR_Check_Dragging && {!STABILIZED(_target) && !(["FirstAidKit","Medikit"] arrayIntersect items player isEqualTo [])}
 }
-call mf_compile; */
+call mf_compile;
 
 ////////////////////////////////////////////////
 // Revive Action Check
 ////////////////////////////////////////////////
-/* FAR_Check_Revive =
+FAR_Check_Revive =
 {
 	private _target = call FAR_FindTarget;
 
 	// do not show Revive if target is enemy
 	IS_MEDIC(player) && [player, _target] call A3W_fnc_isFriendly && FAR_Check_Dragging
 }
-call mf_compile; */
+call mf_compile;
 
 ////////////////////////////////////////////////
 // Slay Action Check
@@ -407,7 +407,7 @@ call mf_compile;
 ////////////////////////////////////////////////
 // Load Dragged Action Check
 ////////////////////////////////////////////////
-/* FAR_Check_Load_Dragged =
+FAR_Check_Load_Dragged =
 {
 	private ["_veh", "_draggedUnit"];
 	_veh = cursorTarget;
@@ -415,7 +415,7 @@ call mf_compile;
 
 	player distance _veh <= (sizeOf typeOf _veh / 3) max 2 && [_draggedUnit, _veh, true] call fn_canGetIn && [_draggedUnit, player] call A3W_fnc_isFriendly
 }
-call mf_compile; */
+call mf_compile;
 
 ////////////////////////////////////////////////
 // Eject Injured Action Check
@@ -433,7 +433,7 @@ call mf_compile;
 ////////////////////////////////////////////////
 // Show Nearby Friendly Medics
 ////////////////////////////////////////////////
-/* FAR_IsFriendlyMedic =
+FAR_IsFriendlyMedic =
 {
 	IS_MEDIC(_this) && !UNCONSCIOUS(_this) && [_this, player] call A3W_fnc_isFriendly
 }
@@ -485,4 +485,4 @@ FAR_CheckFriendlies =
 
 	_msg + (if (_medicsText == "") then { "<br/>- none -" } else { _medicsText })
 }
-call mf_compile; */
+call mf_compile;
