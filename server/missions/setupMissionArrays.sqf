@@ -80,7 +80,9 @@ aquaticMissions =
 	["mission_ArmedDiversquad", 1],
 	["mission_Coastal_Convoy", 1],
 	["mission_SunkenSupplies", 1],
-	["mission_SunkenTreasure", 1]
+	["mission_SunkenTreasure", 1],
+	["mission_Jaws", 1]
+	
 	
 
 ];
