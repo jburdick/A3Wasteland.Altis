@@ -426,6 +426,7 @@ player createDiaryRecord ["credits",
 <br/>	* Austerror (GitHub)
 <br/>	* AWA (OpenDayZ)
 <br/>	* bodybag (Gameaholic.se)
+<br/>	* Champ-1 (CHVD)
 <br/>	* code34 (iniDBI)
 <br/>	* Das Attorney (Jump MF)
 <br/>	* Ed! (404Games forums)
