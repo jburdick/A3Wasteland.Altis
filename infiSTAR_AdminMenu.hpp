@@ -1,6 +1,6 @@
 /*
 Antihack & AdminTools - Christian Lorenzen - www.infiSTAR.de
-#3235
+#2
 */
 class RscListBox_infiSTAR {
 access=0;
