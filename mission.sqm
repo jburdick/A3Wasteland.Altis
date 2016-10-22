@@ -5588,7 +5588,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_01";
 				description="Service";
 			};
@@ -5609,7 +5609,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_02";
 				description="Service";
 			};
@@ -5630,7 +5630,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_03";
 				description="Service";
 			};
@@ -5651,7 +5651,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_04";
 				description="Service";
 			};
@@ -5671,7 +5671,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_05";
 				description="Service";
 			};
@@ -5692,7 +5692,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_06";
 				description="Service";
 			};
@@ -5713,7 +5713,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_07";
 				description="Service";
 			};
@@ -5734,7 +5734,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_08";
 				description="Service";
 			};

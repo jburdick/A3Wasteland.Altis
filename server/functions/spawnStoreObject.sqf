@@ -204,11 +204,6 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			// don't need this anymore at all
 			switch (true) do
 			{
-				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F", "B_Slingload_01_Ammo_F"] > 0):
-				{
-					[_object] remoteExecCall ["A3W_fnc_setupResupplyTruck", 0, _object];
-				};
-
 				/*case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
 				{
 					_object setAmmoCargo 10;

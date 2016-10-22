@@ -12,7 +12,6 @@ class ServerDir
 	class setupMissionObject {file = "server\functions\setupMissionObject.sqf";};
 	class setupMissionATM {file = "server\functions\setupMissionATM.sqf";};
 	class setupResupplyTruck {file = "server\functions\fn_setupResupplyTruck.sqf";};
-	class setupResupplyTruck_Static {file = "server\functions\fn_setupResupplyTruck_Static.sqf";};
 	class setupStoreNPC {file = "server\functions\setupStoreNPC.sqf";};
 	class takeOwnership {file = "server\functions\fn_takeOwnership.sqf";};
 };
