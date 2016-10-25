@@ -150,6 +150,7 @@ if (["A3W_survivalSystem"] call isConfigOn) then
 	};
 
 	[] execVM "client\functions\createGeneralStoreMarkers.sqf";
+	[] execVM "client\functions\createSupplyVehicleMarker.sqf";
 	[] execVM "client\functions\createVehicleStoreMarkers.sqf";
 	[] execVM "client\functions\createLegendMarkers.sqf";
 };
@@ -161,7 +162,6 @@ A3W_clientSetupComplete = compileFinal "true";
 A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 [] execVM "client\functions\drawPlayerIcons.sqf";
-// [] execVM "addons\camera\functions.sqf";
 [] execVM "addons\UAV_Control\functions.sqf";
 if(hasInterface) then{[] execVM "addons\statusBar\statusBar.sqf"}; 
 
