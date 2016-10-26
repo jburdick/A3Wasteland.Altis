@@ -39,6 +39,11 @@ briefing = 0; // if 0, skip Continue button
 #define A3W_UICOLOR_G  0.51 // default = 0.51
 #define A3W_UICOLOR_B  0.96 // default = 0.96
 
+#define SAF_DEF
+    #include "addons\sushi_scripts\core\init.cpp"
+    #include "addons\sushi_scripts\breach\init.cpp"
+#undef SAF_DEF
+
 //Dialog includes
 
 #include "client\gui_base.hpp"
@@ -92,6 +97,13 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
+	class SAF 
+	{
+        #define SAF_FNCS
+            #include "sushi_scripts\core\init.cpp"
+            #include "sushi_scripts\breach\init.cpp"
+        #undef SAF_FNCS
+    };
 };
 
 class CfgNotifications
