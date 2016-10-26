@@ -1,36 +1,35 @@
 version=52;
 class EditorData
 {
-	moveGridStep=0.5;
+	moveGridStep=1.7618344;
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=522;
+	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=1981;
+		nextID=1969;
 	};
 	class MarkerIDProvider
 	{
-		nextID=306;
+		nextID=314;
 	};
 	class LayerIndexProvider
 	{
-		nextID=11;
+		nextID=10;
 	};
 	class Camera
 	{
-		pos[]={5036.9873,49.237686,10785.017};
-		dir[]={0.3307336,-0.5729357,-0.74992383};
-		up[]={0.23119357,0.81959802,-0.52422005};
-		aside[]={-0.91498077,-1.4266698e-007,-0.4035278};
+		pos[]={15115.231,204.31059,16824.207};
+		dir[]={-0.51895261,-0.34925523,-0.78022015};
+		up[]={-0.19343424,0.93702173,-0.29081848};
+		aside[]={-0.83265102,-6.1839819e-007,0.55382782};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Ui_F",
 	"A3_Structures_F_Households_House_Big01",
 	"A3_Structures_F_Households_House_Small02",
 	"A3_Structures_F_Mil_Cargo",
@@ -44,7 +43,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -54,40 +53,33 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item2
-		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item4
+		class Item3
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
@@ -123,7 +115,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=306;
+		items=313;
 		class Item0
 		{
 			dataType="Group";
@@ -5577,14 +5569,180 @@ class Mission
 		class Item254
 		{
 			dataType="Marker";
-			position[]={16061.949,56.833313,18262.105};
+			position[]={9564.999,56.3787,15653.898};
 			name="Mission_35";
 			type="Empty";
 			colorName="ColorOrange";
 			id=429;
-			atlOffset=3.8146973e-006;
+			atlOffset=-90.29821;
 		};
 		class Item255
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14771.537,19.835796,16668.686};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_01";
+				description="Service";
+			};
+			id=449;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00020980835;
+		};
+		class Item256
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={23003.188,6.003438,18887.773};
+				angles[]={0.0079936078,0,6.2525201};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_02";
+				description="Service";
+			};
+			id=450;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00020980835;
+		};
+		class Item257
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={20888.58,28.868752,7294.543};
+				angles[]={0.055937801,0,0.0039968039};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_03";
+				description="Service";
+			};
+			id=451;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00023651123;
+		};
+		class Item258
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={26796.943,22.532242,24665.967};
+				angles[]={0,0.68455303,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_04";
+				description="Service";
+			};
+			id=452;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00020980835;
+		};
+		class Item259
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9179.8438,16.686424,21676.594};
+				angles[]={0,1.034376,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_05";
+				description="Service";
+			};
+			id=453;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.40890217;
+		};
+		class Item260
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4943.9766,18.52396,14400.782};
+				angles[]={0,1.1826177,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_06";
+				description="Service";
+			};
+			id=454;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00020980835;
+		};
+		class Item261
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11856.981,18.958883,9435.5918};
+				angles[]={0,0.57114154,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_07";
+				description="Service";
+			};
+			id=455;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.00053596497;
+		};
+		class Item262
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3676.2893,9.4859638,13411.975};
+				angles[]={6.2778587,2.2891912,0.0093286335};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck_Static";
+				name="Service_Truck_08";
+				description="Service";
+			};
+			id=456;
+			type="B_Truck_01_ammo_F";
+			atlOffset=-0.028640747;
+		};
+		class Item263
 		{
 			dataType="Marker";
 			position[]={9432.9404,124.96718,20260.697};
@@ -5598,7 +5756,7 @@ class Mission
 			id=557;
 			atlOffset=7.6293945e-006;
 		};
-		class Item256
+		class Item264
 		{
 			dataType="Marker";
 			position[]={3619.5984,12.500292,13015.494};
@@ -5611,7 +5769,7 @@ class Mission
 			b=350;
 			id=558;
 		};
-		class Item257
+		class Item265
 		{
 			dataType="Marker";
 			position[]={9314.8438,118.97337,15893.634};
@@ -5626,7 +5784,7 @@ class Mission
 			id=559;
 			atlOffset=1.5258789e-005;
 		};
-		class Item258
+		class Item266
 		{
 			dataType="Marker";
 			position[]={20959.137,43.132454,16948.439};
@@ -5640,7 +5798,7 @@ class Mission
 			id=560;
 			atlOffset=-3.8146973e-006;
 		};
-		class Item259
+		class Item267
 		{
 			dataType="Marker";
 			position[]={14617.703,46.959015,20780.9};
@@ -5653,7 +5811,7 @@ class Mission
 			b=150;
 			id=561;
 		};
-		class Item260
+		class Item268
 		{
 			dataType="Marker";
 			position[]={20943.961,13.97664,19253.166};
@@ -5666,7 +5824,7 @@ class Mission
 			b=150;
 			id=562;
 		};
-		class Item261
+		class Item269
 		{
 			dataType="Marker";
 			position[]={27025.637,20.642216,23211.48};
@@ -5679,7 +5837,7 @@ class Mission
 			b=150;
 			id=563;
 		};
-		class Item262
+		class Item270
 		{
 			dataType="Marker";
 			position[]={12851.905,88.359009,16700.438};
@@ -5693,7 +5851,7 @@ class Mission
 			id=564;
 			atlOffset=0.58628845;
 		};
-		class Item263
+		class Item271
 		{
 			dataType="Marker";
 			position[]={11749.389,12.628704,9549.3164};
@@ -5706,7 +5864,7 @@ class Mission
 			b=150;
 			id=565;
 		};
-		class Item264
+		class Item272
 		{
 			dataType="Marker";
 			position[]={20529.043,34.126812,8871.2021};
@@ -5720,7 +5878,7 @@ class Mission
 			id=566;
 			atlOffset=3.8146973e-006;
 		};
-		class Item265
+		class Item273
 		{
 			dataType="Marker";
 			position[]={9432.3232,124.82588,20260.68};
@@ -5730,7 +5888,7 @@ class Mission
 			id=567;
 			atlOffset=7.6293945e-006;
 		};
-		class Item266
+		class Item274
 		{
 			dataType="Marker";
 			position[]={3619.6282,12.484255,13015.957};
@@ -5739,7 +5897,7 @@ class Mission
 			colorName="ColorRed";
 			id=568;
 		};
-		class Item267
+		class Item275
 		{
 			dataType="Marker";
 			position[]={9315.1221,119.15121,15891.987};
@@ -5749,7 +5907,7 @@ class Mission
 			id=569;
 			atlOffset=-7.6293945e-006;
 		};
-		class Item268
+		class Item276
 		{
 			dataType="Marker";
 			position[]={20961.031,42.78162,16940.863};
@@ -5758,7 +5916,7 @@ class Mission
 			colorName="ColorRed";
 			id=570;
 		};
-		class Item269
+		class Item277
 		{
 			dataType="Marker";
 			position[]={12850.942,87.952797,16699.529};
@@ -5768,7 +5926,7 @@ class Mission
 			id=571;
 			atlOffset=7.6293945e-006;
 		};
-		class Item270
+		class Item278
 		{
 			dataType="Marker";
 			position[]={14613.917,46.785393,20779.008};
@@ -5778,7 +5936,7 @@ class Mission
 			id=572;
 			atlOffset=-3.8146973e-006;
 		};
-		class Item271
+		class Item279
 		{
 			dataType="Marker";
 			position[]={20943.963,13.951282,19260.742};
@@ -5787,7 +5945,7 @@ class Mission
 			colorName="ColorRed";
 			id=573;
 		};
-		class Item272
+		class Item280
 		{
 			dataType="Marker";
 			position[]={27033.213,20.629999,23213.375};
@@ -5796,7 +5954,7 @@ class Mission
 			colorName="ColorRed";
 			id=574;
 		};
-		class Item273
+		class Item281
 		{
 			dataType="Marker";
 			position[]={11739.919,12.497035,9551.21};
@@ -5805,7 +5963,7 @@ class Mission
 			colorName="ColorRed";
 			id=575;
 		};
-		class Item274
+		class Item282
 		{
 			dataType="Marker";
 			position[]={20529.043,34.288311,8878.7803};
@@ -5815,7 +5973,7 @@ class Mission
 			id=576;
 			atlOffset=3.8146973e-006;
 		};
-		class Item275
+		class Item283
 		{
 			dataType="Marker";
 			position[]={14473.897,17.002466,16867.523};
@@ -5825,7 +5983,7 @@ class Mission
 			angle=44.138062;
 			id=577;
 		};
-		class Item276
+		class Item284
 		{
 			dataType="Marker";
 			position[]={12120.591,24.993164,15846.394};
@@ -5836,7 +5994,7 @@ class Mission
 			id=578;
 			atlOffset=-0.0086994171;
 		};
-		class Item277
+		class Item285
 		{
 			dataType="Marker";
 			position[]={8711.5957,93.086029,15931.121};
@@ -5846,7 +6004,7 @@ class Mission
 			angle=258.32901;
 			id=579;
 		};
-		class Item278
+		class Item286
 		{
 			dataType="Marker";
 			position[]={6430.9741,34.823841,15220.92};
@@ -5856,7 +6014,7 @@ class Mission
 			angle=239.01831;
 			id=580;
 		};
-		class Item279
+		class Item287
 		{
 			dataType="Marker";
 			position[]={5694.1484,21.028578,14753.772};
@@ -5866,7 +6024,7 @@ class Mission
 			angle=248.01154;
 			id=581;
 		};
-		class Item280
+		class Item288
 		{
 			dataType="Marker";
 			position[]={17105.578,14.5,17869.596};
@@ -5877,7 +6035,7 @@ class Mission
 			id=582;
 			atlOffset=0.0018606186;
 		};
-		class Item281
+		class Item289
 		{
 			dataType="Marker";
 			position[]={16656.031,4.4119678,15707.655};
@@ -5887,7 +6045,7 @@ class Mission
 			angle=308.37082;
 			id=583;
 		};
-		class Item282
+		class Item290
 		{
 			dataType="Marker";
 			position[]={19582.35,80.654572,12638.244};
@@ -5898,7 +6056,7 @@ class Mission
 			id=584;
 			atlOffset=-0.036499023;
 		};
-		class Item283
+		class Item291
 		{
 			dataType="Marker";
 			position[]={20790.363,36.342773,16646.154};
@@ -5909,7 +6067,7 @@ class Mission
 			id=585;
 			atlOffset=-0.6037674;
 		};
-		class Item284
+		class Item292
 		{
 			dataType="Marker";
 			position[]={22749.746,14.071923,19082.979};
@@ -5918,7 +6076,7 @@ class Mission
 			colorName="ColorOrange";
 			id=586;
 		};
-		class Item285
+		class Item293
 		{
 			dataType="Layer";
 			name="VanillaLayer";
@@ -6097,2333 +6255,223 @@ class Mission
 			id=1933;
 			atlOffset=-14.285049;
 		};
-		class Item286
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={14796.289,19.836079,16633.621};
-				angles[]={0,0.76598525,0};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1950;
-			type="B_Truck_01_ammo_F";
-			atlOffset=0.00049209595;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item287
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={20886.949,28.68829,7294.9517};
-				angles[]={0,0.12405463,0};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1951;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.15973091;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item288
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={22982.738,6.4800978,18883.316};
-				angles[]={0,1.017205,0};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1952;
-			type="B_Truck_01_ammo_F";
-			atlOffset=0.032175064;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item289
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={26838.119,26.562119,24507.527};
-				angles[]={0.02399601,0.76598525,6.2765174};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1953;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.19143486;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item290
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9179.5547,16.258949,21678.135};
-				angles[]={0,1.00748,0};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1954;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.011131287;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item291
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6211.6855,30.319324,15031.076};
-				angles[]={0.022664838,5.5061345,0.041309625};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1955;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.0036945343;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item292
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={11854.598,19.071892,9438.7686};
-				angles[]={0,0.54780024,0};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1956;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.0097103119;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item293
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9487.0234,115.27242,15055.983};
-				angles[]={0.0093286335,2.426898,6.256525};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
-			};
-			id=1957;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-0.014129639;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
 		class Item294
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5050.5605,33.105583,10765.492};
-				angles[]={0,5.750134,0};
+				position[]={11525.576,21.428854,9427.1572};
+				angles[]={0.0028703704,0.88315833,6.2663374};
 			};
-			side="Civilian";
-			flags=6;
+			side="Empty";
+			flags=5;
 			class Attributes
 			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
 			};
-			id=1958;
-			type="B_Truck_01_ammo_F";
-			atlOffset=-3.8146973e-006;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
+			id=1950;
+			type="Land_Atm_02_F";
 		};
 		class Item295
+		{
+			dataType="Marker";
+			position[]={14771.535,-1.6634227e-029,16668.695};
+			name="marker_306";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1951;
+			atlOffset=-17.91;
+		};
+		class Item296
+		{
+			dataType="Marker";
+			position[]={9179.8418,2.1819331e+013,21676.598};
+			name="marker_307";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1952;
+			atlOffset=2.1819331e+013;
+		};
+		class Item297
+		{
+			dataType="Marker";
+			position[]={3676.301,-7.9777363e-033,13412};
+			name="marker_308";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1953;
+			atlOffset=-7.5892096;
+		};
+		class Item298
+		{
+			dataType="Marker";
+			position[]={4943.9712,1.790126e+030,14400.787};
+			name="marker_309";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1954;
+			atlOffset=1.790126e+030;
+		};
+		class Item299
+		{
+			dataType="Marker";
+			position[]={11856.836,-8.743602e-022,9435.5547};
+			name="marker_310";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1955;
+			atlOffset=-17.038637;
+		};
+		class Item300
+		{
+			dataType="Marker";
+			position[]={20888.588,1.7525276e+029,7294.438};
+			name="marker_311";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1956;
+			atlOffset=1.7525276e+029;
+		};
+		class Item301
+		{
+			dataType="Marker";
+			position[]={23003.123,130273.84,18887.756};
+			name="marker_312";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1957;
+			atlOffset=130269.77;
+		};
+		class Item302
+		{
+			dataType="Marker";
+			position[]={26796.936,-3.4462802e-032,24665.891};
+			name="marker_313";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1958;
+			atlOffset=-20.607954;
+		};
+		class Item303
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19335.129,33.516273,13360.093};
-				angles[]={0,5.9004536,0};
+				position[]={4578.2461,301.1362,21415.098};
+				angles[]={0,2.3342731,0};
 			};
-			side="Civilian";
-			flags=6;
+			side="Empty";
+			flags=5;
 			class Attributes
 			{
-				lock="LOCKEDPLAYER";
-				fuel=0;
-				init="this call A3W_fnc_setupResupplyTruck";
 			};
 			id=1959;
-			type="B_Truck_01_ammo_F";
-			atlOffset=0.037004471;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item296
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={19335.16,31.593273,13360.084};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply01";
-					};
-					id=1961;
-					type="C_man_1_1_F";
-					atlOffset=0.037000656;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1961;
-						item1=1959;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1960;
-			atlOffset=0.037004471;
-		};
-		class Item297
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14796.289,17.911438,16633.672};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply02";
-					};
-					id=1963;
-					type="C_man_1_1_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1963;
-						item1=1950;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1962;
-			atlOffset=0.00049209595;
-		};
-		class Item298
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={22982.648,4.5579777,18883.346};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply03";
-					};
-					id=1965;
-					type="C_man_1_1_F";
-					atlOffset=0.032000065;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1965;
-						item1=1952;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1964;
-			atlOffset=0.032175064;
-		};
-		class Item299
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={26838.119,24.641275,24507.473};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply04";
-					};
-					id=1967;
-					type="C_man_1_1_F";
-					atlOffset=-0.19099998;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1967;
-						item1=1953;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1966;
-			atlOffset=-0.19143486;
-		};
-		class Item300
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9179.5498,14.334969,21678.176};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply05";
-					};
-					id=1969;
-					type="C_man_1_1_F";
-					atlOffset=-0.010998726;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1969;
-						item1=1954;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1968;
-			atlOffset=-0.011131287;
-		};
-		class Item301
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6211.7651,28.397007,15031.082};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply06";
-					};
-					id=1971;
-					type="C_man_1_1_F";
-					atlOffset=-0.0039997101;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1971;
-						item1=1955;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1970;
-			atlOffset=-0.0036945343;
-		};
-		class Item302
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11854.452,17.153324,9438.7822};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply07";
-					};
-					id=1973;
-					type="C_man_1_1_F";
-					atlOffset=-0.010000229;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1973;
-						item1=1956;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1972;
-			atlOffset=-0.0097103119;
-		};
-		class Item303
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9486.9717,113.34917,15056.016};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply08";
-					};
-					id=1975;
-					type="C_man_1_1_F";
-					atlOffset=-0.014007568;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1975;
-						item1=1957;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1974;
-			atlOffset=-0.014129639;
+			type="Land_Atm_01_F";
 		};
 		class Item304
 		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20886.926,26.767025,7294.894};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply09";
-					};
-					id=1977;
-					type="C_man_1_1_F";
-					atlOffset=-0.15999794;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1977;
-						item1=1951;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1976;
-			atlOffset=-0.15973091;
+			dataType="Marker";
+			position[]={15211.678,-1.335183e-005,16779.711};
+			name="Jet_1";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=226.99997;
+			id=1960;
+			atlOffset=-17.910013;
 		};
 		class Item305
 		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5050.561,31.181438,10765.542};
-						angles[]={0,0.93692762,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="Resupply10";
-					};
-					id=1980;
-					type="C_man_1_1_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="enableSimulation";
-							expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="hideObject";
-							expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1980;
-						item1=1958;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1979;
-			atlOffset=-3.8146973e-006;
+			dataType="Marker";
+			position[]={15144.729,0,17225.455};
+			name="Jet_2";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1961;
+			atlOffset=-17.91;
+		};
+		class Item306
+		{
+			dataType="Marker";
+			position[]={14168.672,0,16191.258};
+			name="Jet_3";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=135;
+			id=1962;
+			atlOffset=-20.553244;
+		};
+		class Item307
+		{
+			dataType="Marker";
+			position[]={23148.742,3.5236688,18402.359};
+			name="Jet_4";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1963;
+			atlOffset=0.33366871;
+		};
+		class Item308
+		{
+			dataType="Marker";
+			position[]={22979.605,0,17001.701};
+			name="Jet_5";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=329.99994;
+			id=1964;
+			atlOffset=-3.1900001;
+		};
+		class Item309
+		{
+			dataType="Marker";
+			position[]={21166.678,0,7568.8403};
+			name="Jet_6";
+			type="Empty";
+			colorName="ColorYellow";
+			id=1965;
+			atlOffset=-18.230478;
+		};
+		class Item310
+		{
+			dataType="Marker";
+			position[]={11615.774,0,11941.714};
+			name="Jet_7";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1966;
+			atlOffset=-23.492937;
+		};
+		class Item311
+		{
+			dataType="Marker";
+			position[]={11367.355,0,11439.591};
+			name="Jet_8";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1967;
+			atlOffset=-22.479101;
+		};
+		class Item312
+		{
+			dataType="Marker";
+			position[]={21041.588,19.380178,7431.4175};
+			name="Jet_9";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1968;
+			atlOffset=-1.5249386;
 		};
 	};
 };
