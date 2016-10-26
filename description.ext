@@ -71,7 +71,6 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
-#include "addons\killfeed\dialogs\common.hpp"
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
@@ -94,6 +93,7 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
+	#include "addons\killfeed\dialogs\common.hpp"
 	class killfeed {
 		tag = "kill";
 		class functions {
