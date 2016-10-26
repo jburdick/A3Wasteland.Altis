@@ -71,6 +71,7 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
+#include "addons\killfeed\dialogs\common.hpp"
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
@@ -79,6 +80,7 @@ class RscTitles
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "addons\statusBar\statusBar.hpp"
+	#include "killfeed\dialogs\titles.hpp"
 };
 
 class CfgFunctions
@@ -91,6 +93,16 @@ class CfgFunctions
 	class armajunkies
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
+	};
+	class killfeed {
+		tag = "kill";
+		class functions {
+			file = "killfeed\functions";
+			class killfeedMain {};
+			class killfeedCompile {};
+			class killfeedType {};
+			class killfeedRender {};
+		};
 	};
 };
 

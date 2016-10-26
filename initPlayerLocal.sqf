@@ -10,7 +10,7 @@ if (!isServer) then
 };
 null = [player] execVM "addons\GrassCutter\grasscutter.sqf";
 player addEventhandler["respawn","_this execVM 'addons\GrassCutter\grasscutter.sqf'"];
-//[] execVM "addons\killfeed\killfeed.sqf";
+[] execVM "addons\killfeed\killfeed.sqf";
 _s_d={
 
 	a_a set[1,[true,_e addaction["Drag",{
