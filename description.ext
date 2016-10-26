@@ -80,7 +80,7 @@ class RscTitles
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "addons\statusBar\statusBar.hpp"
-	#include "addons\killfeed\dialogs\titles.hpp"
+	#include "killfeed\dialogs\titles.hpp"
 };
 
 class CfgFunctions
@@ -97,7 +97,7 @@ class CfgFunctions
 	class killfeed {
 		tag = "kill";
 		class functions {
-			file = "addons\killfeed\functions";
+			file = "killfeed\functions";
 			class killfeedMain {};
 			class killfeedCompile {};
 			class killfeedType {};
