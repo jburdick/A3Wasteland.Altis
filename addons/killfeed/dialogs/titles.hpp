@@ -12,9 +12,9 @@ class killfeed_board
 		{
 			idc = 0;
 			x = 0.008 * safezoneW + safezoneX;
-			y = 0.1 * safezoneH + safezoneY;
-			w = 0.56 * safezoneW;
-			h = 0.46 * safezoneH;
+			y = 0.01 * safezoneH + safezoneY;
+			w = 0.283594 * safezoneW;
+			h = 0.231 * safezoneH;
 		};
 	};
 };
@@ -32,10 +32,10 @@ class killfeed_picture
 		class RscPicture_1101: RscPicture
         {
           idc = 1;
-          x = 0.1 * safezoneW + safezoneX;
-          y = 0.1 * safezoneH + safezoneY;
-         w = 0.10 * safezoneW;
-          h = 0.09 * safezoneH;
+          x = 0.032 * safezoneW + safezoneX;
+          y = 0.004 * safezoneH + safezoneY;
+          w = 0.153594 * safezoneW;
+          h = 0.141 * safezoneH;
         };
 	};
 };
