@@ -12,7 +12,7 @@ if ( SAF_MISSION_SET(breach_useBreach) < 1 ) exitWith {};
 		private _zone = _arr select 0;
 		private _locAll = _arr select 1;
 		private _closeDoors = _arr select 2;
-		
+
 		private _center = getMarkerPos _zone;
 		private _size = markerSize _zone;
 		private _rX = _size select 0;
@@ -36,11 +36,11 @@ if ( SAF_MISSION_SET(breach_useBreach) < 1 ) exitWith {};
 					 {_y animate [format ["%1", _x], SAF_MISSION_SET(breach_closeFix)]} foreach SAF_MISSION_SET(breach_customDoorNames);
 				};
 			} foreach _buildingsArr;
-		}; 
-		
+		};
+
 	} foreach SAF_MISSION_SET(breach_Zones);
 	SAF_MISSION_SET(breach_PostInitRun) = 2;
-	Diag_Log format ["Breach Script has be initialized"];
+	Diag_Log format ["Breach Script has been initialized"];
 
 	//-->Handle gun breach
 	if (SAF_MISSION_SET(breach_allowGunBreach) > 0 && !isDedicated) then {

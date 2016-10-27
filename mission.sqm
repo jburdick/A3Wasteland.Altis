@@ -8,28 +8,29 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=1969;
+		nextID=1970;
 	};
 	class MarkerIDProvider
 	{
-		nextID=314;
+		nextID=315;
 	};
 	class LayerIndexProvider
 	{
-		nextID=10;
+		nextID=11;
 	};
 	class Camera
 	{
-		pos[]={15115.231,204.31059,16824.207};
-		dir[]={-0.51895261,-0.34925523,-0.78022015};
-		up[]={-0.19343424,0.93702173,-0.29081848};
-		aside[]={-0.83265102,-6.1839819e-007,0.55382782};
+		pos[]={14812.115,7466.4155,15941.865};
+		dir[]={-0.076527551,-0.99137694,-0.10654782};
+		up[]={-0.57832855,0.13114758,-0.80519468};
+		aside[]={-0.81222349,6.4237975e-007,0.5833773};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Characters_F",
+	"A3_Ui_F",
 	"A3_Structures_F_Households_House_Big01",
 	"A3_Structures_F_Households_House_Small02",
 	"A3_Structures_F_Mil_Cargo",
@@ -43,7 +44,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -53,33 +54,40 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item2
+		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item2
+		class Item3
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item3
+		class Item4
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item4
+		class Item5
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item5
+		class Item6
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
@@ -115,7 +123,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=313;
+		items=314;
 		class Item0
 		{
 			dataType="Group";
@@ -2994,7 +3002,7 @@ class Mission
 						angles[]={0,0.93692034,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3002,12 +3010,14 @@ class Mission
 					};
 					id=183;
 					type="C_man_1_1_F";
+					atlOffset=3.7124577;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=182;
+			atlOffset=3.7124577;
 		};
 		class Item39
 		{
@@ -3343,7 +3353,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3351,12 +3361,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
+					atlOffset=0.35717964;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
+			atlOffset=0.35717964;
 		};
 		class Item50
 		{
@@ -6382,7 +6394,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99997;
+			angle=226.99995;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6426,7 +6438,7 @@ class Mission
 			name="Jet_5";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=329.99994;
+			angle=329.99991;
 			id=1964;
 			atlOffset=-3.1900001;
 		};
@@ -6472,6 +6484,19 @@ class Mission
 			angle=180;
 			id=1968;
 			atlOffset=-1.5249386;
+		};
+		class Item313
+		{
+			dataType="Marker";
+			position[]={13417.95,1.2053273e+034,17781.66};
+			name="Breach";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlack";
+			a=50000;
+			b=50000;
+			id=1969;
+			atlOffset=1.2053273e+034;
 		};
 	};
 };
