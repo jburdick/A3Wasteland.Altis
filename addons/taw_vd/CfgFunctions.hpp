@@ -2,7 +2,7 @@ class TAW_VD {
 	tag = "TAWVD";
 
 	class Initialize {
-		file = "addons\taw_vd";
+		file = "taw_vd";
 		class stateTracker {
 			ext = ".fsm";
 			postInit = 1;
