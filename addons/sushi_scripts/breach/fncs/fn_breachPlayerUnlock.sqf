@@ -6,7 +6,7 @@ private _s = _this select 1;
 {
 	private _o = if (saf_mission_setting_breach_closeFix > 0) then { 0 } else { 1 };
 	_d animate [_x, _o];
-	_d setVariable [format ["bis_disabled_%1", _x], 1,true];
+	_d setVariable [format ["bis_disabled_%1", _x], 0,true];
 	sleep 0.1;
 	if (_force) then {
 		

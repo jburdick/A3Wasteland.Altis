@@ -20,4 +20,4 @@ _c4];
 "SmallSecondary" createVehicle position _c4;
 deleteVehicle _c4;
 if (getDammage _b > 0.4) then {_b setDammage 0.4}; */
-[_b,_s,true] spawn SAF_fnc_breachPlayerLockDoor;
+[_b,_s,false] spawn SAF_fnc_breachPlayerLockDoor;
