@@ -23,4 +23,10 @@ class breach_safplug
 		class breachStun {};
 		class lockpickcheck{};
 		class checkexplosive {};
+		
+		class checkunlock {};
+		class checklock {};
+		class breachPlayerLockDoor {};
+		class breachlock{};
+		class breachunlock{};
 };
