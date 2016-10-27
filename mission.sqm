@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13;
+		nextID=14;
 	};
 	class Camera
 	{
-		pos[]={9511.917,146.84491,15108.884};
-		dir[]={0.90756875,-0.39789891,0.1343621};
-		up[]={0.39360386,0.91743767,0.058271408};
-		aside[]={0.14645484,-7.0594251e-007,-0.98925042};
+		pos[]={9380.1279,195.94678,15093.3};
+		dir[]={0.93387467,-0.3457498,0.091350272};
+		up[]={0.34410992,0.93832493,0.03366074};
+		aside[]={0.097354606,1.6979175e-007,-0.99525505};
 	};
 };
 binarizationWanted=0;
@@ -5692,8 +5692,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4943.9766,18.52396,14400.782};
-				angles[]={0,1.1826177,0};
+				position[]={5926.8164,227.96947,20128.953};
+				angles[]={0.14823914,1.6916,0.026657995};
 			};
 			side="Empty";
 			flags=4;
@@ -5706,7 +5706,6 @@ class Mission
 			};
 			id=454;
 			type="B_Truck_01_ammo_F";
-			atlOffset=0.00020980835;
 		};
 		class Item261
 		{
@@ -6315,7 +6314,7 @@ class Mission
 		class Item298
 		{
 			dataType="Marker";
-			position[]={4943.9712,1.790126e+030,14400.787};
+			position[]={5926.811,1.790126e+030,20128.957};
 			name="marker_309";
 			text="Service";
 			type="hd_dot";
@@ -6390,7 +6389,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99992;
+			angle=226.99991;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6519,8 +6518,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9527.2549,129.24918,15114.246};
-				angles[]={0.010018189,4.0079217,0.0038920844};
+				position[]={9527.2549,129.22969,15114.246};
+				angles[]={0.0013372133,4.0079217,6.259192};
 			};
 			side="Empty";
 			flags=4;
@@ -6533,7 +6532,6 @@ class Mission
 			};
 			id=1973;
 			type="B_Truck_01_ammo_F";
-			atlOffset=0.019485474;
 		};
 	};
 };
