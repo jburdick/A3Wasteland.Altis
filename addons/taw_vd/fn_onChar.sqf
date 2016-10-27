@@ -18,7 +18,7 @@ params ["_control","_code","_slider"];
 disableSerialization;
 if(isNull _control) exitWith {}; //POOOOOP
 
-_maxRange = if(!isNil "tawvd_maxRange") then {tawvd_maxRange} else {20000};
+_maxRange = if(!isNil "tawvd_maxRange") then {tawvd_maxRange} else {5000};
 _value = parseNumber (ctrlText _control);
 if(_value > _maxRange OR _value < 100) exitwith {[] call TAWVD_fnc_openMenu;};
 

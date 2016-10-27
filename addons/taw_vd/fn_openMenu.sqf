@@ -19,7 +19,7 @@ disableSerialization;
 	if(!isNil "tawvd_maxRange") then {
 		slidersetRange [_x select 0,100,tawvd_maxRange];
 	} else {
-		slidersetRange [_x select 0,100,20000];
+		slidersetRange [_x select 0,100,5000];
 	};
 	((findDisplay MENU_IDD) displayCtrl (_x select 0)) sliderSetSpeed [100,100,100];
 	sliderSetPosition[_x select 0, _x select 1];
