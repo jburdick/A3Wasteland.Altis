@@ -8,7 +8,7 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=1970;
+		nextID=1974;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11;
+		nextID=13;
 	};
 	class Camera
 	{
-		pos[]={14812.115,7466.4155,15941.865};
-		dir[]={-0.076527551,-0.99137694,-0.10654782};
-		up[]={-0.57832855,0.13114758,-0.80519468};
-		aside[]={-0.81222349,6.4237975e-007,0.5833773};
+		pos[]={9511.917,146.84491,15108.884};
+		dir[]={0.90756875,-0.39789891,0.1343621};
+		up[]={0.39360386,0.91743767,0.058271408};
+		aside[]={0.14645484,-7.0594251e-007,-0.98925042};
 	};
 };
 binarizationWanted=0;
@@ -123,7 +123,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=314;
+		items=317;
 		class Item0
 		{
 			dataType="Group";
@@ -3002,7 +3002,7 @@ class Mission
 						angles[]={0,0.93692034,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3010,14 +3010,12 @@ class Mission
 					};
 					id=183;
 					type="C_man_1_1_F";
-					atlOffset=3.7124577;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=182;
-			atlOffset=3.7124577;
 		};
 		class Item39
 		{
@@ -3353,7 +3351,7 @@ class Mission
 						angles[]={0,2.5787754,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3361,14 +3359,12 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
-					atlOffset=0.35717964;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
-			atlOffset=0.35717964;
 		};
 		class Item50
 		{
@@ -5600,7 +5596,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_01";
 				description="Service";
 			};
@@ -5621,7 +5617,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_02";
 				description="Service";
 			};
@@ -5642,7 +5638,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_03";
 				description="Service";
 			};
@@ -5663,7 +5659,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_04";
 				description="Service";
 			};
@@ -5683,7 +5679,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_05";
 				description="Service";
 			};
@@ -5704,7 +5700,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_06";
 				description="Service";
 			};
@@ -5725,7 +5721,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_07";
 				description="Service";
 			};
@@ -5746,7 +5742,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="this call A3W_fnc_setupResupplyTruck_Static";
+				init="this call A3W_fnc_setupResupplyTruck";
 				name="Service_Truck_08";
 				description="Service";
 			};
@@ -6394,7 +6390,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99995;
+			angle=226.99992;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6438,7 +6434,7 @@ class Mission
 			name="Jet_5";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=329.99991;
+			angle=329.99985;
 			id=1964;
 			atlOffset=-3.1900001;
 		};
@@ -6488,15 +6484,56 @@ class Mission
 		class Item313
 		{
 			dataType="Marker";
-			position[]={13417.95,1.2053273e+034,17781.66};
-			name="Breach";
-			markerType="ELLIPSE";
-			type="ellipse";
-			colorName="ColorBlack";
-			a=50000;
-			b=50000;
-			id=1969;
-			atlOffset=1.2053273e+034;
+			position[]={27185.801,25.206879,24940.543};
+			name="Jet_10";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1970;
+			atlOffset=-0.00010681152;
+		};
+		class Item314
+		{
+			dataType="Marker";
+			position[]={26815.119,21.142014,24605.779};
+			name="Jet_11";
+			type="Empty";
+			colorName="ColorYellow";
+			angle=180;
+			id=1971;
+			atlOffset=-1.9428577;
+		};
+		class Item315
+		{
+			dataType="Marker";
+			position[]={9528,119.80474,15114.777};
+			name="marker_314";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=1972;
+			atlOffset=-7.480217;
+		};
+		class Item316
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9527.2549,129.24918,15114.246};
+				angles[]={0.010018189,4.0079217,0.0038920844};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="LOCKED";
+				init="this call A3W_fnc_setupResupplyTruck";
+				name="Service_Truck_09";
+				description="Service";
+			};
+			id=1973;
+			type="B_Truck_01_ammo_F";
+			atlOffset=0.019485474;
 		};
 	};
 };
