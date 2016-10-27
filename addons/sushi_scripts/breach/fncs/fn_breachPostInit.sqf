@@ -12,7 +12,6 @@ if ( SAF_MISSION_SET(breach_useBreach) < 1 ) exitWith {};
 		private _zone = _arr select 0;
 		private _locAll = _arr select 1;
 		private _closeDoors = _arr select 2;
-
 		private _center = getMarkerPos _zone;
 		private _size = markerSize _zone;
 		private _rX = _size select 0;
@@ -62,5 +61,13 @@ if ( SAF_MISSION_SET(breach_useBreach) < 1 ) exitWith {};
 	call SAF_fnc_checkexplosive;
 	player addeventhandler ["respawn","call SAF_fnc_checkexplosive;"];
 	};
+	};
+	if (!isNull Player) then {
+	call SAF_fnc_checkunlock;
+	player addeventhandler ["respawn","call SAF_fnc_checkunlock;"];
+	};
+	if (!isNull Player) then {
+	call SAF_fnc_checklock;
+	player addeventhandler ["respawn","call SAF_fnc_checklock;"];
 	};
 };

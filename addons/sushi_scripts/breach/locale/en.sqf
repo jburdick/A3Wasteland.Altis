@@ -1,5 +1,7 @@
 ﻿SAF_STR_BREACH_CHECK = "Check lock";
 SAF_STR_BREACH_PLANT = "Place explosive";
+SAF_STR_BREACH_UNLOCK = "Unlock Door";
+SAF_STR_BREACH_LOCK = "lock Door";
 SAF_STR_BREACH_PICKLOCK = "Pick lock";
 SAF_STR_BREACH_STATUS_LOCK = "Door locked";
 SAF_STR_BREACH_STATUS_OPEN = "Door Unlocked";

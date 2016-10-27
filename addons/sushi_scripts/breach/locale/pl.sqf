@@ -1,5 +1,7 @@
 ﻿SAF_STR_BREACH_CHECK = "Sprawdź zamek";
 SAF_STR_BREACH_PLANT = "Załóż ładunek";
+SAF_STR_BREACH_UNLOCK = "Unlock Door";
+SAF_STR_BREACH_LOCK = "lock Door";
 SAF_STR_BREACH_PICKLOCK = "Otwórz zamek";
 SAF_STR_BREACH_STATUS_LOCK = "Drzwi zamknięte";
 SAF_STR_BREACH_STATUS_OPEN = "Drzwi otwarte";
