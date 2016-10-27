@@ -1,6 +1,6 @@
 #include "defines.h"
 
-class RscEdit {
+class RscEdit_TAW {
 	type = 2;
 	style = 0x00 + 0x40;
 	font = "PuristaMedium";
@@ -346,7 +346,7 @@ class RscButtonMenu:RscShortcutButton {
 	soundPush[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundPush",0.09,1};
 	soundClick[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundClick",0.09,1};
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",0.09,1};
-	textureNoShortcut = "";
+	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0";
 };
 
 class TAW_VDMenu {
@@ -486,7 +486,7 @@ class TAW_VDMenu {
 		}
 
 		//Values (RscEdit Butons)
-		class VD_onFoot_Edit : RscEdit {
+		class VD_onFoot_Edit : RscEdit_TAW {
 			idc = INFANTRY_EDIT;
 			text = "";
 			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call TAWVD_fnc_onChar;";
