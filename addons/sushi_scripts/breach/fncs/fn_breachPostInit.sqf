@@ -61,11 +61,13 @@ if ( SAF_MISSION_SET(breach_useBreach) < 1 ) exitWith {};
 	call SAF_fnc_checkexplosive;
 	player addeventhandler ["respawn","call SAF_fnc_checkexplosive;"];
 	};
+	
 	};
 	if (!isNull Player) then {
 	call SAF_fnc_checkunlock;
 	player addeventhandler ["respawn","call SAF_fnc_checkunlock;"];
 	};
+	
 	if (!isNull Player) then {
 	call SAF_fnc_checklock;
 	player addeventhandler ["respawn","call SAF_fnc_checklock;"];
