@@ -16,7 +16,7 @@ class RscEdit_TAW {
 	canModify = 1;
 };
 
-class RscListBox {
+class RscListBox_TAW {
 	style = 16;
 	idc = -1;
 	type = 5;
@@ -71,7 +71,7 @@ class RscListBox {
 	}
 };
 
-class RscCheckBox {
+class RscCheckBox_TAW {
 	access = 0; // Control access (0 - ReadAndWrite, 1 - ReadAndCreate, 2 - ReadOnly, 3 - ReadOnlyVerified)
 	idc = -1; // Control identification (without it, the control won't be displayed)
 	type = 77; // Type
@@ -122,7 +122,7 @@ class RscCheckBox {
 	soundEscape[] = { "\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1 }; // Sound played when the control is released after pushing down
 };
 
-class RscXSliderH {
+class RscXSliderH_TAW {
 	style = 1024;
 	type = 43;
 	shadow = 2;
@@ -145,7 +145,7 @@ class RscXSliderH {
 	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
 };
 
-class RscText {
+class RscText_TAW {
 	x = 0;
 	y = 0;
 	h = 0.037;
@@ -162,7 +162,7 @@ class RscText {
 	linespacing = 1;
 };
 
-class RscTitle:RscText {
+class RscTitle:RscText_TAW {
 	style = 0;
 	shadow = 0;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
@@ -358,7 +358,7 @@ class TAW_VDMenu {
 	onLoad = "((_this select 0) displayCtrl 2999) ctrlSetFade 1; ((_this select 0) displayCtrl 2999) ctrlCommit 0;";
 
 	class controlsBackground {
-		class TitleBackground : RscText {
+		class TitleBackground : RscText_TAW {
 			colorBackground[] = { "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])" };
 			idc = -1;
 			x = .3;
@@ -367,7 +367,7 @@ class TAW_VDMenu {
 			h = (1 / 25);
 		};
 
-		class MainBackground : RscText {
+		class MainBackground : RscText_TAW {
 			colorBackground[] = { 0, 0, 0, .7 };
 			idc = -1;
 			x = .3;
@@ -386,7 +386,7 @@ class TAW_VDMenu {
 			h = (1 / 25);
 		};
 
-		class OnFootText : RscText {
+		class OnFootText : RscText_TAW {
 			idc = -1;
 			text = "Infantry:";
 			x = .32;
@@ -446,7 +446,7 @@ class TAW_VDMenu {
 	class controls {
 
 		//Sliders
-		class VD_onFoot_slider : RscXSliderH {
+		class VD_onFoot_slider : RscXSliderH_TAW {
 			idc = INFANTRY_SLIDER;
 			text = "";
 			onSliderPosChanged = "[0, _this select 1] call TAWVD_fnc_onSliderChanged;";
@@ -563,7 +563,7 @@ class TAW_VDMenu {
 			x = .67;
 		};
 
-		class ObjectSyncCheckbox : RscCheckbox
+		class ObjectSyncCheckbox : RscCheckbox_TAW
 		{
 			idc = 2931;
 			x = .32; y = .6;
@@ -573,7 +573,7 @@ class TAW_VDMenu {
 			h = 1 * GUI_GRID_CENTER_H; 
 		};
 
-		class ObjectSynctext : RscText {
+		class ObjectSynctext : RscText_TAW {
 			idc = -1;
 			text = "Sync with view";
 			x = .345; y = .596;
@@ -595,7 +595,7 @@ class TAW_VDMenu {
 					h = 3;
 					
 					class Controls {
-						class MyTitleBackground:RscText {
+						class MyTitleBackground:RscText_TAW {
 							colorBackground[] = { "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])" };
 							idc = -1;
 							x = 0;
@@ -614,7 +614,7 @@ class TAW_VDMenu {
 							h = (1 / 25);
 						};
 						
-						class MainBackground:RscText {
+						class MainBackground:RscText_TAW {
 							colorBackground[] = { 0, 0, 0, .7 };
 							idc = -1;
 							x = 0;
@@ -623,7 +623,7 @@ class TAW_VDMenu {
 							h = .57 - (22 / 250);
 						};
 						
-						class SaveList:RscListBox {
+						class SaveList:RscListBox_TAW {
 							idc = SAVES_LIST;
 							sizeEx = 0.04;
 							colorBackground[] = {0.1,0.1,0.1,0.9};
