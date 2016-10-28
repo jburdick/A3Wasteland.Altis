@@ -22,7 +22,7 @@ _setupObjects =
 
 	_transportChoicesUnarmed = ["O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_covered_F","O_Heli_Transport_04_box_F","B_Heli_Transport_03_unarmed_green_F","B_Heli_Transport_03_unarmed_F","I_Heli_Transport_02_F"];
 	_transportChoicesArmed = ["B_Heli_Transport_03_F","B_Heli_Transport_03_black_F"];
-	_supportChoices = ["O_Heli_Attack_02_black_F","O_Heli_Attack_02_F","B_Heli_Attack_01_F"];
+	_supportChoices = ["O_Heli_Attack_02_F","O_Heli_Attack_02_F","B_Heli_Attack_01_F"];
 
 	_veh1 = [];
 
