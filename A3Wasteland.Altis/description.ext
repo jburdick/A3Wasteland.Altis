@@ -86,12 +86,12 @@ class RscTitles
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "addons\statusBar\statusBar.hpp"
-	#include "addons\taw_vd\GUI.h"
+	//#include "addons\taw_vd\GUI.h"
 };
 
 class CfgFunctions
 {
-	#include "addons\taw_vd\CfgFunctions.hpp"
+	//#include "addons\taw_vd\CfgFunctions.hpp"
 	class A3W
 	{
 		#include "client\CfgFunctions.hpp"
@@ -101,13 +101,13 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
-	class SAF 
+	/* class SAF 
 	{
         #define SAF_FNCS
             #include "addons\sushi_scripts\core\init.cpp"
             #include "addons\sushi_scripts\breach\init.cpp"
         #undef SAF_FNCS
-    };
+    }; */
 };
 
 class CfgNotifications
