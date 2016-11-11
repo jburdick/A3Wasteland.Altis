@@ -39,7 +39,7 @@ _setupObjects =
 
 			// Reduce all shells and MG ammo, reset smoke mags
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// AFV-4 Gorgon
@@ -50,7 +50,7 @@ _setupObjects =
 			// Reduce all shells and MG ammo, reset AT missiles and smoke mags
 			_vehicle addMagazineTurret ["2Rnd_GAT_missiles", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// BTR-K Kamysh
@@ -61,7 +61,7 @@ _setupObjects =
 			// Reduce all shells and MG ammo, reset AT missiles and smoke mags
 			_vehicle addMagazineTurret ["2Rnd_GAT_missiles", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// FV-720 Mora
@@ -72,7 +72,7 @@ _setupObjects =
 			// Reduce all shells and MG ammo, reset smoke mags
 			_vehicle removeMagazineTurret ["1000Rnd_65x39_Belt_Yellow", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// M2A4 Slammer UP
@@ -85,7 +85,7 @@ _setupObjects =
 			_vehicle removeMagazineTurret ["500Rnd_127x99_mag_Tracer_Red", [0,0]];
 			_vehicle addMagazineTurret ["20Rnd_105mm_HEAT_MP_T_Red", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// M2A1 Slammer
@@ -96,7 +96,7 @@ _setupObjects =
 			// Reduce AP shells & MG ammo, reset HE shells and smoke mags
 			_vehicle addMagazineTurret ["16Rnd_120mm_HE_shells_Tracer_Red", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// T-100 Varsuk
@@ -108,7 +108,7 @@ _setupObjects =
 			_vehicle removeMagazineTurret ["2000Rnd_65x39_Belt_Green", [0]];
 			_vehicle removeMagazineTurret ["450Rnd_127x108_Ball", [0,0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// MBT-52 Kuma
@@ -121,7 +121,7 @@ _setupObjects =
 			_vehicle removeMagazineTurret ["500Rnd_127x99_mag_Tracer_Yellow", [0,0]];
 			_vehicle addMagazineTurret ["14Rnd_120mm_HE_shells_Tracer_Yellow", [0]];
 			_vehicle addMagazineTurret ["SmokeLauncherMag", [0,0]];
-			_vehicle setVehicleAmmo 0.5;
+			_vehicle setVehicleAmmo 1.0;
 		};
 
 		// PO-30 Orca
@@ -134,7 +134,7 @@ _setupObjects =
 		// Mi-48 Kajman
 		case (_vehicle isKindOf "Heli_Attack_02_base_F"):
 		{
-			_vehicle setVehicleAmmo 0;
+			_vehicle setVehicleAmmo 1.0;
 
 			// Custom load
 			_vehicle addMagazine "250Rnd_30mm_HE_shells";
@@ -146,7 +146,7 @@ _setupObjects =
 		case (_vehicle isKindOf "Helicopter_Base_F"):
 		{
 			// Cut all ammo by half
-			_vehicle setVehicleAmmoDef 0.5;
+			_vehicle setVehicleAmmoDef 1.0;
 		};
 	};
 
