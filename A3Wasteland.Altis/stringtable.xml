@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
   Do not bother submitting translations to the A3W GitHub repo, the strings below are only a tiny fraction of all messages used in the mission.
@@ -120,4 +120,46 @@
 			<English>You cannot take more spawn beacons!</English>
 		</Key>
 	</Package>
+	<Package name="MSS">
+	<Key ID="STR_MSS_head">
+		<Original>Choose a seat</Original>
+		<English>Choose a seat</English>
+		<German>Wähle einen Sitzplatz</German>
+	</Key>
+	<Key ID="STR_MSS_close">
+		<Original>Close</Original>
+		<English>Close</English>
+		<German>Schließen</German>
+	</Key>
+	<Key ID="STR_MSS_action">
+		<Original>Choose Seat</Original>
+		<English>Choose Seat</English>
+		<German>Sitzplatz wählen</German>
+	</Key>
+	<Key ID="STR_MSS_revoke">
+		<Original>This seat is already occupied</Original>
+		<English>This seat is already occupied</English>
+		<German>Dieser Platz ist bereits besetzt</German>
+	</Key>
+	<Key ID="STR_MSS_notsup">
+		<Original>This vehicle is not supported by MSS</Original>
+		<English>This vehicle is not supported by MSS</English>
+		<German>Dieses Fahrzeug wird nicht von MSS unterstützt</German>
+	</Key>
+	<Key ID="STR_MSS_notable">
+		<Original>You cant use MSS from this position</Original>
+		<English>You cant use MSS from this position</English>
+		<German>Du kannst MSS von dieser Position aus nicht benutzen</German>
+	</Key>
+	<Key ID="STR_MSS_speedlimit">
+		<Original>You cant do this while your vehicle is moving</Original>
+		<English>You cant do this while your vehicle is moving</English>
+		<German>Du kannst das nicht machen während das Fahrzeug sich bewegt</German>
+	</Key>
+	<Key ID="STR_MSS_already">
+		<Original>You are on this seat already</Original>
+		<English>You are on this seat already</English>
+		<German>Du sitzt bereits auf diesem Platz</German>
+	</Key>
+</Package>
 </Project>
