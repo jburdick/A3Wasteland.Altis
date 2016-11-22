@@ -139,7 +139,7 @@ class CfgSounds
 {
     sounds[] =
 	{
-		beep, beep2, beep3, beep4, beep5, beep6, beep7, beep8, beep9
+		beep, beep2, beep3, beep4, beep5, beep6, beep7, beep8, beep9, alluhu
 	};
 
 	class beep
@@ -678,5 +678,11 @@ class CfgSounds
 		sound[] = {"addons\injured_AI\sounds\fire38.ogg", 2, 1.0}; //Location of sound, bear in mind it will only find locations WITHIN the mission!
 		titles[]={}; //Do not use unless you know what you are doing!
 	};
+	class allahu
+		{
+			name = "allahu";
+			sound[] = {addons\suicide_bomber\sound\allahu.ogg, 1, 1.0};
+			titles[] = {};
+		};
 };
 #include "infiSTAR_AdminMenu.hpp"

@@ -102,6 +102,7 @@ if (hasInterface || isServer) then
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 	[] execVM "addons\bounty\init.sqf";
 	[] execVM "addon\scripts\VehicleAugmentation.sqf";
+	[] ExecVM "addons\suicide_bomber\suicide_bomber.sqf";
 
 	inCap = compile preprocessfilelinenumbers "addons\injured_AI\cripts\inCap.sqf";
 	/*//parameters
