@@ -40,8 +40,8 @@ briefing = 0; // if 0, skip Continue button
 #define A3W_UICOLOR_B  0.96 // default = 0.96
 
 #define SAF_DEF
-    #include "addons\sushi_scripts\core\init.cpp"
-    #include "addons\sushi_scripts\breach\init.cpp"
+    #include "addons\Monkey_Breach\core\init.cpp"
+    #include "addons\Monkey_Breach\breach\init.cpp"
 #undef SAF_DEF
 
 //Dialog includes
@@ -98,11 +98,11 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
-	class SAF 
+	class SAF
 	{
         #define SAF_FNCS
-            //#include "addons\sushi_scripts\core\init.cpp"
-            //#include "addons\sushi_scripts\breach\init.cpp"
+            #include "addons\Monkey_Breach\core\init.cpp"
+            #include "addons\Monkey_Breach\breach\init.cpp"
         #undef SAF_FNCS
     };
 };
