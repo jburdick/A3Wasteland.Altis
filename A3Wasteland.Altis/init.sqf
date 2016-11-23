@@ -105,7 +105,9 @@ if (hasInterface || isServer) then
 	[] execVM "addons\suicide_bomber\suicide_bomber.sqf";
 	[] execVM "addons\mss\mss_action.sqf";
 	[] execVM "initVision.sqf";
-	
+	[] execVM "VCOMAI\init.sqf";
+
+
 	inCap = compile preprocessfilelinenumbers "addons\injured_AI\cripts\inCap.sqf";
 	/*//parameters
 	_this select 0, true or false, ais war voices,ais will talk with radio or yelling while firing, (default = true)
