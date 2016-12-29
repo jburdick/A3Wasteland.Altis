@@ -10,4 +10,4 @@ if (!isServer) then
 };
 null = [player] execVM "addons\GrassCutter\grasscutter.sqf";
 player addEventhandler["respawn","_this execVM 'addons\GrassCutter\grasscutter.sqf'"];
-[] execVM "addon\scripts\QS_icons.sqf";
+
