@@ -101,6 +101,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\laptop\init.sqf";
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 	[] execVM "addons\bounty\init.sqf";
+	[] execVM "addons\Crater_Cleaner\cratercleaner.sqf";
 };
 
 // Remove line drawings from map
