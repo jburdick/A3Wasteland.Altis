@@ -729,6 +729,13 @@ backpackArray = compileFinal str
 	["Kitbag (Green)", "B_Kitbag_rgr", 350, "backpack"],
 	["Kitbag (MTP)", "B_Kitbag_mcamo", 350, "backpack"],
 	["Kitbag (Sage)", "B_Kitbag_sgg", 350, "backpack"],
+	
+	["Tactical Pack (Black)", "B_TacticalPack_blk", 350, "backpack"],
+	["Tactical Pack (Green)", "B_TacticalPack_rgr", 350, "backpack"],
+	["Tactical Pack (Hex)", "B_TacticalPack_ocamo", 350, "backpack"],
+	["Tactical Pack (Multi)", "B_TacticalPack_mcamo", 350, "backpack"],
+	["Tactical Pack (Olive)", "B_TacticalPack_oli", 350, "backpack"],
+	
 
 	["Viper Light Harness (Black)", "B_ViperLightHarness_blk_F", 350, "backpack", "noDLC"],
 	["Viper Light Harness (Hex)", "B_ViperLightHarness_hex_F", 350, "backpack", "noDLC"],
