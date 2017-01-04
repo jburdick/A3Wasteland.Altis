@@ -5,10 +5,11 @@
 //Starts off much the same as the client start.  This is to find information from config arrays
 
 
-private ["_type","_selection","_player"]; //Variables coming from command menu and client side APOC_cli_startAirdrop
-_type 				= _this select 0;
-_selectionNumber 	= _this select 1;
-_player 			= _this select 2;
+private ["_type","_selection","_player","_heliDirection"]; //Variables coming from command menu and client side APOC_cli_startAirdrop
+_type = _this select 0;
+_selectionNumber = _this select 1;
+_player = _this select 2;
+_heliDirection = _this select 3;
 
 diag_log format ["SERVER - Apoc's Airdrop Assistance - Player: %1, Drop Type: %2, Selection #: %3",name _player,_type,_selectionNumber];
 //hint format ["Well we've made it this far! %1, %2, %3,",_player,_type,_selectionNumber];
@@ -18,6 +19,7 @@ switch (_type) do {
 	case "vehicle": {_selectionArray = APOC_AA_VehOptions};
 	case "supply": 	{_selectionArray = APOC_AA_SupOptions};
 	case "picnic":	{_selectionArray = APOC_AA_SupOptions};
+	case "base":	{_selectionArray = APOC_AA_SupOptions};
 	default 		{_selectionArray = APOC_AA_VehOptions; diag_log "AAA - Default Array Selected - Something broke";};
 };
 
@@ -30,30 +32,29 @@ _price 			= (_selectionArray select _selectionNumber) select 2;
 
 /////// Let's spawn us  an AI helo to carry the cargo /////////////////////////////////////////////////
 
- _heliType = "B_Heli_Transport_03_unarmed_F";
- _center = createCenter civilian;
+_heliType = "B_Heli_Transport_03_unarmed_F";
+_center = createCenter civilian;
 _grp = createGroup civilian;
 if(isNil("_grp2"))then{_grp2 = createGroup civilian;}else{_grp2 = _grp2;};
 _flyHeight = 350;
 _dropSpot = [(position _player select 0),(position _player select 1),_flyHeight];
-_heliDirection = random 360;
 _flyHeight = 200;  //Distance from ground that heli will fly at
-_heliStartDistance = 5000;
+_heliStartDistance = 2000;
 _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropSpot select 1) - (cos _heliDirection) * _heliStartDistance, (_flyHeight+200)];
 
 diag_log format ["AAA - Heli Spawned at %1", _spos];
 _heli = createVehicle [_heliType, _spos, [], 0, "FLY"];
-_heli allowDamage true;
+_heli allowDamage false;
 _heli setVariable ["R3F_LOG_disabled", true, true];
 [_heli] call vehicleSetup;
 
 _crew = [_grp, _spos] call createRandomSoldierC;
 _crew moveInDriver _heli;
-_crew allowDamage true;
+_crew allowDamage false;
 
 _heli setCaptive true;
 
-_heliDistance = 5000;
+_heliDistance = 2000;
 _dir = ((_dropSpot select 0) - (_spos select 0)) atan2 ((_dropSpot select 1) - (_spos select 1));
 _flySpot = [(_dropSpot select 0) + (sin _dir) * _heliDistance, (_dropSpot select 1) + (cos _dir) * _heliDistance, _flyHeight];
 
@@ -82,8 +83,10 @@ _object = switch (_type) do {
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object setVariable ["A3W_purchasedVehicle", true, true];
 		_object setVariable ["ownerUID", getPlayerUID _player, true];
+		_object setVariable ["R3F_LOG_Disabled", true, true]; // Make vehicle locked
+		_object lock 2; // Make vehicle locked
 		[_object, false] call vehicleSetup;
-		if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
+				if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
 		{
 			_object call fn_manualVehicleSave;
 		};
@@ -95,7 +98,9 @@ _object = switch (_type) do {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_Disabled", false, true];
 		[_object, _selectionClass] call fn_refillbox;
+		_object setVariable ["A3W_inventoryLockR3F", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
 	};
@@ -105,14 +110,33 @@ _object = switch (_type) do {
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_Disabled", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
+		_object
+	};
+	case "base":
+	{
+		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
+		_object = createVehicle ["Land_Pod_Heli_Transport_04_box_F", _objectSpawnPos, [], 0, "None"];
+		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
+		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_disabled",false,true];
+		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
+		[_object, ["Land_Cargo_Tower_V1_F", ["Land_Canal_Wall_Stairs_F", 2], ["Land_Mil_WallBig_4m_F", 5], ["Land_Canal_WallSmall_10m_F", 10], ["Land_RampConcreteHigh_F",2], ["Land_RampConcrete_F", 2],["BlockConcrete_F",4],["Land_BagFence_Round_F",2],["Land_BagFence_Short_F",4],["Land_HBarrier_3_F",2],["Land_Crash_barrier_F",2],["Land_LampShabby_F",4]] ] execVM "addons\R3F_LOG\auto_load_in_vehicle.sqf";
+		clearBackpackCargoGlobal _object;
+		clearMagazineCargoGlobal _object;
+		clearWeaponCargoGlobal _object;
+		clearItemCargoGlobal _object;
+		_object setVariable ["allowDamage", false, true];
 		_object
 	};
 	default {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_Disabled", false, true];
 		[_object, "mission_USSpecial"] call fn_refillbox;
+		_object setVariable ["A3W_inventoryLockR3F", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
 		};
@@ -145,10 +169,14 @@ _player setVariable ["bmoney", _newBalance, true];
 //  Now on to the fun stuff:
 
 diag_log format ["Apoc's Airdrop Assistance - Object at %1, Detach Up Next", position _object];  //A little log love to confirm the location of this new creature
+playSound3D ["a3\sounds_f\air\sfx\SL_rope_break.wss",_heli,false,getPosASL _heli,3,1,500];
 detach _object;  //WHEEEEEEEEEEEEE
 _objectPosDrop = position _object;
 _heli fire "CMFlareLauncher";
 _heli fire "CMFlareLauncher";
+
+sleep 2;
+playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL _player,3,1,25];
 
 //Delete heli once it has proceeded to end point
 	[_heli,_grp,_flySpot,_dropSpot,_heliDistance] spawn {
@@ -208,19 +236,17 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 				case "Land_Sacks_goods_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["food", 50, true];
+					_object2 setVariable ["R3F_LOG_Disabled", false, true];
+					_object2 setVariable ["allowDamage", true, true];
+					_object2 allowDamage true;
 					_object2
 				}; //A very big picnic, no?
 				case "Land_BarrelWater_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["water",50, true];
-					_object2
-				};
-				case "FlexibleTank_01_sand_F": {
-					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
-					_object2
-				};
-				case "Box_NATO_AmmoVeh_F": {
-					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+					_object2 setVariable ["R3F_LOG_Disabled", false, true];
+					_object2 setVariable ["allowDamage", true, true];
+					_object2 allowDamage true;
 					_object2
 				};
 			};
