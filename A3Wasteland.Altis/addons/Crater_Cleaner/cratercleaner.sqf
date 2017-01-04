@@ -10,7 +10,7 @@
 /*Definable Start*/
 CCAbleToRepair = 1; 			//Allow the bobcat to repair destroyed vehicles, 1 = Yes, 0 = No
 CCTimeToFixMultiplier = 0.5;	//Requires CCAbleToRepair = 1, Sleep Each second during repairs, default = 1
-CCRepairMultipler = 0.1;		//Requires CCAbleToRepair = 1, CCTimeToFixMulitplier Second repair level, default = 0.1
+CCRepairMultipler = 0.01;		//Requires CCAbleToRepair = 1, CCTimeToFixMulitplier Second repair level, default = 0.1
 CCRepairLimit = 0;			//Requires CCAbleToRepair = 1, Limit the Repair level to this, default = 0
 /*Definable End*/
 
