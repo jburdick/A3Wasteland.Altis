@@ -1065,7 +1065,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 45000, "vehicle"],
+	
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],
@@ -1075,6 +1075,7 @@ tanksArray = compileFinal str
 	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 130000, "vehicle"], // Commander gun variant
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 140000, "vehicle"],
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 150000, "vehicle"],
+	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 5000000, "vehicle"],
 	["M4 Scorcher", "B_MBT_01_arty_F", 750000, "vehicle"],
 	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 1000000, "vehicle"]
 ];
