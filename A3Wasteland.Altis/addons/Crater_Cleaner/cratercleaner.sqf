@@ -42,13 +42,12 @@ Lala_fnc_Dead_Vehicle_Check = {
 	_nearvehicles = _nearvehicles - [_veh];
 	_nearestvehicle = _nearvehicles select 0;
 
-	_deletevehactionname = "Test";
+	_deletevehactionname = "Remove Salvage";
 
 	if (CCAbleToRepair == 0) then {
 		_deletevehactionname = format ["<t color ='#FF0000'>Remove Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
 	} else {
 		_deletevehactionname = format ["<t color ='#FF0000'>Fix the Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
-		_deletevehactionname = format ["<t color ='#FF0000'>Remove Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
 	};
 	_unit setUserActionText [DeadVehAddAction,_deletevehactionname];
 
