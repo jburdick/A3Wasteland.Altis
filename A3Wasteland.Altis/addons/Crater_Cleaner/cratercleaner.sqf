@@ -48,6 +48,7 @@ Lala_fnc_Dead_Vehicle_Check = {
 		_deletevehactionname = format ["<t color ='#FF0000'>Remove Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
 	} else {
 		_deletevehactionname = format ["<t color ='#FF0000'>Fix the Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
+		_deletevehactionname = format ["<t color ='#FF0000'>Remove Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
 	};
 	_unit setUserActionText [DeadVehAddAction,_deletevehactionname];
 
@@ -107,7 +108,6 @@ Lala_fnc_Fix_Dead_Vehicle = {
   _oldname allowdamage false;
 	if (!isNil {_oldvarname}) then { _oldname setVehicleVarName _oldvarname; };
 	_oldname setDamage 0.9;
-	_oldname setVehicleAmmo 0.0;
 
 	for [{_x=0.95},{_x>=CCRepairLimit},{_x=_x-CCRepairMultipler}] do {
 		_oldname setDamage _x;
@@ -116,7 +116,7 @@ Lala_fnc_Fix_Dead_Vehicle = {
 		sleep CCTimeToFixMultiplier;
 	};
 	if (CCRepairLimit == 0) then {_oldname setDamage 0;};
-	_oldname setFuel 0;
+	_oldname setFuel 1;
 	_veh vehicleChat format ["Repairing %1 - %2%3",getText (configFile >> 'cfgVehicles' >> typeOf _oldname >> 'displayName'),damage _oldname * 100,'%'];
 	_veh vehicleChat format ["Repairs complete on %1",getText (configFile >> 'cfgVehicles' >> typeOf _oldname >> 'displayName')];
 };
