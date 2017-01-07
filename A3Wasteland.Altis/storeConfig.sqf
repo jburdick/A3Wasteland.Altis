@@ -729,13 +729,13 @@ backpackArray = compileFinal str
 	["Kitbag (Green)", "B_Kitbag_rgr", 350, "backpack"],
 	["Kitbag (MTP)", "B_Kitbag_mcamo", 350, "backpack"],
 	["Kitbag (Sage)", "B_Kitbag_sgg", 350, "backpack"],
-	
+
 	["Tactical Pack (Black)", "B_TacticalPack_blk", 350, "backpack"],
 	["Tactical Pack (Green)", "B_TacticalPack_rgr", 350, "backpack"],
 	["Tactical Pack (Hex)", "B_TacticalPack_ocamo", 350, "backpack"],
 	["Tactical Pack (Multi)", "B_TacticalPack_mcamo", 350, "backpack"],
 	["Tactical Pack (Olive)", "B_TacticalPack_oli", 350, "backpack"],
-	
+
 
 	["Viper Light Harness (Black)", "B_ViperLightHarness_blk_F", 350, "backpack", "noDLC"],
 	["Viper Light Harness (Hex)", "B_ViperLightHarness_hex_F", 350, "backpack", "noDLC"],
@@ -854,7 +854,7 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 
 genObjectsArray = compileFinal str
 [
-	
+
 	["Base locker", "Land_Device_assembled_F", 550000, "object"],  //Cael817, SNAFU,Used for base operations <-- Destroyable
 	["Camo Ammo Cache", "Box_FIA_Support_F", 1000, "ammocrate"],
 	["Support Crate", "Box_NATO_Support_F", 100],
@@ -902,7 +902,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (6 blocks, Green)", "Land_HBarrier_01_wall_6_green_F", 500, "object"],
 	["HBarrier Wall Corner (Green)", "Land_HBarrier_01_wall_corner_green_F", 500, "object"],
 	["HBarrier Watchtower (Green)", "Land_HBarrier_01_big_tower_green_F", 600, "object"],
-	
+
 
 	["Concrete Wall", "Land_CncWall1_F", 400, "object"],
 	["Concrete Military Wall", "Land_Mil_ConcreteWall_F", 400, "object"],
@@ -995,7 +995,7 @@ landArray = compileFinal str
 
 	["MB 4WD", "I_C_Offroad_02_unarmed_F", 1100, "vehicle", "SKIPSAVE"],
 	["MB 4WD (Rollcage)", "C_Offroad_02_unarmed_F", 1100, "vehicle", "SKIPSAVE"],
-	
+
 	["Offroad", "C_Offroad_01_F", 1100, "vehicle", "SKIPSAVE"],
 	["Offroad (Gendarmerie)", "B_GEN_Offroad_01_gen_F", 1100, "vehicle", "SKIPSAVE"],
 	["Offroad Camo", "B_G_Offroad_01_F", 1250, "vehicle", "SKIPSAVE"],
@@ -1033,7 +1033,7 @@ landArray = compileFinal str
 	["Zamak Medical", "I_Truck_02_medical_F", 9000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 10000, "vehicle"],
 	// ["Zamak Ammo", "I_Truck_02_ammo_F", 25, "vehicle"],
-	
+
 	["Prowler (Unarmed)", "B_T_LSV_01_unarmed_F", 900, "vehicle"],
 	["Prowler (Armed)", "B_T_LSV_01_armed_F", 5000, "vehicle"],
 	["Qilin (Unarmed)", "O_T_LSV_02_unarmed_F", 900, "vehicle"],
@@ -1115,19 +1115,19 @@ planesArray = compileFinal str
 [
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle", "SKIPSAVE"],
 	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 1250, "vehicle", "SKIPSAVE"],
-	
+
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 400000, "vehicle"],
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 745000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 760000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 760000, "vehicle"],
-	
+
 	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000],
 	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000],
 	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 800000],
-	
+
 	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 920000],
 	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 920000],
-	
+
 	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 820000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 210000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
 	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 820000, "vehicle"],
@@ -1217,7 +1217,7 @@ colorsArray = compileFinal str
 			["Hello Kitty", _texDir + "hellokitty.paa"],
 			["Hex", _texDir + "hex.paa"],
 			["Hippie", _texDir + "hippie.paa"],
-			// ["ISIS", _texDir + "isis.paa"],
+			["ISIS", _texDir + "isis.paa"],
 			["Leopard", _texDir + "leopard.paa"],
 			["Mountain Dew", _texDir + "mtndew.paa"],
 			["'Murica", _texDir + "murica.paa"],
