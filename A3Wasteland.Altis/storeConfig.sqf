@@ -170,8 +170,8 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 75000],
-	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 150000],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 10000000],
 	["Explosives Crate(Empty)", "Box_NATO_AmmoOrd_F", 100],
 	["Ammo Crate (Empty)", "Box_NATO_Ammo_F", 100],
 	["Granade Crate (Empty)", "Box_NATO_Grenades_F", 100],
