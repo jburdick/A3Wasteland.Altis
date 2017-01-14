@@ -71,7 +71,7 @@ _setupObjects =
 	_leader setRank "LIEUTENANT";
 
 	_aiGroup setCombatMode "RED";
-	_aiGroup setBehaviour "COMBAT";
+	_aiGroup setBehaviour "AWARE";
 	_aiGroup setFormation "STAG COLUMN";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
@@ -82,7 +82,7 @@ _setupObjects =
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 55;
 		_waypoint setWaypointCombatMode "RED";
-		_waypoint setWaypointBehaviour "COMBAT";
+		_waypoint setWaypointBehaviour "AWARE";
 		_waypoint setWaypointFormation "STAG COLUMN";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
