@@ -643,9 +643,9 @@ uniformArray = compileFinal str
 	["Paramilitary Garb 3", "U_I_C_Soldier_Para_3_F", 25],
 	["Paramilitary Garb 4", "U_I_C_Soldier_Para_4_F", 25],
 	["Paramilitary Garb 5", "U_I_C_Soldier_Para_5_F", 25],
-	["Syndikat Uniform", "U_I_C_Soldier_Camo_F", 25]
+	["Syndikat Uniform", "U_I_C_Soldier_Camo_F", 25],
 	["Special Purpose Suit (Hex)", "U_O_V_Soldier_Viper_hex_F", 25000, "uni"],
-	["Special Purpose Suit (G Hex)", "U_O_V_Soldier_Viper_F", 25000, "uni"],
+	["Special Purpose Suit (G Hex)", "U_O_V_Soldier_Viper_F", 25000, "uni"]
 
 ];
 
