@@ -31,7 +31,5 @@ APOC_AA_SupOptions =
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
 ["Food",				"Land_Sacks_goods_F",		5000, 	"picnic"],
-["Water",				"Land_BarrelWater_F",		5000, 	"picnic"],
-["Fuel", 				"FlexibleTank_01_sand_F",	5000,	"picnic"],
-["Vehicle Ammo",		"Box_NATO_AmmoVeh_F",		3000000, "picnic"]
+["Water",				"Land_BarrelWater_F",		5000, 	"picnic"]
 ];
