@@ -39,10 +39,10 @@ briefing = 0; // if 0, skip Continue button
 #define A3W_UICOLOR_G  0.51 // default = 0.51
 #define A3W_UICOLOR_B  0.96 // default = 0.96
 
-#define SAF_DEF
+/*#define SAF_DEF
     #include "addons\sushi_scripts\core\init.cpp"
     #include "addons\sushi_scripts\breach\init.cpp"
-#undef SAF_DEF
+#undef SAF_DEF*/
 
 //Dialog includes
 
@@ -76,16 +76,17 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\vPin\dialog\vPin_mainMenu.hpp"
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
+#include "addons\killfeed\dialogs\common.hpp"
 
 class RscTitles
 {
+	#include "addons\killfeed\dialogs\titles.hpp"
 	#include "addons\proving_ground\PG_rsctitles.hpp"
 	#include "addons\lsd_nvg\RscTitles.hpp"
 	#include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "addons\statusBar\statusBar.hpp"
-	#include "addons\killfeed\dialogs\titles.hpp"
 };
 
 class CfgFunctions
@@ -99,13 +100,13 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
-	class SAF 
+	/*class SAF
 	{
         #define SAF_FNCS
             //#include "addons\sushi_scripts\core\init.cpp"
             //#include "addons\sushi_scripts\breach\init.cpp"
         #undef SAF_FNCS
-    };
+    };*/
 
 	class killfeed {
 		tag = "kill";
@@ -118,8 +119,6 @@ class CfgFunctions
 		};
 	};
 };
-
-#include "addons\killfeed\dialogs\common.hpp"
 
 class CfgNotifications
 {
