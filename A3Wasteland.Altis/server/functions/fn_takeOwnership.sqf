@@ -1,4 +1,5 @@
 // ******************************************************************************************
+// ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2016 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: fn_takeOwnership.sqf
@@ -26,9 +27,18 @@ if (_veh getVariable ["A3W_skipAutoSave", false]) then
 	_veh setVariable ["A3W_skipAutoSave", nil, true];
 };
 
-if (!isNil "fn_manualVehicleSave") then
+[_veh, side _player] spawn
 {
-	_veh call fn_manualVehicleSave;
-};
+	params ["_veh", "_side"];
 
-// TODO: switch UAV side if applicable
+	// Swap UAV team
+	if (unitIsUAV _veh) then
+	{
+		[_veh, _side, true] call fn_createCrewUAV;
+	};
+
+	if (!isNil "fn_manualVehicleSave") then
+	{
+		_veh call fn_manualVehicleSave;
+	};
+};
