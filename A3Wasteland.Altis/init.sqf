@@ -115,10 +115,11 @@ if (hasInterface || isServer) then
 player addAction 
 [
 	"Put on Uniform",
-	"addons\scripts\AUSMD_putonUni.sqf",
+	"AUSMD_putonUni.sqf",
 	nil,
-	4,
+	6,
 	true,
 	true,
 	"",
 	' !alive cursorTarget && cursorTarget isKindOf "Man" && uniform cursorTarget != "" && player distance cursorTarget < 4 '
+];
