@@ -107,18 +107,18 @@ if (hasInterface || isServer) then
 // Remove line drawings from map
 /*(createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
 [
-	"!triggerActivated thisTrigger", 
+	"!triggerActivated thisTrigger",
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
 ];*/
 
-player addAction 
+player addAction
 [
 	"Put on Uniform",
 	"addons\scripts\AUSMD_putonUni.sqf",
 	nil,
-	4,
+	6,
 	true,
 	true,
 	"",
-	' !alive cursorTarget && cursorTarget isKindOf "Man" && uniform cursorTarget != "" && player distance cursorTarget < 4 '
+	' !alive cursorTarget && cursorTarget isKindOf "Man" '
