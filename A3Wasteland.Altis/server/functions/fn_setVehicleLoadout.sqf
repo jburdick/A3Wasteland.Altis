@@ -19,9 +19,9 @@ if (!local _veh) exitWith
 private _class = typeOf _veh;
 private ["_mags", "_weapons", "_customCode"];
 
-switch (true) do
+/*switch (true) do
 {
-	/*case (_class isKindOf "UAV_02_base_F" && !(_class isKindOf "UAV_02_CAS_base_F")):
+	case (_class isKindOf "UAV_02_base_F" && !(_class isKindOf "UAV_02_CAS_base_F")):
 	{
 		_mags =
 		[
@@ -167,28 +167,8 @@ switch (true) do
 		[
 			["mortar_82mm", [0]]
 		];
-	};*/
-
-	case (_class isKindOf "UAV_03_base_F"):
-	{
-		_mags =
-		[
-			["120Rnd_CMFlare_Chaff_Magazine", [-1]],
-			["500Rnd_30mm_HE_shells", [0]],
-			["4Rnd_LG_scalpel", [0]],
-			["4Rnd_AAA_missiles", [0]],
-			["Laserbatteries", [0]]
-		];
-		_weapons =
-		[
-			["CMFlareLauncher", [-1]],
-			["gatling_30mm", [0]],
-			["missiles_SCALPEL", [0]],
-			["missiles_ASRAAM", [0]],
-			["Laserdesignator_mounted", [0]]
-		];
 	};
-};
+};*/
 
 if (isNil "_mags" && isNil "_weapons" && isNil "_customCode") exitWith {};
 
