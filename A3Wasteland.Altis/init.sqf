@@ -111,14 +111,3 @@ if (hasInterface || isServer) then
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
 ];*/
-
-player addAction
-[
-	"Put on Uniform",
-	"addons\scripts\AUSMD_putonUni.sqf",
-	nil,
-	6,
-	true,
-	true,
-	"",
-	' !alive cursorTarget && cursorTarget isKindOf "Man" '
