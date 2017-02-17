@@ -174,9 +174,9 @@ switch (true) do
 		_mags =
 		[
 			["120Rnd_CMFlare_Chaff_Magazine", [-1]],
-			["2000Rnd_65x39_Belt_Tracer_Green_Splash", [0]],
+			["1000Rnd_65x39_Belt", [0]],
 			["24Rnd_missiles", [0]],
-			["4Rnd_LG_scalpel", [0]],
+			["2Rnd_LG_scalpel", [0]],
 			["2Rnd_AAA_missiles", [0]],
 			["Laserbatteries", [0]]
 		];
