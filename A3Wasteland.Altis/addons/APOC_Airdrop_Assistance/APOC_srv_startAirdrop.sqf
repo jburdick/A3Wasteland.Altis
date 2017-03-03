@@ -74,7 +74,8 @@ _wp1 = _grp addWaypoint [_flySpot, 0, 2];
 _heli flyInHeight _flyHeight;
 
 //////// Create Purchased Object //////////////////////////////////////////////
-_object = switch (_type) do {
+_object = switch (_type) do
+{
 	case "vehicle":
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
@@ -153,12 +154,13 @@ While {true} do {
 };
 // Let's handle the money after this tricky spot - This way players won't be charged for non-delivered goods!
 _playerMoney = _player getVariable ["bmoney", 0];
-		if (_price > _playerMoney) exitWith{
-			{ _x setDamage 1; } forEach units _grp;
-			_heli setDamage 1;
-			_object setDamage 1;
-			diag_log format ["Apoc's Airdrop Assistance - Player Account Too Low, Drop Aborted. %1. Bank:$%2. Cost: $%3", _player, _playerMoney, _price];  //A little log love to mark the Scallywag who tried to cheat the valiant pilot
-			};  //Thought you'd be tricky and not pay, eh?
+	if (_price > _playerMoney) exitWith
+  {
+		{ _x setDamage 1; } forEach units _grp;
+		_heli setDamage 1;
+		_object setDamage 1;
+		diag_log format ["Apoc's Airdrop Assistance - Player Account Too Low, Drop Aborted. %1. Bank:$%2. Cost: $%3", _player, _playerMoney, _price];  //A little log love to mark the Scallywag who tried to cheat the valiant pilot
+	};  //Thought you'd be tricky and not pay, eh?
 
 //Server Style Money handling
 _balance = _player getVariable ["bmoney", 0];
@@ -179,14 +181,16 @@ sleep 2;
 playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL _player,3,1,25];
 
 //Delete heli once it has proceeded to end point
-	[_heli,_grp,_flySpot,_dropSpot,_heliDistance] spawn {
+	[_heli,_grp,_flySpot,_dropSpot,_heliDistance] spawn
+  {
 		private ["_heli","_grp","_flySpot","_dropSpot","_heliDistance"];
 		_heli = _this select 0;
 		_grp = _this select 1;
 		_flySpot = _this select 2;
 		_dropSpot = _this select 3;
 		_heliDistance = _this select 4;
-		while{([_heli, _flySpot] call BIS_fnc_distance2D)>200}do{
+		while{([_heli, _flySpot] call BIS_fnc_distance2D)>200}do
+    {
 			if(!alive _heli || !canMove _heli)exitWith{};
 			sleep 5;
 		};
@@ -196,7 +200,8 @@ playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL
 	};
 
 //Time based deletion of the heli, in case it gets distracted
-	[_heli,_grp] spawn {
+	[_heli,_grp] spawn
+  {
 		private ["_heli","_grp"];
 		_heli = _this select 0;
 		_grp = _this select 1;
@@ -210,19 +215,20 @@ playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL
 	};
 
 WaitUntil {(((position _object) select 2) < (_flyHeight-20))};
-		_heli fire "CMFlareLauncher";
-		_objectPosDrop = position _object;
-		_para = createVehicle ["B_Parachute_02_F", _objectPosDrop, [], 0, ""];
-		_object attachTo [_para,[0,0,-1.5]];
+	_heli fire "CMFlareLauncher";
+	_objectPosDrop = position _object;
+	_para = createVehicle ["B_Parachute_02_F", _objectPosDrop, [], 0, ""];
+	_object attachTo [_para,[0,0,-1.5]];
 
-		_smoke1= "SmokeShellGreen" createVehicle getPos _object;
-		_smoke1 attachto [_object,[0,0,-0.5]];
-		_flare1= "F_40mm_Green" createVehicle getPos _object;
-		_flare1 attachto [_object,[0,0,-0.5]];
+	_smoke1= "SmokeShellGreen" createVehicle getPos _object;
+	_smoke1 attachto [_object,[0,0,-0.5]];
+	_flare1= "F_40mm_Green" createVehicle getPos _object;
+	_flare1 attachto [_object,[0,0,-0.5]];
 
-		if (_type == "vehicle") then {_object allowDamage true;}; //Turn on damage for vehicles once they're in the 'chute.  Could move this until they hit the ground.  Admins choice.
+	if (_type == "vehicle") then {_object allowDamage true;}; //Turn on damage for vehicles once they're in the 'chute.  Could move this until they hit the ground.  Admins choice.
 
 WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
+<<<<<<< HEAD
 		detach _object;
 		_smoke2= "SmokeShellGreen" createVehicle getPos _object;
 		//_smoke2 attachto [_object,[0,0,-0.5]];
@@ -251,3 +257,45 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 				};
 			};
 		};
+=======
+detach _object;
+_smoke2= "SmokeShellGreen" createVehicle getPos _object;
+//_smoke2 attachto [_object,[0,0,-0.5]];
+_flare2= "F_40mm_Green" createVehicle getPos _object;
+//_flare2 attachto [_object,[0,0,-0.5]];
+sleep 2;
+if (_type == "picnic") then
+{  //So let's go ahead and delete that ugly ammo pallet and create a wonderful picnic basket/barrel
+	_objectLandPos = position _object;
+	deleteVehicle _object;
+	_object2 = switch (_selectionClass) do
+  {
+		case "Land_Sacks_goods_F":
+    {
+			_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+			_object2 setVariable ["food", 50, true];
+			_object2 setVariable ["R3F_LOG_Disabled", false, true];
+			_object2 setVariable ["allowDamage", true, true];
+			_object2 allowDamage true;
+			_object2
+		}; //A very big picnic, no?
+		case "Land_BarrelWater_F":
+    {
+			_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+			_object2 setVariable ["water",50, true];
+			_object2 setVariable ["R3F_LOG_Disabled", false, true];
+			_object2 setVariable ["allowDamage", true, true];
+			_object2 allowDamage true;
+			_object2
+		};
+	  case "Box_NATO_AmmoVeh_F":
+    {
+			_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+			_object2 setVariable ["R3F_LOG_Disabled", false, true];
+			_object2 setVariable ["allowDamage", true, true];
+			_object2 allowDamage true;
+			_object2
+    };
+	};
+};
+>>>>>>> origin/master
