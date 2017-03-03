@@ -249,5 +249,12 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 					_object2 allowDamage true;
 					_object2
 				};
+			   case "Box_NATO_AmmoVeh_F": {
+					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
+					_object2 setVariable ["R3F_LOG_Disabled", false, true];
+					_object2 setVariable ["allowDamage", true, true];
+					_object2 allowDamage true;
+					_object2
 			};
+
 		};
