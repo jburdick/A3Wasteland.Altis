@@ -232,10 +232,8 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 		if (_type == "picnic") then {  //So let's go ahead and delete that ugly ammo pallet and create a wonderful picnic basket/barrel
 			_objectLandPos = position _object;
 			deleteVehicle _object;
-			_object2 = switch (_selectionClass) do
-      {
-				case "Land_Sacks_goods_F":
-        {
+			_object2 = switch (_selectionClass) do {
+				case "Land_Sacks_goods_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["food", 50, true];
 					_object2 setVariable ["R3F_LOG_Disabled", false, true];
@@ -243,8 +241,7 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 					_object2 allowDamage true;
 					_object2
 				}; //A very big picnic, no?
-				case "Land_BarrelWater_F":
-        {
+				case "Land_BarrelWater_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["water",50, true];
 					_object2 setVariable ["R3F_LOG_Disabled", false, true];
@@ -252,12 +249,5 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 					_object2 allowDamage true;
 					_object2
 				};
-			   case "Box_NATO_AmmoVeh_F":
-         {
-					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
-					_object2 setVariable ["R3F_LOG_Disabled", false, true];
-					_object2 setVariable ["allowDamage", true, true];
-					_object2 allowDamage true;
-					_object2
 			};
 		};
