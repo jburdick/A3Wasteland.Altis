@@ -15,11 +15,10 @@ APOC_AA_VehOptions =
 ["UH-80 Ghost Hawk",  	"B_Heli_Transport_01_F", 	75000, 	"vehicle"],
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	230000, "vehicle"],
 ["T-100 Varsuk", 		    "O_MBT_02_cannon_F", 		  280000, "vehicle"]
-
-
 ];
 
 APOC_AA_SupOptions =
+[
 // ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
 ["Launchers", 		    	"airdrop_Launchers", 			60000,	"supply"],
 ["Sniper Rifles", 	   	"airdrop_Snipers", 				50000,	"supply"],
