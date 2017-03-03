@@ -16,6 +16,7 @@ APOC_AA_VehOptions =
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	230000, "vehicle"],
 ["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		280000, "vehicle"]
 
+
 ];
 
 APOC_AA_SupOptions =
@@ -27,7 +28,9 @@ APOC_AA_SupOptions =
 ["Dive Gear", 			"airdrop_Diving_Gear", 			25000,	"supply"],
 ["Medical", 			"airdrop_Medical", 				5000,	"supply"],
 ["Field Engineer",		"airdrop_Field_Engineer", 		5000,	"supply"],
-// ["Test",				"mission_USLaunchers",			1,		"supply"],
+["Vehicle Ammo Crate",	"Box_NATO_AmmoVeh_F", 		    300000,	"supply"],
+// ["Test",				"mission_USLaunchers",			1,		"supply"]
+
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
 ["Food",				"Land_Sacks_goods_F",		5000, 	"picnic"],
