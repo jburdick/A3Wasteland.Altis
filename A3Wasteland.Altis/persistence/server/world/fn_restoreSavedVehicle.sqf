@@ -75,13 +75,27 @@ if (_isUAV) then
 	{
 		params ["_uav", "_flying", "_uavSide"];
 
-		_grp = [_uav, _uavSide, true] call fn_createCrewUAV;
+		
+
+
+
+
+
+
+
+
+
+		_grp = [_uav, _uavSide] call fn_createCrewUAV;
 
 		if (_flying) then
 		{
 			_wp = (group _uav) addWaypoint [getPosATL _uav, 0];
 			_wp setWaypointType "MOVE";
 		};
+
+
+
+
 	};
 };
 

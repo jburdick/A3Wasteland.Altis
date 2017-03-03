@@ -11,7 +11,7 @@ APOC_AA_VehOptions =
 ["Offroad HMG", 		"B_G_Offroad_01_armed_F",	5000, 	"vehicle"],
 ["MH-9 Hummingbird", 	"B_Heli_Light_01_F", 		15000, 	"vehicle"],
 ["Hunter HMG", 			"B_MRAP_01_hmg_F", 			70000, 	"vehicle"],
-["Strider GMG", 		"B_MRAP_01_hmg_F", 			75000, 	"vehicle"],
+["Strider GMG", 		"I_MRAP_03_gmg_F", 			75000, 	"vehicle"],
 ["UH-80 Ghost Hawk", 	"B_Heli_Transport_01_F", 	75000, 	"vehicle"],
 ["IFV-6a Cheetah AA", 	"B_APC_Tracked_01_AA_F", 	230000, "vehicle"],
 ["T-100 Varsuk", 		"O_MBT_02_cannon_F", 		280000, "vehicle"]
@@ -19,7 +19,6 @@ APOC_AA_VehOptions =
 ];
 
 APOC_AA_SupOptions =
-<<<<<<< HEAD
 [// ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
 ["Launchers", 			"airdrop_Launchers", 			60000,	"supply"],
 ["Sniper Rifles", 		"airdrop_Snipers", 				50000,	"supply"],
@@ -34,17 +33,3 @@ APOC_AA_SupOptions =
 ["Food",				"Land_Sacks_goods_F",		5000, 	"picnic"],
 ["Water",				"Land_BarrelWater_F",		5000, 	"picnic"]
 ];
-=======
-[
-["Launchers", 		    	"airdrop_Launchers", 			60000,	"supply"],
-["Sniper Rifles", 	   	"airdrop_Snipers", 				50000,	"supply"],
-["Rifles", 			      	"airdrop_Rifles", 				45000,	"supply"],
-["LMGs", 				        "airdrop_LMGs", 				  45000,	"supply"],
-["Dive Gear", 	     		"airdrop_Diving_Gear", 		25000,	"supply"],
-["Medical", 		      	"airdrop_Medical", 				5000,	  "supply"],
-["Field Engineer",  		"airdrop_Field_Engineer", 5000, 	"supply"],
-["Vehicle Ammo Crate",	"Box_NATO_AmmoVeh_F", 		300000,	"vehicle"],
-["Food",				        "Land_Sacks_goods_F",		  5000, 	"picnic"],
-["Water",			        	"Land_BarrelWater_F",		  5000, 	"picnic"]
-];
->>>>>>> origin/master

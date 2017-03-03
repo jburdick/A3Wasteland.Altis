@@ -150,9 +150,7 @@ A3W_territoryCaptureTime = 1*60;   // Time in seconds needed to capture a territ
 A3W_territoryPayroll = 1;          // Periodically reward sides and indie groups based on how many territories they own (0 = no, 1 = yes)
 A3W_payrollInterval = 1;			// Delay in seconds between each payroll
 A3W_payrollAmount = 50;           // Amount of money rewarded per territory on each payroll
-A3W_SubpayrollAmount = 10;        //Payroll amount of sub terriroties
 A3W_territoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //Territories allowed
-A3W_subterritoryAllowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //Territories allowed
 
 // Mission settings
 A3W_serverMissions = 1;            	// Enable server missions (0 = no, 1 = yes)

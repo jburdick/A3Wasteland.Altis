@@ -4,9 +4,7 @@
 //	@file Name: fn_createCrewUAV.sqf
 //	@file Author: AgentRev
 
-params [["_uav",objNull,[objNull]], ["_side",sideUnknown,[sideUnknown]], ["_skipCreate",false,[false]]];
-
-if (!unitIsUAV _uav) exitWith {};
+params [["_uav",objNull,[objNull]], ["_side",sideUnknown,[sideUnknown]]];
 
 private _crewCount = count allTurrets _uav + 1; // +1 because allTurrets doesn't include driver
 private _crewNotReady = {alive _uav && {alive _x} count crew _uav < _crewCount};
@@ -14,9 +12,9 @@ private "_time";
 
 while _crewNotReady do // bruteforce that shit up
 {
-	if (!_skipCreate) then { createVehicleCrew _uav } else { _skipCreate = false };
-	_time = time;
-	waitUntil {!(time - _time < 1 && _crewNotReady)};
+	createVehicleCrew _uav;
+	_time = diag_tickTime;
+	waitUntil {!(diag_tickTime - _time < 1 && _crewNotReady)};
 };
 
 if (!alive _uav) exitWith { grpNull };
