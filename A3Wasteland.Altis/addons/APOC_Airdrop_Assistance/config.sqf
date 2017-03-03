@@ -19,7 +19,6 @@ APOC_AA_VehOptions =
 
 APOC_AA_SupOptions =
 [
-// ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
 ["Launchers", 		    	"airdrop_Launchers", 			60000,	"supply"],
 ["Sniper Rifles", 	   	"airdrop_Snipers", 				50000,	"supply"],
 ["Rifles", 			      	"airdrop_Rifles", 				45000,	"supply"],
@@ -27,7 +26,7 @@ APOC_AA_SupOptions =
 ["Dive Gear", 	     		"airdrop_Diving_Gear", 		25000,	"supply"],
 ["Medical", 		      	"airdrop_Medical", 				5000,	  "supply"],
 ["Field Engineer",  		"airdrop_Field_Engineer", 5000, 	"supply"],
-["Vehicle Ammo Crate",	"Box_NATO_AmmoVeh_F", 		300000,	"picnic"],
+["Vehicle Ammo Crate",	"Box_NATO_AmmoVeh_F", 		300000,	"vehicle"],
 ["Food",				        "Land_Sacks_goods_F",		  5000, 	"picnic"],
 ["Water",			        	"Land_BarrelWater_F",		  5000, 	"picnic"]
 ];
