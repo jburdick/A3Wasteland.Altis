@@ -416,6 +416,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Device_assembled_F", 10], // Base Locker
 	//["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 10],
+	["Box_East_AmmoVeh_F", 10],
+	["Box_IND_AmmoVeh_F", 10],
 	["B_supplyCrate_F", 2],
 	["Box_Ammo_F", 1],
 	["EAST_Box_Base", 1],
@@ -533,6 +535,13 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["ContainmentArea_02_sand_F", 10],
 	["Box_Syndicate_Wps_F", 1],
 	["Box_Syndicate_WpsLaunch_F", 1],
+	["IG_supplyCrate_F", 2],
+	["C_supplyCrate_F", 2],
+	["C_T_supplyCrate_F", 2],
+	["I_supplyCrate_F", 2],
+	["Box_FIA_Wps_F", 2],
+	["Box_FIA_Support_F", 1],
+	["Box_IND_AmmoOrd_FF", 1],
 	["Box_IED_Exp_F", 1]
 ];
 

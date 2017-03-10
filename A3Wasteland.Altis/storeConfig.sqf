@@ -872,6 +872,7 @@ genObjectsArray = compileFinal str
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
 	["Shoot House Wall", "Land_Shoot_House_Wall_F", 180, "object"],
 
+	["Flexible Fuel Tank", "FlexibleTank_01_sand_F", 300],
 	["Fuel station", "Land_FuelStation_Feed_F", 500],
 	["Fuel Bladder", "StorageBladder_01_fuel_sand_F", 500],
 
