@@ -45,7 +45,7 @@ briefing = 0; // if 0, skip Continue button
 #undef SAF_DEF
 
 //Dialog includes
-
+#include "addons\CHVD\dialog.hpp"
 #include "client\gui_base.hpp"
 #include "addons\R3F_LOG\desc_include.h"
 #include "client\systems\ui_toolkit.hpp"
@@ -89,6 +89,7 @@ class RscTitles
 
 class CfgFunctions
 {
+	#include "addons\CHVD\CfgFunctions.hpp"
 	class A3W
 	{
 		#include "client\CfgFunctions.hpp"
@@ -98,7 +99,7 @@ class CfgFunctions
 	{
 		#include "addons\aj\aj_FunctionsDefinition.hpp"
 	};
-	class SAF 
+	class SAF
 	{
         #define SAF_FNCS
             //#include "addons\sushi_scripts\core\init.cpp"
