@@ -130,7 +130,6 @@ else
 private _bank = 0;
 private _bounty = 0;
 private _bountyKills = [];
-private _maxMoney = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
 
 if (_moneySaving) then
 {
@@ -139,17 +138,12 @@ if (_moneySaving) then
 	_bank = _result param [0,0];
 };
 
-if (["A3W_bountyMax", 0] call getPublicVar > 0) then
+if (["A3W_atmBounties"] call isConfigOn) then
 {
 	_result = ["getPlayerBounty:" + _UID, 2] call extDB_Database_async;
 
 	_bounty = _result param [0,0];
 	_bountyKills = _result param [1,[]];
-};
-
-if (_bank > _maxMoney) then
-{
-	_bank = _maxMoney;
 };
 
 _data append
