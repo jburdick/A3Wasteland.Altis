@@ -8,7 +8,8 @@ disableSerialization;
 
 private ["_start","_panelOptions","_BoS_select","_displayBoS"];
 _uid = getPlayerUID player;
-if (!isNil "_uid") then {
+if (!isNil "_uid") then
+{
 	_start = createDialog "BoS_Menu";
 
 	_displayBoS = uiNamespace getVariable "BoS_Menu";

@@ -11,33 +11,32 @@ if (BeaconScanInProgress) exitWith
 
 _beaconsnear = nearestObjects [player, ["Land_Sleeping_bag_folded_F","Land_Tentdome_F"], 100];
 
-if ((count _beaconsnear) > 0 ) then 
-	{
-	
+if ((count _beaconsnear) > 0 ) then
+{
 	playsound "beep9"; ["Device found - tracking started.", 5] call mf_notify_client;
 	BeaconScanInProgress = true;
 	Beaconscanstop = false;
-	
+
 	_distance = 0; //init distance
-	
+
 	while {_distance < 100} do
-		{	
+	{
 		_beaconsnear = nearestObjects [player, ["Land_Sleeping_bag_folded_F","Land_Tentdome_F"], 100];
-		
-		if (Beaconscanstop) exitwith 
-			{
+
+		if (Beaconscanstop) exitwith
+		{
 			playsound "beep9";
 			["Device scan interrupted.", 5] call mf_notify_client;
 			BeaconScanInProgress = false;
-			};
-		
-		if (count _beaconsnear == 0) exitwith 
-			{
+		};
+
+		if (count _beaconsnear == 0) exitwith
+		{
 			playsound "beep9";
 			["No devices in detector range.", 5] call mf_notify_client;
 			BeaconScanInProgress = false;
-			};
-		
+		};
+
 		_nearestbeacon = _beaconsnear select 0;
 		_distance = player distance _nearestbeacon;
 		_dir = getdir (vehicle player);
@@ -47,30 +46,31 @@ if ((count _beaconsnear) > 0 ) then
 		if (_difference > 180) then { _difference = _difference - 360};
 		if (_difference < -180) then { _difference = _difference + 360};
 		_adjusteddiff = (abs _difference);
-		_beepfreq = ((_adjusteddiff / 50) + 0.25);	
-		
-		
-		
-			switch (true) do 
-				{
+		_beepfreq = ((_adjusteddiff / 50) + 0.25);
+
+
+
+			switch (true) do
+			{
 				case (_distance < 6) : {playsound "beep6";};
 				case (_distance < 10) : {playsound "beep5";};
 				case (_distance < 20) : {playsound "beep4";};
 				case (_distance < 30) : {playsound "beep3";};
 				case (_distance < 50) : {playsound "beep2";};
 				case (_distance < 100) : {playsound "beep";};
-				default {
+				default
+				{
 						//default case should not happen
 						playsound "beep9";
 						["There was a malfunction of your device detector.", 5] call mf_notify_client;
-						};
 				};
+			};
 			sleep _beepfreq;
-			
-		};
-	}
+
+	};
+}
 else
 {
-playsound "beep9";
-["No device in detector range.", 5] call mf_notify_client;
+	playsound "beep9";
+	["No device in detector range.", 5] call mf_notify_client;
 };
