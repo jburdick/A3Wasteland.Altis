@@ -49,3 +49,5 @@ Temporary Items
 #Work Files not to sync
 *.pbo
 *.bak
+
+Temp/
