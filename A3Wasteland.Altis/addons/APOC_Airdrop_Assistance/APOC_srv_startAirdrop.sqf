@@ -173,18 +173,20 @@ diag_log format ["Apoc's Airdrop Assistance - Object at %1", position _object]; 
 
 //Wait until the heli completes the drop waypoint, then move on to dropping the cargo and all of that jazz
 
-While {true} do {
+While {true} do
+{
 	sleep 0.1;
 	if (currentWaypoint _grp >= 2) exitWith {};  //Completed Drop Waypoint
 };
 // Let's handle the money after this tricky spot - This way players won't be charged for non-delivered goods!
 _playerMoney = _player getVariable ["bmoney", 0];
-if (_price > _playerMoney) exitWith{
+if (_price > _playerMoney) exitWith
+{
 	{ _x setDamage 1; } forEach units _grp;
 	_heli setDamage 1;
 	_object setDamage 1;
 	diag_log format ["Apoc's Airdrop Assistance - Player Account Too Low, Drop Aborted. %1. Bank:$%2. Cost: $%3", _player, _playerMoney, _price];  //A little log love to mark the Scallywag who tried to cheat the valiant pilot
-	};  //Thought you'd be tricky and not pay, eh?
+};  //Thought you'd be tricky and not pay, eh?
 
 //Server Style Money handling
 _balance = _player getVariable ["bmoney", 0];
@@ -213,7 +215,8 @@ playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL
 	_flySpot = _this select 2;
 	_dropSpot = _this select 3;
 	_heliDistance = _this select 4;
-	while{([_heli, _flySpot] call BIS_fnc_distance2D)>200}do{
+	while{([_heli, _flySpot] call BIS_fnc_distance2D)>200}do
+	{
 		if(!alive _heli || !canMove _heli)exitWith{};
 		sleep 5;
 	};

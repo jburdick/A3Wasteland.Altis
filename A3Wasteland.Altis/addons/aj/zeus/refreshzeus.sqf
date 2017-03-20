@@ -3,7 +3,6 @@
 // @file Author: www.armajunkies.de
 // Refresh of all Mission Objects and set Owner on Zeus Keypress
 
-
 _uid = getPlayerUID player;
 
 if(_uid in (call zeusAdmins)) then

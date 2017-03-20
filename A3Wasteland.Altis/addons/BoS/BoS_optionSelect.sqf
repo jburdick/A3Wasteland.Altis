@@ -11,15 +11,12 @@ _uid = getPlayerUID player;
 if (!isNil "_uid") then
 {
 	_panelType = _this select 0;
-
 	_displayBoS = uiNamespace getVariable ["BoS_Menu", displayNull];
-
 	switch (true) do
 	{
 		case (!isNull _displayBoS): //BoS panel
 		{
 			_BoS_select = _displayBoS displayCtrl BoS_Menu_option;
-
 			switch (lbCurSel _BoS_select) do
 			{
 				case 0: //Mark Owned Object
@@ -39,12 +36,12 @@ if (!isNil "_uid") then
 				};
 				case 3: //Lock Down Base
 				{
-					closeDialog 0;					
+					closeDialog 0;
 					execVM "addons\BoS\BoS_lockDown.sqf";
 				};
 				case 4: //Release Lock Down
 				{
-					closeDialog 0;					
+					closeDialog 0;
 					execVM "addons\BoS\BoS_releaseLockDown.sqf";
 				};
 				case 5: //Relock Base Objects
@@ -64,9 +61,9 @@ if (!isNil "_uid") then
 				};
 				case 8: //Change Password
 				{
-					closeDialog 0;					
+					closeDialog 0;
 					execVM "addons\Bos\password_change.sqf";
-				};					
+				};
 			};
 		};
 	};

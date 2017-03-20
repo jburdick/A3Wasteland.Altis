@@ -15,7 +15,6 @@ _uid = getPlayerUID player;
 if (_uid call isAdmin) then
 {
 	_panelType = _this select 0;
-
 	_displayAdmin = uiNamespace getVariable ["AdminMenu", displayNull];
 	_displayDebug = uiNamespace getVariable ["DebugMenu", displayNull];
 
@@ -27,53 +26,17 @@ if (_uid call isAdmin) then
 
 			switch (lbCurSel _adminSelect) do
 			{
-				case 0: //Player Menu
-				{
-					closeDialog 0;
-					execVM "client\systems\adminPanel\playerMenu.sqf";
-				};
-				case 1: //Full Vehicle Management
-				{
-					closeDialog 0;
-					execVM "client\systems\adminPanel\vehicleManagement.sqf";
-				};
-				case 2: //Markers log
-				{
-					closeDialog 0;
-					createDialog "MarkerLog";
-				};
-				case 3: //Tags
-				{
-					execVM "client\systems\adminPanel\playerTags.sqf";
-				};
-				case 4: //Teleport
-				{
-					closeDialog 0;
-					["A3W_teleport", "onMapSingleClick",
-					{
-						vehicle player setPos _pos;
-						if (!isNil "notifyAdminMenu") then { ["teleport", _pos] spawn notifyAdminMenu };
-						["A3W_teleport", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
-						true
-					}] call BIS_fnc_addStackedEventHandler;
-					hint "Click on map to teleport";
-				};
-				case 5: //Money
+				case 0: //Money
 				{
 					_money = 1000000;
 					player setVariable ["cmoney", (player getVariable ["cmoney",0]) + _money, true];
 				};
-				case 6: //Debug Menu
+				case 1: //Debug Menu
 				{
 					closeDialog 0;
 					execVM "client\systems\adminPanel\loadDebugMenu.sqf";
 				};
-				case 7: //Object search menu
-				{
-					closeDialog 0;
-					execVM "client\systems\adminPanel\loadObjectSearch.sqf";
-				};
-				case 8: // toggle God mode
+				case 2: // toggle God mode
 				{
 					execVM "client\systems\adminPanel\toggleGodMode.sqf";
 				};
@@ -110,27 +73,9 @@ if (_uid call isAdmin) then
 					closeDialog 0;
 					true spawn client_respawnDialog;
 				};
-				case 5: //Access Proving Grounds
-				{
-					closeDialog 0;
-					createDialog "balca_debug_main";
-				};
-				case 6: //Show server FPS function
+				case 5: //Show server FPS function
 				{
 					hint format["Server FPS: %1",serverFPS];
-				};
-				case 7: //Test Function
-				{
-					_group = createGroup civilian;
-					_leader = _group createunit ["C_man_polo_1_F", getPos player, [], 0.5, "Form"];
-
-					_leader addMagazine "RPG32_HE_F";
-					_leader addMagazine "RPG32_HE_F";
-					_leader addWeapon "launch_RPG32_F";
-					_leader addMagazine "30Rnd_556x45_Stanag";
-					_leader addMagazine "30Rnd_556x45_Stanag";
-					_leader addMagazine "30Rnd_556x45_Stanag";
-					_leader addWeapon "arifle_TRG20_F";
 				};
 			};
 		};

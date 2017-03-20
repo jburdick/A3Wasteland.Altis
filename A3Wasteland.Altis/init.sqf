@@ -94,7 +94,6 @@ if (hasInterface || isServer) then
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
 	if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
-	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
