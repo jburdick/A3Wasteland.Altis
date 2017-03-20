@@ -15,6 +15,7 @@
 #endif
 
 CHVD_allowNoGrass = true;
+enableEnvironment [false, true];
 enableSaving [false, false];
 
 // block script injection exploit

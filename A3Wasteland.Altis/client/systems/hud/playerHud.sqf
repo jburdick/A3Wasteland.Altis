@@ -352,7 +352,5 @@ while {true} do
 			A3W_missingMarkersNotice = true;
 		};
 	};
-
-	enableEnvironment true;
 	uiSleep 1;
 };
