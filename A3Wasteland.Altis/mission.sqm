@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=21;
+		nextID=22;
 	};
 	class Camera
 	{
-		pos[]={14487.643,27.382895,5840.479};
-		dir[]={0.35147971,-0.31422573,0.88188988};
-		up[]={0.11634003,0.94934517,0.29190561};
-		aside[]={0.92894167,-2.5279587e-007,-0.37023222};
+		pos[]={14472.432,149.89566,5821.5762};
+		dir[]={0.12060207,-0.92345369,0.36427382};
+		up[]={0.29024023,0.38370705,0.87665886};
+		aside[]={0.94932783,-2.5425106e-007,-0.3142989};
 	};
 };
 binarizationWanted=0;
@@ -5775,30 +5775,30 @@ class Mission
 		class Item264
 		{
 			dataType="Marker";
-			position[]={3619.5984,12.500292,13015.494};
+			position[]={3083.2102,0,13197.901};
 			name="TERRITORY_1_KAVALA";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=350;
-			b=350;
+			a=75;
+			b=75;
 			id=558;
+			atlOffset=-47.700127;
 		};
 		class Item265
 		{
 			dataType="Marker";
-			position[]={9314.8438,118.97337,15893.634};
+			position[]={6148.8018,0,16261.731};
 			name="TERRITORY_2_AGIOS";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=150;
-			b=325;
-			angle=248.16191;
+			a=180;
+			b=75;
 			id=559;
-			atlOffset=1.5258789e-005;
+			atlOffset=-43;
 		};
 		class Item266
 		{
@@ -5817,7 +5817,7 @@ class Mission
 		class Item267
 		{
 			dataType="Marker";
-			position[]={14617.703,46.959015,20780.9};
+			position[]={4579.0073,47.569527,21393.955};
 			name="TERRITORY_5_FRINI";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -5826,19 +5826,22 @@ class Mission
 			a=150;
 			b=150;
 			id=561;
+			atlOffset=-252.07773;
 		};
 		class Item268
 		{
 			dataType="Marker";
-			position[]={20943.961,13.97664,19253.166};
+			position[]={21832.652,0,20994.018};
 			name="TERRITORY_6_MILRESEARCH";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
 			a=150;
-			b=150;
+			b=185;
+			angle=264.56998;
 			id=562;
+			atlOffset=-27.588646;
 		};
 		class Item269
 		{
@@ -5907,21 +5910,22 @@ class Mission
 		class Item274
 		{
 			dataType="Marker";
-			position[]={3619.6282,12.484255,13015.957};
+			position[]={3083.2102,12.332841,13197.901};
 			name="FLAG_1_KAVALA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=568;
+			atlOffset=-35.367287;
 		};
 		class Item275
 		{
 			dataType="Marker";
-			position[]={9315.1221,119.15121,15891.987};
+			position[]={6148.8018,119.80474,16261.731};
 			name="FLAG_2_AGIOS";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=569;
-			atlOffset=-7.6293945e-006;
+			atlOffset=76.804741;
 		};
 		class Item276
 		{
@@ -5945,21 +5949,22 @@ class Mission
 		class Item278
 		{
 			dataType="Marker";
-			position[]={14613.917,46.785393,20779.008};
+			position[]={4598.3877,47.569527,21397.479};
 			name="FLAG_5_FRINI";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
-			atlOffset=-3.8146973e-006;
+			atlOffset=-251.83688;
 		};
 		class Item279
 		{
 			dataType="Marker";
-			position[]={20943.963,13.951282,19260.742};
+			position[]={21829.129,14.094675,20994.018};
 			name="FLAG_6_MILRESEARCH";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=573;
+			atlOffset=-13.757086;
 		};
 		class Item280
 		{
@@ -6398,7 +6403,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.9998;
+			angle=226.99979;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6559,7 +6564,7 @@ class Mission
 			class Attributes
 			{
 				onActivation="(vehicle player) allowdamage false;";
-				onDeactivation="(vehicle player) allowdamage true;";
+				onDeactivation="(vehicle player) allowdamage false;";
 				sizeA=150;
 				sizeB=150;
 				sizeC=150;
