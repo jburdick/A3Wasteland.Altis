@@ -13,57 +13,6 @@ _aKeyName = { _arr = actionKeysNamesArray _this; if (count _arr == 0) exitWith {
 
 waitUntil {!isNull player};
 
-player createDiarySubject
-["infos",
-  [
-    "BIB Website: BIBGaming.com",
-    "BIB Teamspeak Server: ts3.bibgamin.net",
-    "BIB Patreon: https://www.patreon.com/user?u=4371658"
-  ]
-];
-player createDiarySubject
-["credits",
-  [
-    "A3Wasteland Mission by AgentRev - A3Wasteland.com",
-    "",
-    "Brothers in Blood Development Team:",
-    "BIB Lead Developer ~ Monkey",
-    "BIB Developer ~ Whichdoctor",
-    "BIB Developer ~ DreadedWraith"
-    "",
-    "BIB Wasteland Server Admins:"
-    "Wilks",
-    "Cats",
-    "Masher",
-    "Vru",
-    "Titus",
-    "Sayrus",
-    "Rage",
-    "Wrath of Heineken"
-  ]
-];
-player createDiaryRecord
-["changelog",
-  [
-    "vBIB1.0",
-    "
-      <br/>[Added] Territory Control System
-      <br/>[Added] Base Locking and wide array of available base objects
-      <br/>[Added] Custom Mission
-      <br/>[Added] Airdrops
-      <br/>[Added] CH View Distance
-      <br/>[Added] Advanced Bobcat repair
-      <br/>[Added] Advanced Sling Load
-      <br/>[Added] Grass Cutting
-      <br/>[Added] Hide Body Script
-      <br/>[Added] Equip enemy uniforms (via scrollwheel option)
-      <br/>[Added] Attach static weapons to offraods
-      <br/>[Added]
-      <br/>[Added]
-      <br/>[Added]
-    "
-  ]
-];
 player createDiaryRecord
 ["changelog",
   [
@@ -457,6 +406,26 @@ player createDiaryRecord ["credits",
 [
 "Credits",
 "
+<br/><font size= '16' color='#FFF000'> BIB Gaming Development Team </font>
+<br/> Lead Developer ~ Monkey (BIB)
+<br/> Senior Developer ~ Witchdoctor (GGO)
+<br/> Senior Developer ~ DreadedWraith (GGO)
+<br/>
+
+<br/><br/><font size= '16' color='#FFF000'> Server Admins </font>
+<br/> Wilks (BIB)
+<br/> Masher (BIB)
+<br/> Vru (BIB)
+<br/> Cats (BIB)
+<br/> Titus (BIB)
+<br/> Sayrus (BIB)
+<br/> Lynx (BIB)
+<br/> Integer (BIB)
+<br/> Rage (BIB)
+<br/> Lacks (BIB)
+<br/> Smokebreak (BIB)
+<br/>
+
 <br/><font size='16' color='#BBBBBB'>Developed by A3Wasteland.com:</font>
 <br/>	* AgentRev (TeamPlayerGaming)
 <br/>	* JoSchaap (GoT/Tweakers.net)
@@ -605,8 +574,8 @@ player createDiaryRecord ["infos",
 <br/>Q. Is it ok for me to shoot my team mates?
 <br/>A. If you are member of BLUFOR or OPFOR teams, then you are NOT allowed to shoot or steal items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.
 <br/>
-<br/>Q. Whats with the canisters, baskets and big bags?
-<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.
+/*<br/>Q. Whats with the canisters, baskets and big bags?
+<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.*/
 <br/>
 <br/>Q. I saw someone breaking a rule, what do I do?
 <br/>A. Simply go into global chat and get the attention of one of the admins or visit our forums, and make a report if the offense is serious.
