@@ -1,6 +1,6 @@
 //Client Function for Airdrop Assistance (not really a function, as it is called via ExecVM from command menu)
 //This takes values from command menu, and some passed variables, and interacts with client and sends commands to server
-//Author: Apoc
+//Author: Apoc, BIB_Monkey
 //Credits: Some methods taken from Cre4mpie's airdrop scripts, props for the idea!
 //Starts off much the same as the client start.  This is to find information from config arrays
 
@@ -19,7 +19,9 @@ switch (_type) do
 {
 	case "vehicle": {_selectionArray = APOC_AA_VehOptions};
 	case "supply": 	{_selectionArray = APOC_AA_SupOptions};
-	case "picnic":	{_selectionArray = APOC_AA_SupOptions};
+	case "food":	{_selectionArray = APOC_AA_SupOptions};
+	case "water":	{_selectionArray = APOC_AA_SupOptions};
+	case "vicammo":	{_selectionArray = APOC_AA_SupOptions};
 	case "base":	{_selectionArray = APOC_AA_SupOptions};
 	default 		{_selectionArray = APOC_AA_VehOptions; diag_log "AAA - Default Array Selected - Something broke";};
 };
@@ -55,7 +57,7 @@ _crew allowDamage false;
 
 _heli setCaptive true;
 
-_heliDistance = 2000;
+_heliDistance = 200;
 _dir = ((_dropSpot select 0) - (_spos select 0)) atan2 ((_dropSpot select 1) - (_spos select 1));
 _flySpot = [(_dropSpot select 0) + (sin _dir) * _heliDistance, (_dropSpot select 1) + (cos _dir) * _heliDistance, _flyHeight];
 
@@ -112,6 +114,7 @@ _object = switch (_type) do
 		_object = createVehicle ["Land_Sacks_goods_F", _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["food", 50, true];
 		_object setVariable ["R3F_LOG_Disabled", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
@@ -122,6 +125,7 @@ _object = switch (_type) do
 		_object = createVehicle ["Land_BarrelWater_F", _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["water",50, true];
 		_object setVariable ["R3F_LOG_Disabled", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
@@ -252,8 +256,8 @@ _smoke2= "SmokeShellGreen" createVehicle getPos _object;
 //_smoke2 attachto [_object,[0,0,-0.5]];
 _flare2= "F_40mm_Green" createVehicle getPos _object;
 //_flare2 attachto [_object,[0,0,-0.5]];
-sleep 2;
-if (_type == "food") then
+//sleep 2;
+/*if (_type == "food") then
 {
 	_objectLandPos = position _object;
 	deleteVehicle _object;
@@ -299,4 +303,4 @@ if (_type == "vicammo") then
 			_object2
 		};
 	};
-};
+};*/

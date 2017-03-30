@@ -2,7 +2,8 @@
 // @file Author:  wiking.at
 // @file Author: www.armajunkies.de
 
-class ajzeus {
+class ajzeus
+{
 	file="addons\aj\zeus";
-	class aj_s_initZeus {preInit=1;};	
+	class aj_s_initZeus {preInit=1;};
 };

@@ -17,7 +17,9 @@ switch (_type) do
 {
 	case "vehicle": {_selectionArray = APOC_AA_VehOptions};
 	case "supply": 	{_selectionArray = APOC_AA_SupOptions};
-	case "picnic":	{_selectionArray = APOC_AA_SupOptions};
+	case "food":	{_selectionArray = APOC_AA_SupOptions};
+	case "water":	{_selectionArray = APOC_AA_SupOptions};
+	case "vicammo":	{_selectionArray = APOC_AA_SupOptions};
 	case "base":	{_selectionArray = APOC_AA_SupOptions};
 	default 		{_selectionArray = APOC_AA_VehOptions; diag_log "AAA - Default Array Selected - Something broke";};
 };
@@ -68,4 +70,3 @@ if ([parseText _confirmMsg, "Confirm", "DROP!", true] call BIS_fnc_guiMessage) t
 	hint format ["Inbound Airdrop %2 Heading: %1 ETA: 20s",ceil _heliDirection,_selectionName];
 	player groupChat format ["Inbound Airdrop %2 Heading: %1 ETA: 20s",ceil _heliDirection,_selectionName];
 };
-	

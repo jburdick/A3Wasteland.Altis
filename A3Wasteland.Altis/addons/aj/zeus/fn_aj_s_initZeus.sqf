@@ -3,7 +3,7 @@ scriptName "fn_aj_s_initZeus";
 // @file Author:  wiking.at
 // @file Author: www.armajunkies.de
 
-if (isServer) then 
+if (isServer) then
 	{
 
 	//load Zeus now - no variables available at pre-init - so do it from scratch
@@ -13,7 +13,7 @@ if (isServer) then
 		call compile preprocessFileLineNumbers ("\A3Wasteland_settings\zeus.sqf");
 		}
 	else
-		{
+	{
 		/*******************************************************
 		Player UID examples :
 
@@ -29,38 +29,38 @@ if (isServer) then
 
 
 		// Zeus Admins
-		zeusAdmins = 
+		zeusAdmins =
 		[
-		// Put player UIDs here
+			// Put player UIDs here
 		];
 		diag_log "A3W:Zeus - no external Zeus Config File found";
-		};
+	};
 
 	if (typeName zeusAdmins == "ARRAY") then
-		{ 
-		zeusAdmins = compileFinal str zeusAdmins 
+		{
+		zeusAdmins = compileFinal str zeusAdmins
 		};
 
 	publicVariable "zeusAdmins";
-	
+
 	_zeusAdminList =  call zeusAdmins;
-	
+
 	    // Create Zeus Module if zeusAdmins are defined
 	if (count _zeusAdminList > 0 && isNil "aj_var_centerSideLogic_Zeus") then
-		{
+	{
 		aj_var_centerSideLogic_Zeus = createCenter sideLogic; publicVariable "aj_var_centerSideLogic_Zeus";  //Create game side for Zeus
 		aj_var_groupSideLogic_Zeus = createGroup aj_var_centerSideLogic_Zeus; publicVariable "aj_var_groupSideLogic_Zeus";  //Create group for Zeus
-			
+
 			//now create the curators for all zeusAdmins
-		   {       
-		   Call Compile Format ["aj_var_modulezeus%1 = aj_var_groupSideLogic_Zeus createUnit ['ModuleCurator_F',[0,0,0] , [], 0, ''];",_x];
-		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['showNotification', false, true];",_x];
-		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['birdType', '', true];",_x];
-		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Owner', '%1', true];",_x];
-		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Addons', 3, true];",_x];
-		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Forced', 0, true];",_x];
-		   Call Compile Format ["publicVariable 'aj_var_moduleZeus%1'; ",_x];
+		   {
+			   Call Compile Format ["aj_var_modulezeus%1 = aj_var_groupSideLogic_Zeus createUnit ['ModuleCurator_F',[0,0,0] , [], 0, ''];",_x];
+			   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['showNotification', false, true];",_x];
+			   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['birdType', '', true];",_x];
+			   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Owner', '%1', true];",_x];
+			   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Addons', 3, true];",_x];
+			   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Forced', 0, true];",_x];
+			   Call Compile Format ["publicVariable 'aj_var_moduleZeus%1'; ",_x];
 		   }
 		   forEach _zeusAdminList;
-		};	
+	};
 };
