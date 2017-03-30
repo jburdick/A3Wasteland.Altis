@@ -3,8 +3,7 @@
 //	@file Author: LouD (based on objectLockStateMachine.sqf by [404] Costlyy)
 //	@file Created: 28 march 2015
 
-if(mutexScriptInProgress) exitWith
-{
+if(mutexScriptInProgress) exitWith {
 	player globalChat "The current operation isn't finished !";
 };
 
@@ -18,6 +17,8 @@ _checks =
 	private ["_progress", "_failed"];
 	_progress = _this select 0;
 	_failed = true;
+
+
 	switch (true) do
 	{
 		case ((player distance cursorTarget) > 5): { _text = "Repair cancelled!" };
@@ -29,6 +30,7 @@ _checks =
 			_text = format ["Repair %1%2 complete", floor (_progress * 100), "%"];
 		};
 	};
+	
 	[_failed, _text];
 };
 
@@ -46,8 +48,7 @@ if (_success) then
 mutexScriptInProgress = false;
 
 
-if (mutexScriptInProgress) then
-{
+if (mutexScriptInProgress) then {
 	mutexScriptInProgress = false;
 	diag_log format["WASTELAND DEBUG: An error has occured in BoS_repairLocker.sqf. Mutex lock was not reset. Mutex lock state actual: %1", mutexScriptInProgress];
 };

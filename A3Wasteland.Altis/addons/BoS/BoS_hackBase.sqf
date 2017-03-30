@@ -30,7 +30,7 @@ _checks =
 			_text = format ["Hacking %1%2 complete", floor (_progress * 100), "%"];
 		};
 	};
-
+	
 	[_failed, _text];
 };
 
@@ -44,6 +44,7 @@ if (_success) then
 };
 
 mutexScriptInProgress = false;
+
 
 if (mutexScriptInProgress) then {
 	mutexScriptInProgress = false;

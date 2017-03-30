@@ -48,11 +48,8 @@ if ((count _beaconsnear) > 0 ) then
 		_adjusteddiff = (abs _difference);
 		_beepfreq = ((_adjusteddiff / 50) + 0.25);
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 			switch (true) do
 			{
 				case (_distance < 6) : {playsound "beep6";};

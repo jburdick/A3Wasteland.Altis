@@ -20,14 +20,11 @@ _floatDateStamp = missionStart;
 _floatDateStamp resize 5;
 _floatDateStamp = (dateToNumber _floatDateStamp) + (diag_tickTime / 31536000);
 _noMatch = true;
-{ if(_x select 0 == getPlayerUID _unit) exitWith
-  {
-    _x set [1, _floatDateStamp];
-    _noMatch = false;
-  }
-} forEach _bountyKills;
-if(_noMatch)then
-{
+{ if(_x select 0 == getPlayerUID _unit) exitWith{
+  _x set [1, _floatDateStamp];
+  _noMatch = false;
+} } forEach _bountyKills;
+if(_noMatch)then{
   _bountyKills pushBack [getPlayerUID _unit, _floatDateStamp];
   _killer setVariable ["bountyKills", _bountyKills, true];
 };
@@ -43,21 +40,21 @@ if(_noMatch)then
     name _killer,
     _bountyAmount,
     [
-    	"has kicked the bucket!",
-    	"got fucked up!",
-    	"is taking a swim with cement boots",
-    	"is now a worm buffet",
-    	"is taking a dirt nap",
-    	"became a root inspector",
-    	"is checking out the grass from underneath",
-    	"is deader than a doornail",
-    	"is headed home in a pine box",
-    	"is out of their misery",
-    	"is sleeping with the fishes",
-    	"was WASTED",
-    	"is pushing daisies",
-    	"got whacked",
-    	"is deader than Prince"
+	"has kicked the bucket!",
+	"got fucked up!",
+	"is taking a swim with cement boots",
+	"is now a worm buffet",
+	"is taking a dirt nap",
+	"became a root inspector",
+	"is checking out the grass from underneath",
+	"is deader than a doornail",
+	"is headed home in a pine box",
+	"is out of their misery",
+	"is sleeping with the fishes",
+	"was WASTED",
+	"is pushing daisies",
+	"got whacked",
+	"is deader than Prince"
     ] call BIS_fnc_selectRandom
    ]
   ] call hintBroadcast;

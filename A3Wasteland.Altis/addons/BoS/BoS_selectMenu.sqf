@@ -11,7 +11,7 @@
 #define OBJECT_CONDITION "{cursorTarget getVariable ['objectLocked', false]}"
 #define NONOWNED_CONDITION "{'ToolKit' in (items player)} && {cursorTarget getVariable ['ownerUID',''] != getPlayerUID player}"
 
-BoS_open =
+BoS_open = 
 {
 	private ["_ownersuid","_coownersuid,","_owner"];
 	_uid = getPlayerUID player;
@@ -38,7 +38,7 @@ BoS_open =
 		};*/
 		default
 		{
-			hint "An unknown error occurred. This could be because your Base Locker is not locked."
+		hint "An unknown error occurred. This could be because your Base Locker is not locked."
 		};
 	};
 };

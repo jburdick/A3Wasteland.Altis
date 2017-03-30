@@ -15,39 +15,53 @@
       _amount = _list param [3, 0, [0]];
       _rewardAmount = _list param [4, 0, [0]];
       _bountyKey = _list param [5, "", [""]];
+
       _result = 0;
       _cost = _amount;
       _sBalance = _sender getVariable ["bmoney", 0];
+
       if (_cost > 0) then
       {
         if (!isPlayer _sender || !isPlayer _recipient || _sender == _recipient) exitWith {}; // invalid sender or recipient
         if (_sBalance < _cost) exitWith {}; // sender has not enough funds for transfer
+
         _bounty = _recipient getVariable ["bounty", 0];
+
         if (_bounty + _rewardAmount > ["A3W_bountyMax", 50000] call getPublicVar) exitWith {}; // recipient would exceed or has reached max balance
+
         _sBalance = _sBalance - (if (!local _sender) then { _cost } else { 0 });
         _bounty = _bounty + _rewardAmount;
+
         _sender setVariable ["bmoney", _sBalance, true];
         _recipient setVariable ["bounty", _bounty, true];
+
         _senderUID = getPlayerUID _sender;
         _recipientUID = getPlayerUID _recipient;
+
         if (["A3W_playerSaving"] call isConfigOn) then
         {
           [_senderUID, [["BankMoney", _sBalance]], []] call fn_saveAccount;
           [_recipientUID, [["Bounty", _bounty]], []] call fn_saveAccount;
         };
+
         _result = _rewardAmount;
+
         pvar_bountyNotify = ["bountyAdded", _result, name _sender];
         (owner _recipient) publicVariableClient "pvar_bountyNotify";
       };
+
       pvar_bountyNotify = ["bountySent", _result, name _recipient];
       (owner _sender) publicVariableClient "pvar_bountyNotify";
+
       // Reset client-side player balance to previous value if transfer failed
       if (_result == 0) then
       {
         _sender setVariable ["bmoney", _sBalance + (if (local _sender) then { _cost } else { 0 }), true];
       };
+
       _sender setVariable [_bountyKey, nil, true];
     };
+
     case "rewardbounty":
     {
       _outlaw = _list param [1, objNull, [objNull]];

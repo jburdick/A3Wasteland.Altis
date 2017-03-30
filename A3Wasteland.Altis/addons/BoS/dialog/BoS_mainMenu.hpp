@@ -10,8 +10,8 @@ class BoS_Menu
 	movingEnable=1;
 	onLoad = "uiNamespace setVariable ['BoS_Menu', _this select 0]";
 
-	class controlsBackground
-	{
+	class controlsBackground {
+
 		class BoS_Menu_background: IGUIBack
 		{
 			idc=-1;
@@ -69,3 +69,4 @@ class BoS_Menu
 		};
 	};
 };
+

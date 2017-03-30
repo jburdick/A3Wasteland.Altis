@@ -13,147 +13,141 @@ _aKeyName = { _arr = actionKeysNamesArray _this; if (count _arr == 0) exitWith {
 
 waitUntil {!isNull player};
 
-player createDiaryRecord
-["changelog",
-  [
-    "v1.3b",
-    "
-      <br/>[Added] Private parking
-      <br/>[Added] Private storage
-      <br/>[Added] Vehicle ownership
-      <br/>[Added] Vehicle locking
-      <br/>[Added] Vehicle selling
-      <br/>[Added] Mine saving
-      <br/>[Added] Resupply trucks
-      <br/>[Added] CH View Distance
-      <br/>[Added] Map legend
-      <br/>[Added] UAV side persistence
-      <br/>[Added] headless server cleanup
-      <br/>[Changed] Static designators now available to indies
-      <br/>[Changed] Some store prices
-      <br/>[Fixed] Many other minor changes and fixes
-    "
-  ]
-];
+player createDiarySubject ["infos", "Infos and Help"];
+player createDiarySubject ["changelog", "Changelog"];
+player createDiarySubject ["credits", "Credits"];
 
-player createDiaryRecord
-["changelog",
-  [
-  "v1.3",
-  "
-    <br/>[Added] Tanoa version
-    <br/>[Added] Apex content on dev/preview branches
-    <br/>[Added] Sticky explosive charges
-    br/> [Added] Heavy towing and airlifting
-    <br/>[Added] Load dragged injured friendly in vehicles
-    <br/>[Added] Eject loaded injured friendly from vehicles
-    <br/>[Added] Autostabilize when loaded in medical vehicle
-    <br/>[Added] 'Finish off' action to slay injured enemies
-    <br/>[Added] Improved injured unit detection
-    <br/>[Added] Scoreboard persistence option for servers
-    <br/>[Added] Fatal PvP headshots option for servers
-    <br/>[Added] Custom death messages option for servers
-    <br/>[ADded] Auto-center heli turret on manual fire
-    <br/>[Added] UAV side persistence
-    <br/>[Added] More textures for some vehicles in store
-    <br/>[Added] Abandoned quadcopter cleanup
-    <br/>[Added] More admin menu logging
-    <br/>[Changed] Reduced heli missile damage
-    <br/>[Changed] Improved mission crate loot
-    <br/>[Changed] Vest armor values in general store
-    <br/>[Changed] Increased Mag Repack flexibility
-    <br/>[Changed] Toggled off autonomous on static designators
-    <br/>[Changed] Disabled rain due to weather desync
-    <br/>[Fixed] Engineer with toolkit can now always repair
-    <br/>[Fixed] Improved missile lock-on
-    <br/>[Fixed] Improvements to kill tracking system
-    <br/>[Fixed] Items and money not dropping on injured logout
-    <br/>[Fixed] Combat log timer not resetting on death
-    <br/>[Fixed] Player not always ejected on injury
-    <br/>[Fixed] Double kill/death count
-    <br/>[Fixed] Spawn cooldowns resetting on rejoin
-    <br/>[Fixed] Striders spawning without laser batteries
-    <br/>[Fixed] Disabled rain due to syncing issues
-    <br/>[Fixed] Various minor bugfixes and optimizations
-  "
-  ]
-];
+player createDiaryRecord ["changelog",
+[
+"v1.3b",
+"
+<br/>[Added] Private parking
+<br/>[Added] Private storage
+<br/>[Added] Vehicle ownership
+<br/>[Added] Vehicle locking
+<br/>[Added] Vehicle selling
+<br/>[Added] Mine saving
+<br/>[Added] Resupply trucks
+<br/>[Added] CH View Distance
+<br/>[Added] Map legend
+<br/>[Added] UAV side persistence
+<br/>[Added] headless server cleanup
+<br/>[Changed] Static designators now available to indies
+<br/>[Changed] Some store prices
+<br/>[Fixed] Many other minor changes and fixes
+"
+]];
 
-player createDiaryRecord
-["changelog",
-  [
-    "v1.2b",
-    "
-      <br/>[Added] Scoreboard scrolling via mousewheel
-      <br/>[Added] New paintjobs for Kajman, Strider, Gorgon, Hatchback
-      <br/>[Changed] Hostile Heli (single) crates now spawn on touchdown
-      <br/>[Changed] Lowered Ifrit center of mass to reduce rollovers
-      <br/>[Changed] Updated antihack database
-      <br/>[Fixed] Saved grenades not throwable on rejoin
-      <br/>[Fixed] Corpses not ejecting from vehicle wrecks
-      <br/>[Fixed] Items not dropping from vehicle wreck corpses
-      <br/>[Fixed] Revive not triggering properly on fatal shot
-      <br/>[Fixed] Vehicle turret ammo saving issues
-      <br/>[Fixed] Too low damage resistance during revive mode
-      <br/>[Fixed] UGVs not airliftable via R3F
-      <br/>[Fixed] Revive broken after getting run over by vehicles
-      <br/>[Fixed] Veh respawn not being delayed when owner is within 1km
-      <br/>[Fixed] All armor values showing 0 in general store
-      <br/>[Fixed] Supplies category in general store sometimes empty
-      <br/>[Fixed] Server rules not showing anymore in map menu
-      <br/>[Fixed] Territory info overlapping with vehicle HUD
-      <br/>[Fixed] Vehicle contents selling money exploit
-      <br/>[Fixed] Antihack kicks not always working properly
-      <br/>[Fixed] Various minor bugfixes and optimizations
-    "
-  ]
-];
+player createDiaryRecord ["changelog",
+[
+"v1.3",
+"
+<br/>[Added] Tanoa version
+<br/>[Added] Apex content on dev/preview branches
+<br/>[Added] Sticky explosive charges
+br/> [Added] Heavy towing and airlifting
+<br/>[Added] Load dragged injured friendly in vehicles
+<br/>[Added] Eject loaded injured friendly from vehicles
+<br/>[Added] Autostabilize when loaded in medical vehicle
+<br/>[Added] 'Finish off' action to slay injured enemies
+<br/>[Added] Improved injured unit detection
+<br/>[Added] Scoreboard persistence option for servers
+<br/>[Added] Fatal PvP headshots option for servers
+<br/>[Added] Custom death messages option for servers
+<br/>[ADded] Auto-center heli turret on manual fire
+<br/>[Added] UAV side persistence
+<br/>[Added] More textures for some vehicles in store
+<br/>[Added] Abandoned quadcopter cleanup
+<br/>[Added] More admin menu logging
+<br/>[Changed] Reduced heli missile damage
+<br/>[Changed] Improved mission crate loot
+<br/>[Changed] Vest armor values in general store
+<br/>[Changed] Increased Mag Repack flexibility
+<br/>[Changed] Toggled off autonomous on static designators
+<br/>[Changed] Disabled rain due to weather desync
+<br/>[Fixed] Engineer with toolkit can now always repair
+<br/>[Fixed] Improved missile lock-on
+<br/>[Fixed] Improvements to kill tracking system
+<br/>[Fixed] Items and money not dropping on injured logout
+<br/>[Fixed] Combat log timer not resetting on death
+<br/>[Fixed] Player not always ejected on injury
+<br/>[Fixed] Double kill/death count
+<br/>[Fixed] Spawn cooldowns resetting on rejoin
+<br/>[Fixed] Striders spawning without laser batteries
+<br/>[Fixed] Disabled rain due to syncing issues
+<br/>[Fixed] Various minor bugfixes and optimizations
+"
+]];
 
-player createDiaryRecord
-["changelog",
-  [
-    "v1.2",
-    "
-      <br/>[Added] Mag Repack by Outlawled (Ctrl + " + NKEYNAME(19) + ")
-      <br/>[Added] Adjustable NV by xx-LSD-xx (Shift + PageUp/Down)
-      <br/>[Added] New vehicle store paintjobs
-      <br/>[Added] Town spawn cooldown
-      <br/>[Added] Ghosting timer
-      <br/>[Added] Object lock restriction near stores and missions
-      <br/>[Added] Headless client object saving
-      <br/>[Added] Time and weather saving
-      <br/>[Changed] Expanded UAV control restriction to quadcopters
-      <br/>[Changed] Injured players no longer count as town enemies
-      <br/>[Changed] Upgraded extDB to extDB2 by Torndeco
-      <br/>[Changed] Updated antihack
-      <br/>[Fixed] Old spawn beacons no longer shown on spawn menu
-      <br/>[Fixed] Multiple money duping exploits
-      <br/>[Fixed] Vehicles and objects sometimes disappearing from DB
-      <br/>[Fixed] Severe injuries caused by jumping over small ledges
-      <br/>[Fixed] Antihack kicks due to RHS, MCC, AGM, ACE3, ALiVE
-      <br/>[Fixed] Various minor bugfixes and optimizations
-    "
-  ]
-];
+player createDiaryRecord ["changelog",
+[
+"v1.2b",
+"
+<br/>[Added] Scoreboard scrolling via mousewheel
+<br/>[Added] New paintjobs for Kajman, Strider, Gorgon, Hatchback
+<br/>[Changed] Hostile Heli (single) crates now spawn on touchdown
+<br/>[Changed] Lowered Ifrit center of mass to reduce rollovers
+<br/>[Changed] Updated antihack database
+<br/>[Fixed] Saved grenades not throwable on rejoin
+<br/>[Fixed] Corpses not ejecting from vehicle wrecks
+<br/>[Fixed] Items not dropping from vehicle wreck corpses
+<br/>[Fixed] Revive not triggering properly on fatal shot
+<br/>[Fixed] Vehicle turret ammo saving issues
+<br/>[Fixed] Too low damage resistance during revive mode
+<br/>[Fixed] UGVs not airliftable via R3F
+<br/>[Fixed] Revive broken after getting run over by vehicles
+<br/>[Fixed] Veh respawn not being delayed when owner is within 1km
+<br/>[Fixed] All armor values showing 0 in general store
+<br/>[Fixed] Supplies category in general store sometimes empty
+<br/>[Fixed] Server rules not showing anymore in map menu
+<br/>[Fixed] Territory info overlapping with vehicle HUD
+<br/>[Fixed] Vehicle contents selling money exploit
+<br/>[Fixed] Antihack kicks not always working properly
+<br/>[Fixed] Various minor bugfixes and optimizations
+"
+]];
 
-player createDiaryRecord
-["changelog",
-  [
-  "v1.1b",
-  "
-    <br/>[Added] Marksmen DLC content
-    <br/>[Added] Prevent usage of commander camera
-    <br/>[Added] Emergency eject hotkey (Ctrl + " + AKEYNAME("GetOut") + ")
-    <br/>[Added] Restricted UAV connection to owner's group
-    <br/>[Changed] Improved purchased vehicle setup time
-    <br/>[Changed] Admins can now use global voice chat
-    <br/>[Changed] Updated antihack
-    <br/>[Fixed] Corpses not being ejected from vehicles
-    <br/>[Fixed] Thermal imaging not working for UAVs
-    <br/>[Fixed] Various minor bugfixes and optimizations
-  "
-  ]
-];
+player createDiaryRecord ["changelog",
+[
+"v1.2",
+"
+<br/>[Added] Mag Repack by Outlawled (Ctrl + " + NKEYNAME(19) + ")
+<br/>[Added] Adjustable NV by xx-LSD-xx (Shift + PageUp/Down)
+<br/>[Added] New vehicle store paintjobs
+<br/>[Added] Town spawn cooldown
+<br/>[Added] Ghosting timer
+<br/>[Added] Object lock restriction near stores and missions
+<br/>[Added] Headless client object saving
+<br/>[Added] Time and weather saving
+<br/>[Changed] Expanded UAV control restriction to quadcopters
+<br/>[Changed] Injured players no longer count as town enemies
+<br/>[Changed] Upgraded extDB to extDB2 by Torndeco
+<br/>[Changed] Updated antihack
+<br/>[Fixed] Old spawn beacons no longer shown on spawn menu
+<br/>[Fixed] Multiple money duping exploits
+<br/>[Fixed] Vehicles and objects sometimes disappearing from DB
+<br/>[Fixed] Severe injuries caused by jumping over small ledges
+<br/>[Fixed] Antihack kicks due to RHS, MCC, AGM, ACE3, ALiVE
+<br/>[Fixed] Various minor bugfixes and optimizations
+"
+]];
+
+player createDiaryRecord ["changelog",
+[
+"v1.1b",
+"
+<br/>[Added] Marksmen DLC content
+<br/>[Added] Prevent usage of commander camera
+<br/>[Added] Emergency eject hotkey (Ctrl + " + AKEYNAME("GetOut") + ")
+<br/>[Added] Restricted UAV connection to owner's group
+<br/>[Changed] Improved purchased vehicle setup time
+<br/>[Changed] Admins can now use global voice chat
+<br/>[Changed] Updated antihack
+<br/>[Fixed] Corpses not being ejected from vehicles
+<br/>[Fixed] Thermal imaging not working for UAVs
+<br/>[Fixed] Various minor bugfixes and optimizations
+"
+]];
 
 player createDiaryRecord ["changelog",
 [
@@ -406,26 +400,6 @@ player createDiaryRecord ["credits",
 [
 "Credits",
 "
-<br/><font size= '16' color='#FFF000'> BIB Gaming Development Team </font>
-<br/> Lead Developer ~ Monkey (BIB)
-<br/> Senior Developer ~ Witchdoctor (GGO)
-<br/> Senior Developer ~ DreadedWraith (GGO)
-<br/>
-
-<br/><br/><font size= '16' color='#FFF000'> Server Admins </font>
-<br/> Wilks (BIB)
-<br/> Masher (BIB)
-<br/> Vru (BIB)
-<br/> Cats (BIB)
-<br/> Titus (BIB)
-<br/> Sayrus (BIB)
-<br/> Lynx (BIB)
-<br/> Integer (BIB)
-<br/> Rage (BIB)
-<br/> Lacks (BIB)
-<br/> Smokebreak (BIB)
-<br/>
-
 <br/><font size='16' color='#BBBBBB'>Developed by A3Wasteland.com:</font>
 <br/>	* AgentRev (TeamPlayerGaming)
 <br/>	* JoSchaap (GoT/Tweakers.net)
@@ -574,8 +548,8 @@ player createDiaryRecord ["infos",
 <br/>Q. Is it ok for me to shoot my team mates?
 <br/>A. If you are member of BLUFOR or OPFOR teams, then you are NOT allowed to shoot or steal items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.
 <br/>
-/*<br/>Q. Whats with the canisters, baskets and big bags?
-<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.*/
+<br/>Q. Whats with the canisters, baskets and big bags?
+<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.
 <br/>
 <br/>Q. I saw someone breaking a rule, what do I do?
 <br/>A. Simply go into global chat and get the attention of one of the admins or visit our forums, and make a report if the offense is serious.

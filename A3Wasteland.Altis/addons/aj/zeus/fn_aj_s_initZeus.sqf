@@ -14,10 +14,24 @@ if (isServer) then
 		}
 	else
 	{
+		/*******************************************************
+		Player UID examples :
+
+		"1234567887654321", // Meatwad
+		"8765432112345678", // Master Shake
+		"1234876543211234", // Frylock
+		"1337133713371337"  // Carl
+
+		Important: The player UID must always be placed between
+					double quotes (") and all lines need to have
+					a comma (,) except the last one.
+		********************************************************/
+
+
 		// Zeus Admins
 		zeusAdmins =
 		[
-			//Zues Admin UIDS located in external file
+			// Put player UIDs here
 		];
 		diag_log "A3W:Zeus - no external Zeus Config File found";
 	};

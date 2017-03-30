@@ -8,17 +8,14 @@ _newBounty = [];
 _floatDateStamp = missionStart;
 _floatDateStamp resize 5;
 _floatDateStamp = dateToNumber _floatDateStamp;
-if(_floatDateStamp > 0) then
-{
+if(_floatDateStamp > 0) then{
   _floatDateStamp = _floatDateStamp + (diag_tickTime / 31536000);
   {
     //0.00273973 = 1 day
-    if(_floatDateStamp < (_x select 1) + (((["A3W_bountyLifetime", 0] call getPublicVar) / 24) * 0.00273973))then
-    {
+    if(_floatDateStamp < (_x select 1) + (((["A3W_bountyLifetime", 0] call getPublicVar) / 24) * 0.00273973))then{
       //If the current time stamp is less than the bounty kill fall of time, keep it in the list
       _newBounty pushBack _x;
     };
   } forEach _bountyKills;
-}
-else{_newBounty = _bountyKills};
+}else{_newBounty = _bountyKills};
 _player setVariable ["bountyKills", _newBounty, true];

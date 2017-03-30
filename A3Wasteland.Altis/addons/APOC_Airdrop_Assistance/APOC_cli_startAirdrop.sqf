@@ -37,12 +37,12 @@ if (!isNil "APOC_AA_lastUsedTime") then
 
 	_timeRemainingReuse = _coolDownTimer - (diag_tickTime - APOC_AA_lastUsedTime); //time is still in s
 	if ((_timeRemainingReuse) > 0) then
-	{
-		hint format["Negative. Airdrop Offline. Online ETA: %1", _timeRemainingReuse call fn_formatTimer];
-		playSound "FD_CP_Not_Clear_F";
-		player groupChat format ["Negative. Airdrop Offline. Online ETA: %1",_timeRemainingReuse call fn_formatTimer];
-		breakOut "APOC_cli_startAirdrop";
-	};
+		{
+			hint format["Negative. Airdrop Offline. Online ETA: %1", _timeRemainingReuse call fn_formatTimer];
+			playSound "FD_CP_Not_Clear_F";
+			player groupChat format ["Negative. Airdrop Offline. Online ETA: %1",_timeRemainingReuse call fn_formatTimer];
+			breakOut "APOC_cli_startAirdrop";
+		};
 };
 ////////////////////////////////////////////////////////
 
