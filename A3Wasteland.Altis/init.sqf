@@ -14,6 +14,8 @@
 #define DEBUG false
 #endif
 
+CHVD_allowNoGrass = true;
+enableEnvironment [false, true];
 enableSaving [false, false];
 
 // block script injection exploit
@@ -92,7 +94,6 @@ if (hasInterface || isServer) then
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
 	if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
-	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
@@ -102,12 +103,13 @@ if (hasInterface || isServer) then
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 	[] execVM "addons\bounty\init.sqf";
 	[] execVM "addons\Crater_Cleaner\cratercleaner.sqf";
+	[] execVM "addons\scripts\VehicleAugmentation.sqf";
 };
 
 // Remove line drawings from map
 /*(createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
 [
-	"!triggerActivated thisTrigger", 
+	"!triggerActivated thisTrigger",
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
 ];*/

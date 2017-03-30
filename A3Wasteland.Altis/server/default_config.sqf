@@ -60,13 +60,6 @@ A3W_bountyMinStart = 25000;         // Minimum amount of money to start a bounty
 A3W_bountyRewardPerc = 100;         // Percentage of cost that goes to bounty reward
 A3W_bountyLifetime = 7*24;         // Maximum lifetime in hours for bounty kills to store in DB (storing bounty kills is to prevent from forming groups with someone you collected bounty on)
 
-// Not currently implemented, soon
-/*A3W_atmBounties = 1;
-A3W_bountyMax = 100000;
-A3W_bountyMin = 1000;
-A3W_bountyFee = 50;
-A3W_bountyKillsLifetime = 3*24;*/
-// Persistence settings
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
 A3W_moneySaving = 1;               // If playerSaving = 1, save player money amount (0 = no, 1 = yes)

@@ -8,24 +8,23 @@ disableSerialization;
 
 private ["_start","_panelOptions","_BoS_select","_displayBoS"];
 _uid = getPlayerUID player;
-if (!isNil "_uid") then {
+if (!isNil "_uid") then
+{
 	_start = createDialog "BoS_Menu";
-
 	_displayBoS = uiNamespace getVariable "BoS_Menu";
 	_BoS_select = _displayBoS displayCtrl BoS_Menu_option;
-
-	_panelOptions = [
-					"Show objects owned by you",
-					"Show Base Border",
-					"Repair Locker",
-					"Lock Down Base",
-					"Release Lock Down",
-					"Relock Base Objects",
-					"Lights OFF",
-					"Lights ON",
-					"Change PIN"
+	_panelOptions =
+	[
+		"Show objects owned by you",
+		"Show Base Border",
+		"Repair Locker",
+		"Lock Down Base",
+		"Release Lock Down",
+		"Relock Base Objects",
+		"Lights OFF",
+		"Lights ON",
+		"Change PIN"
 	];
-
 	{
 		_BoS_select lbAdd _x;
 	} forEach _panelOptions;
