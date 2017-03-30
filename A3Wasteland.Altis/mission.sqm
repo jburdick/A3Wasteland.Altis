@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1.7618344;
@@ -8,22 +8,22 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=1974;
+		nextID=1985;
 	};
 	class MarkerIDProvider
 	{
-		nextID=315;
+		nextID=318;
 	};
 	class LayerIndexProvider
 	{
-		nextID=14;
+		nextID=22;
 	};
 	class Camera
 	{
-		pos[]={9380.1279,195.94678,15093.3};
-		dir[]={0.93387467,-0.3457498,0.091350272};
-		up[]={0.34410992,0.93832493,0.03366074};
-		aside[]={0.097354606,1.6979175e-007,-0.99525505};
+		pos[]={14472.432,149.89566,5821.5762};
+		dir[]={0.12060207,-0.92345369,0.36427382};
+		up[]={0.29024023,0.38370705,0.87665886};
+		aside[]={0.94932783,-2.5425106e-007,-0.3142989};
 	};
 };
 binarizationWanted=0;
@@ -50,49 +50,49 @@ class AddonsMetaData
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item1
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item2
 		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item3
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item4
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item5
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item6
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -123,7 +123,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=317;
+		items=319;
 		class Item0
 		{
 			dataType="Group";
@@ -3002,7 +3002,7 @@ class Mission
 						angles[]={0,0.93692034,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3010,12 +3010,14 @@ class Mission
 					};
 					id=183;
 					type="C_man_1_1_F";
+					atlOffset=3.4200001;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=182;
+			atlOffset=3.4200001;
 		};
 		class Item39
 		{
@@ -3072,12 +3074,14 @@ class Mission
 					};
 					id=187;
 					type="C_man_1_1_F";
+					atlOffset=1.9073486e-006;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=186;
+			atlOffset=1.9073486e-006;
 		};
 		class Item41
 		{
@@ -3231,14 +3235,14 @@ class Mission
 					};
 					id=197;
 					type="C_man_1_1_F";
-					atlOffset=0.00014686584;
+					atlOffset=0.0001449585;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=196;
-			atlOffset=0.00014686584;
+			atlOffset=0.0001449585;
 		};
 		class Item46
 		{
@@ -3326,14 +3330,14 @@ class Mission
 					};
 					id=203;
 					type="C_man_1_1_F";
-					atlOffset=3.4196582;
+					atlOffset=3.4196596;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=202;
-			atlOffset=3.4196582;
+			atlOffset=3.4196596;
 		};
 		class Item49
 		{
@@ -3359,12 +3363,14 @@ class Mission
 					};
 					id=205;
 					type="C_man_1_1_F";
+					atlOffset=0.063081741;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=204;
+			atlOffset=0.063081741;
 		};
 		class Item50
 		{
@@ -3390,12 +3396,14 @@ class Mission
 					};
 					id=207;
 					type="C_man_1_1_F";
+					atlOffset=0.063079834;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=206;
+			atlOffset=0.063079834;
 		};
 		class Item51
 		{
@@ -4139,7 +4147,7 @@ class Mission
 			type="Empty";
 			colorName="ColorKhaki";
 			id=286;
-			atlOffset=6.3279724;
+			atlOffset=6.3680115;
 		};
 		class Item129
 		{
@@ -4929,7 +4937,7 @@ class Mission
 			};
 			id=385;
 			type="Land_u_House_Small_02_V1_F";
-			atlOffset=0.019424438;
+			atlOffset=0.029647827;
 		};
 		class Item211
 		{
@@ -4947,7 +4955,7 @@ class Mission
 			};
 			id=386;
 			type="Land_u_House_Small_02_V1_F";
-			atlOffset=0.021469116;
+			atlOffset=0.031692505;
 		};
 		class Item212
 		{
@@ -5706,6 +5714,7 @@ class Mission
 			};
 			id=454;
 			type="B_Truck_01_ammo_F";
+			atlOffset=-0.02293396;
 		};
 		class Item261
 		{
@@ -5766,30 +5775,30 @@ class Mission
 		class Item264
 		{
 			dataType="Marker";
-			position[]={3619.5984,12.500292,13015.494};
+			position[]={3083.2102,0,13197.901};
 			name="TERRITORY_1_KAVALA";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=350;
-			b=350;
+			a=75;
+			b=75;
 			id=558;
+			atlOffset=-47.700127;
 		};
 		class Item265
 		{
 			dataType="Marker";
-			position[]={9314.8438,118.97337,15893.634};
+			position[]={6148.8018,0,16261.731};
 			name="TERRITORY_2_AGIOS";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=150;
-			b=325;
-			angle=248.16191;
+			a=180;
+			b=75;
 			id=559;
-			atlOffset=1.5258789e-005;
+			atlOffset=-43;
 		};
 		class Item266
 		{
@@ -5808,7 +5817,7 @@ class Mission
 		class Item267
 		{
 			dataType="Marker";
-			position[]={14617.703,46.959015,20780.9};
+			position[]={4579.0073,47.569527,21393.955};
 			name="TERRITORY_5_FRINI";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -5817,19 +5826,22 @@ class Mission
 			a=150;
 			b=150;
 			id=561;
+			atlOffset=-252.07773;
 		};
 		class Item268
 		{
 			dataType="Marker";
-			position[]={20943.961,13.97664,19253.166};
+			position[]={21832.652,0,20994.018};
 			name="TERRITORY_6_MILRESEARCH";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
 			a=150;
-			b=150;
+			b=185;
+			angle=264.56998;
 			id=562;
+			atlOffset=-27.588646;
 		};
 		class Item269
 		{
@@ -5898,21 +5910,22 @@ class Mission
 		class Item274
 		{
 			dataType="Marker";
-			position[]={3619.6282,12.484255,13015.957};
+			position[]={3083.2102,12.332841,13197.901};
 			name="FLAG_1_KAVALA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=568;
+			atlOffset=-35.367287;
 		};
 		class Item275
 		{
 			dataType="Marker";
-			position[]={9315.1221,119.15121,15891.987};
+			position[]={6148.8018,119.80474,16261.731};
 			name="FLAG_2_AGIOS";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=569;
-			atlOffset=-7.6293945e-006;
+			atlOffset=76.804741;
 		};
 		class Item276
 		{
@@ -5936,21 +5949,22 @@ class Mission
 		class Item278
 		{
 			dataType="Marker";
-			position[]={14613.917,46.785393,20779.008};
+			position[]={4598.3877,47.569527,21397.479};
 			name="FLAG_5_FRINI";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
-			atlOffset=-3.8146973e-006;
+			atlOffset=-251.83688;
 		};
 		class Item279
 		{
 			dataType="Marker";
-			position[]={20943.963,13.951282,19260.742};
+			position[]={21829.129,14.094675,20994.018};
 			name="FLAG_6_MILRESEARCH";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=573;
+			atlOffset=-13.757086;
 		};
 		class Item280
 		{
@@ -6098,7 +6112,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1934;
-					atlOffset=32.785923;
+					atlOffset=32.892658;
 				};
 				class Item1
 				{
@@ -6140,7 +6154,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1938;
-					atlOffset=32.456512;
+					atlOffset=32.562782;
 				};
 				class Item5
 				{
@@ -6161,7 +6175,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1940;
-					atlOffset=33.207062;
+					atlOffset=33.315437;
 				};
 				class Item7
 				{
@@ -6203,7 +6217,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1944;
-					atlOffset=33.128544;
+					atlOffset=33.236832;
 				};
 				class Item11
 				{
@@ -6224,7 +6238,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1946;
-					atlOffset=32.380375;
+					atlOffset=32.486691;
 				};
 				class Item13
 				{
@@ -6245,7 +6259,7 @@ class Mission
 					type="Empty";
 					colorName="ColorBlack";
 					id=1948;
-					atlOffset=33.370331;
+					atlOffset=33.47934;
 				};
 				class Item15
 				{
@@ -6389,7 +6403,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99991;
+			angle=226.99979;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6532,6 +6546,35 @@ class Mission
 			};
 			id=1973;
 			type="B_Truck_01_ammo_F";
+		};
+		class Item317
+		{
+			dataType="Marker";
+			position[]={14496.373,6.9620634e+033,5895.0977};
+			name="Respawn Island";
+			text="Island Off Limits";
+			type="hd_warning";
+			id=1981;
+			atlOffset=6.9620634e+033;
+		};
+		class Item318
+		{
+			dataType="Trigger";
+			position[]={14499.896,3.5241346,5879.2412};
+			class Attributes
+			{
+				onActivation="(vehicle player) allowdamage false;";
+				onDeactivation="(vehicle player) allowdamage false;";
+				sizeA=150;
+				sizeB=150;
+				sizeC=150;
+				repeatable=1;
+				activationBy="ANY";
+				isRectangle=1;
+			};
+			id=1984;
+			type="EmptyDetector";
+			atlOffset=-6.3909998;
 		};
 	};
 };
