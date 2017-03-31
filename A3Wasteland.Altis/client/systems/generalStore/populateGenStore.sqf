@@ -166,7 +166,7 @@ _playerSideNum = switch (playerSide) do
 										"U_B_survival_uniform",
 										"U_B_CombatUniform_mcam",
 										"U_O_OfficerUniform_ocamo",
-										"U_B_CombatUniform_mcam_vest"
+										"U_B_CombatUniform_mcam_vest",
 										"U_B_T_Soldier_F",
 										"U_B_CombatUniform_mcam_tshirt",
 										"U_B_CTRG_1",
