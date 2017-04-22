@@ -170,6 +170,15 @@ if (isNil "_ammoCargo" || {!finite _ammoCargo}) then { _ammoCargo = 0 };
 if (isNil "_fuelCargo" || {!finite _fuelCargo}) then { _fuelCargo = 0 };
 if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 
+// Save vPin by LouD
+{ _variables pushBack [_x select 0, _veh getVariable _x] } forEach
+[
+  ["vPin", false],
+  ["password", ""]
+];
+
+_owner = _veh getVariable ["ownerUID", ""]; 
+
 _props =
 [
 	["Class", _class],

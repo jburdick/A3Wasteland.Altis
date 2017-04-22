@@ -146,41 +146,7 @@ _playerSideNum = switch (playerSide) do
 					case (_isUniform):
 					{
 						if !(player isUniformAllowed _weaponClass || // indie exception for NATO jungle ghillie & thermal suit due to BIS not giving a damn
-						     (playerSide == INDEPENDENT && {{_weaponClass == _x} count
-									 [
-										"U_B_CTRG_Soldier_F",
-										"U_B_T_FullGhillie_tna_F",
-										"U_O_T_FullGhillie_tna_F",
-								 		"U_B_Wetsuit",
-								 		"U_O_Wetsuit",
-								 		"U_B_GhillieSuit",
-								 		"U_O_GhillieSuit",
-								 		"U_B_T_Sniper_F",
-										"U_O_T_Sniper_F",
-										"U_B_FullGhillie_ard",
-										"U_O_FullGhillie_ard",
-										"U_B_FullGhillie_lsh",
-										"U_O_FullGhillie_lsh",
-										"U_B_FullGhillie_sard",
-										"U_O_FullGhillie_sard",
-										"U_B_survival_uniform",
-										"U_B_CombatUniform_mcam",
-										"U_O_OfficerUniform_ocamo",
-										"U_B_CombatUniform_mcam_vest",
-										"U_B_T_Soldier_F",
-										"U_B_CombatUniform_mcam_tshirt",
-										"U_B_CTRG_1",
-										"U_B_CTRG_2",
-										"U_B_CTRG_3",
-										"U_O_CombatUniform_ocamo",
-										"U_O_CombatUniform_oucamo",
-										"U_O_T_Soldier_F",
-										"U_B_PilotCoveralls",
-										"U_O_PilotCoveralls",
-										"U_B_HeliPilotCoveralls",
-										"U_O_V_Soldier_Viper_hex_F",
-										"U_O_V_Soldier_Viper_F"
-									] > 0})) then
+						     (playerSide == INDEPENDENT && {{_weaponClass == _x} count ["U_B_CTRG_Soldier_F","U_B_T_FullGhillie_tna_F"] > 0})) then
 						{
 							_showItem = false;
 						};

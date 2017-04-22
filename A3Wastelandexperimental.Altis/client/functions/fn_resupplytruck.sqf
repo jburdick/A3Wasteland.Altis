@@ -8,7 +8,7 @@
 #define REARM_TIME_SLICE 5
 #define REPAIR_TIME_SLICE 1
 #define REFUEL_TIME_SLICE 1
-#define PRICE_RELATIONSHIP 10 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
+#define PRICE_RELATIONSHIP 4 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
 #define RESUPPLY_TIMEOUT 30
 
 // Check if mutex lock is active.
@@ -180,7 +180,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		_vehicle engineOn false;
 
-		/* if (player getVariable ["cmoney",0] >= _price) then
+		if (player getVariable ["cmoney",0] >= _price) then
 		{
 			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _price, _vehName], "Do you want to proceed?"];
 
@@ -188,7 +188,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 			{
 				breakTo "resupplyTruckThread";
 			};
-		}; */
+		};
 
 		call _checkAbortConditions;
 		call _checkPlayerMoney;

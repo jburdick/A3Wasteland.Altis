@@ -133,7 +133,6 @@ if (isServer) then
 		"A3W_remoteBombStoreRadius",
 		"A3W_vehiclePurchaseCooldown",
 		"A3W_disableGlobalVoice",
-		"A3W_disableSideVoice",
 		"A3W_antiHackMinRecoil",
 		"A3W_spawnBeaconCooldown",
 		"A3W_spawnBeaconSpawnHeight",
@@ -150,13 +149,11 @@ if (isServer) then
 		"A3W_uavControl",
 		"A3W_disableUavFeed",
 		"A3W_townSpawnCooldown",
-		"A3W_townSpawnSpawnHeight",
 		"A3W_survivalSystem",
 		"A3W_extDB_GhostingAdmins",
 		"A3W_extDB_SaveUnlockedObjects",
 		"A3W_hcPrefix",
 		"A3W_hcObjCaching",
-		"A3W_territoryAllowed",
 		"A3W_hcObjCachingID",
 		"A3W_hcObjCleanup",
 		"A3W_hcObjCleanupID",
@@ -169,15 +166,6 @@ if (isServer) then
 		"A3W_vehicleLocking",
 		"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
-		"A3W_bountyMax",
-		"A3W_bountyMinStart",
-		"A3W_bountyRewardPerc",
-		"A3W_bountyLifetime",
-		"A3W_maxMoney",
-		"A3W_healthTime",
-		"A3W_hungerTime",
-		"A3W_thirstTime",
-		"BoS_coolDownTimer",
 		"A3W_headshotNoRevive"
 	];
 
@@ -198,12 +186,11 @@ _staticWeaponSavingOn = ["A3W_staticWeaponSaving"] call isConfigOn;
 _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
-_camonetSavingOn = ["A3W_camoNetSaving"] call isConfigOn;
 _timeSavingOn = ["A3W_timeSaving"] call isConfigOn;
 _weatherSavingOn = ["A3W_weatherSaving"] call isConfigOn;
 _mineSavingOn = ["A3W_mineSaving"] call isConfigOn;
 
-_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _camonetSavingOn);
+_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
 _vehicleSavingOn = ["A3W_vehicleSaving"] call isConfigOn;
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
 
@@ -226,7 +213,7 @@ if (_hcObjSavingOn) then
 
 _setupPlayerDB = scriptNull;
 
-#define MIN_EXTDB_VERSION 49
+#define MIN_EXTDB_VERSION 1.0124
 
 // Do we need any persistence?
 if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _timeSavingOn || _weatherSavingOn) then
@@ -234,12 +221,12 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	_savingMethod = ["A3W_savingMethod", "profile"] call getPublicVar;
-	if (_savingMethod == "extDB2") then { _savingMethod = "extDB" };
+	if ((_savingMethod == "extDB2") || (_savingMethod == "extDB3"))  then { _savingMethod = "extDB" };
 
 	// extDB
 	if (_savingMethod == "extDB") then
 	{
-		_version = "extDB2" callExtension "9:VERSION";
+		_version = "extDB3" callExtension "9:VERSION";
 
 		if (parseNumber _version >= MIN_EXTDB_VERSION) then
 		{
@@ -247,20 +234,19 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 			A3W_savingMethodDir = compileFinal "'extDB'";
 			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "A3W"] call getPublicVar);
 			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "a3wasteland"] call getPublicVar);
-			A3W_extDB_RconName = compileFinal str (["A3W_extDB_RconName", "A3W"] call getPublicVar);
 
-			diag_log format ["[INFO] extDB2 v%1 extension loaded", _version];
+			diag_log format ["[INFO] extDB3 v%1 extension loaded", _version];
 		}
 		else
 		{
 			if (_version != "") then
 			{
-				diag_log format "[INFO] ███ extDB2 startup cancelled!";
-				diag_log format ["[INFO] ███ A3W requires extDB2 v%1 or later: v%2 detected", MIN_EXTDB_VERSION, _result];
+				diag_log format "[INFO] ███ extDB3 startup cancelled!";
+				diag_log format ["[INFO] ███ A3W requires extDB3 v%1 or later: v%2 detected", MIN_EXTDB_VERSION, _result];
 			}
 			else
 			{
-				diag_log "[INFO] ███ extDB2 NOT FOUND! Make sure extDB2.dll (Windows) or extDB2.so (Linux) and extdb-conf.ini are in the same directory as arma3server, and that you are using the -filePatching parameter";
+				diag_log "[INFO] ███ extDB3 NOT FOUND! Make sure extDB3.dll / extDB3_x64.dll (Windows) or extDB3.so (Linux) and extdb-conf.ini are in the same directory as arma3server, and that you are using the -filePatching parameter";
 			};
 
 			_savingMethod = "profile"; // fallback
@@ -436,7 +422,6 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _mineSavingOn || _
 			["warchestSaving", _warchestSavingOn],
 			["warchestMoneySaving", _warchestMoneySavingOn],
 			["spawnBeaconSaving", _beaconSavingOn],
-			["camoNetSaving", _camonetSavingOn],
 			["timeSaving", _timeSavingOn],
 			["weatherSaving", _weatherSavingOn],
 			["hcObjSaving", _hcObjSavingOn]

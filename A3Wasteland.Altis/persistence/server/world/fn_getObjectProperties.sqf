@@ -93,6 +93,35 @@ _ammoCargo = getAmmoCargo _obj;
 _fuelCargo = getFuelCargo _obj;
 _repairCargo = getRepairCargo _obj;
 
+// BASE - SAFE LOCKING Start
+switch (true) do
+{
+  case ( _obj isKindOf "Land_Device_assembled_F"):
+  {
+    { _variables pushBack [_x select 0, _obj getVariable _x] } forEach
+    [
+      ["password", ""],
+      ["lights", ""],
+      ["lockDown", false]
+    ];
+  };
+  case ( _obj isKindOf "Box_NATO_AmmoVeh_F"):
+  {
+    { _variables pushBack [_x select 0, _obj getVariable _x] } forEach
+    [
+      ["password", ""],
+      ["lockedSafe", false],
+      ["A3W_inventoryLockR3F", false],
+      ["R3F_LOG_disabled", false]
+    ];
+  };
+  case ( _obj isKindOf "Land_InfoStand_V2_F"):
+  {
+    _variables pushBack ["password", _obj getVariable ["password", ""]];
+  };
+};
+//BASE - SAFE LOCKING End 
+
 // Fix for -1.#IND
 if (isNil "_ammoCargo" || {!finite _ammoCargo}) then { _ammoCargo = 0 };
 if (isNil "_fuelCargo" || {!finite _fuelCargo}) then { _fuelCargo = 0 };

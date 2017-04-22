@@ -137,7 +137,6 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			if (_isUAV) then
 			{
-
 				createVehicleCrew _object;
 
 				//assign AI to the vehicle so it can actually be used
@@ -145,26 +144,12 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				{
 					params ["_uav", "_playerSide", "_playerGroup"];
 
-
-
-
-
-
-
-
-
-
-
-
-					_grp = [_uav, _playerSide] call fn_createCrewUAV;
+					_grp = [_uav, _playerSide, true] call fn_createCrewUAV;
 
 					if (isNull (_uav getVariable ["ownerGroupUAV", grpNull])) then
 					{
 						_uav setVariable ["ownerGroupUAV", _playerGroup, true]; // not currently used
 					};
-
-
-
 				};
 			};
 
@@ -202,9 +187,14 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			clearBackpackCargoGlobal _object;
 
 			// don't need this anymore at all
-			switch (true) do
+			/*switch (true) do
 			{
-				/*case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
+				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"] > 0):
+				{
+					_object setAmmoCargo 5;
+				};
+
+				case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
 				{
 					_object setAmmoCargo 10;
 				};
@@ -237,8 +227,8 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				case ({_object isKindOf _x} count ["B_Truck_01_Repair_F", "O_Truck_02_box_F", "O_Truck_03_repair_F", "I_Truck_02_box_F"] > 0):
 				{
 					_object setRepairCargo 25;
-				};*/
-			};
+				};
+			};*/
 
 			if (_skipSave) then
 			{

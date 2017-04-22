@@ -17,6 +17,10 @@
 enableSaving [false, false];
 enableEnvironment [false, true];
 
+CHVD_allowNoGrass = false;
+//CHVD_maxView = 7500;
+//CHVD_maxObj = 5000;
+
 // block script injection exploit
 inGameUISetEventHandler ["PrevAction", ""];
 inGameUISetEventHandler ["Action", ""];
