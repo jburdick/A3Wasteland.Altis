@@ -8,7 +8,7 @@
 #define REARM_TIME_SLICE 5
 #define REPAIR_TIME_SLICE 1
 #define REFUEL_TIME_SLICE 1
-#define PRICE_RELATIONSHIP 4 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
+#define PRICE_RELATIONSHIP 10 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
 #define RESUPPLY_TIMEOUT 30
 
 // Check if mutex lock is active.
@@ -141,6 +141,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 		};
 	};
 
+
 	// Check if player has enough money
 	_checkPlayerMoney =
 	{
@@ -188,6 +189,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 			{
 				breakTo "resupplyTruckThread";
 			};
+
 		};
 
 		call _checkAbortConditions;
@@ -354,6 +356,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 };
 
 _vehicle setVariable ["A3W_truckResupplyThread", _resupplyThread];
+
 
 // Secondary thread for cleanup in case of error in resupply thread
 [_vehicle, _resupplyThread] spawn

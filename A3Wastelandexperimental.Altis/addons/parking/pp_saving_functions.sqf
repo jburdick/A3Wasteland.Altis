@@ -261,7 +261,6 @@ if (isClient) then {
     if (!alive getConnectedUAV player) then {
       player connectTerminalToUAV _vehicle; // attempt uav connect
     };
-
     [_marker] spawn {
       ARGVX3(0,_marker,"");
       sleep 60;

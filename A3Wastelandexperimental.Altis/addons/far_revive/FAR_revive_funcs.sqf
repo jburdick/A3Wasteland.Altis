@@ -29,7 +29,7 @@ call mf_compile;
 // Handle Death
 ////////////////////////////////////////////////
 FAR_HandleDamage_EH = "addons\far_revive\FAR_HandleDamage_EH.sqf" call mf_compile;
-//FAR_fnc_headshotHitPartEH = "addons\far_revive\FAR_headshotHitPartEH.sqf" call mf_compile;
+FAR_fnc_headshotHitPartEH = "addons\far_revive\FAR_headshotHitPartEH.sqf" call mf_compile;
 
 ////////////////////////////////////////////////
 // Make Player Unconscious
@@ -87,6 +87,7 @@ FAR_HandleTreating =
 				{
 					_target setVariable ["FAR_isUnconscious", 0, true];
 					[player, "reviveCount", 1] call fn_addScore;
+					player removeItem "Medikit";
 				}
 				else
 				{

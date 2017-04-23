@@ -10,5 +10,5 @@ _unit = _this select 0;
 
 //diag_log format ["weaponDisassembledServer: %1", _this];
 
-pvar_weaponDisassembledEvent = _this;
+//pvar_weaponDisassembledEvent = _this;
 (owner _unit) publicVariableClient "pvar_weaponDisassembledEvent";
