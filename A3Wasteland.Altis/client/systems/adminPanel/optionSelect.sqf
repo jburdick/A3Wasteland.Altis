@@ -62,6 +62,7 @@ if (_uid call isAdmin) then
 				{
 					_money = 1000000;
 					player setVariable ["cmoney", (player getVariable ["cmoney",0]) + _money, true];
+
 				};
 				case 6: //Debug Menu
 				{

@@ -141,6 +141,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 		};
 	};
 
+
 	// Check if player has enough money
 	_checkPlayerMoney =
 	{
@@ -180,7 +181,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		_vehicle engineOn false;
 
-		/* if (player getVariable ["cmoney",0] >= _price) then
+		if (player getVariable ["cmoney",0] >= _price) then
 		{
 			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _price, _vehName], "Do you want to proceed?"];
 
@@ -188,7 +189,8 @@ _resupplyThread = [_vehicle, _unit] spawn
 			{
 				breakTo "resupplyTruckThread";
 			};
-		}; */
+
+		};
 
 		call _checkAbortConditions;
 		call _checkPlayerMoney;
@@ -354,6 +356,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 };
 
 _vehicle setVariable ["A3W_truckResupplyThread", _resupplyThread];
+
 
 // Secondary thread for cleanup in case of error in resupply thread
 [_vehicle, _resupplyThread] spawn

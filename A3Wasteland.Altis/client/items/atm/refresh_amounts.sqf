@@ -39,6 +39,7 @@ _rewardAmount = 0;
 _selAcc = call compile (_accDropdown lbData lbCurSel _accDropdown);
 
 if (_bountyChecked) then
+
 {
 	_rewardAmount = ceil (_amount * (_reward / 100));
 	_feeText ctrlSetText format ["$%1%2", [_rewardAmount] call fn_numbersText, if (_rewardAmount > 0) then { " (" + str _reward + "%)" } else { "" }];

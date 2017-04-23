@@ -99,6 +99,7 @@ vehicleWeapons =
 	["arifle_Mk20C_F", "arifle_Mk20_F", "arifle_Mk20_GL_F", "arifle_Mk20C_plain_F", "arifle_Mk20_plain_F", "arifle_Mk20_GL_plain_F"],
 	["arifle_Katiba_F", "arifle_Katiba_C_F", "arifle_Katiba_GL_F"],
 	["arifle_MXC_F", "arifle_MX_F", "arifle_MX_GL_F", "arifle_MXM_F", "arifle_MXC_Black_F", "arifle_MXC_khk_F", "arifle_MX_Black_F", "arifle_MX_khk_F", "arifle_MX_GL_Black_F", "arifle_MX_GL_khk_F"],
+
 	["srifle_EBR_F", "srifle_DMR_01_F"],
 	["hgun_Pistol_01_F", "hgun_P07_F", "hgun_P07_khk_F", "hgun_Rook40_F", "hgun_Pistol_heavy_02_F", "hgun_Pistol_heavy_01_F"],
 	["arifle_MX_SW_F", "LMG_Mk200_F", "LMG_Zafir_F"],
@@ -174,3 +175,11 @@ vehicleAddition2 =
 	"MineDetector",
 	"ToolKit"
 ];
+
+
+
+
+
+
+
+

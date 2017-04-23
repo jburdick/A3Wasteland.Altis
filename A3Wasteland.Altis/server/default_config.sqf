@@ -22,6 +22,7 @@ A3W_startHour = 07;                // In-game hour at mission start (0 to 23) - 
 A3W_timeMultiplierDay = 7.5;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
 A3W_timeMultiplierNight = 15.0;     // Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
+
 // Player settings
 A3W_startingMoney = 10000;           // Amount of money that players start with
 A3W_survivalSystem = 1;            // Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission
@@ -35,6 +36,7 @@ A3W_townSpawnCooldown = 10*60;      // Number of seconds to wait between each sp
 A3W_townSpawnSpawnHeight = 1500;   // Altitude in meters at which players will spawn when spawning on a specific town (0 = ground/sea)
 A3W_spawnBeaconCooldown = 15*60;    // Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
 A3W_spawnBeaconSpawnHeight = 2500; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
+
 // Antihack settings
 A3W_antiHackUnitCheck = 1;         // Detect players who spawn unauthorized AI units (0 = no, 1 = yes) - disable if you have custom unit scripts/mods like AI recruitment or ALiVE
 A3W_antiHackMinRecoil = 1.0;       // Mininum recoil coefficient enforced by the antihack (recommended values: default = 1.0, TMR Mod = 0.5, VTS Weapon Resting = 0.25) (minimum: 0.02)
@@ -60,12 +62,6 @@ A3W_bountyMinStart = 25000;         // Minimum amount of money to start a bounty
 A3W_bountyRewardPerc = 100;         // Percentage of cost that goes to bounty reward
 A3W_bountyLifetime = 7*24;         // Maximum lifetime in hours for bounty kills to store in DB (storing bounty kills is to prevent from forming groups with someone you collected bounty on)
 
-// Not currently implemented, soon
-/*A3W_atmBounties = 1;
-A3W_bountyMax = 100000;
-A3W_bountyMin = 1000;
-A3W_bountyFee = 50;
-A3W_bountyKillsLifetime = 3*24;*/
 // Persistence settings
 A3W_savingMethod = "extDB";      // Method used for saving data ("profile", "iniDB", "extDB")
 A3W_playerSaving = 1;              // Save player data like position, health, inventory, etc. (0 = no, 1 = yes)
@@ -75,6 +71,7 @@ A3W_timeSaving = 1;                // Save and restore in-game clock time betwee
 A3W_weatherSaving = 1;             // Save and restore weather settings between server restarts (0 = no, 1 = yes)
 A3W_combatAbortDelay = 60;         // If playerSaving = 1, delay in seconds for which to disable abort and respawn buttons after firing or being shot (0 = none)
 A3W_vehicleSaving = 1;             // Save purchased and captured vehicles between server restarts (0 = no, 1 = yes)
+
 A3W_baseSaving = 1;                // Save locked base parts between server restarts (0 = no, 1 = yes)
 A3W_boxSaving = 1;                 // Save locked weapon crates and their contents between server restarts (0 = no, 1 = yes)
 A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magazines between server restarts (0 = no, 1 = yes)
@@ -93,6 +90,7 @@ A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "e
 A3W_privateParkingLimit = 0;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
 A3W_privateParkingCost = 10000;     // Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;            // Enable vehicle locking and lockpicking (0 = no, 1 = yes)
+
 // iniDB settings
 PDB_PlayerFileID = "A3W_";         // Player savefile prefix (if you run multiple servers, keep it the same for all of them)
 PDB_ObjectFileID = "A3W_";         // Object savefile prefix (if you run multiple servers, change it to a unique value for each server)
@@ -107,6 +105,7 @@ A3W_extDB_SaveUnlockedObjects = 0; // Save and restore unlocked baseparts that w
 A3W_extDB_ConfigName = "A3W";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
 A3W_extDB_IniName = "a3wasteland.ini"; // Name of the INI file in extDB\sql_custom to be used
 A3W_extDB_Misc = 0;                // Enable extDB Misc Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+
 // Headless client settings
 A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names in mission.sqm
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)

@@ -112,6 +112,8 @@ _code =
 					_entryName ctrlSetStructuredText parseText format["<t shadow='0' size='0.85' color='%2'>%1</t>", name _player, _textHexColor];
 				};
 
+
+
 				_entryPKills = _display displayCtrl scoreGUI_PListEntry_PKills(_id);
 				_entryPKills ctrlSetText str (([_player, "playerKills", false] call fn_getScore) - ([_player, "teamKills", false] call fn_getScore));
 				_entryPKills ctrlSetTextColor _textColor;
@@ -239,6 +241,8 @@ _code =
 					{
 						case BLUFOR: { format ["BLUFOR - ( %1 )", _teamCnt] };
 						case OPFOR:  { format ["OPFOR - ( %1 )", _teamCnt] };
+
+
 						default      { "Aliens" };
 					};
 				};

@@ -17,10 +17,6 @@
 enableSaving [false, false];
 enableEnvironment [false, true];
 
-CHVD_allowNoGrass = false;
-//CHVD_maxView = 7500;
-//CHVD_maxObj = 5000;
-
 // block script injection exploit
 inGameUISetEventHandler ["PrevAction", ""];
 inGameUISetEventHandler ["Action", ""];
@@ -32,6 +28,11 @@ currMissionDir = compileFinal str (_descExtPath select [0, count _descExtPath - 
 X_Server = false;
 X_Client = false;
 X_JIP = false;
+
+CHVD_allowNoGrass = false;
+CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
+CHVD_maxView = 12000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 12000; // Set maximimum object view distance (default: 12000)
 
 // versionName = ""; // Set in STR_WL_WelcomeToWasteland in stringtable.xml
 
@@ -96,7 +97,6 @@ if (hasInterface || isServer) then
 	[] execVM "addons\vactions\functions.sqf";
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 	[] execVM "addons\R3F_LOG\init.sqf";
-	if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 	[] execVM "addons\JumpMF\init.sqf";

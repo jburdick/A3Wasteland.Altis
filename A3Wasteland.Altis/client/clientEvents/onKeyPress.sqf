@@ -107,6 +107,7 @@ if (!_handled && _key in actionKeys "GetOver") then
 		};
 	};
 };
+
 // Eject
 if (!_handled && _key in actionKeys "GetOut") then
 {
@@ -165,4 +166,5 @@ if (!_handled && _key in (actionKeys "MoveDown" + actionKeys "MoveUp")) then
 		reload player;
 	};
 };
+
 _handled

@@ -12,4 +12,4 @@ pp_retrieve_cost = ["A3W_privateParkingCost", 2500] call getPublicVar;
 pp_max_player_vehicles = ["A3W_privateParkingLimit", 2] call getPublicVar;
 
 //List of class names for vehicles that are not allowed to be parked
-pp_disallowed_vehicle_classes = [B_Truck_01_ammo_F];
+pp_disallowed_vehicle_classes = ["B_Truck_01_ammo_F"];

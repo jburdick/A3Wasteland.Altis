@@ -67,6 +67,7 @@ createRandomSyndikatPilot = [_path, "createUnits\createRandomSyndikatPilot.sqf"]
 createFireBase = [_path, "createFireBase.sqf"] call mf_compile;
 
 //Function Compiles
+
 _path = "server\functions";
 A3W_fnc_checkHackedVehicles = [_path, "checkHackedVehicles.sqf"] call mf_compile;
 A3W_fnc_deleteEmptyGroup = [_path, "fn_deleteEmptyGroup.sqf"] call mf_compile;

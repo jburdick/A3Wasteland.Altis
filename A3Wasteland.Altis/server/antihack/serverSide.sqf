@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
 waitUntil {!isNil "A3W_serverSetupComplete"};
 if !(["A3W_antiHackUnitCheck"] call isConfigOn) exitWith {};
 
-private ["_flagChecksum", "_serverID", "_cheatFlag", "_unit","_belongstoZeusAdmin","_checkedplayer","_checkedplayerUID"];
+private ["_flagChecksum", "_serverID", "_cheatFlag", "_unit"];
 _flagChecksum = _this select 0;
 
 waitUntil {!isNil "bis_functions_mainscope"};
@@ -42,7 +42,7 @@ while { true } do
 			 if (isNil "_belongstoZeusAdmin") then {_belongstoZeusAdmin = false;};
 					
 			//set cheatflag 
-				if (alive _unit && !_belongstoZeusAdmin && !isPlayer _unit && {getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "UAVPilot"}) then
+				if (alive _unit && !isPlayer _unit && {getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "UAVPilot"}) then
 				{
 					_clientPlayer = [owner _unit] call findClientPlayer;
 

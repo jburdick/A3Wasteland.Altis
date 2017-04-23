@@ -31,7 +31,6 @@
 		_bountyCheckbox ctrlShow false;
 		_bountyLabel ctrlShow false;
 	};
-
 	_input = _dialog displayCtrl AtmAmountInput_IDC;
 	_input ctrlAddEventHandler ["KeyUp", mf_items_atm_refresh_amounts];
 	ctrlSetFocus _input;

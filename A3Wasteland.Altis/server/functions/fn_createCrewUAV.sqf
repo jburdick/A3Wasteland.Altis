@@ -15,7 +15,6 @@ private "_time";
 while _crewNotReady do // bruteforce that shit up
 {
 	if (!_skipCreate) then { createVehicleCrew _uav } else { _skipCreate = false };
-
 	_time = time;
 	waitUntil {!(time - _time < 1 && _crewNotReady)};
 };
