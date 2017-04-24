@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=10;
 	class ItemIDProvider
 	{
 		nextID=2011;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19;
+		nextID=20;
 	};
 	class Camera
 	{
-		pos[]={14572.975,20.265638,16764.75};
-		dir[]={-0.66187173,-0.28180668,0.69471478};
-		up[]={-0.19440988,0.95945251,0.20405607};
-		aside[]={0.72405547,-4.0786108e-007,0.68982285};
+		pos[]={9138.8994,102.83277,8032.6201};
+		dir[]={0.813959,-0.38817626,0.43237779};
+		up[]={0.34284028,0.92155677,0.18211751};
+		aside[]={0.46915933,-9.4893039e-008,-0.88319981};
 	};
 };
 binarizationWanted=0;
@@ -4303,7 +4303,7 @@ class Mission
 			name="VehStore4_landSpawn";
 			type="Empty";
 			colorName="ColorBlack";
-			angle=48.059742;
+			angle=48.059738;
 			id=305;
 			atlOffset=1.7961311;
 		};
@@ -5407,7 +5407,7 @@ class Mission
 			};
 			id=456;
 			type="B_Truck_01_ammo_F";
-			atlOffset=-0.028999805;
+			atlOffset=-0.028999329;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5449,36 +5449,37 @@ class Mission
 		class Item238
 		{
 			dataType="Marker";
-			position[]={3619.5984,12.500292,13015.494};
-			name="TERRITORY_1_KAVALA";
-			markerType="ELLIPSE";
-			type="ellipse";
-			colorName="ColorYellow";
-			fillName="DiagGrid";
-			a=350;
-			b=350;
-			id=558;
-		};
-		class Item239
-		{
-			dataType="Marker";
-			position[]={9314.8438,118.97337,15893.634};
-			name="TERRITORY_2_AGIOS";
+			position[]={4577.271,0,21410.451};
+			name="TERRITORY_1_OREOKASTRO";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
 			a=150;
-			b=325;
-			angle=248.16191;
+			b=150;
+			id=558;
+			atlOffset=-299.98587;
+		};
+		class Item239
+		{
+			dataType="Marker";
+			position[]={6179.7139,0,16243.193};
+			name="TERRITORY_2_KOREFACTORY";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=60;
+			b=160;
+			angle=267.55899;
 			id=559;
-			atlOffset=1.5258789e-005;
+			atlOffset=-43;
 		};
 		class Item240
 		{
 			dataType="Marker";
-			position[]={20959.137,43.132454,16948.439};
-			name="TERRITORY_3_PAROS";
+			position[]={21384.625,0,16361.43};
+			name="TERRITORY_3_KALOCHORI";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5486,13 +5487,13 @@ class Mission
 			a=150;
 			b=150;
 			id=560;
-			atlOffset=-3.8146973e-006;
+			atlOffset=-19.958248;
 		};
 		class Item241
 		{
 			dataType="Marker";
-			position[]={14617.703,46.959015,20780.9};
-			name="TERRITORY_5_FRINI";
+			position[]={10677.408,0,12255.492};
+			name="TERRITORY_5_THERISA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5500,19 +5501,21 @@ class Mission
 			a=150;
 			b=150;
 			id=561;
+			atlOffset=-16.78611;
 		};
 		class Item242
 		{
 			dataType="Marker";
-			position[]={20943.961,13.97664,19253.166};
-			name="TERRITORY_6_MILRESEARCH";
+			position[]={21875.395,0,21010.576};
+			name="TERRITORY_6_GHOSTHOTEL";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=150;
-			b=150;
+			a=170;
+			b=170;
 			id=562;
+			atlOffset=-25.430317;
 		};
 		class Item243
 		{
@@ -5544,8 +5547,8 @@ class Mission
 		class Item245
 		{
 			dataType="Marker";
-			position[]={11749.389,12.628704,9549.3164};
-			name="TERRITORY_8_VIKOS";
+			position[]={9243.2852,0,8057.0962};
+			name="TERRITORY_8_SFAKA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5553,6 +5556,7 @@ class Mission
 			a=150;
 			b=150;
 			id=565;
+			atlOffset=-41.668995;
 		};
 		class Item246
 		{
@@ -5581,30 +5585,33 @@ class Mission
 		class Item248
 		{
 			dataType="Marker";
-			position[]={3619.6282,12.484255,13015.957};
-			name="FLAG_1_KAVALA";
+			position[]={4576.1602,0,21412.938};
+			name="FLAG_1_OREOKASTRO";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=568;
+			atlOffset=-300.05457;
 		};
 		class Item249
 		{
 			dataType="Marker";
-			position[]={9315.1221,119.15121,15891.987};
-			name="FLAG_2_AGIOS";
+			position[]={6179.5142,0,16246.824};
+			name="FLAG_2_KOREFACTORY";
 			type="mil_objective";
 			colorName="ColorRed";
+			angle=0.76800001;
 			id=569;
-			atlOffset=-7.6293945e-006;
+			atlOffset=-43;
 		};
 		class Item250
 		{
 			dataType="Marker";
-			position[]={20961.031,42.78162,16940.863};
-			name="FLAG_3_PAROS";
+			position[]={21386.52,0,16353.854};
+			name="FLAG_3_KALOCHORI";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=570;
+			atlOffset=-19.665003;
 		};
 		class Item251
 		{
@@ -5619,21 +5626,22 @@ class Mission
 		class Item252
 		{
 			dataType="Marker";
-			position[]={14613.917,46.785393,20779.008};
-			name="FLAG_5_FRINI";
+			position[]={10677.191,0,12257.227};
+			name="FLAG_5_THERISA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
-			atlOffset=-3.8146973e-006;
+			atlOffset=-16.78553;
 		};
 		class Item253
 		{
 			dataType="Marker";
-			position[]={20943.963,13.951282,19260.742};
-			name="FLAG_6_MILRESEARCH";
+			position[]={21878.055,0,21010.166};
+			name="FLAG_6_GHOSTHOTEL";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=573;
+			atlOffset=-24.924829;
 		};
 		class Item254
 		{
@@ -5647,11 +5655,12 @@ class Mission
 		class Item255
 		{
 			dataType="Marker";
-			position[]={11739.919,12.497035,9551.21};
-			name="FLAG_8_VIKOS";
+			position[]={9242.7158,0,8056.7749};
+			name="FLAG_8_SFAKA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=575;
+			atlOffset=-41.654915;
 		};
 		class Item256
 		{
@@ -6070,7 +6079,7 @@ class Mission
 		class Item269
 		{
 			dataType="Marker";
-			position[]={14771.535,-1.6634227e-029,16668.695};
+			position[]={14622.117,0,16773.643};
 			name="marker_306";
 			text="Service";
 			type="hd_dot";
@@ -6167,7 +6176,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99983;
+			angle=226.99982;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6402,7 +6411,6 @@ class Mission
 			class Attributes
 			{
 				init="[this] call A3W_fnc_setupMissionObject";
-				aiRadarUsage=-1343733792;
 			};
 			id=1974;
 			type="Land_i_Shed_Ind_F";
@@ -6467,7 +6475,6 @@ class Mission
 			class Attributes
 			{
 				init="[this] call A3W_fnc_setupMissionObject";
-				aiRadarUsage=-1054867456;
 			};
 			id=1978;
 			type="Land_i_Shed_Ind_F";
@@ -6486,7 +6493,6 @@ class Mission
 			class Attributes
 			{
 				init="[this] call A3W_fnc_setupMissionObject";
-				aiRadarUsage=1112227808;
 			};
 			id=1989;
 			type="Land_i_Shed_Ind_F";

@@ -34,7 +34,6 @@ private _checks =
 		case (!alive player): {}; // player is dead, no need for a notification
 		case (vehicle player != player): { _text = FORMAT2(ERR_FAILED, ERR_IN_VEHICLE) };
 		case (!alive _vehicle): { _text = FORMAT2(ERR_FAILED, ERR_DESTROYED) };
-		case (_vehicle == "B_Truck_01_ammo_F"): {_text =FORMAT2(ERR_NOTALLOWED)};
 		case (_vehicle getVariable ["ownerUID","0"] isEqualTo getPlayerUID player && {!unitIsUAV _vehicle || side _vehicle == side group player}): { _text = FORMAT2(ERR_FAILED, ERR_OWNED) };
 		case (locked _vehicle > 1): { _text = FORMAT2(ERR_FAILED, ERR_LOCKED) };
 		case ({alive _x && getText (configFile >> "CfgVehicles" >> typeOf _x >> "simulation") != "UAVPilot"} count crew _vehicle > 0): { _text = FORMAT2(ERR_FAILED, ERR_CREW) };

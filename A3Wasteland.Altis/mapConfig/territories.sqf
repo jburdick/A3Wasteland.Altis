@@ -13,13 +13,13 @@
 
 [
 	["TERRITORY_0_ABDERA", "Abdera", 5000, "CITY"],
-	["TERRITORY_1_KAVALA", "Kavala", 5000, "CITY"],
-	["TERRITORY_2_AGIOS", "Agios Dionysios", 5000, "CITY"],
-	["TERRITORY_3_PAROS", "Paros", 5000, "CITY"],
+	["TERRITORY_1_OREOKASTRO", "Oreokastro", 5000, "CITY"],
+	["TERRITORY_2_KOREFACTORY", "Kore Factory", 5000, "CITY"],
+	["TERRITORY_3_KALOCHORI", "Kalochori", 5000, "CITY"],
 	["TERRITORY_4_MILHILL", "Military Hill", 5000, "CITY"],
-	["TERRITORY_5_FRINI", "Frini", 5000, "CITY"],
-	["TERRITORY_6_MILRESEARCH", "Research Post", 5000, "CITY"],
+	["TERRITORY_5_THERISA", "Therisa", 5000, "CITY"],
+	["TERRITORY_6_GHOSTHOTEL", "Ghost Hotel", 5000, "CITY"],
 	["TERRITORY_7_MOLOS", "Molos", 5000, "CITY"],
-	["TERRITORY_8_VIKOS", "Vikos", 5000, "CITY"],
+	["TERRITORY_8_SFAKA", "Sfaka", 5000, "CITY"],
 	["TERRITORY_9_PANAGIA", "Panagia", 5000, "CITY"]
 ]
