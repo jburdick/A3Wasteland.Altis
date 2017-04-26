@@ -64,7 +64,7 @@ if (isServer) then
 		   forEach _zeusAdminList;
 	};
 };
-while{true} do
+/*while{true} do
 {
     {
         _prefix = [_x,0,16] call BIS_fnc_trimString;
@@ -75,4 +75,4 @@ while{true} do
         //hint format ["marker prefix:%1",_prefix];
     } foreach allMapMarkers;
     sleep 1;
-};
+};*/
