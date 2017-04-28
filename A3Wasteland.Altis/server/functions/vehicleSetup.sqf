@@ -77,15 +77,15 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
 };
 
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _vehicle];
 };
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _vehicle];
 };
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _vehicle];
 };

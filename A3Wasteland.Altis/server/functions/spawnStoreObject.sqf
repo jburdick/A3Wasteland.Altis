@@ -194,6 +194,16 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _object];
 					_object setAmmoCargo 0;
 				};
+				case ({_object isKindOf _x} count ["B_Slingload_01_Fuel_F", "Land_FuelStation_Feed_F", "StorageBladder_01_fuel_sand_F"] > 0):
+				{
+					_object remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _object];
+					_object setFuelCargo 0;
+				};
+				case ({_object isKindOf _x} count ["B_Slingload_01_Repair_F"] > 0):
+				{
+					_object remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _object];
+					_object setAmmoCargo 0;
+				};
 			};
 
 			if (_skipSave) then
