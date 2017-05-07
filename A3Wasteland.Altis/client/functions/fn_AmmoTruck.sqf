@@ -8,7 +8,7 @@
 #define REARM_TIME_SLICE 5
 #define REPAIR_TIME_SLICE 1
 #define REFUEL_TIME_SLICE 1
-#define PRICE_RELATIONSHIP 0 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
+#define PRICE_RELATIONSHIP 1 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
 #define RESUPPLY_TIMEOUT 30
 
 // Check if mutex lock is active.
@@ -38,15 +38,15 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 	scopeName "resupplyTruckThread";
 
-	_price = 1000; // price = 1000 for vehicles not found in vehicle store
+	_price = 0; // price = 1000 for vehicles not found in vehicle store
 
-	{
+	/*{
 		if (_vehClass == _x select 1) exitWith
 		{
 			_price = _x select 2;
 			_price = round (_price / PRICE_RELATIONSHIP);
 		};
-	} forEach (call allVehStoreVehicles + call staticGunsArray);
+	} forEach (call allVehStoreVehicles + call staticGunsArray);*/
 
 	_titleText = { titleText [_this, "PLAIN DOWN", ((REARM_TIME_SLICE max 1) / 10) max 0.3] };
 
@@ -212,7 +212,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 			};
 		} forEach magazinesAllTurrets _vehicle;
 
-		_checkDone = true;
+		/*_checkDone = true;*/
 
 		// Reload turret mags
 		{
@@ -223,11 +223,11 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 				if (_notFull) then
 				{
-					if (_checkDone) then
+					/*if (_checkDone) then
 					{
 						_checkDone = false;
 						sleep 3;
-					};
+					};*/
 
 					call _checkAbortConditions;
 
@@ -261,7 +261,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		[_vehicle, false, true, true] call A3W_fnc_setVehicleLoadout;
 
-		_checkDone = true;
+		/*_checkDone = true;*/
 
 		//Repair Cycle
 		/*(getAllHitPointsDamage _vehicle) params ["_hitPoints", "_selections", "_dmgValues"];
