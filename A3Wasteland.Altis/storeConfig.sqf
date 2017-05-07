@@ -170,8 +170,8 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 150000],
-	["Ammo Container", "B_Slingload_01_Ammo_F", 10000000],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 800000],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 250000],
 	["Explosives Crate(Empty)", "Box_NATO_AmmoOrd_F", 100],
 	["Ammo Crate (Empty)", "Box_NATO_Ammo_F", 100],
 	["Granade Crate (Empty)", "Box_NATO_Grenades_F", 100],
@@ -1014,7 +1014,7 @@ landArray = compileFinal str
 	["HEMTT Fuel", "B_Truck_01_fuel_F", 9000, "vehicle"],
 	["HEMTT Medical", "B_Truck_01_medical_F", 10000, "vehicle"],
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
-	// ["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
+	["HEMTT Ammo", "B_Truck_01_ammo_F", 500000, "vehicle"],
 
 	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 
@@ -1023,7 +1023,7 @@ landArray = compileFinal str
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 10000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 12500, "vehicle"],
-	["Tempest Ammo", "O_Truck_03_ammo_F", 500000, "vehicle"],
+	["Tempest Ammo", "O_Truck_03_ammo_F", 600000, "vehicle"],
 
 
 	["Zamak Transport", "I_Truck_02_transport_F", 4000, "vehicle"],
@@ -1031,7 +1031,7 @@ landArray = compileFinal str
 	["Zamak Fuel", "I_Truck_02_fuel_F", 7500, "vehicle"],
 	["Zamak Medical", "I_Truck_02_medical_F", 9000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 10000, "vehicle"],
-	// ["Zamak Ammo", "I_Truck_02_ammo_F", 25, "vehicle"],
+	["Zamak Ammo", "I_Truck_02_ammo_F", 700000, "vehicle"],
 
 	["Prowler (Unarmed)", "B_T_LSV_01_unarmed_F", 900, "vehicle"],
 	["Prowler (Armed)", "B_T_LSV_01_armed_F", 5000, "vehicle"],
@@ -1064,7 +1064,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	
+
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],

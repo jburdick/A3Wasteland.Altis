@@ -186,49 +186,25 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			clearBackpackCargoGlobal _object;
 
-			// don't need this anymore at all
-			/*switch (true) do
+			//Setup Service Objects
+			switch (true) do
 			{
-				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"] > 0):
+				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F", "B_Slingload_01_Ammo_F"] > 0):
 				{
-					_object setAmmoCargo 5;
+					_object remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _object];
+					_object setAmmoCargo 0;
 				};
-
-				case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
+				case ({_object isKindOf _x} count ["B_Slingload_01_Fuel_F", "Land_FuelStation_Feed_F", "StorageBladder_01_fuel_sand_F", "FlexibleTank_01_sand_F"] > 0):
 				{
-					_object setAmmoCargo 10;
+					_object remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _object];
+					_object setFuelCargo 0;
 				};
-
-				case ({_object isKindOf _x} count ["B_Truck_01_ammo_F", "O_Truck_02_Ammo_F", "O_Truck_03_ammo_F", "I_Truck_02_ammo_F"] > 0):
+				case ({_object isKindOf _x} count ["B_Slingload_01_Repair_F"] > 0):
 				{
-					_object setAmmoCargo 25;
+					_object remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _object];
+					_object setAmmoCargo 0;
 				};
-
-				case ({_object isKindOf _x} count ["C_Van_01_fuel_F", "I_G_Van_01_fuel_F", "O_Heli_Transport_04_fuel_F"] > 0):
-				{
-					_object setFuelCargo 10;
-				};
-
-				case ({_object isKindOf _x} count ["B_Truck_01_fuel_F", "O_Truck_02_fuel_F", "O_Truck_03_fuel_F", "I_Truck_02_fuel_F"] > 0):
-				{
-					_object setFuelCargo 25;
-				};
-
-				case (_object isKindOf "Offroad_01_repair_base_F"):
-				{
-					_object setRepairCargo 5;
-				};
-
-				case (_object isKindOf "O_Heli_Transport_04_repair_F"):
-				{
-					_object setRepairCargo 10;
-				};
-
-				case ({_object isKindOf _x} count ["B_Truck_01_Repair_F", "O_Truck_02_box_F", "O_Truck_03_repair_F", "I_Truck_02_box_F"] > 0):
-				{
-					_object setRepairCargo 25;
-				};
-			};*/
+			};
 
 			if (_skipSave) then
 			{

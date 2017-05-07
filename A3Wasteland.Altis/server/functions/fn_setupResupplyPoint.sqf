@@ -6,7 +6,7 @@
 
 params [["_veh",objNull,[objNull]], ["_static",false,[false]]];
 
-if (_veh getVariable ["A3W_resupplyTruckSetup", false]) exitWith {};
+if (_veh getVariable ["A3W_resupplyPoint", false]) exitWith {};
 
 if (hasInterface) then
 {
@@ -39,5 +39,5 @@ if (_static) then
 	_veh setVariable ["R3F_LOG_disabled", true];
 };
 
-_veh setVariable ["A3W_resupplyTruck", true];
-_veh setVariable ["A3W_resupplyTruckSetup", true];
+_veh setVariable ["A3W_AmmoTruck", true];
+_veh setVariable ["A3W_AmmoTruckSetup", true];
