@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=138;
+	toggles=10;
 	class ItemIDProvider
 	{
 		nextID=2022;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=23;
+		nextID=24;
 	};
 	class Camera
 	{
-		pos[]={20536.539,59.460442,8854.4814};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={20557.732,264.53687,8689.5615};
+		dir[]={-0.87647223,-0.3978481,0.27113739};
+		up[]={-0.38007805,0.91745001,0.11757746};
+		aside[]={0.29553327,6.8044756e-008,0.95533329};
 	};
 };
 binarizationWanted=0;
@@ -98,7 +98,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=300;
+		items=298;
 		class Item0
 		{
 			dataType="Group";
@@ -5126,7 +5126,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9432.9404,0,20260.697};
-			name="TERRITORY_1";
+			name="TERRITORY_00";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5140,7 +5140,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4577.271,0,21410.451};
-			name="TERRITORY_2";
+			name="TERRITORY_01";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5154,7 +5154,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6179.7139,0,16243.193};
-			name="TERRITORY_3";
+			name="TERRITORY_02";
 			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5169,7 +5169,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21384.625,0,16361.43};
-			name="TERRITORY_4";
+			name="TERRITORY_03";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5183,7 +5183,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.408,0,12255.492};
-			name="TERRITORY_7";
+			name="TERRITORY_06";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5197,7 +5197,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21875.395,0,21010.576};
-			name="TERRITORY_6";
+			name="TERRITORY_05";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5211,7 +5211,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={27025.637,0,23211.48};
-			name="TERRITORY_8";
+			name="TERRITORY_07";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5225,7 +5225,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={12851.905,0,16700.438};
-			name="TERRITORY_5";
+			name="TERRITORY_04";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5239,7 +5239,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9243.2852,0,8057.0962};
-			name="TERRITORY_10";
+			name="TERRITORY_09";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5253,7 +5253,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={20529.043,0,8871.2021};
-			name="TERRITORY_9";
+			name="TERRITORY_08";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5267,7 +5267,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9432.3232,0,20260.68};
-			name="FLAG_1";
+			name="FLAG_00";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=567;
@@ -5277,7 +5277,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4576.1602,0,21412.938};
-			name="FLAG_2";
+			name="FLAG_01";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=568;
@@ -5287,7 +5287,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6179.5142,0,16246.824};
-			name="FLAG_3";
+			name="FLAG_02";
 			type="mil_objective";
 			colorName="ColorRed";
 			angle=0.76800001;
@@ -5298,7 +5298,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21386.52,0,16353.854};
-			name="FLAG_4";
+			name="FLAG_03";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=570;
@@ -5308,7 +5308,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={12850.942,0,16699.529};
-			name="FLAG_5";
+			name="FLAG_04";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=571;
@@ -5318,7 +5318,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.191,0,12257.227};
-			name="FLAG_7";
+			name="FLAG_06";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
@@ -5328,7 +5328,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21878.055,0,21010.166};
-			name="FLAG_6";
+			name="FLAG_05";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=573;
@@ -5338,7 +5338,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={27033.213,0,23213.375};
-			name="FLAG_8";
+			name="FLAG_07";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=574;
@@ -5348,7 +5348,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9242.7158,0,8056.7749};
-			name="FLAG_10";
+			name="FLAG_09";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=575;
@@ -5358,7 +5358,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={20529.043,0,8878.7803};
-			name="FLAG_9";
+			name="FLAG_08";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=576;
@@ -5868,7 +5868,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99977;
+			angle=226.99976;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6201,7 +6201,7 @@ class Mission
 			};
 			id=2013;
 			type="Land_Cargo40_blue_F";
-			atlOffset=0.00020122528;
+			atlOffset=-9.1552734e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6364,7 +6364,7 @@ class Mission
 			};
 			id=2017;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-7.6293945e-005;
+			atlOffset=-0.00025939941;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6405,7 +6405,7 @@ class Mission
 			};
 			id=2018;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00026988983;
+			atlOffset=-0.00057888031;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6470,32 +6470,6 @@ class Mission
 				};
 				nAttributes=1;
 			};
-		};
-		class Item298
-		{
-			dataType="Marker";
-			position[]={15399.707,0,15909.06};
-			name="TERRITORY_11";
-			markerType="RECTANGLE";
-			type="ellipse";
-			colorName="ColorYellow";
-			fillName="DiagGrid";
-			a=60;
-			b=160;
-			angle=267.55899;
-			id=2020;
-			atlOffset=-4.3389163;
-		};
-		class Item299
-		{
-			dataType="Marker";
-			position[]={15399.508,0,15912.69};
-			name="FLAG_11";
-			type="mil_objective";
-			colorName="ColorRed";
-			angle=0.76800001;
-			id=2021;
-			atlOffset=-4.4190893;
 		};
 	};
 };
