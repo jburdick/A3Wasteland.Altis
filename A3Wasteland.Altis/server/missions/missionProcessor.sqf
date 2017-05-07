@@ -139,13 +139,13 @@ waitUntil
 	{
 		_failed = false;
 		_complete = true;
-	};
+	};*/
 
 	(_failed || _complete || (!_ignoreAiDeaths && {alive _x} count units _aiGroup == 0))
 };
 
 if (_failed) then
-{*/
+{
 	// Mission failed
 
 	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup;
