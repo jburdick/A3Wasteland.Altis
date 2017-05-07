@@ -170,8 +170,8 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 150000],
-	["Ammo Container", "B_Slingload_01_Ammo_F", 10000000],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 800000],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 250000],
 	["Explosives Crate(Empty)", "Box_NATO_AmmoOrd_F", 100],
 	["Ammo Crate (Empty)", "Box_NATO_Ammo_F", 100],
 	["Granade Crate (Empty)", "Box_NATO_Grenades_F", 100],
@@ -866,7 +866,7 @@ genObjectsArray = compileFinal str
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
 
 
-	["Ladder", "Land_PierLadder_F", 100],
+	/*["Ladder", "Land_PierLadder_F", 100],*/
 
 	["Highway Guardrail", "Land_Crash_barrier_F", 200, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
@@ -892,7 +892,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (6 blocks)", "Land_HBarrierWall6_F", 500, "object"],
 	["HBarrier Wall Corner", "Land_HBarrierWall_corner_F", 500, "object"],
 	["HBarrier Watchtower", "Land_HBarrierTower_F", 600, "object"],
-	["HBarrier (1 block, Green)", "Land_HBarrier_01_line_1_green_F", 150, "object"],
+	/*["HBarrier (1 block, Green)", "Land_HBarrier_01_line_1_green_F", 150, "object"],
 	["HBarrier (3 blocks, Green)", "Land_HBarrier_01_line_3_green_F", 200, "object"],
 	["HBarrier (5 blocks Green)", "Land_HBarrier_01_line_5_green_F", 250, "object"],
 	["HBarrier Corridor (Green)", "Land_HBarrier_01_wall_corridor_green_F", 250, "object"],
@@ -900,7 +900,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (4 blocks, Green)", "Land_HBarrier_01_wall_4_green_F", 400, "object"],
 	["HBarrier Wall (6 blocks, Green)", "Land_HBarrier_01_wall_6_green_F", 500, "object"],
 	["HBarrier Wall Corner (Green)", "Land_HBarrier_01_wall_corner_green_F", 500, "object"],
-	["HBarrier Watchtower (Green)", "Land_HBarrier_01_big_tower_green_F", 600, "object"],
+	["HBarrier Watchtower (Green)", "Land_HBarrier_01_big_tower_green_F", 600, "object"],*/
 
 
 	["Concrete Wall", "Land_CncWall1_F", 400, "object"],
@@ -926,14 +926,14 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Small)", "Land_BagBunker_Small_F", 250, "object"],
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
-	["Bag Fence (Corner, Green)", "Land_BagFence_01_corner_green_F", 150, "object"],
+	/*["Bag Fence (Corner, Green)", "Land_BagFence_01_corner_green_F", 150, "object"],
 	["Bag Fence (End, Green)", "Land_BagFence_01_end_green_F", 150, "object"],
 	["Bag Fence (Long, Green)", "Land_BagFence_01_long_green_F", 200, "object"],
 	["Bag Fence (Round, Green)", "Land_BagFence_01_round_green_F", 150, "object"],
 	["Bag Fence (Short, Green)", "Land_BagFence_01_short_green_F", 150, "object"],
 	["Bag Bunker (Small, Green)", "Land_BagBunker_01_small_green_F", 250, "object"],
 	["Bag Bunker (Large, Green)", "Land_BagBunker_01_large_green_F", 500, "object"],
-	["Bag Bunker Tower (Green)", "Land_HBarrier_01_tower_green_F", 1000, "object"],
+	["Bag Bunker Tower (Green)", "Land_HBarrier_01_tower_green_F", 1000, "object"],*/
 
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
@@ -950,28 +950,13 @@ genObjectsArray = compileFinal str
 
 	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"],
 
-
 	["Lighthouse", "Land_LightHouse_F", 150, "object"],
-
-
 
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
 	["Medical Container", "B_Slingload_01_Medevac_F", 1000]
-
-
-
-
-
-
-
-
-
-
-
-
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
@@ -1014,7 +999,7 @@ landArray = compileFinal str
 	["HEMTT Fuel", "B_Truck_01_fuel_F", 9000, "vehicle"],
 	["HEMTT Medical", "B_Truck_01_medical_F", 10000, "vehicle"],
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
-	// ["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
+	["HEMTT Ammo", "B_Truck_01_ammo_F", 500000, "vehicle"],
 
 	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 
@@ -1023,7 +1008,7 @@ landArray = compileFinal str
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 10000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 12500, "vehicle"],
-	["Tempest Ammo", "O_Truck_03_ammo_F", 500000, "vehicle"],
+	["Tempest Ammo", "O_Truck_03_ammo_F", 600000, "vehicle"],
 
 
 	["Zamak Transport", "I_Truck_02_transport_F", 4000, "vehicle"],
@@ -1031,7 +1016,7 @@ landArray = compileFinal str
 	["Zamak Fuel", "I_Truck_02_fuel_F", 7500, "vehicle"],
 	["Zamak Medical", "I_Truck_02_medical_F", 9000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 10000, "vehicle"],
-	// ["Zamak Ammo", "I_Truck_02_ammo_F", 25, "vehicle"],
+	["Zamak Ammo", "I_Truck_02_ammo_F", 700000, "vehicle"],
 
 	["Prowler (Unarmed)", "B_T_LSV_01_unarmed_F", 900, "vehicle"],
 	["Prowler (Armed)", "B_T_LSV_01_armed_F", 5000, "vehicle"],
@@ -1064,7 +1049,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	
+
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],
@@ -1120,6 +1105,12 @@ planesArray = compileFinal str
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 745000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 760000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 760000, "vehicle"],
+	
+	["A-149 Gryphon", "I_Plane_Fighter_04_F", 760000, "vehicle"],
+	["To-201 Shikra", "O_Plane_Fighter_02_F", 760000, "vehicle"],
+	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 760000, "vehicle"],
+	["F/A-181 Black Wasp II", "B_Plane_Fighter_01_F", 760000, "vehicle"],
+	["F/A-181 Black Wasp II (Stealth)", "B_Plane_Fighter_01_Stealth_F", 760000, "vehicle"],
 
 	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000],
 	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000],
@@ -1134,8 +1125,9 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 210000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 820000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 210000, "vehicle"],
-
-	["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000]
+    ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
+	["UCAV Sentinel", "UAV_05_Base_F", 600000]
+	
 ];
 boatsArray = compileFinal str
 [
