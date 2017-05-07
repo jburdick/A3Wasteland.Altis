@@ -866,7 +866,7 @@ genObjectsArray = compileFinal str
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
 
 
-	["Ladder", "Land_PierLadder_F", 100],
+	/*["Ladder", "Land_PierLadder_F", 100],*/
 
 	["Highway Guardrail", "Land_Crash_barrier_F", 200, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"],
@@ -892,7 +892,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (6 blocks)", "Land_HBarrierWall6_F", 500, "object"],
 	["HBarrier Wall Corner", "Land_HBarrierWall_corner_F", 500, "object"],
 	["HBarrier Watchtower", "Land_HBarrierTower_F", 600, "object"],
-	["HBarrier (1 block, Green)", "Land_HBarrier_01_line_1_green_F", 150, "object"],
+	/*["HBarrier (1 block, Green)", "Land_HBarrier_01_line_1_green_F", 150, "object"],
 	["HBarrier (3 blocks, Green)", "Land_HBarrier_01_line_3_green_F", 200, "object"],
 	["HBarrier (5 blocks Green)", "Land_HBarrier_01_line_5_green_F", 250, "object"],
 	["HBarrier Corridor (Green)", "Land_HBarrier_01_wall_corridor_green_F", 250, "object"],
@@ -900,7 +900,7 @@ genObjectsArray = compileFinal str
 	["HBarrier Wall (4 blocks, Green)", "Land_HBarrier_01_wall_4_green_F", 400, "object"],
 	["HBarrier Wall (6 blocks, Green)", "Land_HBarrier_01_wall_6_green_F", 500, "object"],
 	["HBarrier Wall Corner (Green)", "Land_HBarrier_01_wall_corner_green_F", 500, "object"],
-	["HBarrier Watchtower (Green)", "Land_HBarrier_01_big_tower_green_F", 600, "object"],
+	["HBarrier Watchtower (Green)", "Land_HBarrier_01_big_tower_green_F", 600, "object"],*/
 
 
 	["Concrete Wall", "Land_CncWall1_F", 400, "object"],
@@ -926,14 +926,14 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Small)", "Land_BagBunker_Small_F", 250, "object"],
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
-	["Bag Fence (Corner, Green)", "Land_BagFence_01_corner_green_F", 150, "object"],
+	/*["Bag Fence (Corner, Green)", "Land_BagFence_01_corner_green_F", 150, "object"],
 	["Bag Fence (End, Green)", "Land_BagFence_01_end_green_F", 150, "object"],
 	["Bag Fence (Long, Green)", "Land_BagFence_01_long_green_F", 200, "object"],
 	["Bag Fence (Round, Green)", "Land_BagFence_01_round_green_F", 150, "object"],
 	["Bag Fence (Short, Green)", "Land_BagFence_01_short_green_F", 150, "object"],
 	["Bag Bunker (Small, Green)", "Land_BagBunker_01_small_green_F", 250, "object"],
 	["Bag Bunker (Large, Green)", "Land_BagBunker_01_large_green_F", 500, "object"],
-	["Bag Bunker Tower (Green)", "Land_HBarrier_01_tower_green_F", 1000, "object"],
+	["Bag Bunker Tower (Green)", "Land_HBarrier_01_tower_green_F", 1000, "object"],*/
 
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
@@ -950,28 +950,13 @@ genObjectsArray = compileFinal str
 
 	["Castle Tower", "Land_Castle_01_tower_F", 150, "object"],
 
-
 	["Lighthouse", "Land_LightHouse_F", 150, "object"],
-
-
 
 	["Taru Pod", "Land_Pod_Heli_Transport_04_box_F", 500],
 	["Cargo Container", "B_Slingload_01_Cargo_F", 1000],
 	["Fuel Container", "B_Slingload_01_Fuel_F", 1000],
 	["Repair Container", "B_Slingload_01_Repair_F", 1000],
 	["Medical Container", "B_Slingload_01_Medevac_F", 1000]
-
-
-
-
-
-
-
-
-
-
-
-
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);

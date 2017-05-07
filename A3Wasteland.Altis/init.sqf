@@ -95,7 +95,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\parking\functions.sqf";
 	[] execVM "addons\storage\functions.sqf";
 	[] execVM "addons\vactions\functions.sqf";
-	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
+	/*[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";*/
 	[] execVM "addons\R3F_LOG\init.sqf";
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";

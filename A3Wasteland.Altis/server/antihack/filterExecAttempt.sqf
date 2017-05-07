@@ -56,9 +56,9 @@ if (_packetName == "BIS_fnc_MP_packet") then
 
 			// NOTE: You also need to whitelist individual functions in client\CfgRemoteExec_fnc.hpp
 		];
-		
-		
-	//allow zeus functions	
+
+
+	//allow zeus functions
 	if (!_whitelisted) then
 	{
 		scopeName "zeusFunc";
@@ -80,7 +80,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			};
 		};
 	};
-	
+
 		if (!_whitelisted) then
 		{
 			{
@@ -93,7 +93,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			[
 				"A3W_fnc_",
 				"mf_remote_",
-				"APOC_srv_"
+				/*"APOC_srv_"*/
 			];
 		};
 	};
