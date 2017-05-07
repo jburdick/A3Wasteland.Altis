@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=138;
 	class ItemIDProvider
 	{
 		nextID=2022;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=24;
+		nextID=25;
 	};
 	class Camera
 	{
@@ -5782,7 +5782,7 @@ class Mission
 		class Item263
 		{
 			dataType="Marker";
-			position[]={9179.8418,2.1819331e+013,21676.598};
+			position[]={9179.4004,2.1819331e+013,21678.535};
 			name="marker_307";
 			text="Service";
 			type="hd_dot";
@@ -5793,29 +5793,29 @@ class Mission
 		class Item264
 		{
 			dataType="Marker";
-			position[]={3676.301,-7.9777363e-033,13412};
+			position[]={3680.8279,0,13389.525};
 			name="marker_308";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1953;
-			atlOffset=-7.5892096;
+			atlOffset=-7.7861032;
 		};
 		class Item265
 		{
 			dataType="Marker";
-			position[]={11856.836,-8.743602e-022,9435.5547};
+			position[]={11853.452,0,9437.0488};
 			name="marker_310";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1955;
-			atlOffset=-17.038637;
+			atlOffset=-17.242718;
 		};
 		class Item266
 		{
 			dataType="Marker";
-			position[]={20888.588,1.7525276e+029,7294.438};
+			position[]={20889.988,1.7525276e+029,7292.6362};
 			name="marker_311";
 			text="Service";
 			type="hd_dot";
@@ -5826,24 +5826,24 @@ class Mission
 		class Item267
 		{
 			dataType="Marker";
-			position[]={23003.123,130273.84,18887.756};
+			position[]={22994.072,130273.84,18899.025};
 			name="marker_312";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1957;
-			atlOffset=130269.77;
+			atlOffset=130267.04;
 		};
 		class Item268
 		{
 			dataType="Marker";
-			position[]={26796.936,-3.4462802e-032,24665.891};
+			position[]={26790.346,0,24671.752};
 			name="marker_313";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1958;
-			atlOffset=-20.607954;
+			atlOffset=-20.332218;
 		};
 		class Item269
 		{
@@ -5868,7 +5868,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99976;
+			angle=226.99974;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -5984,18 +5984,18 @@ class Mission
 		class Item281
 		{
 			dataType="Marker";
-			position[]={9528,119.80474,15114.777};
+			position[]={9523.9844,119.80469,15115.495};
 			name="marker_314";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1972;
-			atlOffset=-7.480217;
+			atlOffset=-7.5526657;
 		};
 		class Item282
 		{
 			dataType="Marker";
-			position[]={5926.811,1.790126e+030,20128.957};
+			position[]={5906.4307,1.790126e+030,20159.525};
 			name="marker_309";
 			text="Service";
 			type="hd_dot";
@@ -6273,7 +6273,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={26790.418,21.663437,24671.729};
-				angles[]={0.053282689,2.3013203,6.2805109};
+				angles[]={0,5.4137206,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6313,7 +6313,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9179.3975,15.671347,21678.486};
-				angles[]={0.0053265258,2.617852,6.2805333};
+				angles[]={0,5.6714277,0};
 			};
 			side="Empty";
 			flags=4;
