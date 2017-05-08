@@ -20,8 +20,8 @@ APOC_AA_VehOptions =
 
 APOC_AA_SupOptions =
 [
-  ["Food",				    "Land_Sacks_goods_F",		  5000, 	"food"],
-  ["Water",				    "Land_BarrelWater_F",		  5000, 	"water"],
+  // ["Food",				    "Land_Sacks_goods_F",		  5000, 	"food"],
+  // ["Water",				    "Land_BarrelWater_F",		  5000, 	"water"],
   ["Launchers", 			"airdrop_Launchers", 			60000,	"supply"],
   ["Sniper Rifles", 	"airdrop_Snipers", 				50000,	"supply"],
   ["Rifles", 				  "airdrop_Rifles", 				45000,	"supply"],
