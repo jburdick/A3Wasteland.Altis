@@ -129,6 +129,15 @@ switch (true) do
 			_vehicle addMagazineTurret ["300Rnd_20mm_shells", [-1]];
 		};
 	};
+	case ({_class isKindOf _x} count ["B_UAV_02_dynamicLoadout_F", "O_UAV_02_dynamicLoadout_F", "I_UAV_02_dynamicLoadout_F"] > 0):
+	{
+		/*_vehicle pylons=";;";*/
+		_vehicle setPylonLoadOut
+		{
+			[pylons1, "", forced = false, turret path = []],
+			[pylons2, "", forced = false, turret path = []]
+		};
+	};
 };
 
 _weapons = getArray (configFile >> "CfgVehicles" >> _class >> "weapons");

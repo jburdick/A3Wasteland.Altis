@@ -1072,7 +1072,7 @@ helicoptersArray = compileFinal str
 	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 7000, "vehicle"], // Ka-60
 	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"], // AW159
 
-	// ["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 7500, "vehicle"], // CH-54
+	["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 7500, "vehicle"], // CH-54
 	["Mi-290 Taru (Box) [DLC]", "O_Heli_Transport_04_box_F", 8000, "vehicle"],
 	["Mi-290 Taru (Fuel) [DLC]", "O_Heli_Transport_04_fuel_F", 8500, "vehicle"],
 	["Mi-290 Taru (Bench) [DLC]", "O_Heli_Transport_04_bench_F", 9000, "vehicle"],
@@ -1105,7 +1105,7 @@ planesArray = compileFinal str
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 745000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 760000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 760000, "vehicle"],
-	
+
 	["A-149 Gryphon", "I_Plane_Fighter_04_F", 760000, "vehicle"],
 	["To-201 Shikra", "O_Plane_Fighter_02_F", 760000, "vehicle"],
 	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 760000, "vehicle"],
@@ -1119,15 +1119,12 @@ planesArray = compileFinal str
 	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 920000],
 	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 920000],
 
-	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 820000, "vehicle"],
-	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 210000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
-	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 820000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 210000, "vehicle"],
-	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 820000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 210000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
+	["MQ4A Greyhawk UAV", "B_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
+	["K40 Ababil-3 UAV (CSAT)", "O_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
+	["K40 Ababil-3 UAV (AAF)", "I_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
+  ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
 	["UCAV Sentinel", "UAV_05_Base_F", 600000]
-	
+
 ];
 boatsArray = compileFinal str
 [
@@ -1433,7 +1430,7 @@ customPlayerItems = compileFinal str
 	["Jerry Can (Empty)", "jerrycanempty", localize "STR_WL_ShopDescriptions_fuelEmpty", "client\icons\jerrycan.paa", 50, 25],
 	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 15000, 7500],
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
-	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
+	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100]
 ];
 
 call compile preprocessFileLineNumbers "mapConfig\storeOwners.sqf";
