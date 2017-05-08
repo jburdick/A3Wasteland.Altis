@@ -127,7 +127,7 @@ waitUntil
 		};
 	};*/
 //// AI Reinforcement Section  //Apoc ////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
+
 	if (!isNull _leaderTemp) then { _leader = _leaderTemp }; // Update current leader
 
 	if (!isNil "_waitUntilMarkerPos") then { _marker setMarkerPos (call _waitUntilMarkerPos) };
@@ -139,7 +139,7 @@ waitUntil
 	{
 		_failed = false;
 		_complete = true;
-	};*/
+	};
 
 	(_failed || _complete || (!_ignoreAiDeaths && {alive _x} count units _aiGroup == 0))
 };
