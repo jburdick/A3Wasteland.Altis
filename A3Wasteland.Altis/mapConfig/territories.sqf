@@ -12,14 +12,14 @@
 // 4 - Territory category, currently unused. See territory/README.md for details.
 
 [
-	["TERRITORY_00", "Abdera", 5000, "CITY"],
-	["TERRITORY_01", "Oreokastro", 5000, "CITY"],
-	["TERRITORY_02", "Kore Factory", 5000, "CITY"],
-	["TERRITORY_03", "Kalochori", 5000, "CITY"],
-	["TERRITORY_04", "Military Hill", 5000, "CITY"],
-	["TERRITORY_05", "Therisa", 5000, "CITY"],
-	["TERRITORY_06", "Ghost Hotel", 5000, "CITY"],
-	["TERRITORY_07", "Molos", 5000, "CITY"],
-	["TERRITORY_08", "Panagia", 5000, "CITY"],
-	["TERRITORY_09", "Sfaka", 5000, "CITY"]
+	["TERRITORY_0_ABDERA", "Abdera", 5000, "CITY"],
+	["TERRITORY_1_OREOKASTRO", "Oreokastro", 5000, "CITY"],
+	["TERRITORY_2_KOREFACTORY", "Kore Factory", 5000, "CITY"],
+	["TERRITORY_3_KALOCHORI", "Kalochori", 5000, "CITY"],
+	["TERRITORY_4_MILITARYHILL", "Military Hill", 5000, "CITY"],
+	["TERRITORY_5_THERISA", "Therisa", 5000, "CITY"],
+	["TERRITORY_6_GHOSTHOTEL", "Ghost Hotel", 5000, "CITY"],
+	["TERRITORY_7_MOLOS", "Molos", 5000, "CITY"],
+	["TERRITORY_8_PANAGIA", "Panagia", 5000, "CITY"],
+	["TERRITORY_9_SFAKA", "Sfaka", 5000, "CITY"]
 ]
