@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=138;
+	toggles=10;
 	class ItemIDProvider
 	{
 		nextID=2022;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=26;
+		nextID=28;
 	};
 	class Camera
 	{
@@ -5183,7 +5183,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.408,0,12255.492};
-			name="TERRITORY_6_GHOSTHOTEL";
+			name="TERRITORY_5_THERISA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5197,7 +5197,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21875.395,0,21010.576};
-			name="TERRITORY_5_THERISA";
+			name="TERRITORY_6_GHOSTHOTEL";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5318,7 +5318,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.191,0,12257.227};
-			name="FLAG_6_GHOSTHOTEL";
+			name="FLAG_5_THERISA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
@@ -5328,7 +5328,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21878.055,0,21010.166};
-			name="FLAG_5_THERISA";
+			name="FLAG_6_GHOSTHOTEL";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=573;
@@ -5868,7 +5868,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99973;
+			angle=226.99969;
 			id=1960;
 			atlOffset=-17.910013;
 		};
