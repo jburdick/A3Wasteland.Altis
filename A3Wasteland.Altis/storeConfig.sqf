@@ -1418,6 +1418,36 @@ colorsArray = compileFinal str
 		[
 			["Green Hex (Varsuk)", ["GreenHex"]]
 		]
+	],
+	[ // F/A-181 Black Wasp
+		"Plane_Fighter_01_Base_F",
+		[
+			//["Dark Grey (F/A-181 Black Wasp)", ["DarkGrey"]], // default
+			["Dark Grey Camo (F/A-181 Black Wasp)", ["DarkGreyCamo"]]
+		]
+	],
+	[ // UCAV Sentinel
+		"UAV_05_Base_F",
+		[
+			//["Dark Grey (UCAV Sentinel)", ["DarkGrey"]], // default
+			["Dark Grey Camo (UCAV Sentinel)", ["DarkGreyCamo"]]
+		]
+	],
+	[ //  To-201 Shikra
+		"Plane_Fighter_02_Base_F",
+		[
+			//["Arid Hex Camo (To-201 Shikra)", ["CamoAridHex"]], // default
+			["Grey Hex Camo (To-201 Shikra)", ["CamoGreyHex"]],
+			["Blue (To-201 Shikra)", ["CamoBlue"]]
+		]
+	],
+	[ // A-149 Gryphon
+		"Plane_Fighter_04_Base_F",
+		[
+			//["Digital Green Camo (A-149 Gryphon)", ["DigitalCamoGreen"]], // default
+			["Digital Grey Camo (A-149 Gryphon)", ["DigitalCamoGrey"]],
+			["Grey (A-149 Gryphon)", ["CamoGrey"]]
+		]
 	]
 ];
 
