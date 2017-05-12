@@ -72,7 +72,8 @@ if (_texture isEqualType "") then
 			case (_veh isKindOf "Heli_Attack_02_base_F"):         { [0,1] };
 
 			case (_veh isKindOf "VTOL_Base_F"):                   { [0,1,2,3] };
-			case (_veh isKindOf "Plane_Base_F"):                  { [0,1] };
+			case (_veh isKindOf "Plane_Base_F"):                  { [0,1,2,3] };
+			case (_veh isKindOf "UAV_05_Base_F"):                  { [0,1,2] };
 
 			case (_veh isKindOf "UGV_01_rcws_base_F"):            { [0,2] };
 			case (_veh isKindOf "UAV_03_base_F"):                 { [0,1] };
