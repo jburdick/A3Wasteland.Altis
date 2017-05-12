@@ -1125,8 +1125,8 @@ planesArray = compileFinal str
 	["MQ4A Greyhawk UAV", "B_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
 	["K40 Ababil-3 UAV (CSAT)", "O_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
 	["K40 Ababil-3 UAV (AAF)", "I_UAV_02_dynamicLoadout_F", 820000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
-	["UCAV Sentinel", "UAV_05_Base_F", 600000]
+	["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
+	["UCAV Sentinel", "B_UAV_05_F", 600000]
 
 ];
 boatsArray = compileFinal str
