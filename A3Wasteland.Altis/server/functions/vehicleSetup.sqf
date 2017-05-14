@@ -77,15 +77,15 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
 };
 
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _vehicle];
 };
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _vehicle];
 };
-if (_vehicle getVariable ["A3W_AmmoTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
+if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
 {
 	[_vehicle] remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _vehicle];
 };
@@ -127,15 +127,6 @@ switch (true) do
 		if (_brandNew) then
 		{
 			_vehicle addMagazineTurret ["300Rnd_20mm_shells", [-1]];
-		};
-	};
-	case ({_class isKindOf _x} count ["B_UAV_02_dynamicLoadout_F", "O_UAV_02_dynamicLoadout_F", "I_UAV_02_dynamicLoadout_F"] > 0):
-	{
-		/*_vehicle pylons=";;";*/
-		_vehicle setPylonLoadOut
-		{
-			[pylons1, "", forced = false, turret path = []],
-			[pylons2, "", forced = false, turret path = []]
 		};
 	};
 };
