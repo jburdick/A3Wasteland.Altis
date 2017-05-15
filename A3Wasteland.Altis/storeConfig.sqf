@@ -204,7 +204,10 @@ staticGunsArray = compileFinal str
 	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 6000],
 	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 25000],
 	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 25000],
-	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 25000]
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 25000],
+	["Praetorian 1C AAA", "B_AAA_System_01_F", 110000],
+	["Mk-49 Spartan SAM", "B_SAM_System_01_F", 130000],
+	["Mk-21 Centurion SAM", "B_SAM_System_02_F", 130000]
 ];
 
 throwputArray = compileFinal str
@@ -1102,9 +1105,15 @@ planesArray = compileFinal str
 	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 1250, "vehicle", "SKIPSAVE"],
 
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 400000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 745000, "vehicle"],
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 700000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 760000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 760000, "vehicle"],
+	
+	["A-149 Gryphon", "I_Plane_Fighter_04_F", 710000, "vehicle"],
+	["To-201 Shikra", "O_Plane_Fighter_02_F", 780000, "vehicle"],
+	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 760000, "vehicle"],
+	["F/A-181 Black Wasp II", "B_Plane_Fighter_01_F", 780000, "vehicle"],
+	["F/A-181 Black Wasp II (Stealth)", "B_Plane_Fighter_01_Stealth_F", 760000, "vehicle"],
 
 	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000],
 	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000],
@@ -1119,8 +1128,9 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 210000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 820000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 210000, "vehicle"],
-
-	["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000]
+    ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
+	["UCAV Sentinel", "B_UAV_05_F", 600000]
+	
 ];
 boatsArray = compileFinal str
 [
@@ -1408,6 +1418,36 @@ colorsArray = compileFinal str
 		[
 			["Green Hex (Varsuk)", ["GreenHex"]]
 		]
+	],
+	[ // F/A-181 Black Wasp
+		"Plane_Fighter_01_Base_F",
+		[
+			//["Dark Grey (F/A-181 Black Wasp)", ["DarkGrey"]], // default
+			["Dark Grey Camo (F/A-181 Black Wasp)", ["DarkGreyCamo"]]
+		]
+	],
+	[ // UCAV Sentinel
+		"UAV_05_Base_F",
+		[
+			//["Dark Grey (UCAV Sentinel)", ["DarkGrey"]], // default
+			["Dark Grey Camo (UCAV Sentinel)", ["DarkGreyCamo"]]
+		]
+	],
+	[ //  To-201 Shikra
+		"Plane_Fighter_02_Base_F",
+		[
+			//["Arid Hex Camo (To-201 Shikra)", ["CamoAridHex"]], // default
+			["Grey Hex Camo (To-201 Shikra)", ["CamoGreyHex"]],
+			["Blue (To-201 Shikra)", ["CamoBlue"]]
+		]
+	],
+	[ // A-149 Gryphon
+		"Plane_Fighter_04_Base_F",
+		[
+			//["Digital Green Camo (A-149 Gryphon)", ["DigitalCamoGreen"]], // default
+			["Digital Grey Camo (A-149 Gryphon)", ["DigitalCamoGrey"]],
+			["Grey (A-149 Gryphon)", ["CamoGrey"]]
+		]
 	]
 ];
 
@@ -1424,6 +1464,7 @@ customPlayerItems = compileFinal str
 	// ["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500],
 	["Jerry Can (Full)", "jerrycanfull", localize "STR_WL_ShopDescriptions_fuelFull", "client\icons\jerrycan.paa", 150, 75],
 	["Jerry Can (Empty)", "jerrycanempty", localize "STR_WL_ShopDescriptions_fuelEmpty", "client\icons\jerrycan.paa", 50, 25],
+	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 15000, 15000],
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
 	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
 	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 15000, 7500]
