@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=2022;
+		nextID=2030;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=28;
+		nextID=31;
 	};
 	class Camera
 	{
-		pos[]={20557.732,264.53687,8689.5615};
-		dir[]={-0.87647223,-0.3978481,0.27113739};
-		up[]={-0.38007805,0.91745001,0.11757746};
-		aside[]={0.29553327,6.8044756e-008,0.95533329};
+		pos[]={4337.5156,310.05853,20073.029};
+		dir[]={0.7900939,-0.47800899,-0.38387388};
+		up[]={0.42996156,0.87833792,-0.20891348};
+		aside[]={-0.4370586,1.6861304e-007,-0.89948881};
 	};
 };
 binarizationWanted=0;
@@ -33,13 +33,14 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_Ind_Shed",
-	"A3_Structures_F_Ind_Cargo"
+	"A3_Structures_F_Ind_Cargo",
+	"A3_Boat_F_Jets_Carrier_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -65,6 +66,13 @@ class AddonsMetaData
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Boat_F_Jets";
+			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -98,7 +106,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=298;
+		items=306;
 		class Item0
 		{
 			dataType="Group";
@@ -5868,7 +5876,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99969;
+			angle=226.99965;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6470,6 +6478,164 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item298
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2335.6118,0,16683.242};
+				angles[]={0,0.22543722,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2022;
+			type="Land_Carrier_01_base_F";
+			atlOffset=150.95235;
+		};
+		class Item299
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2315.9805,24.88763,16760.957};
+				angles[]={0,4.9584646,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+			};
+			id=2023;
+			type="Land_Cargo40_blue_F";
+			atlOffset=0.041017532;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item300
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={19439.068,0,22487.502};
+				angles[]={0,3.2994452,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2024;
+			type="Land_Carrier_01_base_F";
+			atlOffset=179.05243;
+		};
+		class Item301
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={19463.902,24.88763,22411.289};
+				angles[]={0,1.7492871,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+			};
+			id=2025;
+			type="Land_Cargo40_blue_F";
+			atlOffset=0.042139053;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item302
+		{
+			dataType="Marker";
+			position[]={19463.637,0,22411.68};
+			name="marker_315";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=2026;
+			atlOffset=177.0817;
+		};
+		class Item303
+		{
+			dataType="Marker";
+			position[]={2315.3433,0,16761.764};
+			name="marker_316";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=2027;
+			atlOffset=147.07184;
+		};
+		class Item304
+		{
+			dataType="Marker";
+			position[]={2336.252,0,16683.492};
+			name="marker_317";
+			text="CVN-83-USS Freedom";
+			type="hd_dot";
+			colorName="ColorKhaki";
+			id=2028;
+			atlOffset=150.9458;
+		};
+		class Item305
+		{
+			dataType="Marker";
+			position[]={19438.879,0,22487.949};
+			name="marker_318";
+			text="CVN-83-USS Freedom";
+			type="hd_dot";
+			colorName="ColorKhaki";
+			id=2029;
+			atlOffset=179.06097;
 		};
 	};
 };
