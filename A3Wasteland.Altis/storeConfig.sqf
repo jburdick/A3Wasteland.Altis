@@ -1102,7 +1102,7 @@ helicoptersArray = compileFinal str
 planesArray = compileFinal str
 [
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle", "SKIPSAVE"],
-	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 1250, "vehicle", "SKIPSAVE"],
+	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 3000, "vehicle", "SKIPSAVE"],
 
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 400000, "vehicle"],
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 700000, "vehicle"],
@@ -1115,12 +1115,12 @@ planesArray = compileFinal str
 	["F/A-181 Black Wasp II", "B_Plane_Fighter_01_F", 780000, "vehicle"],
 	["F/A-181 Black Wasp II (Stealth)", "B_Plane_Fighter_01_Stealth_F", 760000, "vehicle"],
 
-	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000],
-	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000],
-	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 800000],
+	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
+	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000, "vehicle"],
+	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 800000, "vehicle"],
 
-	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 920000],
-	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 920000],
+	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 920000, "vehicle"],
+	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 920000, "vehicle"],
 
 	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 820000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 210000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
@@ -1128,8 +1128,8 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 210000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 820000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 210000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
-	["UCAV Sentinel", "B_UAV_05_F", 600000]
+        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000, "vehicle"],
+	["UCAV Sentinel", "B_UAV_05_F", 600000, "vehicle"]
 	
 ];
 boatsArray = compileFinal str
