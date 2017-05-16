@@ -165,13 +165,22 @@ switch (true) do
 if (_brandNew) then
 {
 	{
-		_path = _x;
+		_x params ["_mag", "_path"];
 
+		if (_mag select [0,5] != "Pylon" && (toLower getText (configFile >> "CfgMagazines" >> _mag >> "ammo")) find "_minigun_" != -1) then
 		{
-			if ((toLower getText (configFile >> "CfgMagazines" >> _x >> "ammo")) find "_minigun_" != -1) then
-			{
-				_vehicle addMagazineTurret [_x, _path];
-			};
-		} forEach (_vehicle magazinesTurret _path);
-	} forEach ([[-1]] + allTurrets _vehicle);
+			_vehicle addMagazineTurret [_mag, _path];
+		};
+	} forEach magazinesAllTurrets _vehicle;
+
+	private "_magCfg";
+
+	{
+		_magCfg = configFile >> "CfgMagazines" >> _x;
+
+		if ((toLower getText (_magCfg >> "ammo")) find "_minigun_" != -1) then
+		{
+			_vehicle setAmmoOnPylon [_forEachIndex + 1, 2 * getNumber (_magCfg >> "count")];
+		};
+	} forEach getPylonMagazines _vehicle;
 };

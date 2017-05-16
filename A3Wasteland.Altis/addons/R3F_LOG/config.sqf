@@ -412,7 +412,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	//["Static_Designator_01_base_F", 2],
 	//["Static_Designator_02_base_F", 2],
 	["Land_Canal_Wall_10m_F", 10], // Base door
-	["Land_InfoStand_V2_F", 3], // Base door key	
+	["Land_InfoStand_V2_F", 3], // Base door key
 	["Land_Device_assembled_F", 10], // Base Locker
 	//["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 10],
@@ -655,6 +655,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_HBarrier_01_wall_4_green_F",
 	"Land_HBarrier_01_wall_6_green_F",
 	"Land_HBarrier_01_wall_corner_green_F",
-	"Land_HBarrier_01_big_tower_green_F"
-	
+	"Land_HBarrier_01_big_tower_green_F",
+	"Land_HBarrierWall_corridor_F"
+
 ];

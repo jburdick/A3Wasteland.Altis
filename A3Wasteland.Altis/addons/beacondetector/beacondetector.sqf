@@ -9,7 +9,7 @@ if (BeaconScanInProgress) exitWith
 	["You are already performing another device scan.", 5] call mf_notify_client;
 };
 
-_beaconsnear = nearestObjects [player, ["Land_Sleeping_bag_folded_F","Land_Tentdome_F"], 100];
+_beaconsnear = nearestObjects [player, ["Land_PlasticCase_01_small_F"], 100];
 
 if ((count _beaconsnear) > 0 ) then
 {
@@ -21,7 +21,7 @@ if ((count _beaconsnear) > 0 ) then
 
 	while {_distance < 100} do
 	{
-		_beaconsnear = nearestObjects [player, ["Land_Sleeping_bag_folded_F","Land_Tentdome_F"], 100];
+		_beaconsnear = nearestObjects [player, ["Land_PlasticCase_01_small_F"], 100];
 
 		if (Beaconscanstop) exitwith
 		{
