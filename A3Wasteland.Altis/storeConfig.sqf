@@ -1056,8 +1056,8 @@ tanksArray = compileFinal str
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 55000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 75000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 100000, "vehicle"],
-	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 115000, "vehicle"],
-	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 115000, "vehicle"],
+	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 110000, "vehicle"],
+	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 110000, "vehicle"],
 	["M2A1 Slammer", "B_MBT_01_cannon_F", 125000, "vehicle"],
 	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 130000, "vehicle"], // Commander gun variant
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 140000, "vehicle"],
@@ -1124,9 +1124,9 @@ planesArray = compileFinal str
 
 	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 700000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 250000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
-	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 720000, "vehicle"],
+	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 700000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 250000, "vehicle"],
-	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 720000, "vehicle"],
+	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 700000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 250000, "vehicle"],
         ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
 	["UCAV Sentinel", "B_UAV_05_F", 450000, "vehicle"]
