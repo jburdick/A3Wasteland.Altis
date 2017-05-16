@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=2022;
+		nextID=2030;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=22;
+		nextID=31;
 	};
 	class Camera
 	{
-		pos[]={20536.539,59.460442,8854.4814};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={4337.5156,310.05853,20073.029};
+		dir[]={0.7900939,-0.47800899,-0.38387388};
+		up[]={0.42996156,0.87833792,-0.20891348};
+		aside[]={-0.4370586,1.6861304e-007,-0.89948881};
 	};
 };
 binarizationWanted=0;
@@ -33,13 +33,14 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_Ind_Shed",
-	"A3_Structures_F_Ind_Cargo"
+	"A3_Structures_F_Ind_Cargo",
+	"A3_Boat_F_Jets_Carrier_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -68,6 +69,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item4
+		{
+			className="A3_Boat_F_Jets";
+			name="Arma 3 Jets - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=3783014;
@@ -80,7 +88,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="A3Wasteland Altis v1.3b";
+		briefingName="A3Wasteland Altis v1.3c";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=28800;
@@ -98,7 +106,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=300;
+		items=306;
 		class Item0
 		{
 			dataType="Group";
@@ -5126,7 +5134,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9432.9404,0,20260.697};
-			name="TERRITORY_1_ABDERA";
+			name="TERRITORY_0_ABDERA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5140,7 +5148,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4577.271,0,21410.451};
-			name="TERRITORY_2_OREOKASTRO";
+			name="TERRITORY_1_OREOKASTRO";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5154,7 +5162,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6179.7139,0,16243.193};
-			name="TERRITORY_3_KOREFACTORY";
+			name="TERRITORY_2_KOREFACTORY";
 			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5169,7 +5177,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21384.625,0,16361.43};
-			name="TERRITORY_4_KALOCHORI";
+			name="TERRITORY_3_KALOCHORI";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5183,7 +5191,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.408,0,12255.492};
-			name="TERRITORY_7_THERISA";
+			name="TERRITORY_5_THERISA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5211,7 +5219,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={27025.637,0,23211.48};
-			name="TERRITORY_8_MOLOS";
+			name="TERRITORY_7_MOLOS";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5225,7 +5233,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={12851.905,0,16700.438};
-			name="TERRITORY_5_MILHILL";
+			name="TERRITORY_4_MILITARYHILL";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5239,7 +5247,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9243.2852,0,8057.0962};
-			name="TERRITORY_10_SFAKA";
+			name="TERRITORY_9_SFAKA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5252,8 +5260,8 @@ class Mission
 		class Item239
 		{
 			dataType="Marker";
-			position[]={20529.043,34.126812,8871.2021};
-			name="TERRITORY_9_PANAGIA";
+			position[]={20529.043,0,8871.2021};
+			name="TERRITORY_8_PANAGIA";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorYellow";
@@ -5261,13 +5269,13 @@ class Mission
 			a=150;
 			b=150;
 			id=566;
-			atlOffset=3.8146973e-006;
+			atlOffset=-34.126808;
 		};
 		class Item240
 		{
 			dataType="Marker";
 			position[]={9432.3232,0,20260.68};
-			name="FLAG_1_ABDERA";
+			name="FLAG_0_ABDERA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=567;
@@ -5277,7 +5285,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4576.1602,0,21412.938};
-			name="FLAG_2_OREOKASTRO";
+			name="FLAG_1_OREOKASTRO";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=568;
@@ -5287,7 +5295,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6179.5142,0,16246.824};
-			name="FLAG_3_KOREFACTORY";
+			name="FLAG_2_KOREFACTORY";
 			type="mil_objective";
 			colorName="ColorRed";
 			angle=0.76800001;
@@ -5298,7 +5306,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={21386.52,0,16353.854};
-			name="FLAG_4_KALOCHORI";
+			name="FLAG_3_KALOCHORI";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=570;
@@ -5308,7 +5316,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={12850.942,0,16699.529};
-			name="FLAG_5_MILHILL";
+			name="FLAG_4_MILITARYHILL";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=571;
@@ -5318,7 +5326,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10677.191,0,12257.227};
-			name="FLAG_7_THERISA";
+			name="FLAG_5_THERISA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=572;
@@ -5338,7 +5346,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={27033.213,0,23213.375};
-			name="FLAG_8_MOLOS";
+			name="FLAG_7_MOLOS";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=574;
@@ -5348,7 +5356,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9242.7158,0,8056.7749};
-			name="FLAG_10_SFAKA";
+			name="FLAG_9_SFAKA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=575;
@@ -5358,7 +5366,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={20529.043,0,8878.7803};
-			name="FLAG_9_PANAGIA";
+			name="FLAG_8_PANAGIA";
 			type="mil_objective";
 			colorName="ColorRed";
 			id=576;
@@ -5782,7 +5790,7 @@ class Mission
 		class Item263
 		{
 			dataType="Marker";
-			position[]={9179.8418,2.1819331e+013,21676.598};
+			position[]={9179.4004,2.1819331e+013,21678.535};
 			name="marker_307";
 			text="Service";
 			type="hd_dot";
@@ -5793,29 +5801,29 @@ class Mission
 		class Item264
 		{
 			dataType="Marker";
-			position[]={3676.301,-7.9777363e-033,13412};
+			position[]={3680.8279,0,13389.525};
 			name="marker_308";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1953;
-			atlOffset=-7.5892096;
+			atlOffset=-7.7861032;
 		};
 		class Item265
 		{
 			dataType="Marker";
-			position[]={11856.836,-8.743602e-022,9435.5547};
+			position[]={11853.452,0,9437.0488};
 			name="marker_310";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1955;
-			atlOffset=-17.038637;
+			atlOffset=-17.242718;
 		};
 		class Item266
 		{
 			dataType="Marker";
-			position[]={20888.588,1.7525276e+029,7294.438};
+			position[]={20889.988,1.7525276e+029,7292.6362};
 			name="marker_311";
 			text="Service";
 			type="hd_dot";
@@ -5826,24 +5834,24 @@ class Mission
 		class Item267
 		{
 			dataType="Marker";
-			position[]={23003.123,130273.84,18887.756};
+			position[]={22994.072,130273.84,18899.025};
 			name="marker_312";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1957;
-			atlOffset=130269.77;
+			atlOffset=130267.04;
 		};
 		class Item268
 		{
 			dataType="Marker";
-			position[]={26796.936,-3.4462802e-032,24665.891};
+			position[]={26790.346,0,24671.752};
 			name="marker_313";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1958;
-			atlOffset=-20.607954;
+			atlOffset=-20.332218;
 		};
 		class Item269
 		{
@@ -5868,7 +5876,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99979;
+			angle=226.99965;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -5984,18 +5992,18 @@ class Mission
 		class Item281
 		{
 			dataType="Marker";
-			position[]={9528,119.80474,15114.777};
+			position[]={9523.9844,119.80469,15115.495};
 			name="marker_314";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
 			id=1972;
-			atlOffset=-7.480217;
+			atlOffset=-7.5526657;
 		};
 		class Item282
 		{
 			dataType="Marker";
-			position[]={5926.811,1.790126e+030,20128.957};
+			position[]={5906.4307,1.790126e+030,20159.525};
 			name="marker_309";
 			text="Service";
 			type="hd_dot";
@@ -6273,7 +6281,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={26790.418,21.663437,24671.729};
-				angles[]={0.053282689,2.3013203,6.2805109};
+				angles[]={0,5.4137206,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6313,7 +6321,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9179.3975,15.671347,21678.486};
-				angles[]={0.0053265258,2.617852,6.2805333};
+				angles[]={0,5.6714277,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6473,29 +6481,161 @@ class Mission
 		};
 		class Item298
 		{
-			dataType="Marker";
-			position[]={15399.707,0,15909.06};
-			name="TERRITORY_11_Docks";
-			markerType="RECTANGLE";
-			type="ellipse";
-			colorName="ColorYellow";
-			fillName="DiagGrid";
-			a=60;
-			b=160;
-			angle=267.55899;
-			id=2020;
-			atlOffset=-4.3389163;
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2335.6118,0,16683.242};
+				angles[]={0,0.22543722,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2022;
+			type="Land_Carrier_01_base_F";
+			atlOffset=150.95235;
 		};
 		class Item299
 		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2315.9805,24.88763,16760.957};
+				angles[]={0,4.9584646,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+			};
+			id=2023;
+			type="Land_Cargo40_blue_F";
+			atlOffset=0.041017532;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item300
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={19439.068,0,22487.502};
+				angles[]={0,3.2994452,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2024;
+			type="Land_Carrier_01_base_F";
+			atlOffset=179.05243;
+		};
+		class Item301
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={19463.902,24.88763,22411.289};
+				angles[]={0,1.7492871,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call A3W_fnc_setupResupplyPoint";
+			};
+			id=2025;
+			type="Land_Cargo40_blue_F";
+			atlOffset=0.042139053;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item302
+		{
 			dataType="Marker";
-			position[]={15399.508,0,15912.69};
-			name="FLAG_10_Docks";
-			type="mil_objective";
-			colorName="ColorRed";
-			angle=0.76800001;
-			id=2021;
-			atlOffset=-4.4190893;
+			position[]={19463.637,0,22411.68};
+			name="marker_315";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=2026;
+			atlOffset=177.0817;
+		};
+		class Item303
+		{
+			dataType="Marker";
+			position[]={2315.3433,0,16761.764};
+			name="marker_316";
+			text="Service";
+			type="hd_dot";
+			colorName="ColorGreen";
+			id=2027;
+			atlOffset=147.07184;
+		};
+		class Item304
+		{
+			dataType="Marker";
+			position[]={2336.252,0,16683.492};
+			name="marker_317";
+			text="CVN-83-USS Freedom";
+			type="hd_dot";
+			colorName="ColorKhaki";
+			id=2028;
+			atlOffset=150.9458;
+		};
+		class Item305
+		{
+			dataType="Marker";
+			position[]={19438.879,0,22487.949};
+			name="marker_318";
+			text="CVN-83-USS Freedom";
+			type="hd_dot";
+			colorName="ColorKhaki";
+			id=2029;
+			atlOffset=179.06097;
 		};
 	};
 };

@@ -43,11 +43,11 @@ switch (true) do
 	};
 };
 
-private _AmmoTruck = _veh getVariable ["A3W_AmmoTruck", false];
+private _AmmoTruck = _veh getVariable ["A3W_resupplyPoint", false];
 
 if (_AmmoTruck) then
 {
-	_variables pushBack ["A3W_AmmoTruck", true];
+	_variables pushBack ["A3W_resupplyPoint", true];
 };
 
 private _isUav = (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0);
@@ -177,7 +177,7 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
   ["password", ""]
 ];
 
-_owner = _veh getVariable ["ownerUID", ""]; 
+_owner = _veh getVariable ["ownerUID", ""];
 
 _props =
 [

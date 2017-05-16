@@ -202,12 +202,12 @@ staticGunsArray = compileFinal str
 	["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 6000],
 	["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 6000],
 	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 6000],
+	// ["Praetorian 1C AAA", "B_AAA_System_01_F", 110000],
+	// ["Mk-49 Spartan SAM", "B_SAM_System_01_F", 130000],
+	// ["Mk-21 Centurion SAM", "B_SAM_System_02_F", 130000],
 	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 25000],
 	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 25000],
-	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 25000],
-	["Praetorian 1C AAA", "B_AAA_System_01_F", 25000],
-	["Mk-49 Spartan SAM", "B_SAM_System_01_F", 25000],
-	["Mk-21 Centurion SAM", "B_SAM_System_02_F", 25000]
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 25000]
 ];
 
 throwputArray = compileFinal str
@@ -1096,40 +1096,40 @@ helicoptersArray = compileFinal str
 	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 500000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_F", 600000, "vehicle"], // Mi-28 with gunner
 
-	["MQ-12 Falcon", "B_T_UAV_03_F", 600000]
+	["MQ-12 Falcon", "B_T_UAV_03_F", 575000, "vehicle"]
 ];
 
 planesArray = compileFinal str
 [
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle", "SKIPSAVE"],
-	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 1250, "vehicle", "SKIPSAVE"],
+	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 3000, "vehicle", "SKIPSAVE"],
 
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 400000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 745000, "vehicle"],
-	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 760000, "vehicle"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 760000, "vehicle"],
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 650000, "vehicle"],
+	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 750000, "vehicle"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 750000, "vehicle"],
 	
-	["A-149 Gryphon", "I_Plane_Fighter_04_F", 760000, "vehicle"],
-	["To-201 Shikra", "O_Plane_Fighter_02_F", 760000, "vehicle"],
-	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 760000, "vehicle"],
-	["F/A-181 Black Wasp II", "B_Plane_Fighter_01_F", 760000, "vehicle"],
-	["F/A-181 Black Wasp II (Stealth)", "B_Plane_Fighter_01_Stealth_F", 760000, "vehicle"],
+	["A-149 Gryphon", "I_Plane_Fighter_04_F", 690000, "vehicle"],
+	["To-201 Shikra", "O_Plane_Fighter_02_F", 775000, "vehicle"],
+	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 750000, "vehicle"],
+	["F/A-181 Black Wasp II", "B_Plane_Fighter_01_F", 775000, "vehicle"],
+	["F/A-181 Black Wasp II (Stealth)", "B_Plane_Fighter_01_Stealth_F", 750000, "vehicle"],
 
-	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000],
-	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000],
-	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 800000],
+	["V-44 X Blackfish (Infrantry Transport)", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
+	["V-44 X Blackfish (Vehicle Transport)", "B_T_VTOL_01_vehicle_F", 30000, "vehicle"],
+	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 800000, "vehicle"],
 
-	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 920000],
-	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 920000],
+	["Y-32 Xi'an (Infrantry Transport)", "O_T_VTOL_02_infantry_F", 800000, "vehicle"],
+	["Y-32 Xi'an (Vehicle Transport)", "O_T_VTOL_02_vehicle_F", 800000, "vehicle"],
 
-	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 820000, "vehicle"],
+	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 700000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 210000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
-	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 820000, "vehicle"],
+	["K40 Ababil-3 Missile UAV (CSAT)", "O_UAV_02_F", 720000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 210000, "vehicle"],
-	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 820000, "vehicle"],
+	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 720000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 210000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 600000],
-	["UCAV Sentinel", "UAV_05_Base_F", 600000]
+        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
+	["UCAV Sentinel", "B_UAV_05_F", 450000, "vehicle"]
 	
 ];
 boatsArray = compileFinal str

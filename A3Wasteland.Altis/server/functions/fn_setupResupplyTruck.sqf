@@ -6,7 +6,6 @@
 
 params [["_veh",objNull,[objNull]], ["_static",false,[false]]];
 
-if (_veh getVariable ["A3W_resupplyTruckSetup", false]) exitWith {};
 
 if (hasInterface) then
 {

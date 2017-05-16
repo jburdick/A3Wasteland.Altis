@@ -23,13 +23,13 @@ _flagGroup = format ["Flag_%1",current_territorygrp_rnd];
 	//markername starts with territory but not with current territory grp
 	if ((["TERRITORY_", _marker] call fn_startsWith) && !([_territoryGroup, _marker] call fn_startsWith)) then
 	{
-			deleteMarkerLocal _marker;	
+			deleteMarkerLocal _marker;
 	};
 	//markername starts with Flag_ but not with current random territory grp
 	if ((["Flag_", _marker] call fn_startsWith) && !([_flagGroup, _marker] call fn_startsWith)) then
 	{
-			deleteMarkerLocal _marker;	
+			deleteMarkerLocal _marker;
 	};
-	
-	
+
+
 } forEach allMapMarkers;

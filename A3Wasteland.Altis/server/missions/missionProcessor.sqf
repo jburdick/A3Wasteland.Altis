@@ -71,7 +71,7 @@ _reinforceChanceRoll = floor (random 99); //When processor gets called for a mis
 if (isNil "_minReinforceGroups") then { _minReinforceGroups = 1};
 if (isNil "_maxReinforceGroups") then { _maxReinforceGroups = 1};
 if (isNil "_reinforceChance") then { _reinforceChance = 0};
-if (_minReinforceGroups > _maxReinforceGroups) then {_maxReinforceGroups = _minReinforceGroups};//Prevents errors later on if a typo is in mission config 
+if (_minReinforceGroups > _maxReinforceGroups) then {_maxReinforceGroups = _minReinforceGroups};//Prevents errors later on if a typo is in mission config
 _reinforcementsToCall = 0; //initialize variable
 _reinforcementsToCall = ceil (random _maxReinforceGroups); //Find random number of reinforcements to be sent, up to max
 if (_minReinforceGroups > _reinforcementsToCall) then {_reinforcementsToCall = _minReinforceGroups}; //Make sure we call for at least the minimum number of groups
@@ -109,9 +109,9 @@ waitUntil
 	_oldAiCount = _newAiCount;
 
 //// AI Reinforcement Section  //Apoc ////////////////////////////////////////////////////////////////////////////////////////////////////
-	if (((_newAiCount < _startAiCount/2) && (!_reinforcementsCalled)) && !(MISSION_PROC_TYPE_NAME == "Bounty")) then
+	/*if (((_newAiCount < _startAiCount/2) && (!_reinforcementsCalled)) && !(MISSION_PROC_TYPE_NAME == "Bounty")) then
 	{
-		if (_reinforceChance > _reinforceChanceRoll) then 
+		if (_reinforceChance > _reinforceChanceRoll) then
 		{
 			for "_i" from 1 to _reinforcementsToCall step 1 do{
 				nul = [_marker,4,true,false,1500,"random",true,200,150,8,0.5,50,true,false,false,true,_marker,false,"default",_aigroup,nil,1,false,200] execVM "addons\AI_Spawn\heliParadrop.sqf";
@@ -119,13 +119,13 @@ waitUntil
 				_reinforcementsCalled = True;
 				sleep 30;
 			};
-			if ((floor random(100))>85) then 
+			if ((floor random(100))>85) then
 			{
 				_aiGroup2 = [_marker] execVM "server\missions\factoryMethods\createReinforceAttackHelicopter.sqf";
 				diag_log format ["WASTELAND SERVER - %1 Mission%2 Attack Helo Called: %3.  %5 of %4 AI remaining", MISSION_PROC_TYPE_NAME, _controllerSuffix, _missionType, _startAiCount, _newAiCount];
 			};
 		};
-	};
+	};*/
 //// AI Reinforcement Section  //Apoc ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	if (!isNull _leaderTemp) then { _leader = _leaderTemp }; // Update current leader
@@ -149,12 +149,12 @@ if (_failed) then
 	// Mission failed
 
 	{ moveOut _x; deleteVehicle _x } forEach units _aiGroup;
-	
+
 	if (count units _aiGroup2 > 0) then
 	{
 		{ moveOut _x; deleteVehicle _x } forEach units _aiGroup2; //This group only exists if attack heli reinforcement is called upon
 	};
-	
+
 	if (!isNil "_failedExec") then { call _failedExec };
 
 	if (!isNil "_vehicle" && {typeName _vehicle == "OBJECT"}) then
@@ -237,7 +237,7 @@ else
 	call missionHint;
 
 	diag_log format ["WASTELAND SERVER - %1 Mission%2 complete: %3", MISSION_PROC_TYPE_NAME, _controllerSuffix, _missionType];
-	
+
 	if (count units _aiGroup2 > 0) then
 	{
 		sleep 60; //delay to give heli a chance to track down the victors
