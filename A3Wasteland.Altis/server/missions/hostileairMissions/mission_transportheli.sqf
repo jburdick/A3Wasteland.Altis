@@ -5,7 +5,7 @@
 //	@file Author: JoSchaap, AgentRev
 
 if (!isServer) exitwith {};
-#include "mainMissionDefines.sqf"
+#include "hostileairMissionDefines.sqf";
 
 private ["_transportChoicesUnarmed", "_transportChoicesArmed", "_supportChoices", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint",
 	"_vehicleName", "_vehicleName2", "_vehicleName3", "_numWaypoints", "_box1", "_box2", "_box3"];
@@ -178,4 +178,4 @@ _successExec =
 	_successHintMessage = "The helicopter escort has been taken down! Ammo crates have fallen near the wreck.";
 };
 
-_this call mainMissionProcessor;
+_this call hostileairMissionProcessor;
