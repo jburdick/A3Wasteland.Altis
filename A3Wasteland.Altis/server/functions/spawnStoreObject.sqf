@@ -42,11 +42,12 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 		if (!isNil "_objectsArray") then
 		{
-			_results = _objectsArray select {_x select [1,999] isEqualTo _itemEntrySent};
+			_results = (call _objectsArray) select {_x select [1,999] isEqualTo _itemEntrySent};
 
 			if (count _results > 0) then
 			{
 				_itemEntry = _results select 0;
+				_marker = _marker + "_objSpawn";
 			};
 		};
 	};
@@ -99,7 +100,6 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				_marker = _marker + "_planeSpawn";
 			};
 		};
-
 	};
 
 	if (!isNil "_itemEntry" && markerShape _marker != "") then
@@ -119,13 +119,15 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 		if (_player getVariable ["cmoney", 0] >= _itemPrice) then
 		{
 			private _markerPos = markerPos _marker;
+			private _seaSpawn = (_marker find "_seaSpawn" != -1);
 			private _waterNonBoat = false;
+			private _canFloat = (round getNumber (configFile >> "CfgVehicles" >> _class >> "canFloat") > 0);
 
 			// non-boat spawn over water (e.g. aircraft carrier)
-			if (!isNull _storeNPC && surfaceIsWater getPosASL _storeNPC && _marker find "_seaSpawn" == -1) then
+			if (!isNull _storeNPC && surfaceIsWater getPosASL _storeNPC && !_seaSpawn) then
 			{
 				_markerPos set [2, (getPosASL _storeNPC) select 2];
-				_safePos = ASLtoATL _markerPos;
+				_safePos = [ASLtoATL _markerPos, _markerPos] select _canFloat;
 				_waterNonBoat = true;
 			}
 			else // normal spawn
@@ -188,7 +190,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			if (_object isKindOf "AllVehicles" && !(_object isKindOf "StaticWeapon")) then
 			{
-				if (!_waterNonBoat) then
+				if (!_waterNonBoat && !_seaSpawn) then
 				{
 					_object setPosATL [_safePos select 0, _safePos select 1, 0.05];
 				};
@@ -212,26 +214,6 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_object setVariable ["allowDamage", _isDamageable, true];
 
 			clearBackpackCargoGlobal _object;
-
-			//Setup Service Objects
-			switch (true) do
-			{
-				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F", "B_Slingload_01_Ammo_F"] > 0):
-				{
-					_object remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _object];
-					_object setAmmoCargo 0;
-				};
-				case ({_object isKindOf _x} count ["B_Slingload_01_Fuel_F", "Land_FuelStation_Feed_F", "StorageBladder_01_fuel_sand_F", "FlexibleTank_01_sand_F"] > 0):
-				{
-					_object remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _object];
-					_object setFuelCargo 0;
-				};
-				case ({_object isKindOf _x} count ["B_Slingload_01_Repair_F"] > 0):
-				{
-					_object remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _object];
-					_object setAmmoCargo 0;
-				};
-			};
 
 			if (_skipSave) then
 			{
