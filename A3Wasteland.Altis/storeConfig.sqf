@@ -1072,28 +1072,35 @@ helicoptersArray = compileFinal str
 [
 	["M-900 Civilian", "C_Heli_Light_01_civil_F", 4000, "vehicle", "SKIPSAVE"], // MH-6, no flares
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 5000, "vehicle"], // MH-6
-	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 7000, "vehicle"], // Ka-60
-	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"], // AW159
+	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"], // Armed AH-6 (no missiles)
 
-	// ["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 7500, "vehicle"], // CH-54
+
+	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 7000, "vehicle"], // Ka-60
+	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 30000, "vehicle"], // Armed Ka-60 with orca paintjob
+	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 150000, "vehicle"], // Armed Ka-60
+
+	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"], // AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 40000, "vehicle"], // Armed AW159
+
+	["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 7500, "vehicle"], // CH-54
 	["Mi-290 Taru (Box) [DLC]", "O_Heli_Transport_04_box_F", 8000, "vehicle"],
 	["Mi-290 Taru (Fuel) [DLC]", "O_Heli_Transport_04_fuel_F", 8500, "vehicle"],
 	["Mi-290 Taru (Bench) [DLC]", "O_Heli_Transport_04_bench_F", 9000, "vehicle"],
 	["Mi-290 Taru (Transport) [DLC]", "O_Heli_Transport_04_covered_F", 9500, "vehicle"],
-	["CH-67 Huron (Black) [DLC]", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], // CH-47
-	["CH-49 Mohawk", "I_Heli_Transport_02_F", 10000, "vehicle"], // AW101
-
 	["Mi-290 Taru (Medical) [DLC]", "O_Heli_Transport_04_medevac_F",12500, "vehicle"],
 	["Mi-290 Taru (Repair) [DLC]", "O_Heli_Transport_04_repair_F", 12500, "vehicle"],
 	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 1000000, "vehicle"],
 
-	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 25000, "vehicle"], // UH-60 Stealth with 2 side miniguns
+	["CH-67 Huron (Black) [DLC]", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], // CH-47
 	["CH-67 Huron (Armed) [DLC]", "B_Heli_Transport_03_F", 30000, "vehicle"], // CH-47 with 2 side miniguns
-	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 30000, "vehicle"], // Armed AH-6
-	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 30000, "vehicle"], // Armed Ka-60 with orca paintjob
-	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 150000, "vehicle"], // Armed Ka-60
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 40000, "vehicle"], // Armed AW159
+
+	["CH-49 Mohawk", "I_Heli_Transport_02_F", 10000, "vehicle"], // AW101
+
+	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 25000, "vehicle"], // UH-60 Stealth with 2 side miniguns
+
 	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 500000, "vehicle"], // RAH-66 with gunner
+
 	["Mi-48 Kajman", "O_Heli_Attack_02_F", 550000, "vehicle"], // Mi-28 with gunner
 
 	["MQ-12 Falcon", "B_T_UAV_03_F", 575000, "vehicle"]
@@ -1108,7 +1115,7 @@ planesArray = compileFinal str
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 650000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 775000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 750000, "vehicle"],
-	
+
 	["A-149 Gryphon", "I_Plane_Fighter_04_F", 690000, "vehicle"],
 	["To-201 Shikra", "O_Plane_Fighter_02_F", 775000, "vehicle"],
 	["To-201 Shikra (Stealth)", "O_Plane_Fighter_02_Stealth_F", 750000, "vehicle"],
@@ -1128,7 +1135,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 250000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 700000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 250000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
+  ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
 	["UCAV Sentinel", "B_UAV_05_F", 400000, "vehicle"]
 ];
 
