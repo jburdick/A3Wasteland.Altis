@@ -1419,6 +1419,12 @@ colorsArray = compileFinal str
 			["Green Hex (Varsuk)", ["GreenHex"]]
 		]
 	],
+	[ // RHIB paintjob
+		"Boat_Transport_02_base_F",
+		[
+			["Civilian (RHIB)", ["Civilian"]]
+		]
+	],
 	[ // F/A-181 Black Wasp
 		"Plane_Fighter_01_Base_F",
 		[
