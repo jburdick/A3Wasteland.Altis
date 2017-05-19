@@ -1074,6 +1074,14 @@ helicoptersArray = compileFinal str
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 5000, "vehicle"], // MH-6
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeDAR"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-HE"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-AP"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-HE"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-AP"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeSCALX4"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeFALCHION"], // Armed AH-6 (no missiles)
+
 
 
 	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 7000, "vehicle"], // Ka-60

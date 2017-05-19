@@ -23,7 +23,7 @@ PYLON OPTIONS:
 		"PylonMissile_Missile_AGM_02_x2" 				MACER AGM X2
 		"PylonRack_Missile_AGM_02_x2"						MACER II X2
 		"PylonRack_3Rnd_Missile_AGM_02_F" 			MACER AGM X3
-		"PylonRack_12Rnd_PG_missiles" DAGR 			MISSILES X12
+		"PylonRack_12Rnd_PG_missiles" 					DAGR X12
 		"PylonRack_1Rnd_Missile_AGM_01_F"				SHARUR X1
 		"PylonMissile_Missile_AGM_KH25_x1"			KH-25 X1
 
@@ -61,7 +61,24 @@ PYLON OPTIONS:
 		"PylonWeapon_300Rnd_20mm_shells"			20mm TWIN CANNON
 		"PylonWeapon_2000Rnd_65x39_belt"				6.5mm GATTLING GUN (RIGHT SIDE)
 
-["","","",,"",]
+		NUMBER OF PYLONS:
+			GREYHAWK/ABABIL: 2
+			UCAV SENTINEL: 2
+			MQ-12 FALCON: 2
+			AH-6 PAWNEE: 2+2GUNS
+			WY-55 HELLCAT: 2+2GUNS
+			PO-30 ORCA: 2
+			AH-99 BLACKFOOT: 6+MAIN CANNON
+			Mi-48 KAJMAN 4
+			A-143 BUZZARD: 7
+			A-149 GRYPHON: 7+CANNON
+			A-164 WIPEOUT 10+CANNON
+			F/A-181 BLACK WASP II: 12+CANNON
+			F/A-181 BLACK WASP II STEALTH: 8+CANNON
+			To-199 NEOPHRON: 10+CANNON
+			To-201 SHIKRA: 13+CANNON
+			To-201 SHIKRA STEALTH: 7+CANNON
+			Y-32 XI'AN: 4+MAIN CANNON
 */
 switch (true) do
 {
@@ -77,10 +94,42 @@ switch (true) do
 		_pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonWeapon_2000Rnd_65x39_belt"];
 	};
 	//DAR
-	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawnee20mm"):
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeDAR"):
 	{
-		_pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonWeapon_2000Rnd_65x39_belt"];
+		_pylons = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
 	};
+	//SHRIEKER HE
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeS-HE"):
+	{
+		_pylons = ["PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"];
+	};
+	//SHRIEKER AP
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeS-AP"):
+	{
+		_pylons = ["PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_7Rnd_Rocket_04_AP_F"];
+	};
+	//TRATNYR HE
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeT-HE"):
+	{
+		_pylons = ["PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_HE_F"];
+	};
+	//TRATNYR AP
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeT-AP"):
+	{
+		_pylons = ["PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_20Rnd_Rocket_03_AP_F"];
+	};
+	//SCALPEL X4
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeSCALX4"):
+	{
+		_pylons = ["PylonRack_4Rnd_LG_scalpel","PylonRack_4Rnd_LG_scalpel"];
+	};
+	//FLACHION
+	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeFALCHION"):
+	{
+		_pylons = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_Missile_AA_04_F"];
+	};
+
+
 
 
 	// PO-30 Orca (DAR)
