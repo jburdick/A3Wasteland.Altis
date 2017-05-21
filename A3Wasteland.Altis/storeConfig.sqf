@@ -1073,23 +1073,35 @@ helicoptersArray = compileFinal str
 	["M-900 Civilian", "C_Heli_Light_01_civil_F", 4000, "vehicle", "SKIPSAVE"], // MH-6, no flares
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 5000, "vehicle"], // MH-6
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeDAR"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-HE"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-AP"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-HE"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-AP"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeSCALX4"], // Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeFALCHION"], // Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"],
+	["AH-9 Pawnee (DAR)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeDAR"],
+	["AH-9 Pawnee (Shrieker AP)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-HE"],
+	["AH-9 Pawnee (Shrieker HE)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeS-AP"],
+	["AH-9 Pawnee (Tratnyr HE)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-HE"],
+	["AH-9 Pawnee (Tratnyr AP)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeT-AP"],
+	["AH-9 Pawnee (Scalpel x8)", "B_Heli_Light_01_dynamicLoadout_F", 100000, "vehicle", "variant_pawneeSCALX4"],
+	["AH-9 Pawnee (Falchion x2)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeFALCHION"],
 
 
 
-	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 7000, "vehicle"], // Ka-60
-	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 30000, "vehicle"], // Armed Ka-60 with orca paintjob
-	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 150000, "vehicle"], // Armed Ka-60
+	["PO-30 Orca (Unarmed)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaUnArm"],
+	["PO-30 Orca (6.5mm)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaGUN"],
+	["PO-30 Orca (6.5mm + DAR)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaGUNDAR"],
+	["PO-30 Orca (6.5mm + DAGR)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaGUNDAGR"],
+	["PO-30 Orca (Unarmed)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaUnArm"],
+	["PO-30 Orca (Unarmed)", "O_Heli_Light_02_v2_F", 30000, "vehicle", "variant_orcaUnArm"],
 
-	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"], // AW159
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 40000, "vehicle"], // Armed AW159
+
+	["WY-55 Hellcat (Unarmed)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"], // AW159
+	["WY-55 Hellcat (Guns)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ],
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_Hell20mm" ], // Armed AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAR" ], // Armed AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAGR" ], // Armed AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellBOMB" ], // Armed AW159
+	/*["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ], // Armed AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ], // Armed AW159
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ], // Armed AW159*/
+
 
 	["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 7500, "vehicle"], // CH-54
 	["Mi-290 Taru (Box) [DLC]", "O_Heli_Transport_04_box_F", 8000, "vehicle"],
@@ -1143,7 +1155,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 250000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 700000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 250000, "vehicle"],
-        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
+  ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
 	["UCAV Sentinel", "B_UAV_05_F", 400000, "vehicle"]
 ];
 

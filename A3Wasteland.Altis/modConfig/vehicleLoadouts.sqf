@@ -42,21 +42,21 @@ PYLON OPTIONS:
 		"PylonRack_1Rnd_GAA_missiles"						ZYPHER X1
 
 	ROCKETS:
+		"PylonRack_12Rnd_missiles" 							DAR ROCKETS X12
 		"PylonRack_7Rnd_Rocket_04_HE_F"					SHRIEKER HE ROCKETS X7
 		"PylonRack_7Rnd_Rocket_04_AP_F" 				SHRIEKER AP ROCKETS X7
-		"PylonRack_12Rnd_missiles" 							DAR ROCKETS X12
 		"PylonRack_20Rnd_Rocket_03_HE_F"				TRATNYR HE ROCKETS X20
 		"PylonRack_20Rnd_Rocket_03_AP_F"				TRATNYR AP ROCKETS X20
 		"PylonRack_19Rnd_Rocket_Skyfire"				SKYFIRE X19
 
-	BOMBS:
+	 Guided BOMBS:
 		"PylonMissile_1Rnd_Bomb_04_F" 					GBU-12 GUIDED BOMB NATO X1
 		"PylonMissile_1Rnd_Bomb_03_F"						LOM-250G GUIDED BOMB CSAT X1
-		"PylonMissile_1Rnd_Mk82_F" 							MK-82 DUMB BOMB X1
 		"PylonMissile_Bomb_GBU12_x1" 						GBU-12 LASER GUIDIED BOMB X1
 		"PylonRack_Bomb_GBU12_x2"								GBU-12 LASER GUIDED BOMB X2
 		"PylonMissile_Bomb_KAB250_x1"						KAB250 GUIDED BOMB X1
-
+	Dumb Bombs:
+	"PylonMissile_1Rnd_Mk82_F" 							MK-82 DUMB BOMB X1
 	GUNS:
 		"PylonWeapon_300Rnd_20mm_shells"			20mm TWIN CANNON
 		"PylonWeapon_2000Rnd_65x39_belt"				6.5mm GATTLING GUN (RIGHT SIDE)
@@ -91,7 +91,7 @@ switch (true) do
 	//20mm Cannons
 	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawnee20mm"):
 	{
-		_pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonWeapon_2000Rnd_65x39_belt"];
+		_pylons = ["PylonWeapon_300Rnd_20mm_shells","PylonWeapon_300Rnd_20mm_shells"];
 	};
 	//DAR
 	case (_class isKindOf "B_Heli_Light_01_dynamicLoadout_F" && _variant == "pawneeDAR"):
@@ -132,36 +132,88 @@ switch (true) do
 
 
 
-	// PO-30 Orca (DAR)
-	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaDAR"):
+	// PO-30 Orca (Unarmed)
+	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaUnArm"):
+	{
+		_pylons = ["",""];
+	};
+	// PO-30 Orca (Gun)
+	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaGUN"):
+	{
+		_pylons = ["PylonWeapon_2000Rnd_65x39_belt",""];
+	};
+
+	// PO-30 Orca (Gun+DAR)
+	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaGUNDAR"):
 	{
 		_pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_missiles"];
 	};
 
-	// PO-30 Orca (DAGR)
-	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaDAGR"):
+	// PO-30 Orca (GUN+DAGR)
+	case (_class isKindOf "O_Heli_Light_02_dynamicLoadout_F" && _variant == "orcaGUNDAGR"):
 	{
 		_pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_PG_missiles"];
 	};
 
+
+
+	// WY-55 HELLCAT (GUNS ONLY)
+	case (_class isKindOf "I_Heli_light_03_dynamicLoadout_F" && _variant == "HellGun"):
+	{
+		_pylons = ["",""];
+	};
+	// WY-55 HELLCAT (GUNS + DAR)
+	case (_class isKindOf "I_Heli_light_03_dynamicLoadout_F" && _variant == "HellDAR"):
+	{
+		_pylons = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
+	};
+	// WY-55 HELLCAT (GUNS + 20mm CANNONS)
+	case (_class isKindOf "I_Heli_light_03_dynamicLoadout_F" && _variant == "Hell20mm"):
+	{
+		_pylons = ["PylonWeapon_300Rnd_20mm_shells","PylonWeapon_300Rnd_20mm_shells"];
+	};
+	// WY-55 HELLCAT (GUNS + DAGR)
+	case (_class isKindOf "I_Heli_light_03_dynamicLoadout_F" && _variant == "HellDAGR"):
+	{
+		_pylons = ["PylonRack_12Rnd_PG_missiles","PylonRack_12Rnd_PG_missiles"];
+	};
+	// WY-55 HELLCAT (GUNS + LASER GUIDED BOMB)
+	case (_class isKindOf "I_Heli_light_03_dynamicLoadout_F" && _variant == "HellBOMB"):
+	{
+		_pylons = ["PylonRack_Bomb_GBU12_x2","PylonRack_Bomb_GBU12_x2"];
+	};
+
+
+
+
+/*
 	// AH-99 Blackfoot
 	case (_class isKindOf "Heli_Attack_01_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonMissile_1Rnd_AAA_missiles","PylonMissile_1Rnd_LG_scalpel","PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles","PylonMissile_1Rnd_LG_scalpel","PylonMissile_1Rnd_AAA_missiles"];
 	};
+*/
 
+
+/*
 	// Mi-48 Kajman
 	case (_class isKindOf "Heli_Attack_02_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonMissile_1Rnd_LG_scalpel","PylonRack_19Rnd_Rocket_Skyfire","PylonRack_19Rnd_Rocket_Skyfire","PylonMissile_1Rnd_LG_scalpel"];
 	};
+*/
 
+
+/*
 	// Y-32 Xi'an
 	case ({_class isKindOf _x} count ["VTOL_02_infantry_dynamicLoadout_base_F", "VTOL_02_vehicle_dynamicLoadout_base_F"] > 0):
 	{
 		_pylons = ["PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_19Rnd_Rocket_Skyfire","PylonRack_19Rnd_Rocket_Skyfire","PylonRack_1Rnd_Missile_AGM_01_F"];
 	};
+*/
 
+
+/*
 	// A-143 Buzzard AA
 	case (_class isKindOf "Plane_Fighter_03_dynamicLoadout_base_F" && _variant == "buzzardAA"):
 	{
@@ -171,7 +223,6 @@ switch (true) do
 			_veh setAmmoOnPylon [4, 500]; // 20mm gun
 		};
 	};
-
 	// A-143 Buzzard CAS
 	case (_class isKindOf "Plane_Fighter_03_dynamicLoadout_base_F" && _variant == "buzzardCAS"):
 	{
@@ -181,7 +232,10 @@ switch (true) do
 			_veh setAmmoOnPylon [4, 500]; // 20mm gun
 		};
 	};
+*/
 
+
+/*
 	// A-149 Gryphon
 	case (_class isKindOf "Plane_Fighter_04_Base_F"):
 	{
@@ -196,7 +250,10 @@ switch (true) do
 		];
 		_pylons = ["PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1"];
 	};
+*/
 
+
+/*
 	// F/A-181 Black Wasp
 	case (_class isKindOf "B_Plane_Fighter_01_F"):
 	{
@@ -209,7 +266,10 @@ switch (true) do
 		];
 		_pylons = ["PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_AP_F","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_Bomb_GBU12_x1"];
 	};
+*/
 
+
+/*
 	// F/A-181 Black Wasp (Stealth)
 	case (_class isKindOf "B_Plane_Fighter_01_Stealth_F"):
 	{
@@ -225,7 +285,10 @@ switch (true) do
 		];
 		_pylons = ["","","","","","","","","","","",""];
 	};
+*/
 
+
+/*
 	// To-201 Shikra
 	case (_class isKindOf "O_Plane_Fighter_02_F"):
 	{
@@ -238,7 +301,10 @@ switch (true) do
 		];
 		_pylons = ["PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Bomb_KAB250_x1","PylonMissile_Bomb_KAB250_x1","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Bomb_KAB250_x1"];
 	};
+*/
 
+
+/*
 	// To-201 Shikra (Stealth)
 	case (_class isKindOf "O_Plane_Fighter_02_Stealth_F"):
 	{
@@ -254,18 +320,27 @@ switch (true) do
 		];
 		_pylons = ["","","","","","","","","","","","",""];
 	};
+*/
 
+
+/*
 	// A-164 Wipeout CAS
 	case (_class isKindOf "Plane_CAS_01_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_Missile_AGM_02_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_AP_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonRack_1Rnd_Missile_AGM_02_F","PylonRack_1Rnd_Missile_AA_04_F"];
 	};
+*/
 
+
+/*
 	// To-199 Neophron CAS
 	case (_class isKindOf "Plane_CAS_02_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F"];
 	};
+*/
+
+
 
 	// Greyhawk/Ababil Missile UAVs
 	case (_class isKindOf "UAV_02_dynamicLoadout_base_F" && _variant == "greyhawkMissile"):
@@ -277,7 +352,6 @@ switch (true) do
 			_veh setAmmoOnPylon [2, 2]; // left wing
 		};
 	};
-
 	// Greyhawk/Ababil Bomber UAVs
 	case (_class isKindOf "UAV_02_dynamicLoadout_base_F" && _variant == "greyhawkBomber"):
 	{
@@ -285,14 +359,8 @@ switch (true) do
 
 	};
 
-	// KH-3A Fenghuang UAV
-	/*case (_class isKindOf "O_T_UAV_04_CAS_F"):
-	{
-		_customCode =
-		{
-			_veh setMagazineTurretAmmo ["4Rnd_LG_Jian", 2, [0]];
-		};
-	};*/
+
+
 
 	// UCAV Sentinel Missile
 	case (_class isKindOf "B_UAV_05_F" && _variant == "sentinelMissile"):
@@ -305,6 +373,9 @@ switch (true) do
 	{
 		_pylons = ["PylonMissile_Bomb_GBU12_x1","PylonMissile_Bomb_GBU12_x1"];
 	};
+
+
+
 
 	// MQ-12 Falcon UAV (non-dynamicLoadout)
 	case (_class isKindOf "B_T_UAV_03_F"):
