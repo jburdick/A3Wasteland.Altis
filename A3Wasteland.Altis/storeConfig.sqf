@@ -1143,7 +1143,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 250000, "vehicle"],
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 700000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 250000, "vehicle"],
-  ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
+        ["KH-3A Fenghuang", "O_T_UAV_04_CAS_F", 575000, "vehicle"],
 	["UCAV Sentinel", "B_UAV_05_F", 400000, "vehicle"]
 ];
 
