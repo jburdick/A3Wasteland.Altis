@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=138;
 	class ItemIDProvider
 	{
 		nextID=2030;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=31;
+		nextID=32;
 	};
 	class Camera
 	{
@@ -5876,7 +5876,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99965;
+			angle=226.99963;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6116,18 +6116,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11853.532,18.568588,9436.9971};
-				angles[]={0.0053265258,2.1601329,6.220602};
+				position[]={11853.532,18.568895,9436.9971};
+				angles[]={0.0053232545,2.1601241,6.2205977};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2011;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00030708313;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6157,18 +6157,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14622.004,19.237669,16773.92};
-				angles[]={0,2.3235459,0};
+				position[]={14622.004,19.23831,16773.92};
+				angles[]={0,2.3235393,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2012;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00064086914;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6198,7 +6198,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={22994.244,5.50002,18899.07};
+				position[]={22994.246,5.5000772,18899.07};
 				angles[]={0,1.0291858,0};
 			};
 			side="Empty";
@@ -6206,10 +6206,10 @@ class Mission
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2013;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-9.1552734e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6239,18 +6239,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={20890.111,28.377922,7292.7295};
-				angles[]={0.055940546,4.6577339,0.0039967569};
+				position[]={20890.111,28.378014,7292.729};
+				angles[]={0.055937801,4.6577253,0.0039968039};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2014;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-6.6757202e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6281,13 +6281,14 @@ class Mission
 			class PositionInfo
 			{
 				position[]={26790.418,21.663437,24671.729};
-				angles[]={0,5.4137206,0};
+				angles[]={0,5.4137149,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2015;
 			type="Land_Cargo40_blue_F";
@@ -6320,18 +6321,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9179.3975,15.671347,21678.486};
-				angles[]={0,5.6714277,0};
+				position[]={9179.3975,15.671349,21678.486};
+				angles[]={0,5.6714301,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2016;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-9.5367432e-007;
+			atlOffset=9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6361,18 +6363,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5906.5835,225.088,20159.211};
-				angles[]={0,2.198082,0};
+				position[]={5906.5835,225.08827,20159.209};
+				angles[]={0,2.1980851,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2017;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00025939941;
+			atlOffset=-1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6402,18 +6405,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3680.876,9.1186476,13389.319};
-				angles[]={0,5.4163723,0};
+				position[]={3680.8762,9.1192284,13389.319};
+				angles[]={0,5.4163675,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2018;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00057888031;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6443,18 +6446,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9524.0352,128.68533,15115.267};
-				angles[]={0.0013372133,1.0291858,6.2818484};
+				position[]={9524.0352,128.68591,15115.267};
+				angles[]={0.0013439035,1.0291858,6.2818413};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2019;
 			type="Land_Cargo40_blue_F";
-			atlOffset=-0.00057983398;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6500,18 +6503,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2315.9805,24.88763,16760.957};
-				angles[]={0,4.9584646,0};
+				position[]={2315.9802,24.887856,16760.957};
+				angles[]={0,4.9584627,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2023;
 			type="Land_Cargo40_blue_F";
-			atlOffset=0.041017532;
+			atlOffset=0.041242599;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6557,18 +6561,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19463.902,24.88763,22411.289};
-				angles[]={0,1.7492871,0};
+				position[]={19463.902,24.887344,22411.289};
+				angles[]={0,1.7492911,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="this call A3W_fnc_setupResupplyPoint";
+				disableSimulation=1;
 			};
 			id=2025;
 			type="Land_Cargo40_blue_F";
-			atlOffset=0.042139053;
+			atlOffset=0.041852951;
 			class CustomAttributes
 			{
 				class Attribute0
