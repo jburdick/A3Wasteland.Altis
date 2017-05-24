@@ -29,7 +29,5 @@ APOC_AA_SupOptions =
   ["Dive Gear", 			"airdrop_Diving_Gear", 		25000,  "supply"],
   ["Medical", 			  "airdrop_Medical", 				5000,	  "supply"],
   ["Field Engineer",  "airdrop_Field_Engineer", 5000,	  "supply"],
-  ["Vehicle Ammo",		"Box_NATO_AmmoVeh_F",		  300000,	"vicammo"],
-  ["Food",				    "Land_Sacks_goods_F",		  5000, 	"food"],
-  ["Water",				    "Land_BarrelWater_F",		  5000, 	"water"]
-];
+  ["Vehicle Ammo",		"Box_NATO_AmmoVeh_F",		  300000,	"vicammo"]
+ ];
