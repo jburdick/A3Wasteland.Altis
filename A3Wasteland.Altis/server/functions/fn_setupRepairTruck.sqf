@@ -9,7 +9,7 @@ params [["_veh",objNull,[objNull]], ["_static",false,[false]]];
 
 if (hasInterface) then
 {
-	_veh addAction ["<img image='client\icons\repair.paa'/> Repair Vehicle", "client\functions\fn_RepairTruck.sqf", [], 51, false, true, "", "alive _target && alive objectParent _this && _this distance _target <= 20 && (isNil 'mutexScriptInProgress' || {!mutexScriptInProgress})"];
+	_veh addAction ["<img image='client\icons\repair.paa'/> Repair Vehicle", "client\functions\fn_RepairTruck.sqf", [], 51, false, true, "", "_this != driver _target && alive _target && alive objectParent _this && _this distance _target <= 20 && (isNil 'mutexScriptInProgress' || {!mutexScriptInProgress})"];
 	// _this = player, _target = truck
 };
 
