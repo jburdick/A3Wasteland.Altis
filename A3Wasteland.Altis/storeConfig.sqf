@@ -970,35 +970,35 @@ allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsA
 //Text name, classname, buy cost, spawn type, sell price (selling not implemented) or spawning color
 landArray = compileFinal str
 [
-	["Kart", "C_Kart_01_F", 500, "vehicle", "SKIPSAVE"],
+	["Kart", "C_Kart_01_F", 500, "vehicle"],
 
-	["Quadbike (Civilian)", "C_Quadbike_01_F", 600, "vehicle", "SKIPSAVE"],
-	["Quadbike (NATO)", "B_Quadbike_01_F", 650, "vehicle", "SKIPSAVE"],
-	["Quadbike (CSAT)", "O_Quadbike_01_F", 650, "vehicle", "SKIPSAVE"],
-	["Quadbike (AAF)", "I_Quadbike_01_F", 650, "vehicle", "SKIPSAVE"],
-	["Quadbike (FIA)", "B_G_Quadbike_01_F", 650, "vehicle", "SKIPSAVE"],
+	["Quadbike (Civilian)", "C_Quadbike_01_F", 600, "vehicle"],
+	["Quadbike (NATO)", "B_Quadbike_01_F", 650, "vehicle"],
+	["Quadbike (CSAT)", "O_Quadbike_01_F", 650, "vehicle"],
+	["Quadbike (AAF)", "I_Quadbike_01_F", 650, "vehicle"],
+	["Quadbike (FIA)", "B_G_Quadbike_01_F", 650, "vehicle"],
 
-	["Hatchback", "C_Hatchback_01_F", 800, "vehicle", "SKIPSAVE"],
-	["Hatchback Sport", "C_Hatchback_01_sport_F", 1000, "vehicle", "SKIPSAVE"],
+	["Hatchback", "C_Hatchback_01_F", 800, "vehicle"],
+	["Hatchback Sport", "C_Hatchback_01_sport_F", 1000, "vehicle"],
 
-	["SUV", "C_SUV_01_F", 1100, "vehicle", "SKIPSAVE"],
+	["SUV", "C_SUV_01_F", 1100, "vehicle"],
 
-	["MB 4WD", "I_C_Offroad_02_unarmed_F", 1100, "vehicle", "SKIPSAVE"],
-	["MB 4WD (Rollcage)", "C_Offroad_02_unarmed_F", 1100, "vehicle", "SKIPSAVE"],
+	["MB 4WD", "I_C_Offroad_02_unarmed_F", 1100, "vehicle"],
+	["MB 4WD (Rollcage)", "C_Offroad_02_unarmed_F", 1100, "vehicle"],
 
-	["Offroad", "C_Offroad_01_F", 1100, "vehicle", "SKIPSAVE"],
-	["Offroad (Gendarmerie)", "B_GEN_Offroad_01_gen_F", 1100, "vehicle", "SKIPSAVE"],
-	["Offroad Camo", "B_G_Offroad_01_F", 1250, "vehicle", "SKIPSAVE"],
-	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle", "SKIPSAVE"],
-	["Offroad HMG", "B_G_Offroad_01_armed_F", 2500, "vehicle", "SKIPSAVE"],
+	["Offroad", "C_Offroad_01_F", 1100, "vehicle"],
+	["Offroad (Gendarmerie)", "B_GEN_Offroad_01_gen_F", 1100, "vehicle"],
+	["Offroad Camo", "B_G_Offroad_01_F", 1250, "vehicle"],
+	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle"],
+	["Offroad HMG", "B_G_Offroad_01_armed_F", 2500, "vehicle"],
 
-	["Truck", "C_Van_01_transport_F", 700, "vehicle", "SKIPSAVE"],
-	["Truck (Camo)", "B_G_Van_01_transport_F", 800, "vehicle", "SKIPSAVE"],
-	["Truck Box", "C_Van_01_box_F", 900, "vehicle", "SKIPSAVE"],
-	["Fuel Truck", "C_Van_01_fuel_F", 2000, "vehicle", "SKIPSAVE"],
-	["Fuel Truck (Camo)", "B_G_Van_01_fuel_F", 2100, "vehicle", "SKIPSAVE"],
+	["Truck", "C_Van_01_transport_F", 700, "vehicle"],
+	["Truck (Camo)", "B_G_Van_01_transport_F", 800, "vehicle"],
+	["Truck Box", "C_Van_01_box_F", 900, "vehicle"],
+	["Fuel Truck", "C_Van_01_fuel_F", 2000, "vehicle"],
+	["Fuel Truck (Camo)", "B_G_Van_01_fuel_F", 2100, "vehicle"],
 
-	["HEMTT Tractor", "B_Truck_01_mover_F", 4000, "vehicle", "SKIPSAVE"],
+	["HEMTT Tractor", "B_Truck_01_mover_F", 4000, "vehicle"],
 	["HEMTT Box", "B_Truck_01_box_F", 5000, "vehicle"],
 	["HEMTT Transport", "B_Truck_01_transport_F", 6000, "vehicle"],
 	["HEMTT Covered", "B_Truck_01_covered_F", 7500, "vehicle"],
@@ -1073,7 +1073,7 @@ tanksArray = compileFinal str
 
 helicoptersArray = compileFinal str
 [
-	["M-900 Civilian", "C_Heli_Light_01_civil_F", 4000, "vehicle", "SKIPSAVE"], // MH-6, no flares
+	["M-900 Civilian", "C_Heli_Light_01_civil_F", 4000, "vehicle"], // MH-6, no flares
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 5000, "vehicle"], // MH-6
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"],
@@ -1131,8 +1131,8 @@ helicoptersArray = compileFinal str
 
 planesArray = compileFinal str
 [
-	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle", "SKIPSAVE"],
-	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 3000, "vehicle", "SKIPSAVE"],
+	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle"],
+	["Ceasar BTT (racing)", "C_Plane_Civil_01_Racing_F", 3000, "vehicle"],
 
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 390000, "vehicle"],
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 650000, "vehicle"],
@@ -1164,27 +1164,90 @@ planesArray = compileFinal str
 
 boatsArray = compileFinal str
 [
-	["Water Scooter", "C_Scooter_Transport_01_F", 500, "boat", "SKIPSAVE"],
-	["Rescue Boat", "C_Rubberboat", 500, "boat", "SKIPSAVE"],
-	["Rescue Boat (NATO)", "B_Lifeboat", 500, "boat", "SKIPSAVE"],
-	["Rescue Boat (CSAT)", "O_Lifeboat", 500, "boat", "SKIPSAVE"],
-	["RHIB", "I_C_Boat_Transport_02_F", 500, "SKIPSAVE"],
-	["Assault Boat (NATO)", "B_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
-	["Assault Boat (CSAT)", "O_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
-	["Assault Boat (AAF)", "I_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
-	["Assault Boat (FIA)", "B_G_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
-	["Motorboat", "C_Boat_Civil_01_F", 1000, "boat", "SKIPSAVE"],
-	["Motorboat Rescue", "C_Boat_Civil_01_rescue_F", 900, "boat", "SKIPSAVE"],
-	["Motorboat Police", "C_Boat_Civil_01_police_F", 1100, "boat", "SKIPSAVE"],
-	["Speedboat HMG (CSAT)", "O_Boat_Armed_01_hmg_F", 4000, "boat", "SKIPSAVE"],
-	["Speedboat Minigun (NATO)", "B_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
-	["Speedboat Minigun (AAF)", "I_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
-	["SDV Submarine (NATO)", "B_SDV_01_F", 1000, "submarine", "SKIPSAVE"],
-	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine", "SKIPSAVE"],
-	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine", "SKIPSAVE"]
+	["Water Scooter", "C_Scooter_Transport_01_F", 500, "boat"],
+	["Rescue Boat", "C_Rubberboat", 500, "boat"],
+	["Rescue Boat (NATO)", "B_Lifeboat", 500, "boat"],
+	["Rescue Boat (CSAT)", "O_Lifeboat", 500, "boat"],
+	["RHIB", "I_C_Boat_Transport_02_F", 500],
+	["Assault Boat (NATO)", "B_Boat_Transport_01_F", 600, "boat"],
+	["Assault Boat (CSAT)", "O_Boat_Transport_01_F", 600, "boat"],
+	["Assault Boat (AAF)", "I_Boat_Transport_01_F", 600, "boat"],
+	["Assault Boat (FIA)", "B_G_Boat_Transport_01_F", 600, "boat"],
+	["Motorboat", "C_Boat_Civil_01_F", 1000, "boat"],
+	["Motorboat Rescue", "C_Boat_Civil_01_rescue_F", 900, "boat"],
+	["Motorboat Police", "C_Boat_Civil_01_police_F", 1100, "boat"],
+	["Speedboat HMG (CSAT)", "O_Boat_Armed_01_hmg_F", 4000, "boat"],
+	["Speedboat Minigun (NATO)", "B_Boat_Armed_01_minigun_F", 4000, "boat"],
+	["Speedboat Minigun (AAF)", "I_Boat_Armed_01_minigun_F", 4000, "boat"],
+	["SDV Submarine (NATO)", "B_SDV_01_F", 1000, "submarine"],
+	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine"],
+	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine"]
 ];
+PylongArray = compileFinal str
+[
+/*AIR TO GROUND MISSILES*/
 
-allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
+	["SCALPEL X1", "PylonRack_1Rnd_LG_scalpel", 1],
+	["SCALPEL X3", "PylonRack_3Rnd_LG_scalpel", 1],
+	["SCALPEL X4", "PylonRack_4Rnd_LG_scalpel", 1],
+	["MACER AGM X1", "PylonRack_1Rnd_Missile_AGM_02_F", 1],
+	["MACER II AGM X1", "PylonRack_Missile_AGM_02_x1", 1],
+	["MACER AGM X2", "PylonMissile_Missile_AGM_02_x2", 1],
+	["MACER II X2", "PylonRack_Missile_AGM_02_x2", 1],
+	["MACER AGM X3", "PylonRack_3Rnd_Missile_AGM_02_F", 1],
+	["DAGR X12","PylonRack_12Rnd_PG_missiles", 1],
+	["SHARUR X1", "PylonRack_1Rnd_Missile_AGM_01_F", 1],
+	["KH-25 X1", "PylonMissile_Missile_AGM_KH25_x1", 1],
+
+/*AIR TO AIR MISSILES*/
+
+	["FALCHION 22 X1", "PylonRack_1Rnd_Missile_AA_04_F", 1],
+	["ASRAAM X1", "PylonRack_1Rnd_AAA_missiles", 1],
+	["AMRAAM C X1", "PylonRack_Missile_AMRAAM_C_x1", 1],
+	["AMRAAM C X2", "PylonRack_Missile_AMRAAM_C_x2", 1],
+	["AMRAAM D X1", "PylonMissile_Missile_AMRAAM_D_INT_x1", 1],
+	["AMRAAM D X2", "PylonRack_Missile_AMRAAM_D_x2", 1],
+	["BIM9X X2", "PylonRack_Missile_BIM9X_x2", 1],
+	["BIM8X X1", "PylonMissile_Missile_BIM9X_x1", 1],
+	["SAHR-3", "PylonRack_1Rnd_Missile_AA_03_F", 1],
+	["R-73 X1", "PylonMissile_Missile_AA_R73_x1", 1],
+	["R-77 X1", "PylonMissile_Missile_AA_R77_x1", 1],
+	["ZYPHER X1", "PylonRack_1Rnd_GAA_missiles", 1],
+
+/*ROCKETS*/
+
+	["DAR ROCKETS X12", "PylonRack_12Rnd_missiles", 1],
+	["SHRIEKER HE ROCKETS X7", "PylonRack_7Rnd_Rocket_04_HE_F", 1],
+	["SHRIEKER AP ROCKETS X7", "PylonRack_7Rnd_Rocket_04_AP_F", 1],
+	["TRATNYR HE ROCKETS X20", "PylonRack_20Rnd_Rocket_03_HE_F", 1],
+	["TRATNYR AP ROCKETS X20", "PylonRack_20Rnd_Rocket_03_AP_F", 1],
+	["SKYFIRE X19", "PylonRack_19Rnd_Rocket_Skyfire", 1]
+
+ /*Guided BOMBS*/
+
+	/*[],"PylonMissile_1Rnd_Bomb_04_F" 					"GBU-12 GUIDED BOMB NATO X1"
+	[],"PylonMissile_1Rnd_Bomb_03_F"						"LOM-250G GUIDED BOMB CSAT X1"
+	[],"PylonMissile_Bomb_GBU12_x1" 						"GBU-12 LASER GUIDIED BOMB X1"
+	[],"PylonRack_Bomb_GBU12_x2"								"GBU-12 LASER GUIDED BOMB X2"
+	[],"PylonMissile_Bomb_KAB250_x1"						"KAB250 GUIDED BOMB X1"*/
+
+/*Dumb Bombs:*/
+
+/*[],"PylonMissile_1Rnd_Mk82_F" 							"MK-82 DUMB BOMB X1"*/
+
+/*GUNS*/
+
+	/*[],"PylonWeapon_300Rnd_20mm_shells"			"20mm TWIN CANNON"
+	[]"PylonWeapon_2000Rnd_65x39_belt"				"6.5mm GATTLING GUN (RIGHT SIDE)"*/
+
+
+
+];
+/*MagsArray = compileFinal str
+[
+
+];*/
+allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray + call PylongArray + call MagsArray);
 
 uavArray = compileFinal str
 [
