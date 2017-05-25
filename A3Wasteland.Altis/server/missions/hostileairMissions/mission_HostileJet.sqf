@@ -24,7 +24,12 @@ _setupObjects =
 		["B_Plane_CAS_01_F"],
 		["I_Plane_Fighter_03_AA_F"],
 		["I_Plane_Fighter_03_CAS_F"],
-		["O_Plane_CAS_02_F"]
+		["O_Plane_CAS_02_F"],
+		["I_Plane_Fighter_04_F"],
+	        ["O_Plane_Fighter_02_F"],
+	        ["O_Plane_Fighter_02_Stealth_F"],
+	        ["B_Plane_Fighter_01_F"],
+	        ["B_Plane_Fighter_01_Stealth_F"]
 	];
 
 	_convoyVeh = _planeChoices call BIS_fnc_selectRandom;

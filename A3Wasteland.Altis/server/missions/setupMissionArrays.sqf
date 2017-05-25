@@ -39,8 +39,8 @@ MoneyMissions =
 PatrolMissions =
 [
 	["mission_militaryPatrol", 1],
-	["mission_TanoaPatrol", 1],
-	["mission_artyPatrol", 1]
+	["mission_altisPatrol", 1],
+	["mission_artyPatrol", .3]
 	
 	
 	
