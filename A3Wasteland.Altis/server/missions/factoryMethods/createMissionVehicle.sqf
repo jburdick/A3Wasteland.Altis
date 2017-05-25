@@ -39,7 +39,4 @@ if (_fuel != 1) then { _veh setFuel _fuel };
 if (_ammo != 1) then { _veh setVehicleAmmo _ammo };
 _veh setDamage _damage;
 
-[_veh, 2] call A3W_fnc_setLockState; // Lock
-_veh setVariable ["A3W_lockpickDisabled", true, true];
-
 _veh
