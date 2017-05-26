@@ -93,7 +93,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			[
 				"A3W_fnc_",
 				"mf_remote_"
-				/*"APOC_srv_"*/
+				"APOC_srv_"
 			];
 		};
 	};
