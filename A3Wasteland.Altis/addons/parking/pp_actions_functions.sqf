@@ -135,7 +135,7 @@ pp_get_near_vehicles = {
   ARGVX4(0,_player,objNull,[]);
 
   def(_vehicles);
-  _vehicles = (nearestObjects [getPos _player, ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"], 50]);
+  _vehicles = (nearestObjects [_player, ["LandVehicle","Air","Ship"], 50]);
 
   init(_filtered,[]);
   def(_uid);
@@ -440,4 +440,3 @@ diag_log "Parking terminals setup complete";
 
 parking_functions_defined = true;
 diag_log "Loading parking functions complete";
-
