@@ -73,6 +73,10 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
 #include "addons\CHVD\dialog.hpp"
+#include "addons\GOM\dialogs\GOM_dialog_parents.hpp"
+#include "addons\GOM\dialogs\GOM_dialog_controls.hpp"
+
+
 
 class RscTitles
 {
@@ -103,6 +107,7 @@ class CfgFunctions
         #undef SAF_FNCS
   };
 	#include "addons\CHVD\CfgFunctions.hpp"
+	#include "addons\GOM\functions\GOM_fnc_functions.hpp"
 };
 
 class CfgNotifications

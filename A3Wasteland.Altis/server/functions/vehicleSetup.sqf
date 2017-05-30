@@ -48,18 +48,34 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
 };
 
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _vehicle];
-};
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _vehicle];
-};
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _vehicle];
-};
+if ({_vehicle iskindof _x} count
+		[
+			"FlexibleTank_01_sand_F",
+			"Land_FuelStation_Feed_F",
+			"StorageBladder_01_fuel_sand_F",
+			"B_Slingload_01_Fuel_F",
+			"B_Slingload_01_Repair_F",
+			"C_Offroad_01_repair_F",
+			"C_Van_01_fuel_F","B_G_Van_01_fuel_F",
+			"B_Truck_01_fuel_F",
+			"B_Truck_01_Repair_F",
+			"B_Truck_01_ammo_F",
+			"O_Truck_03_fuel_F",
+			"O_Truck_03_repair_F",
+			"O_Truck_03_ammo_F",
+			"I_Truck_02_fuel_F",
+			"I_Truck_02_box_F",
+			"I_Truck_02_ammo_F",
+			"B_APC_Tracked_01_CRV_F",
+			"O_Heli_Transport_04_fuel_F",
+			"O_Heli_Transport_04_repair_F",
+			"O_Heli_Transport_04_ammo_F"
+		] >0)
+	then
+	{
+		[_vehicle] remoteExecCall ["GOM_fnc_addAircraftLoadout", 0, _vehicle];
+	};
+
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
 
 // Vehicle customization
