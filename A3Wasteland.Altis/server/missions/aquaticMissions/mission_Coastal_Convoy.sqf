@@ -36,7 +36,7 @@ _setupObjects =
 		(_vehChoices select 1) set [1, "O_Heli_Attack_02_dynamicLoadout_F"];
 		(_vehChoices select 2) set [1, "O_Heli_Attack_02_dynamicLoadout_F"];
 	};
-	
+
 	_convoyVeh = _vehChoices call BIS_fnc_selectRandom;
 
 	_veh1 = _convoyVeh select 0;
@@ -160,7 +160,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["Two <t color='%3'>%1</t> are patrolling the coasts, escorted by a <t color='%3'>%2</t>.<br/>Intercept them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["Two <t color='%3'>%1</t> are patrolling the coasts, escorted by a <t color='%3'>%2</t>.<br/>Intercept them and recover their cargo!", _vehicleName, _vehicleName2, aquaticMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };

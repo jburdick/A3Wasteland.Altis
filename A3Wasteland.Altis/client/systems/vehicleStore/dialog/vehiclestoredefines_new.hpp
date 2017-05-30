@@ -92,11 +92,12 @@
 #define MB_BUTTON_USER    4
 
 
+
 ////////////////
 //Base Classes//
 ////////////////
 
-class RscText
+class VICRscText
 {
    access = 0;
    idc = -1;
@@ -137,7 +138,7 @@ class RscPicture
    h = 0.15;
 };
 
-class RscButton
+class VICRscButton
 {
 
   access = 0;
@@ -170,7 +171,7 @@ class RscButton
    borderSize = 0;
 };
 
-class RscFrame
+class VICRscFrame
 {
    type = CT_STATIC;
    idc = -1;
@@ -183,7 +184,7 @@ class RscFrame
    text = "";
 };
 
-class BOX
+class VICBOX
 {
   type = CT_STATIC;
    idc = -1;
