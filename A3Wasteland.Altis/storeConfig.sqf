@@ -1183,71 +1183,7 @@ boatsArray = compileFinal str
 	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine"],
 	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine"]
 ];
-PylongArray = compileFinal str
-[
-/*AIR TO GROUND MISSILES*/
-
-	["SCALPEL X1", "PylonRack_1Rnd_LG_scalpel", 1],
-	["SCALPEL X3", "PylonRack_3Rnd_LG_scalpel", 1],
-	["SCALPEL X4", "PylonRack_4Rnd_LG_scalpel", 1],
-	["MACER AGM X1", "PylonRack_1Rnd_Missile_AGM_02_F", 1],
-	["MACER II AGM X1", "PylonRack_Missile_AGM_02_x1", 1],
-	["MACER AGM X2", "PylonMissile_Missile_AGM_02_x2", 1],
-	["MACER II X2", "PylonRack_Missile_AGM_02_x2", 1],
-	["MACER AGM X3", "PylonRack_3Rnd_Missile_AGM_02_F", 1],
-	["DAGR X12","PylonRack_12Rnd_PG_missiles", 1],
-	["SHARUR X1", "PylonRack_1Rnd_Missile_AGM_01_F", 1],
-	["KH-25 X1", "PylonMissile_Missile_AGM_KH25_x1", 1],
-
-/*AIR TO AIR MISSILES*/
-
-	["FALCHION 22 X1", "PylonRack_1Rnd_Missile_AA_04_F", 1],
-	["ASRAAM X1", "PylonRack_1Rnd_AAA_missiles", 1],
-	["AMRAAM C X1", "PylonRack_Missile_AMRAAM_C_x1", 1],
-	["AMRAAM C X2", "PylonRack_Missile_AMRAAM_C_x2", 1],
-	["AMRAAM D X1", "PylonMissile_Missile_AMRAAM_D_INT_x1", 1],
-	["AMRAAM D X2", "PylonRack_Missile_AMRAAM_D_x2", 1],
-	["BIM9X X2", "PylonRack_Missile_BIM9X_x2", 1],
-	["BIM8X X1", "PylonMissile_Missile_BIM9X_x1", 1],
-	["SAHR-3", "PylonRack_1Rnd_Missile_AA_03_F", 1],
-	["R-73 X1", "PylonMissile_Missile_AA_R73_x1", 1],
-	["R-77 X1", "PylonMissile_Missile_AA_R77_x1", 1],
-	["ZYPHER X1", "PylonRack_1Rnd_GAA_missiles", 1],
-
-/*ROCKETS*/
-
-	["DAR ROCKETS X12", "PylonRack_12Rnd_missiles", 1],
-	["SHRIEKER HE ROCKETS X7", "PylonRack_7Rnd_Rocket_04_HE_F", 1],
-	["SHRIEKER AP ROCKETS X7", "PylonRack_7Rnd_Rocket_04_AP_F", 1],
-	["TRATNYR HE ROCKETS X20", "PylonRack_20Rnd_Rocket_03_HE_F", 1],
-	["TRATNYR AP ROCKETS X20", "PylonRack_20Rnd_Rocket_03_AP_F", 1],
-	["SKYFIRE X19", "PylonRack_19Rnd_Rocket_Skyfire", 1]
-
- /*Guided BOMBS*/
-
-	/*[],"PylonMissile_1Rnd_Bomb_04_F" 					"GBU-12 GUIDED BOMB NATO X1"
-	[],"PylonMissile_1Rnd_Bomb_03_F"						"LOM-250G GUIDED BOMB CSAT X1"
-	[],"PylonMissile_Bomb_GBU12_x1" 						"GBU-12 LASER GUIDIED BOMB X1"
-	[],"PylonRack_Bomb_GBU12_x2"								"GBU-12 LASER GUIDED BOMB X2"
-	[],"PylonMissile_Bomb_KAB250_x1"						"KAB250 GUIDED BOMB X1"*/
-
-/*Dumb Bombs:*/
-
-/*[],"PylonMissile_1Rnd_Mk82_F" 							"MK-82 DUMB BOMB X1"*/
-
-/*GUNS*/
-
-	/*[],"PylonWeapon_300Rnd_20mm_shells"			"20mm TWIN CANNON"
-	[]"PylonWeapon_2000Rnd_65x39_belt"				"6.5mm GATTLING GUN (RIGHT SIDE)"*/
-
-
-
-];
-/*MagsArray = compileFinal str
-[
-
-];*/
-allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray + call PylongArray + call MagsArray);
+allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
 
 uavArray = compileFinal str
 [
