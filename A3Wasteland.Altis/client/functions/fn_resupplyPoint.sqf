@@ -204,7 +204,7 @@ _resupplyThread = [_vehicle, _unit] spawn
 		call _checkAbortConditions;
 
 		private _pathArrs = [];
-
+/*
 		// Collect turret mag data
 		{
 			_x params ["_mag", "_path", "_ammo"];
@@ -275,7 +275,11 @@ _resupplyThread = [_vehicle, _unit] spawn
 		} forEach _pathArrs;
 
 		[_vehicle, false, true, true] call A3W_fnc_setVehicleLoadout;
-
+*/
+		_text = format ["Reloading %1...", [_vehName];
+		sleep (REARM_TIME_SLICE / 2);
+		_vehicle setvehicleammo 1;
+		sleep (REARM_TIME_SLICE / 2);
 		_checkDone = true;
 
 		(getAllHitPointsDamage _vehicle) params ["_hitPoints", "_selections", "_dmgValues"];
