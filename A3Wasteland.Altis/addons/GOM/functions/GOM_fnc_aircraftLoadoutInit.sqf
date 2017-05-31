@@ -1,4 +1,4 @@
-a Vehicle/*
+/*
 GOM_fnc_aircraftLoadout V1.2 made by Grumpy Old Man 17-5-2017
 feel free to use as you like, as long as I'm credited as the original author
 this function is used to make one vehicle act as a loadout station
@@ -896,7 +896,7 @@ GOM_fnc_aircraftLoadout = {
 	createdialog "GOM_dialog_aircraftLoadout";
 	playSound "Click";
 
-	_vehicles = vehicles select {typeof _x iskindof "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x}};
+	_vehicles = vehicles select {typeof _x iskindof "AllVehicles" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x}};
 
 	if (_pilot isEqualTo "PILOT") then {_vehicles = [_obj]};
 
