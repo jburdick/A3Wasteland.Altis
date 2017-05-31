@@ -30,7 +30,7 @@ class GOMRscStructuredText_1101: GOMRscStructuredText
 {
 	idc = 1101;
 
-	text = "<t align='center'>--- Grumpy Old Mans Aircraft Loadout ---"; //--- ToDo: Localize;
+	text = "<t align='center'>--- Vehicle Service System ---"; //--- ToDo: Localize;
 	x = 1 * GUI_GRID_W + GUI_GRID_X;
 	y = 0 * GUI_GRID_H + GUI_GRID_Y;
 	w = 38 * GUI_GRID_W;

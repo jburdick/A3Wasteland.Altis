@@ -203,9 +203,9 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		call _checkAbortConditions;
 
-		private _pathArrs = [];
+		/*private _pathArrs = [];*/
 
-		// Collect turret mag data
+		/*// Collect turret mag data
 		{
 			_x params ["_mag", "_path", "_ammo"];
 
@@ -227,9 +227,9 @@ _resupplyThread = [_vehicle, _unit] spawn
 			};
 		} forEach magazinesAllTurrets _vehicle;
 
-		_checkDone = true;
+		_checkDone = true;*/
 
-		// Reload turret mags
+		/*// Reload turret mags
 		{
 			_x params ["_path", "_magPairs"];
 
@@ -272,10 +272,14 @@ _resupplyThread = [_vehicle, _unit] spawn
 					sleep (REARM_TIME_SLICE / 2);
 				};
 			} forEach _magPairs;
-		} forEach _pathArrs;
+		} forEach _pathArrs;*/
 
-		[_vehicle, false, true, true] call A3W_fnc_setVehicleLoadout;
+		/*[_vehicle, false, true, true] call A3W_fnc_setVehicleLoadout;*/
 
+		_text = format ["Reloading %1...", [_vehName]];
+		sleep (REARM_TIME_SLICE / 2);
+		_vehicle setvehicleammo 1;
+		sleep (REARM_TIME_SLICE / 2);
 		_checkDone = true;
 
 		(getAllHitPointsDamage _vehicle) params ["_hitPoints", "_selections", "_dmgValues"];

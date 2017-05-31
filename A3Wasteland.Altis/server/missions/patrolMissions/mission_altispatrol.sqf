@@ -11,12 +11,12 @@ private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_createVehicle","
 
 _setupVars =
 {
-  _missionType = "Altis Patrol";
+	_missionType = "Altis Patrol";
 	_locationsArray = nil;
 };
 
 _setupObjects =
--{
+{
 	_town = (call cityList) call BIS_fnc_selectRandom;
 	_missionPos = markerPos (_town select 0);
 
@@ -67,7 +67,7 @@ _setupObjects =
 	_vehiclePos1 = [_vPos1 + 5, _vPos2 + 5, _vPos3];
 	_vehiclePos2 = [_vPos1 + 10, _vPos2 + 10, _vPos3];
 	_vehiclePos3 = [_vPos1 + 15, _vPos2 + 15, _vPos3];
-	_vehiclePos4 = [_vPos1 + 20, _vPos2 + 20, _vPos3];*/
+ -	_vehiclePos4 = [_vPos1 + 20, _vPos2 + 20, _vPos3];*/
 
 	_vehicles =
 	[
@@ -171,4 +171,4 @@ _successExec =
 	_successHintMessage = "The patrol has been stopped, the money and crates and vehicles are yours to take.";
 };
 
-_this call patrolMissionProcessor; 
+_this call patrolMissionProcessor;
