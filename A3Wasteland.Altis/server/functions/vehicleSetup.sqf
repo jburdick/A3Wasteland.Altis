@@ -50,29 +50,11 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 
 if ({_vehicle iskindof _x} count
 		[
-			"B_APC_Tracked_01_rcws_F",
-			"B_Truck_01_ammo_F",
-			"B_Truck_01_Repair_F",
-			"B_Truck_01_Repair_F",
-			"O_Heli_Transport_04_ammo_F",
-			"O_Heli_Transport_04_fuel_F",
-			"O_Heli_Transport_04_repair_F",
-			"O_Truck_03_ammo_F",
-			"O_Truck_03_fuel_F",
-			"O_Truck_03_repair_F",
-			"O_Truck_02_Ammo_F",
-			"O_Truck_02_box_F",
-			"O_Truck_02_fuel_F",
-			"O_T_Truck_03_ammo_ghex_F",
-			"O_T_Truck_03_fuel_ghex_F",
-			"O_T_Truck_03_repair_ghex_F",
-			"I_Truck_02_ammo_F",
-			"I_Truck_02_fuel_F",
-			"I_Truck_02_box_F",
-			"C_Van_01_fuel_F",
-			"C_Offroad_01_repair_F",
-			"C_Truck_02_fuel_F",
-			"C_Truck_02_box_F"
+			"air",
+			"Car",
+			"StaticWeapon",
+			"Tank",
+			"Ship_F"
 		] >0)
 	then
 	{

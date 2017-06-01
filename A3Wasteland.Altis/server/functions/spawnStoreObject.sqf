@@ -260,7 +260,9 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 						"Land_FuelStation_Feed_F"
 					] > 0):
  				{
- 					_object remoteExecCall ["GOM_fnc_addAircraftLoadout", 0, _object];
+ 					_object setAmmoCargo 0;
+					_object setFuelCargo 0;
+					_object setRepairCargo 0;
  				};
  			};
 
