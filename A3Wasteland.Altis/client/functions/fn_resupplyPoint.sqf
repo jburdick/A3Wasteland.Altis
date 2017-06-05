@@ -22,6 +22,48 @@ doCancelAction = false;
 params ["", ["_unit",objNull,[objNull]]];
 
 _vehicle = vehicle _unit;
+_pylonsequiped = GetPylonMagazines _vehicle;
+
+_pylons =
+  [
+    ["PylonRack_1Rnd_LG_scalpel",             1000],   	//SCALPEL X1
+    ["PylonRack_3Rnd_LG_scalpel",             3000],  	//SCALPEL X3
+    ["PylonRack_4Rnd_LG_scalpel",             4000],		//SCALPEL X4
+    ["PylonRack_1Rnd_Missile_AGM_02_F",       4000], 		//MACER AGM X1
+    ["PylonRack_Missile_AGM_02_x1",           5000],		//MACER II AGM X1
+    ["PylonMissile_Missile_AGM_02_x2",        8000], 		//MACER AGM X2
+    ["PylonRack_Missile_AGM_02_x2",           10000],		//MACER II X2
+    ["PylonRack_3Rnd_Missile_AGM_02_F",       12000], 	//MACER AGM X3
+    ["PylonRack_12Rnd_PG_missiles",           10000], 	//DAGR X12
+    ["PylonRack_1Rnd_Missile_AGM_01_F",       4000],		//SHARUR X1
+    ["PylonMissile_Missile_AGM_KH25_x1",      5000],		//KH-25 X1
+    ["PylonRack_1Rnd_Missile_AA_04_F",        5000], 		//FALCHION 22 X1
+    ["PylonRack_1Rnd_AAA_missiles",           2500], 		//ASRAAM X1
+    ["PylonRack_Missile_AMRAAM_C_x1",         4000],		//AMRAAM C X1
+    ["PylonRack_Missile_AMRAAM_C_x2",         8000],		//AMRAAM C X2
+    ["PylonMissile_Missile_AMRAAM_D_INT_x1",  5000], 		//AMRAAM D X1
+    ["PylonRack_Missile_AMRAAM_D_x2",         10000], 	//AMRAAM D X2
+    ["PylonRack_Missile_BIM9X_x2",            14000], 	//BIM9X X2
+    ["PylonMissile_Missile_BIM9X_x1",         7000],		//BIM8X X1
+    ["PylonRack_1Rnd_Missile_AA_03_F",        8000], 		//SAHR-3
+    ["PylonMissile_Missile_AA_R73_x1",        9000],		//R-73 X1
+    ["PylonMissile_Missile_AA_R77_x1",        10000],		//R-77 X1
+    ["PylonRack_1Rnd_GAA_missiles",           15000],		//ZYPHER X1
+    ["PylonRack_12Rnd_missiles",              3000], 		//DAR ROCKETS X12
+    ["PylonRack_7Rnd_Rocket_04_HE_F",          8000],   //SHRIEKER HE ROCKETS X7
+    ["PylonRack_7Rnd_Rocket_04_AP_F",          7000], 	//SHRIEKER AP ROCKETS X7
+    ["PylonRack_20Rnd_Rocket_03_HE_F",         10000],	//TRATNYR HE ROCKETS X20
+    ["PylonRack_20Rnd_Rocket_03_AP_F",         12000],	//TRATNYR AP ROCKETS X20
+    ["PylonRack_19Rnd_Rocket_Skyfire",         9000],		//SKYFIRE X19
+    ["PylonMissile_1Rnd_Bomb_04_F",            2500], 	//GBU-12 GUIDED BOMB NATO X1
+    ["PylonMissile_1Rnd_Bomb_03_F",            2500],		//LOM-250G GUIDED BOMB CSAT X1
+    ["PylonMissile_Bomb_GBU12_x1",             2500], 	//GBU-12 LASER GUIDIED BOMB X1
+    ["PylonRack_Bomb_GBU12_x2",                5000],		//GBU-12 LASER GUIDED BOMB X2
+    ["PylonMissile_Bomb_KAB250_x1",            2500],		//KAB250 GUIDED BOMB X1
+    ["PylonMissile_1Rnd_Mk82_F",               500], 		//MK-82 DUMB BOMB X1
+    ["PylonWeapon_300Rnd_20mm_shells",         700],		//20mm TWIN CANNON
+    ["PylonWeapon_2000Rnd_65x39_belt",         100]			//6.5mm GATTLING GUN (RIGHT SIDE)
+  ];
 
 //check if caller is in vehicle
 if (_vehicle == _unit) exitWith {};
@@ -38,17 +80,26 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 	scopeName "AmmoTruckThread";
 
-	_price = 1000; // price = 1000 for vehicles not found in vehicle store
-
+	_baseprice = 1000; // price = 1000 for vehicles not found in vehicle store
 	{
 		if (_vehClass == _x select 1) exitWith
 		{
-			_price = _x select 2;
-			_price = round (_price / PRICE_RELATIONSHIP);
+			_baseprice = _x select 2;
+			_baseprice = round (_baseprice / PRICE_RELATIONSHIP);
 		};
 	} forEach (call allVehStoreVehicles + call staticGunsArray);
 
-	_titleText = { titleText [_this, "PLAIN DOWN", ((REARM_TIME_SLICE max 1) / 10) max 0.3] };
+ _pylonprice = 0;
+	{
+    _pylonweapon = _x foreach _pylonsequiped;
+    if (_pylonweapon == _x select 0) exitWith
+    {
+      _pylonprice = _x select 1;
+    } forEach _pylons;
+  };
+  _price = (_baseprice + _pylonprice);
+
+  _titleText = { titleText [_this, "PLAIN DOWN", ((REARM_TIME_SLICE max 1) / 10) max 0.3] };
 
 	_checkAbortConditions =
 	{
@@ -203,78 +254,6 @@ _resupplyThread = [_vehicle, _unit] spawn
 
 		call _checkAbortConditions;
 
-		/*private _pathArrs = [];*/
-
-		/*// Collect turret mag data
-		{
-			_x params ["_mag", "_path", "_ammo"];
-
-			if (_mag != "FakeWeapon") then
-			{
-				_pathArr = [_pathArrs, _path] call fn_getFromPairs;
-				_new = isNil "_pathArr";
-
-				if (_new) then { _pathArr = [] };
-
-				_index = [_pathArr, _mag, 1] call fn_addToPairs;
-
-				if (_ammo < getNumber (configFile >> "CfgMagazines" >> _mag >> "count")) then
-				{
-					(_pathArr select _index) set [2, true]; // mark mag for reload
-				};
-
-				if (_new) then { _pathArrs pushBack [_path, _pathArr] };
-			};
-		} forEach magazinesAllTurrets _vehicle;
-
-		_checkDone = true;*/
-
-		/*// Reload turret mags
-		{
-			_x params ["_path", "_magPairs"];
-
-			{
-				_x params ["_mag", "_qty", ["_notFull", false]];
-
-				if (_notFull) then
-				{
-					if (_checkDone) then
-					{
-						_checkDone = false;
-						sleep 3;
-					};
-
-					call _checkAbortConditions;
-
-					_magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
-
-					_text = format ["Reloading %1...", [_vehName, _magName] select (_magName != "")];
-					_text call _titleText;
-
-					sleep (REARM_TIME_SLICE / 2);
-					call _checkAbortConditions;
-
-					if (_qty isEqualTo 1) then
-					{
-						_vehicle setMagazineTurretAmmo [_mag, getNumber (configFile >> "CfgMagazines" >> _mag >> "count"), _path];
-					}
-					else
-					{
-						_vehicle removeMagazinesTurret [_mag, _path];
-
-						private "_i";
-						for "_i" from 1 to _qty do
-						{
-							_vehicle addMagazineTurret [_mag, _path];
-						};
-					};
-
-					sleep (REARM_TIME_SLICE / 2);
-				};
-			} forEach _magPairs;
-		} forEach _pathArrs;*/
-
-		/*[_vehicle, false, true, true] call A3W_fnc_setVehicleLoadout;*/
 
 		_text = format ["Reloading %1...", [_vehName]];
 		sleep (REARM_TIME_SLICE / 2);
