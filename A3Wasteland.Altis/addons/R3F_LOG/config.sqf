@@ -562,8 +562,8 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Device_assembled_F", //relocker
 	"StaticWeapon",
 	"ReammoBox_F",
-	"Kart_01_Base_F",
-	"Quadbike_01_base_F",
+	/*"Kart_01_Base_F",
+	"Quadbike_01_base_F",*/
 	"Rubber_duck_base_F",
 	"SDV_01_base_F",
 	"UAV_01_base_F",
