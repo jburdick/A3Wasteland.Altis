@@ -48,18 +48,19 @@ if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
 	_vehicle remoteExec ["A3W_fnc_setupAntiExplode", 0, _vehicle];
 };
 
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _vehicle];
-};
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportFuel") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _vehicle];
-};
-if (_vehicle getVariable ["A3W_resupplyPoint", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportRepair") > 0) then
-{
-	[_vehicle] remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _vehicle];
-};
+if ({_vehicle iskindof _x} count
+		[
+			"air",
+			"Car",
+			"StaticWeapon",
+			"Tank",
+			"Ship_F"
+		] >0)
+	then
+	{
+		[_vehicle] remoteExecCall ["GOM_fnc_addAircraftLoadout", 0, _vehicle];
+	};
+
 [_vehicle, _brandNew] call A3W_fnc_setVehicleLoadout;
 
 // Vehicle customization

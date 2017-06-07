@@ -396,7 +396,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["B_T_VTOL_01_armed_F", 100],
 	["O_T_VTOL_02_infantry_F", 50],
 	["O_T_VTOL_02_vehicle_F", 100]
-	
+
 ];
 
 /**
@@ -454,6 +454,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Crash_barrier_F", 5],
 	["Land_HBarrierBig_F", 5],
 	["Land_HBarrierTower_F", 8],
+	["Land_HBarrierWall_corridor_F", 8],
 	["Land_HBarrierWall4_F", 4],
 	["Land_HBarrierWall6_F", 6],
 	["Land_HBarrier_1_F", 3],
@@ -561,11 +562,11 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Device_assembled_F", //relocker
 	"StaticWeapon",
 	"ReammoBox_F",
-	"Kart_01_Base_F",
-	"Quadbike_01_base_F",
-	"Rubber_duck_base_F",
-	"SDV_01_base_F",
-	"UAV_01_base_F",
+	/*"Kart_01_Base_F",
+	"Quadbike_01_base_F",*/
+	/*"Rubber_duck_base_F",*/
+	/*"SDV_01_base_F",
+	"UAV_01_base_F",*/
 	"Land_BagBunker_Large_F",
 	"Land_BagBunker_Small_F",
 	"Land_BagBunker_Tower_F",

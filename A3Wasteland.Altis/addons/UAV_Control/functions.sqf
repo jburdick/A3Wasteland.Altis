@@ -20,7 +20,7 @@ while {true} do
 	waitUntil {_uav = getConnectedUAV player; !isNull _uav};
 
 	// ignore remote designators and autoturrets unless indie
-	if (!(_uav isKindOf "StaticWeapon") || !(playerSide in [BLUFOR,OPFOR])) then
+	/*if (!(_uav isKindOf "StaticWeapon") || !(playerSide in [BLUFOR,OPFOR])) then
 	{
 		_ownerUID = _uav getVariable ["ownerUID", "0"];
 
@@ -43,7 +43,7 @@ while {true} do
 		player connectTerminalToUAV objNull;
 		playSound "FD_CP_Not_Clear_F";
 		["You are not allowed to connect to this unmanned vehicle.", 5] call mf_notify_client;
-	};
+	};*/
 
 	if (alive _uav && _uav == getConnectedUAV player) then
 	{

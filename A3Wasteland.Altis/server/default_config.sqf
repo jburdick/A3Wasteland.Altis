@@ -88,7 +88,7 @@ A3W_mineLifetime = 1*24;           // Maximum lifetime in hours for saved mines 
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
 A3W_privateParkingLimit = 0;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
-A3W_privateParkingCost = 10000;     // Cost to retrieve an individual vehicle from private parking
+A3W_privateParkingCost = 25000;     // Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;            // Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 
 // iniDB settings

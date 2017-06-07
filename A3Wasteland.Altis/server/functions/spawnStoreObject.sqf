@@ -27,6 +27,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 {
 	_timeoutKey = _key + "_timeout";
 	_objectID = "";
+	private _seaSpawn = false;
 	private _playerGroup = group _player;
 	_playerSide = side _playerGroup;
 
@@ -74,6 +75,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			{
 				_itemEntry = _results select 0;
 				_marker = _marker + "_seaSpawn";
+				_seaSpawn = true;
 			};
 		};
 
@@ -119,26 +121,49 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 		if (_player getVariable ["cmoney", 0] >= _itemPrice) then
 		{
 			private _markerPos = markerPos _marker;
-			private _seaSpawn = (_marker find "_seaSpawn" != -1);
-			private _waterNonBoat = false;
+			private _npcPos = getPosASL _storeNPC;
 			private _canFloat = (round getNumber (configFile >> "CfgVehicles" >> _class >> "canFloat") > 0);
+			private _waterNonBoat = false;
+			private "_spawnPosAGL";
 
 			// non-boat spawn over water (e.g. aircraft carrier)
-			if (!isNull _storeNPC && surfaceIsWater getPosASL _storeNPC && !_seaSpawn) then
+			if (!isNull _storeNPC && surfaceIsWater _npcPos && !_seaSpawn) then
 			{
-				_markerPos set [2, (getPosASL _storeNPC) select 2];
-				_safePos = [ASLtoATL _markerPos, _markerPos] select _canFloat;
+				_markerPos set [2, _npcPos select 2];
+ 				_spawnPosAGL = ASLtoAGL _markerPos;
+				_safePos = if (_canFloat) then { _spawnPosAGL } else { ASLtoATL _markerPos };
 				_waterNonBoat = true;
 			}
 			else // normal spawn
 			{
 				_safePos = _markerPos findEmptyPosition [0, 50, _class];
 				if (count _safePos == 0) then { _safePos = _markerPos };
+				_spawnPosAGL = _safePos;
 			};
+
+
+			// delete wrecks near spawn
+			{
+				if (!alive _x) then
+				{
+					deleteVehicle _x;
+				};
+			} forEach nearestObjects [_spawnPosAGL, ["LandVehicle","Air","Ship"], 25];
 
 			if (_player getVariable [_timeoutKey, true]) then { breakOut "spawnStoreObject" }; // Timeout
 
 			_object = createVehicle [_class, _safePos, [], 0, ""];
+
+			if (_waterNonBoat) then
+			{
+				private _posSurf = getPos _object;
+				private _posASL = getPosASL _object;
+
+				if (_posSurf select 2 < 0) then
+				{
+					_object setPosASL [_posSurf select 0, _posSurf select 1, (_posASL select 2) - (_posSurf select 2) + 0.05];
+				};
+			};
 
 			if (_player getVariable [_timeoutKey, true]) then // Timeout
 			{
@@ -190,7 +215,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			if (_object isKindOf "AllVehicles" && !(_object isKindOf "StaticWeapon")) then
 			{
-				if (!_waterNonBoat && !_seaSpawn) then
+				if (!surfaceIsWater _safePos) then
 				{
 					_object setPosATL [_safePos select 0, _safePos select 1, 0.05];
 				};
@@ -218,23 +243,29 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			//Setup Service Objects
  			switch (true) do
  			{
- 				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F", "B_Slingload_01_Ammo_F"] > 0):
+ 				case ({_object isKindOf _x} count
+					[
+						"Box_IND_AmmoVeh_F",
+						"Box_East_AmmoVeh_F",
+						"Box_NATO_AmmoVeh_F",
+						"B_Slingload_01_Ammo_F",
+						"B_Slingload_01_Fuel_F",
+						"B_Slingload_01_Repair_F",
+						"Land_Pod_Heli_Transport_04_ammo_F",
+						"Land_Pod_Heli_Transport_04_fuel_F",
+						"Land_Pod_Heli_Transport_04_repair_F",
+						"StorageBladder_01_fuel_forest_F",
+						"StorageBladder_01_fuel_sand_F",
+						"Land_fs_feed_F",
+						"Land_FuelStation_Feed_F"
+					] > 0):
  				{
- 					_object remoteExecCall ["A3W_fnc_setupAmmoTruck", 0, _object];
  					_object setAmmoCargo 0;
- 				};
- 				case ({_object isKindOf _x} count ["B_Slingload_01_Fuel_F", "Land_FuelStation_Feed_F", "StorageBladder_01_fuel_sand_F", "FlexibleTank_01_sand_F"] > 0):
- 				{
- 					_object remoteExecCall ["A3W_fnc_setupFuelTruck", 0, _object];
- 					_object setFuelCargo 0;
- 				};
- 				case ({_object isKindOf _x} count ["B_Slingload_01_Repair_F"] > 0):
- 				{
- 					_object remoteExecCall ["A3W_fnc_setupRepairTruck", 0, _object];
- 					_object setAmmoCargo 0;
+					_object setFuelCargo 0;
+					_object setRepairCargo 0;
  				};
  			};
- 
+
 			if (_skipSave) then
 			{
 				_object setVariable ["A3W_skipAutoSave", true, true];
