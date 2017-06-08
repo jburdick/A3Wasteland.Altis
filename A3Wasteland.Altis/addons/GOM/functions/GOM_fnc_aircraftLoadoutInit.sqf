@@ -360,7 +360,7 @@ _nul = [_obj,_rearm,_pylons,_pylonAmmoCounts] spawn {
 	_notbusy = [];
 	_ammosource = objnull;
 	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then {
-	_ammoVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0}};
+	_ammoVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0} AND !isKindOf "B_APC_Tracked_01_CRV_F"};
 	if (_ammoVehs isEqualTo []) exitWith {systemchat "You have no valid ammo sources!"};
 
 
@@ -533,9 +533,8 @@ GOM_fnc_setPylonsRefuel = {
 
 	params ["_obj"];
 
-	if (lbCursel 1500 < 0) exitWith {systemchat "Select a vehicle first.
-"};
-	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0}};;
+	if (lbCursel 1500 < 0) exitWith {systemchat "Select a vehicle first."};
+	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0} AND !isKindOf "B_APC_Tracked_01_CRV_F"};
 	_refuelSource = objnull;
 	if (GOM_fnc_aircraftLoadout_NeedsFuelSource) then {
 
