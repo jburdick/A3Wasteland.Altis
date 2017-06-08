@@ -170,8 +170,8 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 800000],
-	["Ammo Container", "B_Slingload_01_Ammo_F", 250000],
+	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 5000000],
+	["Ammo Container", "B_Slingload_01_Ammo_F", 1000000],
 	["Explosives Crate(Empty)", "Box_NATO_AmmoOrd_F", 100],
 	["Ammo Crate (Empty)", "Box_NATO_Ammo_F", 100],
 	["Granade Crate (Empty)", "Box_NATO_Grenades_F", 100],
@@ -300,9 +300,9 @@ ammoArray = compileFinal str
 	["RPG-42 Anti-Tank Rocket", "RPG32_F", 250],              // Direct damage: high      | Splash damage: low    | Guidance: none
 	["RPG-42 High-Explosive Rocket", "RPG32_HE_F", 250],      // Direct damage: medium    | Splash damage: medium | Guidance: none
 	["PCML Anti-Tank Missile", "NLAW_F", 1200],                // Direct damage: very high | Splash damage: low    | Guidance: laser, ground vehicles
-	["Titan Anti-Tank Missile", "Titan_AT", 3500],             // Direct damage: high      | Splash damage: low    | Guidance: mouse, laser, ground vehicles
-	["Titan Anti-Personnel Missile", "Titan_AP", 3500],        // Direct damage: low       | Splash damage: high   | Guidance: mouse, laser
-	["Titan Anti-Air Missile", "Titan_AA", 3500],              // Direct damage: low       | Splash damage: medium | Guidance: aircraft
+	["Titan Anti-Tank Missile", "Titan_AT", 5000],             // Direct damage: high      | Splash damage: low    | Guidance: mouse, laser, ground vehicles
+	["Titan Anti-Personnel Missile", "Titan_AP", 10000],        // Direct damage: low       | Splash damage: high   | Guidance: mouse, laser
+	["Titan Anti-Air Missile", "Titan_AA", 7000],              // Direct damage: low       | Splash damage: medium | Guidance: aircraft
 	["40mm HE Grenade Round", "1Rnd_HE_Grenade_shell", 125],
 	["40mm 3Rnd HE Grenades", "3Rnd_HE_Grenade_shell", 250],
 	["40mm Smoke Round (White)", "1Rnd_Smoke_Grenade_shell", 50],
@@ -1005,7 +1005,7 @@ landArray = compileFinal str
 	["HEMTT Fuel", "B_Truck_01_fuel_F", 9000, "vehicle"],
 	["HEMTT Medical", "B_Truck_01_medical_F", 10000, "vehicle"],
 	["HEMTT Repair", "B_Truck_01_Repair_F", 12500, "vehicle"],
-	["HEMTT Ammo", "B_Truck_01_ammo_F", 500000, "vehicle"],
+	["HEMTT Ammo", "B_Truck_01_ammo_F", 1000000, "vehicle"],
 
 	// ["Tempest Device", "O_Truck_03_device_F", 4000, "vehicle"],
 
@@ -1014,7 +1014,7 @@ landArray = compileFinal str
 	["Tempest Fuel", "O_Truck_03_fuel_F", 9000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 10000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 12500, "vehicle"],
-	["Tempest Ammo", "O_Truck_03_ammo_F", 600000, "vehicle"],
+	["Tempest Ammo", "O_Truck_03_ammo_F", 1500000, "vehicle"],
 
 
 	["Zamak Transport", "I_Truck_02_transport_F", 4000, "vehicle"],
@@ -1022,7 +1022,7 @@ landArray = compileFinal str
 	["Zamak Fuel", "I_Truck_02_fuel_F", 7500, "vehicle"],
 	["Zamak Medical", "I_Truck_02_medical_F", 9000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 10000, "vehicle"],
-	["Zamak Ammo", "I_Truck_02_ammo_F", 700000, "vehicle"],
+	["Zamak Ammo", "I_Truck_02_ammo_F", 2000000, "vehicle"],
 
 	["Prowler (Unarmed)", "B_T_LSV_01_unarmed_F", 900, "vehicle"],
 	["Prowler (Armed)", "B_T_LSV_01_armed_F", 5000, "vehicle"],
@@ -1065,7 +1065,7 @@ tanksArray = compileFinal str
 	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 130000, "vehicle"], // Commander gun variant
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 140000, "vehicle"],
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 150000, "vehicle"],
-	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 500000, "vehicle"],
+	["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 5000000, "vehicle"],
 	["M4 Scorcher", "B_MBT_01_arty_F", 3500000, "vehicle"],
 	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 5000000, "vehicle"]
 ];
@@ -1078,29 +1078,29 @@ helicoptersArray = compileFinal str
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee (20mm Cannons)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawnee20mm"],
 	["AH-9 Pawnee (DAR)", "B_Heli_Light_01_dynamicLoadout_F", 45000, "vehicle", "variant_pawneeDAR"],
-	["AH-9 Pawnee (Shrieker AP)", "B_Heli_Light_01_dynamicLoadout_F", 50000, "vehicle", "variant_pawneeS-HE"],
-	["AH-9 Pawnee (Shrieker HE)", "B_Heli_Light_01_dynamicLoadout_F", 50000, "vehicle", "variant_pawneeS-AP"],
-	["AH-9 Pawnee (Tratnyr HE)", "B_Heli_Light_01_dynamicLoadout_F", 60000, "vehicle", "variant_pawneeT-HE"],
-	["AH-9 Pawnee (Tratnyr AP)", "B_Heli_Light_01_dynamicLoadout_F", 60000, "vehicle", "variant_pawneeT-AP"],
-	["AH-9 Pawnee (Scalpel x8)", "B_Heli_Light_01_dynamicLoadout_F", 100000, "vehicle", "variant_pawneeSCALX4"],
-	["AH-9 Pawnee (Falchion x2)", "B_Heli_Light_01_dynamicLoadout_F", 50000, "vehicle", "variant_pawneeFALCHION"],
+	["AH-9 Pawnee (Shrieker AP)", "B_Heli_Light_01_dynamicLoadout_F", 70000, "vehicle", "variant_pawneeS-HE"],
+	["AH-9 Pawnee (Shrieker HE)", "B_Heli_Light_01_dynamicLoadout_F", 80000, "vehicle", "variant_pawneeS-AP"],
+	["AH-9 Pawnee (Tratnyr HE)", "B_Heli_Light_01_dynamicLoadout_F", 90000, "vehicle", "variant_pawneeT-HE"],
+	["AH-9 Pawnee (Tratnyr AP)", "B_Heli_Light_01_dynamicLoadout_F", 80000, "vehicle", "variant_pawneeT-AP"],
+	["AH-9 Pawnee (Scalpel x8)", "B_Heli_Light_01_dynamicLoadout_F", 200000, "vehicle", "variant_pawneeSCALX4"],
+	["AH-9 Pawnee (Falchion x2)", "B_Heli_Light_01_dynamicLoadout_F", 120000, "vehicle", "variant_pawneeFALCHION"],
 
 
 
 	["PO-30 Orca (Unarmed)", "O_Heli_Light_02_dynamicLoadout_F", 6000, "vehicle", "variant_orcaUnArm"],
 	["PO-30 Orca (6.5mm)", "O_Heli_Light_02_dynamicLoadout_F", 10000, "vehicle", "variant_orcaGUN"],
 	["PO-30 Orca (6.5mm + DAR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaGUNDAR"],
-	["PO-30 Orca (6.5mm + DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 50000, "vehicle", "variant_orcaGUNDAGR"],
+	["PO-30 Orca (6.5mm + DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 75000, "vehicle", "variant_orcaGUNDAGR"],
 	/*["PO-30 Orca (Unarmed)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaUnArm"],
 	["PO-30 Orca (Unarmed)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaUnArm"],*/
 
 
 	["WY-55 Hellcat (Unarmed)", "I_Heli_light_03_unarmed_F", 7000, "vehicle"],
 	["WY-55 Hellcat (Guns)", "I_Heli_light_03_dynamicLoadout_F", 10000, "vehicle","variant_HellGun" ],
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_Hell20mm" ],
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAR" ],
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAGR" ],
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellBOMB" ],
+	["WY-55 Hellcat (20mm Cannon)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_Hell20mm" ],
+	["WY-55 Hellcat (DAR)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAR" ],
+	["WY-55 Hellcat (DAGR)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellDAGR" ],
+	["WY-55 Hellcat (Bombs)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellBOMB" ],
 	/*["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ],
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ],
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle","variant_HellGun" ], */
@@ -1113,7 +1113,7 @@ helicoptersArray = compileFinal str
 	["Mi-290 Taru (Transport) [DLC]", "O_Heli_Transport_04_covered_F", 9500, "vehicle"],
 	["Mi-290 Taru (Medical) [DLC]", "O_Heli_Transport_04_medevac_F",12500, "vehicle"],
 	["Mi-290 Taru (Repair) [DLC]", "O_Heli_Transport_04_repair_F", 12500, "vehicle"],
-	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 1000000, "vehicle"],
+	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 5000000, "vehicle"],
 
 	["CH-67 Huron (Black) [DLC]", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], // CH-47
 	["CH-67 Huron (Armed) [DLC]", "B_Heli_Transport_03_F", 30000, "vehicle"], // CH-47 with 2 side miniguns

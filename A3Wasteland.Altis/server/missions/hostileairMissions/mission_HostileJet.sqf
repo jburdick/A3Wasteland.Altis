@@ -111,14 +111,14 @@ _successExec =
 	// Mission completed
 
 	//Money
-	for "_i" from 1 to 10 do
+	/*for "_i" from 1 to 10 do
 	{
 		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
 		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
 		_cash setDir random 360;
 		_cash setVariable ["cmoney", 7500, true];
 		_cash setVariable ["owner", "world", true];
-	};
+	};*/
 /*
 	_Boxes1 = ["Box_IND_Wps_F","Box_East_Wps_F","Box_NATO_Wps_F","Box_NATO_AmmoOrd_F","Box_NATO_Grenades_F","Box_East_WpsLaunch_F","Box_NATO_WpsLaunch_F","Box_East_WpsSpecial_F","Box_NATO_WpsSpecial_F"];
 	_currBox1 = _Boxes1 call BIS_fnc_selectRandom;
@@ -134,7 +134,7 @@ _successExec =
 
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];*/
 
-	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates and LOTS of money have fallen near the pilot.";
+	_successHintMessage = "The sky is clear again, the enemy patrol was taken out!";
 };
 
 _this call hostileairMissionProcessor;

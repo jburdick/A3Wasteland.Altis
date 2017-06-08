@@ -21,18 +21,18 @@ _pylons = //Array of all possible pylon weapons
 
 		//	Pylon Weapons						,						Price					What it actually is
 
-    ["PylonRack_1Rnd_LG_scalpel",             1000],   	//SCALPEL X1
-    ["PylonRack_3Rnd_LG_scalpel",             3000],  	//SCALPEL X3
-    ["PylonRack_4Rnd_LG_scalpel",             4000],		//SCALPEL X4
-    ["PylonRack_1Rnd_Missile_AGM_02_F",       4000], 		//MACER AGM X1
-    ["PylonRack_Missile_AGM_02_x1",           5000],		//MACER II AGM X1
-    ["PylonMissile_Missile_AGM_02_x2",        8000], 		//MACER AGM X2
-    ["PylonRack_Missile_AGM_02_x2",           10000],		//MACER II X2
-    ["PylonRack_3Rnd_Missile_AGM_02_F",       12000], 	//MACER AGM X3
-    ["PylonRack_12Rnd_PG_missiles",           10000], 	//DAGR X12
-    ["PylonRack_1Rnd_Missile_AGM_01_F",       4000],		//SHARUR X1
-    ["PylonMissile_Missile_AGM_KH25_x1",      5000],		//KH-25 X1
-    ["PylonRack_1Rnd_Missile_AA_04_F",        5000], 		//FALCHION 22 X1
+    ["PylonRack_1Rnd_LG_scalpel",             10000],   	//SCALPEL X1
+    ["PylonRack_3Rnd_LG_scalpel",             30000],  	//SCALPEL X3
+    ["PylonRack_4Rnd_LG_scalpel",             40000],		//SCALPEL X4
+    ["PylonRack_1Rnd_Missile_AGM_02_F",       15000], 		//MACER AGM X1
+    ["PylonRack_Missile_AGM_02_x1",           20000],		//MACER II AGM X1
+    ["PylonMissile_Missile_AGM_02_x2",        30000], 		//MACER AGM X2
+    ["PylonRack_Missile_AGM_02_x2",           40000],		//MACER II X2
+    ["PylonRack_3Rnd_Missile_AGM_02_F",      	45000], 	//MACER AGM X3
+    ["PylonRack_12Rnd_PG_missiles",           20000], 	//DAGR X12
+    ["PylonRack_1Rnd_Missile_AGM_01_F",       15000],		//SHARUR X1
+    ["PylonMissile_Missile_AGM_KH25_x1",      20000],		//KH-25 X1
+    ["PylonRack_1Rnd_Missile_AA_04_F",        15000], 		//FALCHION 22 X1
     ["PylonRack_1Rnd_AAA_missiles",           2500], 		//ASRAAM X1
     ["PylonRack_Missile_AMRAAM_C_x1",         4000],		//AMRAAM C X1
     ["PylonRack_Missile_AMRAAM_C_x2",         8000],		//AMRAAM C X2
@@ -43,20 +43,20 @@ _pylons = //Array of all possible pylon weapons
     ["PylonRack_1Rnd_Missile_AA_03_F",        8000], 		//SAHR-3
     ["PylonMissile_Missile_AA_R73_x1",        9000],		//R-73 X1
     ["PylonMissile_Missile_AA_R77_x1",        10000],		//R-77 X1
-    ["PylonRack_1Rnd_GAA_missiles",           15000],		//ZYPHER X1
+    ["PylonRack_1Rnd_GAA_missiles",           40000],		//ZYPHER X1
     ["PylonRack_12Rnd_missiles",              3000], 		//DAR ROCKETS X12
-    ["PylonRack_7Rnd_Rocket_04_HE_F",          8000],   //SHRIEKER HE ROCKETS X7
-    ["PylonRack_7Rnd_Rocket_04_AP_F",          7000], 	//SHRIEKER AP ROCKETS X7
-    ["PylonRack_20Rnd_Rocket_03_HE_F",         10000],	//TRATNYR HE ROCKETS X20
-    ["PylonRack_20Rnd_Rocket_03_AP_F",         12000],	//TRATNYR AP ROCKETS X20
-    ["PylonRack_19Rnd_Rocket_Skyfire",         9000],		//SKYFIRE X19
+    ["PylonRack_7Rnd_Rocket_04_HE_F",          14000],   //SHRIEKER HE ROCKETS X7
+    ["PylonRack_7Rnd_Rocket_04_AP_F",          14000], 	//SHRIEKER AP ROCKETS X7
+    ["PylonRack_20Rnd_Rocket_03_HE_F",         24000],	//TRATNYR HE ROCKETS X20
+    ["PylonRack_20Rnd_Rocket_03_AP_F",         24000],	//TRATNYR AP ROCKETS X20
+    ["PylonRack_19Rnd_Rocket_Skyfire",         19000],		//SKYFIRE X19
     ["PylonMissile_1Rnd_Bomb_04_F",            2500], 	//GBU-12 GUIDED BOMB NATO X1
     ["PylonMissile_1Rnd_Bomb_03_F",            2500],		//LOM-250G GUIDED BOMB CSAT X1
     ["PylonMissile_Bomb_GBU12_x1",             2500], 	//GBU-12 LASER GUIDIED BOMB X1
     ["PylonRack_Bomb_GBU12_x2",                5000],		//GBU-12 LASER GUIDED BOMB X2
     ["PylonMissile_Bomb_KAB250_x1",            2500],		//KAB250 GUIDED BOMB X1
     ["PylonMissile_1Rnd_Mk82_F",               500], 		//MK-82 DUMB BOMB X1
-    ["PylonWeapon_300Rnd_20mm_shells",         700],		//20mm TWIN CANNON
+    ["PylonWeapon_300Rnd_20mm_shells",         1700],		//20mm TWIN CANNON
     ["PylonWeapon_2000Rnd_65x39_belt",         100]			//6.5mm GATTLING GUN (RIGHT SIDE)
 ];
 
