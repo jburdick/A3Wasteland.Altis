@@ -53,6 +53,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -77,6 +81,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -101,6 +109,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -181,7 +193,6 @@ _successExec =
 		_cash setVariable["owner","world",true];
 	};
 */
-	//This works
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
     [_box1,"Launchers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;

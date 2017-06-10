@@ -56,6 +56,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -80,6 +84,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
@@ -104,6 +112,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -126,6 +138,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -148,6 +164,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
@@ -170,6 +190,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -192,6 +216,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -213,6 +241,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
@@ -235,6 +267,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -257,6 +293,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;

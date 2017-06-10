@@ -36,6 +36,10 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;

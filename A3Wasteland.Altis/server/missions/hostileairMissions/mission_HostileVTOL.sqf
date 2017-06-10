@@ -39,11 +39,19 @@ _setupObjects =
 
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"]; // Added to make it fly
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
 		_vehicle setVelocity _vel; // Added to make it fly
 		_vehicle setVariable [call vChecksum, true, false];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		_aiGroup addVehicle _vehicle;
 
 		// add pilot
@@ -119,57 +127,64 @@ _successExec =
 	_currBox1 = _Boxes1 call BIS_fnc_selectRandom;
 	_box1 = createVehicle [_currBox1, _lastPos, [], 2, "None"];
 	_box1 setDir random 360;
+	_box1 setammocargo 0;
 	_box1 allowDamage false;
 
 	_Boxes2 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox2 = _Boxes2 call BIS_fnc_selectRandom;
 	_box2 = createVehicle [_currBox2, _lastPos, [], 2, "None"];
 	_box2 setDir random 360;
+	_box2 setammocargo 0;
 	_box2 allowDamage false;
 
 	_Boxes3 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox3 = _Boxes3 call BIS_fnc_selectRandom;
 	_box3 = createVehicle [_currBox3, _lastPos, [], 2, "None"];
 	_box3 setDir random 360;
+	_box13setammocargo 0;
 	_box3 allowDamage false;
 
 	_Boxes4 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox4 = _Boxes4 call BIS_fnc_selectRandom;
 	_box4 = createVehicle [_currBox4, _lastPos, [], 2, "None"];
 	_box4 setDir random 360;
+	_box4 setammocargo 0;
 	_box4 allowDamage false;
 
 	_Boxes5 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox5 = _Boxes5 call BIS_fnc_selectRandom;
 	_box5 = createVehicle [_currBox5, _lastPos, [], 2, "None"];
 	_box5 setDir random 360;
+	_box5 setammocargo 0;
 	_box5 allowDamage false;
 
 	_Boxes6 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox6 = _Boxes6 call BIS_fnc_selectRandom;
 	_box6 = createVehicle [_currBox6, _lastPos, [], 2, "None"];
 	_box6 setDir random 360;
+	_box6 setammocargo 0;
 	_box6 allowDamage false;
 
 	_Boxes7 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox7 = _Boxes7 call BIS_fnc_selectRandom;
 	_box7 = createVehicle [_currBox7, _lastPos, [], 2, "None"];
 	_box7 setDir random 360;
+	_box7 setammocargo 0;
 	_box7 allowDamage false;
 
 	_Boxes8 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox8 = _Boxes8 call BIS_fnc_selectRandom;
 	_box8 = createVehicle [_currBox8, _lastPos, [], 2, "None"];
 	_box8 setDir random 360;
+	_box8 setammocargo 0;
 	_box8 allowDamage false;
 
 	_Boxes9 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox9 = _Boxes9 call BIS_fnc_selectRandom;
 	_box9 = createVehicle [_currBox9, _lastPos, [], 2, "None"];
 	_box9 setDir random 360;
+	_box9 setammocargo 0;
 	_box9 allowDamage false;
-
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 
 	_successHintMessage = "The sky is clear again, the enemy supply drop was taken out! Cargo has fallen near the wreck, go find it!.";
 };
