@@ -1026,7 +1026,7 @@ genObjectsArray = compileFinal str
 ["Fuel Station Roof (Sun Oil)","Land_FuelStation_Shed_F",800],
 
 //Towers
-["*****Towers*****"]
+["*****Towers*****"],
 ["Castle (Stone)","Land_Castle_01_tower_F",1],
 ["Military Cargo (Brown)","Land_Cargo_Tower_V3_F",5000],
 ["Military Cargo (Green)","Land_Cargo_Tower_V1_F",5000],
