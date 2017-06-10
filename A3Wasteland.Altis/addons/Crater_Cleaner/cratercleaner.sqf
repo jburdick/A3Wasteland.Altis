@@ -9,9 +9,9 @@
 // null = [] execVM "cratercleaner.sqf";
 /*Definable Start*/
 CCAbleToRepair = 1; 			//Allow the bobcat to repair destroyed vehicles, 1 = Yes, 0 = No
-CCTimeToFixMultiplier = 0.2;	//Requires CCAbleToRepair = 1, Sleep Each second during repairs, default = 1
-CCRepairMultipler = 0.01;		//Requires CCAbleToRepair = 1, CCTimeToFixMulitplier Second repair level, default = 0.1
-CCRepairLimit = 0;			//Requires CCAbleToRepair = 1, Limit the Repair level to this, default = 0
+CCTimeToFixMultiplier = 1;	//Requires CCAbleToRepair = 1, Sleep Each second during repairs, default = 1
+CCRepairMultipler = 0.1;		//Requires CCAbleToRepair = 1, CCTimeToFixMulitplier Second repair level, default = 0.1
+CCRepairLimit = 0.4;			//Requires CCAbleToRepair = 1, Limit the Repair level to this, default = 0
 /*Definable End*/
 
 /*Script Start*/
@@ -23,13 +23,13 @@ waitUntil {!isNull player};
 LALA_fnc_Crater_Check = {
 	_unit = _this select 0;
 	_veh = vehicle _unit;
-
 	if !(_veh isKindOf "B_APC_Tracked_01_CRV_F") exitWith {false;};
 
 	_crater = nearestObjects [_veh,["CraterLong"],30];
 
 	_return = (count _crater > 0);
 	_return;
+
 };
 
 Lala_fnc_Dead_Vehicle_Check = {
@@ -42,16 +42,6 @@ Lala_fnc_Dead_Vehicle_Check = {
 	_nearvehicles = _nearvehicles - [_veh];
 	_nearestvehicle = _nearvehicles select 0;
 
-	_deletevehactionname = "Remove Salvage";
-
-	if (CCAbleToRepair == 0) then {
-		_deletevehactionname = format ["<t color ='#FF0000'>Remove Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
-	} else {
-		_deletevehactionname = format ["<t color ='#FF0000'>Fix the Destroyed %1</t>", getText (configFile >> 'cfgVehicles' >> typeOf _nearestvehicle >> 'displayName')];
-	};
-	_unit setUserActionText [DeadVehAddAction,_deletevehactionname];
-
-	_return = ((!alive _nearestvehicle OR damage _nearestvehicle >= 1));
 	_return;
 };
 
@@ -123,9 +113,17 @@ Lala_fnc_Fix_Dead_Vehicle = {
 
 LALA_fnc_AddAction_Crater_Cleaner = {
 	_player = player;
+	_repairobjectnear = 0;
+	_repairObject = ["B_Slingload_01_Repair_F", "B_Truck_01_Repair_F"];
+	_objectnar = nearestObjects [player, "all", 50];
+	_repairobjectcheck = _repairObject arrayIntersect _objectnear;
+	if (count _repairobjectcheck >0) then {
+			_repairobjectnear = 1;
+	};
 	if (isNil {_player getVariable "CraterActionAdded"}) then {
 		_player addAction ["<t color ='#FF0000'>Remove Crater/s</t>",{[(_this select 0)] spawn LALA_fnc_Crater_Remover},"",7,false,true,"",'[_this] call LALA_fnc_Crater_Check'];
-		DeadVehAddAction = _player addAction ["<t color ='#FF0000'>Remove Dead Vehicle</t>",{if (CCAbleToRepair == 0) then {[(_this select 0)] spawn Lala_fnc_Dead_Vehicle_Remover} else {[(_this select 0)] spawn Lala_fnc_Fix_Dead_Vehicle};},"",7,false,true,"",'[_this] call Lala_fnc_Dead_Vehicle_Check'];
+		_player addAction ["<t color ='#FF0000'>Remove Destroyed Vehicle</t>",Lala_fnc_Dead_Vehicle_Remover,"",7,false,true,"",'[_this] call Lala_fnc_Dead_Vehicle_Check'];
+		_player addAction ["<t color ='#FF0000'>Restore Destroyed Vehicle</t>",Lala_fnc_Dead_Vehicle_Remover,"",7,false,true,"",'[_this] call Lala_fnc_Dead_Vehicle_Check && _repairobjectnear > 0'];
 		_player setVariable ["CraterActionAdded",true,true];
 		_player addEventHandler ["Respawn",{(_this select 0) setVariable ["CraterActionAdded",nil,true]; [] spawn LALA_fnc_AddAction_Crater_Cleaner;}];
 	};
