@@ -1225,7 +1225,7 @@ genObjectsArray = compileFinal str
 ["Test227","Land_Shoot_House_Wall_Long_Prone_F",1],
 ["Test228","Land_Shoot_House_Wall_Stand_F",1],
 ["Test229","Land_Shoot_House_Wall_Long_Stand_F",1],
-["test243","Land_Scaffolding_F",1,"",0]
+["test243","Land_Scaffolding_F",1]
 
 
 
