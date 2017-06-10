@@ -10,41 +10,41 @@
  */
 
 /** Contient la liste de tous les objets en cours de déplacements manuels */
-R3F_LOG_liste_objets_en_deplacement = [];
+R3F_LOG_liste_objects_en_deplacement = [];
 
 /**
- * Fonction PVEH ajoutant les nouveaux objets en cours de déplacement dans la liste
+ * Fonction PVEH ajoutant les new objets en cours de déplacement dans la liste
  * @param 1 le nouvel objet en cours de déplacement
  */
-R3F_LOG_FNCT_PVEH_nouvel_objet_en_deplacement =
+R3F_LOG_FNCT_PVEH_nouvel_object_en_deplacement =
 {
-	private ["_objet"];
+	private ["_object"];
 	
-	_objet = _this select 1;
+	_object = _this select 1;
 	
-	R3F_LOG_liste_objets_en_deplacement = R3F_LOG_liste_objets_en_deplacement - [_objet];
-	R3F_LOG_liste_objets_en_deplacement pushBack _objet;
+	R3F_LOG_liste_objects_en_deplacement = R3F_LOG_liste_objects_en_deplacement - [_object];
+	R3F_LOG_liste_objects_en_deplacement pushBack _object;
 	
-	_objet allowDamage false;
+	_object allowDamage false;
 };
-"R3F_LOG_PV_nouvel_objet_en_deplacement" addPublicVariableEventHandler R3F_LOG_FNCT_PVEH_nouvel_objet_en_deplacement;
+"R3F_LOG_PV_nouvel_object_en_deplacement" addPublicVariableEventHandler R3F_LOG_FNCT_PVEH_nouvel_object_en_deplacement;
 
 /**
  * Fonction PVEH retirant de la liste les objets dont le déplacement est terminé
  * @param 1 l'objet dont le déplacement est terminé
  */
-R3F_LOG_FNCT_PVEH_fin_deplacement_objet =
+R3F_LOG_FNCT_PVEH_fin_deplacement_object =
 {
-	private ["_objet"];
+	private ["_object"];
 	
-	_objet = _this select 1;
+	_object = _this select 1;
 	
-	R3F_LOG_liste_objets_en_deplacement = R3F_LOG_liste_objets_en_deplacement - [_this select 1];
+	R3F_LOG_liste_objects_en_deplacement = R3F_LOG_liste_objects_en_deplacement - [_this select 1];
 	
 	// Limitation : si l'objet a été "allowDamage false" par ailleurs, il ne le sera plus. Voir http://feedback.arma3.com/view.php?id=19211
-	_objet allowDamage true;
+	_object allowDamage true;
 };
-"R3F_LOG_PV_fin_deplacement_objet" addPublicVariableEventHandler R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+"R3F_LOG_PV_fin_deplacement_object" addPublicVariableEventHandler R3F_LOG_FNCT_PVEH_fin_deplacement_object;
 
 /**
  * Fonction traitant les event handler HandleDamage des unités locales,
@@ -64,7 +64,7 @@ R3F_LOG_FNCT_EH_HandleDamage =
 	
 	if (
 		// Filtre sur les blessures de type choc/collision
-		_this select 4 == "" && {(isNull _source || _source == _unite || _source in R3F_LOG_liste_objets_en_deplacement)
+		_this select 4 == "" && {(isNull _source || _source == _unite || _source in R3F_LOG_liste_objects_en_deplacement)
 		&& {
 			// Si l'unité est potentiellement en collision avec un objet en cours de déplacement
 			{
@@ -77,7 +77,7 @@ R3F_LOG_FNCT_EH_HandleDamage =
 						(boundingBoxReal _x select 1) vectorAdd [12, 12, 12] // bbox max élargie (zone de sûreté)
 					] call R3F_LOG_FNCT_3D_pos_est_dans_bbox
 				}
-			} count R3F_LOG_liste_objets_en_deplacement != 0
+			} count R3F_LOG_liste_objects_en_deplacement != 0
 		}
 	}) then
 	{
@@ -97,7 +97,7 @@ sleep 5;
 
 while {true} do
 {
-	private ["_idx_objet"];
+	private ["_idx_object"];
 	
 	// Vérifier que les unités locales à la machine sont gérées, et ne plus gérées celles qui ne sont plus locales
 	// Par chaque unité
@@ -137,33 +137,33 @@ while {true} do
 	};
 	
 	// Vérifier l'intégrité de la liste des objets en cours de déplacements, et la nettoyer si besoin
-	for [{_idx_objet = 0}, {_idx_objet < count R3F_LOG_liste_objets_en_deplacement}, {;}] do
+	for [{_idx_object = 0}, {_idx_object < count R3F_LOG_liste_objects_en_deplacement}, {;}] do
 	{
-		private ["_objet"];
+		private ["_object"];
 		
-		_objet = R3F_LOG_liste_objets_en_deplacement select _idx_objet;
+		_object = R3F_LOG_liste_objects_en_deplacement select _idx_object;
 		
-		if (isNull _objet) then
+		if (isNull _object) then
 		{
-			R3F_LOG_liste_objets_en_deplacement = R3F_LOG_liste_objets_en_deplacement - [objNull];
+			R3F_LOG_liste_objects_en_deplacement = R3F_LOG_liste_objects_en_deplacement - [objNull];
 			
 			// On recommence la validation de la liste
-			_idx_objet = 0;
+			_idx_object = 0;
 		}
 		else
 		{
 			// Si l'objet n'est plus déplacé par une unité valide
-			if !(isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
-				{alive (_objet getVariable "R3F_LOG_est_deplace_par") && isPlayer (_objet getVariable "R3F_LOG_est_deplace_par")}
+			if !(isNull (_object getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
+				{alive (_object getVariable "R3F_LOG_est_deplace_par") && isPlayer (_object getVariable "R3F_LOG_est_deplace_par")}
 			) then
 			{
-				["R3F_LOG_PV_fin_deplacement_objet", _objet] call R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+				["R3F_LOG_PV_fin_deplacement_object", _object] call R3F_LOG_FNCT_PVEH_fin_deplacement_object;
 				
 				// On recommence la validation de la liste
-				_idx_objet = 0;
+				_idx_object = 0;
 			}
 			// Si l'objet est toujours en déplacement, on poursuit le parcours de la liste
-			else {_idx_objet = _idx_objet+1;};
+			else {_idx_object = _idx_object+1;};
 		};
 	};
 	
