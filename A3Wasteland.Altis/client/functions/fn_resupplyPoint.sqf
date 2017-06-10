@@ -112,7 +112,36 @@ Switch (true) do
 	]>0):
 	{
 		//Non Dynamic vehicles are service based on percentage of store price
-		_totalprice = _baseprice;
+	 _totalprice = _baseprice;
+
+	 //Find ot how much money the player has
+	 _money = player getVariable ["cmoney", 0];
+
+	 // Check player has enough money
+	 if (_money >= _totalprice) then {
+	 	//Prompt player to confirm cost
+	 	_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+	 	[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+	 	mutexScriptInProgress = true;  //prevents players from doing other actions
+	 	doCancelAction = false;
+
+	 	//Subtract cost from player money
+	 	player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+	 	//Begin Service Actions
+	 	 titleText ["Rearming...", "PLAIN"];
+	 	 sleep 15;
+	 	_vehicle setVehicleAmmo 1;
+	 	titleText ["Reparing...", "PLAIN"];
+	 	sleep 15;
+	 	_vehicle setDammage 0;
+	 	titleText ["Refueling...", "PLAIN"];
+	 	sleep 15;
+	 	_vehicle setFuel 1;
+	 	titleText ["Vehicle Ready!", "PLAIN"];
+	 } else {
+	 		titleText ["You don't have enough money", "PLAIN", 1];
+	 };
 	};
 
 
@@ -145,6 +174,35 @@ Switch (true) do
 
 		//Total Price equials sum of prices of all components
 		_totalprice = (_baseprice + _pylon1price + _pylon2price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -191,6 +249,35 @@ Switch (true) do
 
 
 		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -239,6 +326,7 @@ Switch (true) do
 				_pylon4price = _x select 1;
 			};
 		} forEach _pylons;
+		{
 		if (_pylon5 == _x select 0) exitWith
 		{
 			_pylon6price = _x select 1;
@@ -254,6 +342,35 @@ Switch (true) do
 
 		//Total Price equials sum of prices of all components
 		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -325,6 +442,35 @@ Switch (true) do
 
 		//Total Price equials sum of prices of all components
 		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -507,6 +653,35 @@ Switch (true) do
 
 		//Total Price equials sum of prices of all components
 		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -621,6 +796,35 @@ Switch (true) do
 
 		//Total Price equials sum of prices of all components
 		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price + _pylon10price + _pylon12price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
 	};
 
 
@@ -645,134 +849,137 @@ Switch (true) do
 
 
 		//Set 0 pylon value if none Loaded
-	_pylon1price = 0;
-	_pylon2price = 0;
-	_pylon3price = 0;
-	_pylon4price = 0;
-	_pylon5price = 0;
-	_pylon6price = 0;
-	_pylon7price = 0;
-	_pylon8price = 0;
-	_pylon9price = 0;
-	_pylon10price = 0;
-	_pylon11price = 0;
-	_pylon12price = 0;
-	_pylon13price = 0;
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+		_pylon8price = 0;
+		_pylon9price = 0;
+		_pylon10price = 0;
+		_pylon11price = 0;
+		_pylon12price = 0;
+		_pylon13price = 0;
 
 
 		//Set price per pylon weapon laoded on aircraft
-	{
-		if (_pylon1 == _x select 0) exitWith
 		{
-			_pylon1price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon2 == _x select 0) exitWith
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon2price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon3 == _x select 0) exitWith
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon3price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon4 == _x select 0) exitWith
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon4price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon5 == _x select 0) exitWith
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon6price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon6 == _x select 0) exitWith
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon6price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon7 == _x select 0) exitWith
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon7price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon8 == _x select 0) exitWith
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-			_pylon8price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon9 == _x select 0) exitWith
+			if (_pylon8 == _x select 0) exitWith
+			{
+				_pylon8price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-		_pylon9price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon10 == _x select 0) exitWith
+			if (_pylon9 == _x select 0) exitWith
+			{
+			_pylon9price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-		_pylon10price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon11 == _x select 0) exitWith
+			if (_pylon10 == _x select 0) exitWith
+			{
+			_pylon10price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-		_pylon11price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon12 == _x select 0) exitWith
+			if (_pylon11 == _x select 0) exitWith
+			{
+			_pylon11price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-		_pylon12price = _x select 1;
-		};
-	} forEach _pylons;
-	{
-		if (_pylon13 == _x select 0) exitWith
+			if (_pylon12 == _x select 0) exitWith
+			{
+			_pylon12price = _x select 1;
+			};
+		} forEach _pylons;
 		{
-		_pylon13price = _x select 1;
-		};
-	} forEach _pylons;
+			if (_pylon13 == _x select 0) exitWith
+			{
+			_pylon13price = _x select 1;
+			};
+		} forEach _pylons;
 
 
-	//Total Price equials sum of prices of all components
-	_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price + _pylon10price + _pylon12price + _pylon13price);
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price + _pylon10price + _pylon12price + _pylon13price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
+
+
+	};
 };
 
-
-mutexScriptInProgress = true;  //prevents players from doing other actions
-doCancelAction = false;
-
-//Find ot how much money the player has
-_money = player getVariable ["cmoney", 0];
-
-// Check player has enough money
-if (_money >= _totalprice) then {
-	//Prompt player to confirm cost
-	_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
-	[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
-	//Subtract cost from player money
-	player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
-
-	//Begin Service Actions
-	 titleText ["Rearming...", "PLAIN"];
-	 sleep 15;
-	_vehicle setVehicleAmmo 1;
-	titleText ["Reparing...", "PLAIN"];
-	sleep 15;
-	_vehicle setDammage 0;
-	titleText ["Refueling...", "PLAIN"];
-	sleep 15;
-	_vehicle setFuel 1;
-	titleText ["Vehicle Ready!", "PLAIN"];
-} else {
-		titleText ["You don't have enough money", "PLAIN", 1];
-};
 mutexScriptInProgress = false;
 //All Done!
