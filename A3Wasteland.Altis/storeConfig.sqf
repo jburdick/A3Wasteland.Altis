@@ -1023,7 +1023,7 @@ genObjectsArray = compileFinal str
 ["Concrete Block","BlockConcrete_F",1000],
 ["Container,Cargo", "B_Slingload_01_Cargo_F", 1000],
 ["Container,Fuel", "B_Slingload_01_Fuel_F", 1000],
-["Container,Medical", "B_Slingload_01_Medevac_F", 1000]
+["Container,Medical", "B_Slingload_01_Medevac_F", 1000],
 ["Container,Repair", "B_Slingload_01_Repair_F", 1000],
 ["Deck,Pier","Land_Pier_addon",1000],
 ["Doorway,Concrete","Land_CncShelter_F",200],
@@ -1044,7 +1044,7 @@ genObjectsArray = compileFinal str
 ["Pier,Wooden","Land_Pier_small_F",200],
 ["Ramp,Concrete (Low)","Land_RampConcrete_F",500],
 ["Ramp,Concrete (High)","Land_RampConcreteHigh_F",500],
-["Scaffolding","Land_Scaffolding_F",1,"",100]
+["Scaffolding","Land_Scaffolding_F",1,"",100],
 ["Sidewalk,Narrow","Land_Pavement_narrow_F",50],
 ["Sidewalk,Wide","Land_Pavement_wide_F",50],
 ["Sidewalk,Narrow (Corner)","Land_Pavement_narrow_corner_F",50],
@@ -1067,7 +1067,7 @@ genObjectsArray = compileFinal str
 ["Fuel Station Roof (Sun Oil)","Land_FuelStation_Shed_F",800],
 
 //Towers
-["*****Towers*****"]
+["*****Towers*****"],
 ["Bag Bunker", "Land_BagBunker_Tower_F", 1000, "object"],
 ["Castle (Stone)","Land_Castle_01_tower_F",2500],
 ["HBarrier Watchtower", "Land_HBarrierTower_F", 1000, "object"],
