@@ -1,5 +1,5 @@
-_locker = nearestObjects [player, ["Land_Device_assembled_F"], 5];
-_lockableBuildings = nearestObjects [_locker, "HouseBase", 200];
+_locker = nearestObjects [player, ["Land_Device_assembled_F","Land_SatellitePhone_F"], 5];
+_lockableBuildings = nearestObjects ["_locker", "HouseBase", 200];
 
 
  _lockdoors =

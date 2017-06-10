@@ -96,7 +96,7 @@ _repairCargo = getRepairCargo _obj;
 // BASE - SAFE LOCKING Start
 switch (true) do
 {
-  case ( _obj isKindOf "Land_Device_assembled_F"):
+  case ( {_obj isKindOf _x} count ["Land_Device_assembled_F","Land_SatellitePhone_F"]>0):
   {
     { _variables pushBack [_x select 0, _obj getVariable _x] } forEach
     [
@@ -120,7 +120,7 @@ switch (true) do
     _variables pushBack ["password", _obj getVariable ["password", ""]];
   };
 };
-//BASE - SAFE LOCKING End 
+//BASE - SAFE LOCKING End
 
 // Fix for -1.#IND
 if (isNil "_ammoCargo" || {!finite _ammoCargo}) then { _ammoCargo = 0 };

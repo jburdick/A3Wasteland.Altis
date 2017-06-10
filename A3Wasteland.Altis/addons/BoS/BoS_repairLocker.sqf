@@ -30,7 +30,7 @@ _checks =
 			_text = format ["Repair %1%2 complete", floor (_progress * 100), "%"];
 		};
 	};
-	
+
 	[_failed, _text];
 };
 
@@ -39,7 +39,7 @@ _success = [_totalDuration, "AinvPknlMstpSlayWrflDnon_medic", _checks, [cursorTa
 if (_success) then
 {
 	private["_reLockers", "_repair"];
-	_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 5];
+	_reLockers = nearestObjects [player, ["Land_Device_assembled_F","Land_SatellitePhone_F"], 5];
 	_repair = _reLockers select 0;
 	_repair setDamage 0;
 	["Base Re-Locker is Repaired.", 5] call mf_notify_client;
