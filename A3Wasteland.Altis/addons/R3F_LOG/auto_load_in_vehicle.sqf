@@ -28,6 +28,6 @@ if (isServer) then
 	
 	if (R3F_LOG_active) then
 	{
-		_this call R3F_LOG_FNCT_carrier_charger_auto;
+		_this call R3F_LOG_FNCT_transporteur_charger_auto;
 	};
 };

@@ -10,14 +10,14 @@
 
 STR_R3F_LOG_action_heliporter = "Lift the object";
 STR_R3F_LOG_action_heliporter_fait = "Object ""%1"" attached.";
-STR_R3F_LOG_action_heliport_drop = "Drop the object";
+STR_R3F_LOG_action_heliport_larguer = "Drop the object";
 STR_R3F_LOG_action_heliport_parachute = "Paradrop the object";
-STR_R3F_LOG_action_heliport_drop_fait = "Object ""%1"" dropped.";
+STR_R3F_LOG_action_heliport_larguer_fait = "Object ""%1"" dropped.";
 STR_R3F_LOG_action_heliport_attente = "Hooking... (%1)";
 STR_R3F_LOG_action_heliport_echec_attente = "Lift aborted ! Stay hover during the hooking.";
 
-STR_R3F_LOG_action_move_object = "Take ""%1""";
-STR_R3F_LOG_action_release_object = "Release ""%1""";
+STR_R3F_LOG_action_deplacer_objet = "Take ""%1""";
+STR_R3F_LOG_action_relacher_objet = "Release ""%1""";
 STR_R3F_LOG_action_aligner_pente = "Adjust to the slope";
 STR_R3F_LOG_action_aligner_sol = "Adjust to the ground";
 STR_R3F_LOG_action_aligner_horizon = "Adjust horizontally";
@@ -28,9 +28,9 @@ STR_LOCK_OBJECT = "Lock this object";
 STR_UNLOCK_OBJECT = "Unlock this object";
 
 STR_R3F_LOG_action_charger_deplace = "Load in the vehicle";
-STR_R3F_LOG_action_selectionner_object_charge = "Load ""%1"" in...";
+STR_R3F_LOG_action_selectionner_objet_charge = "Load ""%1"" in...";
 STR_R3F_LOG_action_charger_selection = "... load in ""%1""";
-STR_R3F_LOG_action_selectionner_object_fait = "Now select the destination for ""%1""...";
+STR_R3F_LOG_action_selectionner_objet_fait = "Now select the destination for ""%1""...";
 STR_R3F_LOG_action_charger_en_cours = "Loading in progress...";
 STR_R3F_LOG_action_charger_fait = "The object ""%1"" has been loaded in ""%2"".";
 STR_R3F_LOG_action_charger_pas_assez_de_place = "There is not enough space for this object in this vehicle !";
@@ -45,7 +45,7 @@ STR_R3F_LOG_action_contenu_vehicule = "View the vehicle's content";
 STR_R3F_LOG_action_decharger_en_cours = "Unloading in progress...";
 STR_R3F_LOG_action_decharger_fait = "The object ""%1"" has been unloaded from the vehicle.";
 STR_R3F_LOG_action_decharger_deja_fait = "The object has already been unloaded !";
-STR_R3F_LOG_action_decharger_movable_exceptionnel = "Once released, this object will no more be movable manually.<br/>Do you confirm the action ?";
+STR_R3F_LOG_action_decharger_deplacable_exceptionnel = "Once released, this object will no more be movable manually.<br/>Do you confirm the action ?";
 
 STR_R3F_LOG_action_ouvrir_usine = "Open the creation factory";
 STR_R3F_LOG_action_creer_en_cours = "Creation in progress...";
@@ -59,9 +59,9 @@ STR_R3F_LOG_action_revendre_fait = "The object ""%1"" has been sent back to the 
 STR_R3F_LOG_action_revendre_decharger_avant = "You can't sent it back while its cargo content is not empty !";
 
 STR_R3F_LOG_mutex_action_en_cours = "The current operation isn't finished !";
-STR_R3F_LOG_joueur_dans_object = "There is a player in the object ""%1"" !";
-STR_R3F_LOG_object_en_cours_transport = "The object ""%1"" is already in transit !";
-STR_R3F_LOG_object_remorque_en_cours = "Impossible because the object ""%1"" is towing another object !";
+STR_R3F_LOG_joueur_dans_objet = "There is a player in the object ""%1"" !";
+STR_R3F_LOG_objet_en_cours_transport = "The object ""%1"" is already in transit !";
+STR_R3F_LOG_objet_remorque_en_cours = "Impossible because the object ""%1"" is towing another object !";
 STR_R3F_LOG_trop_loin = "Impossible because the object ""%1"" is too far !";
 
 STR_R3F_LOG_dlg_CV_titre = "Vehicle's content";
