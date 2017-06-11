@@ -1,7 +1,5 @@
-_locker = nearestObjects [player, ["Land_Device_assembled_F","Land_SatellitePhone_F"], 5];
-_lockableBuildings = nearestObjects ["_locker", "HouseBase", 200];
-
-
+_lockerpos = getpos( nearestObject [player, ["Land_Device_assembled_F", "Land_SatellitePhone_F"]]);
+_lockableBuildings = _lockerpos nearObjects ["HouseBase", 100];
  _lockdoors =
  {
    setVariable ['bis_disabled_Door_1',1,true];

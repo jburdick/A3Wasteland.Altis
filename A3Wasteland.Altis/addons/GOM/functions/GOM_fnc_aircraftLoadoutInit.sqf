@@ -46,7 +46,7 @@ _repairsources =
 	"B_G_Offroad_01_repair_F",
 	"O_G_Offroad_01_repair_F",
 	"I_G_Offroad_01_repair_F",
-	"C_Offroad_01_repair_F"
+	"C_Offroad_01_repair_F",
 	"B_APC_Tracked_01_CRV_F",
 	"O_Truck_03_repair_F",
 	"O_Truck_02_box_F",
@@ -57,11 +57,11 @@ _repairsources =
 _fuelsource =
 [
 	"FlexibleTank_01_forest_F",
-	"FlexibleTank_01_sand_F"
+	"FlexibleTank_01_sand_F",
 	"B_G_Van_01_fuel_F",
 	"O_G_Van_01_fuel_F",
 	"I_G_Van_01_fuel_F",
-	"C_Van_01_fuel_F"
+	"C_Van_01_fuel_F",
 	"O_Truck_03_fuel_F",
 	"O_Truck_02_fuel_F",
 	"O_Heli_Transport_04_fuel_F",
