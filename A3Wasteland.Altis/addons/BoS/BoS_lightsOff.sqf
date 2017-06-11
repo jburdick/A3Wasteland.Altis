@@ -22,10 +22,7 @@
 	_x setHit ["light_4_hit", 0.97];
 	_x setVariable ["lights", "off", true];
 } forEach nearestObjects [player, [
-	"Lamps_base_F",
-	"PowerLines_base_F",
-	"PowerLines_Small_base_F",
-	"Land_Device_assembled_F"
+	"All"
 ], 30];
 
 hint "Lights OFF";
