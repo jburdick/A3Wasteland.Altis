@@ -1072,11 +1072,10 @@ genObjectsArray = compileFinal str
 	["Berm,Large (Brown)","ContainmentArea_01_sand_F",500],
 	["Berm,Small (Green)","ContainmentArea_02_forest_F",300],
 	["Berm,Small (Brown)","ContainmentArea_02_sand_F",300],
+	["Camo Ammo Cache", "Box_FIA_Support_F", 1000],
 	["Concrete Block","BlockConcrete_F",1000],
 	["Container,Cargo", "B_Slingload_01_Cargo_F",1000],
-	["Container,Fuel", "B_Slingload_01_Fuel_F",1000],
-	["Container,Medical", "B_Slingload_01_Medevac_F",1000],
-	["Container,Repair", "B_Slingload_01_Repair_F",1000],
+	["Container,Taru Pod","Land_Pod_Heli_Transport_04_box_F", 500],
 	["Counter,Retail with Cash Register","Land_CashDesk_F",300],
 	["Counter,Wood (Slum)","Land_WoodenCounter_01_F",20],
 	["Curb,Concrete","Land_Obstacle_Saddle_F",50],
@@ -1149,20 +1148,26 @@ genObjectsArray = compileFinal str
 	["Sign,Traffic Direction (Right)","ArrowDesk_R_F",200],
 	["Sign,Mines","Land_Sign_Mines_F",100],
 	["Sign,Unexploded Ammo","Land_Sign_WarningUnexplodedAmmo_F",100],
+	["Sling Boxes (NATO)", "B_CargoNet_01_ammo_F", 1000],
+	["Sling Box", "CargoNet_01_box_F", 1000],
 	["Stairs,Concrete","Land_GH_Stairs_F",500],
+	["Support Crate", "Box_NATO_Support_F", 100],
 	["Table,Folding (Large)","Land_CampingTable_F",40],
 	["Table,Folding (Small)","Land_CampingTable_small_F",20],
 	["Table,Plastic Patio","Land_TablePlastic_01_F",20],
 	["Table,Rattan","Land_RattanTable_01_F",50],
 	["Table,Wood (Large,Slum)","Land_WoodenTable_large_F",20],
 	["Table,Wood (Small,Slum)","Land_WoodenTable_small_F",10],
-	["Taru Pod","Land_Pod_Heli_Transport_04_box_F", 500],
 	["Traffic Cone (Small)","RoadCone_F",10],
 	["Traffic Cone (Large)","Land_RoadCone_01_F",20],
 	["Workbench with Vise","Land_Workbench_01_F",50],
 
+
 	//Service Objects
 	["*****Service Objects*****"],
+	["Container,Fuel", "B_Slingload_01_Fuel_F",1000],
+	["Container,Medical", "B_Slingload_01_Medevac_F",1000],
+	["Container,Repair", "B_Slingload_01_Repair_F",1000],
 	["Fuel Bladder (Green)","StorageBladder_01_fuel_forest_F",500],
 	["Fuel Bladder (Brown)","StorageBladder_01_fuel_sand_F",500],
 	["Fuel Pump","Land_fs_feed_F",500],
@@ -1257,7 +1262,6 @@ genObjectsArray = compileFinal str
 	["BAD NO GRAB Test53","Land_JumpTarget_F",1],
 	["BAD NO FUNCTIONING GATE OPEN","Land_Mil_WallBig_Gate_F",1],
 
-	*/
 
 	//For future fun
 	/*
