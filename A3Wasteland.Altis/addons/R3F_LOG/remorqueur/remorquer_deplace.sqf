@@ -1,5 +1,5 @@
 /**
- * Remorque l'objet dï¿½placï¿½ par le joueur avec un remorqueur
+ * Remorque l'objet déplacé par le joueur avec un remorqueur
  * 
  * Copyright (C) 2014 Team ~R3F~
  * 
@@ -19,7 +19,7 @@ else
 	private ["_objet", "_remorqueur", "_offset_attach_y"];
 	
 	_objet = R3F_LOG_joueur_deplace_objet;
-	_remorqueur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorObject_virtuel;
+	_remorqueur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorTarget_virtuel;
 	
 	if (!isNull _remorqueur && {
 		_remorqueur getVariable ["R3F_LOG_fonctionnalites", R3F_LOG_CST_zero_log] select R3F_LOG_IDX_can_tow &&
@@ -53,10 +53,10 @@ else
 		
 		_towerGroundPos = _remorqueur worldToModel (_remorqueur call fn_getPos3D);
 		
-		// On place le joueur sur le cï¿½tï¿½ du vï¿½hicule en fonction qu'il se trouve ï¿½ sa gauche ou droite
+		// On place le joueur sur le côté du véhicule en fonction qu'il se trouve à sa gauche ou droite
 		if ((getPosASL player) select 2 > 0) then
 		{
-			// On place le joueur sur le cï¿½tï¿½ du vï¿½hicule, ce qui permet d'ï¿½viter les blessure et rend l'animation plus rï¿½aliste
+			// On place le joueur sur le côté du véhicule, ce qui permet d'éviter les blessure et rend l'animation plus réaliste
 			player attachTo [_remorqueur,
 			[
 				(_towerMinBB select 0) - 0.25,
@@ -75,11 +75,11 @@ else
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		sleep 2;
 		
-		// Quelques corrections visuelles pour des classes spï¿½cifiques
+		// Quelques corrections visuelles pour des classes spécifiques
 		if (typeOf _remorqueur == "B_Truck_01_mover_F") then {_offset_attach_y = 1.0;}
 		else {_offset_attach_y = 0.2;};
 		
-		// Attacher ï¿½ l'arriï¿½re du vï¿½hicule au ras du sol
+		// Attacher à l'arrière du véhicule au ras du sol
 		_objet attachTo [_remorqueur,
 		[
 			_towerCenterX - _objectCenterX,
@@ -96,7 +96,7 @@ else
 			
 			_azimut_canon = ((_objet weaponDirection (weapons _objet select 0)) select 0) atan2 ((_objet weaponDirection (weapons _objet select 0)) select 1);
 			
-			// Seul le D30 a le canon pointant vers le vï¿½hicule
+			// Seul le D30 a le canon pointant vers le véhicule
 			if !(_objet isKindOf "D30_Base") then // All in Arma
 			{
 				_azimut_canon = _azimut_canon + 180;

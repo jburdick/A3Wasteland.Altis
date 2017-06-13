@@ -117,7 +117,7 @@ class GOMRscButton_1601: GOMRscButton
 	w = 6.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 };
-/*class GOMRscStructuredText_1105: GOMRscStructuredText
+class GOMRscStructuredText_1105: GOMRscStructuredText
 {
 	idc = 1105;
 
@@ -127,7 +127,7 @@ class GOMRscButton_1601: GOMRscButton
 	w = 6 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	colorBackground[] = {0,0,0,0};
-};*/
+};
 class GOMRscEdit_1400: GOMRscEdit
 {
 	idc = 1400;
@@ -167,7 +167,7 @@ class GOMRscButton_1604: GOMRscButton
 	w = 6.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 };
-/*class GOMRscCheckbox_2800: GOMRscCheckBox
+class GOMRscCheckbox_2800: GOMRscCheckBox
 {
 	idc = 2800;
 
@@ -193,8 +193,8 @@ class GOMRscCheckbox_2802: GOMRscCheckBox
 	y = 20 * GUI_GRID_H + GUI_GRID_Y;
 	w = 1 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
-};*/
-/*class GOMRscText_1003: GOMRscText
+};
+class GOMRscText_1003: GOMRscText
 {
 	idc = 1003;
 
@@ -223,7 +223,7 @@ class GOMRscText_1005: GOMRscText
 	y = 20 * GUI_GRID_H + GUI_GRID_Y;
 	w = 9 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
-};*/
+};
 class GOMRscFrame_1800: GOMRscFrame
 {
 	idc = 1800;

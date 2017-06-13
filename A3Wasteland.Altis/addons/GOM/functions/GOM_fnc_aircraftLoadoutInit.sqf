@@ -14,67 +14,12 @@ GOM_fnc_aircraftLoadout_NeedsAmmoSource = true; //(default: true) needs ammo sup
 GOM_fnc_aircraftLoadout_NeedsRepairSource = true; //(default: true) needs repair supply within 50m of the Vehicle or functions will be unavailable
 
 
-GOM_fnc_allowAllPylons = false; //(default: false) removes check that only allows compatible pylons to be mounted
+GOM_fnc_allowAllPylons = true; //(default: false) removes check that only allows compatible pylons to be mounted
 
 GOM_fnc_aircraftLoadoutRepairTime = 60; //(default: 60) time it takes to repair a vehicle from 0 to 100% health. Going from 50% to 100% will take half the time
 GOM_fnc_aircraftLoadoutRefuelRate = 1800; //(default: 1800) rate in liters per minute a vehicle will be refuelled at. Going from 0 to 100% fuel will take 60 seconds if the vehicle holds 1800l max fuel. wipeout has 1000l max fuel as a measurement
 
-//Define service sources
-_lightammosources =
-[
-	"Box_IND_AmmoVeh_F",
-	"Box_East_AmmoVeh_F",
-	"Box_NATO_AmmoVeh_F"
-];
-_mediumammosources =
-[
-	"O_Truck_03_ammo_F",
-	"O_Truck_02_Ammo_F",
-	"O_Heli_Transport_04_ammo_F",
-	"I_Truck_02_ammo_F",
-	"C_Truck_02_box_F",
-	"Land_Pod_Heli_Transport_04_ammo_F"
-];
 
-_heavyammosources =
-[
-	"B_Truck_01_ammo_F",
-	"B_Slingload_01_Ammo_F"
-];
-_repairsources =
-[
-	"B_G_Offroad_01_repair_F",
-	"O_G_Offroad_01_repair_F",
-	"I_G_Offroad_01_repair_F",
-	"C_Offroad_01_repair_F",
-	"B_APC_Tracked_01_CRV_F",
-	"O_Truck_03_repair_F",
-	"O_Truck_02_box_F",
-	"O_Heli_Transport_04_fuel_F",
-	"I_Truck_02_box_F",
-	"Land_Pod_Heli_Transport_04_repair_F"
-];
-_fuelsource =
-[
-	"FlexibleTank_01_forest_F",
-	"FlexibleTank_01_sand_F",
-	"B_G_Van_01_fuel_F",
-	"O_G_Van_01_fuel_F",
-	"I_G_Van_01_fuel_F",
-	"C_Van_01_fuel_F",
-	"O_Truck_03_fuel_F",
-	"O_Truck_02_fuel_F",
-	"O_Heli_Transport_04_fuel_F",
-	"I_Truck_02_fuel_F",
-	"C_Truck_02_fuel_F",
-	"Land_Pod_Heli_Transport_04_fuel_F",
-	"B_Truck_01_fuel_F",
-	"B_Slingload_01_Fuel_F",
-	"StorageBladder_01_fuel_forest_F",
-	"StorageBladder_01_fuel_sand_F",
-	"Land_fs_feed_F",
-	"Land_FuelStation_Feed_F"
-];
 //do not adjust anything below this line
 GOM_fnc_addAircraftLoadout = {
 
@@ -112,7 +57,7 @@ GOM_fnc_updateDialog = {
 
 	_fueltext = if (GOM_fnc_aircraftLoadout_NeedsFuelSource AND !_canRefuel) then {"You need fuel sources to refuel the Vehicle."} else {""};
 	_repairtext = if (GOM_fnc_aircraftLoadout_NeedsRepairSource AND !_canRepair) then {"You need repair sources to repair the Vehicle."} else {""};
-	_rearmtext = if (GOM_fnc_aircraftLoadout_NeedsAmmoSource AND !_canRearm) then {"Insufficient Ammo Available."} else {""};
+	_rearmtext = if (GOM_fnc_aircraftLoadout_NeedsAmmoSource AND !_canRearm) then {"You need ammo sources to rearm the Vehicle."} else {""};
 
 	if (GOM_fnc_aircraftLoadout_NeedsFuelSource AND _canRefuel) then {
 		_t = "";
@@ -414,21 +359,16 @@ _nul = [_obj,_rearm,_pylons,_pylonAmmoCounts] spawn {
 
 	_notbusy = [];
 	_ammosource = objnull;
-	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then
-	{
-		_ammoVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0} AND isKindOf !("B_APC_Tracked_01_CRV_F")};
-		if (_ammoVehs isEqualTo []) exitWith
-		{
-			systemchat "You have no valid ammo sources!"
-		};
+	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then {
+	_ammoVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0}};
+	if (_ammoVehs isEqualTo []) exitWith {systemchat "You have no valid ammo sources!"};
+
 
 		_notBusy = _ammoVehs select {!(_x getVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false])};
 
-		if (_notBusy isEqualTo []) exitWith
-		{
-			systemchat "All repair sources are currently busy!"
-		};
+		if (_notBusy isEqualTo []) exitWith {systemchat "All repair sources are currently busy!"};
 		_ammosource = _notBusy select 0;
+
 		_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",true,true];
 
 	};
@@ -593,8 +533,9 @@ GOM_fnc_setPylonsRefuel = {
 
 	params ["_obj"];
 
-	if (lbCursel 1500 < 0) exitWith {systemchat "Select a vehicle first."};
-	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0} AND isKindOf !("B_APC_Tracked_01_CRV_F")};
+	if (lbCursel 1500 < 0) exitWith {systemchat "Select a vehicle first.
+"};
+	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0}};;
 	_refuelSource = objnull;
 	if (GOM_fnc_aircraftLoadout_NeedsFuelSource) then {
 
@@ -825,8 +766,8 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 params ["_obj"];
 
 
-	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0} AND isKindOf !("B_APC_Tracked_01_CRV_F")};;
-	_rearmVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0} AND isKindOf !("B_APC_Tracked_01_CRV_F")};;
+	_refuelVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0}};;
+	_rearmVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0}};;
 	_repairVehs = vehicles select {typeof _x isKindOf "All" AND {_x distance2d _obj <= 50} AND {speed _x < 1} AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0}};;
 	_flags = [];
 
