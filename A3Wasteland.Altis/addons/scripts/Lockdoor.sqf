@@ -19,7 +19,7 @@ fn_isDoorUnlocked =
 {
 	private ["_visible", "_target", "_selName", "_intersectDist"];
 	_visible = false;
-	_target = cursorObject;
+	_target = cursorTarget;
 
 	{
 		_selName = _x select 0;
@@ -37,7 +37,7 @@ fn_isDoorUnlocked =
 fn_lockDoor =
 {
 	private ["_target", "_selName", "_intersectDist"];
-	_target = cursorObject;
+	_target = cursorTarget;
 
 	{
 		_selName = _x select 0;

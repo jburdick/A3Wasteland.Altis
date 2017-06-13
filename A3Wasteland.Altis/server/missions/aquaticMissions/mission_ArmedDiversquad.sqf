@@ -41,11 +41,6 @@ _setupObjects =
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle2;
 	_vehicle setPosASL _missionPos;
 	_vehicle lockDriver true;
-	_vehicle setVehicleReportRemoteTargets true;
-	_vehicle setVehicleReceiveRemoteTargets true;
-	_vehicle setVehicleRadar 1;
-	_vehicle confirmSensorTarget [[west,east,resistance], true];
-
 
 	[_vehicle, [
 		["itm", "U_B_Wetsuit", 2],

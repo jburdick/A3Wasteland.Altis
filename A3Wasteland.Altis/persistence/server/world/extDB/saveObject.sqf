@@ -24,26 +24,11 @@ if (isNil "_objectID") then
 _updateValues = [[_obj] call fn_getObjectProperties, 0] call extDB_pairsToSQL;
 
 _locked = _obj getVariable ["objectLocked", false];
-/*_doorlocked1 = _obj getVariable ["bis_disabled_Door_1", 0];
-_doorlocked2 = _obj getVariable ["bis_disabled_Door_2", 0];
-_doorlocked3 = _obj getVariable ["bis_disabled_Door_3", 0];
-_doorlocked4 = _obj getVariable ["bis_disabled_Door_4", 0];
-_doorlocked5 = _obj getVariable ["bis_disabled_Door_5", 0];
-_doorlocked6 = _obj getVariable ["bis_disabled_Door_6", 0];
-_doorlocked7 = _obj getVariable ["bis_disabled_Door_7", 0];
-_doorlocked8 = _obj getVariable ["bis_disabled_Door_8", 0];*/
 _deployable = (_obj getVariable ["a3w_spawnBeacon", false] || _obj getVariable ["a3w_warchest", false]);
 
 _updateValues = _updateValues + (",Locked=" + (if (_locked) then { "1" } else { "0" }));
 _updateValues = _updateValues + (",Deployable=" + (if (_deployable) then { "1" } else { "0" }));
-/*_updateValues = _updateValues + (",doorlocked1=" + (if (_doorlocked1) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked2=" + (if (_doorlocked2) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked3=" + (if (_doorlocked3) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked4=" + (if (_doorlocked4) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked5=" + (if (_doorlocked5) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked6=" + (if (_doorlocked6) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked7=" + (if (_doorlocked7) then { "1" } else { "0" }));
-_updateValues = _updateValues + (",doorlocked8=" + (if (_doorlocked8) then { "1" } else { "0" }));*/
+
 if (_manual) then
 {
 	_updateValues = _updateValues + ",LastInteraction=NOW()";

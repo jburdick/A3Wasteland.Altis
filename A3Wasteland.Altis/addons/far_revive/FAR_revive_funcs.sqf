@@ -205,7 +205,7 @@ call mf_compile;
 
 FAR_Drag_Load_Vehicle =
 {
-	params [["_veh",cursorObject]];
+	params [["_veh",cursorTarget]];
 	private "_draggedUnit";
 	_draggedUnit = player getVariable ["FAR_isDragging", objNull];
 
@@ -225,7 +225,7 @@ call mf_compile;
 
 FAR_Eject_Injured =
 {
-	params [["_veh",cursorObject]];
+	params [["_veh",cursorTarget]];
 
 	{
 		if (UNCONSCIOUS(_x) && [_x, player] call A3W_fnc_isFriendly) then
@@ -327,7 +327,7 @@ call mf_compile;
 
 #define ABDOMEN_ASL(UNIT) (AGLtoASL (UNIT modelToWorldVisual (UNIT selectionPosition "spine1")))
 #define FAR_Target_INVALID(TARGET) (!alive TARGET || (!isPlayer TARGET && !FAR_Debugging) || TARGET distance player > FAR_Max_Distance || !UNCONSCIOUS(TARGET) || BEING_TREATED(TARGET) || DRAGGED(TARGET) || \
-(TARGET != cursorObject && {!(lineIntersectsObjs [ABDOMEN_ASL(player), ABDOMEN_ASL(TARGET), TARGET, player, false, 4] isEqualTo [])}))
+(TARGET != cursorTarget && {!(lineIntersectsObjs [ABDOMEN_ASL(player), ABDOMEN_ASL(TARGET), TARGET, player, false, 4] isEqualTo [])}))
 
 // lineIntersectsObjs is to check whether or not there is a wall between an imaginary line that goes from the medic's abdomen to the target's abdomen, if the target is not being aimed at directly
 
@@ -337,7 +337,7 @@ call mf_compile;
 FAR_FindTarget =
 {
 	private ["_target", "_unit"];
-	_target = cursorObject;
+	_target = cursorTarget;
 
 	if (FAR_Target_INVALID(_target)) then
 	{
@@ -410,7 +410,7 @@ call mf_compile;
 FAR_Check_Load_Dragged =
 {
 	private ["_veh", "_draggedUnit"];
-	_veh = cursorObject;
+	_veh = cursorTarget;
 	_draggedUnit = player getVariable ["FAR_isDragging", objNull];
 
 	player distance _veh <= (sizeOf typeOf _veh / 3) max 2 && [_draggedUnit, _veh, true] call fn_canGetIn && [_draggedUnit, player] call A3W_fnc_isFriendly
@@ -423,7 +423,7 @@ call mf_compile;
 FAR_Check_Eject_Injured =
 {
 	private "_veh";
-	_veh = cursorObject;
+	_veh = cursorTarget;
 
 	player distance _veh <= (sizeOf typeOf _veh / 3) max 2 && !(_veh isKindOf "Man") && {{UNCONSCIOUS(_x) && [_x, player] call A3W_fnc_isFriendly} count crew _veh > 0}
 }

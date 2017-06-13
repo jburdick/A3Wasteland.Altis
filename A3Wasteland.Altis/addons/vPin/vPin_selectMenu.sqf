@@ -6,12 +6,12 @@
 //	@file Author: LouD (Original author: Cael817)
 //	@file Description: vPin script
 
-#define PLAYER_CONDITION "(vehicle player == player && {!isNull cursorObject})"
-#define ITEM_CONDITION "{({cursorObject iskindof _x} count ['Land', 'Air', 'Water'] > 0)} && {(player distance cursorObject) < 5}"
-#define OBJECT_CONDITION "{!(isNil {cursorObject getVariable 'ownerUID'})}"
-#define OBJECT_OWNER "{cursorObject getVariable ['ownerUID',''] == getPlayerUID player}"
-#define OBJECT_NONOWNER "{cursorObject getVariable ['ownerUID',''] != getPlayerUID player}"
-#define PIN_CONDITION "{cursorObject getVariable ['vPin', true]} && {!isNil {cursorObject getVariable 'vPin'}}"
+#define PLAYER_CONDITION "(vehicle player == player && {!isNull cursorTarget})"
+#define ITEM_CONDITION "{({cursortarget iskindof _x} count ['Land', 'Air', 'Water'] > 0)} && {(player distance cursortarget) < 5}"
+#define OBJECT_CONDITION "{!(isNil {cursorTarget getVariable 'ownerUID'})}"
+#define OBJECT_OWNER "{cursorTarget getVariable ['ownerUID',''] == getPlayerUID player}"
+#define OBJECT_NONOWNER "{cursorTarget getVariable ['ownerUID',''] != getPlayerUID player}"
+#define PIN_CONDITION "{cursorTarget getVariable ['vPin', true]} && {!isNil {cursorTarget getVariable 'vPin'}}"
 
 vPin_open = 
 {
@@ -27,8 +27,8 @@ vPin_Actions =
 {
 	{ [player, _x] call fn_addManagedAction } forEach
 	[
-		["<t color='#FFFFFF'><img image='client\icons\keypad.paa'/> Vehicle Pinlock</t>", vPin_owner, [cursorObject], -6, false, false, "", PLAYER_CONDITION + " && " + ITEM_CONDITION + " && " + OBJECT_CONDITION + " && " + OBJECT_OWNER + " && " + PIN_CONDITION],
-		["<t color='#FFFFFF'><img image='client\icons\keypad.paa'/> Vehicle Pinlock</t>", vPin_open, [cursorObject], -6, false, false, "", PLAYER_CONDITION + " && " + ITEM_CONDITION + " && " + OBJECT_CONDITION + " && " + OBJECT_NONOWNER + " && " + PIN_CONDITION]
+		["<t color='#FFFFFF'><img image='client\icons\keypad.paa'/> Vehicle Pinlock</t>", vPin_owner, [cursorTarget], -6, false, false, "", PLAYER_CONDITION + " && " + ITEM_CONDITION + " && " + OBJECT_CONDITION + " && " + OBJECT_OWNER + " && " + PIN_CONDITION],
+		["<t color='#FFFFFF'><img image='client\icons\keypad.paa'/> Vehicle Pinlock</t>", vPin_open, [cursorTarget], -6, false, false, "", PLAYER_CONDITION + " && " + ITEM_CONDITION + " && " + OBJECT_CONDITION + " && " + OBJECT_NONOWNER + " && " + PIN_CONDITION]
 	];
 };
 

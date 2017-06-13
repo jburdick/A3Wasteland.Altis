@@ -8,7 +8,7 @@
 #define AMOUNT 100
 
 
-_target = cursorObject;
+_target = cursorTarget;
 _target_pos = getPos _target;
 
 //hint format["%1", _target_pos];

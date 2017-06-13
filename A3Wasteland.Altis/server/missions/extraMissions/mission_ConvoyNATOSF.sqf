@@ -15,10 +15,10 @@ _setupVars =
 {
 	_missionType = "Rogue NATO SF Team";
 	_locationsArray = LandConvoyPaths;
-
+	
 	_reinforceChance = 0; // Chance of reinforcements being called
 	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 3; //maximum number of paradrop groups that will respond to call
+	_maxReinforceGroups = 3; //maximum number of paradrop groups that will respond to call	
 };
 
 _setupObjects =
@@ -30,7 +30,7 @@ _setupObjects =
 	_convoyVeh = ["B_T_LSV_01_armed_F"];
 
 	_veh1 = _convoyVeh select 0;
-
+	
 	_createVehicle =
 	{
 		private ["_type", "_position", "_direction", "_vehicle", "_soldier"];
@@ -40,10 +40,6 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
-		_vehicle setVehicleReportRemoteTargets true;
-		_vehicle setVehicleReceiveRemoteTargets true;
-		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		[_vehicle] call vehicleSetup;
 
@@ -55,13 +51,13 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createNATOSFGunner;
 		_soldier moveInGunner _vehicle;
-
+		
 		_soldier = [_aiGroup, _position] call createNATOSFCommander;
 		_soldier moveInCommander _vehicle;
-
+		
 		_soldier = [_aiGroup, _position] call createNATOSFAT;
 		_soldier moveInCargo _vehicle;
-
+		
 		_soldier = [_aiGroup, _position] call createNATOSFSAW;
 		_soldier moveInCargo _vehicle;
 
@@ -142,13 +138,13 @@ _successExec =
 	_box1 = createVehicle [_currBox1, _lastPos, [], 2, "None"];
 	_box1 setDir random 360;
 	_box1 allowDamage false;
-
+	
 	_Boxes2 = ["Box_NATO_WpsLaunch_F", "Box_T_NATO_Wps_F"];
 	_currBox2 = _Boxes2 call BIS_fnc_selectRandom;
 	_box2 = createVehicle [_currBox2, _lastPos, [], 2, "None"];
 	_box2 setDir random 360;
 	_box2 allowDamage false;
-
+	
 	_successHintMessage = "The team has been killed, the weapon crates and vehicles are now yours to take.";
 };
 

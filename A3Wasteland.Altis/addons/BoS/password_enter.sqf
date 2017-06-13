@@ -1,5 +1,5 @@
 // ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright ï¿½ 2014 	BadVolt 	*
+// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 	BadVolt 	*
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: password_enter.sqf
@@ -8,7 +8,7 @@
 
 //#define DURATION 10
 
-_object = cursorObject;
+_object = cursorTarget;
 
 OutputText = nil;
 

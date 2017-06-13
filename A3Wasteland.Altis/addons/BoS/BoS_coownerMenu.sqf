@@ -22,9 +22,7 @@ if (!isNil "_uid") then {
 					"Release Lock Down",
 					"Relock Base Objects",
 					"Lights OFF",
-					"Lights ON",
-					"Lock Doors",
-					"Unlock Doors"
+					"Lights ON"
 	];
 
 	{

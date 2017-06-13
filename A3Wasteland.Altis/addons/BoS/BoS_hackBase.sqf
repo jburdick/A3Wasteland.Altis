@@ -21,7 +21,7 @@ _checks =
 
 	switch (true) do
 	{
-		case ((player distance cursorObject) > 5): { _text = "Hacking cancelled!" };
+		case ((player distance cursorTarget) > 5): { _text = "Hacking cancelled!" };
 		case (doCancelAction): { doCancelAction = false; _text = "Hacking cancelled!" };
 		case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
 		default
@@ -34,12 +34,12 @@ _checks =
 	[_failed, _text];
 };
 
-_success = [_totalDuration, "AinvPknlMstpSlayWrflDnon_medic", _checks, [cursorObject]] call a3w_actions_start;
+_success = [_totalDuration, "AinvPknlMstpSlayWrflDnon_medic", _checks, [cursorTarget]] call a3w_actions_start;
 
 if (_success) then
 {
-	cursorObject setVariable ["lockDown", false, true];
-	cursorObject setVariable ["password", "12345", true];
+	cursorTarget setVariable ["lockDown", false, true];
+	cursorTarget setVariable ["password", "12345", true];
 	["Base Re-Locker is hacked, the Lock Down is removed and the password is set to 12345.", 5] call mf_notify_client;
 };
 

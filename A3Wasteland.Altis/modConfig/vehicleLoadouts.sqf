@@ -323,33 +323,34 @@ switch (true) do
 */
 
 
-
-	/*// A-164 Wipeout CAS
+/*
+	// A-164 Wipeout CAS
 	case (_class isKindOf "Plane_CAS_01_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_Missile_AGM_02_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_AP_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonRack_1Rnd_Missile_AGM_02_F","PylonRack_1Rnd_Missile_AA_04_F"];
-	};*/
+	};
+*/
 
 
-
-
-	/*// To-199 Neophron CAS
+/*
+	// To-199 Neophron CAS
 	case (_class isKindOf "Plane_CAS_02_dynamicLoadout_base_F"):
 	{
 		_pylons = ["PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F"];
-	};*/
-
-
-
-	// Greyhawk/Ababil Missile UAVs
-	case (_class isKindOf "UAV_02_dynamicLoadout_base_F" && _variant == "greyhawkRecon"):
-	{
-		_pylons = ["",""];
 	};
+*/
+
+
+
 	// Greyhawk/Ababil Missile UAVs
 	case (_class isKindOf "UAV_02_dynamicLoadout_base_F" && _variant == "greyhawkMissile"):
 	{
 		_pylons = ["PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel"];
+		_customCode =
+		{
+			_veh setAmmoOnPylon [1, 2]; // right wing
+			_veh setAmmoOnPylon [2, 2]; // left wing
+		};
 	};
 	// Greyhawk/Ababil Bomber UAVs
 	case (_class isKindOf "UAV_02_dynamicLoadout_base_F" && _variant == "greyhawkBomber"):
@@ -376,7 +377,7 @@ switch (true) do
 
 
 
-	/*// MQ-12 Falcon UAV (non-dynamicLoadout)
+	// MQ-12 Falcon UAV (non-dynamicLoadout)
 	case (_class isKindOf "B_T_UAV_03_F"):
 	{
 		_mags =
@@ -397,5 +398,5 @@ switch (true) do
 			["missiles_ASRAAM", [0]],
 			["Laserdesignator_mounted", [0]]
 		];
-	};*/
+	};
 };

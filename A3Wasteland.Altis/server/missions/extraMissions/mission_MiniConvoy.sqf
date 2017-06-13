@@ -17,7 +17,7 @@ _setupVars =
 	_locationsArray = LandConvoyPaths;
 	_reinforceChance = 20; // Chance of reinforcements being called
 	_minReinforceGroups = 1; //minimum number of paradrop groups that will respond to call
-	_maxReinforceGroups = 2; //maximum number of paradrop groups that will respond to call
+	_maxReinforceGroups = 2; //maximum number of paradrop groups that will respond to call	
 };
 
 _setupObjects =
@@ -51,10 +51,6 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
-		_vehicle setVehicleReportRemoteTargets true;
-		_vehicle setVehicleReceiveRemoteTargets true;
-		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		[_vehicle] call vehicleSetup;
 

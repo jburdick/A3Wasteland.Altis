@@ -13,7 +13,11 @@ MainMissions =
 	["mission_Sniper", 1],
 	["mission_SupplyDrop", 1],
 	["mission_TownInvasion", 1],
+	//["mission_Hackers", 1],
 	["mission_transportheli", 1]
+	
+	
+	
 ];
 
 SideMissions =
@@ -29,12 +33,17 @@ SideMissions =
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1]
+	
 ];
 
 PatrolMissions =
 [
 	["mission_militaryPatrol", 1],
-	["mission_altisPatrol", 1]
+	["mission_altisPatrol", 1],
+	["mission_artyPatrol", .3]
+	
+	
+	
 ];
 
 vehicleMissions =
@@ -47,6 +56,8 @@ vehicleMissions =
 	["mission_LSV", 1],
 	["mission_VTOL", 1],
 	["mission_jet", 1]
+	
+
 ];
 
 extraMissions =
@@ -57,6 +68,11 @@ extraMissions =
 	//["mission_HackLaptop", 1],
 	["mission_MiniConvoy", 1],
 	["mission_HostageRescue", 1]
+	
+	
+	
+	
+
 ];
 
 aquaticMissions =
@@ -66,6 +82,9 @@ aquaticMissions =
 	["mission_SunkenSupplies", 1],
 	["mission_SunkenTreasure", 1],
 	["mission_Jaws", 1]
+	
+	
+
 ];
 
 hostileairMissions =
@@ -75,11 +94,7 @@ hostileairMissions =
 	["mission_HostileHeliFormation", 1],
 	["mission_HostileJet", 1],
 	["mission_HostileVTOL", 1]
-];
-
-EndGameMissions =
-[
-	"mission_artypatrol, 1"
+	
 ];
 
 MainMissions = [MainMissions, [["A3W_heliPatrolMissions", ["mission_Coastal_Convoy", "mission_HostileHeliFormation"]], ["A3W_underWaterMissions", ["mission_ArmedDiversquad"]]]] call removeDisabledMissions;
