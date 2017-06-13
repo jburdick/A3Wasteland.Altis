@@ -95,7 +95,7 @@ switch (_lockState) do
 			_object = _this select 1;
 			_failed = true;
 
-			_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 200];
+			_reLockers = nearestObjects [player, ["Land_Device_assembled_F","Land_SatellitePhone_F"], 200];
 			if (count _reLockers > 0) then {
 				_reLocker = _reLockers select 0;
 				}else{
