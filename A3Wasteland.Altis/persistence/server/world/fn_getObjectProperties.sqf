@@ -105,6 +105,20 @@ switch (true) do
       ["lockDown", false]
     ];
   };
+	case ( _obj isKindOf "Box_NATO_AmmoVeh_F"):
+  {
+    { _variables pushBack [_x select 0, _obj getVariable _x] } forEach
+    [
+      ["password", ""],
+      ["lockedSafe", false],
+      ["A3W_inventoryLockR3F", false],
+      ["R3F_LOG_disabled", false]
+    ];
+  };
+  case ( _obj isKindOf "Land_InfoStand_V2_F"):
+  {
+    _variables pushBack ["password", _obj getVariable ["password", ""]];
+  };
 };
 //BASE - SAFE LOCKING End
 

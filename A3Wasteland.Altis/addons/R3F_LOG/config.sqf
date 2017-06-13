@@ -1221,7 +1221,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "Land_Stone_4m_F",
 "Land_Stone_8m_F",
 "Land_Stone_Gate_F",
-"Land_Stone_pillar_F"
+"Land_Stone_pillar_F",
 "Land_SurvivalRadio_F",
 "Land_TableDesk_F",
 "Land_TablePlastic_01_F",
