@@ -1,5 +1,5 @@
 /**
- * Charger l'objet déplacé par le joueur dans un transporteur
+ * Charger l'objet dï¿½placï¿½ par le joueur dans un transporteur
  * 
  * Copyright (C) 2014 Team ~R3F~
  * 
@@ -19,7 +19,7 @@ else
 	private ["_objet", "_transporteur"];
 	
 	_objet = R3F_LOG_joueur_deplace_objet;
-	_transporteur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorTarget_virtuel;
+	_transporteur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorObject_virtuel;
 	
 	if (!isNull _transporteur && {
 		_transporteur getVariable ["R3F_LOG_fonctionnalites", R3F_LOG_CST_zero_log] select R3F_LOG_IDX_can_transport_cargo &&
@@ -34,12 +34,12 @@ else
 			_chargement = [_transporteur] call R3F_LOG_FNCT_calculer_chargement_vehicule;
 			_cout_chargement_objet = _objet getVariable "R3F_LOG_fonctionnalites" select R3F_LOG_IDX_can_be_transported_cargo_cout;
 			
-			// Si l'objet loge dans le véhicule
+			// Si l'objet loge dans le vï¿½hicule
 			if ((_chargement select 0) + _cout_chargement_objet <= (_chargement select 1)) then
 			{
 				[_transporteur, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
 				
-				// On mémorise sur le réseau le nouveau contenu du véhicule
+				// On mï¿½morise sur le rï¿½seau le nouveau contenu du vï¿½hicule
 				_objets_charges = _transporteur getVariable ["R3F_LOG_objets_charges", []];
 				_objets_charges = _objets_charges + [_objet];
 				_transporteur setVariable ["R3F_LOG_objets_charges", _objets_charges, true];

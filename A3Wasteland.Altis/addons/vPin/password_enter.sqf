@@ -1,12 +1,12 @@
 // ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 	BadVolt 	*
+// * This project is licensed under the GNU Affero GPL v3. Copyright ï¿½ 2014 	BadVolt 	*
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: password_enter.sqf
 //	@file Author: LouD (Original author: BadVolt)
 //	@file Description: Entering password and opens vPin
 
-_object = cursorTarget;
+_object = cursorObject;
 
 OutputText = nil;
 

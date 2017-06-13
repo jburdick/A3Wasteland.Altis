@@ -1,7 +1,7 @@
 /**
- * Gestion du déverrouillage d'un objet et du compte-à-rebours
+ * Gestion du dï¿½verrouillage d'un objet et du compte-ï¿½-rebours
  * 
- * @param 0 l'objet à déverrouiller
+ * @param 0 l'objet ï¿½ dï¿½verrouiller
  * 
  * Copyright (C) 2014 Team ~R3F~
  * 
@@ -18,7 +18,7 @@ else
 {
 	R3F_LOG_mutex_local_verrou = true;
 	
-	private ["_objet", "_duree", "_ctrl_titre", "_ctrl_fond", "_ctrl_jauge", "_time_debut", "_attente_valide", "_cursorTarget_distance"];
+	private ["_objet", "_duree", "_ctrl_titre", "_ctrl_fond", "_ctrl_jauge", "_time_debut", "_attente_valide", "_cursorObject_distance"];
 	
 	_objet = _this select 0;
 	_duree = 0; //R3F_LOG_CFG_unlock_objects_timer;
@@ -29,26 +29,26 @@ else
 	
 	disableSerialization;
 	/*
-	// Création du titre du compte-à-rebours dans le display du jeu
+	// Crï¿½ation du titre du compte-ï¿½-rebours dans le display du jeu
 	_ctrl_titre = (findDisplay 46) ctrlCreate ["RscText", -1];
 	_ctrl_titre ctrlSetPosition [0.5 - 0.5*_JAUGE_W, _JAUGE_Y - 1.5*_JAUGE_H, _JAUGE_W, 1.5*_JAUGE_H];
 	_ctrl_titre ctrlSetFontHeight 1.5*_JAUGE_H;
 	_ctrl_titre ctrlSetText format [STR_R3F_LOG_deverrouillage_en_cours, _duree];
 	_ctrl_titre ctrlCommit 0;
 	
-	// Création de l'arrière-plan de la jauge dans le display du jeu
+	// Crï¿½ation de l'arriï¿½re-plan de la jauge dans le display du jeu
 	_ctrl_fond = (findDisplay 46) ctrlCreate ["RscText", -1];
 	_ctrl_fond ctrlSetBackgroundColor [0, 0, 0, 0.4];
 	_ctrl_fond ctrlSetPosition [0.5 - 0.5*_JAUGE_W, _JAUGE_Y, _JAUGE_W, _JAUGE_H];
 	_ctrl_fond ctrlCommit 0;
 	
-	// Création d'une jauge à 0% dans le display du jeu
+	// Crï¿½ation d'une jauge ï¿½ 0% dans le display du jeu
 	_ctrl_jauge = (findDisplay 46) ctrlCreate ["RscText", -1];
 	_ctrl_jauge ctrlSetBackgroundColor [0, 0.6, 0, 1];
 	_ctrl_jauge ctrlSetPosition [0.5 - 0.5*_JAUGE_W, _JAUGE_Y, 0, _JAUGE_H];
 	_ctrl_jauge ctrlCommit 0;
 	
-	// La jauge passe progressivement de 0% à 100%
+	// La jauge passe progressivement de 0% ï¿½ 100%
 	_ctrl_jauge ctrlSetPosition [0.5 - 0.5*_JAUGE_W, _JAUGE_Y, _JAUGE_W, _JAUGE_H];
 	_ctrl_jauge ctrlCommit _duree;
 	*/
@@ -59,10 +59,10 @@ else
 	{
 		//_ctrl_titre ctrlSetText format [STR_R3F_LOG_deverrouillage_en_cours, ceil (_duree - (time - _time_debut))];
 		
-		_cursorTarget_distance = call R3F_LOG_FNCT_3D_cursorTarget_distance_bbox;
+		_cursorObject_distance = call R3F_LOG_FNCT_3D_cursorObject_distance_bbox;
 		
-		// Pour valider le déverrouillage, il faut maintenir la visée l'objet pendant le compte-à-rebours
-		if (!alive player || _cursorTarget_distance select 0 != _objet || _cursorTarget_distance select 1 > 5) then
+		// Pour valider le dï¿½verrouillage, il faut maintenir la visï¿½e l'objet pendant le compte-ï¿½-rebours
+		if (!alive player || _cursorObject_distance select 0 != _objet || _cursorObject_distance select 1 > 5) then
 		{
 			_attente_valide = false;
 		};
@@ -76,7 +76,7 @@ else
 	
 	if (_attente_valide) then
 	{
-		// Mise à jour du propriétaire du verrou
+		// Mise ï¿½ jour du propriï¿½taire du verrou
 		[_objet, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
 		
 		systemChat STR_R3F_LOG_deverrouillage_succes_attente;

@@ -1136,7 +1136,7 @@ genObjectsArray = compileFinal str
 	["Shoot House Wall (Prone)","Land_Shoot_House_Wall_Prone_F",100],
 	["Shoot House Wall (Long Prone)","Land_Shoot_House_Wall_Long_Prone_F",100],
 	["Shoot House Wall (Stand)","Land_Shoot_House_Wall_Stand_F",100],
-	["Shoot House Wall (Long Stand)","Land_Shoot_House_Wall_Long_Stand_F",100]
+	["Shoot House Wall (Long Stand)","Land_Shoot_House_Wall_Long_Stand_F",100],
 	["Sidewalk,Narrow","Land_Pavement_narrow_F",50],
 	["Sidewalk,Wide","Land_Pavement_wide_F",50],
 	["Sidewalk,Narrow (Corner)","Land_Pavement_narrow_corner_F",50],
@@ -1236,7 +1236,7 @@ genObjectsArray = compileFinal str
 	["Military (4m Green)","Land_Mil_WallBig_4m_F",300],
 	["Military (Corner,Green)","Land_Mil_WallBig_Corner_F",150],
 	["Pipe and Concrete (Short)","Land_Pipe_fence_4m_F",100],
-	["Pipe and Concrete (Tall)","Land_PipeWall_concretel_8m_F",200],
+	["Pipe and Concrete (Tall)","Land_PipeWall_concretel_8m_F",200]
 
 
 	//Bad: Needs retesting after R3F overhaul

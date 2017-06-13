@@ -5,7 +5,7 @@
 //	@file Author: AgentRev
 
 private "_veh";
-_veh = cursorTarget;
+_veh = cursorObject;
 
 alive _veh && {player distance _veh <= (sizeOf typeOf _veh / 2) max 2} && 
 (["A3W_extDB_SaveUnlockedObjects"] call isConfigOn || _veh getVariable ["objectLocked", false]) &&

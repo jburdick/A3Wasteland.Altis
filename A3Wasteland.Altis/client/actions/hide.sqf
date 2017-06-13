@@ -18,7 +18,7 @@ if (mutexScriptInProgress) exitWith
 
 private ["_vehicle", "_vehClass", "_checks", "_firstCheck", "_time", "_money", "_success"];
 
-_vehicle = cursorTarget;
+_vehicle = cursorObject;
 _vehClass = typeOf _vehicle;
 
 if (isNull _vehicle) exitWith {};

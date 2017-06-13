@@ -67,7 +67,7 @@ _fuelsource =
 	"O_Heli_Transport_04_fuel_F",
 	"I_Truck_02_fuel_F",
 	"C_Truck_02_fuel_F",
-	"Land_Pod_Heli_Transport_04_fuel_F"
+	"Land_Pod_Heli_Transport_04_fuel_F",
 	"B_Truck_01_fuel_F",
 	"B_Slingload_01_Fuel_F",
 	"StorageBladder_01_fuel_forest_F",
