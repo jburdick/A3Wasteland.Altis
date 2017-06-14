@@ -42,16 +42,14 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [[west,east,resistance], true];
+		_vehicle confirmSensorTarget [0, true];
+		_vehicle confirmSensorTarget [1, true];
+		_vehicle confirmSensorTarget [2, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
 		_vehicle setVelocity _vel; // Added to make it fly
 		_vehicle setVariable [call vChecksum, true, false];
-		_vehicle setVehicleReportRemoteTargets true;
-		_vehicle setVehicleReceiveRemoteTargets true;
-		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [[west,east,resistance], true];
 		_aiGroup addVehicle _vehicle;
 
 		// add pilot
@@ -140,8 +138,8 @@ _successExec =
 	_Boxes3 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];
 	_currBox3 = _Boxes3 call BIS_fnc_selectRandom;
 	_box3 = createVehicle [_currBox3, _lastPos, [], 2, "None"];
-	_box3 setDir random 360;
-	_box13setammocargo 0;
+	_box3  setDir random 360;
+	_box13  setammocargo 0;
 	_box3 allowDamage false;
 
 	_Boxes4 = ["Box_T_East_Ammo_F", "Box_T_East_Wps_F", "Box_East_AmmoOrd_F", "Box_CSAT_Equip_F", "Box_CSAT_Uniforms_F", "Box_East_WpsLaunch_F", "Box_T_East_WpsSpecial_F", "Box_East_Support_F", "Box_East_AmmoVeh_F"];

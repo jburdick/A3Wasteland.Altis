@@ -41,7 +41,9 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [[west,east,resistance], true];
+		_vehicle confirmSensorTarget [0, true];
+		_vehicle confirmSensorTarget [1, true];
+		_vehicle confirmSensorTarget [2, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;

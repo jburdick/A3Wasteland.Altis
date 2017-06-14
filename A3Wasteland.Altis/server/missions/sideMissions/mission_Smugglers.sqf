@@ -25,7 +25,9 @@ _setupObjects =
 	_vehicle1 setVehicleReportRemoteTargets true;
 	_vehicle1 setVehicleReceiveRemoteTargets true;
 	_vehicle1 setVehicleRadar 1;
-	_vehicle1 confirmSensorTarget [[west,east,resistance], true];
+	_vehicle confirmSensorTarget [0, true];
+	_vehicle confirmSensorTarget [1, true];
+	_vehicle confirmSensorTarget [2, true];
 	_vehicle1 setVariable [call vChecksum, true, false];
 	_vehicle1 setFuel 1;
 	_vehicle1 setVehicleLock "UNLOCKED";
@@ -35,7 +37,9 @@ _setupObjects =
 	_vehicle2 setVehicleReportRemoteTargets true;
 	_vehicle2 setVehicleReceiveRemoteTargets true;
 	_vehicle2 setVehicleRadar 1;
-	_vehicle2 confirmSensorTarget [[west,east,resistance], true];
+	_vehicle confirmSensorTarget [0, true];
+	_vehicle confirmSensorTarget [1, true];
+	_vehicle confirmSensorTarget [2, true];
 	_vehicle2 setVariable [call vChecksum, true, false];
 	_vehicle2 setFuel 1;
 	_vehicle2 setVehicleLock "UNLOCKED";

@@ -7,11 +7,11 @@
 //	@file Description: locks the vehicle
 
 private ["_vPins"];
-_vPins = cursorTarget;
+_vPins = cursorObject;
 
 if (!isNil "_vPins") then
 {
-	if !(cursorTarget getVariable "R3F_LOG_disabled") then
+	if !(cursorObject getVariable "R3F_LOG_disabled") then
 	{
 		if (local _vPins) then
 		{
