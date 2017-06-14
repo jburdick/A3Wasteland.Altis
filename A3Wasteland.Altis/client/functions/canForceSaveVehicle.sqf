@@ -4,7 +4,7 @@
 //	@file Name: canForceSaveVehicle.sqf
 //	@file Author: AgentRev
 
-private _veh = cursorTarget;
+private _veh = cursorObject;
 
 alive _veh && {player distance _veh <= (sizeOf typeOf _veh / 2) max 2} &&
 {_veh isKindOf "AllVehicles" && !(_veh isKindOf "Man" || _veh isKindOf "StaticWeapon") &&
