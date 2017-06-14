@@ -548,6 +548,8 @@ else
 		};
 	} forEach entities "CAManBase";
 };
+//Enable Logistics System
+//[] execVM "server/logistics/init.sqf"
 
 //Execute Server Missions.
 if (["A3W_serverMissions"] call isConfigOn) then

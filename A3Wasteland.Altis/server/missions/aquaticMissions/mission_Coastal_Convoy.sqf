@@ -59,6 +59,13 @@ _setupObjects =
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [0, true];
+		_vehicle confirmSensorTarget [1, true];
+		_vehicle confirmSensorTarget [2, true];
+
 
 		if (_variant != "") then
 		{

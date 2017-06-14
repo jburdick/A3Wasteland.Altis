@@ -43,6 +43,12 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [0, true];
+		_vehicle confirmSensorTarget [1, true];
+		_vehicle confirmSensorTarget [2, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		[_vehicle] call vehicleSetup;
 

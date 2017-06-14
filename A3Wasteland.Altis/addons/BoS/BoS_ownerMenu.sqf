@@ -23,7 +23,9 @@ if (!isNil "_uid") then {
 					"Relock Base Objects",
 					"Lights OFF",
 					"Lights ON",
-					"Change PIN"
+					"Change PIN",
+					"Lock Doors",
+					"Unlock Doors"
 	];
 
 	{

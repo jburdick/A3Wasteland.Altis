@@ -1,7 +1,7 @@
 //Title BIB_EnemyUniform
 //Author BIB_Monkey
 //Script allows players to equip enemy faction uniforms
-/*_target= (cursorTarget);
+/*_target= (cursorObject);
 _loadout= getUnitLoadout _target;
 _inventory= getItemCargo player;
 _weapon= weapons player;
@@ -24,7 +24,7 @@ player addWeapon [_weapon this select 2];*/
 #define DURATION 10
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
 
-private _target = (cursorTarget);
+private _target = (cursorObject);
 
 
 private _started = [DURATION, ANIMATION,] call a3w_actions_start;
