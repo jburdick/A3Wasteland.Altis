@@ -46,6 +46,12 @@ _setupObjects =
 	// Vehicle Class, Position, Fuel, Ammo, Damage, Special
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle2;
 	_vehicle setPosASL _missionPos;
+	_vehicle setVehicleReportRemoteTargets true;
+	_vehicle setVehicleReceiveRemoteTargets true;
+	_vehicle setVehicleRadar 1;
+	_vehicle confirmSensorTarget [0, true];
+	_vehicle confirmSensorTarget [1, true];
+	_vehicle confirmSensorTarget [2, true];
 	_vehicle lockDriver true;
 
 	_aiGroup = createGroup CIVILIAN;
@@ -54,7 +60,7 @@ _setupObjects =
 	[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
-	_missionHintText = format ["A treasure containing <t color='%1'>$75,000</t> and weapons is being recovered.<br/>If you want to capture it, you will need diving gear and an underwater weapon."];
+	_missionHintText = format ["A treasure containing <t color='%1'>$100,000</t> and weapons is being recovered.<br/>If you want to capture it, you will need diving gear and an underwater weapon."];
 };
 
 _waitUntilMarkerPos = nil;
@@ -78,7 +84,7 @@ _successExec =
 
 	// Give the rewards
 	{
-		_x setVariable ["cmoney", 7500, true];
+		_x setVariable ["cmoney", 10000, true];
 		_x setVariable ["owner", "world", true];
 	} forEach _cashObjects;
 

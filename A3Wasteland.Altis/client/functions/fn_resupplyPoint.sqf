@@ -5,39 +5,34 @@
 //  @file Author: Wiking, AgentRev, micovery
 
 #define RESUPPLY_TRUCK_DISTANCE 20
-#define REARM_TIME_SLICE 5
-#define REPAIR_TIME_SLICE 1
-#define REFUEL_TIME_SLICE 1
 #define PRICE_RELATIONSHIP 10 // resupply price = brand-new store price divided by PRICE_RELATIONSHIP
 #define RESUPPLY_TIMEOUT 30
-
 // Check if mutex lock is active.
 if (mutexScriptInProgress) exitWith {
 	titleText ["You are already performing another action.", "PLAIN DOWN", 0.5];
 };
 
-mutexScriptInProgress = true;
-doCancelAction = false;
-
 params ["", ["_unit",objNull,[objNull]]];
 
 _vehicle = vehicle _unit;
-_pylonsequiped = GetPylonMagazines _vehicle;
 
-_pylons =
+_pylons = //Array of all possible pylon weapons
   [
-    ["PylonRack_1Rnd_LG_scalpel",             1000],   	//SCALPEL X1
-    ["PylonRack_3Rnd_LG_scalpel",             3000],  	//SCALPEL X3
-    ["PylonRack_4Rnd_LG_scalpel",             4000],		//SCALPEL X4
-    ["PylonRack_1Rnd_Missile_AGM_02_F",       4000], 		//MACER AGM X1
-    ["PylonRack_Missile_AGM_02_x1",           5000],		//MACER II AGM X1
-    ["PylonMissile_Missile_AGM_02_x2",        8000], 		//MACER AGM X2
-    ["PylonRack_Missile_AGM_02_x2",           10000],		//MACER II X2
-    ["PylonRack_3Rnd_Missile_AGM_02_F",       12000], 	//MACER AGM X3
-    ["PylonRack_12Rnd_PG_missiles",           10000], 	//DAGR X12
-    ["PylonRack_1Rnd_Missile_AGM_01_F",       4000],		//SHARUR X1
-    ["PylonMissile_Missile_AGM_KH25_x1",      5000],		//KH-25 X1
-    ["PylonRack_1Rnd_Missile_AA_04_F",        5000], 		//FALCHION 22 X1
+
+		//	Pylon Weapons						,						Price					What it actually is
+
+    ["PylonRack_1Rnd_LG_scalpel",             10000],   	//SCALPEL X1
+    ["PylonRack_3Rnd_LG_scalpel",             30000],  	//SCALPEL X3
+    ["PylonRack_4Rnd_LG_scalpel",             40000],		//SCALPEL X4
+    ["PylonRack_1Rnd_Missile_AGM_02_F",       15000], 		//MACER AGM X1
+    ["PylonRack_Missile_AGM_02_x1",           20000],		//MACER II AGM X1
+    ["PylonMissile_Missile_AGM_02_x2",        30000], 		//MACER AGM X2
+    ["PylonRack_Missile_AGM_02_x2",           40000],		//MACER II X2
+    ["PylonRack_3Rnd_Missile_AGM_02_F",      	45000], 	//MACER AGM X3
+    ["PylonRack_12Rnd_PG_missiles",           20000], 	//DAGR X12
+    ["PylonRack_1Rnd_Missile_AGM_01_F",       15000],		//SHARUR X1
+    ["PylonMissile_Missile_AGM_KH25_x1",      20000],		//KH-25 X1
+    ["PylonRack_1Rnd_Missile_AA_04_F",        15000], 		//FALCHION 22 X1
     ["PylonRack_1Rnd_AAA_missiles",           2500], 		//ASRAAM X1
     ["PylonRack_Missile_AMRAAM_C_x1",         4000],		//AMRAAM C X1
     ["PylonRack_Missile_AMRAAM_C_x2",         8000],		//AMRAAM C X2
@@ -48,313 +43,943 @@ _pylons =
     ["PylonRack_1Rnd_Missile_AA_03_F",        8000], 		//SAHR-3
     ["PylonMissile_Missile_AA_R73_x1",        9000],		//R-73 X1
     ["PylonMissile_Missile_AA_R77_x1",        10000],		//R-77 X1
-    ["PylonRack_1Rnd_GAA_missiles",           15000],		//ZYPHER X1
+    ["PylonRack_1Rnd_GAA_missiles",           40000],		//ZYPHER X1
     ["PylonRack_12Rnd_missiles",              3000], 		//DAR ROCKETS X12
-    ["PylonRack_7Rnd_Rocket_04_HE_F",          8000],   //SHRIEKER HE ROCKETS X7
-    ["PylonRack_7Rnd_Rocket_04_AP_F",          7000], 	//SHRIEKER AP ROCKETS X7
-    ["PylonRack_20Rnd_Rocket_03_HE_F",         10000],	//TRATNYR HE ROCKETS X20
-    ["PylonRack_20Rnd_Rocket_03_AP_F",         12000],	//TRATNYR AP ROCKETS X20
-    ["PylonRack_19Rnd_Rocket_Skyfire",         9000],		//SKYFIRE X19
+    ["PylonRack_7Rnd_Rocket_04_HE_F",          14000],   //SHRIEKER HE ROCKETS X7
+    ["PylonRack_7Rnd_Rocket_04_AP_F",          14000], 	//SHRIEKER AP ROCKETS X7
+    ["PylonRack_20Rnd_Rocket_03_HE_F",         24000],	//TRATNYR HE ROCKETS X20
+    ["PylonRack_20Rnd_Rocket_03_AP_F",         24000],	//TRATNYR AP ROCKETS X20
+    ["PylonRack_19Rnd_Rocket_Skyfire",         19000],		//SKYFIRE X19
     ["PylonMissile_1Rnd_Bomb_04_F",            2500], 	//GBU-12 GUIDED BOMB NATO X1
     ["PylonMissile_1Rnd_Bomb_03_F",            2500],		//LOM-250G GUIDED BOMB CSAT X1
     ["PylonMissile_Bomb_GBU12_x1",             2500], 	//GBU-12 LASER GUIDIED BOMB X1
     ["PylonRack_Bomb_GBU12_x2",                5000],		//GBU-12 LASER GUIDED BOMB X2
     ["PylonMissile_Bomb_KAB250_x1",            2500],		//KAB250 GUIDED BOMB X1
     ["PylonMissile_1Rnd_Mk82_F",               500], 		//MK-82 DUMB BOMB X1
-    ["PylonWeapon_300Rnd_20mm_shells",         700],		//20mm TWIN CANNON
+    ["PylonWeapon_300Rnd_20mm_shells",         1700],		//20mm TWIN CANNON
     ["PylonWeapon_2000Rnd_65x39_belt",         100]			//6.5mm GATTLING GUN (RIGHT SIDE)
-  ];
+];
 
 //check if caller is in vehicle
 if (_vehicle == _unit) exitWith {};
 
-_resupplyThread = [_vehicle, _unit] spawn
+//Define Vehicle
+_vehClass = typeOf _vehicle;
+_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+_vehName = getText (_vehCfg >> "displayName");
+
+// price = 1000 for vehicles not found in vehicle store
+_baseprice = 1000;
+
+//Determine base cost of servicing vehicle pased on percentage of store price
 {
-	params ["_vehicle", "_unit"];
+if (_vehClass == _x select 1) exitWith
+{
+	_baseprice = _x select 2;
+	_baseprice = round (_baseprice / PRICE_RELATIONSHIP);
+};
+} forEach (call allVehStoreVehicles + call staticGunsArray);
 
-	_vehClass = typeOf _vehicle;
-	_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
-	_vehName = getText (_vehCfg >> "displayName");
-	_isUAV = (round getNumber (_vehCfg >> "isUav") >= 1);
-	_isStaticWep = _vehClass isKindOf "StaticWeapon";
-
-	scopeName "AmmoTruckThread";
-
-	_baseprice = 1000; // price = 1000 for vehicles not found in vehicle store
+// Differntiate between nondymanic and dynamic vehicles as well as by number of pylons
+Switch (true) do
+{
+	// Non-Dynamic Vehicles
+	case ({_vehicle iskindof _x} count
+	[
+		"B_CTRG_LSV_01_light_F", "B_CTRG_Heli_Transport_01_sand_F", "B_CTRG_Heli_Transport_01_tropic_F", "B_G_Boat_Transport_01_F", "B_G_Van_01_fuel_F",
+		"B_G_Offroad_01_F", "B_G_Offroad_01_armed_F", "B_G_Offroad_01_repair_F", "B_G_Quadbike_01_F", "B_G_Van_01_transport_F", "B_G_Mortar_01_F",
+		"B_GEN_Offroad_01_gen_F", "B_APC_Tracked_01_AA_F", "B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_CRV_F", "B_APC_Tracked_01_rcws_F",
+		"B_MBT_01_arty_F", "B_MBT_01_mlrs_F", "B_Boat_Transport_01_F", "B_Lifeboat", "B_Boat_Armed_01_minigun_F", "B_Truck_01_mover_F",
+		"B_Truck_01_ammo_F", "B_Truck_01_box_F", "B_Truck_01_fuel_F", "B_Truck_01_Repair_F", "B_Truck_01_medical_F", "B_Truck_01_transport_F",
+		"B_Truck_01_covered_F", "B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "B_LSV_01_armed_F", "B_LSV_01_unarmed_F", "B_Quadbike_01_F",
+		"B_UAV_01_F", "B_UGV_01_F", "B_UGV_01_rcws_F", "B_Heli_Transport_03_F", "B_Heli_Transport_03_unarmed_F", "B_Heli_Light_01_F", "B_Heli_Transport_01_F",
+		"B_MBT_01_cannon_F", "B_MBT_01_TUSK_F", "B_SAM_System_02_F", "B_HMG_01_F", "B_HMG_01_high_F", "B_HMG_01_A_F", "B_GMG_01_F", "B_GMG_01_high_F", "B_GMG_01_A_F",
+		"B_SAM_System_01_F", "B_Mortar_01_F", "B_AAA_System_01_F", "B_Static_Designator_01_F", "B_static_AA_F", "B_static_AT_F", "B_T_Lifeboat", "B_T_VTOL_01_armed_F",
+		"B_T_VTOL_01_infantry_F", "B_T_VTOL_01_vehicle_F", 	"O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_MBT_02_arty_F",
+		"O_Boat_Transport_01_F", "O_Lifeboat", "O_Boat_Armed_01_hmg_F", "O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_LSV_02_armed_F", "O_LSV_02_unarmed_F",
+		"O_Quadbike_01_F", "O_Truck_03_device_F", "O_Truck_03_ammo_F", "O_Truck_03_fuel_F", "O_Truck_03_medical_F", "O_Truck_03_repair_F", "O_Truck_03_transport_F",
+		"O_Truck_03_covered_F", "O_Truck_02_Ammo_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_Truck_02_medical_F", "O_Truck_02_box_F", "O_Truck_02_transport_F",
+		"O_Truck_02_covered_F", "O_UAV_01_F", "O_UGV_01_F", "O_UGV_01_rcws_F", "O_Heli_Transport_04_F", "O_Heli_Transport_04_ammo_F", "O_Heli_Transport_04_bench_F",
+		"O_Heli_Transport_04_box_F", "O_Heli_Transport_04_fuel_F", "O_Heli_Transport_04_medevac_F", "O_Heli_Transport_04_repair_F", "O_Heli_Transport_04_covered_F",
+		"O_Heli_Light_02_unarmed_F", "O_SDV_01_F", "B_SDV_01_F", "I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_Boat_Transport_01_F",
+		"I_Boat_Armed_01_minigun_F", "I_Quadbike_01_F", "I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "I_Truck_02_ammo_F", "I_Truck_02_fuel_F",
+		"I_Truck_02_medical_F", "I_Truck_02_box_F", "I_Truck_02_transport_F", "I_Truck_02_covered_F", "I_UAV_01_F", "I_UGV_01_F", "I_UGV_01_rcws_F",
+		"I_Heli_Transport_02_F", "I_Heli_light_03_unarmed_F", "I_SDV_01_F", "I_MBT_03_cannon_F", "I_HMG_01_F", "I_HMG_01_high_F", "I_HMG_01_A_F",
+		"I_GMG_01_F", "I_GMG_01_high_F", "I_GMG_01_A_F", "I_Mortar_01_F", "I_static_AA_F", "I_static_AT_F", "I_C_Boat_Transport_02_F", "C_Heli_Light_01_civil_F",
+		"C_Van_01_fuel_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Kart_01_F", "C_Kart_01_Blu_F", "C_Kart_01_Fuel_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F",
+		"C_Offroad_02_unarmed_F", "C_Offroad_01_F", "C_Offroad_01_repair_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Truck_02_fuel_F",
+		"C_Truck_02_box_F", "C_Truck_02_transport_F", "C_Truck_02_covered_F", "C_Plane_Civil_01_F", "C_Plane_Civil_01_racing_F"
+	]>0):
 	{
-		if (_vehClass == _x select 1) exitWith
-		{
-			_baseprice = _x select 2;
-			_baseprice = round (_baseprice / PRICE_RELATIONSHIP);
-		};
-	} forEach (call allVehStoreVehicles + call staticGunsArray);
+		//Non Dynamic vehicles are service based on percentage of store price
+	 _totalprice = _baseprice;
 
- _pylonprice = 0;
+	 //Find ot how much money the player has
+	 _money = player getVariable ["cmoney", 0];
+
+	 // Check player has enough money
+	 if (_money >= _totalprice) then {
+	 	//Prompt player to confirm cost
+	 	_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+	 	[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+	 	mutexScriptInProgress = true;  //prevents players from doing other actions
+	 	doCancelAction = false;
+
+	 	//Subtract cost from player money
+	 	player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+	 	//Begin Service Actions
+	 	 titleText ["Rearming...", "PLAIN"];
+	 	 sleep 15;
+	 	_vehicle setVehicleAmmo 1;
+	 	titleText ["Reparing...", "PLAIN"];
+	 	sleep 15;
+	 	_vehicle setDammage 0;
+	 	titleText ["Refueling...", "PLAIN"];
+	 	sleep 15;
+	 	_vehicle setFuel 1;
+	 	titleText ["Vehicle Ready!", "PLAIN"];
+	 } else {
+	 		titleText ["You don't have enough money", "PLAIN", 1];
+	 };
+	};
+
+
+	//Dynamic Vehicle with Two Pylons
+	case ({_vehicle iskindof _x} count ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_Heli_Light_01_dynamicLoadout_F", "O_Heli_Light_02_dynamicLoadout_F", "I_Heli_light_03_dynamicLoadout_F", "O_UAV_02_dynamicLoadout_F", "I_UAV_02_dynamicLoadout_F"] >0):
 	{
-    _pylonweapon = _x foreach _pylonsequiped;
-    if (_pylonweapon == _x select 0) exitWith
-    {
-      _pylonprice = _x select 1;
-    } forEach _pylons;
-  };
-  _price = (_baseprice + _pylonprice);
 
-  _titleText = { titleText [_this, "PLAIN DOWN", ((REARM_TIME_SLICE max 1) / 10) max 0.3] };
+		//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
 
-	_checkAbortConditions =
-	{
-		private _abortText = "";
-		private _pauseText = "";
-		private "_checkCondition";
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
 
-		call
+		//Set price per pylon weapon laoded on aircraft
 		{
-			if (doCancelAction) exitWith
+			if (_pylon1 == _x select 0) exitWith
 			{
-				doCancelAction = false;
-				_abortText = "Cancelled by player.";
+				_pylon1price = _x select 1;
 			};
-
-			if (!alive player) exitWith
-			{
-				_abortText = "You have been killed.";
-			};
-
-			// Abort if vehicle is no longer local, otherwise commands won't do anything
-			_checkCondition = {!local _vehicle};
-			if (call _checkCondition) exitWith
-			{
-				_pauseText = "Take back control of the vehicle.";
-				_abortText = "Another player took control of the vehicle.";
-			};
-
-			// Abort if vehicle is destroyed
-			_checkCondition = {!alive _vehicle};
-			if (call _checkCondition) exitWith
-			{
-				_abortText = "The vehicle has been destroyed.";
-			};
-
-			/*// Abort if no resupply vehicle in proximity
-			_checkCondition = {{alive _x && {_x getVariable ["A3W_AmmoTruck", false]}} count (_vehicle nearEntities ["AllVehicles", RESUPPLY_TRUCK_DISTANCE]) == 0};
-			if (call _checkCondition) exitWith
-			{
-				_pauseText = "Move closer to a resupply vehicle.";
-				_abortText = "Too far from resupply vehicle.";
-			};*/
-
-			// Abort if player gets out of vehicle
-			_checkCondition = {vehicle _unit != _vehicle};
-			if (!_isUAV && !_isStaticWep && _checkCondition) exitWith
-			{
-				_pauseText = "Get back in the vehicle.";
-				_abortText = "You are not in the vehicle.";
-			};
-
-			// Abort if someone gets in the gunner seat
-			_checkCondition = {alive gunner _vehicle};
-			if (!_isUAV && _checkCondition) exitWith
-			{
-				_pauseText = "The gunner seat must be empty.";
-				_abortText = "Someone is in the gunner seat.";
-			};
-		};
-
-		if (_pauseText != "") then
+		} forEach _pylons;
 		{
-			private "_i";
-
-			for [{_i = RESUPPLY_TIMEOUT}, {_i > 0 && _checkCondition && !doCancelAction}, {_i = _i - 1}] do
+			if (_pylon2 == _x select 0) exitWith
 			{
-				_vehicle setVariable ["A3W_AmmoTruckTimeout", true];
-				titleText [format ["%1\n%2", _pauseText, format ["Resupply sequence timeout in %1", _i]], "PLAIN DOWN", 0.5];
-				sleep 1;
+				_pylon2price = _x select 1;
 			};
+		} forEach _pylons;
 
-			_vehicle setVariable ["A3W_AmmoTruckTimeout", nil];
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price);
 
-			if !(call _checkCondition) then
-			{
-				_abortText = "";
-				titleText ["", "PLAIN DOWN", 0.5];
-			};
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
 
-			if (doCancelAction) then
-			{
-				_abortText = "Cancelled by player.";
-			};
-		};
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
 
-		if (_abortText != "") then
-		{
-			titleText [format ["%1\n%2", _abortText, "Resupply sequence aborted"], "PLAIN DOWN", 0.5];
-			breakTo "AmmoTruckThread";
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
 		};
 	};
 
 
-	// Check if player has enough money
-	_checkPlayerMoney =
+	//Dynamic Vehicles with 4 pylons
+	case ({_vehicle iskindof _x} count ["B_T_UAV_03_dynamicLoadout_F", "O_Heli_Attack_02_dynamicLoadout_F", "O_T_VTOL_02_infantry_dynamicLoadout_F", "O_T_VTOL_02_vehicle_dynamicLoadout_F"] >0):
 	{
-		if (player getVariable ["cmoney",0] < _price) then
+
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+
 		{
-			_text = format ["%1\n%2", format ["Not enough money, you need $%1 to resupply %2", _price, _vehName], "Resupply sequence aborted"];
-			[_text, 10] call mf_notify_client;
-			breakTo "AmmoTruckThread";
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
 		};
 	};
 
-	call
+
+	// Dynamic Vehicles with 6 pylons
+	case ({_vehicle iskindof _x} count ["B_Heli_Attack_01_dynamicLoadout_F", "I_Plane_Fighter_04_F"] >0):
 	{
-		if (_isStaticWep) then
-		{
-			_text = format ["%1\n%2", "Resupply sequence started", "Please get out of the static weapon."];
-			titleText [_text, "PLAIN DOWN", 0.5];
-			sleep 10;
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
 
-			call _checkAbortConditions;
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+
+			//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+		if (_pylon5 == _x select 0) exitWith
+		{
+			_pylon6price = _x select 1;
+		};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
+	};
+
+
+	// Dynamic Vehicles with 7 pylons
+	case ({_vehicle iskindof _x} count ["O_Plane_Fighter_02_Stealth_F", "I_Plane_Fighter_03_dynamicLoadout_F"] >0):
+	{
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
+		_pylon7 = _pylonsequiped select 6;
+
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+
+			//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
+	};
+
+
+	// Dynamic Vehicles with 10 pylons
+	case ({_vehicle iskindof _x} count ["B_Plane_Fighter_01_Stealth_F"] >0):
+	{
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
+		_pylon7 = _pylonsequiped select 6;
+		_pylon8 = _pylonsequiped select 7;
+
+
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+		_pylon8price = 0;
+
+
+		//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon8 == _x select 0) exitWith
+			{
+				_pylon8price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price);
+	};
+
+
+	// Dynamic Vehicles with 10 pylons
+	case ({_vehicle iskindof _x} count ["O_Plane_Fighter_02_Stealth_F", "I_Plane_Fighter_03_dynamicLoadout_F"] >0):
+	{
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
+		_pylon7 = _pylonsequiped select 6;
+		_pylon8 = _pylonsequiped select 7;
+		_pylon9 = _pylonsequiped select 8;
+		_pylon10 = _pylonsequiped select 9;
+
+
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+		_pylon8price = 0;
+		_pylon9price = 0;
+		_pylon10price = 0;
+
+
+		//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon8 == _x select 0) exitWith
+			{
+				_pylon8price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon9 == _x select 0) exitWith
+			{
+			_pylon9price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon10 == _x select 0) exitWith
+			{
+			_pylon10price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
+	};
+
+
+	// Dynamic Vehicles with 12 pylons
+	case ({_vehicle iskindof _x} count ["B_Plane_Fighter_01_F"] >0):
+	{
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
+		_pylon7 = _pylonsequiped select 6;
+		_pylon8 = _pylonsequiped select 7;
+		_pylon9 = _pylonsequiped select 8;
+		_pylon10 = _pylonsequiped select 9;
+		_pylon11 = _pylonsequiped select 10;
+		_pylon12 = _pylonsequiped select 11;
+
+
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+		_pylon8price = 0;
+		_pylon9price = 0;
+		_pylon10price = 0;
+		_pylon11price = 0;
+		_pylon12price = 0;
+
+
+		//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon8 == _x select 0) exitWith
+			{
+				_pylon8price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon9 == _x select 0) exitWith
+			{
+			_pylon9price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon10 == _x select 0) exitWith
+			{
+			_pylon10price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon11 == _x select 0) exitWith
+			{
+			_pylon11price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon12 == _x select 0) exitWith
+			{
+			_pylon12price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price + _pylon10price + _pylon12price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
+		};
+	};
+
+
+	// Dynamic Vehicles with 13 pylons
+	case ({_vehicle iskindof _x} count ["O_Plane_Fighter_02_F"] >0):
+	{
+			//Determine Weapons Loaded on Pylons
+		_pylonsequiped = GetPylonMagazines _vehicle;
+		_pylon1 = _pylonsequiped select 0;
+		_pylon2 = _pylonsequiped select 1;
+		_pylon3 = _pylonsequiped select 2;
+		_pylon4 = _pylonsequiped select 3;
+		_pylon5 = _pylonsequiped select 4;
+		_pylon6 = _pylonsequiped select 5;
+		_pylon7 = _pylonsequiped select 6;
+		_pylon8 = _pylonsequiped select 7;
+		_pylon9 = _pylonsequiped select 8;
+		_pylon10 = _pylonsequiped select 9;
+		_pylon11 = _pylonsequiped select 10;
+		_pylon12 = _pylonsequiped select 11;
+		_pylon13 = _pylonsequiped select 13;
+
+
+		//Set 0 pylon value if none Loaded
+		_pylon1price = 0;
+		_pylon2price = 0;
+		_pylon3price = 0;
+		_pylon4price = 0;
+		_pylon5price = 0;
+		_pylon6price = 0;
+		_pylon7price = 0;
+		_pylon8price = 0;
+		_pylon9price = 0;
+		_pylon10price = 0;
+		_pylon11price = 0;
+		_pylon12price = 0;
+		_pylon13price = 0;
+
+
+		//Set price per pylon weapon laoded on aircraft
+		{
+			if (_pylon1 == _x select 0) exitWith
+			{
+				_pylon1price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon2 == _x select 0) exitWith
+			{
+				_pylon2price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon3 == _x select 0) exitWith
+			{
+				_pylon3price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon4 == _x select 0) exitWith
+			{
+				_pylon4price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon5 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon6 == _x select 0) exitWith
+			{
+				_pylon6price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon7 == _x select 0) exitWith
+			{
+				_pylon7price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon8 == _x select 0) exitWith
+			{
+				_pylon8price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon9 == _x select 0) exitWith
+			{
+			_pylon9price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon10 == _x select 0) exitWith
+			{
+			_pylon10price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon11 == _x select 0) exitWith
+			{
+			_pylon11price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon12 == _x select 0) exitWith
+			{
+			_pylon12price = _x select 1;
+			};
+		} forEach _pylons;
+		{
+			if (_pylon13 == _x select 0) exitWith
+			{
+			_pylon13price = _x select 1;
+			};
+		} forEach _pylons;
+
+
+		//Total Price equials sum of prices of all components
+		_totalprice = (_baseprice + _pylon1price + _pylon2price + _pylon3price + _pylon4price + _pylon5price + _pylon6price + _pylon7price + _pylon8price + _pylon9price + _pylon10price + _pylon10price + _pylon12price + _pylon13price);
+
+		//Find ot how much money the player has
+		_money = player getVariable ["cmoney", 0];
+
+		// Check player has enough money
+		if (_money >= _totalprice) then {
+			//Prompt player to confirm cost
+			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _totalprice, _vehName], "Do you want to proceed?"];
+			[_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage;
+			mutexScriptInProgress = true;  //prevents players from doing other actions
+			doCancelAction = false;
+
+			//Subtract cost from player money
+			player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _totalprice, true];
+
+			//Begin Service Actions
+			 titleText ["Rearming...", "PLAIN"];
+			 sleep 15;
+			_vehicle setVehicleAmmo 1;
+			titleText ["Reparing...", "PLAIN"];
+			sleep 15;
+			_vehicle setDammage 0;
+			titleText ["Refueling...", "PLAIN"];
+			sleep 15;
+			_vehicle setFuel 1;
+			titleText ["Vehicle Ready!", "PLAIN"];
+		} else {
+				titleText ["You don't have enough money", "PLAIN", 1];
 		};
 
-		call _checkPlayerMoney;
-		call _checkAbortConditions;
 
-		_vehicle setVariable ["A3W_truckResupplyEngineEH", _vehicle addEventHandler ["Engine",
-		{
-			params ["_vehicle", "_started"];
-
-			(_vehicle getVariable "A3W_truckResupplyThread") params [["_resupplyThread", scriptNull, [scriptNull]]];
-
-			if (_started && !scriptDone _resupplyThread && !(_vehicle getVariable ["A3W_AmmoTruckTimeout", false])) then
-			{
-				_vehicle engineOn false;
-			};
-		}]];
-
-		_vehicle engineOn false;
-
-		if (player getVariable ["cmoney",0] >= _price) then
-		{
-			_msg = format ["%1<br/><br/>%2", format ["It will cost you $%1 to resupply %2.", _price, _vehName], "Do you want to proceed?"];
-
-			if !([_msg, "Resupply Vehicle", true, true] call BIS_fnc_guiMessage) then
-			{
-				breakTo "AmmoTruckThread";
-			};
-
-		};
-
-		call _checkAbortConditions;
-		call _checkPlayerMoney;
-
-		//start resupply here
-		player setVariable ["cmoney", (player getVariable ["cmoney",0]) - _price, true];
-		_text = format ["%1\n%2", format ["You paid $%1 to resupply %2.", _price, _vehName], "Please stand by..."];
-		[_text, 10] call mf_notify_client;
-		[] spawn fn_savePlayerData;
-
-		call _checkAbortConditions;
-
-
-		_text = format ["Reloading %1...", [_vehName]];
-		sleep (REARM_TIME_SLICE / 2);
-		_vehicle setvehicleammo 1;
-		sleep (REARM_TIME_SLICE / 2);
-		_checkDone = true;
-
-		(getAllHitPointsDamage _vehicle) params ["_hitPoints", "_selections", "_dmgValues"];
-		_repairSlice = if (count _hitPoints > 0) then { REPAIR_TIME_SLICE min (10 / (count _hitPoints)) } else { 0 }; // no longer than 10 seconds
-
-		{
-
-			if (_dmgValues select _forEachIndex > 0.001) then
-			{
-				if (_checkDone) then
-				{
-					_checkDone = false;
-					sleep 3;
-				};
-
-				call _checkAbortConditions;
-
-				"Repairing..." call _titleText;
-				sleep (_repairSlice / 2);
-				call _checkAbortConditions;
-
-				if (_x != "") then
-				{
-					_vehicle setHitpointDamage [_x, 0];
-				}
-				else
-				{
-					_selName = _selections select _forEachIndex;
-
-					if (_selName != "") then
-					{
-						_vehicle setHit [_selName, 0];
-					};
-				};
-
-				sleep (_repairSlice / 2);
-				_repaired = true;
-			};
-		} forEach _hitPoints;
-
-		if (damage _vehicle > 0.001) then
-		{
-			call _checkAbortConditions;
-
-			"Repairing..." call _titleText;
-			sleep 1;
-
-			call _checkAbortConditions;
-			_vehicle setDamage 0;
-			_repaired = true;
-		};
-
-		_checkDone = true;
-
-		if (fuel _vehicle < 0.999 && !_isStaticWep) then
-		{
-			while {fuel _vehicle < 0.999} do
-			{
-				if (_checkDone) then
-				{
-					_checkDone = false;
-					sleep 3;
-				};
-
-				call _checkAbortConditions;
-
-				"Refueling..." call _titleText;
-				sleep (REFUEL_TIME_SLICE / 2);
-				call _checkAbortConditions;
-
-				_vehicle setFuel ((fuel _vehicle) + 0.1);
-				 sleep (REFUEL_TIME_SLICE / 2);
-			};
-		};
-
-		titleText ["Your vehicle is ready.", "PLAIN DOWN", 0.5];
 	};
 };
 
-_vehicle setVariable ["A3W_truckResupplyThread", _resupplyThread];
-
-
-// Secondary thread for cleanup in case of error in resupply thread
-[_vehicle, _resupplyThread] spawn
-{
-	params ["_vehicle", "_resupplyThread"];
-
-	waitUntil {scriptDone _resupplyThread};
-
-	_ehID = _vehicle getVariable ["A3W_truckResupplyEngineEH", -1];
-
-	if (_ehID isEqualType 0) then
-	{
-		_vehicle removeEventHandler ["Engine", _ehID];
-	};
-
-	_vehicle setVariable ["A3W_truckResupplyEngineEH", nil];
-	mutexScriptInProgress = false;
-};
+mutexScriptInProgress = false;
+//All Done!

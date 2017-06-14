@@ -36,6 +36,12 @@ _setupObjects =
 		_direction = _this select 2;
 
 		_vehicle = createVehicle [_type, _position, [], 0, "None"];
+		_vehicle setVehicleReportRemoteTargets true;
+		_vehicle setVehicleReceiveRemoteTargets true;
+		_vehicle setVehicleRadar 1;
+		_vehicle confirmSensorTarget [0, true];
+		_vehicle confirmSensorTarget [1, true];
+		_vehicle confirmSensorTarget [2, true];
 		[_vehicle] call vehicleSetup;
 
 		_vehicle setDir _direction;
@@ -141,14 +147,14 @@ _successExec =
 {
 	// Mission completed
 
-	for "_x" from 1 to 10 do
+	/*for "_x" from 1 to 10 do
 	{
 		_cash = "Land_Money_F" createVehicle markerPos _marker;
 		_cash setPos ((markerPos _marker) vectorAdd ([[2 + random 2,0,0], random 360] call BIS_fnc_rotateVector2D));
 		_cash setDir random 360;
 		_cash setVariable["cmoney",15000,true];
 		_cash setVariable["owner","world",true];
-	};
+	};*/
 
 	_box1 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
     [_box1,"Ammo_Drop"] call fn_refillbox;
