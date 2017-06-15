@@ -1469,8 +1469,8 @@ planesArray = compileFinal str
 	["F/A-181 Black Wasp II","B_Plane_Fighter_01_F",775000,"vehicle"],
 	["F/A-181 Black Wasp II (Stealth)","B_Plane_Fighter_01_Stealth_F",750000,"vehicle"],
 
-	["V-44 X Blackfish (Infrantry Transport)","O_T_VTOL_02_infantry_dynamicLoadout_F",20000,"vehicle"],
-	["V-44 X Blackfish (Vehicle Transport)","O_T_VTOL_02_vehicle_dynamicLoadout_F",30000,"vehicle"],
+	["V-44 X Blackfish (Infrantry Transport)","B_T_VTOL_01_infantry_F",20000,"vehicle"],
+	["V-44 X Blackfish (Vehicle Transport)","B_T_VTOL_01_vehicle_F",30000,"vehicle"],
 	["V-44 X Blackfish (Armed)","B_T_VTOL_01_armed_F",700000,"vehicle"],
 
 	["Y-32 Xi'an (Infrantry Transport)","O_T_VTOL_02_infantry_F",750000,"vehicle"],
