@@ -857,7 +857,7 @@ genObjectsArray = compileFinal str
 [
 	//Base Management Objects
 	["*****Base Management*****",														"objNull",															1],
-	["Base Manager",																				"Land_SatellitePhone_F",								1],
+	["Base Manager",																				"Land_SatellitePhone_F",								500000],
 	//["Base Manager","Land_Device_assembled_F",500],
 
 	//Buildings
