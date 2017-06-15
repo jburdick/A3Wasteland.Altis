@@ -91,7 +91,7 @@ R3F_LOG_CFG_lock_objects_mode = "none";
  * Mettre à -1 pour qu'on ne puisse pas déverrouiller les objets.
  * Voir aussi la variable de configiration R3F_LOG_CFG_lock_objects_mode.
  */
-R3F_LOG_CFG_unlock_objects_timer = 15;
+R3F_LOG_CFG_unlock_objects_timer = 1;
 
 /**
  * ALLOW NO GRAVITY OVER GROUND
@@ -871,6 +871,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "ArrowDesk_L_F",
 "ArrowDesk_R_F",
 "B_CargoNet_01_ammo_F",
+"B_Slingload_01_Cargo_F"
 "B_Slingload_01_Medevac_F",
 "B_Slingload_01_Fuel_F",
 "B_Slingload_01_Ammo_F",
