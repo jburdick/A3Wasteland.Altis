@@ -762,7 +762,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Razorwire_F", 5],
 	["Land_Research_house_V1_F", 50],
 	["Land_Research_HQ_F", 75],
-  ["Land_ReservoirTower_F", 75]
+  ["Land_ReservoirTower_F", 75],
 	["Land_RoadCone_01_F", 2],
 	["Land_Sacks_goods_F", 2],
 	["Land_SatellitePhone_F", 1],
@@ -831,8 +831,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_TinWall_02_l_pole_F", 2],
 	["Land_ToiletBox_F", 2],
   ["Land_TreeBin_F", 10],
-  ["Land_TTowerBig_1_F", 100]
-  ["Land_TTowerBig_2_F", 100]
+  ["Land_TTowerBig_1_F", 100],
+  ["Land_TTowerBig_2_F", 100],
 	["Land_TyreBarrier_01_line_x4_F", 3],
 	["Land_TyreBarrier_01_F", 2],
 	["Land_TyreBarrier_01_line_x6_F", 4],
@@ -926,7 +926,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "ArrowDesk_L_F",
 "ArrowDesk_R_F",
 "B_CargoNet_01_ammo_F",
-"B_Slingload_01_Cargo_F"
+"B_Slingload_01_Cargo_F",
 "B_Slingload_01_Medevac_F",
 "B_Slingload_01_Fuel_F",
 "B_Slingload_01_Ammo_F",
@@ -1252,7 +1252,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "Land_PlasticBarrier_01_line_x2_F",
 "Land_PlasticBarrier_02_F",
 "Land_PlasticBarrier_03_F",
-"Land_Pod_Heli_Transport_04_box_F"
+"Land_Pod_Heli_Transport_04_box_F",
 "Land_Pod_Heli_Transport_04_fuel_F",
 "Land_Pod_Heli_Transport_04_repair_F",
 "Land_PoleWall_01_3m_F",
