@@ -1242,10 +1242,10 @@ genObjectsArray = compileFinal str
 	["Military Cargo (No.5)",                               "Land_Cargo_Tower_V1_No5_F",            6500],
 	["Military Cargo (No.6)",                               "Land_Cargo_Tower_V1_No6_F",            6500],
 	["Military Cargo (No.7)",                               "Land_Cargo_Tower_V1_No7_F",            6500],
-	["Radio Tower (Narrow)",                                "Land_TTowerBig_2_F",                   25000]
-	["Radio Tower (Wide)",                                  "Land_TTowerBig_1_F",                   25000]
+	["Radio Tower (Narrow)",                                "Land_TTowerBig_2_F",                   25000],
+	["Radio Tower (Wide)",                                  "Land_TTowerBig_1_F",                   25000],
 	["Solar Collector",                                     "Land_spp_Tower_F",                     100000],
-	["Water Reservoir",                                     "Land_ReservoirTower_F",                10000]
+	["Water Reservoir",                                     "Land_ReservoirTower_F",                10000],
 
 	//Walls
 	["*****Walls*****", "objNull", 1],
@@ -1291,7 +1291,7 @@ genObjectsArray = compileFinal str
 	["Military (4m Green)",                                 "Land_Mil_WallBig_4m_F",                300],
 	["Military (Corner,Green)",                             "Land_Mil_WallBig_Corner_F",            150],
 	["Pipe and Concrete (Short)",                           "Land_Pipe_fence_4m_F",                 100],
-	["Pipe and Concrete (Tall)",                            "Land_PipeWall_concretel_8m_F",         200]
+	["Pipe and Concrete (Tall)",                            "Land_PipeWall_concretel_8m_F",         200],
 	["Stones,Piled (Low,Long)",                             "Land_StoneWall_01_s_10m_F",            100],
 
 

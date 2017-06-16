@@ -753,7 +753,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_PortableHelipadLight_01_F", 2],
 	["Land_PortableLight_double_F", 4],
 	["Land_PortableLight_single_F", 2],
-  ["Land_PowerPoleWooden_L_F", 10]
+  ["Land_PowerPoleWooden_L_F", 10],
 	["Land_Rack_F", 2],
   ["Land_Rampart_F", 30],
 	["Land_RampConcrete_F", 6],
