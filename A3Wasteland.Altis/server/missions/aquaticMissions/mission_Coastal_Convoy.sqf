@@ -62,9 +62,9 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [0, true];
-		_vehicle confirmSensorTarget [1, true];
-		_vehicle confirmSensorTarget [2, true];
+		_vehicle confirmSensorTarget [west, true];
+		_vehicle confirmSensorTarget [east, true];
+		_vehicle confirmSensorTarget [resistance, true];
 
 
 		if (_variant != "") then
