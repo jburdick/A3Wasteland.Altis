@@ -1027,7 +1027,7 @@ genObjectsArray = compileFinal str
 	["Light,Wood Pole (Shabby)",                            "Land_LampShabby_F",                    300],
 	["Portable Flood (Double)",                             "Land_PortableLight_double_F",          200],
 	["Portable Flood (Single)",                             "Land_PortableLight_single_F",          100],
-	["Power Pole w/Light",                                  "Land_PowerPoleWooden_L_F",             500]
+	["Power Pole w/Light",                                  "Land_PowerPoleWooden_L_F",             500],
 	["Solar Pole",                                          "Land_LampSolar_F",                     1000],
 	["Street Light,Globes",                                 "Land_LampDecor_F",                     500],
 	["Street Light (Small)",                                "Land_LampStreet_small_F",              500],

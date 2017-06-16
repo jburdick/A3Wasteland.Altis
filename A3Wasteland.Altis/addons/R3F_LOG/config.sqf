@@ -563,7 +563,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_CncWall4_F", 5],
 	["Land_Concrete_SmallWall_4m_F", 2],
 	["Land_Concrete_SmallWall_8m_F", 4],
-  ["Land_ConcretePipe_F",],
+  ["Land_ConcretePipe_F",5],
 	["Land_ConcreteWall_01_l_gate_F", 2],
 	["Land_ConcreteWall_01_m_pole_F", 2],
 	["Land_ConcreteWall_01_l_8m_F", 4],
