@@ -903,7 +903,7 @@ genObjectsArray = compileFinal str
 	["Shed,Open Sided (Small)",															"Land_Shed_Small_F",										1000],
 
 	//Fences
-	["*****Fences*****",																		"Land_HumanSkull_F",															1],
+	["*****Fences*****",																		"Land_HumanSkull_F",										1],
 	["Bamboo (4m)",																					"Land_BambooFence_01_s_4m_F",						100],
 	["Bamboo (8m)",																					"Land_BambooFence_01_s_8m_F",						200],
 	["Bamboo (Pole)",																				"Land_BambooFence_01_s_pole_F",					50],
@@ -969,7 +969,7 @@ genObjectsArray = compileFinal str
 	["Wrought Iron (Gate Double)",                          "Land_PipeFence_01_m_gate_v2_F",        750],
 
 	//Houses
-	["*****Houses*****", "Land_HumanSkull_F", 1],
+	["*****Houses*****",                                    "Land_HumanSkull_F",                    1],
 	["Cobblestone with Balcony 2 Story (Large,White)",      "Land_i_House_Big_02_V3_F",             10000],
 	["Cobblestone with Porch 2 Story (Large,White)",        "Land_i_House_Big_01_V3_F",             10000],
 	["Cobblestone Bungalow(Small,White)",                   "Land_i_House_Small_01_V3_F",           5000],
@@ -1013,7 +1013,7 @@ genObjectsArray = compileFinal str
 	["Stucco 2 Story with Porch (Large,Yellow)",            "Land_i_House_Big_01_V2_F",             5000],
 
 	//Lights
-	["*****Lights*****", "Land_HumanSkull_F", 1],
+	["*****Lights*****",                                    "Land_HumanSkull_F",                    1],
 	["Airport Pole Lamp (3 Halogen 1 Red)",                 "Land_LampAirport_F",                   2500],
 	["Halogen Light Pole",                                  "Land_LampHalogen_F",                   1000],
 	["Harbor Lamp",                                         "Land_LampHarbour_F",                   500],
@@ -1035,7 +1035,7 @@ genObjectsArray = compileFinal str
 	["Traffic Cone with Light",                             "RoadCone_L_F",                         100],
 
 	//Objects
-	["*****Objects*****", "Land_HumanSkull_F", 1],
+	["*****Objects*****",                                   "Land_HumanSkull_F",                    1],
 	["Bag Fence (Corner)",                                  "Land_BagFence_Corner_F",               150],
 	["Bag Fence (End)",                                     "Land_BagFence_End_F",                  150],
 	["Bag Fence (Long)",                                    "Land_BagFence_Long_F",                 200],
@@ -1211,7 +1211,7 @@ genObjectsArray = compileFinal str
 
 
 	//Service Objects
-	["*****Service Objects*****", "Land_HumanSkull_F", 1],
+	["*****Service Objects*****",                           "Land_HumanSkull_F",                    1],
 	["Container,Fuel",                                      "B_Slingload_01_Fuel_F",                1000],
 	["Container,Medical",                                   "B_Slingload_01_Medevac_F",             1000],
 	["Container,Repair",                                    "B_Slingload_01_Repair_F",              1000],
@@ -1225,7 +1225,7 @@ genObjectsArray = compileFinal str
 	["Taru Pod (Repair)",                                   "Land_Pod_Heli_Transport_04_repair_F",  1000],
 
 	//Towers
-	["*****Towers*****", "Land_HumanSkull_F", 1],
+	["*****Towers*****",                                    "Land_HumanSkull_F",                    1],
 	["Air Traffic Control",                                 "Land_Airport_Tower_F",                 25000],
 	["Bag Bunker",                                          "Land_BagBunker_Tower_F",               1000],
 	["Castle (Stone)",                                      "Land_Castle_01_tower_F",               5000],
@@ -1246,7 +1246,7 @@ genObjectsArray = compileFinal str
 	["Water Reservoir",                                     "Land_ReservoirTower_F",                10000],
 
 	//Walls
-	["*****Walls*****", "Land_HumanSkull_F", 1],
+	["*****Walls*****",                                     "Land_HumanSkull_F",                    1],
 	["Canal (Large)",                                       "Land_Canal_Wall_10m_F",                500],
 	["Canal (Small)",                                       "Land_Canal_WallSmall_10m_F",           250],
 	["Canal (Stairs)",                                      "Land_Canal_Wall_Stairs_F",             500],

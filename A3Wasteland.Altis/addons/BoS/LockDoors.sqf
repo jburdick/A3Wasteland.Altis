@@ -11,7 +11,7 @@
   _x setVariable ['bis_disabled_Door_1',1,true];
 } forEach nearestObjects [player,
   [
-    "Land_Cargo_House_V3_F",
+    /*"Land_Cargo_House_V3_F",
     "Land_Cargo_House_V1_F",
     "Land_Medevac_house_V1_F",
     "Land_Cargo_House_V2_F",
@@ -29,7 +29,8 @@
     "Land_Slum_House01_F",
     "Land_i_Stone_Shed_V2_F",
     "Land_i_Stone_Shed_V1_F",
-    "Land_i_Stone_Shed_V3_F"
+    "Land_i_Stone_Shed_V3_F"*/
+    "All"
 ], 100];
 
 //Objects with Two Doors
