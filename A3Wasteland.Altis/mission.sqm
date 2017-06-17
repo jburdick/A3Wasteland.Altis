@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=2030;
+		nextID=2035;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=32;
+		nextID=33;
 	};
 	class Camera
 	{
-		pos[]={4337.5156,310.05853,20073.029};
-		dir[]={0.7900939,-0.47800899,-0.38387388};
-		up[]={0.42996156,0.87833792,-0.20891348};
-		aside[]={-0.4370586,1.6861304e-007,-0.89948881};
+		pos[]={12426.655,36.508148,15576.276};
+		dir[]={0.90670675,-0.32712367,-0.26631671};
+		up[]={0.3138774,0.94497365,-0.092191853};
+		aside[]={-0.28181982,2.363231e-008,-0.95949143};
 	};
 };
 binarizationWanted=0;
@@ -106,7 +106,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=306;
+		items=308;
 		class Item0
 		{
 			dataType="Group";
@@ -3239,24 +3239,68 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9436.3906,126.08245,20266.604};
-						angles[]={0,1.1776069,0};
+						position[]={9436.3906,126.08208,20266.604};
+						angles[]={0,1.1776085,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
-						init="[this] spawn A3W_fnc_setupStoreNPC";
+						init="call{[this] spawn A3W_fnc_setupStoreNPC}";
 						name="GunStore4";
 					};
 					id=199;
 					type="C_man_1_1_F";
+					atlOffset=0.52899933;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=198;
+			atlOffset=0.52899933;
 		};
 		class Item47
 		{
@@ -5876,7 +5920,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99963;
+			angle=226.99962;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6487,8 +6531,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2335.6118,0,16683.242};
-				angles[]={0,0.22543722,0};
+				position[]={26393.436,0,7575.5264};
+				angles[]={0,0.26453918,0};
 			};
 			side="Empty";
 			class Attributes
@@ -6496,15 +6540,15 @@ class Mission
 			};
 			id=2022;
 			type="Land_Carrier_01_base_F";
-			atlOffset=150.95235;
+			atlOffset=185.97;
 		};
 		class Item299
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2315.9802,24.887856,16760.957};
-				angles[]={0,4.9584627,0};
+				position[]={26376.859,24.887856,7653.9492};
+				angles[]={0,4.9975648,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6545,8 +6589,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19439.068,0,22487.502};
-				angles[]={0,3.2994452,0};
+				position[]={5131.1577,0,26837.691};
+				angles[]={0,4.6766315,0};
 			};
 			side="Empty";
 			class Attributes
@@ -6554,15 +6598,15 @@ class Mission
 			};
 			id=2024;
 			type="Land_Carrier_01_base_F";
-			atlOffset=179.05243;
+			atlOffset=158.56926;
 		};
 		class Item301
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19463.902,24.887344,22411.289};
-				angles[]={0,1.7492911,0};
+				position[]={5061.1392,24.887344,26798.738};
+				angles[]={0,3.1264775,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6601,46 +6645,135 @@ class Mission
 		class Item302
 		{
 			dataType="Marker";
-			position[]={19463.637,0,22411.68};
+			position[]={5061.4795,0,26798.994};
 			name="marker_315";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
+			angle=78.906967;
 			id=2026;
-			atlOffset=177.0817;
+			atlOffset=159.14204;
 		};
 		class Item303
 		{
 			dataType="Marker";
-			position[]={2315.3433,0,16761.764};
+			position[]={26376.252,0,7654.7793};
 			name="marker_316";
 			text="Service";
 			type="hd_dot";
 			colorName="ColorGreen";
+			angle=2.2403805;
 			id=2027;
-			atlOffset=147.07184;
+			atlOffset=185.97;
 		};
 		class Item304
 		{
 			dataType="Marker";
-			position[]={2336.252,0,16683.492};
+			position[]={26394.086,0,7575.751};
 			name="marker_317";
 			text="CVN-83-USS Freedom";
 			type="hd_dot";
 			colorName="ColorKhaki";
+			angle=2.2403805;
 			id=2028;
-			atlOffset=150.9458;
+			atlOffset=185.97;
 		};
 		class Item305
 		{
 			dataType="Marker";
-			position[]={19438.879,0,22487.949};
+			position[]={5131.5601,0,26837.963};
 			name="marker_318";
 			text="CVN-83-USS Freedom";
 			type="hd_dot";
 			colorName="ColorKhaki";
+			angle=78.906967;
 			id=2029;
-			atlOffset=179.06097;
+			atlOffset=158.56757;
+		};
+		class Item306
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12438.998,25.160841,15557.547};
+						angles[]={0,6.1632986,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] spawn A3W_fnc_setupStoreNPC}";
+						name="Gunstore5";
+					};
+					id=2033;
+					type="C_man_1_1_F";
+					atlOffset=0.0052280426;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male04GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2032;
+			atlOffset=0.0052280426;
+		};
+		class Item307
+		{
+			dataType="Marker";
+			position[]={12438.49,0,15572.55};
+			name="GunStore5_objSpawn";
+			type="Empty";
+			colorName="ColorBlack";
+			id=2034;
+			atlOffset=-24.176062;
 		};
 	};
 };
