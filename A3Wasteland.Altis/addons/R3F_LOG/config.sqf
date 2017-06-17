@@ -413,6 +413,11 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
+	//Parant Classes
+	["Static", 1],
+	["Thing", 1],
+	
+	//Child Classes
 	["APC_Tracked_01_base_F", 200],
 	["APC_Tracked_02_base_F", 200],
 	["APC_Tracked_03_base_F", 200],
@@ -923,7 +928,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
 
-"ArrowDesk_L_F",
+/*"ArrowDesk_L_F",
 "ArrowDesk_R_F",
 "B_CargoNet_01_ammo_F",
 "B_Slingload_01_Cargo_F",
@@ -1402,5 +1407,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "StorageBladder_01_fuel_forest_F",
 "TapeSign_F",
 "TyreBarrier_01_black_F",
-"TyreBarrier_01_white_F"
+"TyreBarrier_01_white_F"*/
+"Static",
+"Thing"
 ];

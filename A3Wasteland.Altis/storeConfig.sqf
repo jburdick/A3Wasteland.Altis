@@ -856,12 +856,12 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 genObjectsArray = compileFinal str
 [
 	//Base Management Objects
-	["*****Base Management*****",														"objNull",															1],
+	["*****Base Management*****",														"Land_HumanSkull_F",										1],
 	["Base Manager",																				"Land_SatellitePhone_F",								500000],
-	//["Base Manager","Land_Device_assembled_F",500],
+	//["Base Manager",																			"Land_Device_assembled_F",							500],
 
 	//Buildings
-	["*****Buildings*****",																	"objNull",															1],
+	["*****Buildings*****",																	"Land_HumanSkull_F",										1],
 	["Construction (Huge)",																	"Land_WIP_F",														7000],
 	["Construction (Small)",																"Land_Unfinished_Building_01_F",				3000],
 	["Construction (Large)",																"Land_Unfinished_Building_02_F",				5000],
@@ -903,7 +903,7 @@ genObjectsArray = compileFinal str
 	["Shed,Open Sided (Small)",															"Land_Shed_Small_F",										1000],
 
 	//Fences
-	["*****Fences*****",																		"objNull",															1],
+	["*****Fences*****",																		"Land_HumanSkull_F",															1],
 	["Bamboo (4m)",																					"Land_BambooFence_01_s_4m_F",						100],
 	["Bamboo (8m)",																					"Land_BambooFence_01_s_8m_F",						200],
 	["Bamboo (Pole)",																				"Land_BambooFence_01_s_pole_F",					50],
@@ -969,7 +969,7 @@ genObjectsArray = compileFinal str
 	["Wrought Iron (Gate Double)",                          "Land_PipeFence_01_m_gate_v2_F",        750],
 
 	//Houses
-	["*****Houses*****", "objNull", 1],
+	["*****Houses*****", "Land_HumanSkull_F", 1],
 	["Cobblestone with Balcony 2 Story (Large,White)",      "Land_i_House_Big_02_V3_F",             10000],
 	["Cobblestone with Porch 2 Story (Large,White)",        "Land_i_House_Big_01_V3_F",             10000],
 	["Cobblestone Bungalow(Small,White)",                   "Land_i_House_Small_01_V3_F",           5000],
@@ -1013,7 +1013,7 @@ genObjectsArray = compileFinal str
 	["Stucco 2 Story with Porch (Large,Yellow)",            "Land_i_House_Big_01_V2_F",             5000],
 
 	//Lights
-	["*****Lights*****", "objNull", 1],
+	["*****Lights*****", "Land_HumanSkull_F", 1],
 	["Airport Pole Lamp (3 Halogen 1 Red)",                 "Land_LampAirport_F",                   2500],
 	["Halogen Light Pole",                                  "Land_LampHalogen_F",                   1000],
 	["Harbor Lamp",                                         "Land_LampHarbour_F",                   500],
@@ -1035,7 +1035,7 @@ genObjectsArray = compileFinal str
 	["Traffic Cone with Light",                             "RoadCone_L_F",                         100],
 
 	//Objects
-	["*****Objects*****", "objNull", 1],
+	["*****Objects*****", "Land_HumanSkull_F", 1],
 	["Bag Fence (Corner)",                                  "Land_BagFence_Corner_F",               150],
 	["Bag Fence (End)",                                     "Land_BagFence_End_F",                  150],
 	["Bag Fence (Long)",                                    "Land_BagFence_Long_F",                 200],
@@ -1211,7 +1211,7 @@ genObjectsArray = compileFinal str
 
 
 	//Service Objects
-	["*****Service Objects*****", "objNull", 1],
+	["*****Service Objects*****", "Land_HumanSkull_F", 1],
 	["Container,Fuel",                                      "B_Slingload_01_Fuel_F",                1000],
 	["Container,Medical",                                   "B_Slingload_01_Medevac_F",             1000],
 	["Container,Repair",                                    "B_Slingload_01_Repair_F",              1000],
@@ -1225,7 +1225,7 @@ genObjectsArray = compileFinal str
 	["Taru Pod (Repair)",                                   "Land_Pod_Heli_Transport_04_repair_F",  1000],
 
 	//Towers
-	["*****Towers*****", "objNull", 1],
+	["*****Towers*****", "Land_HumanSkull_F", 1],
 	["Air Traffic Control",                                 "Land_Airport_Tower_F",                 25000],
 	["Bag Bunker",                                          "Land_BagBunker_Tower_F",               1000],
 	["Castle (Stone)",                                      "Land_Castle_01_tower_F",               5000],
@@ -1246,7 +1246,7 @@ genObjectsArray = compileFinal str
 	["Water Reservoir",                                     "Land_ReservoirTower_F",                10000],
 
 	//Walls
-	["*****Walls*****", "objNull", 1],
+	["*****Walls*****", "Land_HumanSkull_F", 1],
 	["Canal (Large)",                                       "Land_Canal_Wall_10m_F",                500],
 	["Canal (Small)",                                       "Land_Canal_WallSmall_10m_F",           250],
 	["Canal (Stairs)",                                      "Land_Canal_Wall_Stairs_F",             500],
@@ -1258,22 +1258,22 @@ genObjectsArray = compileFinal str
 	["City,Decorative(Gate)",                               "Land_City_Gate_F",                     500],
 	["City,Decorative(Pillar)",                             "Land_City_Pillar_F",                   200],
 	["Cobblestone (4m)",                                    "Land_Stone_4m_F",                      200],
-	["Cobblestone (Gate)",                                  "Land_Stone_Gate_F",                    500],
 	["Cobblestone (8m)",                                    "Land_Stone_8m_F",                      400],
+	["Cobblestone (Gate)",                                  "Land_Stone_Gate_F",                    500],
 	["Cobblestone (Pillar)",                                "Land_Stone_pillar_F",                  200],
-	["Concrete, Acoustic Panel",                            "Land_Wall_IndCnc_2deco_F",             250],
 	["Concrete and Chainlink (2m)",                         "Land_NetFence_02_m_2m_F",              200],
 	["Concrete and Chainlink (4m)",                         "Land_NetFence_02_m_4m_F",              400],
 	["Concrete and Chainlink (8m)",                         "Land_NetFence_02_m_8m_F",              800],
 	["Concrete and Chainlink (Gate)",                       "Land_NetFence_02_m_gate_v1_F",         500],
 	["Concrete and Chainlink (Post)",                       "Land_NetFence_02_m_pole_F",            100],
+	["Concrete, Acoustic Panel",                            "Land_Wall_IndCnc_2deco_F",             250],
 	["Concrete,Decorative (2m)",                            "Land_ConcreteWall_02_m_2m_F",          200],
 	["Concrete,Decorative (4m)",                            "Land_ConcreteWall_02_m_4m_F",          400],
 	["Concrete,Decorative (8m)",                            "Land_ConcreteWall_02_m_8m_F",          600],
 	["Concrete,Decorative (Gate)",                          "Land_ConcreteWall_02_m_gate_F",        500],
 	["Concrete,Decorative (Post)",                          "Land_ConcreteWall_02_m_pole_F",        100],
-	["Concrete,Layered",                                    "Land_Wall_IndCnc_4_F",                 300],
 	["Concrete,Layered (Post)",                             "Land_Wall_IndCnc_Pole_F",              100],
+	["Concrete,Layered",                                    "Land_Wall_IndCnc_4_F",                 300],
 	["Concrete,Medium (4m)",                                "Land_ConcreteWall_01_m_4m_F",          300],
 	["Concrete,Medium (8m)",                                "Land_ConcreteWall_01_m_8m_F",          600],
 	["Concrete,Medium (Gate)",                              "Land_ConcreteWall_01_m_gate_F",        1000],
@@ -1290,7 +1290,7 @@ genObjectsArray = compileFinal str
 	["Military (Corner,Green)",                             "Land_Mil_WallBig_Corner_F",            150],
 	["Pipe and Concrete (Short)",                           "Land_Pipe_fence_4m_F",                 100],
 	["Pipe and Concrete (Tall)",                            "Land_PipeWall_concretel_8m_F",         200],
-	["Stones,Piled (Low,Long)",                             "Land_StoneWall_01_s_10m_F",            100],
+	["Stones,Piled (Low,Long)",                             "Land_StoneWall_01_s_10m_F",            100]
 
 
 

@@ -1,3 +1,5 @@
+
+//Objects with only one Door
 {
   if (!local _x) then
   {
@@ -30,6 +32,7 @@
     "Land_i_Stone_Shed_V3_F"
 ], 100];
 
+//Objects with Two Doors
 {
   if (!local _x) then
   {
@@ -64,6 +67,8 @@
   "Land_i_Stone_HouseSmall_V1_F",
   "Land_i_Stone_HouseSmall_V2_F"
   ], 100];
+
+  //Objects with Three Doors
   {
     if (!local _x) then
     {
@@ -94,49 +99,53 @@
       "Land_MilOffices_V1_F",
       "Land_CarService_F"
     ], 100];
+
+//Objects with 4 doors
+{
+  if (!local _x) then
   {
-    if (!local _x) then
-    {
-      private ["_setOwner_time"];
-      _setOwner_time = time;
-      [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
-      waitUntil {local _x || time > _setOwner_time + 1.5};
-    };
-    _x setVariable ['bis_disabled_Door_1',0,true];
-    _x setVariable ['bis_disabled_Door_2',0,true];
-    _x setVariable ['bis_disabled_Door_3',0,true];
-    _x setVariable ['bis_disabled_Door_4',0,true];
-  } forEach nearestObjects [player,
-    [
-      "Land_i_House_Big_02_V3_F",
-      "Land_i_House_Big_02_V1_F",
-      "Land_i_House_Big_02_V2_F",
-      "Land_i_Shop_01_V3_F",
-      "Land_i_Shop_01_V1_F",
-      "Land_i_Shop_01_V2_F"
-    ], 100];
-    {
-      if (!local _x) then
-      {
-        private ["_setOwner_time"];
-        _setOwner_time = time;
-        [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
-        waitUntil {local _x || time > _setOwner_time + 1.5};
-      };
-      _x setVariable ['bis_disabled_Door_1',0,true];
-      _x setVariable ['bis_disabled_Door_2',0,true];
-      _x setVariable ['bis_disabled_Door_3',0,true];
-      _x setVariable ['bis_disabled_Door_4',0,true];
-      _x setVariable ['bis_disabled_Door_5',0,true];
-      _x setVariable ['bis_disabled_Door_6',0,true];
-      _x setVariable ['bis_disabled_Door_7',0,true];
-      _x setVariable ['bis_disabled_Door_8',0,true];
+    private ["_setOwner_time"];
+    _setOwner_time = time;
+    [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
+    waitUntil {local _x || time > _setOwner_time + 1.5};
+  };
+  _x setVariable ['bis_disabled_Door_1',0,true];
+  _x setVariable ['bis_disabled_Door_2',0,true];
+  _x setVariable ['bis_disabled_Door_3',0,true];
+  _x setVariable ['bis_disabled_Door_4',0,true];
+} forEach nearestObjects [player,
+  [
+    "Land_i_House_Big_02_V3_F",
+    "Land_i_House_Big_02_V1_F",
+    "Land_i_House_Big_02_V2_F",
+    "Land_i_Shop_01_V3_F",
+    "Land_i_Shop_01_V1_F",
+    "Land_i_Shop_01_V2_F"
+  ], 100];
 
-    } forEach nearestObjects [player,
-      [
-        "Land_i_Barracks_V1_F",
-        "Land_i_Barracks_V2_F",
-        "Land_u_Barracks_V2_F"
-      ], 100];
+//Objects with 8 Doors
+{
+  if (!local _x) then
+  {
+    private ["_setOwner_time"];
+    _setOwner_time = time;
+    [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
+    waitUntil {local _x || time > _setOwner_time + 1.5};
+  };
+  _x setVariable ['bis_disabled_Door_1',0,true];
+  _x setVariable ['bis_disabled_Door_2',0,true];
+  _x setVariable ['bis_disabled_Door_3',0,true];
+  _x setVariable ['bis_disabled_Door_4',0,true];
+  _x setVariable ['bis_disabled_Door_5',0,true];
+  _x setVariable ['bis_disabled_Door_6',0,true];
+  _x setVariable ['bis_disabled_Door_7',0,true];
+  _x setVariable ['bis_disabled_Door_8',0,true];
 
-hint "Doors Unlocked";
+} forEach nearestObjects [player,
+  [
+    "Land_i_Barracks_V1_F",
+    "Land_i_Barracks_V2_F",
+    "Land_u_Barracks_V2_F"
+  ], 100];
+
+hint "Doors Locked";

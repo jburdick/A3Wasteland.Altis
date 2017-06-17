@@ -134,14 +134,14 @@ _setupObjects =
 	_textVehSupport = "";
 
 	if(_vehicleName2 == _vehicleName3) then {
-		_textVehSupport = format ["2 <t color='%2'>%1</t> helicopters", _vehicleName2, mainMissionColor];
+		_textVehSupport = format ["2 <t color='%2'>%1</t> helicopters", _vehicleName2, hostileairMissionColor];
 	}
 	else
 	{
-		_textVehSupport = format ["1 <t color='%3'>%1</t> and 1 <t color='%3'>%2</t>", _vehicleName2, _vehicleName3, mainMissionColor];
+		_textVehSupport = format ["1 <t color='%3'>%1</t> and 1 <t color='%3'>%2</t>", _vehicleName2, _vehicleName3, hostileairMissionColor];
 	};
 
-	_missionHintText = format ["A <t color='%3'>%1</t> helicopter and an escort of %2 are on the move. Take them down and collect their payload!", _vehicleName, _textVehSupport, mainMissionColor];
+	_missionHintText = format ["A <t color='%3'>%1</t> helicopter and an escort of %2 are on the move. Take them down and collect their payload!", _vehicleName, _textVehSupport, hostileairMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };

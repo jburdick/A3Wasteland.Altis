@@ -22,7 +22,7 @@
 	_x setHit ["light_4_hit", 0];
 	_x setVariable ["lights", "on", true];
 } forEach nearestObjects [player, [
-	"All"
+	"Static"
 ], 30];
 
 hint "Lights ON";
