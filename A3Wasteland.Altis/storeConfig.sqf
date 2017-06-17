@@ -896,7 +896,6 @@ genObjectsArray = compileFinal str
 	["Military Post (Rusty)",																"Land_Cargo_Patrol_V1_F",								750],
 	["Military Offices",																		"Land_MilOffices_V1_F",									25000],
 	["Office",																							"Land_Offices_01_V1_F",									100000],
-	["Shed,Concrete Mixing",                                "Land_cmp_Shed_F",                      1000],
 	["Shed,Open Sided (Large)",															"Land_Shed_Big_F",											3000],
 	["Shed,Open Sided (Small)",															"Land_Shed_Small_F",										1000],
 
@@ -1341,6 +1340,7 @@ genObjectsArray = compileFinal str
 	["Bag Fence (Short, Green)", "Land_BagFence_01_short_green_F", 150, "object"],
 	["Bag Bunker (Small, Green)", "Land_BagBunker_01_small_green_F", 250, "object"],
 	["Bag Bunker (Large, Green)", "Land_BagBunker_01_large_green_F", 500, "object"],
+	["Shed,Concrete Mixing",                                "Land_cmp_Shed_F",                      1000],
 	["Bag Bunker Tower (Green)", "Land_HBarrier_01_tower_green_F", 1000, "object"]
 
 	*/
