@@ -1140,7 +1140,6 @@ genObjectsArray = compileFinal str
 	["Oil Tank (Small)",                                    "Land_dp_smallTank_F",                  3000],
 	["Molon Labe Monument",                                 "Land_MolonLabe_F",                     4000000],
 	["Party Tent",                                          "Land_PartyTent_01_F",                  69],
-	["Pier,Cement Box (Tall)",                              "Land_Pier_Box_F",                      10000],
 	["Pier,Concrete (Huge)",                                "Land_Pier_F",                          15000],
 	["Pier,Deck",                                           "Land_Pier_addon",                      1000],
 	["Pier,Wooden",                                         "Land_Pier_small_F",                    200],
@@ -1230,7 +1229,6 @@ genObjectsArray = compileFinal str
 	["Air Traffic Control",                                 "Land_Airport_Tower_F",                 25000],
 	["Bag Bunker",                                          "Land_BagBunker_Tower_F",               1000],
 	["Castle (Stone)",                                      "Land_Castle_01_tower_F",               5000],
-	["Concrete Mixing Tower",                               "Land_cmp_Tower_F",                     2000],
 	["HBarrier Watchtower",                                 "Land_HBarrierTower_F",                 1000],
 	["Military Cargo (Brown)",                              "Land_Cargo_Tower_V3_F",                5000],
 	["Military Cargo (Green)",                              "Land_Cargo_Tower_V1_F",                5000],
@@ -1318,6 +1316,8 @@ genObjectsArray = compileFinal str
 	["BAD NO GRAB Test52","Land_HelipadSquare_F",1],
 	["BAD NO GRAB Test53","Land_JumpTarget_F",1],
 	["BAD NO FUNCTIONING GATE OPEN","Land_Mil_WallBig_Gate_F",1],
+	["Concrete Mixing Tower",                               "Land_cmp_Tower_F",                     2000],
+	["Pier,Cement Box (Tall)",                              "Land_Pier_Box_F",                      10000],
 
 
 	//For future fun
