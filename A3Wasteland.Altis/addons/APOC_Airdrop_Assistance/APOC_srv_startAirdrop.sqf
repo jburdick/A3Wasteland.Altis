@@ -146,7 +146,7 @@ _object = switch (_type) do
 		_object setVariable ["allowDamage", false, true];
 		_object
 	};
-	case "vicammo":  //Beware of Bears!
+	case "vicammo":
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["Box_NATO_AmmoVeh_F", _objectSpawnPos, [], 0, "None"];
