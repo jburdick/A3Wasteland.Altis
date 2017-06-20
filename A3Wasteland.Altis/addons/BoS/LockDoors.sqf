@@ -29,7 +29,8 @@
     "Land_Slum_House01_F",
     "Land_i_Stone_Shed_V2_F",
     "Land_i_Stone_Shed_V1_F",
-    "Land_i_Stone_Shed_V3_F"
+    "Land_i_Stone_Shed_V3_F",
+    "Wall"
 ], 100];
 
 //Objects with Two Doors
@@ -65,7 +66,8 @@
   "Land_i_House_Small_01_V2_F",
   "Land_i_Stone_HouseSmall_V3_F",
   "Land_i_Stone_HouseSmall_V1_F",
-  "Land_i_Stone_HouseSmall_V2_F"
+  "Land_i_Stone_HouseSmall_V2_F",
+  "Wall"
   ], 100];
 
   //Objects with Three Doors
