@@ -54,6 +54,7 @@ _setupObjects =
 		// add pilot
 		_soldier = [_aiGroup, _position] call createRandomPilot;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 		// lock the vehicle untill the mission is finished and initialize cleanup on it
 
 

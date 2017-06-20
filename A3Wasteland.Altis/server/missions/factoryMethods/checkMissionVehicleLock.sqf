@@ -21,12 +21,13 @@ if (_vehicle isKindOf "LandVehicle") then
 		_veh = assignedVehicle _unit;
 
 		if (canMove _veh) then
-		{ 
+		{
 			[_unit] orderGetIn true;
 
 			if ((assignedVehicleRole _unit) param [0,""] == "Driver") then
 			{
-				_unit moveInDriver _veh; // bruteforce driver to remain seated
+				_unit
+				_soldier triggerDynamicSimulation true; _veh; // bruteforce driver to remain seated
 			};
 		};
 	}];

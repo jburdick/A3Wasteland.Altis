@@ -15,11 +15,11 @@ _radius = param [3, 10, [0]];
 
 _unitTypes =
 [
-	"I_C_Soldier_Bandit_7_F", "I_C_Soldier_Para_7_F", "I_C_Soldier_Para_2_F", 
-	"I_C_Soldier_Bandit_3_F", "I_C_Soldier_Bandit_2_F", "I_C_Soldier_Para_3_F", 
-	"I_C_Soldier_Para_4_F", "I_C_Soldier_Para_6_F", "I_C_Soldier_Para_8_F", 
-	"I_C_Soldier_Bandit_5_F", "I_C_Soldier_Bandit_6_F", "I_C_Soldier_Bandit_1_F", 
-	"I_C_Soldier_Para_1_F", "I_C_Soldier_Para_5_F", "I_C_Soldier_Bandit_8_F", 
+	"I_C_Soldier_Bandit_7_F", "I_C_Soldier_Para_7_F", "I_C_Soldier_Para_2_F",
+	"I_C_Soldier_Bandit_3_F", "I_C_Soldier_Bandit_2_F", "I_C_Soldier_Para_3_F",
+	"I_C_Soldier_Para_4_F", "I_C_Soldier_Para_6_F", "I_C_Soldier_Para_8_F",
+	"I_C_Soldier_Bandit_5_F", "I_C_Soldier_Bandit_6_F", "I_C_Soldier_Bandit_1_F",
+	"I_C_Soldier_Para_1_F", "I_C_Soldier_Para_5_F", "I_C_Soldier_Bandit_8_F",
 	"I_C_Soldier_Bandit_4_F"
 ];
 
@@ -87,6 +87,7 @@ for "_i" from 1 to 32 do
 	_unit addRating 1e11;
 	_unit spawn refillPrimaryAmmo;
 	_unit call setMissionSkill;
+	_soldier triggerDynamicSimulation true;
 	_unit addEventHandler ["Killed", server_playerDied];
 };
 

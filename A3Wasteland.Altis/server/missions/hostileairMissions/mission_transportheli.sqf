@@ -64,6 +64,7 @@ _setupObjects =
 		// the little bird, orca, and hellcat do not require gunners and should not have any passengers
 		_soldier = [_aiGroup, _position] call createRandomSoldierC;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 
 		if (_isArmed) then {
 			if ((_type find "Transport") >= 0 ) then {

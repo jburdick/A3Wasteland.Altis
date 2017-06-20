@@ -36,7 +36,7 @@ _soldier addHeadgear "H_PilotHelmetHeli_B";
 
 _soldier spawn refillPrimaryAmmo;
 _soldier call setMissionSkill;
-
+_soldier triggerDynamicSimulation true;
 _soldier addEventHandler ["Killed", server_playerDied];
 
 _soldier

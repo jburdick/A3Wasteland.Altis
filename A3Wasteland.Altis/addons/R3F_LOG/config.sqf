@@ -414,8 +414,6 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
 	//Parant Classes
-	["Static", 1],
-	["Thing", 1],
 
 	//Child Classes
 	["APC_Tracked_01_base_F", 200],
@@ -927,9 +925,6 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
  */
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
-//Parent Classes
-"Static",
-"Thing",
 
 //Child Classes
 
