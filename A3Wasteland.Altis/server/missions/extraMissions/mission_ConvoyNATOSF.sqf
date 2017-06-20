@@ -54,6 +54,7 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createNATOSFDriver;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 
 		_soldier = [_aiGroup, _position] call createNATOSFGunner;
 		_soldier moveInGunner _vehicle;

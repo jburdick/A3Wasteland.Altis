@@ -54,6 +54,7 @@ _setupObjects =
 		// add pilot
 		_soldier = [_aiGroup, _position] call createRandomPilot;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 		_soldier = [_aiGroup, _position] call createRandomPilot;
 		_soldier moveInTurret [_vehicle, [0]];
 		_soldier = [_aiGroup, _position] call createRandomPilot;

@@ -51,7 +51,7 @@ if (_rank != "") then
 	_soldier setRank _rank;
 };
 
-
+_soldier triggerDynamicSimulation true;
 _soldier call setMissionSkill;
 
 _soldier addEventHandler ["Killed", server_playerDied];

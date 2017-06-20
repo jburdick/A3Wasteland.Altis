@@ -156,6 +156,7 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
+ _soldier triggerDynamicSimulation true;
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
