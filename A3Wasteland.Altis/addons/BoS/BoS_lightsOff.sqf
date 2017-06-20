@@ -22,7 +22,8 @@
 	_x setHit ["light_4_hit", 0.97];
 	_x setVariable ["lights", "off", true];
 } forEach nearestObjects [player, [
-	"All"
+	"Static",
+	"Thing"
 ], 100];
 
 hint "Lights OFF";
