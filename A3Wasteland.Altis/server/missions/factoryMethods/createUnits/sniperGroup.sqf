@@ -108,6 +108,7 @@ _leader = leader _group;
 
 {
 	_x call setMissionSkill;
+	_x triggerDynamicSimulation true;
 	_x allowFleeing 0;
 	_x addRating 9999999;
 	_x addEventHandler ["Killed", server_playerDied];

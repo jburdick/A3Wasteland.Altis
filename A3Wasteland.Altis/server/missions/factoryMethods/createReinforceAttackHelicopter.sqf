@@ -48,7 +48,8 @@ _createVehicle =
 	// add a driver/pilot/captain to the vehicle
 	// the little bird, orca, and hellcat do not require gunners and should not have any passengers
 	_soldier = [_aiGroup2, _position] call createRandomSoldierC;
-	_soldier moveInDriver _vehicle;
+	_soldier
+	_soldier triggerDynamicSimulation true; _vehicle;
 
 	switch (true) do
 	{
@@ -96,7 +97,7 @@ _aiGroup2 setCombatMode "WHITE"; // Defensive behaviour
 _aiGroup2 setBehaviour "AWARE";
 _aiGroup2 setFormation "STAG COLUMN";
 
-_speedMode = "FULL"; //speed them up to get there 
+_speedMode = "FULL"; //speed them up to get there
 
 _aiGroup2 setSpeedMode _speedMode;
 
@@ -110,17 +111,17 @@ _aiGroup2 setSpeedMode _speedMode;
 	_waypoint setWaypointBehaviour "COMBAT";
 	_waypoint setWaypointFormation "STAG COLUMN";
 	_waypoint setWaypointSpeed _speedMode;
-	
+
 //Waypoint 2 - Take Care of Business
 	_waypoint2 = _aiGroup2 addWaypoint [_callLocationPos,0,2];
 	_waypoint2 setWaypointType "SAD";
 	_waypoint2 setWaypointCombatMode "RED";
 	_waypoint2 setWaypointBehaviour "COMBAT";
-	
+
 [_callLocationPos] spawn {
 	private["_targetPos"];
 	_targetPos = _this select 0;
 	_smoke1 = "SmokeShellRed" createVehicle _targetPos;
-};	
+};
 
 _aiGroup2 //Returns the group to the calling processor to allow for it to be deleted

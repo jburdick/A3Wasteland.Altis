@@ -41,9 +41,9 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [0, true];
-		_vehicle confirmSensorTarget [1, true];
-		_vehicle confirmSensorTarget [2, true];
+		_vehicle confirmSensorTarget [west, true];
+		_vehicle confirmSensorTarget [east, true];
+		_vehicle confirmSensorTarget [resistance, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
@@ -54,6 +54,7 @@ _setupObjects =
 		// add pilot
 		_soldier = [_aiGroup, _position] call createRandomPilot;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 		// lock the vehicle untill the mission is finished and initialize cleanup on it
 
 

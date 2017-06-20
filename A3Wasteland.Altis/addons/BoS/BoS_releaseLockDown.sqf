@@ -4,4 +4,5 @@
 //	@file Created:
 
 cursorObject setVariable ["lockDown", false, true];
+cursorobject enableSimulationGlobal true;
 hint "Released Lock Down";

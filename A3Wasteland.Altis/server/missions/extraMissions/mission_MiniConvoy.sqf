@@ -54,9 +54,9 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [0, true];
-		_vehicle confirmSensorTarget [1, true];
-		_vehicle confirmSensorTarget [2, true];
+		_vehicle confirmSensorTarget [west, true];
+		_vehicle confirmSensorTarget [east, true];
+		_vehicle confirmSensorTarget [resistance, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		[_vehicle] call vehicleSetup;
 
@@ -65,6 +65,7 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];

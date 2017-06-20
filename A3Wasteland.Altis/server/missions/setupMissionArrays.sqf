@@ -12,8 +12,7 @@ MainMissions =
 	["mission_Outpost", 1],
 	["mission_Sniper", 1],
 	["mission_SupplyDrop", 1],
-	["mission_TownInvasion", 1],
-	["mission_transportheli", 1]
+	["mission_TownInvasion", 1]
 ];
 
 SideMissions =
@@ -74,7 +73,8 @@ hostileairMissions =
 	["mission_HostileHelicopter", 1],
 	["mission_HostileHeliFormation", 1],
 	["mission_HostileJet", 1],
-	["mission_HostileVTOL", 1]
+	["mission_HostileVTOL", 1],
+  ["mission_transportheli", 1]
 ];
 
 EndGameMissions =

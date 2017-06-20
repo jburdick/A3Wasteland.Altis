@@ -79,6 +79,7 @@ briefing = 0; // if 0, skip Continue button
 
 
 
+
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
@@ -183,3 +184,4 @@ class CfgSounds
 							titles[] = {};
 		};
 };
+#include "infiSTAR_AdminMenu.hpp"

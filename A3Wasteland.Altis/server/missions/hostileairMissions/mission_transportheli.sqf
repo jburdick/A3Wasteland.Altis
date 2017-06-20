@@ -51,9 +51,9 @@ _setupObjects =
 		_vehicle setVehicleReportRemoteTargets true;
 		_vehicle setVehicleReceiveRemoteTargets true;
 		_vehicle setVehicleRadar 1;
-		_vehicle confirmSensorTarget [0, true];
-		_vehicle confirmSensorTarget [1, true];
-		_vehicle confirmSensorTarget [2, true];
+		_vehicle confirmSensorTarget [west, true];
+		_vehicle confirmSensorTarget [east, true];
+		_vehicle confirmSensorTarget [resistance, true];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 		[_vehicle] call vehicleSetup;
 
@@ -64,6 +64,7 @@ _setupObjects =
 		// the little bird, orca, and hellcat do not require gunners and should not have any passengers
 		_soldier = [_aiGroup, _position] call createRandomSoldierC;
 		_soldier moveInDriver _vehicle;
+		_soldier triggerDynamicSimulation true;
 
 		if (_isArmed) then {
 			if ((_type find "Transport") >= 0 ) then {
@@ -134,14 +135,14 @@ _setupObjects =
 	_textVehSupport = "";
 
 	if(_vehicleName2 == _vehicleName3) then {
-		_textVehSupport = format ["2 <t color='%2'>%1</t> helicopters", _vehicleName2, mainMissionColor];
+		_textVehSupport = format ["2 <t color='%2'>%1</t> helicopters", _vehicleName2, hostileairMissionColor];
 	}
 	else
 	{
-		_textVehSupport = format ["1 <t color='%3'>%1</t> and 1 <t color='%3'>%2</t>", _vehicleName2, _vehicleName3, mainMissionColor];
+		_textVehSupport = format ["1 <t color='%3'>%1</t> and 1 <t color='%3'>%2</t>", _vehicleName2, _vehicleName3, hostileairMissionColor];
 	};
 
-	_missionHintText = format ["A <t color='%3'>%1</t> helicopter and an escort of %2 are on the move. Take them down and collect their payload!", _vehicleName, _textVehSupport, mainMissionColor];
+	_missionHintText = format ["A <t color='%3'>%1</t> helicopter and an escort of %2 are on the move. Take them down and collect their payload!", _vehicleName, _textVehSupport, hostileairMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };

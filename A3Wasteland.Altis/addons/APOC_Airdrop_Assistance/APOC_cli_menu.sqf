@@ -50,12 +50,10 @@ _i=0;
 	_optionSupMenu = [];
 	_lineElement1=format ["%1 ($%2)",(APOC_AA_SupOptions select _i) select 0, (APOC_AA_SupOptions select _i) select 2];
 	_type = (APOC_AA_SupOptions select _i) select 3;
+	
 	_optionSupMenu pushback _lineElement1;
-
 	_optionSupMenu append [[_i+2], "", -5];
-
 	_optionSupMenu pushback [["expression", format ['["%1",%2,player] execVM "addons\APOC_Airdrop_Assistance\APOC_cli_startAirdrop.sqf"',_type,_i]]];
-
 	_optionSupMenu append ["1","1"];
 
 	SupplyMenu pushback _optionSupMenu;
