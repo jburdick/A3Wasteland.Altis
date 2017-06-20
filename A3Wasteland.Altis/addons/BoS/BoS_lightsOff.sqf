@@ -23,6 +23,6 @@
 	_x setVariable ["lights", "off", true];
 } forEach nearestObjects [player, [
 	"All"
-], 30];
+], 100];
 
 hint "Lights OFF";
