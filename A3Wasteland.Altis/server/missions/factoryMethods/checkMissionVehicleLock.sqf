@@ -26,8 +26,7 @@ if (_vehicle isKindOf "LandVehicle") then
 
 			if ((assignedVehicleRole _unit) param [0,""] == "Driver") then
 			{
-				_unit
-				_soldier triggerDynamicSimulation true; _veh; // bruteforce driver to remain seated
+				_unit moveInDriver _veh; // bruteforce driver to remain seated
 			};
 		};
 	}];
