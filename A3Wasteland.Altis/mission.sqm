@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=38;
+		nextID=41;
 	};
 	class Camera
 	{
-		pos[]={12435.719,26.248434,15564.23};
-		dir[]={0.69805866,-0.26485819,-0.66544223};
-		up[]={0.19173943,0.96426797,-0.18277924};
-		aside[]={-0.69008344,6.5186759e-007,-0.72390664};
+		pos[]={4837.2471,545.04443,3089.1113};
+		dir[]={0.90119225,-0.21508282,0.37631807};
+		up[]={0.19847579,0.97659338,0.082879245};
+		aside[]={0.38533863,-8.2072802e-009,-0.92278957};
 	};
 };
 binarizationWanted=0;
@@ -43,14 +43,13 @@ addons[]=
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Heli_Items_Electronics",
 	"A3_Props_F_Exp_Military_Camps",
-	"A3_Structures_F_Heli_Items_Luggage",
-	"A3_Supplies_F_Exp_Ammoboxes"
+	"A3_Structures_F_Heli_Items_Luggage"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=10;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -121,13 +120,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
-		{
-			className="A3_Supplies_F_Exp";
-			name="Arma 3 Apex - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 class DynamicSimulation
@@ -171,24 +163,6 @@ class CustomAttributes
 							"ARRAY"
 						};
 					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="None";
-							};
-						};
-					};
 				};
 			};
 		};
@@ -217,7 +191,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=326;
+		items=325;
 		class Item0
 		{
 			dataType="Group";
@@ -6032,7 +6006,7 @@ class Mission
 			name="Jet_1";
 			type="Empty";
 			colorName="ColorYellow";
-			angle=226.99953;
+			angle=226.99948;
 			id=1960;
 			atlOffset=-17.910013;
 		};
@@ -6643,8 +6617,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={26393.436,0,7575.5264};
-				angles[]={0,0.26453918,0};
+				position[]={2751.083,0,1702.5869};
+				angles[]={0,2.1601567,0};
 			};
 			side="Empty";
 			class Attributes
@@ -6659,8 +6633,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={26376.859,24.887856,7653.9492};
-				angles[]={0,4.9975648,0};
+				position[]={2830.6951,24.887856,1693.2684};
+				angles[]={0,0.6099968,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6769,7 +6743,7 @@ class Mission
 		class Item303
 		{
 			dataType="Marker";
-			position[]={26376.252,0,7654.7793};
+			position[]={2733.8994,0,1781.8398};
 			name="marker_316";
 			text="Service";
 			type="hd_dot";
@@ -6781,7 +6755,7 @@ class Mission
 		class Item304
 		{
 			dataType="Marker";
-			position[]={26394.086,0,7575.751};
+			position[]={2751.7334,0,1702.8115};
 			name="marker_317";
 			text="CVN-83-USS Freedom";
 			type="hd_dot";
@@ -7670,50 +7644,6 @@ class Mission
 					};
 				};
 				nAttributes=2;
-			};
-		};
-		class Item325
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={12440.27,25.536432,15559.315};
-				angles[]={0,3.1093564,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this] call A3W_fnc_setupMissionObject;" \n "[this] addAction [""<img image='client\icons\money.paa'/> Sell bin contents"", ""client\systems\selling\sellCrateItems.sqf"", [true], 1, false, false, """", STORE_ACTION_CONDITION + "" && "" + SELL_BIN_CONDITION];}";
-				name="GunStore5_SellBox";
-				disableSimulation=1;
-				aiRadarUsage=348875846;
-			};
-			id=2065;
-			type="Box_NATO_Equip_F";
-			atlOffset=0.0017089844;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				nAttributes=1;
 			};
 		};
 	};
