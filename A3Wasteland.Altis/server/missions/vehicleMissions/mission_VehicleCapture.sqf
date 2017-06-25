@@ -125,14 +125,14 @@ _setupObjects =
 		};
 
 		// PO-30 Orca
-		case (_vehicle isKindOf "Heli_Light_02_base_F"):
+		case (_vehicle isKindOf "Heli_Light_02_base_dynamicLoadout_F"):
 		{
 			// Reset all ammo
 			_vehicle setVehicleAmmoDef 1;
 		};
 
 		// Mi-48 Kajman
-		case (_vehicle isKindOf "Heli_Attack_02_base_F"):
+		case (_vehicle isKindOf "Heli_Attack_02_base_dynamicLoadout_F"):
 		{
 			_vehicle setVehicleAmmo 1.0;
 
