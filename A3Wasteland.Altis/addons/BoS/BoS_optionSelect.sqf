@@ -22,60 +22,55 @@ if (!isNil "_uid") then
 
 			switch (lbCurSel _BoS_select) do
 			{
-				case 0: //Mark Owned Object
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_markOwned.sqf";
-				};
-				case 1: //Show Base Border
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_showBorder.sqf";
-				};
-				case 2: //Repair Base Locker
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_repairLocker.sqf";
-				};
-				case 3: //Lock Down Base
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_lockDown.sqf";
-				};
-				case 4: //Release Lock Down
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_releaseLockDown.sqf";
-				};
-				case 5: //Relock Base Objects
-				{
-					closeDialog 0;
-					execVM "addons\BoS\BoS_reLock.sqf";
-				};
-				case 6: //Turn off all lights
+				case 0: //Turn off all lights
 				{
 					closeDialog 0;
 					execVM "addons\BoS\BoS_lightsOff.sqf";;
 				};
-				case 7: //Turn on all lighs
+				case 1: //Turn on all lighs
 				{
 					closeDialog 0;
 					execVM "addons\BoS\BoS_lightsOn.sqf";
 				};
-				case 8: //Change Password
-				{
-					closeDialog 0;
-					execVM "addons\Bos\password_change.sqf";
-				};
-				case 9: //Lock Doors
+				case 2: //Lock Doors
 				{
 					closeDialog 0;
 					execVM "addons\Bos\LockDoors.sqf";
 				};
-				Case 10: //Unlock Doors
+				Case 3: //Unlock Doors
 				{
 					closeDialog 0;
 					execVM "addons\Bos\UnlockDoors.sqf";
+				};
+				case 4: //Mark Owned Object
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_markOwned.sqf";
+				};
+				case 5: //Show Base Border
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_showBorder.sqf";
+				};
+				case 6: //Lock Down Base
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_lockDown.sqf";
+				};
+				case 7: //Release Lock Down
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_releaseLockDown.sqf";
+				};
+				case 8: //Relock Base Objects
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_reLock.sqf";
+				};
+				case 9: //Change Password
+				{
+					closeDialog 0;
+					execVM "addons\Bos\password_change.sqf";
 				};
 			};
 		};
