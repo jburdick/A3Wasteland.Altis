@@ -414,7 +414,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
 	//Parant Classes
-	["reammobox", 1],
+	["ReammoBox_F", 1],
 	//Child Classes
 	["APC_Tracked_01_base_F", 200],
 	["APC_Tracked_02_base_F", 200],
@@ -926,8 +926,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
 
-	//Parant Classes
-	"reammobox",
+	//Parent Classes
+	"ReammoBox_F",
 	//Child Classes
 	"ArrowDesk_L_F",
 	"ArrowDesk_R_F",
@@ -1000,7 +1000,6 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Flag_Viper_F",
 	"Flag_White_F",
 	"FlexibleTank_01_sand_F",
-	"Hatchback_01_base_F",
 	"I_supplyCrate_F",
 	"IG_supplyCrate_F",
 	"IND_Box_Base",
@@ -1386,7 +1385,6 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Workbench_01_F",
 	"OfficeTable_01_new_F",
 	"OfficeTable_01_old_F",
-	"Offroad_01_base_F",
 	"PlasticBarrier_01_white_F",
 	"PlasticBarrier_01_red_F",
 	"PlasticBarrier_02_grey_F",
