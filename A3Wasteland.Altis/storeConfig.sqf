@@ -1239,7 +1239,7 @@ genObjectsArray = compileFinal str
   ["Sign,Military Area (Small,Greek)", "Land_Sign_WarningMilAreaSmall_F", 100],
   ["Sign,Military Vehicles", "Land_SignM_WarningMilitaryVehicles_english_F", 100],
   ["Sign,Military Vehicles (Greek)", "Land_Sign_WarningMilitaryVehicles_F", 100],
-  ["Fuel Pump (Malden)", "Land_FuelStation_01_pump_malevil_F". 2500],
+  ["Fuel Pump (Malden)", "Land_FuelStation_01_pump_malevil_F", 2500],
   ["Fuel Station Roof (Malden)", "Land_FuelStation_01_roof_malevil_F", 5000],
   ["Fuel Station Sign (Malden)", "Land_FuelStation_01_prices_malevil_F", 25000],
   ["Supermarket", "Land_Supermarket_01_malden_F", 50000],

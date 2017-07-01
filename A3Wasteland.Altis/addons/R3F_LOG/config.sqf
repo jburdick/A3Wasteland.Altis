@@ -948,7 +948,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
   ["Land_Sign_WarningMilAreaSmall_F", 2],
   ["Land_SignM_WarningMilitaryVehicles_english_F", 2],
   ["Land_Sign_WarningMilitaryVehicles_F", 2],
-  ["Land_FuelStation_01_pump_malevil_F". 5],
+  ["Land_FuelStation_01_pump_malevil_F", 5],
   ["Land_FuelStation_01_roof_malevil_F", 50],
   ["Land_FuelStation_01_prices_malevil_F", 10],
   ["Land_Supermarket_01_malden_F", 100],
