@@ -11,8 +11,8 @@
   //Holster Weapon
 	["Holster Weapon", { player action ["SwitchWeapon", player, player, 100] }, [], -11, false, false, "", "vehicle player == player && currentWeapon player != '' && (stance player != 'CROUCH' || currentWeapon player != handgunWeapon player)"], // A3 v1.58 bug, holstering handgun while crouched causes infinite anim loop
   //Remote Base Access
-  ["Acess Remote Base Management", "client\actions\basemanagement.sqf", [], 1, false, true, "", "'B_UavTerminal' in items player || 'O_UavTerminal' in items player ||'I_UavTerminal' in items player"],
-  //Open Player Menu
+  ["Acess Remote Base Management", "client\actions\BaseManegement.sqf", [], 1, false, true, ""],
+	//Open Player Menu
 	[format ["<img image='client\icons\playerMenu.paa' color='%1'/> <t color='%1'>[</t>Player Menu<t color='%1'>]</t>", "#FF8000"], "client\systems\playerMenu\init.sqf", [], -10, false],
   //Picku Money
 	["<img image='client\icons\money.paa'/> Pickup Money", "client\actions\pickupMoney.sqf", [], 1, false, false, "", "{_x getVariable ['owner', ''] != 'mission'} count (player nearEntities ['Land_Money_F', 5]) > 0"],

@@ -11,5 +11,5 @@ If ((player distance _NearestManager) < 50) then {
     hint "Welcome";
   };
 } else {
-  titleText ["No Base Manager in Range", "PlainDown", 1];
+  hint "No Base Manager in Range";
 };

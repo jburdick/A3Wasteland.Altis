@@ -187,30 +187,18 @@ staticGunsArray = compileFinal str
 	["Mk30 HMG .50 Low tripod (NATO)",					"B_HMG_01_F",																			2000],
 	["Mk30 HMG .50 Low tripod (CSAT)",					"O_HMG_01_F",																			2000],
 	["Mk30 HMG .50 Low tripod (AAF)",						"I_HMG_01_F",																			2000],
-	["Mk30A HMG .50 Sentry (NATO)",							"B_HMG_01_A_F",																		10000],
-	["Mk30A HMG .50 Sentry (CSAT)",							"O_HMG_01_A_F",																		10000],
-	["Mk30A HMG .50 Sentry (AAF)",							"I_HMG_01_A_F",																		10000],
 	["Mk30 HMG .50 High tripod (NATO)",					"B_HMG_01_high_F",																3000],
 	["Mk30 HMG .50 High tripod (CSAT)",					"O_HMG_01_high_F",																3000],
 	["Mk30 HMG .50 High tripod (AAF)",					"I_HMG_01_high_F",																3000],
 	["Mk32 GMG 20mm Low tripod (NATO)",					"B_GMG_01_F",																			5000],
 	["Mk32 GMG 20mm Low tripod (CSAT)",					"O_GMG_01_F",																			5000],
 	["Mk32 GMG 20mm Low tripod (AAF)",					"I_GMG_01_F",																			5000],
-	["Mk32A GMG 20mm Sentry (NATO)",						"B_GMG_01_A_F",																		15000],
-	["Mk32A GMG 20mm Sentry (CSAT)",						"O_GMG_01_A_F",																		15000],
-	["Mk32A GMG 20mm Sentry (AAF)",							"I_GMG_01_A_F",																		15000],
 	["Mk32 GMG 20mm High tripod (NATO)",				"B_GMG_01_high_F",																6000],
 	["Mk32 GMG 20mm High tripod (CSAT)",				"O_GMG_01_high_F",																6000],
 	["Mk32 GMG 20mm High tripod (AAF)",					"I_GMG_01_high_F",																6000],
-	// ["Praetorian 1C AAA",										"B_AAA_System_01_F",															110000],
-	// ["Mk-49 Spartan SAM",										"B_SAM_System_01_F",															130000],
-	// ["Mk-21 Centurion SAM",									"B_SAM_System_02_F",															130000],
 	["Mk6 Mortar (NATO)",												"B_Mortar_01_F",																	25000],
 	["Mk6 Mortar (CSAT)",												"O_Mortar_01_F",																	25000],
-	["Mk6 Mortar (AAF)",												"I_Mortar_01_F",																	25000],
-	["Praetorian 1C AAA",												"B_AAA_System_01_F",															25000],
-	["Mk-49 Spartan SAM",												"B_SAM_System_01_F",															25000],
-	["Mk-21 Centurion SAM",											"B_SAM_System_02_F",															25000]
+	["Mk6 Mortar (AAF)",												"I_Mortar_01_F",																	25000]
 ];
 
 throwputArray = compileFinal str
@@ -337,30 +325,30 @@ accessoriesArray = compileFinal str
 	["Suppressor 5.56mm",												"muzzle_snds_M",																	100,							"item"],
 	["Suppressor 5.56mm (Khaki)",								"muzzle_snds_m_khk_F",														100,							"item"],
 	["Suppressor 5.56mm (Sand)",								"muzzle_snds_m_snd_F",														100,							"item"],
-	["Suppressor 5.8mm","muzzle_snds_58_blk_F",100,"item"],
-	["Suppressor 5.8mm (G Hex)","muzzle_snds_58_wdm_F",100,"item"],
-	["Suppressor 6.5mm","muzzle_snds_H",100,"item"],
-	["Suppressor 6.5mm (Khaki)","muzzle_snds_H_khk_F",100,"item"],
-	["Suppressor 6.5mm (Sand)","muzzle_snds_H_snd_F",100,"item"],
-	["Suppressor 6.5mm LMG","muzzle_snds_H_MG",125,"item"],
-	["Suppressor 6.5mm LMG (Black)","muzzle_snds_H_MG_blk_F",125,"item"],
-	["Suppressor 6.5mm LMG (Khaki)","muzzle_snds_H_MG_khk_F",125,"item"],
-	["Suppressor Type 115","muzzle_snds_65_TI_blk_F",125,"item"],
-	["Suppressor Type 115 (Hex)","muzzle_snds_65_TI_hex_F",125,"item"],
-	["Suppressor Type 115 (G Hex)","muzzle_snds_65_TI_ghex_F",125,"item"],
-	["Suppressor 7.62mm","muzzle_snds_B",125,"item"],
-	["Suppressor 7.62mm (Khaki)","muzzle_snds_B_khk_F",125,"item"],
-	["Suppressor 7.62mm (Sand)","muzzle_snds_B_snd_F",125,"item"],
-	["Suppressor .338","muzzle_snds_338_black",150,"item"],
-	["Suppressor .338 (Green)","muzzle_snds_338_green",150,"item"],
-	["Suppressor .338 (Sand)","muzzle_snds_338_sand",175,"item"],
-	["Suppressor 9.3mm","muzzle_snds_93mmg",175,"item"],
-	["Suppressor 9.3mm (Tan)","muzzle_snds_93mmg_tan",175,"item"],
-	["Bipod (NATO)","bipod_01_F_blk",100,"item","noDLC"],
-	["Bipod (CSAT)","bipod_02_F_blk",100,"item","noDLC"],
-	["Bipod (AAF)","bipod_03_F_blk",100,"item","noDLC"],
-	["Bipod (MTP)","bipod_01_F_mtp",100,"item","noDLC"],
-	["Bipod (Hex)","bipod_02_F_hex",100,"item","noDLC"],
+	["Suppressor 5.8mm",												"muzzle_snds_58_blk_F",														100,							"item"],
+	["Suppressor 5.8mm (G Hex)",								"muzzle_snds_58_wdm_F",														100,							"item"],
+	["Suppressor 6.5mm",												"muzzle_snds_H",																	100,							"item"],
+	["Suppressor 6.5mm (Khaki)",								"muzzle_snds_H_khk_F",														100,							"item"],
+	["Suppressor 6.5mm (Sand)",									"muzzle_snds_H_snd_F",														100,							"item"],
+	["Suppressor 6.5mm LMG",										"muzzle_snds_H_MG",																125,							"item"],
+	["Suppressor 6.5mm LMG (Black)",						"muzzle_snds_H_MG_blk_F",													125,							"item"],
+	["Suppressor 6.5mm LMG (Khaki)",						"muzzle_snds_H_MG_khk_F",													125,							"item"],
+	["Suppressor Type 115",											"muzzle_snds_65_TI_blk_F",												125,							"item"],
+	["Suppressor Type 115 (Hex)",								"muzzle_snds_65_TI_hex_F",												125,							"item"],
+	["Suppressor Type 115 (G Hex)",							"muzzle_snds_65_TI_ghex_F",												125,							"item"],
+	["Suppressor 7.62mm",												"muzzle_snds_B",																	125,							"item"],
+	["Suppressor 7.62mm (Khaki)",								"muzzle_snds_B_khk_F",														125,							"item"],
+	["Suppressor 7.62mm (Sand)",								"muzzle_snds_B_snd_F",														125,							"item"],
+	["Suppressor .338",													"muzzle_snds_338_black",													150,							"item"],
+	["Suppressor .338 (Green)",									"muzzle_snds_338_green",													150,							"item"],
+	["Suppressor .338 (Sand)",									"muzzle_snds_338_sand",														175,							"item"],
+	["Suppressor 9.3mm",												"muzzle_snds_93mmg",															175,							"item"],
+	["Suppressor 9.3mm (Tan)",									"muzzle_snds_93mmg_tan",													175,							"item"],
+	["Bipod (NATO)",														"bipod_01_F_blk",																	100,							"item",								"noDLC"],
+	["Bipod (CSAT)",														"bipod_02_F_blk",																	100,							"item",								"noDLC"],
+	["Bipod (AAF)",															"bipod_03_F_blk",																	100,							"item",								"noDLC"],
+	["Bipod (MTP)",															"bipod_01_F_mtp",																	100,							"item",								"noDLC"],
+	["Bipod (Hex)",															"bipod_02_F_hex",																	100,							"item",								"noDLC"],
 	["Bipod (Olive)","bipod_03_F_oli",100,"item","noDLC"],
 	["Bipod (Sand)","bipod_01_F_snd",100,"item","noDLC"],
 	["Bipod (Tan)","bipod_02_F_tan",100,"item","noDLC"],
@@ -1521,96 +1509,78 @@ tanksArray = compileFinal str
 
 helicoptersArray = compileFinal str
 [
-	["M-900 Civilian","C_Heli_Light_01_civil_F",4000,"vehicle"],// MH-6,no flares
-	["MH-9 Hummingbird","B_Heli_Light_01_F",5000,"vehicle"],// MH-6
-	["AH-9 Pawnee (Gun-Only)","B_Heli_Light_01_dynamicLoadout_F",15000,"vehicle","variant_pawneeGun"],// Armed AH-6 (no missiles)
-	["AH-9 Pawnee (20mm Cannons)","B_Heli_Light_01_dynamicLoadout_F",45000,"vehicle","variant_pawnee20mm"],
-	["AH-9 Pawnee (DAR)","B_Heli_Light_01_dynamicLoadout_F",45000,"vehicle","variant_pawneeDAR"],
+
 	["AH-9 Pawnee (Shrieker AP)","B_Heli_Light_01_dynamicLoadout_F",70000,"vehicle","variant_pawneeS-HE"],
 	["AH-9 Pawnee (Shrieker HE)","B_Heli_Light_01_dynamicLoadout_F",80000,"vehicle","variant_pawneeS-AP"],
-	["AH-9 Pawnee (Tratnyr HE)","B_Heli_Light_01_dynamicLoadout_F",90000,"vehicle","variant_pawneeT-HE"],
 	["AH-9 Pawnee (Tratnyr AP)","B_Heli_Light_01_dynamicLoadout_F",80000,"vehicle","variant_pawneeT-AP"],
-	["AH-9 Pawnee (Scalpel x8)","B_Heli_Light_01_dynamicLoadout_F",200000,"vehicle","variant_pawneeSCALX4"],
+	["AH-9 Pawnee (Gun-Only)","B_Heli_Light_01_dynamicLoadout_F",15000,"vehicle","variant_pawneeGun"],// Armed AH-6 (no missiles)
+	["AH-9 Pawnee (20mm Cannons)","B_Heli_Light_01_dynamicLoadout_F",45000,"vehicle","variant_pawnee20mm"],
 	["AH-9 Pawnee (Falchion x2)","B_Heli_Light_01_dynamicLoadout_F",120000,"vehicle","variant_pawneeFALCHION"],
-
-
-
-	["PO-30 Orca (Unarmed)","O_Heli_Light_02_dynamicLoadout_F",6000,"vehicle","variant_orcaUnArm"],
-	["PO-30 Orca (6.5mm)","O_Heli_Light_02_dynamicLoadout_F",10000,"vehicle","variant_orcaGUN"],
-	["PO-30 Orca (6.5mm + DAR)","O_Heli_Light_02_dynamicLoadout_F",40000,"vehicle","variant_orcaGUNDAR"],
-	["PO-30 Orca (6.5mm + DAGR)","O_Heli_Light_02_dynamicLoadout_F",75000,"vehicle","variant_orcaGUNDAGR"],
-	/*["PO-30 Orca (Unarmed)","O_Heli_Light_02_dynamicLoadout_F",30000,"vehicle","variant_orcaUnArm"],
-	["PO-30 Orca (Unarmed)","O_Heli_Light_02_dynamicLoadout_F",30000,"vehicle","variant_orcaUnArm"],*/
-
-
-	["WY-55 Hellcat (Unarmed)","I_Heli_light_03_unarmed_F",7000,"vehicle"],
-	["WY-55 Hellcat (Guns)","I_Heli_light_03_dynamicLoadout_F",10000,"vehicle","variant_HellGun" ],
-	["WY-55 Hellcat (20mm Cannon)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_Hell20mm" ],
-	["WY-55 Hellcat (DAR)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellDAR" ],
-	["WY-55 Hellcat (DAGR)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellDAGR" ],
-	["WY-55 Hellcat (Bombs)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellBOMB" ],
-	/*["WY-55 Hellcat (Armed)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellGun" ],
-	["WY-55 Hellcat (Armed)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellGun" ],
-	["WY-55 Hellcat (Armed)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellGun" ],*/
-
-
-	["Mi-290 Taru (Crane) [DLC]","O_Heli_Transport_04_F",7500,"vehicle"],// CH-54
+	["AH-9 Pawnee (Scalpel x8)","B_Heli_Light_01_dynamicLoadout_F",200000,"vehicle","variant_pawneeSCALX4"],
+	["AH-9 Pawnee (Tratnyr HE)","B_Heli_Light_01_dynamicLoadout_F",90000,"vehicle","variant_pawneeT-HE"],
+	["AH-9 Pawnee (DAR)","B_Heli_Light_01_dynamicLoadout_F",45000,"vehicle","variant_pawneeDAR"],
+	["AH-99 Blackfoot","B_Heli_Attack_01_dynamicLoadout_F",500000,"vehicle"],// RAH-66 with gunner
+	["CH-49 Mohawk","I_Heli_Transport_02_F",10000,"vehicle"],// AW101
+	["CH-67 Huron (Armed) [DLC]","B_Heli_Transport_03_F",30000,"vehicle"],// CH-47 with 2 side miniguns
+	["CH-67 Huron (Black) [DLC]","B_Heli_Transport_03_unarmed_F",10000,"vehicle"],// CH-47
+	["M-900 Civilian","C_Heli_Light_01_civil_F",4000,"vehicle"],// MH-6,no flares
+	["MH-9 Hummingbird","B_Heli_Light_01_F",5000,"vehicle"],// MH-6
 	["Mi-290 Taru (Box) [DLC]","O_Heli_Transport_04_box_F",8000,"vehicle"],
+	["Mi-290 Taru (Ammo) [DLC]","O_Heli_Transport_04_ammo_F",5000000,"vehicle"],
+	["Mi-290 Taru (Repair) [DLC]","O_Heli_Transport_04_repair_F",12500,"vehicle"],
+	["Mi-290 Taru (Crane) [DLC]","O_Heli_Transport_04_F",7500,"vehicle"],// CH-54
 	["Mi-290 Taru (Fuel) [DLC]","O_Heli_Transport_04_fuel_F",8500,"vehicle"],
 	["Mi-290 Taru (Bench) [DLC]","O_Heli_Transport_04_bench_F",9000,"vehicle"],
 	["Mi-290 Taru (Transport) [DLC]","O_Heli_Transport_04_covered_F",9500,"vehicle"],
 	["Mi-290 Taru (Medical) [DLC]","O_Heli_Transport_04_medevac_F",12500,"vehicle"],
-	["Mi-290 Taru (Repair) [DLC]","O_Heli_Transport_04_repair_F",12500,"vehicle"],
-	["Mi-290 Taru (Ammo) [DLC]","O_Heli_Transport_04_ammo_F",5000000,"vehicle"],
-
-	["CH-67 Huron (Black) [DLC]","B_Heli_Transport_03_unarmed_F",10000,"vehicle"],// CH-47
-	["CH-67 Huron (Armed) [DLC]","B_Heli_Transport_03_F",30000,"vehicle"],// CH-47 with 2 side miniguns
-
-	["CH-49 Mohawk","I_Heli_Transport_02_F",10000,"vehicle"],// AW101
-
+	["Mi-48 Kajman","O_Heli_Attack_02_dynamicLoadout_F",550000,"vehicle"], // Mi-28 with gunner
+	["MQ-12 Falcon",														"B_T_UAV_03_dynamicLoadout_F",										575000,							"vehicle"],
+	["PO-30 Orca (Unarmed)","O_Heli_Light_02_dynamicLoadout_F",30000,"vehicle","variant_orcaUnArm"],
+	["PO-30 Orca (Unarmed)","O_Heli_Light_02_dynamicLoadout_F",6000,"vehicle","variant_orcaUnArm"],
+	["PO-30 Orca (6.5mm + DAGR)","O_Heli_Light_02_dynamicLoadout_F",75000,"vehicle","variant_orcaGUNDAGR"],
+	["PO-30 Orca (6.5mm + DAR)","O_Heli_Light_02_dynamicLoadout_F",40000,"vehicle","variant_orcaGUNDAR"],
+	["PO-30 Orca (6.5mm)","O_Heli_Light_02_dynamicLoadout_F",10000,"vehicle","variant_orcaGUN"],
 	["UH-80 Ghost Hawk","B_Heli_Transport_01_F",25000,"vehicle"],// UH-60 Stealth with 2 side miniguns
-
-	["AH-99 Blackfoot","B_Heli_Attack_01_dynamicLoadout_F",500000,"vehicle"],// RAH-66 with gunner
-
-	["Mi-48 Kajman","O_Heli_Attack_02_dynamicLoadout_F",550000,"vehicle"],// Mi-28 with gunner
-
-	["MQ-12 Falcon","B_T_UAV_03_dynamicLoadout_F",575000,"vehicle"]
+	["WY-55 Hellcat (Armed)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellGun" ],
+	["WY-55 Hellcat (Unarmed)","I_Heli_light_03_unarmed_F",7000,"vehicle"],
+	["WY-55 Hellcat (Bombs)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellBOMB" ],
+	["WY-55 Hellcat (DAR)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellDAR" ],
+	["WY-55 Hellcat (20mm Cannon)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_Hell20mm" ],
+	["WY-55 Hellcat (Guns)","I_Heli_light_03_dynamicLoadout_F",10000,"vehicle","variant_HellGun" ],
+	["WY-55 Hellcat (DAGR)","I_Heli_light_03_dynamicLoadout_F",40000,"vehicle","variant_HellDAGR" ]
 ];
 
 planesArray = compileFinal str
 [
+
+	/*["A-143 Buzzard CAS","I_Plane_Fighter_03_dynamicLoadout_F",650000,"vehicle"],*/
+	["A-143 Buzzard","I_Plane_Fighter_03_dynamicLoadout_F",390000,"vehicle"],
+	["A-149 Gryphon","I_Plane_Fighter_04_F",690000,"vehicle"],
+	["A-164 Wipeout","B_Plane_CAS_01_dynamicLoadout_F",775000,"vehicle"],
 	["Caesar BTT","C_Plane_Civil_01_F",3000,"vehicle"],
 	["Ceasar BTT (racing)","C_Plane_Civil_01_Racing_F",3000,"vehicle"],
-
-	["A-143 Buzzard","I_Plane_Fighter_03_dynamicLoadout_F",390000,"vehicle"],
-	/*["A-143 Buzzard CAS","I_Plane_Fighter_03_dynamicLoadout_F",650000,"vehicle"],*/
-	["A-164 Wipeout","B_Plane_CAS_01_dynamicLoadout_F",775000,"vehicle"],
+	["F/A-181 Black Wasp II (Stealth)","B_Plane_Fighter_01_Stealth_F",750000,"vehicle"],
+	["F/A-181 Black Wasp II","B_Plane_Fighter_01_F",775000,"vehicle"],
+	["K40 Ababil-3 UAV (Unarmed)",							"O_UAV_02_dynamicLoadout_F",											100000,						"vehicle",				"greyhawkRecon"],
+	["K40 Ababil-3 UAV (Bomber)",								"I_UAV_02_dynamicLoadout_F",											250000,						"vehicle",				"greyhawkBomber"],
+	["K40 Ababil-3 UAV (Missiles)",							"O_UAV_02_dynamicLoadout_F",											700000,						"vehicle",				"greyhawkMissile"],
+	["K40 Ababil-3 UAV (Bomber)",								"O_UAV_02_dynamicLoadout_F",											250000,						"vehicle",				"greyhawkBomber"],
+	["K40 Ababil-3 UAV (Unarmed)",							"I_UAV_02_dynamicLoadout_F",											100000,						"vehicle",				"greyhawkRecon"],
+	["K40 Ababil-3 UAV (Missiles)",							"I_UAV_02_dynamicLoadout_F",											700000,						"vehicle",				"greyhawkMissile"],
+	["KH-3A Fenghuang",													"O_T_UAV_04_CAS_F",																575000,						"vehicle"],
+	["MQ4A Greyhawk UAV (Bomber)",							"B_UAV_02_dynamicLoadout_F",											250000,							"vehicle",				"greyhawkBomber"],// Bomber UAVs are a lot harder to use,hence why they are cheaper than Missile ones
+	["MQ4A Greyhawk  (Unarmed)",								"B_UAV_02_dynamicLoadout_F",											100000,							"vehicle",				"greyhawkRecon"],
+	["MQ4A Greyhawk UAV (Missiles)",						"B_UAV_02_dynamicLoadout_F",											700000,							"vehicle",				"greyhawkMissile"],
 	["To-199 Neophron CAS","O_Plane_CAS_02_dynamicLoadout_F",750000,"vehicle"],
-
-	["A-149 Gryphon","I_Plane_Fighter_04_F",690000,"vehicle"],
 	["To-201 Shikra","O_Plane_Fighter_02_F",775000,"vehicle"],
 	["To-201 Shikra (Stealth)","O_Plane_Fighter_02_Stealth_F",750000,"vehicle"],
-	["F/A-181 Black Wasp II","B_Plane_Fighter_01_F",775000,"vehicle"],
-	["F/A-181 Black Wasp II (Stealth)","B_Plane_Fighter_01_Stealth_F",750000,"vehicle"],
-
-	["V-44 X Blackfish (Infrantry Transport)","B_T_VTOL_01_infantry_F",20000,"vehicle"],
+	["UCAV Sentinel",														"B_UAV_05_F",																			400000,							"vehicle"],
 	["V-44 X Blackfish (Vehicle Transport)","B_T_VTOL_01_vehicle_F",30000,"vehicle"],
+	["V-44 X Blackfish (Infrantry Transport)","B_T_VTOL_01_infantry_F",20000,"vehicle"],
 	["V-44 X Blackfish (Armed)","B_T_VTOL_01_armed_F",700000,"vehicle"],
-
-	["Y-32 Xi'an (Infrantry Transport)","O_T_VTOL_02_infantry_F",750000,"vehicle"],
 	["Y-32 Xi'an (Vehicle Transport)","O_T_VTOL_02_vehicle_F",750000,"vehicle"],
+	["Y-32 Xi'an (Infrantry Transport)","O_T_VTOL_02_infantry_F",750000,"vehicle"]
 
-	["MQ4A Greyhawk  (Unarmed)","B_UAV_02_dynamicLoadout_F",100000,"vehicle","greyhawkRecon"],
-	["MQ4A Greyhawk UAV (Missiles)","B_UAV_02_dynamicLoadout_F",700000,"vehicle","greyhawkMissile"],
-	["MQ4A Greyhawk UAV (Bomber)","B_UAV_02_dynamicLoadout_F",250000,"vehicle","greyhawkBomber"],// Bomber UAVs are a lot harder to use,hence why they are cheaper than Missile ones
-	["K40 Ababil-3 UAV (Unarmed)","O_UAV_02_dynamicLoadout_F",100000,"vehicle","greyhawkRecon"],
-	["K40 Ababil-3 UAV (Missiles)","O_UAV_02_dynamicLoadout_F",700000,"vehicle","greyhawkMissile"],
-	["K40 Ababil-3 UAV (Bomber)","O_UAV_02_dynamicLoadout_F",250000,"vehicle","greyhawkBomber"],
-	["K40 Ababil-3 UAV (Unarmed)","I_UAV_02_dynamicLoadout_F",100000,"vehicle","greyhawkRecon"],
-	["K40 Ababil-3 UAV (Missiles)","I_UAV_02_dynamicLoadout_F",700000,"vehicle","greyhawkMissile"],
-	["K40 Ababil-3 UAV (Bomber)","I_UAV_02_dynamicLoadout_F",250000,"vehicle","greyhawkBomber"],
-  ["KH-3A Fenghuang","O_T_UAV_04_CAS_F",575000,"vehicle"],
-	["UCAV Sentinel","B_UAV_05_F",400000,"vehicle"]
 ];
 
 boatsArray = compileFinal str
@@ -1634,7 +1604,22 @@ boatsArray = compileFinal str
 	["SDV Submarine (CSAT)","O_SDV_01_F",1000,"submarine"],
 	["SDV Submarine (AAF)","I_SDV_01_F",1000,"submarine"]
 ];
-allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
+AutonomousArray = compileFinal str
+[
+["Mk-21 Centurion SAM",											"B_SAM_System_02_F",															25000],
+["Mk-49 Spartan SAM",												"B_SAM_System_01_F",															25000],
+["Mk30A HMG .50 Sentry (NATO)",							"B_HMG_01_A_F",																		10000],
+["Mk30A HMG .50 Sentry (CSAT)",							"O_HMG_01_A_F",																		10000],
+["Mk30A HMG .50 Sentry (AAF)",							"I_HMG_01_A_F",																		10000],
+["Mk32A GMG 20mm Sentry (NATO)",						"B_GMG_01_A_F",																		15000],
+["Mk32A GMG 20mm Sentry (CSAT)",						"O_GMG_01_A_F",																		15000],
+["Mk32A GMG 20mm Sentry (AAF)",							"I_GMG_01_A_F",																		15000],
+["Praetorian 1C AAA",												"B_AAA_System_01_F",															25000]
+
+
+
+];
+allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray + call AutonomousArray);
 
 uavArray = compileFinal str
 [

@@ -55,7 +55,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 	if (_isVehStore) then
 	{
-		// LAND VEHICLES
+		// LAND VEHICLES and autonomous Weapons
 		{
 			_results = (call _x) select {_x select [1,999] isEqualTo _itemEntrySent};
 
@@ -64,7 +64,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				_itemEntry = _results select 0;
 				_marker = _marker + "_landSpawn";
 			};
-		} forEach [landArray, armoredArray, tanksArray];
+		} forEach [landArray, armoredArray, tanksArray, AutonomousArray];
 
 		// SEA VEHICLES
 		if (isNil "_itemEntry") then
@@ -108,15 +108,6 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 	{
 		_itemPrice = _itemEntry select 2;
 		_skipSave = "SKIPSAVE" in (_itemEntry select [3,999]);
-
-		/*if (_class isKindOf "Box_NATO_Ammo_F") then
-		{
-			switch (side _player) do
-			{
-				case OPFOR:       { _class = "Box_East_Ammo_F" };
-				case INDEPENDENT: { _class = "Box_IND_Ammo_F" };
-			};
-		};*/
 
 		if (_player getVariable ["cmoney", 0] >= _itemPrice) then
 		{
@@ -184,25 +175,32 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			};
 
 			private _isUAV = (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0);
-
+			//assign AI to the vehicle so it can actually be used
 			if (_isUAV) then
 			{
-				createVehicleCrew _object;
-
-				//assign AI to the vehicle so it can actually be used
-				[_object, _playerSide, _playerGroup] spawn
+				if (_object iskindof "StaticWeapon") then
 				{
-					params ["_uav", "_playerSide", "_playerGroup"];
-
-					_grp = [_uav, _playerSide, true] call fn_createCrewUAV;
-
-					if (isNull (_uav getVariable ["ownerGroupUAV", grpNull])) then
+					Switch (true) do
 					{
-						_uav setVariable ["ownerGroupUAV", _playerGroup, true]; // not currently used
+						case (playerside == East):
+						{
+							_AI = _playerGroup createUnit ["O_UAV_AI", _object, [], 0, "NONE"];
+							_AI moveInGunner _object;
+						};
+					};
+				} else
+				{
+					[_object, _playerSide, _playerGroup] spawn
+					{
+						params ["_uav", "_playerSide", "_playerGroup"];
+						_grp = [_uav, _playerSide, true] call fn_createCrewUAV;
+						if (isNull (_uav getVariable ["ownerGroupUAV", grpNull])) then
+						{
+							_uav setVariable ["ownerGroupUAV", _playerGroup, true]; // not currently used
+						};
 					};
 				};
 			};
-
 			if (isPlayer _player && !(_player getVariable [_timeoutKey, true])) then
 			{
 				_player setVariable [_key, _objectID, true];
@@ -232,7 +230,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			_object setDir (if (_object isKindOf "Plane") then { markerDir _marker } else { random 360 });
 
-			_isDamageable = !(_object isKindOf "ReammoBox_F"); // ({_object isKindOf _x} count ["AllVehicles", "Lamps_base_F", "Cargo_Patrol_base_F", "Cargo_Tower_base_F"] > 0);
+			_isDamageable = !(_object isKindOf "ReammoBox_F");
 
 			[_object] call vehicleSetup;
 			_object allowDamage _isDamageable;
