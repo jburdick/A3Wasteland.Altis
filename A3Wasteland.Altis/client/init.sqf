@@ -130,10 +130,6 @@ call compile preprocessFileLineNumbers "client\functions\setupClientPVars.sqf";
 //client Executes
 A3W_scriptThreads pushBack execVM "client\systems\hud\playerHud.sqf";
 
-if (["A3W_survivalSystem"] call isConfigOn) then
-{
-	execVM "client\functions\initSurvival.sqf";
-};
 
 [] spawn
 {
@@ -159,7 +155,6 @@ A3W_clientSetupComplete = compileFinal "true";
 
 [] spawn playerSpawn;
 
-A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 [] execVM "client\functions\drawPlayerIcons.sqf";
 //[] execVM "addons\camera\functions.sqf";
