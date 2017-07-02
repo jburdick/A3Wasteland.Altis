@@ -7,15 +7,15 @@
 //	@file Created: 20/11/2012 05:13
 //	@file Args:
 
-#include "dialog\genstoreDefines.sqf";
+#include "dialog\BaseStoreDefines.sqf";
 disableSerialization;
 
 private ["_dialog", "_itemlisttext", "_itemlist", "_class", "_qty", "_listIndex"];
 
 // Grab access to the controls
-_dialog = findDisplay genstore_DIALOG;
-_itemlisttext = _dialog displayCtrl genstore_item_TEXT;
-_itemlist = _dialog displayCtrl genstore_sell_list;
+_dialog = findDisplay BaseStore_DIALOG;
+_itemlisttext = _dialog displayCtrl BaseStore_item_TEXT;
+_itemlist = _dialog displayCtrl BaseStore_sell_list;
 
 //Clear the list
 lbClear _itemlist;

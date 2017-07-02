@@ -9,7 +9,7 @@
 
 if (!isNil "storeSellingHandle" && {typeName storeSellingHandle == "SCRIPT"} && {!scriptDone storeSellingHandle}) exitWith {hint "Please wait, your previous sale is being processed"};
 
-#include "dialog\genstoreDefines.sqf";
+#include "dialog\BaseStoreDefines.sqf";
 
 storeSellingHandle = [] spawn
 {
@@ -21,10 +21,10 @@ storeSellingHandle = [] spawn
 	_size = 0;
 
 	// Grab access to the controls
-	_dialog = findDisplay genstore_DIALOG;
-	_itemlist = _dialog displayCtrl genstore_sell_list;
-	_totalText = _dialog displayCtrl genstore_total;
-	_playerMoneyText = _Dialog displayCtrl genstore_money;
+	_dialog = findDisplay BaseStore_DIALOG;
+	_itemlist = _dialog displayCtrl BaseStore_sell_list;
+	_totalText = _dialog displayCtrl BaseStore_total;
+	_playerMoneyText = _Dialog displayCtrl BaseStore_money;
 
 	//Get Selected Item
 	_itemIndex = lbCurSel _itemlist;
@@ -44,7 +44,7 @@ storeSellingHandle = [] spawn
 
 		player setVariable ["cmoney", _playerMoney + _price, true];
 		_playerMoneyText ctrlSetText format ["Cash: $%1", [player getVariable "cmoney"] call fn_numbersText];
-		[] execVM "client\systems\generalStore\getInventory.sqf";
+		[] execVM "client\systems\BasePartsStore\getInventory.sqf";
 	};
 };
 

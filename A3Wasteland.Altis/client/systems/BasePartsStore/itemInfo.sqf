@@ -7,7 +7,7 @@
 //	@file Created: 20/11/2012 05:13
 //	@file Args:
 
-#include "dialog\genstoreDefines.sqf";
+#include "dialog\BaseStoreDefines.sqf";
 disableSerialization;
 
 private ["_weap_type", "_picture", "_price", "_description", "_dialog", "_itemlist", "_itemlisttext", "_itemInfo", "_itemDesc", "_itemIndex", "_itemText", "_itemData", "_itemConfigInfo"];
@@ -19,11 +19,11 @@ _price = 0;
 _description = "";
 
 // Grab access to the controls
-_dialog = findDisplay genstore_DIALOG;
-_itemlist = _dialog displayCtrl genstore_item_list;
-_itemlisttext = _dialog displayCtrl genstore_item_TEXT;
-_itemInfo = _dialog displayCtrl genstore_item_Info;
-_itemDesc = _dialog displayCtrl genstore_item_desc;
+_dialog = findDisplay BaseStore_DIALOG;
+_itemlist = _dialog displayCtrl BaseStore_item_list;
+_itemlisttext = _dialog displayCtrl BaseStore_item_TEXT;
+_itemInfo = _dialog displayCtrl BaseStore_item_Info;
+_itemDesc = _dialog displayCtrl BaseStore_item_desc;
 
 //Get Selected Item
 _itemIndex = lbCurSel _itemlist;

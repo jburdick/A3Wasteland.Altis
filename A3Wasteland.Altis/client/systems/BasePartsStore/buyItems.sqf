@@ -9,7 +9,7 @@
 
 if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Please wait, your previous purchase is being processed"};
 
-#include "dialog\genstoreDefines.sqf";
+#include "dialog\BaseStoreDefines.sqf";
 
 #define PURCHASED_CRATE_TYPE_AMMO 60
 #define PURCHASED_CRATE_TYPE_WEAPON 61
@@ -27,12 +27,12 @@ storePurchaseHandle = _this spawn
 	_successHint = true;
 
 	// Grab access to the controls
-	_dialog = findDisplay genstore_DIALOG;
-	_itemlist = _dialog displayCtrl genstore_item_list;
-	_totalText = _dialog displayCtrl genstore_total;
-	_playerMoneyText = _Dialog displayCtrl genstore_money;
+	_dialog = findDisplay BaseStore_DIALOG;
+	_itemlist = _dialog displayCtrl BaseStore_item_list;
+	_totalText = _dialog displayCtrl BaseStore_total;
+	_playerMoneyText = _Dialog displayCtrl BaseStore_money;
 
-	_itemIndex = lbCurSel genstore_item_list;
+	_itemIndex = lbCurSel BaseStore_item_list;
 	_itemText = _itemlist lbText _itemIndex;
 	_itemData = _itemlist lbData _itemIndex;
 
@@ -316,7 +316,7 @@ storePurchaseHandle = _this spawn
 				};
 
 				//populate the inventory items
-				[] execVM "client\systems\generalStore\getInventory.sqf";
+				[] execVM "client\systems\BasePartsStore\getInventory.sqf";
 			};
 		} forEach (call customPlayerItems);
 	};

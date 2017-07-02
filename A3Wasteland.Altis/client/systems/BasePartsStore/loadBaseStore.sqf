@@ -2,19 +2,19 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: loadGenStore.sqf
+//	@file Name: loadBaseStore.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:13
 //	@file Args:
 
-#include "dialog\genstoreDefines.sqf";
+#include "dialog\BaseStoreDefines.sqf";
 disableSerialization;
 
 private ["_genshopDialog", "_Dialog", "_playerMoney", "_owner"];
-_genshopDialog = createDialog "genstored";
+_genshopDialog = createDialog "BaseStored";
 
-_Dialog = findDisplay genstore_DIALOG;
-_playerMoney = _Dialog displayCtrl genstore_money;
+_Dialog = findDisplay BaseStore_DIALOG;
+_playerMoney = _Dialog displayCtrl BaseStore_money;
 _playerMoney ctrlSetText format["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 if (!isNil "_this") then { _owner = _this select 0 };
 if (!isNil "_owner") then
@@ -26,7 +26,7 @@ if (!isNil "_owner") then
 [] spawn
 {
 	disableSerialization;
-	_dialog = findDisplay genstore_DIALOG;
+	_dialog = findDisplay BaseStore_DIALOG;
 	while {!isNull _dialog} do
 	{
 		_escMenu = findDisplay 49;
