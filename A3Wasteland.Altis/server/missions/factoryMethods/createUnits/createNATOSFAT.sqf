@@ -61,7 +61,7 @@ if (_rank != "") then
 
 _soldier spawn refillPrimaryAmmo;
 _soldier call setMissionSkill;
-
+_soldier triggerDynamicSimulation true;
 _soldier addEventHandler ["Killed", server_playerDied];
 
 _soldier

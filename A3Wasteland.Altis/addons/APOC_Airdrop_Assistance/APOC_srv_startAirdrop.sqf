@@ -47,13 +47,14 @@ _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropS
 
 diag_log format ["AAA - Heli Spawned at %1", _spos];
 _heli = createVehicle [_heliType, _spos, [], 0, "FLY"];
-_heli allowDamage false;
 _heli setVariable ["R3F_LOG_disabled", true, true];
 [_heli] call vehicleSetup;
+_heli enableDynamicSimulation false;
+
 
 _crew = [_grp, _spos] call createRandomSoldierC;
 _crew moveInDriver _heli;
-_crew allowDamage false;
+_crew triggerDynamicSimulation true;
 
 _heli setCaptive true;
 
@@ -146,7 +147,7 @@ _object = switch (_type) do
 		_object setVariable ["allowDamage", false, true];
 		_object
 	};
-	case "vicammo":  //Beware of Bears!
+	case "vicammo":
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["Box_NATO_AmmoVeh_F", _objectSpawnPos, [], 0, "None"];
