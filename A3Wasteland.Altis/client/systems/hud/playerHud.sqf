@@ -85,7 +85,6 @@ _displayTerritoryActivity =
 	[_topLeftIconText, _activityMessage]
 };
 
-_survivalSystem = ["A3W_survivalSystem"] call isConfigOn;
 _unlimitedStamina = ["A3W_unlimitedStamina"] call isConfigOn;
 _atmEnabled = ["A3W_atmEnabled"] call isConfigOn;
 _disableUavFeed = ["A3W_disableUavFeed"] call isConfigOn;

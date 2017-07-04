@@ -63,9 +63,4 @@ if (["A3W_savingMethod", "profile"] call getPublicVar == "extDB") then
 	{
 		[player, ["<img image='client\icons\save.paa'/> Force Save Vehicle", { cursorObject call fn_forceSaveVehicle }, [], -9.5, false, true, "", "call canForceSaveVehicle"]] call fn_addManagedAction;
 	};
-
-	if (["A3W_staticWeaponSaving"] call isConfigOn) then
-	{
-		[player, ["<img image='client\icons\save.paa'/> Force Save Turret", { cursorObject call fn_forceSaveObject }, [], -9.5, false, true, "", "call canForceSaveStaticWeapon"]] call fn_addManagedAction;
-	};
 };

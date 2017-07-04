@@ -16,8 +16,6 @@ if (!isServer) then
 
 waitUntil {!isNil "A3W_serverSetupComplete"};
 
-[] execVM "client\functions\bannedNames.sqf";
-
 showPlayerIcons = true;
 mutexScriptInProgress = false;
 respawnDialogActive = false;
