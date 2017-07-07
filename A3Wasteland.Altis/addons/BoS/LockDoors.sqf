@@ -1,3 +1,4 @@
+_NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
 
 //Objects with only one Door
 {
@@ -9,7 +10,7 @@
     waitUntil {local _x || time > _setOwner_time + 1.5};
   };
   _x setVariable ['bis_disabled_Door_1',1,true];
-} forEach nearestObjects [player,
+} forEach nearestObjects [_NearestManager,
   [
     "Land_Cargo_House_V3_F",
     "Land_Cargo_House_V1_F",
@@ -44,7 +45,7 @@
   };
   _x setVariable ['bis_disabled_Door_1',1,true];
   _x setVariable ['bis_disabled_Door_2',1,true];
-} forEach nearestObjects [player,
+} forEach nearestObjects [_NearestManager,
   [
   "Land_i_House_Small_03_V1_F",
   "Land_i_House_Big_01_V3_F",
@@ -82,7 +83,7 @@
     _x setVariable ['bis_disabled_Door_1',1,true];
     _x setVariable ['bis_disabled_Door_2',1,true];
     _x setVariable ['bis_disabled_Door_3',1,true];
-  } forEach nearestObjects [player,
+  } forEach nearestObjects [_NearestManager,
     [
       "Land_Offices_01_V1_F",
       "Land_i_Shop_02_V3_F",
@@ -115,7 +116,7 @@
   _x setVariable ['bis_disabled_Door_2',1,true];
   _x setVariable ['bis_disabled_Door_3',1,true];
   _x setVariable ['bis_disabled_Door_4',1,true];
-} forEach nearestObjects [player,
+} forEach nearestObjects [_NearestManager,
   [
     "Land_i_House_Big_02_V3_F",
     "Land_i_House_Big_02_V1_F",
@@ -143,11 +144,13 @@
   _x setVariable ['bis_disabled_Door_7',1,true];
   _x setVariable ['bis_disabled_Door_8',1,true];
 
-} forEach nearestObjects [player,
+} forEach nearestObjects [_NearestManager,
   [
     "Land_i_Barracks_V1_F",
     "Land_i_Barracks_V2_F",
     "Land_u_Barracks_V2_F"
   ], 100];
 
+  
+_NearestManager = setVariable ["doorsLocked", true];
 hint "Doors Locked";

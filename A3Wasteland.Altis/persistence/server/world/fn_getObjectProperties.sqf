@@ -115,7 +115,8 @@ switch (true) do
     [
       ["password", ""],
       ["lights", ""],
-      ["lockDown", false]
+      ["lockDown", false],
+	  ["doorsLocked", false]
     ];
   };
 };

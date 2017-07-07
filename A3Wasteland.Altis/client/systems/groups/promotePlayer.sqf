@@ -36,25 +36,8 @@ _inCombat = false;
 
 if (alive _target) then
 {
-	//_isIndie = !((side group _target) in [BLUFOR,OPFOR]);
-
-	//check to see how close to the enemy the target leader is
-	{
-		if (_x distance _target < 100 && {[_x, _target] call A3W_fnc_isFriendly}) exitWith
-		{
-			_inCombat = true;
-		};
-	} forEach allUnits;
-};
-
-if (!_inCombat) then
-{
-	(group player) selectLeader _target;
+		(group player) selectLeader _target;
 	player globalChat format ["You have promoted %1 to group leader", name _target];
 	player setVariable ["currentGroupIsLeader", false, true];
 	_target setVariable ["currentGroupIsLeader", true, true];
-}
-else
-{
-	player globalChat "This player is in combat. You can't make it leader right now";
 };

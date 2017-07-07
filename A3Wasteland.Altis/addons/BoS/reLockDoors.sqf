@@ -1,4 +1,5 @@
-_NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
+_Manager = _this select 0;
+
 //Objects with only one Door
 {
   if (!local _x) then
@@ -8,8 +9,8 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
     [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
     waitUntil {local _x || time > _setOwner_time + 1.5};
   };
-  _x setVariable ['bis_disabled_Door_1',0,true];
-} forEach nearestObjects [_NearestManager,
+  _x setVariable ['bis_disabled_Door_1',1,true];
+} forEach nearestObjects [_Manager,
   [
     "Land_Cargo_House_V3_F",
     "Land_Cargo_House_V1_F",
@@ -42,9 +43,9 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
     [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
     waitUntil {local _x || time > _setOwner_time + 1.5};
   };
-  _x setVariable ['bis_disabled_Door_1',0,true];
-  _x setVariable ['bis_disabled_Door_2',0,true];
-} forEach nearestObjects [_NearestManager,
+  _x setVariable ['bis_disabled_Door_1',1,true];
+  _x setVariable ['bis_disabled_Door_2',1,true];
+} forEach nearestObjects [_Manager,
   [
   "Land_i_House_Small_03_V1_F",
   "Land_i_House_Big_01_V3_F",
@@ -66,7 +67,8 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
   "Land_i_House_Small_01_V2_F",
   "Land_i_Stone_HouseSmall_V3_F",
   "Land_i_Stone_HouseSmall_V1_F",
-  "Land_i_Stone_HouseSmall_V2_F"
+  "Land_i_Stone_HouseSmall_V2_F",
+  "Wall"
   ], 100];
 
   //Objects with Three Doors
@@ -78,10 +80,10 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
       [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
       waitUntil {local _x || time > _setOwner_time + 1.5};
     };
-    _x setVariable ['bis_disabled_Door_1',0,true];
-    _x setVariable ['bis_disabled_Door_2',0,true];
-    _x setVariable ['bis_disabled_Door_3',0,true];
-  } forEach nearestObjects [_NearestManager,
+    _x setVariable ['bis_disabled_Door_1',1,true];
+    _x setVariable ['bis_disabled_Door_2',1,true];
+    _x setVariable ['bis_disabled_Door_3',1,true];
+  } forEach nearestObjects [_Manager,
     [
       "Land_Offices_01_V1_F",
       "Land_i_Shop_02_V3_F",
@@ -110,11 +112,11 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
     [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
     waitUntil {local _x || time > _setOwner_time + 1.5};
   };
-  _x setVariable ['bis_disabled_Door_1',0,true];
-  _x setVariable ['bis_disabled_Door_2',0,true];
-  _x setVariable ['bis_disabled_Door_3',0,true];
-  _x setVariable ['bis_disabled_Door_4',0,true];
-} forEach nearestObjects [_NearestManager,
+  _x setVariable ['bis_disabled_Door_1',1,true];
+  _x setVariable ['bis_disabled_Door_2',1,true];
+  _x setVariable ['bis_disabled_Door_3',1,true];
+  _x setVariable ['bis_disabled_Door_4',1,true];
+} forEach nearestObjects [_Manager,
   [
     "Land_i_House_Big_02_V3_F",
     "Land_i_House_Big_02_V1_F",
@@ -133,21 +135,21 @@ _NearestManager = nearestObject [player, "Land_SatellitePhone_F"];
     [_x, "setOwnerTo", player] call R3F_LOG_FNCT_exec_commande_MP; // Requires R3F 3.1
     waitUntil {local _x || time > _setOwner_time + 1.5};
   };
-  _x setVariable ['bis_disabled_Door_1',0,true];
-  _x setVariable ['bis_disabled_Door_2',0,true];
-  _x setVariable ['bis_disabled_Door_3',0,true];
-  _x setVariable ['bis_disabled_Door_4',0,true];
-  _x setVariable ['bis_disabled_Door_5',0,true];
-  _x setVariable ['bis_disabled_Door_6',0,true];
-  _x setVariable ['bis_disabled_Door_7',0,true];
-  _x setVariable ['bis_disabled_Door_8',0,true];
+  _x setVariable ['bis_disabled_Door_1',1,true];
+  _x setVariable ['bis_disabled_Door_2',1,true];
+  _x setVariable ['bis_disabled_Door_3',1,true];
+  _x setVariable ['bis_disabled_Door_4',1,true];
+  _x setVariable ['bis_disabled_Door_5',1,true];
+  _x setVariable ['bis_disabled_Door_6',1,true];
+  _x setVariable ['bis_disabled_Door_7',1,true];
+  _x setVariable ['bis_disabled_Door_8',1,true];
 
-} forEach nearestObjects [_NearestManager,
+} forEach nearestObjects [_Manager,
   [
     "Land_i_Barracks_V1_F",
     "Land_i_Barracks_V2_F",
     "Land_u_Barracks_V2_F"
   ], 100];
 
-_NearestManager = setVariable ["doorsLocked", false];
-hint "Doors Locked";
+  
+_Manager = setVariable ["doorsLocked", true];

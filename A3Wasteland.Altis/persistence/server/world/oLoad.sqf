@@ -128,6 +128,11 @@ _exclObjectIDs = [];
       _obj setHit ["light_1_hit", 0.97];
     };
 
+	if (_obj getVariable ["objectLocked", true]) then
+    {
+      [_obj] execVM "addons\BoS\reLockDoors.sqf";
+    };
+	
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
